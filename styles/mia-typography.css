@@ -193,14 +193,14 @@
   font-size: inherit;
   line-height: inherit;
   font-weight: inherit;
-  color: var(--mia-landing-title-blue);
+  color: #F4E8D4;
 }
 
 .teilor-brand-trust-line--secondary {
   font-size: inherit;
   line-height: inherit;
   font-weight: inherit;
-  color: var(--mia-landing-title-blue);
+  color: #9FE8FF;
 }
 
 body.mia-app-intro .teilor-brand-tagline {

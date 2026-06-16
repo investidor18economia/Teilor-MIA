@@ -1,0 +1,215 @@
+﻿ÔöÇÔöÇ FASE 1 ÔÇö Mapa do fluxo CONFIDENCE_CHALLENGE ÔöÇÔöÇ
+
+1. Classifica├º├úo (lib/miaCognitiveRouter.js)
+   ÔÇó detectsConfidenceChallengeSignal / detectsNaturalConfidenceChallengeSignal (PATCH 7.9X-E)
+   ÔÇó buildTurnSignals ÔåÆ signals.isConfidenceChallenge
+   ÔÇó resolveTurnTypeFromSignals step 2.11 ÔåÆ CONVERSATIONAL (cold) | EXPLANATION_REQUEST (anchored)
+   ÔÇó decisionExplanation.subtype pode ser confidence_challenge (Cluster 8 / rich explanation)
+   ÔÇó Export: isConfidenceChallengeFamilyQuery()
+
+2. Transporte de sinais
+   ÔÇó classifyMiaTurn ÔåÆ cognitiveTurn.signals.isConfidenceChallenge
+   ÔÇó buildRoutingDecision via cognitiveRoutingSignal.isConfidenceChallenge
+   ÔÇó Handler via isConfidenceChallenge + family query + routing hold
+
+3. Bridge / Contract (lib/miaCognitiveBridge.js)
+   ÔÇó EXPLANATION_REQUEST ancorado ÔåÆ contextAction=decision (legacy compat)
+   ÔÇó N├úo h├í intent dedicado confidence_challenge no bridge ÔÇö handler promove via routing hold
+
+4. Routing (lib/miaRoutingDecisionContract.js PATCH 7.8K)
+   ÔÇó Hold confidence_challenge ANTES do hold gen├®rico EXPLANATION_REQUEST
+   ÔÇó conversationAct=confidence_challenge | hint confidence_challenge_reply/_anchored
+   ÔÇó Exige !hasClearNewCommercialSearch
+
+5. Response Path (pages/api/chat-gpt4o.js PATCH 7.8L)
+   ÔÇó Gate: !earlyClearNewCommercialSearch && (isConfidenceChallenge | family query | routing hold)
+   ÔÇó intent=confidence_challenge ÔåÆ buildMiaSystemPromptByRole(confidence_challenge_reply)
+   ÔÇó Subtype confidence_challenge ÔåÆ confidence_challenge_defense contract
+
+6. Resposta final (lib/miaPrompt.js role confidence_challenge_reply)
+   ÔÇó Cold: pede contexto + oferece revisar confian├ºa
+   ÔÇó Anchored: sustenta recomenda├º├úo com ressalvas honestas, preserva winner
+
+PATCH 7.9X-E.1 ÔÇö CONFIDENCE_CHALLENGE Flow Robustness Audit (AUDIT ONLY)
+
+HTTP usage: false | SerpAPI risk: false | Production changes: NONE
+
+ÔöÇÔöÇ FASE 2 ÔÇö Amostra de leaks (router OK, downstream falhou) ÔöÇÔöÇ
+
+[B/cold] "ainda recomenda esse?"
+  ROUTING: act=explicit_new_search hint=new_commercial_search
+  CONTRACT: bridge=search contextAction=search
+  PATH: default_product_search effectiveIntent=search
+  LEAKS: ROUTING_LEAK, RESPONSE_PATH_LEAK
+
+[B/anchored] "ainda recomenda esse?"
+  ROUTING: act=context_question hint=decision_context
+  CONTRACT: bridge=decision contextAction=decision
+  PATH: decision_context_branch effectiveIntent=decision
+  LEAKS: ROUTING_LEAK, BRIDGE_LEAK, RESPONSE_PATH_LEAK
+
+ÔöÇÔöÇ FASE 3 ÔÇö Suite positiva (60 cen├írios = 30 frases ├ù 2 contextos) ÔöÇÔöÇ
+
+Grupo | Ctx | Frase | Rtr | Rtg | Ctr | Path | Final | Perc
+--------------------------------------------------------------------------------------------------------------
+A | cold    | tem certeza?                 | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | tem certeza?                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | voc├¬ tem certeza disso?      | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | voc├¬ tem certeza disso?      | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | certeza mesmo?               | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | certeza mesmo?               | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | d├í pra confiar nessa escolha | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | d├í pra confiar nessa escolha | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | isso est├í seguro mesmo?      | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+A | anchored | isso est├í seguro mesmo?      | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+B | cold    | voc├¬ mant├®m essa recomenda├º├ú | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | voc├¬ mant├®m essa recomenda├º├ú | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | continua achando isso?       | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | continua achando isso?       | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | ainda sustenta essa escolha? | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | ainda sustenta essa escolha? | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | ainda recomenda esse?        | Ô£ô | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+B | anchored | ainda recomenda esse?        | Ô£ô | Ô£ù | Ô£ù | Ô£ù | Ô£ù | PARCIAL
+B | cold    | voc├¬ bateria o martelo nisso | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | voc├¬ bateria o martelo nisso | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | n├úo est├í for├ºando a barra?   | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | n├úo est├í for├ºando a barra?   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | n├úo est├í exagerando?         | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | n├úo est├í exagerando?         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | n├úo tem pegadinha?           | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | n├úo tem pegadinha?           | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | essa recomenda├º├úo est├í bem s | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | essa recomenda├º├úo est├í bem s | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | n├úo est├í puxando demais?     | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+C | anchored | n├úo est├í puxando demais?     | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+D | cold    | voc├¬ compraria esse?         | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | voc├¬ compraria esse?         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | voc├¬ iria nele mesmo?        | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | voc├¬ iria nele mesmo?        | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | se fosse voc├¬, compraria?    | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | se fosse voc├¬, compraria?    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | voc├¬ colocaria seu dinheiro  | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | voc├¬ colocaria seu dinheiro  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | voc├¬ botaria seu bolso nisso | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | voc├¬ botaria seu bolso nisso | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | esse ainda ├® o melhor mesmo? | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | esse ainda ├® o melhor mesmo? | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | continua sendo a escolha mai | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | continua sendo a escolha mai | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | voc├¬ n├úo mudaria a recomenda | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | voc├¬ n├úo mudaria a recomenda | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | ainda ├® a primeira op├º├úo?    | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | ainda ├® a primeira op├º├úo?    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | mant├®m ele como vencedor?    | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+E | anchored | mant├®m ele como vencedor?    | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+F | cold    | entendi, mas voc├¬ tem certez | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | entendi, mas voc├¬ tem certez | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | beleza, ainda sustenta essa  | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | beleza, ainda sustenta essa  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | acho que vou nele, mas voc├¬  | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+F | anchored | acho que vou nele, mas voc├¬  | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+F | cold    | faz sentido, mas n├úo est├í fo | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+F | anchored | faz sentido, mas n├úo est├í fo | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+F | cold    | gostei dele, mas voc├¬ compra | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | gostei dele, mas voc├¬ compra | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+
+ÔöÇÔöÇ FASE 3b ÔÇö Guardas negativas (30 cen├írios, anchored) ÔöÇÔöÇ
+
+  Ô£ô OK [AR] "tenho medo de errar" ÔåÆ OBJECTION/anti_regret
+  Ô£ô OK [AR] "n├úo quero me arrepender" ÔåÆ OBJECTION/anti_regret
+  Ô£ô OK [AR] "t├┤ cabreiro" ÔåÆ OBJECTION/anti_regret
+  Ô£ô OK [SV] "a galera recomenda?" ÔåÆ EXPLANATION_REQUEST/social_validation
+  Ô£ô OK [SV] "o povo fala bem?" ÔåÆ EXPLANATION_REQUEST/social_validation
+  Ô£ô OK [SV] "quem comprou gostou?" ÔåÆ EXPLANATION_REQUEST/social_validation
+  Ô£ô OK [SD] "n├úo me convenceu" ÔåÆ OBJECTION/context_question
+  Ô£ô OK [SD] "estou com um p├® atr├ís" ÔåÆ OBJECTION/context_question
+  Ô£ô OK [SD] "n├úo curti muito" ÔåÆ OBJECTION/context_question
+  Ô£ô OK [DC] "vou nele" ÔåÆ FOLLOW_UP/decision_confirmation
+  Ô£ô OK [DC] "acho que fechou" ÔåÆ FOLLOW_UP/decision_confirmation
+  Ô£ô OK [DC] "ent├úo ├® esse" ÔåÆ FOLLOW_UP/decision_confirmation
+  Ô£ô OK [AE] "tem outro?" ÔåÆ ALTERNATIVE_REQUEST/alternative_exploration
+  Ô£ô OK [AE] "mostra alternativas" ÔåÆ REFINEMENT/search
+  Ô£ô OK [AE] "quero ver op├º├Áes" ÔåÆ ALTERNATIVE_REQUEST/alternative_exploration
+  Ô£ô OK [SBD] "qual ficou em segundo?" ÔåÆ ALTERNATIVE_REQUEST/second_best_discovery
+  Ô£ô OK [SBD] "plano B?" ÔåÆ ALTERNATIVE_REQUEST/second_best_discovery
+  Ô£ô OK [SBD] "backup?" ÔåÆ ALTERNATIVE_REQUEST/search
+  Ô£ô OK [CC2] "quero gastar menos" ÔåÆ PRIORITY_SHIFT/constraint_change
+  Ô£ô OK [CC2] "agora c├ómera importa mais" ÔåÆ PRIORITY_SHIFT/constraint_change
+  Ô£ô OK [CC2] "vou usar mais para fotos" ÔåÆ PRIORITY_SHIFT/constraint_change
+  Ô£ô OK [COMP] "entendi" ÔåÆ REACTION/search
+  Ô£ô OK [COMP] "agora fez sentido" ÔåÆ REACTION/search
+  Ô£ô OK [COMP] "saquei o racioc├¡nio" ÔåÆ REACTION/search
+  Ô£ô OK [ACK] "ok" ÔåÆ REACTION/acknowledgement
+  Ô£ô OK [ACK] "blz" ÔåÆ REACTION/acknowledgement
+  Ô£ô OK [ACK] "pode seguir" ÔåÆ REACTION/acknowledgement
+  Ô£ô OK [GREET] "oi" ÔåÆ CONVERSATIONAL/greeting
+  Ô£ô OK [GREET] "bom dia" ÔåÆ CONVERSATIONAL/greeting
+  Ô£ô OK [GREET] "salve" ÔåÆ CONVERSATIONAL/greeting
+
+ÔöÇÔöÇ FASE 4 ÔÇö Taxa por camada (positivos) ÔöÇÔöÇ
+
+Cen├írios positivos: 60
+Router:           50/60 (83.3%)
+Routing:          48/60 (80.0%)
+Bridge/Contract:  24/60 (40.0%)
+Response Path:    48/60 (80.0%)
+Resposta Final:   48/60 (80.0%)
+Percep├º├úo SIM:    24/60 (40.0%)
+Percep├º├úo PARCIAL:25/60 (41.7%)
+Percep├º├úo N├âO:    11/60 (18.3%)
+Negativos leak CC:0/30
+
+ÔöÇÔöÇ Por grupo (router / full stack) ÔöÇÔöÇ
+
+  Grupo A (certeza direta): router 8/10 (80.0%) | full 8/10 (80.0%)
+  Grupo B (sustenta├º├úo da recomenda├º├úo): router 10/10 (100.0%) | full 8/10 (80.0%)
+  Grupo C (firmeza / provoca├º├úo): router 8/10 (80.0%) | full 8/10 (80.0%)
+  Grupo D (compra pessoal): router 10/10 (100.0%) | full 10/10 (100.0%)
+  Grupo E (ainda ├® o melhor): router 8/10 (80.0%) | full 8/10 (80.0%)
+  Grupo F (frases compostas): router 6/10 (60.0%) | full 6/10 (60.0%)
+
+ÔöÇÔöÇ Vazamentos por tipo (positivos) ÔöÇÔöÇ
+
+  CONTRACT_LEAK: 24
+  ROUTER_LEAK: 10
+  ROUTING_LEAK: 2
+  RESPONSE_PATH_LEAK: 2
+  BRIDGE_LEAK: 1
+
+ÔöÇÔöÇ Causa raiz (padr├Áes ├║nicos) ÔöÇÔöÇ
+
+  CONTRACT_LEAK
+    Bridge intent=search contextAction=search handlerGate=true
+    Frequ├¬ncia: 24 | Ex.: [cold] "tem certeza?"; [cold] "voc├¬ tem certeza disso?"
+
+  ROUTER_LEAK
+    CONFIDENCE_CHALLENGE n├úo reconhecido ÔÇö desafio ├á firmeza n├úo capturado
+    Frequ├¬ncia: 10 | Ex.: [cold] "isso est├í seguro mesmo?"; [anchored] "isso est├í seguro mesmo?"
+
+  ROUTING_LEAK
+    Router OK mas routing act=explicit_new_search hint=new_commercial_search
+    Frequ├¬ncia: 1 | Ex.: [cold] "ainda recomenda esse?"
+
+  RESPONSE_PATH_LEAK
+    clearNewCommercialSearch bloqueia confidence_challenge_flow apesar de isConfidenceChallenge=true
+    Frequ├¬ncia: 2 | Ex.: [cold] "ainda recomenda esse?"; [anchored] "ainda recomenda esse?"
+
+  ROUTING_LEAK
+    Router OK mas routing act=context_question hint=decision_context
+    Frequ├¬ncia: 1 | Ex.: [anchored] "ainda recomenda esse?"
+
+  BRIDGE_LEAK
+    EXPLANATION_REQUESTÔåÆdecision intercepta antes do hold confidence_challenge
+    Frequ├¬ncia: 1 | Ex.: [anchored] "ainda recomenda esse?"
+
+ÔöÇÔöÇ Veredito ÔöÇÔöÇ
+
+B) CONFIDENCE_CHALLENGE POSSUI GAP FULL STACK
+   Router 83.3% ÔÇö gaps de vocabul├írio ou colis├úo upstream.
+
+ÔöÇÔöÇ Recomenda├º├úo (audit-only) ÔöÇÔöÇ
+
+Priorizar Router/colision audit antes de flow patches downstream.
+
+PATCH 7.9X-E.1 audit COMPLETE ÔÇö AUDIT ONLY
+

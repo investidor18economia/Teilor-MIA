@@ -28,15 +28,13 @@
 
   gap: 8px;
 
-  padding: 6px 6px 6px 10px;
-
-  border-radius: 10px;
-
-  border: 1px solid rgba(0, 198, 255, 0.14);
-
-  background: linear-gradient(135deg, rgba(0, 198, 255, 0.08) 0%, rgba(0, 198, 255, 0.06) 100%);
+  padding: 2px 4px 4px;
 
   flex-shrink: 0;
+
+  border: none;
+
+  background: transparent;
 
 }
 
@@ -54,7 +52,7 @@
 
   line-height: 1.38;
 
-  color: #C4DCF0;
+  color: #E8D8B5;
 
 }
 
@@ -626,7 +624,7 @@
 
   font-weight: 800;
 
-  color: #00C6FF;
+  color: #E8D8B5;
 
   letter-spacing: -0.3px;
 
@@ -762,7 +760,7 @@
 
   font-weight: 800;
 
-  color: #00C6FF;
+  color: #E8D8B5;
 
 }
 

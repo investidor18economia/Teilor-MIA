@@ -1,0 +1,134 @@
+﻿
+PATCH 7.9X-CC ÔÇö CONSTRAINT_CHANGE Semantic Expansion
+
+ÔöÇÔöÇ Positive (constraint change) ÔöÇÔöÇ
+
+  Ô£ô [A] "quero gastar menos" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "agora quero economizar" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "pensei melhor e quero gastar menos" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "ficou caro pra mim" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "t├í puxado" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "pesou no bolso" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "passou do que eu queria" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "preciso baixar o valor" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "meu or├ºamento diminuiu" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "quero algo mais em conta" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "prefiro gastar menos" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [A] "quero economizar mais" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "c├ómera virou prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "bateria virou prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "desempenho virou prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "conforto virou prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "agora c├ómera pesa mais" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "agora bateria importa mais" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "preciso priorizar autonomia" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "quero priorizar durabilidade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "pre├ºo virou prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "desempenho ficou mais importante" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "quero focar em durabilidade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [B] "agora qualidade importa mais" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "vou jogar mais" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "vou usar mais para fotos" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "vou usar mais para trabalhar" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "vou usar mais fora de casa" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "vou usar mais no dia a dia pesado" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "meu uso mudou" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "agora o foco ├® outro" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "vou usar de outro jeito" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "pensei melhor sobre meu uso" ÔåÆ PRIORITY_SHIFT
+  Ô£ù [C] "preciso considerar outro tipo de uso" ÔåÆ UNKNOWN | router: isConstraintChange missing; router turn: expected PRIORITY_SHIFT, got UNKNOWN
+  Ô£ô [C] "vou usar mais para estudo" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "vou trabalhar bastante nele" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [C] "agora quero para jogos" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "c├ómera n├úo importa tanto" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "bateria n├úo ├® t├úo importante agora" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "desempenho deixou de ser prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ù [D] "pre├ºo n├úo ├® mais o ├║nico crit├®rio" ÔåÆ UNKNOWN | router: isConstraintChange missing; router turn: expected PRIORITY_SHIFT, got UNKNOWN
+  Ô£ô [D] "posso abrir m├úo de c├ómera" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "posso sacrificar desempenho" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "n├úo ligo tanto para isso" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "esse ponto perdeu peso para mim" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "autonomia n├úo importa tanto agora" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [D] "qualidade deixou de ser prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "mudei de ideia" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "pensei melhor" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "olhando melhor agora" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "pensando bem" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "acho que meu foco mudou" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "minha prioridade mudou" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "quero recalibrar a escolha" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "preciso reavaliar com outro crit├®rio" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "pensei melhor sobre o or├ºamento" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [E] "mudei de ideia sobre a prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [F] "gostei dele, mas quero gastar menos" ÔåÆ PRIORITY_SHIFT
+  Ô£ù [F] "acho que vou nele, mas c├ómera virou prioridade" ÔåÆ FOLLOW_UP | router turn: expected PRIORITY_SHIFT, got FOLLOW_UP
+  Ô£ô [F] "esse parece bom, mas bateria importa mais" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [F] "gostei da recomenda├º├úo, mas t├í puxado" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [F] "parece certo, mas meu foco mudou" ÔåÆ PRIORITY_SHIFT
+  Ô£ù [F] "vou nesse se tiver algo mais em conta" ÔåÆ FOLLOW_UP | router: isConstraintChange missing; collision: DECISION_CONFIRMATION; router turn: expected PRIORITY_SHIFT, got FOLLOW_UP
+  Ô£ù [F] "acho que fechou, mas pensei melhor no or├ºamento" ÔåÆ FOLLOW_UP | router turn: expected PRIORITY_SHIFT, got FOLLOW_UP
+  Ô£ô [F] "parece ser esse, mas quero economizar" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [F] "gostei dele mas agora bateria pesa mais" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [F] "esse parece certo mas vou usar mais para fotos" ÔåÆ PRIORITY_SHIFT
+
+ÔöÇÔöÇ Negative / neighbor guards ÔöÇÔöÇ
+
+  Ô£ô [AR] "tenho medo de errar" ÔåÆ OBJECTION
+  Ô£ô [AR] "n├úo quero me arrepender" ÔåÆ OBJECTION
+  Ô£ô [AR] "├® muito dinheiro pra mim" ÔåÆ OBJECTION
+  Ô£ô [AR] "n├úo quero jogar dinheiro fora" ÔåÆ OBJECTION
+  Ô£ô [AR] "t├┤ cabreiro" ÔåÆ OBJECTION
+  Ô£ô [AR] "├® muito dinheiro pra mim, n├úo quero errar" ÔåÆ OBJECTION
+  Ô£ô [CC2] "voc├¬ tem certeza?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [CC2] "continua achando isso?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [CC2] "sustenta essa recomenda├º├úo?" ÔåÆ UNKNOWN
+  Ô£ô [CC2] "voc├¬ compraria esse?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [SV] "a galera recomenda?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [SV] "o povo fala bem?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [SV] "quem comprou gostou?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [SD] "n├úo me convenceu" ÔåÆ OBJECTION
+  Ô£ô [SD] "t├┤ meio assim" ÔåÆ OBJECTION
+  Ô£ô [SD] "n├úo curti muito" ÔåÆ OBJECTION
+  Ô£ô [DC] "vou nele" ÔåÆ FOLLOW_UP
+  Ô£ô [DC] "acho que vou nesse" ÔåÆ FOLLOW_UP
+  Ô£ô [DC] "ent├úo ├® esse" ÔåÆ FOLLOW_UP
+  Ô£ô [DC] "fechou, vou pegar esse" ÔåÆ UNKNOWN
+  Ô£ô [AE] "tem outro?" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [AE] "mostra alternativas" ÔåÆ REFINEMENT
+  Ô£ô [AE] "quero ver op├º├Áes" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [SBD] "qual ficou em segundo?" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [SBD] "plano b?" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [COMP] "entendi" ÔåÆ REACTION
+  Ô£ô [COMP] "agora fez sentido" ÔåÆ REACTION
+  Ô£ô [ACK] "ok" ÔåÆ REACTION
+  Ô£ô [ACK] "blz" ÔåÆ REACTION
+  Ô£ô [GREET] "oi" ÔåÆ CONVERSATIONAL
+  Ô£ô [GREET] "bom dia" ÔåÆ CONVERSATIONAL
+  Ô£ô [COMM] "quero um produto at├® 2000" ÔåÆ UNKNOWN
+  Ô£ô [COMM] "quero comprar um notebook" ÔåÆ UNKNOWN
+  Ô£ô [COMM] "procura uma TV" ÔåÆ UNKNOWN
+  Ô£ô [GUARD] "quero gastar menos, tem outro?" ÔåÆ REFINEMENT
+  Ô£ô [GUARD] "ficou caro pra mim, compara com samsung?" ÔåÆ COMPARISON
+
+ÔöÇÔöÇ AR vs CC collision guards ÔöÇÔöÇ
+
+  Ô£ô "ficou caro pra mim, quero gastar menos" ÔåÆ CC=true AR=false
+  Ô£ô "├® muito dinheiro pra mim, n├úo quero errar" ÔåÆ CC=false AR=true
+  Ô£ô "pesou no bolso" ÔåÆ CC=true AR=false
+  Ô£ô "essa compra pesa" ÔåÆ CC=false AR=true
+
+ÔöÇÔöÇ Summary ÔöÇÔöÇ
+
+Positive: 62/67 (93%)
+Negative: 36/36
+Collisions: 4/4
+Total: 102/107
+  Group A: 12/12
+  Group B: 12/12
+  Group C: 12/13
+  Group D: 9/10
+  Group E: 10/10
+  Group F: 7/10
+
+Verdict: PASS (ROBUST CC)
+

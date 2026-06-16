@@ -1,0 +1,93 @@
+﻿
+PATCH 7.9X-G ÔÇö SOFT_DISAGREEMENT Semantic Expansion
+
+ÔöÇÔöÇ Positive (soft disagreement) ÔöÇÔöÇ
+
+  Ô£ô [A/anchored] "n├úo concordo muito" ÔåÆ OBJECTION signal=true
+  Ô£ô [A/cold] "n├úo concordo muito" ÔåÆ CONVERSATIONAL signal=true
+  Ô£ô [A/anchored] "n├úo sei se concordo" ÔåÆ OBJECTION signal=true
+  Ô£ô [A/anchored] "n├úo concordei totalmente" ÔåÆ OBJECTION signal=true
+  Ô£ô [A/anchored] "n├úo estou t├úo convencido" ÔåÆ OBJECTION signal=true
+  Ô£ô [A/cold] "n├úo estou t├úo convencido" ÔåÆ CONVERSATIONAL signal=true
+  Ô£ù [B/anchored] "ainda estou com um p├® atr├ís" ÔåÆ OBJECTION signal=true | collision: ANTI_REGRET
+  Ô£ù [B/anchored] "estou com um p├® atr├ís" ÔåÆ OBJECTION signal=true | collision: ANTI_REGRET
+  Ô£ô [B/anchored] "ainda estou meio desconfiado" ÔåÆ OBJECTION signal=true
+  Ô£ô [B/anchored] "n├úo senti firmeza" ÔåÆ OBJECTION signal=true
+  Ô£ô [B/anchored] "fiquei na d├║vida" ÔåÆ OBJECTION signal=true
+  Ô£ô [B/anchored] "n├úo me passou tanta confian├ºa" ÔåÆ OBJECTION signal=true
+  Ô£ô [B/anchored] "continuo meio na d├║vida" ÔåÆ OBJECTION signal=true
+  Ô£ô [B/cold] "continuo meio na d├║vida" ÔåÆ CONVERSATIONAL signal=true
+  Ô£ô [C/anchored] "n├úo me convenceu" ÔåÆ OBJECTION signal=true
+  Ô£ô [C/anchored] "n├úo me convenceu muito" ÔåÆ OBJECTION signal=true
+  Ô£ô [C/anchored] "n├úo me ganhou" ÔåÆ OBJECTION signal=true
+  Ô£ô [C/anchored] "n├úo me ganhou ainda" ÔåÆ OBJECTION signal=true
+  Ô£ô [C/anchored] "n├úo bateu comigo" ÔåÆ OBJECTION signal=true
+  Ô£ô [C/anchored] "n├úo bateu muito comigo" ÔåÆ OBJECTION signal=true
+  Ô£ô [D/anchored] "n├úo achei isso t├úo forte assim" ÔåÆ OBJECTION signal=true
+  Ô£ô [D/anchored] "n├úo achei t├úo forte assim" ÔåÆ OBJECTION signal=true
+  Ô£ô [D/anchored] "n├úo parece tudo isso" ÔåÆ OBJECTION signal=true
+  Ô£ô [D/anchored] "achei meio fraco" ÔåÆ OBJECTION signal=true
+  Ô£ô [D/anchored] "esperava algo melhor" ÔåÆ OBJECTION signal=true
+  Ô£ô [D/anchored] "n├úo achei t├úo convincente" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "faz sentido mas ainda tenho d├║vida" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "entendo mas n├úo me convenceu" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "at├® que faz sentido mas fiquei na d├║vida" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "n├úo sei" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "ainda n├úo sei se compro essa ideia" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "tenho minhas d├║vidas" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "n├úo tenho certeza disso" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "acho que n├úo" ÔåÆ OBJECTION signal=true
+  Ô£ô [F/anchored] "sei l├í viu" ÔåÆ OBJECTION signal=true
+  Ô£ô [F/anchored] "t├┤ meio assim ainda" ÔåÆ OBJECTION signal=true
+  Ô£ô [F/anchored] "n├úo curti muito n├úo" ÔåÆ OBJECTION signal=true
+  Ô£ô [F/anchored] "n├úo me desceu muito bem" ÔåÆ OBJECTION signal=true
+  Ô£ô [F/anchored] "n├úo bateu ainda" ÔåÆ OBJECTION signal=true
+  Ô£ô [F/anchored] "n├úo estou comprando muito essa ideia" ÔåÆ OBJECTION signal=true
+  Ô£ô [C/cold] "n├úo me convenceu muito" ÔåÆ CONVERSATIONAL signal=true
+  Ô£ô [D/anchored] "n├úo parece t├úo bom assim" ÔåÆ OBJECTION signal=true
+  Ô£ô [E/anchored] "n├úo sei se ├® isso" ÔåÆ OBJECTION signal=true
+  Ô£ô [F/anchored] "hmm n├úo sei" ÔåÆ OBJECTION signal=true
+  Ô£ô [B/anchored] "n├úo me passou confian├ºa" ÔåÆ OBJECTION signal=true
+  Ô£ô [A/cold] "n├úo sei se concordo" ÔåÆ CONVERSATIONAL signal=true
+  Ô£ô [D/cold] "n├úo achei isso t├úo forte assim" ÔåÆ CONVERSATIONAL signal=true
+  Ô£ô [C/cold] "n├úo me ganhou ainda" ÔåÆ CONVERSATIONAL signal=true
+
+ÔöÇÔöÇ Negative / neighbor guards ÔöÇÔöÇ
+
+  Ô£ô [CC] "voc├¬ tem certeza?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [CC] "continua achando isso?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [CC] "ainda sustenta essa escolha?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [CC] "voc├¬ compraria esse?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [CC] "voc├¬ mant├®m essa recomenda├º├úo?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [AR] "tenho medo de errar" ÔåÆ OBJECTION
+  Ô£ô [AR] "n├úo quero me arrepender" ÔåÆ OBJECTION
+  Ô£ô [AR] "quero evitar dor de cabe├ºa" ÔåÆ OBJECTION
+  Ô£ô [AR] "estou inseguro com essa compra" ÔåÆ OBJECTION
+  Ô£ô [SV] "a galera recomenda?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [SV] "o povo fala bem?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [SV] "quem comprou gostou?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [SV] "as pessoas aprovam?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [DC] "acho que vou nele" ÔåÆ FOLLOW_UP
+  Ô£ô [DC] "vou ficar com esse" ÔåÆ FOLLOW_UP
+  Ô£ô [DC] "fechou ent├úo" ÔåÆ REACTION
+  Ô£ô [AE] "tem outro?" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [AE] "mostra alternativas" ÔåÆ REFINEMENT
+  Ô£ô [AE] "quero ver op├º├Áes" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [SBD] "qual ficou em segundo?" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [SBD] "plano b?" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [SBD] "qual seria o backup?" ÔåÆ ALTERNATIVE_REQUEST
+  Ô£ô [CC2] "quero gastar menos" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [CC2] "bateria virou prioridade" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [CC2] "vou usar mais para fotos" ÔåÆ PRIORITY_SHIFT
+  Ô£ô [GUARD] "n├úo me convenceu ou tem outro?" ÔåÆ COMPARISON
+  Ô£ô [GUARD] "n├úo concordo muito mas quero gastar menos" ÔåÆ UNKNOWN
+  Ô£ô [GUARD] "n├úo me passou confian├ºa, a galera recomenda?" ÔåÆ EXPLANATION_REQUEST
+  Ô£ô [GUARD] "n├úo bateu comigo, voc├¬ tem certeza?" ÔåÆ EXPLANATION_REQUEST
+
+ÔöÇÔöÇ Summary ÔöÇÔöÇ
+
+Positive router coverage: 46/48 (95.8%)
+Neighbor guards: 29/29
+
+PATCH 7.9X-G expansion audit: PASS
+

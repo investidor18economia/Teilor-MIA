@@ -1,4 +1,5 @@
 import { fetchSerpPrices } from "../../lib/prices";
+import { fetchGoogleShoppingLegacyResult } from "../../lib/productSourceAdapter/adapters/googleShoppingAdapter.js";
 import axios from "axios";
 import { supabase } from "../../lib/supabaseClient";
 import { callOpenAI, getOpenAIText } from "../../lib/openai";
@@ -7,7 +8,29 @@ import { MIA_SYSTEM_PROMPT, buildMiaPromptByRole, buildMiaConversationalPrompt, 
 // PATCH 5.2A — Cognitive Authority (autoridade controlada para VALUE_QUESTION / EXPLANATION_REQUEST)
 // PATCH 5.2B — Intent Preservation Layer (preservação de EXPLANATION_REQUEST pós-CSO)
 // PATCH 5.6B — Cognitive Intent Authority Bridge (ponte Cognitive Router → legacy intent)
-import { classifyMiaTurn } from "../../lib/miaCognitiveRouter";
+import {
+  classifyMiaTurn,
+  isAcknowledgementFamilyQuery,
+  isComprehensionFamilyQuery,
+  isDecisionConfirmationFamilyQuery,
+  isAntiRegretFamilyQuery,
+  isConfidenceChallengeFamilyQuery,
+  isGreetingFamilyQuery,
+  isSocialValidationFamilyQuery,
+  isSecondBestDiscoveryFamilyQuery,
+  isAlternativeExplorationFamilyQuery,
+  isConstraintChangeFamilyQuery,
+  isSoftDisagreementFamilyQuery,
+  isAboutMiaFamilyQuery,
+} from "../../lib/miaCognitiveRouter";
+import {
+  buildAboutMiaDeterministicFallback,
+  buildAboutMiaVerbalizationContext,
+  isGenericInstitutionalFallbackReply,
+} from "../../lib/miaCompanyKnowledge";
+import { normalizeCompoundInput } from "../../lib/miaCompoundInputNormalizer";
+import { deriveConversationalToneProfile } from "../../lib/miaConversationalTone";
+import { applyToneComplianceGuard } from "../../lib/miaToneComplianceGuard";
 import { mapCognitiveTurnToLegacyIntent, buildCognitiveBridgeAudit, buildCognitiveBridgeImpactAudit, guardContextActionWithCognitiveBridge, buildRoutingModeAlignmentAudit, buildUnifiedCognitiveRouterAudit } from "../../lib/miaCognitiveBridge";
 import { buildFollowUpUnderstandingAudit } from "../../lib/miaFollowUpUnderstandingAudit";
 import { applyCognitiveAuthorityToRoutingDecision } from "../../lib/miaCognitiveAuthority";
@@ -37,6 +60,8 @@ import {
   buildContractPipelineExtras,
   checkContractViolation,
   enforceWinnerReferenceInvariant,
+  buildRankingSnapshot,
+  resolveRankingRequest,
   ensureSessionContextOnPayload,
   pickWinnerUnderContract,
   preserveAnchorInRankedProducts,
@@ -167,12 +192,30 @@ function getMiaLLMFinishReason(response = null) {
 // Ela deve pedir uma tarefa interna: greeting, context_reply,
 // decision_reply, comparison_reply, vision_identification etc.
 
-function buildMiaSystemPromptByRole(role = "general_reply") {
+function buildMiaSystemPromptByRole(role = "general_reply", toneProfile = null) {
   if (role === "comparison_reply") {
-    return buildMiaPromptByRole("comparison_reply");
+    return buildMiaPromptByRole("comparison_reply", { toneProfile });
   }
 
-  return buildMiaPromptByRole(role);
+  return buildMiaPromptByRole(role, { toneProfile });
+}
+
+function resolveConversationalToneProfile({
+  originalMessage = "",
+  normalizedMessage = "",
+  appliedNormalizations = [],
+  turnType = "",
+  conversationAct = "",
+  responsePathHint = "",
+} = {}) {
+  return deriveConversationalToneProfile({
+    originalMessage,
+    normalizedMessage,
+    appliedNormalizations,
+    turnType,
+    conversationAct,
+    responsePathHint,
+  });
 }
 
 function buildMiaContractMetadata(metadata = {}) {
@@ -183,8 +226,193 @@ function buildMiaContractMetadata(metadata = {}) {
     priority: metadata.priority || "",
     productCount: Number(metadata.productCount || 0),
     hasProducts: !!metadata.hasProducts,
+    cognitiveSignal: metadata.cognitiveSignal || null,
     createdAt: new Date().toISOString()
   };
+}
+
+// PATCH 7.6U-B — transporta sinal cognitivo do Router ao verbalizer (metadata + contexto curto)
+function isCognitiveDetectorActive(detector, value) {
+  if (value === true) return true;
+  if (!value || typeof value !== "object") return false;
+  if (detector === "decisionExplanation") return !!value.active;
+  return !!value.detected;
+}
+
+function resolveCognitiveDetectorSubtype(detector, value) {
+  if (!value || typeof value !== "object") return "";
+  if (value.subtype) return value.subtype;
+  if (detector === "alternativeRequest") {
+    if (value.requestedRank != null) return `rank:${value.requestedRank}`;
+    if (value.requestedTopN != null) return `topN:${value.requestedTopN}`;
+  }
+  return value.type || value.reason || "";
+}
+
+function buildCognitiveSignalForVerbalizer(cognitiveTurnEarly) {
+  if (!cognitiveTurnEarly) return null;
+
+  const signals = cognitiveTurnEarly.signals || {};
+  const detectorPriority = [
+    "projectiveRisk",
+    "hesitationReaction",
+    "delegationRequest",
+    "decisionExplanation",
+    "alternativeRequest"
+  ];
+
+  let activeDetector = "";
+  let activeSubtype = "";
+
+  for (const detector of detectorPriority) {
+    const value = signals[detector];
+    if (!isCognitiveDetectorActive(detector, value)) continue;
+
+    activeDetector = detector;
+    activeSubtype = resolveCognitiveDetectorSubtype(detector, value);
+    break;
+  }
+
+  return {
+    turnType: cognitiveTurnEarly.turnType || "",
+    detector: activeDetector,
+    subtype: activeSubtype,
+    reasons: Array.isArray(cognitiveTurnEarly.reasons)
+      ? cognitiveTurnEarly.reasons.filter(Boolean).slice(0, 8)
+      : []
+  };
+}
+
+function formatCognitiveSignalVerbalizerContext(cognitiveSignal) {
+  if (!cognitiveSignal?.turnType) return "";
+  return (
+    `\nCOGNITIVE SIGNAL (architecture-owned):\n` +
+    `turnType=${cognitiveSignal.turnType}\n` +
+    `detector=${cognitiveSignal.detector || ""}\n` +
+    `subtype=${cognitiveSignal.subtype || ""}\n`
+  );
+}
+
+// PATCH 7.6U-C — instrução comportamental por sinal cognitivo (tom/ângulo apenas)
+function formatCognitiveSignalBehaviorInstruction(cognitiveSignal) {
+  if (!cognitiveSignal || typeof cognitiveSignal !== "object") return "";
+
+  const turnType = String(cognitiveSignal.turnType || "").toUpperCase();
+  const detector = String(cognitiveSignal.detector || "");
+  const subtype = String(cognitiveSignal.subtype || "");
+
+  const safetyLine =
+    "The cognitive signal controls explanation style only. It must not alter the selected product, ranking, anchor, or decision.";
+  const overrideLine =
+    "These behavioral rules override any conflicting generic objection or explanation examples above.";
+
+  if (turnType === "OBJECTION" && detector === "hesitationReaction" && subtype === "not_convinced") {
+    return [
+      "Behavioral instruction:",
+      "- Treat this as user resistance / not fully convinced.",
+      "- Do NOT assume the user is complaining about price.",
+      "- Do NOT open with \"Faz sentido achar caro\" or any price-framing.",
+      "- Acknowledge the hesitation before defending the recommendation.",
+      "- Explain why the current recommendation still makes sense.",
+      "- Mention one honest limitation or possible source of discomfort.",
+      "- Do not restart search, do not change winner, do not repeat a generic recommendation paragraph.",
+      overrideLine,
+      safetyLine
+    ].join("\n");
+  }
+
+  if (turnType === "OBJECTION" && detector === "projectiveRisk" && subtype === "risk_probe") {
+    return [
+      "Behavioral instruction:",
+      "- Treat this as projected purchase risk, hidden drawback, catch, caveat, or 'what am I not seeing?' concern.",
+      "- Start by naming the most relevant risk/caveat directly.",
+      "- Do not open with price justification, generic value framing, or performance selling.",
+      "- Do NOT open with \"Faz sentido achar caro\" or any price-first framing.",
+      "- Do not start with \"Eu iria no...\" or \"O principal motivo é...\" or \"O equilíbrio geral...\".",
+      "- If the user asks about pegadinha/porém/hidden detail, answer the catch/caveat first.",
+      "- If the user mentions porém, start with explicit caveat language (e.g. \"O porém principal é...\").",
+      "- Explain what could realistically bother the user or cause regret.",
+      "- Then explain why that risk does not necessarily invalidate the current recommendation.",
+      "- Keep the selected product, winner, anchor, ranking, and card unchanged.",
+      "- Do not restart search, do not change winner, do not repeat a generic recommendation paragraph.",
+      overrideLine,
+      safetyLine
+    ].join("\n");
+  }
+
+  if (turnType === "OBJECTION" && detector === "hesitationReaction" && subtype === "purchase_anxiety") {
+    return [
+      "Behavioral instruction:",
+      "- Treat this as fear of regret / purchase anxiety.",
+      "- Do NOT assume the user is complaining about price.",
+      "- Do NOT open with \"Faz sentido achar caro\" or any price-framing.",
+      "- Reassure without overpromising.",
+      "- Frame the decision as reducing regret risk, not finding a perfect product.",
+      "- Explain why the current recommendation is still defensible.",
+      "- Mention the honest tradeoff.",
+      "- Do not restart search, do not change winner, do not repeat a generic recommendation paragraph.",
+      overrideLine,
+      safetyLine
+    ].join("\n");
+  }
+
+  // PATCH 7.6V-D — concern / unease about current recommendation
+  if (turnType === "OBJECTION" && detector === "hesitationReaction" && subtype === "concern") {
+    return [
+      "Behavioral instruction:",
+      "- Treat this as user concern or unease about the current recommendation.",
+      "- Start by acknowledging the concern or receio — not by selling the product.",
+      "- Explain what point could realistically worry or bother the user in the current decision.",
+      "- Then explain why that concern does not necessarily invalidate the current recommendation.",
+      "- Be honest about the tradeoff; do not over-reassure.",
+      "- Do NOT open with \"Eu iria no...\", \"O principal motivo é...\", or \"O equilíbrio geral...\".",
+      "- Do NOT open with \"Faz sentido achar caro\" or any price-first framing.",
+      "- Keep the selected product, winner, anchor, ranking, and card unchanged.",
+      "- Do not restart search, do not change winner, do not repeat a generic recommendation paragraph.",
+      overrideLine,
+      safetyLine
+    ].join("\n");
+  }
+
+  if (turnType === "EXPLANATION_REQUEST" && detector === "delegationRequest" && subtype === "decision_delegation") {
+    return [
+      "Behavioral instruction:",
+      "- Treat this as delegated decision request.",
+      "- Give a clear choice using the current winner/anchor.",
+      "- Use controlled first-person language if natural.",
+      "- Explain briefly why this is the choice you would keep.",
+      "- Do not restart search, do not change winner, do not list many alternatives.",
+      overrideLine,
+      safetyLine
+    ].join("\n");
+  }
+
+  // PATCH 7.6V-B — priority shift: reframe by new criterion; block decision-engine generic overwrite
+  if (turnType === "PRIORITY_SHIFT") {
+    return [
+      "Behavioral instruction:",
+      "- Treat this as a priority shift: the user is not asking for a new search, but asking whether the current decision still holds under a different criterion.",
+      "- Reframe the current recommendation using the user's new criterion (less hassle, peace of mind, durability, longevity, aging better, reliability, lower regret risk).",
+      "- Acknowledge that the evaluation angle changed before defending the recommendation.",
+      "- Do NOT repeat a generic recommendation paragraph.",
+      "- Do NOT open with \"Eu iria no...\", \"O principal motivo é...\", or \"O equilíbrio geral...\" without first reframing by the new criterion.",
+      "- Do not always start with the same phrase. Vary the opening naturally.",
+      "- Avoid fixed openings like \"Pensando em...\" every time.",
+      "- Good opening styles include: \"Se o ponto for...\", \"Nesse critério...\", \"Olhando por esse lado...\", \"Aí o mais importante vira...\", \"Para essa preocupação...\", \"Se sua prioridade mudou para...\".",
+      "- Mention the criterion explicitly when possible: less hassle, more peace of mind, durability, longevity, aging better, reliability, lower regret risk.",
+      "- Explain why the current winner remains defensible under that criterion, or honestly state the tradeoff if it is not perfect.",
+      "- Keep the selected product, winner, anchor, ranking, and card unchanged.",
+      "- Do not restart search, do not change winner, do not list many alternatives.",
+      overrideLine,
+      safetyLine
+    ].join("\n");
+  }
+
+  return "";
+}
+
+function hasCognitiveSignalBehaviorInstruction(cognitiveSignal) {
+  return !!formatCognitiveSignalBehaviorInstruction(cognitiveSignal);
 }
 
 function resolveMiaRoleFromIntent({
@@ -196,12 +424,100 @@ function resolveMiaRoleFromIntent({
     return role;
   }
 
+  if (metadata?.source === "about_mia_flow") {
+    return "about_mia_reply";
+  }
+
   if (metadata?.source === "greeting_flow") {
     return "greeting_reply";
   }
 
+  if (metadata?.source === "acknowledgement_flow") {
+    return "acknowledgement_reply";
+  }
+
+  if (metadata?.source === "comprehension_flow") {
+    return "comprehension_reply";
+  }
+
+  if (metadata?.source === "soft_disagreement_flow") {
+    return "soft_disagreement_reply";
+  }
+
+  if (metadata?.source === "decision_confirmation_flow") {
+    return "decision_confirmation_reply";
+  }
+
+  if (metadata?.source === "anti_regret_flow") {
+    return "anti_regret_reply";
+  }
+
+  if (metadata?.source === "confidence_challenge_flow") {
+    return "confidence_challenge_reply";
+  }
+
+  if (metadata?.source === "social_validation_flow") {
+    return "social_validation_reply";
+  }
+
+  if (metadata?.source === "second_best_discovery_flow") {
+    return "second_best_discovery_reply";
+  }
+
+  if (metadata?.source === "alternative_exploration_flow") {
+    return "alternative_exploration_reply";
+  }
+
+  if (metadata?.source === "constraint_change_flow") {
+    return "constraint_change_reply";
+  }
+
+  if (intent === "about_mia") {
+    return "about_mia_reply";
+  }
+
   if (intent === "greeting") {
     return "greeting_reply";
+  }
+
+  if (intent === "acknowledgement") {
+    return "acknowledgement_reply";
+  }
+
+  if (intent === "comprehension") {
+    return "comprehension_reply";
+  }
+
+  if (intent === "soft_disagreement") {
+    return "soft_disagreement_reply";
+  }
+
+  if (intent === "decision_confirmation") {
+    return "decision_confirmation_reply";
+  }
+
+  if (intent === "anti_regret") {
+    return "anti_regret_reply";
+  }
+
+  if (intent === "confidence_challenge") {
+    return "confidence_challenge_reply";
+  }
+
+  if (intent === "social_validation") {
+    return "social_validation_reply";
+  }
+
+  if (intent === "second_best_discovery") {
+    return "second_best_discovery_reply";
+  }
+
+  if (intent === "alternative_exploration") {
+    return "alternative_exploration_reply";
+  }
+
+  if (intent === "constraint_change") {
+    return "constraint_change_reply";
   }
 
   if (intent === "comparison") {
@@ -419,20 +735,38 @@ async function runMiaLLMContract(contract = {}) {
   const role = safeContract.role || "general_reply";
 
   const systemPrompt = buildMiaSystemPromptByRole(role);
+  const rawSystemContent = rawMessages[0]?.content || "";
+
+  // PATCH 7.6U-C — context_reply handler prompts include contract + cognitive signal;
+  // do not replace them with the generic role stub from buildMiaPromptByRole.
+  const preserveHandlerSystemPrompt =
+    role === "context_reply" &&
+    rawMessages[0]?.role === "system" &&
+    (
+      rawSystemContent.includes("COGNITIVE SIGNAL (architecture-owned):") ||
+      rawSystemContent.includes("Behavioral instruction:") ||
+      rawSystemContent.includes("MODO OBJEÇÃO") ||
+      rawSystemContent.includes("MODO EXPLICAÇÃO DE RECOMENDAÇÃO ANCORADA") ||
+      rawSystemContent.includes("MODO DECISÃO / CONTEXTO SEM BUSCA NOVA")
+    );
+
+  const resolvedSystemContent = preserveHandlerSystemPrompt
+    ? rawSystemContent
+    : systemPrompt || rawSystemContent || MIA_SYSTEM_PROMPT;
 
   const messages =
     rawMessages[0]?.role === "system"
       ? [
           {
             ...rawMessages[0],
-            content: systemPrompt || rawMessages[0].content || MIA_SYSTEM_PROMPT
+            content: resolvedSystemContent
           },
           ...rawMessages.slice(1)
         ]
       : [
           {
             role: "system",
-            content: systemPrompt || MIA_SYSTEM_PROMPT
+            content: resolvedSystemContent
           },
           ...rawMessages
         ];
@@ -993,41 +1327,7 @@ console.error(err?.stack);
   }
 }
 async function fetchFromSerpApiProvider(query = "", limit = 12) {
-  try {
-    const products = await fetchSerpPrices(query, limit);
-
-    if (!Array.isArray(products)) {
-      return {
-        provider: "serpapi",
-        ok: false,
-        products: [],
-        error: "invalid_response"
-      };
-    }
-
-    const normalizedProducts = normalizeProviderProducts(
-  products,
-  "serpapi",
-  query,
-  limit
-);
-
-return {
-  provider: "serpapi",
-  ok: normalizedProducts.length > 0,
-  products: normalizedProducts,
-  error: normalizedProducts.length > 0 ? null : "rate_limited_or_empty"
-};
-  } catch (err) {
-    console.error("❌ PROVIDER SERPAPI ERRO:", err?.message || err);
-
-    return {
-      provider: "serpapi",
-      ok: false,
-      products: [],
-      error: err?.response?.status === 429 ? "rate_limited" : "provider_error"
-    };
-  }
+  return fetchGoogleShoppingLegacyResult(query, limit);
 }
 function getOrderedCommercialProviders(query = "") {
   const providers = [
@@ -20311,7 +20611,16 @@ const context = {
 
   activeMiaRole: sessionContext?.activeMiaRole || "",
 
-  user_display_name: String(sessionContext?.user_display_name || "").trim()
+  user_display_name: String(sessionContext?.user_display_name || "").trim(),
+
+  // PATCH 7.6J — preserve ranking snapshot across turns.
+  // buildSessionContext previously dropped this field, so resolveRankingRequest
+  // at L27003/L27056 always received undefined, breaking "quem ficou logo atrás?"
+  // and all ordinal/top-N alternative requests on Turn N+1.
+  // Transported as-is — no recalculation, no reordering, no score mutation.
+  lastRankingSnapshot: Array.isArray(sessionContext?.lastRankingSnapshot)
+    ? sessionContext.lastRankingSnapshot
+    : null
 };
 
   for (let i = messages.length - 1; i >= 0; i--) {
@@ -20411,7 +20720,8 @@ function parsePrice(value) {
 }
 
 function normalizeQuery(text) {
-  return (text || "")
+  const compound = normalizeCompoundInput({ originalMessage: text || "" });
+  return compound.normalizedMessage
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -22006,7 +22316,7 @@ function csoToConvStateSignals(cso) {
  * Build a closed, structured payload from the resolved strategy + CSO.
  * The LLM receives only what is in this payload — nothing more.
  */
-function buildMiaVerbalizerPayload(convStrat, cso) {
+function buildMiaVerbalizerPayload(convStrat, cso, toneProfile = null) {
   if (!convStrat || !cso) return null;
 
   const { purchaseContext, userState, conversationGoal, conversationArc, conversationalIntent } = cso;
@@ -22095,7 +22405,9 @@ function buildMiaVerbalizerPayload(convStrat, cso) {
       scopedTo:      purchaseContext.lastRecommended || null,
       allowedFacts,
       outOfScopeResponse: "Não tenho esse dado disponível neste contexto."
-    }
+    },
+
+    toneProfile: toneProfile || null,
   };
 }
 
@@ -22156,6 +22468,21 @@ function serializePayloadToPrompt(payload) {
   if (calibrations.length > 0) {
     lines.push("[CALIBRAÇÃO DESTE TURNO]");
     calibrations.forEach(c => lines.push(`• ${c}`));
+    lines.push("");
+  }
+
+  if (payload.toneProfile?.toneProfile) {
+    lines.push("[ADAPTACAO DE TOM — SOMENTE ESTILO]");
+    payload.toneProfile.toneInstructions.forEach((rule) => lines.push(`• ${rule}`));
+    lines.push(`• Perfil: ${payload.toneProfile.toneProfile}`);
+    lines.push(
+      payload.toneProfile.shouldUseEmoji
+        ? "• Emoji: no máximo 1, só se couber naturalmente."
+        : "• Emoji: não usar."
+    );
+    lines.push(
+      `• Nunca copie: ${(payload.toneProfile.forbiddenStyle || []).slice(0, 6).join(", ")}`
+    );
     lines.push("");
   }
 
@@ -22407,18 +22734,17 @@ function detectIntent(query = "") {
     return "casual_chat";
   }
 
-  // Saudação simples
-  if (/^(oi|ola|olá|opa|eai|e ai|eae|iae|fala|salve|bom dia|boa tarde|boa noite)$/.test(q)) {
-    return "greeting";
+  // Perguntas institucionais / ABOUT_MIA
+  if (isAboutMiaFamilyQuery(q)) {
+    return "about_mia";
   }
 
-  // Perguntas institucionais / conversa geral
+  // Saudação simples (inclui gírias normalizadas via PATCH 8.0B)
   if (
-    /^(quem e vc|quem e voce|voce e quem|vc e quem|quem e a mia|quem e mia)$/.test(q) ||
-    /^(o que a economia faz|oq a economia faz|o que e a economia|oq e a economia|pra que serve a economia|para que serve a economia|economia faz o que|economia serve pra que)$/.test(q) ||
-    /^(o que voce faz|o que vc faz|oq voce faz|oq vc faz|como voce pode me ajudar|como vc pode me ajudar|qual sua funcao|qual sua função)$/.test(q)
+    /^(oi|ola|olá|opa|eai|e ai|eae|iae|fala|salve|bom dia|boa tarde|boa noite)$/.test(q) ||
+    isGreetingFamilyQuery(q)
   ) {
-    return "general_answer";
+    return "greeting";
   }
 
   // Decisão final
@@ -23026,6 +23352,164 @@ function getSmartFollowUp(intent, reply) {
   return bucket[Math.floor(Math.random() * bucket.length)];
 }
 
+function buildAnchoredGreetingFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Opa! Continuamos com ${cleanTitle(anchorName)}. Quer que eu explique melhor ou compare com outra opção?`;
+  }
+  return "Opa! Continuamos de onde paramos. Quer retomar a explicação ou comparar com outra opção?";
+}
+
+function buildOpenAcknowledgementFallback() {
+  return "Boa. Quando quiser, me diz o que você está pensando em comprar e eu te ajudo a decidir.";
+}
+
+function buildAnchoredAcknowledgementFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Perfeito. Mantemos ${cleanTitle(anchorName)} como referência. Se quiser, posso explicar melhor ou comparar com outra opção.`;
+  }
+  return "Perfeito. Mantemos essa escolha como referência. Se quiser, posso explicar melhor ou comparar com outra opção.";
+}
+
+function buildOpenComprehensionFallback() {
+  return "Claro. Me diz qual parte ficou confusa que eu explico de um jeito mais simples.";
+}
+
+function buildAnchoredComprehensionFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Claro. Mantemos ${cleanTitle(anchorName)} como referência. Posso explicar a escolha de forma mais simples — quer que eu detalhe o ponto principal?`;
+  }
+  return "Claro. Posso explicar a escolha de forma mais simples. Quer que eu detalhe o ponto principal?";
+}
+
+function buildOpenSoftDisagreementFallback() {
+  return "Justo. Me diz qual ponto não te convenceu que eu reviso contigo.";
+}
+
+function buildAnchoredSoftDisagreementFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Justo. Mantendo ${cleanTitle(anchorName)} como referência, posso revisar o ponto que não te convenceu e comparar o trade-off com mais calma.`;
+  }
+  return "Justo. Posso revisar o ponto que não te convenceu e comparar o trade-off com mais calma.";
+}
+
+function buildOpenDecisionConfirmationFallback() {
+  return "Consigo confirmar, mas preciso primeiro saber qual produto estamos decidindo.";
+}
+
+function buildAnchoredDecisionConfirmationFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Sim, eu iria nele — mantendo ${cleanTitle(anchorName)} como referência. Só vale confirmar preço, loja e condição antes de fechar.`;
+  }
+  return "Sim, eu iria nele — mantendo essa escolha como referência. Só vale confirmar preço, loja e condição antes de fechar.";
+}
+
+function buildOpenAntiRegretFallback() {
+  return "Entendo a preocupação. Para avaliar o risco de arrependimento com honestidade, preciso saber qual compra estamos decidindo.";
+}
+
+function buildAnchoredAntiRegretFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Entendo a preocupação. Mantendo ${cleanTitle(anchorName)} como referência, a escolha faz sentido pelo que vimos — mas vale confirmar preço, loja e condição antes de fechar, para reduzir arrependimento.`;
+  }
+  return "Entendo a preocupação. Mantendo essa escolha como referência, a decisão parece coerente — mas vale confirmar preço, loja e condição antes de fechar, para reduzir arrependimento.";
+}
+
+function buildOpenConfidenceChallengeFallback() {
+  return "Consigo revisar minha confiança, mas preciso saber qual decisão estamos falando.";
+}
+
+function buildAnchoredConfidenceChallengeFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Tenho segurança nessa escolha para o seu caso, mas não como garantia absoluta — eu manteria ${cleanTitle(anchorName)} porque continua equilibrando melhor os pontos que você trouxe.`;
+  }
+  return "Tenho segurança nessa escolha para o seu caso, mas não como garantia absoluta — eu manteria essa referência porque continua equilibrando melhor os pontos que você trouxe.";
+}
+
+function buildOpenSocialValidationFallback() {
+  return "Consigo te ajudar a avaliar isso, mas preciso saber de qual produto você está falando — sem contexto não dá para afirmar reputação real.";
+}
+
+function buildAnchoredSocialValidationFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Dá para olhar sinais de reputação, mas não vou inventar review se eu não tiver esse dado. Mantendo ${cleanTitle(anchorName)} como referência, eu olharia popularidade, avaliações, reclamações recorrentes e risco de arrependimento.`;
+  }
+  return "Dá para olhar sinais de reputação, mas não vou inventar review se eu não tiver esse dado. Mantendo essa referência, eu olharia popularidade, avaliações, reclamações recorrentes e risco de arrependimento.";
+}
+
+function buildOpenAlternativeExplorationFallback() {
+  return "Consigo te mostrar outra opção, mas preciso saber qual produto ou decisão estamos usando como referência.";
+}
+
+function buildAnchoredAlternativeExplorationFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  const rankingResolution = resolveRankingRequest(
+    sessionContext?.lastRankingSnapshot,
+    { requestedRank: 2 }
+  );
+
+  if (
+    anchorName &&
+    rankingResolution?.type === "single_rank" &&
+    rankingResolution?.product?.product_name
+  ) {
+    const altName = cleanTitle(rankingResolution.product.product_name);
+    return `Dá para ver outra opção sim — mantendo ${cleanTitle(anchorName)} como referência. Pelo ranking que temos, ${altName} seria uma alternativa paralela, sem trocar a escolha principal.`;
+  }
+
+  if (anchorName) {
+    return `Dá para ver outra opção sim — mantendo ${cleanTitle(anchorName)} como referência. Para cravar outra opção, preciso ter alternativas comparadas no contexto; sem isso não vou inventar outra escolha.`;
+  }
+
+  return "Consigo explorar outra opção, mas preciso saber qual decisão estamos analisando.";
+}
+
+function buildOpenConstraintChangeFallback() {
+  return "Entendi a mudança de critério. Para recalibrar a recomendação na mesma decisão, preciso saber qual compra ou referência estamos usando.";
+}
+
+function buildAnchoredConstraintChangeFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  if (anchorName) {
+    return `Entendi. Mantendo ${cleanTitle(anchorName)} como referência, vamos recalibrar a decisão com esse novo critério — a recomendação pode mudar porque estamos reavaliando com outra prioridade, não porque começamos do zero.`;
+  }
+  return "Entendi. Mantendo essa referência, vamos recalibrar a decisão com o critério que você trouxe agora — a recomendação pode mudar porque a prioridade mudou, não porque começamos outra busca.";
+}
+
+function buildOpenSecondBestDiscoveryFallback() {
+  return "Consigo te mostrar o plano B, mas preciso primeiro ter uma recomendação ou ranking anterior para comparar — sem contexto não dá para cravar quem ficou em segundo.";
+}
+
+function buildAnchoredSecondBestDiscoveryFallback(sessionContext = {}) {
+  const anchorName = sessionContext?.lastBestProduct?.product_name;
+  const rankingResolution = resolveRankingRequest(
+    sessionContext?.lastRankingSnapshot,
+    { requestedRank: 2 }
+  );
+
+  if (
+    anchorName &&
+    rankingResolution?.type === "single_rank" &&
+    rankingResolution?.product?.product_name
+  ) {
+    const secondName = cleanTitle(rankingResolution.product.product_name);
+    return `O vencedor continua sendo ${cleanTitle(anchorName)}. O plano B, pelo ranking que temos, seria ${secondName} — como opção complementar, sem trocar a escolha principal.`;
+  }
+
+  if (anchorName) {
+    return `O vencedor continua sendo ${cleanTitle(anchorName)}. Para cravar o plano B, preciso ter o ranking ou alternativas comparadas — sem isso não vou inventar quem ficou em segundo.`;
+  }
+
+  return "Para mostrar o plano B, preciso saber qual decisão estamos analisando e ter ranking ou alternativas no contexto.";
+}
+
 function buildFallbackReply(intent, bestProduct, period) {
   const productTitle = bestProduct?.product_name ? cleanTitle(bestProduct.product_name) : "";
   const productPrice = bestProduct?.price || "";
@@ -23165,7 +23649,7 @@ function detectContextAction(query = "", intent = "", contextResolution = {}) {
     return "search";
   }
 
-  if (intent === "general_answer" || intent === "greeting") {
+  if (intent === "general_answer" || intent === "greeting" || intent === "about_mia") {
     return "conversation";
   }
 
@@ -23185,30 +23669,6 @@ function getGeneralAnswer(query = "") {
     .replace(/[?!.,;:]+/g, "")
     .replace(/\s+/g, " ")
     .trim();
-
-  if (/^(quem e vc|quem e voce|voce e quem|vc e quem|quem e a mia|quem e mia)$/.test(q)) {
-    return {
-      reply:
-        "Eu sou a MIA, a assistente de compras da EconomIA.\n\nMinha função é te ajudar a encontrar boas opções, comparar produtos e decidir melhor antes de comprar.",
-      clearContext: true
-    };
-  }
-
-  if (/^(o que a economia faz|oq a economia faz|o que e a economia|oq e a economia|pra que serve a economia|para que serve a economia|economia faz o que|economia serve pra que)$/.test(q)) {
-    return {
-      reply:
-        "A EconomIA te ajuda a comprar melhor.\n\nVocê me diz o que procura, ou envia uma imagem, e eu busco opções, comparo preços e te ajudo a decidir com mais segurança.",
-      clearContext: true
-    };
-  }
-
-  if (/^(o que voce faz|o que vc faz|oq voce faz|oq vc faz|como voce pode me ajudar|como vc pode me ajudar|qual sua funcao|qual sua função)$/.test(q)) {
-    return {
-      reply:
-        "Eu te ajudo a escolher melhor antes de comprar.\n\nPosso buscar produtos, comparar opções, analisar custo-benefício, explicar diferenças e te dar uma recomendação mais direta.",
-      clearContext: true
-    };
-  }
 
   if (/^(obrigado|obrigada|valeu|vlw|tmj|beleza|blz)$/.test(q)) {
     return {
@@ -24619,6 +25079,13 @@ function resolveContextResponsePath(routingDecision = {}) {
   return "context_decision_no_search";
 }
 
+function guardMiaReplyForTone(reply, toneProfile) {
+  if (!reply || !toneProfile?.toneProfile) {
+    return { response: String(reply || ""), violations: [], corrected: false };
+  }
+  return applyToneComplianceGuard({ response: String(reply), toneProfile });
+}
+
 function respondWithContract(
   res,
   pipelineTracer,
@@ -24626,7 +25093,7 @@ function respondWithContract(
   payload,
   responsePath,
   extraTrace = {},
-  { sessionBefore = null, contractApply = null, fallbackSession = null } = {}
+  { sessionBefore = null, contractApply = null, fallbackSession = null, toneProfile = null } = {}
 ) {
   const violation = checkContractViolation(responsePath, routingDecision);
 
@@ -24659,6 +25126,20 @@ function respondWithContract(
     sessionBefore
   );
   body = safety.payload;
+
+  if (body.reply && toneProfile) {
+    const toneGuard = guardMiaReplyForTone(body.reply, toneProfile);
+    if (toneGuard.corrected || (toneGuard.violations && toneGuard.violations.length)) {
+      body = { ...body, reply: toneGuard.response };
+      pipelineTracer.patch({
+        tone_compliance_guard: {
+          violations: toneGuard.violations,
+          corrected: toneGuard.corrected,
+          remainingViolations: toneGuard.remainingViolations || [],
+        },
+      });
+    }
+  }
 
   const contractExtras = {
     ...buildContractPipelineExtras({
@@ -24709,6 +25190,29 @@ function respondWithContract(
     } catch (_cognitiveAuditErr) {
       // Auditoria em shadow mode — falhas silenciosas
     }
+  }
+  // ─────────────────────────────────────────────────────────────
+
+  // ─── PATCH 7.6K — MIA_E2E_STATE_TRACE_AUDIT ─────────────────
+  // Checkpoint D: Estado da resposta final (session_context devolvido ao cliente)
+  if (process.env.MIA_STATE_AUDIT === "true") {
+    const _respSC = body.session_context || null;
+    console.log("🧵 MIA_E2E_STATE_TRACE [D:RESPONSE]", JSON.stringify({
+      checkpoint: "D_RESPONSE",
+      responsePath,
+      responseSessionContextPresent: !!_respSC,
+      responseLastBestProduct: _respSC?.lastBestProduct?.product_name || null,
+      responseLastProductMentioned: _respSC?.lastProductMentioned || null,
+      responseLastProductsCount: Array.isArray(_respSC?.lastProducts)
+        ? _respSC.lastProducts.length : 0,
+      responseRankingSnapshotCount: Array.isArray(_respSC?.lastRankingSnapshot)
+        ? _respSC.lastRankingSnapshot.length : 0,
+      flags: [
+        !_respSC && "RESPONSE_SESSION_CONTEXT_MISSING",
+        _respSC && !_respSC.lastBestProduct && "RESPONSE_LAST_BEST_MISSING",
+        _respSC && !Array.isArray(_respSC.lastRankingSnapshot) && "RESPONSE_RANKING_SNAPSHOT_MISSING",
+      ].filter(Boolean),
+    }));
   }
   // ─────────────────────────────────────────────────────────────
 
@@ -25026,6 +25530,29 @@ export default async function handler(req, res) {
     pipelineTracer.patch({
       cso_before: summarizeSessionProductSnapshot(incomingSessionContext)
     });
+
+    // ─── PATCH 7.6K — MIA_E2E_STATE_TRACE_AUDIT ─────────────────
+    // Checkpoint A: Estado recebido no request (req.body.session_context)
+    if (process.env.MIA_STATE_AUDIT === "true") {
+      console.log("🧵 MIA_E2E_STATE_TRACE [A:REQUEST]", JSON.stringify({
+        checkpoint: "A_REQUEST",
+        query: query || "",
+        requestBodyHasSessionContext: !!(req.body?.session_context),
+        requestBodySessionKeys: Object.keys(req.body?.session_context || {}),
+        requestBodyLastBestProduct: req.body?.session_context?.lastBestProduct?.product_name || null,
+        requestBodyLastProductMentioned: req.body?.session_context?.lastProductMentioned || null,
+        requestBodyLastProductsCount: Array.isArray(req.body?.session_context?.lastProducts)
+          ? req.body.session_context.lastProducts.length : 0,
+        requestBodyRankingSnapshotCount: Array.isArray(req.body?.session_context?.lastRankingSnapshot)
+          ? req.body.session_context.lastRankingSnapshot.length : 0,
+        flags: [
+          !req.body?.session_context && "REQUEST_SESSION_CONTEXT_MISSING",
+          (req.body?.session_context && !req.body.session_context.lastBestProduct) && "REQUEST_LAST_BEST_MISSING",
+          (req.body?.session_context && !Array.isArray(req.body.session_context.lastRankingSnapshot)) && "REQUEST_RANKING_SNAPSHOT_MISSING",
+        ].filter(Boolean),
+      }));
+    }
+    // ─────────────────────────────────────────────────────────────
     const contextResolution = resolveContextQuery(
       query,
       conversationMessages,
@@ -25058,6 +25585,31 @@ if (lockedComparisonContextFromSession) {
     req.body?.session_context,
     resolvedQuery
   );
+
+  // ─── PATCH 7.6K — MIA_E2E_STATE_TRACE_AUDIT ─────────────────
+  // Checkpoint B: Estado após buildSessionContext
+  if (process.env.MIA_STATE_AUDIT === "true") {
+    const _reqLast = req.body?.session_context?.lastBestProduct?.product_name || null;
+    const _builtLast = sessionContext?.lastBestProduct?.product_name || null;
+    const _reqSnap = Array.isArray(req.body?.session_context?.lastRankingSnapshot)
+      ? req.body.session_context.lastRankingSnapshot.length : 0;
+    const _builtSnap = Array.isArray(sessionContext?.lastRankingSnapshot)
+      ? sessionContext.lastRankingSnapshot.length : 0;
+    console.log("🧵 MIA_E2E_STATE_TRACE [B:BUILD_SESSION]", JSON.stringify({
+      checkpoint: "B_BUILD_SESSION",
+      builtSessionContextLastBestProduct: _builtLast,
+      builtSessionContextLastProductMentioned: sessionContext?.lastProductMentioned || null,
+      builtSessionContextLastProductsCount: Array.isArray(sessionContext?.lastProducts)
+        ? sessionContext.lastProducts.length : 0,
+      builtSessionContextRankingSnapshotCount: _builtSnap,
+      flags: [
+        _reqLast && !_builtLast && "BUILD_CONTEXT_DROPPED_LAST_BEST",
+        _reqSnap > 0 && _builtSnap === 0 && "BUILD_CONTEXT_DROPPED_RANKING_SNAPSHOT",
+      ].filter(Boolean),
+    }));
+  }
+  // ─────────────────────────────────────────────────────────────
+
   let intent = detectIntent(resolvedQuery);
   const budget = extractBudget(resolvedQuery);
   const normalizedFollowUpQueryEarly = normalizeQuery(query || "");
@@ -25220,6 +25772,16 @@ if (lockedComparisonContextFromSession) {
     // Router em shadow mode — falhas são silenciosas e não afetam o fluxo
   }
 
+  const compoundInputEarly = normalizeCompoundInput({ originalMessage: query });
+  const conversationalToneProfile = resolveConversationalToneProfile({
+    originalMessage: query,
+    normalizedMessage: compoundInputEarly.normalizedMessage,
+    appliedNormalizations: compoundInputEarly.appliedNormalizations,
+    turnType: cognitiveTurnEarly?.turnType || "",
+    conversationAct: routingDecision?.conversationAct || "",
+    responsePathHint: routingDecision?.responsePathHint || "",
+  });
+
   // ─────────────────────────────────────────────────────────────
   // PATCH 5.6B — Cognitive Intent Authority Bridge
   //
@@ -25254,6 +25816,27 @@ if (lockedComparisonContextFromSession) {
 
   // Legacy alias — compatibilidade com eventuais referências futuras
   const cognitiveTurn = cognitiveTurnEarly;
+
+  // ─── PATCH 7.6K — MIA_E2E_STATE_TRACE_AUDIT ─────────────────
+  // Checkpoint C: Estado cognitivo e de roteamento
+  if (process.env.MIA_STATE_AUDIT === "true") {
+    console.log("🧵 MIA_E2E_STATE_TRACE [C:COGNITIVE]", JSON.stringify({
+      checkpoint: "C_COGNITIVE",
+      cognitiveHasActiveAnchor: hasAnchorForRouting,
+      cognitiveHasLastBestProduct: !!(sessionContext?.lastBestProduct?.product_name
+        || incomingSessionContext?.lastBestProduct?.product_name),
+      cognitiveTurnType: cognitiveTurnEarly?.turnType || null,
+      hasAnchorFromBuilt: !!(sessionContext?.lastBestProduct?.product_name),
+      hasAnchorFromIncoming: !!(incomingSessionContext?.lastBestProduct?.product_name),
+      builtSnapshotCount: Array.isArray(sessionContext?.lastRankingSnapshot)
+        ? sessionContext.lastRankingSnapshot.length : 0,
+      flags: [
+        !hasAnchorForRouting && !!(incomingSessionContext?.lastBestProduct) && "COGNITIVE_ANCHOR_FALSE_WITH_REQUEST_CONTEXT",
+      ].filter(Boolean),
+    }));
+  }
+  // ─────────────────────────────────────────────────────────────
+
   // Elevado para escopo do handler para ser acessível fora do bloco CSO (PATCH 5.1C)
   let cognitiveTurnWithCsoElevated = null;
   // ─────────────────────────────────────────────────────────────
@@ -25343,10 +25926,15 @@ if (lockedComparisonContextFromSession) {
   }
   // ─────────────────────────────────────────────────────────────
   // PATCH 6.3 — Refinement Follow-Up Response Contract: prevent welcome fallback
+  // PATCH 7.6A — ALTERNATIVE_REQUEST added as contextual turn type
   //
-  // Quando o Cognitive Router detecta REFINEMENT com âncora ativa,
-  // "tem outro melhor?" pode cair na branch general_answer de buildContextResolution,
+  // Quando o Cognitive Router detecta REFINEMENT ou ALTERNATIVE_REQUEST com âncora ativa,
+  // a query pode cair na branch general_answer de buildContextResolution,
   // gerando `directReply = "Posso te ajudar com compras..."` e `clearContext = true`.
+  //
+  // ALTERNATIVE_REQUEST não é busca nova — é continuação contextual ancorada.
+  // "quem quase ganhou?" / "qual o plano B?" devem usar lastRankingSnapshot,
+  // não disparar nova busca de produto.
   //
   // Esta interceptação:
   //   1. Limpa o directReply para evitar o early return de welcome (linha ~25730).
@@ -25358,7 +25946,8 @@ if (lockedComparisonContextFromSession) {
   // NÃO aplica quando há sinal explícito de nova busca (earlyClearNewCommercialSearch).
   // ─────────────────────────────────────────────────────────────
   if (
-    cognitiveTurnEarly?.turnType === "REFINEMENT" &&
+    (cognitiveTurnEarly?.turnType === "REFINEMENT" ||
+     cognitiveTurnEarly?.turnType === "ALTERNATIVE_REQUEST") &&
     hasAnchorForRouting &&
     !earlyClearNewCommercialSearch
   ) {
@@ -25371,6 +25960,394 @@ if (lockedComparisonContextFromSession) {
     contextResolution.clearContext = false;
     if (!contextResolution.mode || contextResolution.mode === "general_answer") {
       contextResolution.mode = "refinement_followup";
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.6E — Contextual DirectReply Leak Fix
+  //
+  // `buildContextResolution` (resolveContextQuery) pode retornar
+  // directReply genérico ("Posso te ajudar...") antes de o Router ter
+  // preservado o contexto.  PATCH 6.2 (OBJECTION) garante
+  // shouldSkipProductSearch=true mas NÃO limpa directReply.
+  // PATCH 6.3+7.6A limpa apenas para REFINEMENT/ALTERNATIVE_REQUEST.
+  // Resultado: o gate em L~25776 retorna welcome fallback ANTES do
+  // caminho contextual (L~26932), mesmo com âncora e routing corretos.
+  //
+  // Este guard unifica a limpeza para todos os turn types ancorados:
+  //   OBJECTION, REFINEMENT, ALTERNATIVE_REQUEST,
+  //   EXPLANATION_REQUEST, PRIORITY_SHIFT, FOLLOW_UP
+  //
+  // Condições de guarda (todas devem ser verdadeiras):
+  //   1. âncora ativa (hasAnchorForRouting)
+  //   2. routing preservou contexto (shouldPreserveAnchor=true
+  //      OU allowNewSearch=false OU shouldSkipProductSearch=true)
+  //   3. sem sinal explícito de nova busca (earlyClearNewCommercialSearch)
+  //   4. cognitiveTurnEarly classifica como turn type contextual
+  //
+  // Efeito: directReply = null | clearContext = false
+  // NÃO altera mode, routing, winner, ranking, prompt ou Data Layer.
+  // NÃO afeta conversas sem âncora (guardrail #1 protege isso).
+  // ─────────────────────────────────────────────────────────────
+  {
+    const _contextualAnchoredTurnTypes = [
+      "OBJECTION",
+      "REFINEMENT",
+      "ALTERNATIVE_REQUEST",
+      "EXPLANATION_REQUEST",
+      "PRIORITY_SHIFT",
+      "FOLLOW_UP",
+    ];
+    const shouldBypassDirectReplyForContextualTurn =
+      hasAnchorForRouting &&
+      !earlyClearNewCommercialSearch &&
+      (routingDecision?.shouldPreserveAnchor === true ||
+        routingDecision?.allowNewSearch === false ||
+        contextResolution?.shouldSkipProductSearch === true) &&
+      _contextualAnchoredTurnTypes.includes(cognitiveTurnEarly?.turnType);
+
+    if (shouldBypassDirectReplyForContextualTurn) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 8.0A — ABOUT_MIA response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional genérico antes
+  // do about_mia_flow. Limpar directReply e preservar contexto/anchor quando a
+  // família ABOUT_MIA já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isAboutMiaResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isAboutMia === true ||
+        isAboutMiaFamilyQuery(query, { hasActiveAnchor: hasAnchorForRouting }) ||
+        routingDecision?.conversationAct === "about_mia" ||
+        routingDecision?.responsePathHint === "about_mia_reply" ||
+        routingDecision?.responsePathHint === "about_mia_anchored"
+      );
+
+    if (isAboutMiaResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "about_mia";
+      }
+      if (intent !== "about_mia") {
+        intent = "about_mia";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.7H — GREETING response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do greeting_flow. Limpar directReply e preservar contexto quando a
+  // família GREETING já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isGreetingResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isGreeting === true ||
+        isGreetingFamilyQuery(query) ||
+        (
+          routingDecision?.mode === "conversational" &&
+          routingDecision?.conversationAct === "greeting"
+        )
+      );
+
+    if (isGreetingResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "greeting";
+      }
+      if (intent !== "greeting") {
+        intent = "greeting";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.7I — ACKNOWLEDGEMENT response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do acknowledgement_flow. Limpar directReply e preservar contexto quando
+  // a família ACKNOWLEDGEMENT já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isAcknowledgementResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isAcknowledgement === true ||
+        isAcknowledgementFamilyQuery(query) ||
+        routingDecision?.conversationAct === "acknowledgement" ||
+        routingDecision?.responsePathHint === "acknowledgement_reply" ||
+        routingDecision?.responsePathHint === "acknowledgement_anchored"
+      );
+
+    if (isAcknowledgementResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "acknowledgement";
+      }
+      if (intent !== "acknowledgement") {
+        intent = "acknowledgement";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.7M — COMPREHENSION response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do comprehension_flow. Limpar directReply e preservar contexto quando
+  // a família COMPREHENSION já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isComprehensionResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isComprehension === true ||
+        isComprehensionFamilyQuery(query) ||
+        routingDecision?.conversationAct === "comprehension" ||
+        routingDecision?.responsePathHint === "comprehension_reply" ||
+        routingDecision?.responsePathHint === "comprehension_anchored"
+      );
+
+    if (isComprehensionResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "comprehension";
+      }
+      if (intent !== "comprehension") {
+        intent = "comprehension";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.7Q — SOFT_DISAGREEMENT response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do soft_disagreement_flow. Limpar directReply e preservar contexto quando
+  // a família SOFT_DISAGREEMENT já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isSoftDisagreementResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isSoftDisagreement === true ||
+        isSoftDisagreementFamilyQuery(query) ||
+        routingDecision?.conversationAct === "soft_disagreement" ||
+        routingDecision?.responsePathHint === "soft_disagreement_reply" ||
+        routingDecision?.responsePathHint === "soft_disagreement_anchored"
+      );
+
+    if (isSoftDisagreementResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "soft_disagreement";
+      }
+      if (intent !== "soft_disagreement") {
+        intent = "soft_disagreement";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.8D — DECISION_CONFIRMATION response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do decision_confirmation_flow. Limpar directReply e preservar contexto quando
+  // a família DECISION_CONFIRMATION já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isDecisionConfirmationResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isDecisionConfirmation === true ||
+        isDecisionConfirmationFamilyQuery(query) ||
+        routingDecision?.conversationAct === "decision_confirmation" ||
+        routingDecision?.responsePathHint === "decision_confirmation_reply" ||
+        routingDecision?.responsePathHint === "decision_confirmation_anchored"
+      );
+
+    if (isDecisionConfirmationResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "decision_confirmation";
+      }
+      if (intent !== "decision_confirmation") {
+        intent = "decision_confirmation";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.8H — ANTI_REGRET response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do anti_regret_flow. Limpar directReply e preservar contexto quando
+  // a família ANTI_REGRET já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isAntiRegretResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isAntiRegret === true ||
+        isAntiRegretFamilyQuery(query) ||
+        routingDecision?.conversationAct === "anti_regret" ||
+        routingDecision?.responsePathHint === "anti_regret_reply" ||
+        routingDecision?.responsePathHint === "anti_regret_anchored"
+      );
+
+    if (isAntiRegretResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "anti_regret";
+      }
+      if (intent !== "anti_regret") {
+        intent = "anti_regret";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.8L — CONFIDENCE_CHALLENGE response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do confidence_challenge_flow. Limpar directReply e preservar contexto
+  // quando a família CONFIDENCE_CHALLENGE já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isConfidenceChallengeResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isConfidenceChallenge === true ||
+        isConfidenceChallengeFamilyQuery(query) ||
+        routingDecision?.conversationAct === "confidence_challenge" ||
+        routingDecision?.responsePathHint === "confidence_challenge_reply" ||
+        routingDecision?.responsePathHint === "confidence_challenge_anchored"
+      );
+
+    if (isConfidenceChallengeResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "confidence_challenge";
+      }
+      if (intent !== "confidence_challenge") {
+        intent = "confidence_challenge";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.8P — SOCIAL_VALIDATION response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do social_validation_flow. Limpar directReply e preservar contexto
+  // quando a família SOCIAL_VALIDATION já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isSocialValidationResponsePath =
+      cognitiveTurnEarly?.signals?.isSocialValidation === true ||
+      isSocialValidationFamilyQuery(query) ||
+      routingDecision?.conversationAct === "social_validation" ||
+      routingDecision?.responsePathHint === "social_validation_reply" ||
+      routingDecision?.responsePathHint === "social_validation_anchored";
+
+    if (isSocialValidationResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "social_validation";
+      }
+      if (intent !== "social_validation") {
+        intent = "social_validation";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.9D — SECOND_BEST_DISCOVERY response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do second_best_discovery_flow. Limpar directReply e preservar contexto
+  // quando a família SECOND_BEST_DISCOVERY já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isSecondBestDiscoveryResponsePath =
+      cognitiveTurnEarly?.signals?.isSecondBestDiscovery === true ||
+      isSecondBestDiscoveryFamilyQuery(query) ||
+      routingDecision?.conversationAct === "second_best_discovery" ||
+      routingDecision?.responsePathHint === "second_best_discovery_reply" ||
+      routingDecision?.responsePathHint === "second_best_discovery_anchored";
+
+    if (isSecondBestDiscoveryResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "second_best_discovery";
+      }
+      if (intent !== "second_best_discovery") {
+        intent = "second_best_discovery";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.9H — ALTERNATIVE_EXPLORATION response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do alternative_exploration_flow. Limpar directReply e preservar contexto
+  // quando a família ALTERNATIVE_EXPLORATION já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isAlternativeExplorationResponsePath =
+      cognitiveTurnEarly?.signals?.isAlternativeExploration === true ||
+      isAlternativeExplorationFamilyQuery(query) ||
+      routingDecision?.conversationAct === "alternative_exploration" ||
+      routingDecision?.responsePathHint === "alternative_exploration_reply" ||
+      routingDecision?.responsePathHint === "alternative_exploration_anchored";
+
+    if (isAlternativeExplorationResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "alternative_exploration";
+      }
+      if (intent !== "alternative_exploration") {
+        intent = "alternative_exploration";
+      }
+    }
+  }
+  // ─────────────────────────────────────────────────────────────
+  // PATCH 7.9L — CONSTRAINT_CHANGE response path wiring
+  //
+  // resolveContextQuery() pode preencher directReply institucional antes
+  // do constraint_change_flow. Limpar directReply e preservar contexto
+  // quando a família CONSTRAINT_CHANGE já foi reconhecida pelo Router/Routing.
+  // ─────────────────────────────────────────────────────────────
+  {
+    const isConstraintChangeResponsePath =
+      !earlyClearNewCommercialSearch &&
+      (
+        cognitiveTurnEarly?.signals?.isConstraintChange === true ||
+        isConstraintChangeFamilyQuery(query) ||
+        routingDecision?.conversationAct === "constraint_change" ||
+        routingDecision?.responsePathHint === "constraint_change_reply" ||
+        routingDecision?.responsePathHint === "constraint_change_anchored"
+      );
+
+    if (isConstraintChangeResponsePath) {
+      contextResolution.directReply  = null;
+      contextResolution.clearContext = false;
+      if (!contextResolution.mode || contextResolution.mode === "general_answer") {
+        contextResolution.mode = "constraint_change";
+      }
+      if (intent !== "constraint_change") {
+        intent = "constraint_change";
+      }
     }
   }
   // ─────────────────────────────────────────────────────────────
@@ -25589,7 +26566,7 @@ if (lockedComparisonContextFromSession) {
       !earlyClearNewCommercialSearch &&
       !shouldBlockCsoVerbalizer(routingDecision)
     ) {
-      const verbPayload   = buildMiaVerbalizerPayload(convStrat, cso);
+      const verbPayload   = buildMiaVerbalizerPayload(convStrat, cso, conversationalToneProfile);
       const verbSystemPmt = verbPayload ? serializePayloadToPrompt(verbPayload) : null;
 
       let convText    = null;
@@ -25704,6 +26681,9 @@ if (lockedComparisonContextFromSession) {
           // PATCH 5.1C — sinais para auditoria cognitiva final
           // PATCH 5.2A — cognitiveAuthority registrado quando autoridade foi aplicada
           // PATCH 5.2B — intentPreservation registrado quando preservação foi aplicada
+          // PATCH 7.6I — runtime guard: intentPreservationResult é declarado em L+15;
+          //   neste ponto (CSO early return) ainda não foi computado → sempre null aqui.
+          //   O valor real é registrado separadamente em pipelineTracer.patch (L+39).
           cognitiveAuditInput: {
             cognitiveTurnEarly: cognitiveTurnEarly,
             cognitiveTurnWithCso: cognitiveTurnWithCso,
@@ -25712,10 +26692,10 @@ if (lockedComparisonContextFromSession) {
             detectedIntent: intent,
             contextAction: contextActionEarly,
             cognitiveAuthority: cognitiveAuthorityResult?.cognitiveAuthority || null,
-            intentPreservation: intentPreservationResult?.metadata?.intentPreservation || null,
+            intentPreservation: null,
           },
         },
-        { sessionBefore: incomingSessionContext }
+        { sessionBefore: incomingSessionContext, toneProfile: conversationalToneProfile }
       );
     }
   }
@@ -25792,7 +26772,7 @@ if (lockedComparisonContextFromSession) {
       },
       "context_direct_reply_early",
       {},
-      { sessionBefore: req.body?.session_context || {} }
+      { sessionBefore: req.body?.session_context || {}, toneProfile: conversationalToneProfile }
     );
   }
 
@@ -25833,12 +26813,33 @@ const shouldContinueToProductSearch =
   !!earlyQuerySignals.gaming ||
   ["new_or_direct", "direct", "refinement", "priority_change_reopen"].includes(contextResolution.mode);
 
+// PATCH 7.6L — Protect active anchored contextual turns from the general_answer early return.
+// When the Cognitive Router has identified a contextual turn type (ALTERNATIVE_REQUEST, OBJECTION,
+// PRIORITY_SHIFT, EXPLANATION_REQUEST, REFINEMENT, FOLLOW_UP) AND an anchor product is present,
+// the legacy general_answer fallback must not fire — it would destroy lastBestProduct and make
+// MIA appear to forget the entire conversation. This constant lists every turn type that, when
+// combined with an active anchor, must bypass the early return and proceed to the contextual path.
+const ANCHORED_CONTEXTUAL_TURNS = [
+  "ALTERNATIVE_REQUEST",
+  "OBJECTION",
+  "PRIORITY_SHIFT",
+  "EXPLANATION_REQUEST",
+  "REFINEMENT",
+  "FOLLOW_UP"
+];
+
+const isAnchoredContextualTurn =
+  hasAnchorForRouting &&
+  ANCHORED_CONTEXTUAL_TURNS.includes(cognitiveTurnEarly?.turnType);
+
 if (
   (intent === "general_answer" || intent === "casual_chat") &&
   !contextResolution.lockedComparisonFollowUp &&
   !shouldContinueToProductSearch &&
   // PATCH 5.2B — não cair no fallback genérico se a intenção explicativa foi preservada
-  !intentPreservationResult?.preservationApplied
+  !intentPreservationResult?.preservationApplied &&
+  // PATCH 7.6L — não apagar âncora quando o Cognitive Router já detectou turno contextual
+  !isAnchoredContextualTurn
 ) {
   return res.status(200).json({
         reply:
@@ -26510,7 +27511,7 @@ lastProducts: serializedLockedComparisonProducts,
         winner_product: pickProductLabelForPipelineDebug(serializedLockedComparisonWinner),
         winner_source: "comparison_engine_forced"
       },
-      { sessionBefore: sessionContext, contractApply: { incomingLastBest: sessionContext.lastBestProduct } }
+      { sessionBefore: sessionContext, contractApply: { incomingLastBest: sessionContext.lastBestProduct }, toneProfile: conversationalToneProfile }
     );
   }
 
@@ -26680,7 +27681,7 @@ lastComparisonProducts: serializedLockedComparisonFollowUpProducts,
       },
       "comparison_followup_locked",
       {},
-      { sessionBefore: sessionContext }
+      { sessionBefore: sessionContext, toneProfile: conversationalToneProfile }
     );
   }
 }
@@ -26795,7 +27796,7 @@ lastComparisonQuery: sessionContext.lastComparisonQuery || sessionContext.lastQu
         },
         "comparison_followup_priority_axis",
         {},
-        { sessionBefore: sessionContext }
+        { sessionBefore: sessionContext, toneProfile: conversationalToneProfile }
       );
     }
   }
@@ -26902,7 +27903,7 @@ lastComparisonQuery: sessionContext.lastComparisonQuery || sessionContext.lastQu
         : "anchor_preserved_follow_up",
       rerank_applied: routingDecision.allowRerank !== false
     },
-    { sessionBefore: sessionContext }
+        { sessionBefore: sessionContext, toneProfile: conversationalToneProfile }
   );
 }
     // 🔥 MODO CONTEXTO / DECISÃO / ANÁLISE DE PRODUTO ANTERIOR
@@ -26938,13 +27939,26 @@ const isDecisionIntent =
       sessionContext.lastProductMentioned ||
       "";
 
-    const rememberedProductsText = rememberedProducts.length
-      ? rememberedProducts
-          .map((p, index) => {
-            return `${index + 1}. ${cleanTitle(p.product_name)}${p.price ? ` | ${p.price}` : ""}`;
-          })
-          .join("\n")
-      : "Nenhum produto estruturado encontrado; usar apenas o histórico textual da conversa.";
+    // PATCH 7.4 — prefer formal ranking snapshot when available.
+    // Snapshot preserves the real decision order (score-ranked) from the last
+    // search turn. Falls back to lastProducts list when snapshot is absent.
+    // This makes "quem ficou em segundo?" / "top 3?" deterministic — the LLM
+    // sees the authoritative order and only verbalizes, it does not choose.
+    const rememberedProductsText = (() => {
+      const snapshot = sessionContext.lastRankingSnapshot;
+      if (Array.isArray(snapshot) && snapshot.length) {
+        return snapshot
+          .map(item =>
+            `${item.rank}. ${item.product_name}${item.price ? ` | ${item.price}` : ""}${item.isWinner ? " [recomendação atual]" : ""}`
+          )
+          .join("\n");
+      }
+      return rememberedProducts.length
+        ? rememberedProducts
+            .map((p, index) => `${index + 1}. ${cleanTitle(p.product_name)}${p.price ? ` | ${p.price}` : ""}`)
+            .join("\n")
+        : "Nenhum produto estruturado encontrado; usar apenas o histórico textual da conversa.";
+    })();
 
     // PATCH 5.3 — extrai sinais de contexto para o caminho de explicação ancorada
     const _explanationCtx = buildExplanationContext(sessionContext, preferredProductName, activePriority);
@@ -26970,16 +27984,99 @@ const isDecisionIntent =
     // O routing interceptor (PATCH 6.3, acima) já limpou directReply e garantiu
     // shouldSkipProductSearch=true → chegamos aqui via contextual path.
     // O sinal controla apenas o prompt — não altera winner, ranking ou Router.
-    const _isRefinementWithAnchor = cognitiveTurnEarly?.turnType === "REFINEMENT" && hasAnchorForRouting;
+    //
+    // PATCH 7.5 — ALTERNATIVE_REQUEST é uma especialização de REFINEMENT:
+    // usa o mesmo branch de resposta (REFINAMENTO), mas adiciona resolução
+    // determinística de posição de ranking via lastRankingSnapshot.
+    const _isAlternativeRequest = cognitiveTurnEarly?.turnType === "ALTERNATIVE_REQUEST" && hasAnchorForRouting;
+    const _isRefinementWithAnchor = (
+      cognitiveTurnEarly?.turnType === "REFINEMENT" || _isAlternativeRequest
+    ) && hasAnchorForRouting;
+
+    // PATCH 7.5 — resolver posição/top-N formal quando ALTERNATIVE_REQUEST detectado.
+    // Resultado é injetado no prompt para tornar a resposta determinística.
+    // Nunca recalcula ranking. Nunca inventa produto.
+    const _rankingResolution = _isAlternativeRequest
+      ? resolveRankingRequest(
+          sessionContext.lastRankingSnapshot,
+          cognitiveTurnEarly?.signals?.alternativeRequest
+        )
+      : null;
+
+    // PATCH 7.6N-A — detecta PRIORITY_SHIFT com âncora ativa para branch de resposta específico.
+    // Quando o usuário muda o eixo de avaliação (segurança, confiabilidade, durabilidade,
+    // tranquilidade etc.) mas NÃO pediu troca de produto, a resposta deve explicar o winner
+    // autorizado sob o novo eixo — não promover outro produto livremente.
+    // O sinal controla apenas o template do prompt — não altera winner, ranking ou Router.
+    const _isPriorityShiftWithAnchor =
+      cognitiveTurnEarly?.turnType === "PRIORITY_SHIFT" && hasAnchorForRouting;
 
     const _richExpContextModeSelected =
       contextAction === "analysis"  ? "analysis"
       : _isConfidenceChallenge      ? "confidence_challenge_defense"
       : _isObjectionWithAnchor      ? "objection_response_contract"
       : _isRefinementWithAnchor     ? "refinement_followup_response_contract"
+      : _isPriorityShiftWithAnchor  ? "priority_shift_response_contract"
       : _richExpPathActivated       ? "explanation_anchored"
       : "decision_generic";
     let _richExpUnknownProductCorrectionApplied = false;
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PATCH 7.6O-C — Cluster 12 Query Neutralization
+    //
+    // Diagnóstico (7.6O-B): queries de escolha hipotética/final ("se você tivesse
+    // que escolher um só", "qual sobreviveria ao corte") ativam no LLM uma tarefa
+    // de reavaliação livre de produtos, ignorando o winner autorizado pela arquitetura.
+    //
+    // Correção: quando _richExpContextModeSelected === "explanation_anchored" E o
+    // query pertence à família Cluster 12 (HYPOTHETICAL_FINAL_CHOICE), substituir
+    // internamente o query enviado ao LLM por uma pergunta neutra que confirma o
+    // winner autorizado — sem alterar originalQuery, routing, winner, ranking ou
+    // session state.
+    //
+    // A detecção usa os mesmos padrões do miaCognitiveRouter.js Cluster 12 (H1–H6),
+    // inlined localmente pois o signal `decisionExplanation.subtype` não expõe o
+    // cluster — "menor ponte" necessária dado que o subtipo não está disponível nos
+    // signals públicos do cognitiveTurnEarly.
+    // ─────────────────────────────────────────────────────────────────────────
+    const _isCluster12FinalChoice = (() => {
+      // Aplica a ambos os paths de resposta ancorada que podem receber queries Cluster 12.
+      // "confidence_challenge_defense" é ativado quando o router identifica subtype
+      // "confidence_challenge" — mas queries como "qual você manteria" também são Cluster 12
+      // e requerem neutralização para evitar que o LLM promova produtos alternativos.
+      const _eligibleModes = ["explanation_anchored", "confidence_challenge_defense"];
+      if (!_eligibleModes.includes(_richExpContextModeSelected)) return false;
+      if (!_explanationCtx?.anchorTitle) return false;
+      const _cq = resolvedQuery || "";
+      return (
+        // H1 — Conditional framing: "se você/vc tivesse que escolher/ficar com/levar"
+        /\bse (voce|vc) tivesse que (escolher|ficar com|levar|comprar)\b/.test(_cq) ||
+        // H2 — Direct preference: "qual você/vc manteria/levaria/escolheria"
+        /\bqual (voce|vc) (manteria|levaria|escolheria|ficaria com|compraria)\b/.test(_cq) ||
+        // H3 — Final/definitive label: "qual seria sua/a escolha/decisão final/definitiva"
+        /\bqual seria (sua|a) (escolha|decisao) (final|definitiva|certa)\b/.test(_cq) ||
+        // H4 — Survival/single winner: "qual sobreviveria/ficaria/restaria", "se fosse pra ficar com um só"
+        /\bqual (sobreviveria|ficaria|restaria)\b/.test(_cq) ||
+        /\bse (for|fosse) pra (ficar|escolher|levar) (com\s+)?(um|uma) (so|so)\b/.test(_cq) ||
+        /\bse (eu|vc|voce) so pudesse (levar|escolher|ficar com|comprar) (um|uma)\b/.test(_cq) ||
+        // H5 — Implicit subject: "se só pudesse levar um", "se fosse ficar com um"
+        /\bse\s+(so\s+)?pudesse\s+(levar|escolher|ficar\s+com|comprar)\s+(um|uma)\b/.test(_cq) ||
+        /\bse\s+fosse\s+(ficar\s+com|escolher|levar)\s+(um|uma)\b/.test(_cq) ||
+        // H6 — Definitive marker: "última escolha", "escolha definitiva"
+        /\b(ultima|last)\s+(escolha|opcao|decisao)\b/.test(_cq) ||
+        /\b(escolha|decisao)\s+(definitiva|unica)\b/.test(_cq)
+      );
+    })();
+
+    // Query neutralizada para Cluster 12: remove o gatilho de reavaliação livre.
+    // Para todos os outros casos, mantém o query original.
+    const _cluster12NeutralizedQuery = _isCluster12FinalChoice
+      ? `O usuário quer confirmar se "${_explanationCtx.anchorTitle}" continua sendo a escolha final. Explique por que "${_explanationCtx.anchorTitle}" é a melhor opção para este contexto.`
+      : null;
+
+    // Query efetivamente enviada ao LLM neste ramo.
+    // Igual a `query` para todos os casos exceto Cluster 12 + explanation_anchored.
+    const _llmQueryForExplanationPath = _cluster12NeutralizedQuery || query;
 
           const contextModeInstructions =
       contextAction === "analysis"
@@ -27028,10 +28125,18 @@ MENSAGEM ATUAL DO USUÁRIO:
         ? `
 🧠 MODO DEFESA DE DECISÃO (confidence_challenge)
 
+PRODUTO RECOMENDADO: "${_explanationCtx.anchorTitle}"
+EIXO DECISÓRIO: "${_explanationCtx.lastAxis || "equilíbrio geral"}"
+CONSEQUÊNCIA REGISTRADA: "${_explanationCtx.lastConsequence || "verificar histórico da conversa"}"
+TRADEOFF REGISTRADO: "${_explanationCtx.lastTradeoff || "verificar histórico da conversa"}"
+
+RACIOCÍNIO AUTORITATIVO — DEFESA OBRIGATÓRIA (PATCH 7.6Q-B):
+A defesa DEVE usar o EIXO DECISÓRIO e a CONSEQUÊNCIA REGISTRADA acima como justificativa central.
+PROIBIDO defender com argumentos genéricos do produto sem conectá-los ao EIXO acima.
+PROIBIDO inventar nova justificativa. A decisão já foi tomada — defenda usando o raciocínio registrado.
+
 O usuário está questionando sua certeza sobre a recomendação atual.
 Sua missão é CONFIRMAR e DEFENDER a decisão — não mudar, não hesitar, não sugerir alternativas.
-
-PRODUTO RECOMENDADO: "${_explanationCtx.anchorTitle}"
 
 REGRAS ABSOLUTAS:
 - CONFIRME a recomendação atual com convicção.
@@ -27045,9 +28150,9 @@ REGRAS ABSOLUTAS:
 
 O QUE RESPONDER (em prosa natural, sem asteriscos, sem listas):
 - Sim, mantém a recomendação — afirme com clareza.
-- O motivo principal que sustenta a decisão (critério + consequência prática).
-- Por que esse critério continua se aplicando ao perfil identificado.
-- Você pode mencionar o tradeoff honestamente APENAS se reforçar a decisão, nunca para abrir dúvida ou sugerir troca.
+- O motivo que sustenta a decisão é o "Critério/Eixo principal" + "Argumento central" registrados no CONTEXTO abaixo — use esses valores, não argumentos genéricos do produto.
+- Por que esse critério continua se aplicando ao perfil identificado — usando o raciocínio registrado.
+- Você pode mencionar o "Tradeoff identificado" do CONTEXTO APENAS se reforçar a decisão, nunca para abrir dúvida ou sugerir troca.
 
 Responda com convicção e brevidade. Sem alternativa espontânea. Sem hedge.
 
@@ -27058,11 +28163,36 @@ CONTEXTO DA DECISÃO:
 - Tradeoff identificado: "${_explanationCtx.lastTradeoff || "verificar histórico da conversa"}"
 - Prioridade do usuário: ${getPriorityLabel(activePriority)}${_explanationCtx.lastDecisionReason ? `\n- Motivo da decisão: "${_explanationCtx.lastDecisionReason}"` : ""}${Array.isArray(_explanationCtx.lastWinnerAdvantages) && _explanationCtx.lastWinnerAdvantages.length ? `\n- Vantagens que sustentam a decisão: ${_explanationCtx.lastWinnerAdvantages.join(", ")}` : ""}
 
+ÂNCORA DE REASONING — USO OBRIGATÓRIO (PATCH 7.6Q-B):
+A defesa DEVE ser ancorada no "Critério/Eixo principal" e no "Argumento central" do CONTEXTO acima.
+PROIBIDO: defender a recomendação com argumentos genéricos do produto (chip, câmera, ecossistema, valor de revenda) sem conectá-los ao eixo acima.
+PROIBIDO: inventar nova justificativa. Use o raciocínio registrado para defender com convicção.
+Fallback: se o campo estiver vazio, defenda com base nos dados disponíveis e contexto anterior.
+
+FORMA MÍNIMA OBRIGATÓRIA:
+A defesa DEVE conter:
+① "${_explanationCtx.anchorTitle}" mencionado pelo nome
+② Eixo: "${_explanationCtx.lastAxis || "equilíbrio geral"}"
+③ Consequência (IMPERATIVO): "${_explanationCtx.lastConsequence || ""}"
+   Esta ideia, com estas palavras ou paráfrase muito próxima, DEVE aparecer na defesa.
+${_explanationCtx.lastTradeoff ? `④ Tradeoff (se reforçar): "${_explanationCtx.lastTradeoff}"` : ""}
+
+ABERTURA E RESPOSTA BASE OBRIGATÓRIA:
+Sua defesa DEVE começar confirmando com a consequência registrada como justificativa central.
+NÃO comece com "bom equilíbrio" ou lista genérica de atributos — use a consequência específica.
+Estrutura obrigatória de abertura:
+"Sim. ${_explanationCtx.anchorTitle} foi a escolha por ${_explanationCtx.lastAxis || "equilíbrio geral"}: ${_explanationCtx.lastConsequence || ""}. Isso continua se aplicando ao seu perfil.${_explanationCtx.lastTradeoff ? ` ${_explanationCtx.lastTradeoff}` : ""}"
+Adapte o tom e eventuais frases complementares. NÃO omita a consequência. NÃO reduza a "bom desempenho" ou "câmera ótima".
+
 PRODUTO(S) DISPONÍVEL(IS) (citar apenas este, não inventar outros):
 ${rememberedProductsText}
 
 MENSAGEM ATUAL DO USUÁRIO:
-"${query}"
+"${_llmQueryForExplanationPath}"
+
+LEMBRETE FINAL — SUA PRIMEIRA FRASE DEVE SER (paráfrase obrigatória, tom natural):
+"Sim. ${_explanationCtx.anchorTitle} foi a escolha por ${_explanationCtx.lastAxis || "equilíbrio geral"}: ${_explanationCtx.lastConsequence || ""}."
+NÃO inicie com "bom equilíbrio" ou lista genérica sem a consequência específica acima.
 `
         // ── PATCH 6.2 — Objection Response Contract Branch ──────────────────────
         // Quando o Router identificou OBJECTION com âncora ativa, a resposta deve
@@ -27121,7 +28251,32 @@ O usuário está pedindo uma alternativa ou refinamento da recomendação atual 
 Sua missão é usar o produto recomendado como referência e oferecer caminhos de alternativa controlada.
 
 PRODUTO ATUAL (REFERÊNCIA): "${_explanationCtx.anchorTitle}"
-
+${
+  // PATCH 7.5 — ranking resolution block (deterministic, architecture-owned)
+  _rankingResolution?.type === "single_rank"
+    ? `
+RANKING FORMAL RECUPERADO (arquitetura — não alterar):
+Posição solicitada: #${_rankingResolution.rank}
+Produto: ${_rankingResolution.product.product_name}${_rankingResolution.product.price ? ` | ${_rankingResolution.product.price}` : ""}
+Origem: lastRankingSnapshot
+REGRA ABSOLUTA: use este produto para esta posição. Não escolha outro. Não recalcule ranking.
+`
+    : _rankingResolution?.type === "top_n"
+    ? `
+RANKING FORMAL RECUPERADO (arquitetura — não alterar):
+Top ${_rankingResolution.n} solicitados (${_rankingResolution.items.length} disponíveis):
+${_rankingResolution.items.map(i => `${i.rank}. ${i.product_name}${i.price ? ` | ${i.price}` : ""}${i.isWinner ? " [recomendação atual]" : ""}`).join("\n")}
+Origem: lastRankingSnapshot
+REGRA ABSOLUTA: use esta lista exatamente. Não reordene. Não adicione produtos fora da lista.
+`
+    : _rankingResolution?.type === "not_available"
+    ? `
+ATENÇÃO: Não há dados de ranking suficientes para esta posição específica.
+Informe honestamente que não há dados confiáveis registrados para esta posição.
+Não invente produto. Não busque produto novo.
+`
+    : ""
+}
 REGRAS ABSOLUTAS:
 - NÃO responda com boas-vindas ou "Posso te ajudar com...".
 - NÃO diga "Me fala o produto que você quer analisar".
@@ -27154,14 +28309,112 @@ ${rememberedProductsText}
 MENSAGEM ATUAL DO USUÁRIO:
 "${query}"
 `
+        // ── PATCH 7.6N-A — Priority Shift Response Contract ────────────────────
+        // Quando PRIORITY_SHIFT com âncora ativa: o usuário mudou o eixo de avaliação
+        // (segurança, confiabilidade, durabilidade, tranquilidade etc.) mas não pediu
+        // explicitamente uma troca de produto. A resposta deve explicar o winner autorizado
+        // sob o novo critério — sem promover outro produto como nova recomendação.
+        // Equivalente semântico ao objection_response_contract para mudanças de eixo.
+        // ─────────────────────────────────────────────────────────────────────────────────
+        : _isPriorityShiftWithAnchor
+        ? `
+⚡ INSTRUÇÃO PRIORITÁRIA (executar antes de qualquer outra):
+Sua resposta DEVE começar com uma paráfrase desta frase:
+"${_explanationCtx.anchorTitle} foi a escolha por ${_explanationCtx.lastAxis || "equilíbrio geral"}: ${_explanationCtx.lastConsequence || ""}."
+Depois conecte esse raciocínio à nova pergunta do usuário.
+NÃO use "O principal motivo é o equilíbrio geral" sem incluir a consequência específica acima.
+
+🧠 MODO MUDANÇA DE CRITÉRIO / CONTRATO DE RESPOSTA
+
+PRODUTO AUTORIZADO: "${_explanationCtx.anchorTitle}"
+EIXO DECISÓRIO ORIGINAL: "${_explanationCtx.lastAxis || "equilíbrio geral"}"
+CONSEQUÊNCIA REGISTRADA: "${_explanationCtx.lastConsequence || "verificar histórico da conversa"}"
+TRADEOFF REGISTRADO: "${_explanationCtx.lastTradeoff || "verificar histórico da conversa"}"
+
+RACIOCÍNIO AUTORITATIVO — CONTEÚDO OBRIGATÓRIO (PATCH 7.6Q-B):
+Ao responder sobre o novo critério do usuário, PARTA do EIXO DECISÓRIO ORIGINAL e da CONSEQUÊNCIA REGISTRADA acima.
+Explique como esses elementos se relacionam com o novo critério mencionado — não reconstrua o raciocínio do zero.
+PROIBIDO usar como argumento principal: chip, câmera, ecossistema, valor de revenda — exceto se conectados ao EIXO acima.
+PROIBIDO inventar nova justificativa de vitória. Use o raciocínio registrado como âncora.
+
+ABERTURA OBRIGATÓRIA (quebre o padrão da resposta anterior — NÃO comece com "O principal motivo é o equilíbrio geral"):
+Comece conectando o produto ao critério novo do usuário usando a CONSEQUÊNCIA REGISTRADA:
+"${_explanationCtx.anchorTitle} foi escolhido por ${_explanationCtx.lastAxis || "equilíbrio geral"}: ${_explanationCtx.lastConsequence || ""}."
+Depois conecte essa consequência ao critério levantado pelo usuário. Use linguagem natural.
+
+O usuário está avaliando o produto recomendado sob um novo eixo (ex: segurança, confiabilidade, durabilidade, tranquilidade).
+Sua missão é responder sobre o produto autorizado considerando esse novo critério — não escolher outro produto livremente.
+
+REGRAS ABSOLUTAS:
+- NÃO substitua o produto autorizado por outro sem critério explícito do usuário.
+- NÃO diga "Mas para este critério, o melhor seria X" usando produto fora da decisão autorizada.
+- NÃO abra nova busca nem refaça o ranking.
+- NÃO responda genericamente como se não houvesse contexto.
+- PODE explicar como o produto autorizado se sai nesse novo critério.
+- PODE mencionar honestamente se ele tem limitações nesse eixo.
+- PODE oferecer refazer a recomendação com foco nesse critério SOMENTE se o usuário confirmar que esse critério virou prioridade absoluta — nunca por iniciativa própria.
+
+O QUE RESPONDER (em prosa natural, sem asteriscos, sem listas numeradas):
+1. Como o produto autorizado se comporta no critério mencionado pelo usuário — usando o "Argumento central" e o "Critério/Eixo original" do CONTEXTO abaixo como ponto de partida, conectando-os ao novo critério levantado.
+2. Se ele é uma escolha sólida para esse critério — ou onde tem limitação honesta, baseado no "Tradeoff identificado" do CONTEXTO.
+3. Se houver limitação real, ofereça um próximo passo controlado: "Se quiser, posso refazer a busca priorizando [critério]."
+NÃO reconstitua a justificativa do zero usando conhecimento genérico. Parta do raciocínio registrado.
+
+Tom: direto, honesto, sem pressão. Não parecer vendedor. Não inventar outro winner.
+
+CONTEXTO DA DECISÃO ATUAL:
+- Produto autorizado: "${_explanationCtx.anchorTitle}"
+- Critério/Eixo original: "${_explanationCtx.lastAxis || "equilíbrio geral"}"
+- Argumento central: "${_explanationCtx.lastConsequence || "verificar histórico da conversa"}"
+- Tradeoff identificado: "${_explanationCtx.lastTradeoff || "verificar histórico da conversa"}"
+- Prioridade atual do usuário: ${getPriorityLabel(activePriority)}${_explanationCtx.lastDecisionReason ? `\n- Motivo da decisão: "${_explanationCtx.lastDecisionReason}"` : ""}
+
+ÂNCORA DE REASONING — USO OBRIGATÓRIO (PATCH 7.6Q-B):
+Parta do "Argumento central" e do "Critério/Eixo original" registrados acima para responder ao novo critério do usuário.
+PROIBIDO: reconstruir a justificativa do zero com argumentos genéricos não conectados ao contexto acima.
+PROIBIDO: inventar novo raciocínio de vitória. Use o raciocínio registrado como âncora.
+Fallback: se o campo estiver vazio, responda com base nos dados disponíveis e diga que a decisão foi baseada no contexto anterior.
+
+FORMA MÍNIMA OBRIGATÓRIA:
+A resposta DEVE conter, em qualquer ordem, em linguagem natural:
+① Nome do produto: "${_explanationCtx.anchorTitle}"
+② Eixo original: "${_explanationCtx.lastAxis || "equilíbrio geral"}" — em palavras suas, relacionando ao novo critério
+③ Consequência registrada: "${_explanationCtx.lastConsequence || ""}"
+   Mencione essa ideia diretamente — não a simplifique para "bom desempenho" ou "equilíbrio geral".
+${_explanationCtx.lastTradeoff ? `④ Tradeoff: "${_explanationCtx.lastTradeoff}" — mencione honestamente.` : ""}
+NÃO faça nova comparação de produtos. NÃO cite scores ou benchmarks. Apenas responda sobre ${_explanationCtx.anchorTitle}.
+PROIBIDO: usar "equilíbrio geral" como único motivo sem mencionar a consequência específica registrada.
+
+RESPOSTA BASE OBRIGATÓRIA (adapte o tom ao novo critério do usuário, preserve a consequência):
+"${_explanationCtx.anchorTitle} foi escolhido por ${_explanationCtx.lastAxis || "equilíbrio geral"}, e isso se conecta diretamente à sua pergunta: ${_explanationCtx.lastConsequence || ""}${_explanationCtx.lastTradeoff ? ` ${_explanationCtx.lastTradeoff}` : ""}."
+
+PRODUTOS DISPONÍVEIS (não inventar outros, não recomendar espontaneamente como novo winner):
+${rememberedProductsText}
+
+MENSAGEM ATUAL DO USUÁRIO:
+"${query}"
+
+LEMBRETE FINAL — SUA PRIMEIRA FRASE DEVE SER (paráfrase obrigatória, tom natural):
+"${_explanationCtx.anchorTitle} foi a escolha por ${_explanationCtx.lastAxis || "equilíbrio geral"}: ${_explanationCtx.lastConsequence || ""}."
+NÃO inicie com "O principal motivo é o equilíbrio geral" sem mencionar a consequência específica acima.
+`
         : shouldUseRichExplanationPath(routingDecision)
         ? `
 🧠 MODO EXPLICAÇÃO DE RECOMENDAÇÃO ANCORADA
 
-O usuário quer entender melhor por que você recomendou o produto atual.
-NÃO tome nova decisão. NÃO troque o produto. Explique o raciocínio da recomendação anterior.
+PRODUTO AUTORIZADO: "${_explanationCtx.anchorTitle}"
+EIXO DECISÓRIO: "${_explanationCtx.lastAxis || "equilíbrio geral"}"
+CONSEQUÊNCIA REGISTRADA: "${_explanationCtx.lastConsequence || "verificar histórico da conversa"}"
+TRADEOFF REGISTRADO: "${_explanationCtx.lastTradeoff || "verificar histórico da conversa"}"
 
-PRODUTO EM QUESTÃO: "${_explanationCtx.anchorTitle}"
+RACIOCÍNIO AUTORITATIVO — CONTEÚDO OBRIGATÓRIO (PATCH 7.6Q-B):
+Sua explicação DEVE referenciar o EIXO DECISÓRIO e a CONSEQUÊNCIA REGISTRADA acima como base da justificativa.
+Mesmo quando o usuário pede linguagem simples: simplifique o ESTILO, nunca omita o RACIOCÍNIO REAL.
+PROIBIDO usar como argumento principal: chip, câmera, ecossistema, valor de revenda, atualizações — exceto se estiverem no EIXO DECISÓRIO ou CONSEQUÊNCIA REGISTRADA acima.
+PROIBIDO inventar nova justificativa. A decisão foi tomada — explique usando o raciocínio registrado.
+
+O usuário quer entender melhor por que você recomendou "${_explanationCtx.anchorTitle}" na mensagem anterior.
+NÃO tome nova decisão. NÃO troque o produto. Explique o raciocínio de por que "${_explanationCtx.anchorTitle}" foi e continua sendo a recomendação.
 
 REGRAS ABSOLUTAS:
 - NÃO recomende outro produto.
@@ -27171,26 +28424,67 @@ REGRAS ABSOLUTAS:
 - NÃO responda genericamente ("Posso te ajudar..." ou similar).
 - NÃO liste especificações técnicas sem relacionar ao contexto do usuário.
 - Use apenas os dados do contexto abaixo.
+- A resposta deve citar nominalmente o produto autorizado "${_explanationCtx.anchorTitle}" pelo menos uma vez.
+- NÃO promova outro produto como recomendação principal.
+- NÃO substitua o produto autorizado por outro sem que o usuário peça explicitamente uma alternativa, altere orçamento ou altere prioridade principal.
+- Perguntas de escolha final ("qual você escolheria", "se tivesse que escolher um só", "qual sobreviveria ao corte") NÃO são pedidos de nova busca — o produto autorizado JÁ É a escolha. Confirme-o e explique o porquê.
 
-O QUE RESPONDER (em prosa natural, sem asteriscos, sem listas numeradas):
-- Por que esse produto foi recomendado — o critério principal que guiou a decisão.
-- Qual consequência prática isso traz para o usuário no dia a dia.
-- O tradeoff honesto — em que situação esse produto não seria a melhor escolha.
-- Em que cenário você mudaria de recomendação.
+O QUE RESPONDER sobre "${_explanationCtx.anchorTitle}" (em prosa natural, sem asteriscos, sem listas numeradas):
+- O EIXO DA DECISÃO é o valor em "Critério/Eixo principal" do CONTEXTO abaixo — use esse eixo como razão central da explicação. NÃO substitua por argumentos genéricos do produto.
+- A CONSEQUÊNCIA PRÁTICA é o valor em "Argumento central" do CONTEXTO abaixo — explique como ela se manifesta no uso real do usuário.
+- O TRADEOFF é o valor em "Tradeoff identificado" do CONTEXTO abaixo — se existir, mencione com honestidade sem fragilizar a decisão.
+- Se o usuário pedir para escolher "um só" ou qual "sobreviveria ao corte": "${_explanationCtx.anchorTitle}" JÁ É essa escolha — confirme-o usando o eixo e a consequência do CONTEXTO, não com argumentos genéricos.
+- Se houver limitação real, ofereça um próximo passo controlado: "Se quiser, posso refazer a busca priorizando [critério específico]" — SOMENTE se o usuário confirmar, nunca por iniciativa própria.
 
 Responda de forma direta, humana, com raciocínio. Não termine com pergunta genérica.
 
 CONTEXTO DA RECOMENDAÇÃO ANTERIOR:
+- Produto autorizado: "${_explanationCtx.anchorTitle}"
 - Critério/Eixo principal: "${_explanationCtx.lastAxis || "equilíbrio geral"}"
 - Argumento central: "${_explanationCtx.lastConsequence || "verificar histórico da conversa"}"
 - Tradeoff identificado: "${_explanationCtx.lastTradeoff || "verificar histórico da conversa"}"
 - Prioridade do usuário: ${getPriorityLabel(activePriority)}${_explanationCtx.lastDecisionReason ? `\n- Motivo da decisão: "${_explanationCtx.lastDecisionReason}"` : ""}${Array.isArray(_explanationCtx.lastWinnerAdvantages) && _explanationCtx.lastWinnerAdvantages.length ? `\n- Vantagens principais: ${_explanationCtx.lastWinnerAdvantages.join(", ")}` : ""}${Array.isArray(_explanationCtx.lastWinnerSacrifices) && _explanationCtx.lastWinnerSacrifices.length ? `\n- Pontos de atenção: ${_explanationCtx.lastWinnerSacrifices.join(", ")}` : ""}
 
+ÂNCORA DE REASONING — USO OBRIGATÓRIO (PATCH 7.6Q-B):
+Sua explicação DEVE ser ancorada nos campos do CONTEXTO acima:
+1. Referencie o "Critério/Eixo principal" como a razão decisória central.
+2. Referencie o "Argumento central" como a consequência prática que justifica a escolha.
+3. Se o "Tradeoff identificado" existir, mencione-o com honestidade.
+PROIBIDO: usar argumentos genéricos do produto (chip, câmera, ecossistema, valor de revenda, atualizações) como razão principal sem conectá-los ao eixo acima.
+PROIBIDO: inventar nova justificativa. A decisão já foi tomada — explique POR QUÊ ela foi tomada usando o raciocínio registrado.
+Fallback: se nenhum campo de memória estiver disponível, explique brevemente e diga que a decisão foi baseada no contexto anterior.
+
+FORMA MÍNIMA OBRIGATÓRIA (mesmo em linguagem simples):
+A resposta DEVE conter, em qualquer ordem e em linguagem natural:
+① Nome do produto: "${_explanationCtx.anchorTitle}"
+② Eixo decisório: "${_explanationCtx.lastAxis || "equilíbrio geral"}" — referencie esse conceito com suas palavras
+③ Consequência prática (IMPERATIVO): "${_explanationCtx.lastConsequence || ""}"
+   Essa frase ou paráfrase direta DEVE estar na resposta — NÃO reduza a "é rápido" ou "bom desempenho".
+${_explanationCtx.lastTradeoff ? `④ Tradeoff (IMPERATIVO): "${_explanationCtx.lastTradeoff}"
+   Essa frase ou paráfrase direta DEVE estar na resposta.` : ""}
+
+RESPOSTA BASE OBRIGATÓRIA (adapte o TOM e a abertura, preserve o CONTEÚDO):
+Sua resposta DEVE partir desta estrutura e humanizá-la para o contexto do usuário:
+"${_explanationCtx.anchorTitle} foi escolhido por ${_explanationCtx.lastAxis || "equilíbrio geral"}. Na prática: ${_explanationCtx.lastConsequence || ""}${_explanationCtx.lastTradeoff ? ` ${_explanationCtx.lastTradeoff}` : ""}."
+NÃO substitua a consequência acima por "bom desempenho", "câmera ótima" ou qualquer outra generalização.
+NÃO mencione chip, câmera ou ecossistema como razão principal se não estiverem na CONSEQUÊNCIA REGISTRADA acima.
+
 PRODUTOS DISPONÍVEIS (não inventar outros):
 ${rememberedProductsText}
 
 MENSAGEM ATUAL DO USUÁRIO:
-"${query}"
+"${_llmQueryForExplanationPath}"
+
+ABERTURA OBRIGATÓRIA DA RESPOSTA:
+✗ ERRADO: "Se eu tivesse que escolher um só, eu recomendaria o [qualquer produto que não seja ${_explanationCtx.anchorTitle}]."
+✓ CERTO:  "Se eu tivesse que escolher um só, seria o ${_explanationCtx.anchorTitle} porque..."
+✓ CERTO:  "${_explanationCtx.anchorTitle} sobreviveria ao corte porque..."
+Comece SEMPRE mencionando "${_explanationCtx.anchorTitle}" como o produto recomendado.
+
+LEMBRETE FINAL — SUA RESPOSTA DEVE (independente do estilo solicitado):
+① Mencionar "${_explanationCtx.anchorTitle}" pelo nome
+② Incluir na 1ª ou 2ª frase a consequência: "${_explanationCtx.lastConsequence || ""}"
+③ NÃO substituir por "bom desempenho", "câmera ótima" ou qualquer outro genérico
 `
         : `
 🧠 MODO DECISÃO / CONTEXTO SEM BUSCA NOVA
@@ -27240,18 +28534,30 @@ MENSAGEM ATUAL DO USUÁRIO:
 "${query}"
 `;
 
+    const _cognitiveSignalForVerbalizer =
+      buildCognitiveSignalForVerbalizer(cognitiveTurnEarly);
+    const _cognitiveSignalContextBlock = formatCognitiveSignalVerbalizerContext(
+      _cognitiveSignalForVerbalizer
+    );
+    const _cognitiveSignalBehaviorInstruction = formatCognitiveSignalBehaviorInstruction(
+      _cognitiveSignalForVerbalizer
+    );
+
     const contextMessages = [
       {
         role: "system",
         content: `${MIA_SYSTEM_PROMPT}
 
 ${contextModeInstructions}
-`
+${_cognitiveSignalContextBlock}${_cognitiveSignalBehaviorInstruction ? `\n${_cognitiveSignalBehaviorInstruction}` : ""}`
       },
       ...conversationMessages,
       {
         role: "user",
-        content: query
+        // PATCH 7.6O-C: for Cluster 12 (hypothetical final choice) queries in
+        // explanation_anchored mode, use the neutralized query so the LLM does
+        // not treat the message as a fresh product evaluation task.
+        content: _llmQueryForExplanationPath
       }
     ];
 
@@ -27265,9 +28571,17 @@ ${contextModeInstructions}
     source: "context_followup_flow",
     isFollowUp: true,
     contextAction,
-    activePriority
+    activePriority,
+    cognitiveSignal: _cognitiveSignalForVerbalizer
   }
 });
+
+    if (process.env.MIA_DEBUG === "true" && _cognitiveSignalForVerbalizer) {
+      pipelineTracer.patch({
+        cognitive_signal_transport: _cognitiveSignalForVerbalizer,
+        cognitive_signal_behavior_instruction: _cognitiveSignalBehaviorInstruction || null
+      });
+    }
 
     let reply =
      getMiaLLMText(aiResponse)?.trim() ||
@@ -27345,7 +28659,7 @@ if (responseMentionsUnknownProduct(reply, _guardAllowedProducts)) {
     }
   }
 }
-if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecision)) {
+if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecision) && !hasCognitiveSignalBehaviorInstruction(_cognitiveSignalForVerbalizer)) {
   const anchorForDecision = pickAuthoritativeLastBestProduct(
     req.body?.session_context?.lastBestProduct || sessionContext.lastBestProduct,
     rememberedProducts
@@ -27358,6 +28672,20 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
     routingDecision.shouldPreserveAnchor ? anchorForDecision : null
   );
 }
+    // ─────────────────────────────────────────────────────────────
+    // PATCH 7.6O-C — Audit log for Cluster 12 query neutralization
+    // Unconditional — records whether neutralization was applied.
+    // ─────────────────────────────────────────────────────────────
+    pipelineTracer.patch({
+      cluster12QueryNeutralization: {
+        applied: _isCluster12FinalChoice,
+        originalQuery: query,
+        neutralizedQuery: _cluster12NeutralizedQuery || null,
+        anchorTitle: _isCluster12FinalChoice ? (_explanationCtx?.anchorTitle || null) : null,
+        reason: _isCluster12FinalChoice ? "hypothetical_final_choice_trigger" : null,
+      }
+    });
+
     // ─────────────────────────────────────────────────────────────
     // PATCH 5.3A — Rich Explanation Activation Audit
     // Ativado apenas por MIA_DEBUG=true. Não altera reply, prices,
@@ -27615,17 +28943,67 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
         },
       {
         sessionBefore: sessionContext,
-        contractApply: { incomingLastBest: req.body?.session_context?.lastBestProduct }
+        contractApply: { incomingLastBest: req.body?.session_context?.lastBestProduct },
+        toneProfile: conversationalToneProfile,
       }
     );
   }
   
   try {
+    if (intent === "about_mia") {
+      const institutionalContext = buildAboutMiaVerbalizationContext(resolvedQuery || query);
+      const aboutMiaMessages = [
+        {
+          role: "system",
+          content: `${buildMiaSystemPromptByRole("about_mia_reply", conversationalToneProfile)}\n\n${institutionalContext}`,
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle,
+          }),
+        },
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "about_mia_reply",
+        intent,
+        messages: aboutMiaMessages,
+        temperature: 0.45,
+        max_tokens: 220,
+        metadata: {
+          source: "about_mia_flow",
+        },
+      });
+
+      const llmReply = getMiaLLMText(aiResponse);
+      const reply =
+        (llmReply && !isGenericInstitutionalFallbackReply(llmReply)
+          ? llmReply
+          : null) || buildAboutMiaDeterministicFallback(resolvedQuery || query);
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {}),
+      });
+    }
+
     if (intent === "greeting") {
       const greetingMessages = [
         {
           role: "system",
-          content: buildMiaSystemPromptByRole("greeting_reply")
+          content: buildMiaSystemPromptByRole("greeting_reply", conversationalToneProfile)
         },
         {
           role: "user",
@@ -27654,11 +29032,498 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
   }
 });
 
-      const reply = getMiaLLMText(aiResponse) || buildFallbackReply(intent, null, period);
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredGreetingFallback(sessionContext)
+          : buildFallbackReply(intent, null, period));
 
       return res.status(200).json({
-        reply,
-        prices: []
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "acknowledgement") {
+      const acknowledgementMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("acknowledgement_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "acknowledgement_reply",
+        intent,
+        messages: acknowledgementMessages,
+        temperature: 0.5,
+        max_tokens: 160,
+        metadata: {
+          source: "acknowledgement_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredAcknowledgementFallback(sessionContext)
+          : buildOpenAcknowledgementFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "comprehension") {
+      const comprehensionMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("comprehension_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "comprehension_reply",
+        intent,
+        messages: comprehensionMessages,
+        temperature: 0.5,
+        max_tokens: 180,
+        metadata: {
+          source: "comprehension_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredComprehensionFallback(sessionContext)
+          : buildOpenComprehensionFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "soft_disagreement") {
+      const softDisagreementMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("soft_disagreement_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "soft_disagreement_reply",
+        intent,
+        messages: softDisagreementMessages,
+        temperature: 0.5,
+        max_tokens: 200,
+        metadata: {
+          source: "soft_disagreement_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredSoftDisagreementFallback(sessionContext)
+          : buildOpenSoftDisagreementFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "decision_confirmation") {
+      const decisionConfirmationMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("decision_confirmation_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "decision_confirmation_reply",
+        intent,
+        messages: decisionConfirmationMessages,
+        temperature: 0.5,
+        max_tokens: 180,
+        metadata: {
+          source: "decision_confirmation_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredDecisionConfirmationFallback(sessionContext)
+          : buildOpenDecisionConfirmationFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "anti_regret") {
+      const antiRegretMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("anti_regret_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "anti_regret_reply",
+        intent,
+        messages: antiRegretMessages,
+        temperature: 0.5,
+        max_tokens: 200,
+        metadata: {
+          source: "anti_regret_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredAntiRegretFallback(sessionContext)
+          : buildOpenAntiRegretFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "confidence_challenge") {
+      const confidenceChallengeMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("confidence_challenge_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "confidence_challenge_reply",
+        intent,
+        messages: confidenceChallengeMessages,
+        temperature: 0.5,
+        max_tokens: 200,
+        metadata: {
+          source: "confidence_challenge_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredConfidenceChallengeFallback(sessionContext)
+          : buildOpenConfidenceChallengeFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "social_validation") {
+      const socialValidationMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("social_validation_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "social_validation_reply",
+        intent,
+        messages: socialValidationMessages,
+        temperature: 0.5,
+        max_tokens: 200,
+        metadata: {
+          source: "social_validation_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredSocialValidationFallback(sessionContext)
+          : buildOpenSocialValidationFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "second_best_discovery") {
+      const secondBestMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("second_best_discovery_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "second_best_discovery_reply",
+        intent,
+        messages: secondBestMessages,
+        temperature: 0.5,
+        max_tokens: 200,
+        metadata: {
+          source: "second_best_discovery_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredSecondBestDiscoveryFallback(sessionContext)
+          : buildOpenSecondBestDiscoveryFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "alternative_exploration") {
+      const alternativeExplorationMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("alternative_exploration_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "alternative_exploration_reply",
+        intent,
+        messages: alternativeExplorationMessages,
+        temperature: 0.5,
+        max_tokens: 200,
+        metadata: {
+          source: "alternative_exploration_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredAlternativeExplorationFallback(sessionContext)
+          : buildOpenAlternativeExplorationFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
+      });
+    }
+
+    if (intent === "constraint_change") {
+      const constraintChangeMessages = [
+        {
+          role: "system",
+          content: buildMiaSystemPromptByRole("constraint_change_reply", conversationalToneProfile)
+        },
+        {
+          role: "user",
+          content: buildUserPrompt({
+            query: resolvedQuery,
+            originalQuery: query,
+            intent,
+            budget,
+            wantsNew,
+            period,
+            products: hasAnchorForRouting ? [sessionContext.lastBestProduct].filter(Boolean) : [],
+            productLimit: hasAnchorForRouting ? 1 : 0,
+            userStyle
+          })
+        }
+      ];
+
+      const aiResponse = await runMiaBrainTask({
+        role: "constraint_change_reply",
+        intent,
+        messages: constraintChangeMessages,
+        temperature: 0.5,
+        max_tokens: 200,
+        metadata: {
+          source: "constraint_change_flow"
+        }
+      });
+
+      const reply =
+        getMiaLLMText(aiResponse) ||
+        (hasAnchorForRouting
+          ? buildAnchoredConstraintChangeFallback(sessionContext)
+          : buildOpenConstraintChangeFallback());
+
+      return res.status(200).json({
+        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+        prices: [],
+        session_context: hasAnchorForRouting
+          ? (req.body?.session_context || sessionContext)
+          : (req.body?.session_context || {})
       });
     }
     // ======================================================
@@ -27927,7 +29792,7 @@ return respondWithContract(
       intentPreservation: intentPreservationResult?.metadata?.intentPreservation || null,
     },
   },
-  { sessionBefore: sessionContext }
+  { sessionBefore: sessionContext, toneProfile: conversationalToneProfile }
 );
   }
 
@@ -27951,7 +29816,7 @@ return respondWithContract(
     },
     "comparison_early_not_found",
     {},
-    { sessionBefore: sessionContext }
+    { sessionBefore: sessionContext, toneProfile: conversationalToneProfile }
   );
 }
 
@@ -27990,7 +29855,8 @@ if (shouldSkipCommercialProductPipeline(routingDecision)) {
     },
     {
       sessionBefore: sessionContext,
-      contractApply: { incomingLastBest: req.body?.session_context?.lastBestProduct }
+      contractApply: { incomingLastBest: req.body?.session_context?.lastBestProduct },
+      toneProfile: conversationalToneProfile,
     }
   );
 }
@@ -28294,7 +30160,8 @@ if (Array.isArray(products) && products.length > 0) {
             proposedBestProduct: proposedBest,
             proposedProducts: mapCommercialDisplayPrices(commercialDisplayProducts),
             incomingLastBest: sessionContext.lastBestProduct
-          }
+          },
+          toneProfile: conversationalToneProfile,
         }
       );
       }
@@ -28445,6 +30312,13 @@ if (Array.isArray(products) && products.length > 0) {
       lastWinnerAdvantages: _decisionMemEnrich.lastWinnerAdvantages,
       lastWinnerSacrifices: _decisionMemEnrich.lastWinnerSacrifices,
       lastTopic: resolvedQuery,
+      // PATCH 7.4 — persist ranked snapshot at the search write-point.
+      // displayProducts is still score-enriched here (localFallbackScore / score).
+      // Snapshot is immutable for contextual turns downstream.
+      lastRankingSnapshot: buildRankingSnapshot(
+        Array.isArray(displayProducts) ? displayProducts : [],
+        proposedReturnBest
+      ),
       lastInteractionType: "search"
     },
     routingDecision,
@@ -28559,7 +30433,8 @@ if (Array.isArray(products) && products.length > 0) {
         contractApply: {
           proposedBestProduct: proposedReturnBest,
           incomingLastBest: sessionContext.lastBestProduct
-        }
+        },
+        toneProfile: conversationalToneProfile,
       }
     );
 }
@@ -29229,7 +31104,7 @@ return respondWithContract(
   },
   hasComparisonFollowUp ? "comparison_followup" : "legacy_llm_comparison",
   {},
-  { sessionBefore: sessionContext }
+        { sessionBefore: sessionContext, toneProfile: conversationalToneProfile }
 );
 }
 
@@ -30150,6 +32025,12 @@ const finalSessionContext = {
   lastMainConsequence: sessionContext.lastMainConsequence || "",
   lastTradeoff: sessionContext.lastTradeoff || "",
   lastInteractionType: isComparison ? "comparison" : "search",
+  // PATCH 7.4 — persist ranked snapshot at legacy LLM search write-point.
+  // displayProducts here comes from scoredFinalProducts (has finalScoreEngineScore).
+  lastRankingSnapshot: buildRankingSnapshot(
+    Array.isArray(displayProducts) ? displayProducts : [],
+    selectedBestProduct
+  ),
   lastComparisonProducts:
     isComparison && comparisonProducts?.length >= 2
       ? serializeComparisonProducts(comparisonProducts)
@@ -30193,7 +32074,7 @@ return respondWithContract(
       final_response_product: pickProductLabelForPipelineDebug(selectedBestProduct),
       candidate_products: summarizeProductsForPipelineDebug(displayProducts)
     },
-    { sessionBefore: sessionContext }
+        { sessionBefore: sessionContext, toneProfile: conversationalToneProfile }
   );
 }
 } catch (err) {

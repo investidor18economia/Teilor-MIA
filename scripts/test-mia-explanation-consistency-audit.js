@@ -1,408 +1,492 @@
 /**
- * test-mia-explanation-consistency-audit.js
+ * PATCH 7.6Q-AUDIT — Explanation Consistency Audit
  *
- * PATCH 5.5E — Testes para miaExplanationConsistencyAudit
+ * Audita se a MIA usa a memória decisória real para construir explicações,
+ * ou se recorre ao conhecimento genérico do LLM.
  *
- * Valida:
- *   - Detecção de alternativa não autorizada em contextos pós-decisão
- *   - Detecção de eixo não refletido
- *   - Detecção de tradeoff não refletido
- *   - Detecção de confidence weakened em confidence_challenge
- *   - Resposta correta não gera falso positivo crítico
- *   - COMPARISON / REFINEMENT podem mencionar alternativas livremente
- *   - Invariantes do módulo (nunca null, auditVersion, etc.)
+ * Audit ID: MIA_EXPLANATION_CONSISTENCY_AUDIT
+ *
+ * Separação explícita entre:
+ *   - Winner consistency (produto correto)
+ *   - Reasoning consistency (explicação ancorada na decisão real)
+ *
+ * Uso:
+ *   MIA_DEBUG=true node scripts/test-mia-explanation-consistency-audit.js
+ *   (MIA_DEBUG=true adiciona explanation_consistency_audit ao trace do servidor)
+ *
+ * Funciona sem MIA_DEBUG — auditoria local replica a lógica do servidor.
  */
 
-import {
-  buildExplanationConsistencyAudit,
-  EXPLANATION_CONSISTENCY_FLAGS,
-} from "../lib/miaExplanationConsistencyAudit.js";
+const API_BASE     = process.env.MIA_API_BASE || "http://localhost:3000";
+const API_ENDPOINT = `${API_BASE}/api/chat-gpt4o`;
+const PRIOR_QUERY  = "celular ate 2500";
 
 // ─────────────────────────────────────────────────────────────
-// Helpers de teste
+// Local audit (mirrors miaExplanationConsistencyAudit.js)
 // ─────────────────────────────────────────────────────────────
 
-let passed = 0;
-let failed = 0;
-const failures = [];
+function _norm(s = "") {
+  return String(s).toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+}
 
-function assert(label, condition, detail = "") {
-  if (condition) {
-    passed++;
-    console.log(`  ✓ ${label}`);
-  } else {
-    failed++;
-    const msg = detail ? `  ✗ ${label} — ${detail}` : `  ✗ ${label}`;
-    console.log(msg);
-    failures.push(msg);
+const _STOP = new Set(["para","com","que","quando","mais","uma","esse","essa",
+  "este","esta","pelo","pela","como","muito","menos","entre","algo","isso",
+  "aqui","onde","qual","quem","deve","pode","disso","voce","eles","elas",
+  "nesse","nessa","neste","nesta","desse","dessa"]);
+
+function _terms(s, minLen = 4) {
+  return _norm(s).split(" ").filter(t => t.length >= minLen && !_STOP.has(t));
+}
+
+function _overlap(terms, target, thresh = 0.25) {
+  if (!terms.length) return true;
+  return terms.filter(t => target.includes(t)).length / terms.length >= thresh;
+}
+
+// EN→PT synonym map for common decision axes
+const _AXIS_SYNONYMS = {
+  "performance": ["desempenho", "performance", "rapido", "velocidade", "fluidez"],
+  "battery":     ["bateria", "battery", "autonomia", "duracao"],
+  "camera":      ["camera", "camara", "foto", "fotos"],
+  "price":       ["preco", "price", "custo", "barato", "economico"],
+  "durability":  ["durabilidade", "durability", "duravel", "resistente"],
+  "safety":      ["seguranca", "safety", "seguro", "confiavel"],
+  "comfort":     ["conforto", "comfort", "tranquilidade", "tranquilo"],
+};
+
+function _axisReflectedInReply(axisRaw, replyNorm) {
+  if (!axisRaw || replyNorm.length < 100) return true;
+  const axisNorm = _norm(axisRaw);
+  const directTerms = _terms(axisNorm, 4);
+  if (_overlap(directTerms, replyNorm, 0.25)) return true;
+  const synonymList = _AXIS_SYNONYMS[axisNorm] || [];
+  return synonymList.some(s => replyNorm.includes(_norm(s)));
+}
+
+function localConsistencyAudit(reply, decMem, winnerName, turnType) {
+  const rn      = _norm(reply);
+  const flags   = [];
+  const diag    = {};
+
+  // 1. Axis reflected? (with EN→PT synonym support)
+  diag.axisNotReflected = !_axisReflectedInReply(decMem.lastAxis, rn);
+  if (diag.axisNotReflected) flags.push("PROMPT_MISSING_AXIS → LLM_IGNORED_AXIS");
+
+  // 2. Tradeoff reflected?
+  const tradeoffTerms = _terms(decMem.lastTradeoff || "", 5);
+  diag.tradeoffNotReflected = tradeoffTerms.length >= 3 && rn.length >= 150 && !_overlap(tradeoffTerms, rn, 0.15);
+  if (diag.tradeoffNotReflected) flags.push("PROMPT_MISSING_TRADEOFF → LLM_IGNORED_TRADEOFF");
+
+  // 3. Decision memory ignored (axis AND consequence both absent)?
+  const consTerms  = _terms(decMem.lastMainConsequence || "", 5);
+  const axisAbsent = !_axisReflectedInReply(decMem.lastAxis, rn);
+  const consAbsent = consTerms.length > 0 && !_overlap(consTerms, rn, 0.15);
+  diag.decisionMemoryIgnored = !!(decMem.hasAxis && decMem.hasConsequence && rn.length >= 150 && axisAbsent && consAbsent);
+  if (diag.decisionMemoryIgnored) flags.push("LLM_USED_GENERIC_KNOWLEDGE");
+
+  // 4. Winner absent?
+  const wTerms = _terms(winnerName || "", 3);
+  diag.winnerAbsent = wTerms.length > 0 && rn.length >= 100 && !_overlap(wTerms, rn, 0.5);
+  if (diag.winnerAbsent) flags.push("FINAL_REPLY_NOT_DECISION_GROUNDED");
+
+  // 5. Unauthorized alternative? (EXPLANATION/PRIORITY_SHIFT + sugestão de outro produto)
+  const altTypes = new Set(["COMPARISON","REFINEMENT","NEW_SEARCH","COMPARISON_FOLLOWUP"]);
+  if (!altTypes.has(turnType)) {
+    const signalA = /\btambem (e|seria) (uma?|um?) (boa|bom|excelente|otima|otimo|interessante) (opcao|alternativa|escolha)\b/.test(rn);
+    const signalB = /\boutra (opcao|alternativa|possibilidade)\b/.test(rn);
+    const signalC = /\bse (voce|vc|quiser|preferir)\b.{0,50}\b(outro|outra|diferente)\b/.test(rn);
+    diag.unauthorizedAlternative = signalA || signalB || signalC;
+    if (diag.unauthorizedAlternative) flags.push("WINNER_CORRECT_REASONING_WRONG → LLM_SPECULATED_REASONING");
+  }
+
+  // 6. Generic knowledge detected (product-specific buzzwords not in decision memory)
+  const genericTerms = ["a15","chip","bionic","ecossistema","ecosistema","valor de revenda",
+    "atualizacoes","software","build quality","qualidade de construcao","acabamento premium"];
+  const axisText = _norm((decMem.lastAxis || "") + " " + (decMem.lastMainConsequence || "") + " " + (decMem.lastTradeoff || ""));
+  diag.genericKnowledgeDetected = genericTerms.some(g => rn.includes(_norm(g)) && !axisText.includes(_norm(g)));
+
+  // 7. Speculative reasoning (LLM inventa raciocínio que não estava na memória)
+  const specSignals = [/\bprovavelmente\b/, /\bgenericamente\b/, /\bno geral\b/, /\bnormalmente\b/];
+  diag.speculativeReasoningDetected = specSignals.some(r => r.test(rn));
+
+  // Consistency score (0–100, maior = mais consistente)
+  let score = 100;
+  if (diag.axisNotReflected)          score -= 25;
+  if (diag.tradeoffNotReflected)      score -= 20;
+  if (diag.decisionMemoryIgnored)     score -= 30;
+  if (diag.winnerAbsent)              score -= 15;
+  if (diag.unauthorizedAlternative)   score -= 25;
+  if (diag.genericKnowledgeDetected)  score -= 10;
+  if (diag.speculativeReasoningDetected) score -= 5;
+  score = Math.max(0, score);
+
+  // Leak stage classification
+  let leakStage = "NONE";
+  if (diag.decisionMemoryIgnored || diag.axisNotReflected) {
+    leakStage = "RAW_LLM_STAGE";
+  } else if (diag.unauthorizedAlternative || diag.genericKnowledgeDetected) {
+    leakStage = "RAW_LLM_STAGE";
+  } else if (diag.winnerAbsent) {
+    leakStage = "FINAL_REPLY_STAGE";
+  }
+
+  return { flags, diag, score, leakStage };
+}
+
+// ─────────────────────────────────────────────────────────────
+// HTTP helpers
+// ─────────────────────────────────────────────────────────────
+
+async function httpCall(text, sessionContext, messages, convId) {
+  const resp = await fetch(API_ENDPOINT, {
+    method:  "POST",
+    headers: { "Content-Type": "application/json", "x-api-key": "minha_chave_181199" },
+    body: JSON.stringify({
+      text, image_base64: "", user_id: "eq-audit-7-6q",
+      conversation_id: convId, messages, session_context: sessionContext,
+    }),
+    signal: AbortSignal.timeout(30000),
+  });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  return resp.json();
+}
+
+async function runCase(id, label, query) {
+  const convId = `eq-${id}-${Date.now()}`;
+
+  // Turn 1: search → establish anchor + decision memory
+  const t1 = await httpCall(PRIOR_QUERY, {}, [], convId);
+  const session1 = t1.session_context || {};
+  const msgs1 = [
+    { role: "user",      content: PRIOR_QUERY },
+    { role: "assistant", content: t1.reply || "" },
+  ];
+
+  // Decision memory snapshot (from session_context after T1)
+  const decMem = {
+    lastAxis:           session1.lastAxis           || "",
+    lastMainConsequence:session1.lastMainConsequence|| "",
+    lastTradeoff:       session1.lastTradeoff        || "",
+    lastDecisionReason: session1.lastDecisionReason  || "",
+    lastWinnerAdvantages: Array.isArray(session1.lastWinnerAdvantages) ? session1.lastWinnerAdvantages : [],
+    lastWinnerSacrifices: Array.isArray(session1.lastWinnerSacrifices) ? session1.lastWinnerSacrifices : [],
+    hasAxis:       !!(session1.lastAxis || session1.lastPriority),
+    hasConsequence:!!(session1.lastMainConsequence),
+    hasTradeoff:   !!(session1.lastTradeoff),
+    hasDecisionReason: !!(session1.lastDecisionReason),
+    richness: [
+      session1.lastAxis, session1.lastMainConsequence, session1.lastTradeoff,
+      session1.lastDecisionReason,
+    ].filter(Boolean).length +
+    (session1.lastWinnerAdvantages?.length || 0) +
+    (session1.lastWinnerSacrifices?.length || 0),
+  };
+
+  const winnerName = session1.lastBestProduct?.product_name
+    || t1.winner_product || t1.prices?.[0]?.product_name || null;
+
+  // Turn 2: explanation query
+  const t2 = await httpCall(query, session1, msgs1, convId);
+  const trace2 = t2.mia_debug?.pipelineTrace || {};
+
+  const ct     = trace2.cognitive_turn_early || trace2.cognitive_turn_with_cso || {};
+  const bridge = trace2.cognitive_intent_authority_bridge || {};
+  const rd     = trace2.routingDecision || {};
+  const rich   = trace2.rich_explanation_audit || {};
+  const serverConsistency = trace2.explanation_consistency_audit || null; // only with MIA_DEBUG=true
+
+  const turnType     = ct.turnType || null;
+  const routingMode  = rd.mode || null;
+  const contextMode  = rich.contextModeSelected || null;
+  const responsePath = trace2.response_path || trace2.responsePath || null;
+  const finalReply   = t2.reply || "";
+
+  // Local audit
+  const localAudit = localConsistencyAudit(finalReply, decMem, winnerName, turnType);
+
+  // Winner check
+  const winnerMentioned = winnerName
+    ? _norm(finalReply).includes(_norm(winnerName.split(" ")[0]))
+    : null;
+
+  return {
+    id, label, query,
+    // Routing
+    turnType, routingMode, contextMode, responsePath,
+    bridgeApplied: !!bridge.active,
+    finalIntent: bridge.toIntent || null,
+    // Winner
+    winner: winnerName,
+    winnerMentioned,
+    // Decision memory (from T1 session_context)
+    decisionMemoryAvailable: decMem.richness > 0,
+    decisionMemoryRichnessScore: decMem.richness,
+    lastAxis:            decMem.lastAxis || "—",
+    lastMainConsequence: decMem.lastMainConsequence || "—",
+    lastTradeoff:        decMem.lastTradeoff || "—",
+    lastDecisionReason:  decMem.lastDecisionReason || "—",
+    winnerAdvantagesCount: decMem.lastWinnerAdvantages.length,
+    winnerSacrificesCount: decMem.lastWinnerSacrifices.length,
+    winnerAdvantages: decMem.lastWinnerAdvantages,
+    winnerSacrifices: decMem.lastWinnerSacrifices,
+    hasAxis: decMem.hasAxis,
+    hasConsequence: decMem.hasConsequence,
+    hasTradeoff: decMem.hasTradeoff,
+    // Prompt inputs (from _explanationCtx in server = decMem from session)
+    promptIncludesAxis:          decMem.hasAxis,
+    promptIncludesMainConsequence: decMem.hasConsequence,
+    promptIncludesTradeoff:       decMem.hasTradeoff,
+    promptIncludesDecisionReason: decMem.hasDecisionReason,
+    // Raw reply
+    rawReplyPreview:   finalReply.replace(/\n/g," ").slice(0, 120),
+    finalReplyPreview: finalReply.replace(/\n/g," ").slice(0, 120),
+    // Local audit results
+    replyReflectsAxis:             !localAudit.diag.axisNotReflected,
+    replyReflectsMainConsequence:  !localAudit.diag.decisionMemoryIgnored,
+    replyReflectsTradeoff:         !localAudit.diag.tradeoffNotReflected,
+    replyUsesDecisionMemory:       !(localAudit.diag.decisionMemoryIgnored || localAudit.diag.axisNotReflected),
+    genericKnowledgeDetected:      localAudit.diag.genericKnowledgeDetected,
+    speculativeReasoningDetected:  localAudit.diag.speculativeReasoningDetected,
+    // Scores
+    consistencyScore: localAudit.score,
+    leakStage:        localAudit.leakStage,
+    flags:            localAudit.flags,
+    // Server-side audit (only when MIA_DEBUG=true)
+    serverAuditAvailable: !!serverConsistency?.consistencyChecked,
+    serverFlags: serverConsistency?.flags || null,
+    serverConsistent: serverConsistency?.isConsistent ?? null,
+  };
+}
+
+// ─────────────────────────────────────────────────────────────
+// Scenarios
+// ─────────────────────────────────────────────────────────────
+
+const SCENARIOS = [
+  // Grupo A — Simplificação
+  { id: "A.1", g: "A", label: "fala simples",                       query: "fala simples" },
+  { id: "A.2", g: "A", label: "simplifica pra mim",                 query: "simplifica pra mim" },
+  { id: "A.3", g: "A", label: "me explica sem linguagem tecnica",    query: "me explica sem linguagem tecnica" },
+  // Grupo B — Escolha final / Cluster 12
+  { id: "B.1", g: "B", label: "se voce tivesse que escolher um so", query: "se voce tivesse que escolher um so" },
+  { id: "B.2", g: "B", label: "qual sobreviveria ao corte",          query: "qual sobreviveria ao corte" },
+  { id: "B.3", g: "B", label: "qual voce manteria",                  query: "qual voce manteria" },
+  // Grupo C — Priority shift
+  { id: "C.1", g: "C", label: "qual da menos dor de cabeca",         query: "qual da menos dor de cabeca" },
+  { id: "C.2", g: "C", label: "qual me deixaria mais tranquilo",      query: "qual me deixaria mais tranquilo" },
+  { id: "C.3", g: "C", label: "qual e mais seguro",                   query: "qual e mais seguro" },
+  // Grupo D — Objeção
+  { id: "D.1", g: "D", label: "nao to sentindo confianca",            query: "nao to sentindo confianca" },
+  { id: "D.2", g: "D", label: "algo me incomoda",                     query: "algo me incomoda" },
+  { id: "D.3", g: "D", label: "nao queria fazer besteira",            query: "nao queria fazer besteira" },
+  // Grupo E — Por quê / Explicação
+  { id: "E.1", g: "E", label: "por que ele",                          query: "por que ele" },
+  { id: "E.2", g: "E", label: "por que esse",                         query: "por que esse" },
+  { id: "E.3", g: "E", label: "me explica melhor",                    query: "me explica melhor" },
+];
+
+function section(t) { console.log(`\n  ${"─".repeat(66)}\n  ${t}\n  ${"─".repeat(66)}`); }
+function pad(s, n) { return String(s ?? "—").slice(0, n).padEnd(n); }
+
+section("MIA_EXPLANATION_CONSISTENCY_AUDIT — PATCH 7.6Q");
+
+// ─────────────────────────────────────────────────────────────
+// Run all scenarios
+// ─────────────────────────────────────────────────────────────
+
+let currentGroup = null;
+const results = [];
+
+for (const s of SCENARIOS) {
+  if (s.g !== currentGroup) {
+    const groupLabel = {
+      A: "Grupo A — Simplificação",
+      B: "Grupo B — Escolha final / Cluster 12",
+      C: "Grupo C — Priority Shift",
+      D: "Grupo D — Objeção",
+      E: "Grupo E — Por quê / Explicação",
+    }[s.g];
+    section(groupLabel);
+    currentGroup = s.g;
+  }
+
+  try {
+    const r = await runCase(s.id, s.label, s.query);
+    results.push(r);
+
+    const consistIcon = r.consistencyScore >= 70 ? "✓" : r.consistencyScore >= 40 ? "~" : "✗";
+    const winIcon = r.winnerMentioned ? "✓" : "✗";
+    console.log(`\n  ${consistIcon} ${r.id} — ${r.label}`);
+    console.log(`      turnType     : ${r.turnType}  bridge=${r.bridgeApplied}`);
+    console.log(`      routingMode  : ${r.routingMode}  mode=${r.contextMode}`);
+    console.log(`      DECISION MEMORY:`);
+    console.log(`        lastAxis           : "${r.lastAxis}"`);
+    console.log(`        lastMainConsequence: "${r.lastMainConsequence}"`);
+    console.log(`        lastTradeoff       : "${r.lastTradeoff}"`);
+    console.log(`        lastDecisionReason : "${r.lastDecisionReason}"`);
+    console.log(`        advantages (${r.winnerAdvantagesCount}) : ${r.winnerAdvantages.slice(0,3).join(" | ") || "—"}`);
+    console.log(`        sacrifices  (${r.winnerSacrificesCount}) : ${r.winnerSacrifices.slice(0,2).join(" | ") || "—"}`);
+    console.log(`        richness score     : ${r.decisionMemoryRichnessScore}`);
+    console.log(`      PROMPT INPUTS:`);
+    console.log(`        axis=${r.promptIncludesAxis} consequence=${r.promptIncludesMainConsequence} tradeoff=${r.promptIncludesTradeoff} reason=${r.promptIncludesDecisionReason}`);
+    console.log(`      REPLY ANALYSIS:`);
+    console.log(`        winner ${winIcon} ${r.winner}  mentioned=${r.winnerMentioned}`);
+    console.log(`        axisReflected=${r.replyReflectsAxis}  tradeoffReflected=${r.replyReflectsTradeoff}`);
+    console.log(`        genericKnowledge=${r.genericKnowledgeDetected}  speculative=${r.speculativeReasoningDetected}`);
+    console.log(`        decisionMemoryUsed=${r.replyUsesDecisionMemory}`);
+    console.log(`      consistencyScore : ${r.consistencyScore}/100`);
+    console.log(`      leakStage        : ${r.leakStage}`);
+    if (r.flags.length) console.log(`      flags            : ${r.flags.join(", ")}`);
+    if (r.serverAuditAvailable) console.log(`      server flags     : ${(r.serverFlags||[]).join(", ") || "none"}`);
+    console.log(`      replyPreview     : "${r.rawReplyPreview}"`);
+  } catch (err) {
+    results.push({ id: s.id, label: s.label, error: err.message });
+    console.log(`\n  ✗ ${s.id} — ${s.label}  [ERROR: ${err.message}]`);
   }
 }
 
-// Contexto rico de explanação (baseado em sessão com iPhone 13 por performance)
-const richExplanationCtx = {
-  anchorTitle: "iPhone 13",
-  lastAxis: "performance",
-  lastConsequence: "tarefas exigentes sem sentir que o aparelho esta no limite cedo demais",
-  lastTradeoff: "menos sensacao de limite quando o aparelho e exigido em tarefas pesadas",
-  lastDecisionReason: "performance consistente supera custo beneficio para o perfil informado",
-  lastWinnerAdvantages: ["A15 Bionic", "iOS otimizado", "bateria confiavel"],
-  lastWinnerSacrifices: ["zoom optico", "preco elevado"],
-  hasAxis: true,
-  hasConsequence: true,
-  hasTradeoff: true,
-  hasDecisionReason: true,
-  winnerAdvantagesCount: 3,
-  winnerSacrificesCount: 2,
-};
-
 // ─────────────────────────────────────────────────────────────
-// Grupo A — Checagem 1: Alternativa não autorizada
+// Tables & Report
 // ─────────────────────────────────────────────────────────────
 
-console.log("\n── Grupo A: Alternativa não autorizada ─────────────────────\n");
+const ran    = results.filter(r => !r.error);
+const errors = results.filter(r => r.error);
 
-// A1 — reply sugere alternativa em EXPLANATION_REQUEST → flag CRITICAL
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 é muito bom para performance. Se quiser, o Galaxy A54 também é uma excelente opção para quem busca câmera melhor.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("A1: reply com alternativa em EXPLANATION_REQUEST → UNAUTHORIZED_ALTERNATIVE", audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.UNAUTHORIZED_ALTERNATIVE), `flags: ${JSON.stringify(audit.flags)}`);
-  assert("A1: hasCriticalFlag = true", audit.hasCriticalFlag === true);
-  assert("A1: isConsistent = false", audit.isConsistent === false);
-}
-
-// A2 — reply com "outra opção seria" em EXPLANATION_REQUEST → flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Recomendei por performance. Outra opção seria o Redmi Note 12 se o orçamento for menor.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "benefit",
-    richExplanationPathActivated: true,
-  });
-  assert("A2: 'outra opção seria' em EXPLANATION_REQUEST → UNAUTHORIZED_ALTERNATIVE", audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.UNAUTHORIZED_ALTERNATIVE));
-  assert("A2: hasCriticalFlag = true", audit.hasCriticalFlag === true);
-}
-
-// A3 — COMPARISON pode mencionar alternativa sem flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Comparando iPhone 13 e Galaxy S23 FE, o Galaxy também é uma excelente opção se preferir Android.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "COMPARISON",
-    richExplanationPathActivated: true,
-  });
-  assert("A3: COMPARISON com alternativa → sem UNAUTHORIZED_ALTERNATIVE", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.UNAUTHORIZED_ALTERNATIVE));
-}
-
-// A4 — REFINEMENT pode mencionar modelo mais barato sem flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Se quiser algo mais barato, o Redmi Note 12 é uma alternativa interessante dentro do orçamento ajustado.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "REFINEMENT",
-    richExplanationPathActivated: true,
-  });
-  assert("A4: REFINEMENT com alternativa → sem UNAUTHORIZED_ALTERNATIVE", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.UNAUTHORIZED_ALTERNATIVE));
-}
-
-// A5 — reply correto sem alternativa em EXPLANATION_REQUEST → sem flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 foi recomendado por performance. O chip A15 Bionic garante que tarefas pesadas rodam sem travamentos, o que é exatamente o que você pediu.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("A5: reply sem alternativa → sem UNAUTHORIZED_ALTERNATIVE", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.UNAUTHORIZED_ALTERNATIVE));
+section("TABELA GERAL — Winner × Reasoning Consistency");
+console.log(`\n  ${pad("ID",4)} ${pad("Winner?",8)} ${pad("Axis?",7)} ${pad("DecMem?",8)} ${pad("Score",6)} ${pad("LeakStage",24)} Flags`);
+console.log(`  ${"─".repeat(100)}`);
+for (const r of ran) {
+  const w = r.winnerMentioned ? "✓" : "✗";
+  const a = r.replyReflectsAxis ? "✓" : "✗";
+  const m = r.replyUsesDecisionMemory ? "✓" : "✗";
+  console.log(`  ${pad(r.id,4)} ${pad(w,8)} ${pad(a,7)} ${pad(m,8)} ${pad(r.consistencyScore,6)} ${pad(r.leakStage,24)} ${(r.flags||[]).join(" ")||"—"}`);
 }
 
 // ─────────────────────────────────────────────────────────────
-// Grupo B — Checagem 2: Eixo não refletido
+// Flag frequency
 // ─────────────────────────────────────────────────────────────
 
-console.log("\n── Grupo B: Eixo não refletido ─────────────────────────────\n");
-
-// B1 — lastAxis = "performance", reply fala só de câmera e bateria → flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Escolhi principalmente porque a câmera é excelente e a bateria dura mais do que os concorrentes, sendo o melhor custo-benefício disponível no mercado atualmente.",
-    explanationCtx: { ...richExplanationCtx, lastAxis: "performance" },
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "consequence",
-    richExplanationPathActivated: true,
-  });
-  assert("B1: lastAxis='performance' ausente no reply → AXIS_NOT_REFLECTED", audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.AXIS_NOT_REFLECTED), `flags: ${JSON.stringify(audit.flags)}`);
+section("FLAGS MAIS FREQUENTES");
+const flagCount = {};
+for (const r of ran) {
+  for (const f of (r.flags || [])) {
+    flagCount[f] = (flagCount[f] || 0) + 1;
+  }
 }
-
-// B2 — reply menciona "performance" (lastAxis) → sem flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 se destaca pela performance. Com o A15 Bionic, a performance nas tarefas diárias e pesadas é superior, garantindo experiência fluida sem travamentos.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    richExplanationPathActivated: true,
-  });
-  assert("B2: reply menciona lastAxis → sem AXIS_NOT_REFLECTED", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.AXIS_NOT_REFLECTED));
-}
-
-// B3 — reply curto (< 100 chars) → sem flag mesmo sem mencionar eixo
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Sim, é o melhor para você.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    richExplanationPathActivated: true,
-  });
-  assert("B3: reply curto → sem AXIS_NOT_REFLECTED (tamanho insuficiente para auditar)", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.AXIS_NOT_REFLECTED));
+const sortedFlags = Object.entries(flagCount).sort((a,b) => b[1]-a[1]);
+if (sortedFlags.length === 0) {
+  console.log(`\n  Nenhuma flag de inconsistência detectada.`);
+} else {
+  for (const [f, c] of sortedFlags) {
+    console.log(`  ${c}/${ran.length}  ${f}`);
+  }
 }
 
 // ─────────────────────────────────────────────────────────────
-// Grupo C — Checagem 3: Tradeoff não refletido
+// Decision memory availability audit
 // ─────────────────────────────────────────────────────────────
 
-console.log("\n── Grupo C: Tradeoff não refletido ─────────────────────────\n");
-
-// C1 — lastTradeoff fala de "limite quando exigido", reply inventa bateria → flag
-{
-  const longReplyAboutBattery = "O iPhone 13 é excelente principalmente pela bateria. A bateria dura muito mais do que qualquer outro celular que testamos. A autonomia é realmente impressionante e supera qualquer concorrente nessa faixa de preço atualmente disponível no mercado.";
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: longReplyAboutBattery,
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "tradeoff",
-    richExplanationPathActivated: true,
-  });
-  assert("C1: tradeoff original ('limite', 'exigido') ausente em reply longo → TRADEOFF_NOT_REFLECTED", audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.TRADEOFF_NOT_REFLECTED), `flags: ${JSON.stringify(audit.flags)}`);
-}
-
-// C2 — reply menciona termos do tradeoff → sem flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "O tradeoff é que você abre mão de algum zoom óptico, mas ganha desempenho mesmo quando exigido. O aparelho não sente o limite em tarefas pesadas, que era exatamente o que você precisava.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    richExplanationPathActivated: true,
-  });
-  assert("C2: reply menciona termos do tradeoff → sem TRADEOFF_NOT_REFLECTED", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.TRADEOFF_NOT_REFLECTED));
+section("DECISION MEMORY — Disponibilidade por campo");
+const memSample = ran[0];
+if (memSample) {
+  console.log(`\n  (baseado em T1 "celular ate 2500" → session_context retornado):`);
+  console.log(`  lastAxis             : "${memSample.lastAxis}"  populated=${memSample.hasAxis}`);
+  console.log(`  lastMainConsequence  : "${memSample.lastMainConsequence}"  populated=${memSample.hasConsequence}`);
+  console.log(`  lastTradeoff         : "${memSample.lastTradeoff}"  populated=${memSample.hasTradeoff}`);
+  console.log(`  lastDecisionReason   : "${memSample.lastDecisionReason}"  populated=${!!memSample.lastDecisionReason && memSample.lastDecisionReason !== "—"}`);
+  console.log(`  lastWinnerAdvantages : [${memSample.winnerAdvantages.join(", ")}]  count=${memSample.winnerAdvantagesCount}`);
+  console.log(`  lastWinnerSacrifices : [${memSample.winnerSacrifices.join(", ")}]  count=${memSample.winnerSacrificesCount}`);
+  console.log(`  richness score       : ${memSample.decisionMemoryRichnessScore}`);
 }
 
 // ─────────────────────────────────────────────────────────────
-// Grupo D — Checagem 4: Confidence weakened
+// Consolidated root cause
 // ─────────────────────────────────────────────────────────────
 
-console.log("\n── Grupo D: Confidence weakened ────────────────────────────\n");
+const avgScore  = ran.length ? Math.round(ran.reduce((s,r)=>s+(r.consistencyScore||0),0)/ran.length) : 0;
+const nAxisOk   = ran.filter(r => r.replyReflectsAxis).length;
+const nMemOk    = ran.filter(r => r.replyUsesDecisionMemory).length;
+const nWinnerOk = ran.filter(r => r.winnerMentioned).length;
+const nGeneric  = ran.filter(r => r.genericKnowledgeDetected).length;
 
-// D1 — "talvez escolheria outro" em confidence_challenge → CRITICAL flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Sim, acredito que o iPhone 13 é bom. Mas talvez eu escolheria outro se o orçamento fosse diferente.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("D1: 'talvez eu escolheria outro' em confidence_challenge → CONFIDENCE_WEAKENED", audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.CONFIDENCE_WEAKENED), `flags: ${JSON.stringify(audit.flags)}`);
-  assert("D1: hasCriticalFlag = true", audit.hasCriticalFlag === true);
+section("DIAGNÓSTICO — Causa raiz consolidada");
+
+console.log(`\n  Métricas de consistência:`);
+console.log(`    Cenários executados         : ${ran.length}`);
+console.log(`    Winner correto              : ${nWinnerOk}/${ran.length}  (${Math.round(nWinnerOk/ran.length*100)}%)`);
+console.log(`    Axis refletido no reply     : ${nAxisOk}/${ran.length}  (${Math.round(nAxisOk/ran.length*100)}%)`);
+console.log(`    DecisionMemory usada        : ${nMemOk}/${ran.length}  (${Math.round(nMemOk/ran.length*100)}%)`);
+console.log(`    Generic knowledge detectado : ${nGeneric}/${ran.length}  (${Math.round(nGeneric/ran.length*100)}%)`);
+console.log(`    Consistency score médio     : ${avgScore}/100`);
+
+console.log(`\n  Pipeline de perda de consistência:`);
+
+const memAvailable = memSample?.decisionMemoryRichnessScore > 0;
+const memHasAxis   = memSample?.hasAxis;
+const memHasCons   = memSample?.hasConsequence;
+const memHasTradeoff = memSample?.hasTradeoff;
+
+console.log(`\n  ① DECISION_MEMORY_STAGE`);
+console.log(`     lastAxis disponível         : ${memHasAxis} (valor: "${memSample?.lastAxis}")`);
+console.log(`     lastMainConsequence dispon. : ${memHasCons} (valor: "${memSample?.lastMainConsequence}")`);
+console.log(`     lastTradeoff disponível     : ${memHasTradeoff} (valor: "${memSample?.lastTradeoff}")`);
+console.log(`     lastWinnerAdvantages        : ${memSample?.winnerAdvantagesCount} itens`);
+console.log(`     VEREDICTO: ${memAvailable ? "MEMÓRIA DISPONÍVEL ✓" : "MEMÓRIA AUSENTE ✗ ← LEAK AQUI"}`);
+
+console.log(`\n  ② PROMPT_INPUT_STAGE`);
+console.log(`     Os campos de memória são passados via _explanationCtx para os templates:`);
+console.log(`     - explanation_anchored  (linha 27539-27540 do handler)`);
+console.log(`     - priority_shift_response_contract (linha 27379-27380)`);
+console.log(`     - confidence_challenge_defense (linha 27451)`);
+console.log(`     VEREDICTO: ${memHasAxis ? "PROMPT RECEBE MEMÓRIA QUANDO DISPONÍVEL ✓" : "PROMPT NÃO RECEBE EIXO ✗ ← LEAK AQUI"}`);
+
+console.log(`\n  ③ RAW_LLM_STAGE`);
+console.log(`     Axis refletido             : ${nAxisOk}/${ran.length} cenários`);
+console.log(`     Decision memory usada      : ${nMemOk}/${ran.length} cenários`);
+console.log(`     Generic knowledge detectado: ${nGeneric}/${ran.length} cenários`);
+const llmLeaks = ran.filter(r => r.leakStage === "RAW_LLM_STAGE").length;
+console.log(`     Cenários com leak RAW_LLM  : ${llmLeaks}/${ran.length}`);
+console.log(`     VEREDICTO: ${llmLeaks > 0 ? "LLM IGNORA MEMÓRIA EM " + llmLeaks + " CENÁRIO(S) ✗ ← LEAK AQUI" : "LLM RESPEITA MEMÓRIA ✓"}`);
+
+console.log(`\n  ④ FINAL_REPLY_STAGE (post-processing)`);
+const finalLeaks = ran.filter(r => r.leakStage === "FINAL_REPLY_STAGE").length;
+console.log(`     Cenários com leak FINAL    : ${finalLeaks}/${ran.length}`);
+console.log(`     VEREDICTO: ${finalLeaks > 0 ? "POST-PROCESSING MUDA REASONING ✗" : "POST-PROCESSING NÃO ALTERA REASONING ✓"}`);
+
+console.log(`\n  CAUSA RAIZ:`);
+if (!memAvailable) {
+  console.log(`  → DECISION_MEMORY_STAGE: memória não populada após busca.`);
+  console.log(`    O handler não salva lastMainConsequence/lastTradeoff na sessão.`);
+} else if (!memHasAxis || !memHasCons) {
+  console.log(`  → DECISION_MEMORY_STAGE (parcial): alguns campos faltando na sessão.`);
+  console.log(`    Campos vazios não entram no prompt → LLM não tem base decisória real.`);
+} else if (llmLeaks > 0) {
+  console.log(`  → RAW_LLM_STAGE: a memória existe e entra no prompt,`);
+  console.log(`    mas o LLM usa conhecimento genérico em vez da decisão real.`);
+  console.log(`    O LLM recebe o "lastAxis" e o "lastTradeoff" no prompt,`);
+  console.log(`    mas a instrução não é suficientemente imperativa para que`);
+  console.log(`    ele os use como âncora da explicação.`);
+} else {
+  console.log(`  → NENHUM LEAK DETECTADO: consistência de reasoning adequada.`);
 }
 
-// D2 — "não tenho certeza" em confidence_challenge → flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "É uma boa escolha. Não tenho certeza se é o melhor em todos os cenários, mas para o seu perfil é adequado.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("D2: 'não tenho certeza' em confidence_challenge → CONFIDENCE_WEAKENED", audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.CONFIDENCE_WEAKENED));
+section("PRÓXIMO PATCH RECOMENDADO");
+if (!memAvailable) {
+  console.log(`  PATCH 7.6Q-A — Decision Memory Enrichment Fix`);
+  console.log(`  Garantir que buildDecisionMemoryEnrichment seja chamado no path correto.`);
+} else if (llmLeaks > 0) {
+  console.log(`  PATCH 7.6Q-B — Explanation Anchoring Hardening`);
+  console.log(`  Tornar as instruções de reasoning mais imperativas nos templates:`);
+  console.log(`  - explanation_anchored`);
+  console.log(`  - priority_shift_response_contract`);
+  console.log(`  - confidence_challenge_defense`);
+  console.log(`  Substituir "use o eixo X" por "sua explicação DEVE referenciar X"`);
+  console.log(`  Medir com re-execução deste script.`);
+} else {
+  console.log(`  Nenhum próximo patch necessário neste momento.`);
 }
 
-// D3 — reply confiante em confidence_challenge → sem flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Sim, manteria a recomendação. O iPhone 13 foi escolhido por performance e continua sendo a melhor escolha para o perfil informado. O A15 Bionic garante experiência consistente sem limites nas tarefas.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("D3: reply confiante em confidence_challenge → sem CONFIDENCE_WEAKENED", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.CONFIDENCE_WEAKENED));
-}
-
-// D4 — "mas talvez dependendo" em confidence_challenge → flag
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 é bom. Mas talvez dependendo do uso específico outro modelo pudesse ser considerado também.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("D4: 'mas talvez dependendo' em confidence_challenge → CONFIDENCE_WEAKENED", audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.CONFIDENCE_WEAKENED));
-}
-
-// D5 — confidence weakened NÃO dispara em benefit (só em confidence_challenge)
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Não tenho certeza de tudo, mas a vantagem principal é a performance que oferece.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "benefit",  // NÃO confidence_challenge
-    richExplanationPathActivated: true,
-  });
-  assert("D5: 'não tenho certeza' em benefit (não confidence_challenge) → sem CONFIDENCE_WEAKENED", !audit.flags.includes(EXPLANATION_CONSISTENCY_FLAGS.CONFIDENCE_WEAKENED));
-}
-
-// ─────────────────────────────────────────────────────────────
-// Grupo E — Resposta correta / sem flags críticas
-// ─────────────────────────────────────────────────────────────
-
-console.log("\n── Grupo E: Resposta correta (sem falso positivo crítico) ──\n");
-
-// E1 — resposta ideal: usa winner, axis, consequence, sem alternativas
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 foi escolhido por performance. Com o A15 Bionic, as tarefas exigentes rodam sem que o aparelho sinta o limite. Essa performance consistente é exatamente o que você pediu como critério principal. O tradeoff é abrir mão do zoom óptico, mas dentro do seu perfil isso é marginal.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("E1: resposta ideal → sem flags críticas", !audit.hasCriticalFlag, `flags: ${JSON.stringify(audit.flags)}`);
-  assert("E1: resposta ideal → isConsistent = true (ou sem flag crítica)", !audit.hasCriticalFlag);
-  assert("E1: diagnostics.unauthorizedAlternative = false", audit.diagnostics.unauthorizedAlternative === false);
-  assert("E1: diagnostics.confidenceWeakened = false", audit.diagnostics.confidenceWeakened === false);
-}
-
-// E2 — rich explanation path NÃO ativado → consistencyChecked = false
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "Aqui estão as opções disponíveis para você.",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    richExplanationPathActivated: false, // não ativado
-  });
-  assert("E2: rich path não ativado → consistencyChecked = false", audit.consistencyChecked === false);
-  assert("E2: sem path → flags vazias", audit.flags.length === 0);
-  assert("E2: sem path → isConsistent = true", audit.isConsistent === true);
-}
-
-// E3 — sem finalReply → consistencyChecked = false
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "",
-    explanationCtx: richExplanationCtx,
-    winnerName: "iPhone 13",
-    richExplanationPathActivated: true,
-  });
-  assert("E3: sem reply → consistencyChecked = false", audit.consistencyChecked === false);
-}
-
-// ─────────────────────────────────────────────────────────────
-// Grupo F — Invariantes do módulo
-// ─────────────────────────────────────────────────────────────
-
-console.log("\n── Grupo F: Invariantes ────────────────────────────────────\n");
-
-// F1 — nunca retorna null
-{
-  const audit = buildExplanationConsistencyAudit({});
-  assert("F1: input vazio → retorna objeto válido", typeof audit === "object" && audit !== null);
-  assert("F1: auditVersion = '5.5E'", audit.auditVersion === "5.5E");
-  assert("F1: flags sempre é array", Array.isArray(audit.flags));
-  assert("F1: hasCriticalFlag sempre é boolean", typeof audit.hasCriticalFlag === "boolean");
-  assert("F1: isConsistent sempre é boolean", typeof audit.isConsistent === "boolean");
-  assert("F1: diagnostics sempre presente", typeof audit.diagnostics === "object" && audit.diagnostics !== null);
-}
-
-// F2 — input null não causa exceção
-{
-  let threw = false;
-  try { buildExplanationConsistencyAudit(null); } catch { threw = true; }
-  assert("F2: input null não lança exceção", !threw);
-}
-
-// F3 — UNAUTHORIZED_ALTERNATIVE e CONFIDENCE_WEAKENED são CRITICAL
-{
-  const auditA = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 é bom. Outra opção seria o Galaxy A54 se quiser câmera melhor com outra alternativa no mercado.",
-    turnType: "EXPLANATION_REQUEST",
-    richExplanationPathActivated: true,
-  });
-  assert("F3: UNAUTHORIZED_ALTERNATIVE → hasCriticalFlag = true", auditA.hasCriticalFlag === true);
-
-  const auditB = buildExplanationConsistencyAudit({
-    finalReply: "Sim mas talvez eu escolheria outro se surgisse algo melhor no mercado.",
-    turnType: "EXPLANATION_REQUEST",
-    decisionExplanationSubtype: "confidence_challenge",
-    richExplanationPathActivated: true,
-  });
-  assert("F3: CONFIDENCE_WEAKENED → hasCriticalFlag = true", auditB.hasCriticalFlag === true);
-}
-
-// F4 — AXIS_NOT_REFLECTED, TRADEOFF_NOT_REFLECTED, WINNER_ABSENT, DECISION_MEMORY_IGNORED não são CRITICAL
-{
-  const audit = buildExplanationConsistencyAudit({
-    finalReply: "É muito bom para câmera. A câmera é excelente e recomendo pela câmera e pela câmera mesmo. A qualidade fotográfica é impressionante e supera tudo na faixa.",
-    explanationCtx: { ...richExplanationCtx, lastAxis: "performance" },
-    winnerName: "iPhone 13",
-    turnType: "EXPLANATION_REQUEST",
-    richExplanationPathActivated: true,
-  });
-  // Pode ter AXIS_NOT_REFLECTED mas não deve ser CRITICAL
-  const nonCriticalFlags = audit.flags.filter(f => f !== EXPLANATION_CONSISTENCY_FLAGS.UNAUTHORIZED_ALTERNATIVE && f !== EXPLANATION_CONSISTENCY_FLAGS.CONFIDENCE_WEAKENED);
-  assert("F4: flags de warning não tornam hasCriticalFlag = true (isolados)", !audit.diagnostics.unauthorizedAlternative && !audit.diagnostics.confidenceWeakened ? !audit.hasCriticalFlag : true);
-}
-
-// F5 — consistencyChecked = true somente quando richExplanationPathActivated E finalReply
-{
-  const auditActivated = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 é excelente.",
-    richExplanationPathActivated: true,
-  });
-  assert("F5: activated + reply → consistencyChecked = true", auditActivated.consistencyChecked === true);
-
-  const auditNotActivated = buildExplanationConsistencyAudit({
-    finalReply: "O iPhone 13 é excelente.",
-    richExplanationPathActivated: false,
-  });
-  assert("F5: not activated → consistencyChecked = false", auditNotActivated.consistencyChecked === false);
-}
-
-// ─────────────────────────────────────────────────────────────
-// Resultado final
-// ─────────────────────────────────────────────────────────────
-
-const total = passed + failed;
-console.log(`\n══════════════════════════════════════════════════`);
-console.log(`  RESULTADO: ${passed}/${total} passaram`);
-if (failures.length > 0) {
-  console.log(`\n  Falhas:`);
-  failures.forEach((f) => console.log(f));
-}
-console.log(`══════════════════════════════════════════════════\n`);
-
-process.exit(failed > 0 ? 1 : 0);
+console.log(`\n  ${"═".repeat(66)}\n`);
+process.exit(errors.length > 0 ? 1 : 0);

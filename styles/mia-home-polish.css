@@ -36,14 +36,19 @@ body.mia-app-intro .teilor-brand-logo-wrap {
 
 body.mia-app-intro .teilor-brand-trust {
   margin: 0 10px 8px;
-  padding: 5px 9px 5px 10px;
-  border-color: rgba(143, 210, 245, 0.2);
-  background: rgba(8, 22, 48, 0.52);
+  padding: 9px 28px 9px 14px;
+  border-color: rgba(143, 210, 245, 0.22);
+  background: linear-gradient(145deg, rgba(8, 22, 52, 0.94) 0%, rgba(6, 16, 38, 0.98) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   opacity: 1;
 }
 
 body.mia-app-intro .teilor-brand-trust-accent {
-  background: rgba(0, 198, 255, 0.32);
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  background: rgba(0, 198, 255, 0.55);
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.28);
 }
 
 body.mia-app-intro .teilor-brand-trust-text,
@@ -395,7 +400,7 @@ body.mia-app-intro .teilor-brand-trust-line--secondary {
 }
 
 body.mia-app-intro .teilor-brand-trust-line--primary {
-  color: var(--mia-landing-title-blue);
+  color: #F4E8D4;
   font-weight: 600;
   line-height: 1.4;
   opacity: 1;
@@ -403,14 +408,10 @@ body.mia-app-intro .teilor-brand-trust-line--primary {
 
 body.mia-app-intro .teilor-brand-trust-line--secondary {
   margin-top: 2px;
-  color: var(--mia-landing-title-blue);
+  color: #9FE8FF;
   font-weight: 600;
   line-height: 1.38;
   opacity: 1;
-}
-
-body.mia-app-intro .teilor-brand-trust-accent {
-  background: rgba(0, 198, 255, 0.55);
 }
 
 @media (max-width: 640px) {

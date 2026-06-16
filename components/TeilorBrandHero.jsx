@@ -54,6 +54,7 @@ export default function TeilorBrandHero() {
       </div>
       <div className="teilor-brand-trust" role="note">
         <span className="teilor-brand-trust-accent" aria-hidden="true" />
+        <span className="teilor-brand-trust-icon" aria-hidden="true">✦</span>
         <p className="teilor-brand-trust-text">
           <span className="teilor-brand-trust-line teilor-brand-trust-line--primary">
             Seu interesse em primeiro lugar. Sem comissão por indicação.

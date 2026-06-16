@@ -49,31 +49,18 @@ export default function FeedPanel({
     >
 
       <div className="mia-feed-hub-topbar" role="note">
-
         <span className="mia-feed-hub-mia-dot" aria-hidden="true" />
-
         <p className="mia-feed-hub-topbar-text">
-
           Enquanto você vive sua rotina, a MIΛ continua procurando oportunidades por você.
-
         </p>
-
         <button
-
           type="button"
-
           className="mia-feed-hub-close-btn"
-
           onClick={onClose}
-
           aria-label="Fechar feed da MIΛ"
-
         >
-
           <span aria-hidden="true">✕</span>
-
         </button>
-
       </div>
 
 

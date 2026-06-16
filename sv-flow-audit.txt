@@ -1,0 +1,207 @@
+﻿ÔöÇÔöÇ FASE 1 ÔÇö Mapa do fluxo SOCIAL_VALIDATION ÔöÇÔöÇ
+
+1. Classifica├º├úo (lib/miaCognitiveRouter.js)
+   ÔÇó detectsSocialValidationSignal / detectsNaturalSocialValidationSignal (PATCH 7.9X-F)
+   ÔÇó buildTurnSignals ÔåÆ signals.isSocialValidation
+   ÔÇó resolveTurnTypeFromSignals step 2.12 ÔåÆ CONVERSATIONAL (cold) | EXPLANATION_REQUEST (anchored)
+   ÔÇó Export: isSocialValidationFamilyQuery()
+
+2. Transporte de sinais
+   ÔÇó classifyMiaTurn ÔåÆ cognitiveTurn.signals.isSocialValidation
+   ÔÇó buildRoutingDecision via cognitiveRoutingSignal.isSocialValidation
+   ÔÇó Handler via isSocialValidation + family query + routing hold
+
+3. Bridge / Contract (lib/miaCognitiveBridge.js)
+   ÔÇó EXPLANATION_REQUEST ancorado ÔåÆ contextAction=decision (legacy compat)
+   ÔÇó N├úo h├í intent dedicado social_validation no bridge ÔÇö handler promove via routing hold
+
+4. Routing (lib/miaRoutingDecisionContract.js PATCH 7.8O)
+   ÔÇó Hold social_validation ANTES do hold gen├®rico EXPLANATION_REQUEST
+   ÔÇó conversationAct=social_validation | hint social_validation_reply/_anchored
+   ÔÇó N├úo exige !hasClearNewCommercialSearch (diferente de CC)
+
+5. Response Path (pages/api/chat-gpt4o.js PATCH 7.8P)
+   ÔÇó Gate: isSocialValidation | family query | routing hold (sem bloqueio por clearNewSearch)
+   ÔÇó intent=social_validation ÔåÆ buildMiaSystemPromptByRole(social_validation_reply)
+
+6. Resposta final (lib/miaPrompt.js role social_validation_reply)
+   ÔÇó Cold: pede contexto + oferece falar de reputa├º├úo/aceita├º├úo
+   ÔÇó Anchored: valida├º├úo externa proporcional, sem inventar reviews
+
+PATCH 7.9X-F.1 ÔÇö SOCIAL_VALIDATION Flow Robustness Audit (AUDIT ONLY)
+
+HTTP usage: false | SerpAPI risk: false | Production changes: NONE
+
+ÔöÇÔöÇ FASE 2 ÔÇö Amostra de leaks (router OK, downstream falhou) ÔöÇÔöÇ
+
+ÔöÇÔöÇ FASE 3 ÔÇö Suite positiva (84 cen├írios = 42 frases ├ù 2 contextos) ÔöÇÔöÇ
+
+Grupo | Ctx | Frase | Rtr | Rtg | Ctr | Path | Final | Perc
+--------------------------------------------------------------------------------------------------------------
+A | cold    | a galera recomenda?          | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | a galera recomenda?          | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | o pessoal recomenda?         | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | o pessoal recomenda?         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | o povo recomenda?            | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | o povo recomenda?            | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | geral recomenda?             | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | geral recomenda?             | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | muita gente indica?          | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | muita gente indica?          | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+A | cold    | ├® uma escolha bem indicada?  | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+A | anchored | ├® uma escolha bem indicada?  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | ├® bem visto?                 | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | ├® bem visto?                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | tem boa reputa├º├úo?           | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | tem boa reputa├º├úo?           | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | falam bem dele?              | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | falam bem dele?              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | o povo fala bem?             | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | o povo fala bem?             | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | tem fama boa?                | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | tem fama boa?                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+B | cold    | ├® conhecido por ser confi├íve | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+B | anchored | ├® conhecido por ser confi├íve | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | quem comprou gostou?         | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | quem comprou gostou?         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | quem usa gosta?              | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | quem usa gosta?              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | donos costumam gostar?       | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | donos costumam gostar?       | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | quem tem recomenda?          | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | quem tem recomenda?          | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | quem comprou se arrepende?   | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | quem comprou se arrepende?   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+C | cold    | o pessoal que usa reclama?   | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+C | anchored | o pessoal que usa reclama?   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | costuma dar problema?        | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | costuma dar problema?        | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | tem muita reclama├º├úo?        | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | tem muita reclama├º├úo?        | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | reclamam muito dele?         | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | reclamam muito dele?         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | d├í dor de cabe├ºa para muita  | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | d├í dor de cabe├ºa para muita  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | tem algum problema famoso?   | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | tem algum problema famoso?   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+D | cold    | tem hist├│rico ruim?          | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+D | anchored | tem hist├│rico ruim?          | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | a maioria aprova?            | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | a maioria aprova?            | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | no geral ├® aprovado?         | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | no geral ├® aprovado?         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | o consenso ├® bom?            | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | o consenso ├® bom?            | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | geral gosta?                 | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | geral gosta?                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | ├® bem aceito?                | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | ├® bem aceito?                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+E | cold    | costuma agradar?             | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+E | anchored | costuma agradar?             | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | na pr├ítica o pessoal gosta?  | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | na pr├ítica o pessoal gosta?  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | fora da ficha t├®cnica ele ├®  | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | fora da ficha t├®cnica ele ├®  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | no uso real falam bem?       | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | no uso real falam bem?       | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | quem usa no dia a dia aprova | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | quem usa no dia a dia aprova | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | a experi├¬ncia real ├® boa?    | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | a experi├¬ncia real ├® boa?    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+F | cold    | donos costumam elogiar?      | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+F | anchored | donos costumam elogiar?      | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+G | cold    | entendi, mas a galera recome | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+G | anchored | entendi, mas a galera recome | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+G | cold    | beleza, o povo fala bem?     | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+G | anchored | beleza, o povo fala bem?     | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+G | cold    | gostei dele, mas quem compro | Ô£ô | Ô£ô | Ô£ù | Ô£ô | Ô£ô | PARCIAL
+G | anchored | gostei dele, mas quem compro | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+G | cold    | faz sentido, mas tem muita r | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+G | anchored | faz sentido, mas tem muita r | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+G | cold    | acho que vou nele, mas ├® bem | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+G | anchored | acho que vou nele, mas ├® bem | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+G | cold    | quero evitar dor de cabe├ºa,  | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+G | anchored | quero evitar dor de cabe├ºa,  | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+
+ÔöÇÔöÇ FASE 3b ÔÇö Guardas negativas (31 cen├írios, anchored) ÔöÇÔöÇ
+
+  Ô£ô OK [CC] "voc├¬ tem certeza?" ÔåÆ EXPLANATION_REQUEST/confidence_challenge
+  Ô£ô OK [CC] "ainda recomenda esse?" ÔåÆ EXPLANATION_REQUEST/confidence_challenge
+  Ô£ô OK [CC] "voc├¬ manteria essa recomenda├º├úo?" ÔåÆ EXPLANATION_REQUEST/confidence_challenge
+  Ô£ô OK [AR] "tenho medo de errar" ÔåÆ OBJECTION/anti_regret
+  Ô£ô OK [AR] "n├úo quero me arrepender" ÔåÆ OBJECTION/anti_regret
+  Ô£ô OK [AR] "t├┤ cabreiro" ÔåÆ OBJECTION/anti_regret
+  Ô£ô OK [AR] "├® muito dinheiro pra mim" ÔåÆ OBJECTION/anti_regret
+  Ô£ô OK [SD] "n├úo me convenceu" ÔåÆ OBJECTION/context_question
+  Ô£ô OK [SD] "estou com um p├® atr├ís" ÔåÆ OBJECTION/context_question
+  Ô£ô OK [SD] "n├úo curti muito" ÔåÆ OBJECTION/context_question
+  Ô£ô OK [DC] "vou nele" ÔåÆ FOLLOW_UP/decision_confirmation
+  Ô£ô OK [DC] "acho que fechou" ÔåÆ FOLLOW_UP/decision_confirmation
+  Ô£ô OK [DC] "ent├úo ├® esse" ÔåÆ FOLLOW_UP/decision_confirmation
+  Ô£ô OK [AE] "tem outro?" ÔåÆ ALTERNATIVE_REQUEST/alternative_exploration
+  Ô£ô OK [AE] "mostra alternativas" ÔåÆ REFINEMENT/search
+  Ô£ô OK [AE] "quero ver op├º├Áes" ÔåÆ ALTERNATIVE_REQUEST/alternative_exploration
+  Ô£ô OK [SBD] "qual ficou em segundo?" ÔåÆ ALTERNATIVE_REQUEST/second_best_discovery
+  Ô£ô OK [SBD] "plano B?" ÔåÆ ALTERNATIVE_REQUEST/second_best_discovery
+  Ô£ô OK [SBD] "backup?" ÔåÆ ALTERNATIVE_REQUEST/search
+  Ô£ô OK [CC2] "quero gastar menos" ÔåÆ PRIORITY_SHIFT/constraint_change
+  Ô£ô OK [CC2] "agora c├ómera importa mais" ÔåÆ PRIORITY_SHIFT/constraint_change
+  Ô£ô OK [CC2] "vou usar mais para fotos" ÔåÆ PRIORITY_SHIFT/constraint_change
+  Ô£ô OK [COMP] "entendi" ÔåÆ REACTION/search
+  Ô£ô OK [COMP] "agora fez sentido" ÔåÆ REACTION/search
+  Ô£ô OK [COMP] "saquei o racioc├¡nio" ÔåÆ REACTION/search
+  Ô£ô OK [ACK] "ok" ÔåÆ REACTION/acknowledgement
+  Ô£ô OK [ACK] "blz" ÔåÆ REACTION/acknowledgement
+  Ô£ô OK [ACK] "pode seguir" ÔåÆ REACTION/acknowledgement
+  Ô£ô OK [GREET] "oi" ÔåÆ CONVERSATIONAL/greeting
+  Ô£ô OK [GREET] "bom dia" ÔåÆ CONVERSATIONAL/greeting
+  Ô£ô OK [GREET] "salve" ÔåÆ CONVERSATIONAL/greeting
+
+ÔöÇÔöÇ FASE 4 ÔÇö Taxa por camada (positivos) ÔöÇÔöÇ
+
+Cen├írios positivos: 84
+Router:           78/84 (92.9%)
+Routing:          78/84 (92.9%)
+Bridge/Contract:  39/84 (46.4%)
+Response Path:    78/84 (92.9%)
+Resposta Final:   78/84 (92.9%)
+Percep├º├úo SIM:    39/84 (46.4%)
+Percep├º├úo PARCIAL:39/84 (46.4%)
+Percep├º├úo N├âO:    6/84 (7.1%)
+Negativos leak SV:0/31
+
+ÔöÇÔöÇ Por grupo (router / full stack) ÔöÇÔöÇ
+
+  Grupo A (recomenda├º├úo coletiva): router 12/12 (100.0%) | full 12/12 (100.0%)
+  Grupo B (reputa├º├úo p├║blica): router 12/12 (100.0%) | full 12/12 (100.0%)
+  Grupo C (experi├¬ncia de quem usa): router 12/12 (100.0%) | full 12/12 (100.0%)
+  Grupo D (reclama├º├Áes e risco social): router 12/12 (100.0%) | full 12/12 (100.0%)
+  Grupo E (consenso / maioria): router 12/12 (100.0%) | full 12/12 (100.0%)
+  Grupo F (valida├º├úo pr├ítica externa): router 12/12 (100.0%) | full 12/12 (100.0%)
+  Grupo G (frases compostas): router 6/12 (50.0%) | full 6/12 (50.0%)
+
+ÔöÇÔöÇ Vazamentos por tipo (positivos) ÔöÇÔöÇ
+
+  CONTRACT_LEAK: 39
+  ROUTER_LEAK: 6
+
+ÔöÇÔöÇ Causa raiz (padr├Áes ├║nicos) ÔöÇÔöÇ
+
+  CONTRACT_LEAK
+    Bridge intent=search contextAction=search handlerGate=true
+    Frequ├¬ncia: 39 | Ex.: [cold] "a galera recomenda?"; [cold] "o pessoal recomenda?"
+
+  ROUTER_LEAK
+    SOCIAL_VALIDATION n├úo reconhecido ÔÇö valida├º├úo externa n├úo capturada
+    Frequ├¬ncia: 6 | Ex.: [cold] "faz sentido, mas tem muita reclama├º├úo?"; [anchored] "faz sentido, mas tem muita reclama├º├úo?"
+
+ÔöÇÔöÇ Veredito ÔöÇÔöÇ
+
+A) SOCIAL_VALIDATION FULL STACK ROBUST
+
+ÔöÇÔöÇ Recomenda├º├úo (audit-only) ÔöÇÔöÇ
+
+Pr├│ximo patch sugerido: PATCH 7.9X-G.1 ÔÇö Soft Disagreement Flow Robustness Audit
+
+PATCH 7.9X-F.1 audit COMPLETE ÔÇö AUDIT ONLY
+

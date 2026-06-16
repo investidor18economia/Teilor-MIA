@@ -1,0 +1,295 @@
+﻿ÔöÇÔöÇ FASE 1 ÔÇö Mapa do fluxo ACKNOWLEDGEMENT ÔöÇÔöÇ
+
+1. Classifica├º├úo (lib/miaCognitiveRouter.js PATCH 7.7F / 7.9X-J)
+   ÔÇó detectsAcknowledgementSignal ÔåÆ signals.isAcknowledgement
+   ÔÇó COMPREHENSION_SUCCESS reusa isAcknowledgement (design 7.9X-H)
+   ÔÇó resolveTurnType ÔåÆ REACTION
+   ÔÇó Export: isAcknowledgementFamilyQuery(), hasAcknowledgementOpeningPrefix()
+
+2. Bridge / Contract
+   ÔÇó REACTION ÔåÆ legacy search/conversation; handler promove acknowledgement
+
+3. Routing (lib/miaRoutingDecisionContract.js PATCH 7.7F)
+   ÔÇó acknowledgement hold (~650): conversationAct=acknowledgement
+   ÔÇó hint acknowledgement_reply | acknowledgement_anchored
+
+4. Response Path (pages/api/chat-gpt4o.js PATCH 7.7I)
+   ÔÇó isAcknowledgement | family query | routing hold ÔåÆ limpa directReply
+   ÔÇó intent=acknowledgement ÔåÆ acknowledgement_flow
+
+5. Resposta final (lib/miaPrompt.js role acknowledgement_reply)
+   ÔÇó Curta/natural; continuidade sem reiniciar conversa
+
+PATCH 7.9X-J.1 ÔÇö ACKNOWLEDGEMENT Flow Robustness Audit (AUDIT ONLY)
+
+HTTP usage: false | SerpAPI risk: false | Production changes: NONE
+
+ÔöÇÔöÇ FASE 2 ÔÇö Amostra de leaks (router OK, downstream falhou) ÔöÇÔöÇ
+
+[pure/D/cold] "fechou ent├úo"
+  ROUTING: act=acknowledgement hint=acknowledgement_reply
+  PATH: decision_confirmation_flow
+  LEAKS: CONTRACT_LEAK
+
+[pure/D/anchored] "fechou ent├úo"
+  ROUTING: act=acknowledgement hint=acknowledgement_anchored
+  PATH: decision_confirmation_flow
+  LEAKS: CONTRACT_LEAK
+
+ÔöÇÔöÇ FASE 3 ÔÇö Suite positiva (92 cen├írios) ÔöÇÔöÇ
+
+Sub | Grp | Ctx | Frase | Rtr | Rtg | Ctr | Path | Final | Perc
+---------------------------------------------------------------------------------------------------------
+pure | A | cold    | ok                     | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | ok                     | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | okay                   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | okay                   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | certo                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | certo                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | blz                    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | blz                    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | beleza                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | beleza                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | t├í                     | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | t├í                     | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | ta                     | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | ta                     | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | t├í bom                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | t├í bom                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | ta bom                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | ta bom                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | A | cold    | show                   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | A | anchored | show                   | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | suave                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | suave                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | tranquilo              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | tranquilo              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | de boa                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | de boa                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | demorou                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | demorou                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | valeu                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | valeu                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | valeu mesmo            | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | valeu mesmo            | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | massa                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | massa                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | top                    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | top                    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | perfeito               | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | perfeito               | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | B | cold    | ├│timo                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | B | anchored | ├│timo                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | pode seguir            | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | pode seguir            | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | pode continuar         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | pode continuar         | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | continua               | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | continua               | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | segue                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | segue                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | manda                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | manda                  | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | manda ver              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | manda ver              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | prossiga               | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | prossiga               | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | vai                    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | vai                    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | t├í, manda              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | t├í, manda              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+cont | C | cold    | beleza, pode seguir    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+cont | C | anchored | beleza, pode seguir    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | D | cold    | fechado                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | D | anchored | fechado                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | D | cold    | fechou                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | D | anchored | fechou                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | D | cold    | fechado ent├úo          | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+pure | D | anchored | fechado ent├úo          | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+pure | D | cold    | fechou ent├úo           | Ô£ô | Ô£ô | Ô£ù | Ô£ù | Ô£ù | N├âO
+pure | D | anchored | fechou ent├úo           | Ô£ô | Ô£ô | Ô£ù | Ô£ù | Ô£ù | N├âO
+pure | D | cold    | combinado              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | D | anchored | combinado              | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | D | cold    | boa                    | Ô£ù | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+pure | D | anchored | boa                    | Ô£ù | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+pure | D | cold    | ├│timo, segue           | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+pure | D | anchored | ├│timo, segue           | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+pure | D | cold    | perfeito, continua     | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+pure | D | anchored | perfeito, continua     | Ô£ù | Ô£ù | Ô£ù | Ô£ù | Ô£ù | N├âO
+comp | E | cold    | entendi                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | entendi                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+comp | E | cold    | agora entendi          | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | agora entendi          | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+comp | E | cold    | saquei                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | saquei                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+comp | E | cold    | peguei                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | peguei                 | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+comp | E | cold    | agora fez sentido      | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | agora fez sentido      | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+comp | E | cold    | clareou                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | clareou                | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+comp | E | cold    | entendi a l├│gica       | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | entendi a l├│gica       | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+comp | E | cold    | saquei o racioc├¡nio    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | PARCIAL
+comp | E | anchored | saquei o racioc├¡nio    | Ô£ô | Ô£ô | Ô£ô | Ô£ô | Ô£ô | SIM
+
+ÔöÇÔöÇ FASE 3b ÔÇö ACK composto (62 cen├írios) ÔöÇÔöÇ
+
+  Ô£ô OK [F/cold] "ok, mas n├úo me convenceu" ÔåÆ expect=SOFT_DISAGREEMENT path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, mas n├úo me convenceu" ÔåÆ expect=SOFT_DISAGREEMENT path=soft_disagreement_flow
+  Ô£ô OK [F/cold] "beleza, mas fiquei com um p├® atr├ís" ÔåÆ expect=SOFT_DISAGREEMENT path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, mas fiquei com um p├® atr├ís" ÔåÆ expect=SOFT_DISAGREEMENT path=soft_disagreement_flow
+  Ô£ù LEAK [F/cold] "show, mas n├úo gostei muito" ÔåÆ expect=SOFT_DISAGREEMENT path=context_resolution_direct_reply_early_return
+  Ô£ù LEAK [F/anchored] "show, mas n├úo gostei muito" ÔåÆ expect=SOFT_DISAGREEMENT path=decision_context
+  Ô£ô OK [F/cold] "ok, mas voc├¬ tem certeza?" ÔåÆ expect=CONFIDENCE_CHALLENGE path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, mas voc├¬ tem certeza?" ÔåÆ expect=CONFIDENCE_CHALLENGE path=confidence_challenge_flow
+  Ô£ô OK [F/cold] "beleza, ainda recomenda esse?" ÔåÆ expect=CONFIDENCE_CHALLENGE path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, ainda recomenda esse?" ÔåÆ expect=CONFIDENCE_CHALLENGE path=confidence_challenge_flow
+  Ô£ô OK [F/cold] "show, voc├¬ manteria essa recomenda├º├úo?" ÔåÆ expect=CONFIDENCE_CHALLENGE path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "show, voc├¬ manteria essa recomenda├º├úo?" ÔåÆ expect=CONFIDENCE_CHALLENGE path=confidence_challenge_flow
+  Ô£ô OK [F/cold] "ok, mas a galera recomenda?" ÔåÆ expect=SOCIAL_VALIDATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, mas a galera recomenda?" ÔåÆ expect=SOCIAL_VALIDATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/cold] "beleza, o povo fala bem?" ÔåÆ expect=SOCIAL_VALIDATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, o povo fala bem?" ÔåÆ expect=SOCIAL_VALIDATION path=social_validation_flow
+  Ô£ô OK [F/cold] "show, quem comprou gostou?" ÔåÆ expect=SOCIAL_VALIDATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "show, quem comprou gostou?" ÔåÆ expect=SOCIAL_VALIDATION path=social_validation_flow
+  Ô£ô OK [F/cold] "ok, mas tenho medo de errar" ÔåÆ expect=ANTI_REGRET path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, mas tenho medo de errar" ÔåÆ expect=ANTI_REGRET path=anti_regret_flow
+  Ô£ù LEAK [F/cold] "beleza, n├úo quero me arrepender" ÔåÆ expect=ANTI_REGRET path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, n├úo quero me arrepender" ÔåÆ expect=ANTI_REGRET path=anti_regret_flow
+  Ô£ô OK [F/cold] "show, t├┤ cabreiro" ÔåÆ expect=ANTI_REGRET path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "show, t├┤ cabreiro" ÔåÆ expect=ANTI_REGRET path=anti_regret_flow
+  Ô£ô OK [F/cold] "ok, tem outro?" ÔåÆ expect=ALTERNATIVE_EXPLORATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, tem outro?" ÔåÆ expect=ALTERNATIVE_EXPLORATION path=alternative_exploration_flow
+  Ô£ù LEAK [F/cold] "beleza, mostra alternativas" ÔåÆ expect=ALTERNATIVE_EXPLORATION path=context_resolution_direct_reply_early_return
+  Ô£ù LEAK [F/anchored] "beleza, mostra alternativas" ÔåÆ expect=ALTERNATIVE_EXPLORATION path=context_hold
+  Ô£ô OK [F/cold] "show, quero ver op├º├Áes" ÔåÆ expect=ALTERNATIVE_EXPLORATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "show, quero ver op├º├Áes" ÔåÆ expect=ALTERNATIVE_EXPLORATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/cold] "ok, qual ficou em segundo?" ÔåÆ expect=SECOND_BEST_DISCOVERY path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, qual ficou em segundo?" ÔåÆ expect=SECOND_BEST_DISCOVERY path=second_best_discovery_flow
+  Ô£ô OK [F/cold] "beleza, tem plano B?" ÔåÆ expect=SECOND_BEST_DISCOVERY path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, tem plano B?" ÔåÆ expect=SECOND_BEST_DISCOVERY path=second_best_discovery_flow
+  Ô£ô OK [F/cold] "show, quem veio logo atr├ís?" ÔåÆ expect=SECOND_BEST_DISCOVERY path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "show, quem veio logo atr├ís?" ÔåÆ expect=SECOND_BEST_DISCOVERY path=second_best_discovery_flow
+  Ô£ô OK [F/cold] "ok, quero gastar menos" ÔåÆ expect=CONSTRAINT_CHANGE path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, quero gastar menos" ÔåÆ expect=CONSTRAINT_CHANGE path=constraint_change_flow
+  Ô£ô OK [F/cold] "beleza, agora c├ómera importa mais" ÔåÆ expect=CONSTRAINT_CHANGE path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, agora c├ómera importa mais" ÔåÆ expect=CONSTRAINT_CHANGE path=constraint_change_flow
+  Ô£ô OK [F/cold] "show, vou usar mais para fotos" ÔåÆ expect=CONSTRAINT_CHANGE path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "show, vou usar mais para fotos" ÔåÆ expect=CONSTRAINT_CHANGE path=constraint_change_flow
+  Ô£ô OK [F/cold] "ok, vou nele" ÔåÆ expect=DECISION_CONFIRMATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, vou nele" ÔåÆ expect=DECISION_CONFIRMATION path=decision_confirmation_flow
+  Ô£ô OK [F/cold] "beleza, acho que fechou" ÔåÆ expect=DECISION_CONFIRMATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, acho que fechou" ÔåÆ expect=DECISION_CONFIRMATION path=decision_confirmation_flow
+  Ô£ù LEAK [F/cold] "show, ent├úo ├® esse" ÔåÆ expect=DECISION_CONFIRMATION path=context_resolution_direct_reply_early_return
+  Ô£ù LEAK [F/anchored] "show, ent├úo ├® esse" ÔåÆ expect=DECISION_CONFIRMATION path=context_resolution_direct_reply_early_return
+  Ô£ù LEAK [F/cold] "fechou, vou pegar esse" ÔåÆ expect=DECISION_CONFIRMATION path=context_resolution_direct_reply_early_return
+  Ô£ù LEAK [F/anchored] "fechou, vou pegar esse" ÔåÆ expect=DECISION_CONFIRMATION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/cold] "ok, n├úo entendi" ÔåÆ expect=COMPREHENSION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "ok, n├úo entendi" ÔåÆ expect=COMPREHENSION path=comprehension_flow
+  Ô£ô OK [F/cold] "beleza, fiquei confuso" ÔåÆ expect=COMPREHENSION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "beleza, fiquei confuso" ÔåÆ expect=COMPREHENSION path=comprehension_flow
+  Ô£ô OK [F/cold] "show, simplifica pra mim" ÔåÆ expect=COMPREHENSION path=context_resolution_direct_reply_early_return
+  Ô£ô OK [F/anchored] "show, simplifica pra mim" ÔåÆ expect=COMPREHENSION path=comprehension_flow
+  Ô£ô OK [F/cold] "ok, quero comprar um produto" ÔåÆ expect=COMMERCIAL_SEARCH path=default_product_search
+  Ô£ô OK [F/anchored] "ok, quero comprar um produto" ÔåÆ expect=COMMERCIAL_SEARCH path=default_product_search
+  Ô£ô OK [F/cold] "beleza, procura um produto" ÔåÆ expect=COMMERCIAL_SEARCH path=default_product_search
+  Ô£ô OK [F/anchored] "beleza, procura um produto" ÔåÆ expect=COMMERCIAL_SEARCH path=default_product_search
+  Ô£ô OK [F/cold] "show, me recomenda um produto" ÔåÆ expect=COMMERCIAL_SEARCH path=default_product_search
+  Ô£ô OK [F/anchored] "show, me recomenda um produto" ÔåÆ expect=COMMERCIAL_SEARCH path=default_product_search
+
+ÔöÇÔöÇ FASE 3c ÔÇö Negativos / colis├Áes (25 cen├írios, anchored) ÔöÇÔöÇ
+
+  Ô£ô OK [GREET] "oi" ÔåÆ CONVERSATIONAL/greeting/greeting_flow
+  Ô£ô OK [GREET] "bom dia" ÔåÆ CONVERSATIONAL/greeting/greeting_flow
+  Ô£ô OK [GREET] "salve" ÔåÆ CONVERSATIONAL/greeting/greeting_flow
+  Ô£ô OK [GREET] "e a├¡" ÔåÆ CONVERSATIONAL/greeting/greeting_flow
+  Ô£ô OK [SD] "n├úo me convenceu" ÔåÆ OBJECTION/soft_disagreement/soft_disagreement_flow
+  Ô£ô OK [SD] "estou com um p├® atr├ís" ÔåÆ OBJECTION/soft_disagreement/soft_disagreement_flow
+  Ô£ô OK [CC] "voc├¬ tem certeza?" ÔåÆ EXPLANATION_REQUEST/confidence_challenge/confidence_challenge_flow
+  Ô£ô OK [CC] "ainda recomenda esse?" ÔåÆ EXPLANATION_REQUEST/confidence_challenge/confidence_challenge_flow
+  Ô£ô OK [SV] "a galera recomenda?" ÔåÆ EXPLANATION_REQUEST/social_validation/context_resolution_direct_reply_early_return
+  Ô£ô OK [SV] "o povo fala bem?" ÔåÆ EXPLANATION_REQUEST/social_validation/social_validation_flow
+  Ô£ô OK [AR] "tenho medo de errar" ÔåÆ OBJECTION/anti_regret/anti_regret_flow
+  Ô£ô OK [AR] "n├úo quero me arrepender" ÔåÆ OBJECTION/anti_regret/anti_regret_flow
+  Ô£ô OK [AE] "tem outro?" ÔåÆ ALTERNATIVE_REQUEST/alternative_exploration/alternative_exploration_flow
+  Ô£ô OK [AE] "mostra alternativas" ÔåÆ REFINEMENT/general_answer/context_hold
+  Ô£ô OK [SBD] "qual ficou em segundo?" ÔåÆ ALTERNATIVE_REQUEST/second_best_discovery/second_best_discovery_flow
+  Ô£ô OK [SBD] "plano B?" ÔåÆ ALTERNATIVE_REQUEST/second_best_discovery/second_best_discovery_flow
+  Ô£ô OK [CC2] "quero gastar menos" ÔåÆ PRIORITY_SHIFT/constraint_change/constraint_change_flow
+  Ô£ô OK [CC2] "agora c├ómera importa mais" ÔåÆ PRIORITY_SHIFT/constraint_change/constraint_change_flow
+  Ô£ô OK [DC] "vou nele" ÔåÆ FOLLOW_UP/decision_confirmation/decision_confirmation_flow
+  Ô£ô OK [DC] "acho que fechou" ÔåÆ FOLLOW_UP/decision_confirmation/decision_confirmation_flow
+  Ô£ô OK [COMP] "n├úo entendi" ÔåÆ EXPLANATION_REQUEST/comprehension/comprehension_flow
+  Ô£ô OK [COMP] "fiquei confuso" ÔåÆ EXPLANATION_REQUEST/comprehension/comprehension_flow
+  Ô£ô OK [SEARCH] "quero comprar um produto" ÔåÆ UNKNOWN/explicit_new_search/default_product_search
+  Ô£ô OK [SEARCH] "procura um produto" ÔåÆ UNKNOWN/explicit_new_search/default_product_search
+  Ô£ô OK [SEARCH] "me recomenda um produto" ÔåÆ UNKNOWN/explicit_new_search/default_product_search
+
+ÔöÇÔöÇ FASE 4 ÔÇö Taxa por camada (positivos) ÔöÇÔöÇ
+
+Cen├írios positivos: 92
+Router:           84/92 (91.3%)
+Routing:          86/92 (93.5%)
+Bridge/Contract:  84/92 (91.3%)
+Response Path:    84/92 (91.3%)
+Resposta Final:   84/92 (91.3%)
+Percep├º├úo SIM:    42/92 (45.7%)
+Percep├º├úo PARCIAL:42/92 (45.7%)
+Percep├º├úo N├âO:    8/92 (8.7%)
+
+ÔöÇÔöÇ M├®trica separada: ACK puro ÔöÇÔöÇ
+
+  RouterÔåÆFull: 48/56 (85.7%)
+
+ÔöÇÔöÇ M├®trica separada: ACK continuidade ÔöÇÔöÇ
+
+  RouterÔåÆFull: 20/20 (100.0%)
+
+ÔöÇÔöÇ M├®trica separada: COMPREHENSION_SUCCESS via ACK ÔöÇÔöÇ
+
+  RouterÔåÆFull: 16/16 (100.0%)
+
+ÔöÇÔöÇ M├®trica separada: ACK composto ÔöÇÔöÇ
+
+  Preserva├º├úo inten├º├úo: 53/62 (85.5%)
+
+ÔöÇÔöÇ M├®trica separada: negativos / colis├Áes ÔöÇÔöÇ
+
+  Clean: 25/25 (100.0%)
+
+ÔöÇÔöÇ Vazamentos por tipo ÔöÇÔöÇ
+
+  ROUTER_LEAK: 17
+  CONTRACT_LEAK: 2
+  TEST_EXPECTATION_LEAK: 1
+
+ÔöÇÔöÇ Causa raiz (padr├Áes ├║nicos ÔÇö positivos) ÔöÇÔöÇ
+
+  ROUTER_LEAK
+    isAcknowledgement=false turnType=NEW_SEARCH
+    Frequ├¬ncia: 3 | Ex.: [cold] "fechado ent├úo"; [cold] "├│timo, segue"
+
+  ROUTER_LEAK
+    isAcknowledgement=false turnType=UNKNOWN
+    Frequ├¬ncia: 3 | Ex.: [anchored] "fechado ent├úo"; [anchored] "├│timo, segue"
+
+  CONTRACT_LEAK
+    Bridge intent=undefined path=decision_confirmation_flow
+    Frequ├¬ncia: 2 | Ex.: [cold] "fechou ent├úo"; [anchored] "fechou ent├úo"
+
+  ROUTER_LEAK
+    isAcknowledgement=true turnType=REACTION
+    Frequ├¬ncia: 2 | Ex.: [cold] "boa"; [anchored] "boa"
+
+ÔöÇÔöÇ Veredito ÔöÇÔöÇ
+
+B) ACKNOWLEDGEMENT POSSUI GAP FULL STACK
+   ACK composto engoliu inten├º├úo em 9 caso(s).
+
+ÔöÇÔöÇ Recomenda├º├úo (audit-only) ÔöÇÔöÇ
+
+Seguir camada dominante nos leaks acima.
+
+PATCH 7.9X-J.1 audit COMPLETE ÔÇö AUDIT ONLY
+

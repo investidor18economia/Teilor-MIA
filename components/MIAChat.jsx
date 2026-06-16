@@ -24,6 +24,7 @@ import {
   getOpeningTypingDelayMs,
   resolveStoredSessionOpening
 } from "../lib/miaOpeningSystem";
+import { getCognitiveLoadingFallbackState } from "../lib/miaCognitiveLoading.js";
 import {
   buildEstimatedSavingsMessage,
   markPremiumSavingsShown,
@@ -134,7 +135,8 @@ export default function MIAChat() {
   const [favorites, setFavorites] = useState([]);
   const [watches, setWatches] = useState([]);
   const [revealText, setRevealText] = useState("");
-  const [currentLoadingPhrase, setCurrentLoadingPhrase] = useState(0);
+  const [cognitiveLoading, setCognitiveLoading] = useState(() => getCognitiveLoadingFallbackState());
+  const cognitiveLoadingAbortRef = useRef(null);
   const [isListening, setIsListening] = useState(false);
   const [pendingAction, setPendingAction] = useState(null);
   const [selectedImageBase64, setSelectedImageBase64] = useState("");
@@ -1116,18 +1118,45 @@ useEffect(() => {
     startRecognition();
   }
 
-  const loadingPhrases = [
-    "A MIA está analisando",
-    "Avaliando as opções",
-    "Pensando na melhor resposta",
-    "Conferindo o que faz sentido pra você",
-    "Montando a análise com calma",
-    "Organizando o contexto da sua pergunta",
-    "Considerando custo-benefício e uso",
-    "Refinando a recomendação",
-    "Checando os detalhes importantes",
-    "Preparando uma resposta mais clara"
-  ];
+  function resetCognitiveLoading(seed = "") {
+    setCognitiveLoading(getCognitiveLoadingFallbackState(seed));
+  }
+
+  function abortCognitiveLoadingPreview() {
+    if (cognitiveLoadingAbortRef.current) {
+      cognitiveLoadingAbortRef.current.abort();
+      cognitiveLoadingAbortRef.current = null;
+    }
+  }
+
+  async function refreshCognitiveLoadingPreview(text, sessionCtx, requestId) {
+    abortCognitiveLoadingPreview();
+    const controller = new AbortController();
+    cognitiveLoadingAbortRef.current = controller;
+
+    try {
+      const resp = await fetch("/api/mia-cognitive-loading", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": MIA_API_KEY,
+        },
+        body: JSON.stringify({
+          text: text || "",
+          session_context: buildApiSessionContext(sessionCtx),
+        }),
+        signal: controller.signal,
+      });
+      if (!resp.ok) return;
+      const data = await resp.json();
+      if (requestIdRef.current !== requestId) return;
+      if (data?.description) {
+        setCognitiveLoading(data);
+      }
+    } catch (err) {
+      if (err?.name === "AbortError") return;
+    }
+  }
 
   const followUps = [
     "Quer comparar com outro modelo? 💜",
@@ -1600,15 +1629,6 @@ useEffect(() => {
   }, []);
 
   useEffect(() => {
-    if (typing) {
-      const interval = setInterval(() => {
-        setCurrentLoadingPhrase((prev) => (prev + 1) % loadingPhrases.length);
-      }, 2500);
-      return () => clearInterval(interval);
-    }
-  }, [typing]);
-
-  useEffect(() => {
     const behavior = typing || loading || imageAnalysisLoading ? "auto" : "smooth";
     scrollToCurrentMiaFocus(behavior);
   }, [history, typing, loading, revealText, imageAnalysisLoading]);
@@ -1951,6 +1971,8 @@ useEffect(() => {
 
         setLoading(true);
         setTyping(true);
+        resetCognitiveLoading(pergunta);
+        refreshCognitiveLoadingPreview(pergunta, sessionContext, currentRequestId);
 
         // ✅ ETAPA A: histórico para contexto
         const messagesForApi = buildMessagesForApi(history, pergunta);
@@ -2047,6 +2069,7 @@ useEffect(() => {
             return nh;
           });
         } finally {
+          abortCognitiveLoadingPreview();
           setLoading(false);
         }
       };
@@ -2092,6 +2115,8 @@ useEffect(() => {
     ]);
     setLoading(true);
     setTyping(true);
+    resetCognitiveLoading(pergunta);
+    refreshCognitiveLoadingPreview(pergunta, sessionContext, currentRequestId);
 
     // ✅ ETAPA A: histórico para contexto
     const messagesForApi = buildMessagesForApi(history, pergunta);
@@ -2191,6 +2216,7 @@ const resp = await fetch("/api/chat-gpt4o", {
         return newHistory;
       });
     } finally {
+      abortCognitiveLoadingPreview();
       setLoading(false);
     }
   }
@@ -2833,7 +2859,7 @@ function detectPriorityFromText(text = "") {
                     <p className="mia-loading-text">
                       {item.loadingKind === "image-analysis"
                         ? "MIΛ está analisando sua imagem..."
-                        : loadingPhrases[currentLoadingPhrase]}
+                        : cognitiveLoading?.description || getCognitiveLoadingFallbackState().description}
                       <span className="mia-loading-dots" aria-hidden="true">
                         <span className="typing-dot" style={{ animationDelay: "0s" }}></span>
                         <span className="typing-dot" style={{ animationDelay: "0.15s" }}></span>
@@ -2952,7 +2978,9 @@ function detectPriorityFromText(text = "") {
   disabled={composerBusy || (!msg.trim() && !selectedImageBase64)}
           className={`send-btn${loading ? " send-btn--loading" : ""}`}
         >
-          {loading ? "A MIA está analisando..." : "Perguntar para a MIA"}
+          {loading
+            ? cognitiveLoading?.title || getCognitiveLoadingFallbackState().title
+            : "Perguntar para a MIA"}
         </button>
       </div>
       </div>

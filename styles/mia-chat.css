@@ -801,9 +801,9 @@ body.mia-hub-panel-open {
   font-weight: 650;
   letter-spacing: 0.65px;
   text-transform: uppercase;
-  color: #E8C040;
-  background: rgba(212,175,95,0.06);
-  border: 1px solid rgba(212,175,95,0.18);
+  color: #E8D8B5;
+  background: rgba(220, 199, 154, 0.08);
+  border: 1px solid rgba(220, 199, 154, 0.28);
 }
 .mia-offer-card-main {
   display: flex;
@@ -2133,8 +2133,11 @@ body.mia-hub-panel-open {
   letter-spacing: 0.9px;
 }
 .mia-msg-label--pick {
-  color: #00C6FF;
-  text-shadow: 0 0 10px rgba(0, 198, 255, 0.15);
+  color: #E8D8B5;
+  text-shadow: none;
+}
+.mia-msg-label--pick .mia-wordmark-text {
+  color: #E8D8B5;
 }
 .mia-msg-label-prefix {
   font-size: inherit;

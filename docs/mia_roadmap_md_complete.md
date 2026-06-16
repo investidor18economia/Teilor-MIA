@@ -1004,6 +1004,94 @@ Evaluate:
 
 ---
 
+# PATCH 7.7G — Conversational Family Closure Standard
+
+### Status
+
+```txt
+ACTIVE — OFFICIAL CLOSURE RULE
+```
+
+### Objective
+
+Define when a conversational semantic family is truly closed end-to-end — not only when Router and Routing pass locally.
+
+A family is **NOT closed** if the user still receives an institutional/generic fallback such as:
+
+```txt
+Posso te ajudar com compras, comparação de produtos e decisão de custo-benefício.
+Me fala o produto que você quer analisar ou buscar.
+```
+
+### Full-stack closure cycle
+
+```txt
+Router
+↓
+Routing
+↓
+Contract
+↓
+Verbalizer / Response Builder
+↓
+Resposta final percebida pelo usuário
+```
+
+### Official closure criteria
+
+A conversational semantic family may be marked **FULLY CLOSED** only when all are true:
+
+1. Router classifies the human intent correctly.
+2. Routing does not open undue `new_search`.
+3. Contract does not force an undue commercial path.
+4. Anchor/winner are preserved when context exists.
+5. Verbalizer/response builder uses a path compatible with the intent.
+6. Final response is natural, short, and coherent with the intent.
+7. Final response does **not** look like generic institutional fallback.
+8. Commercial guards still work.
+9. Local regression audits remain green.
+10. When needed, at least one real or semi-real test validates user perception.
+
+### Closure statuses
+
+```txt
+FULLY_CLOSED
+TECHNICALLY_CLOSED_BUT_RESPONSE_INCOMPLETE
+NOT_CLOSED
+```
+
+`TECHNICALLY_CLOSED_BUT_RESPONSE_INCOMPLETE` means Router + Routing (+ Contract when applicable) are correct, but the final response path still leaks generic fallback or wrong verbalizer behavior.
+
+### Audit tooling
+
+```bash
+node scripts/test-mia-conversational-family-closure-standard.js
+```
+
+Shared detector:
+
+```txt
+lib/miaConversationalFamilyClosureStandard.js
+```
+
+Generic fallback detection is **conversational**, not product-specific. It flags institutional welcome patterns, not categories or SKUs.
+
+### Initial validated family
+
+```txt
+GREETING — first reference family for closure standard
+```
+
+Next expected patch after technical Router/Routing closure:
+
+```txt
+7.7H — Response path / Contract wiring for GREETING
+```
+
+Clear `contextResolution.directReply` or bypass institutional early return when `signals.isGreeting=true`, so `greeting_flow` can run before generic directReply return.
+
+---
+
 # FASE 5 — EXPANSÃO DA MIA
 
 # Strategic Objective
