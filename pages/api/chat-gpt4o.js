@@ -36,9 +36,12 @@ import { deriveConversationalToneProfile } from "../../lib/miaConversationalTone
 import { applyToneComplianceGuard } from "../../lib/miaToneComplianceGuard";
 import {
   hasUsableDataLayerContent,
+  looksLikeLegacySearchNarrativeReply,
   resolveCommercialOfferExplanation,
   shouldForceCommercialProductExplanation,
 } from "../../lib/miaProductExplanationBuilder.js";
+import { isEvidenceInjectionUseful } from "../../lib/miaDataLayerEvidenceInjectionLayer.js";
+import { INSIGHT_MARKER_PATTERN } from "../../lib/miaExpertInsightGenerationLayer.js";
 import {
   buildSpecialistDecisionExplanation,
   shouldApplySpecialistDecisionExplanation,
@@ -71,8 +74,11 @@ import {
 } from "../../lib/miaConversationalClosingEngine.js";
 import {
   finalizeReplyWithTradeoffVisualEmphasis,
+  hasTradeoffMarkers,
+  hasVisualTradeoffEmphasis,
   shouldApplyTradeoffVisualEmphasis,
 } from "../../lib/miaTradeoffVisualEmphasisLayer.js";
+import { finalizeSpecialistPresentationRecovery, finalizeSpecialistWireContractPreservation } from "../../lib/miaSpecialistPresentationContract.js";
 import { mapCognitiveTurnToLegacyIntent, buildCognitiveBridgeAudit, buildCognitiveBridgeImpactAudit, guardContextActionWithCognitiveBridge, buildRoutingModeAlignmentAudit, buildUnifiedCognitiveRouterAudit } from "../../lib/miaCognitiveBridge";
 import { buildFollowUpUnderstandingAudit } from "../../lib/miaFollowUpUnderstandingAudit";
 import { applyCognitiveAuthorityToRoutingDecision } from "../../lib/miaCognitiveAuthority";
@@ -24446,6 +24452,45 @@ function buildCommercialOnlyFallbackReply(product = {}, query = "") {
   return resolveCommercialOfferExplanation(product, query, resolveCommercialExplanationOptions(product));
 }
 
+function normalizeCommercialReplyFingerprint(text = "") {
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function isSameLegacyCommercialRendererReply(reply = "", legacyReply = "") {
+  const current = normalizeCommercialReplyFingerprint(reply);
+  const legacy = normalizeCommercialReplyFingerprint(legacyReply);
+  if (!current || !legacy) return false;
+  return current === legacy;
+}
+
+function resolveCommercialFinalRendererType({
+  specialistApplied = false,
+  commercialEnrichApplied = false,
+  safeReply = "",
+  legacySafeReply = "",
+} = {}) {
+  if (
+    specialistApplied &&
+    safeReply &&
+    !isSameLegacyCommercialRendererReply(safeReply, legacySafeReply)
+  ) {
+    return "specialist";
+  }
+  if (commercialEnrichApplied) {
+    return "legacy_enriched";
+  }
+  if (
+    looksLikeLegacySearchNarrativeReply(safeReply) ||
+    isSameLegacyCommercialRendererReply(safeReply, legacySafeReply)
+  ) {
+    return "legacy";
+  }
+  return specialistApplied ? "specialist" : "commercial_fallback";
+}
+
 function enrichOfferReplyWithProductExplanation(reply = "", product = {}, query = "", options = {}) {
   if (!product?.product_name) return reply;
 
@@ -25278,11 +25323,16 @@ function resolveContextResponsePath(routingDecision = {}) {
   return "context_decision_no_search";
 }
 
-function guardMiaReplyForTone(reply, toneProfile) {
+function guardMiaReplyForTone(reply, toneProfile, specialistWireOptions = {}) {
   if (!reply || !toneProfile?.toneProfile) {
     return { response: String(reply || ""), violations: [], corrected: false };
   }
-  return applyToneComplianceGuard({ response: String(reply), toneProfile });
+  return applyToneComplianceGuard({
+    response: String(reply),
+    toneProfile,
+    preserveSpecialistPresentation: !!specialistWireOptions.preserveSpecialistPresentation,
+    specialistPresentation: specialistWireOptions.specialistPresentation || null,
+  });
 }
 
 function respondWithContract(
@@ -25292,7 +25342,14 @@ function respondWithContract(
   payload,
   responsePath,
   extraTrace = {},
-  { sessionBefore = null, contractApply = null, fallbackSession = null, toneProfile = null } = {}
+  {
+    sessionBefore = null,
+    contractApply = null,
+    fallbackSession = null,
+    toneProfile = null,
+    specialistPresentation = null,
+    preserveSpecialistPresentation = false,
+  } = {}
 ) {
   const violation = checkContractViolation(responsePath, routingDecision);
 
@@ -25326,8 +25383,15 @@ function respondWithContract(
   );
   body = safety.payload;
 
+  const specialistWireActive =
+    preserveSpecialistPresentation && specialistPresentation?.tradeoff?.gains?.length;
+  const replyBeforeTone = body.reply ? String(body.reply) : "";
+
   if (body.reply && toneProfile) {
-    const toneGuard = guardMiaReplyForTone(body.reply, toneProfile);
+    const toneGuard = guardMiaReplyForTone(body.reply, toneProfile, {
+      preserveSpecialistPresentation: specialistWireActive,
+      specialistPresentation,
+    });
     if (toneGuard.corrected || (toneGuard.violations && toneGuard.violations.length)) {
       body = { ...body, reply: toneGuard.response };
       pipelineTracer.patch({
@@ -25335,6 +25399,27 @@ function respondWithContract(
           violations: toneGuard.violations,
           corrected: toneGuard.corrected,
           remainingViolations: toneGuard.remainingViolations || [],
+          specialistPreserved: toneGuard.specialistPreserved === true,
+        },
+      });
+    }
+  }
+
+  if (specialistWireActive && body.reply) {
+    const wirePreservation = finalizeSpecialistWireContractPreservation({
+      replyBeforeTone,
+      reply: body.reply,
+      presentation: specialistPresentation,
+    });
+
+    if (wirePreservation.ok && wirePreservation.text) {
+      body = { ...body, reply: wirePreservation.text };
+      pipelineTracer.patch({
+        specialist_wire_contract: {
+          applied: !!wirePreservation.applied,
+          recoveredFrom: wirePreservation.recoveredFrom || null,
+          guard: wirePreservation.guard || null,
+          error: wirePreservation.error || null,
         },
       });
     }
@@ -31267,19 +31352,28 @@ if (Array.isArray(products) && products.length > 0) {
     safeReply = `O ${verbalName} aparece como a opção mais alinhada para essa busca.`;
   }
 
+  const legacySafeReply = safeReply;
+  let specialistDecisionExplanationAttempted = false;
+  let specialistDecisionExplanationOk = false;
+  let specialistDecisionExplanationSkipReason = null;
   let specialistDecisionExplanationApplied = false;
   let specialistExplanationParagraphs = [];
+  let specialistPresentation = null;
+  let specialistSensationBridge = null;
+  let specialistAuthorityBridge = null;
+  let commercialEnrichApplied = false;
+  const hasCommercialWinner = !!cleanTitle(selectedBestProduct?.product_name || "");
 
-  if (
-    selectedBestProduct?.product_name &&
-    shouldApplySpecialistDecisionExplanation({
+  if (hasCommercialWinner) {
+    specialistDecisionExplanationAttempted = true;
+    const specialistGateAllowed = shouldApplySpecialistDecisionExplanation({
       responsePath: "return_seguro",
       commercialOfferReset,
       sessionContext,
       routingDecision,
       query: resolvedQuery,
-    })
-  ) {
+    });
+
     const specialistExplanation = buildSpecialistDecisionExplanation({
       query: resolvedQuery,
       budget: extractBudget(resolvedQuery) ?? extractBudget(query),
@@ -31292,16 +31386,36 @@ if (Array.isArray(products) && products.length > 0) {
       responsePath: "return_seguro",
       sessionContext,
       intent,
+      routingDecision,
+      commercialOfferReset,
     });
 
-    if (specialistExplanation.ok && specialistExplanation.text) {
+    specialistDecisionExplanationOk = !!specialistExplanation.ok;
+
+    if (!specialistExplanation.ok || !specialistExplanation.text) {
+      specialistDecisionExplanationSkipReason =
+        specialistExplanation.error || "build_failed";
+    } else if (
+      isSameLegacyCommercialRendererReply(specialistExplanation.text, legacySafeReply)
+    ) {
+      specialistDecisionExplanationSkipReason = "legacy_fingerprint_after_build";
+    } else {
       safeReply = specialistExplanation.text;
       specialistExplanationParagraphs = specialistExplanation.paragraphs || [];
+      specialistPresentation = specialistExplanation.presentation || null;
+      specialistSensationBridge = specialistExplanation.sensationBridge || null;
+      specialistAuthorityBridge = specialistExplanation.authorityBridge || null;
       specialistDecisionExplanationApplied = true;
+      specialistDecisionExplanationSkipReason = specialistGateAllowed
+        ? null
+        : "applied_bypassing_gate_hold";
     }
+  } else {
+    specialistDecisionExplanationSkipReason = "no_winner";
   }
 
-  if (selectedBestProduct?.product_name && !specialistDecisionExplanationApplied) {
+  if (hasCommercialWinner && !specialistDecisionExplanationApplied) {
+    const replyBeforeEnrich = safeReply;
     safeReply = enrichOfferReplyWithProductExplanation(
       safeReply,
       selectedBestProduct,
@@ -31312,6 +31426,9 @@ if (Array.isArray(products) && products.length > 0) {
         previousQuery: sessionContext.lastQuery || "",
       }
     );
+    commercialEnrichApplied =
+      normalizeCommercialReplyFingerprint(safeReply) !==
+      normalizeCommercialReplyFingerprint(replyBeforeEnrich);
   }
 
   let intentDiscoveryApplied = false;
@@ -31531,15 +31648,21 @@ if (Array.isArray(products) && products.length > 0) {
       responsePath: "return_seguro",
       sessionContext,
       routingDecision,
+      presentation: specialistPresentation,
+      closingAuthority: specialistAuthorityBridge?.closingAuthority || null,
     });
 
     if (closingResult.ok && closingResult.text) {
       safeReply = closingResult.text;
       conversationalClosingApplied = !!closingResult.applied;
+      if (closingResult.presentation) {
+        specialistPresentation = closingResult.presentation;
+      }
     }
   }
 
   let tradeoffVisualEmphasisApplied = false;
+  let specialistPresentationRecoveryApplied = false;
 
   if (
     specialistDecisionExplanationApplied &&
@@ -31548,6 +31671,7 @@ if (Array.isArray(products) && products.length > 0) {
       responsePath: "return_seguro",
       intent,
       sessionContext,
+      presentation: specialistPresentation,
     })
   ) {
     const tradeoffVisualResult = finalizeReplyWithTradeoffVisualEmphasis({
@@ -31566,11 +31690,30 @@ if (Array.isArray(products) && products.length > 0) {
       searchCognition,
       responsePath: "return_seguro",
       sessionContext,
+      presentation: specialistPresentation,
     });
 
     if (tradeoffVisualResult.ok && tradeoffVisualResult.text) {
       safeReply = tradeoffVisualResult.text;
       tradeoffVisualEmphasisApplied = !!tradeoffVisualResult.applied;
+      if (tradeoffVisualResult.presentation) {
+        specialistPresentation = tradeoffVisualResult.presentation;
+      }
+    }
+  }
+
+  if (specialistDecisionExplanationApplied && specialistPresentation) {
+    const presentationRecovery = finalizeSpecialistPresentationRecovery({
+      reply: safeReply,
+      presentation: specialistPresentation,
+    });
+
+    if (presentationRecovery.ok && presentationRecovery.text) {
+      safeReply = presentationRecovery.text;
+      specialistPresentationRecoveryApplied = !!presentationRecovery.applied;
+      if (presentationRecovery.presentation) {
+        specialistPresentation = presentationRecovery.presentation;
+      }
     }
   }
 
@@ -31590,6 +31733,7 @@ if (Array.isArray(products) && products.length > 0) {
     repetitionCompressionApplied,
     conversationalClosingApplied,
     tradeoffVisualEmphasisApplied,
+    specialistPresentationRecoveryApplied,
   });
 
   const selectedIdentity = resolveMiaProductIdentity(selectedTitle);
@@ -31661,6 +31805,15 @@ if (Array.isArray(products) && products.length > 0) {
     ? cleanTitle(proposedReturnBest.product_name || "")
     : sessionContext.lastProductMentioned || "";
 
+  const finalRendererType = resolveCommercialFinalRendererType({
+    specialistApplied: specialistDecisionExplanationApplied,
+    commercialEnrichApplied,
+    safeReply,
+    legacySafeReply,
+  });
+  const dataLayerEvidenceApplied = isEvidenceInjectionUseful(safeReply);
+  const expertInsightApplied = INSIGHT_MARKER_PATTERN.test(safeReply);
+
   return respondWithContract(
     res,
     pipelineTracer,
@@ -31706,7 +31859,29 @@ if (Array.isArray(products) && products.length > 0) {
             rankingProfile: searchCognition.source?.rankingProfile || "",
             rankingBreakdown: searchCognition.source?.rankingBreakdown || null
           },
+          specialistDecisionExplanationAttempted,
           specialistDecisionExplanationApplied,
+          specialistDecisionExplanationOk,
+          specialistDecisionExplanationSkipReason,
+          dataLayerEvidenceApplied,
+          expertInsightApplied,
+          cognitiveVariationApplied,
+          argumentMemoryApplied,
+          specialistNarrativeApplied,
+          repetitionCompressionApplied,
+          conversationalClosingApplied,
+          tradeoffVisualEmphasisApplied,
+          specialistPresentationRecoveryApplied,
+          specialistPresentation: specialistPresentation
+            ? {
+                version: specialistPresentation.version || "",
+                gainCount: specialistPresentation.tradeoff?.gains?.length || 0,
+                sacrificeCount: specialistPresentation.tradeoff?.sacrifices?.length || 0,
+                hasClosing: !!specialistPresentation.closing,
+                blockCount: specialistPresentation.blocks?.length || 0,
+              }
+            : null,
+          finalRendererType,
           intentDiscoveryApplied,
           intentDiscoveryProbe: intentDiscoveryResult.meta?.probe || "",
         },
@@ -31761,6 +31936,9 @@ if (Array.isArray(products) && products.length > 0) {
           incomingLastBest: sessionContext.lastBestProduct
         },
         toneProfile: conversationalToneProfile,
+        specialistPresentation,
+        preserveSpecialistPresentation:
+          !!(specialistDecisionExplanationApplied && specialistPresentation?.tradeoff?.gains?.length),
       }
     );
 }

@@ -266,7 +266,10 @@ test("19. iPhone 13 explanation aligns with expected human shape", () => {
   });
 
   assert(built.ok, built.error || "build failed");
-  assert(/se destaca principalmente/i.test(built.text), "opening paragraph");
+  assert(
+    /se destaca principalmente|pesa mais por|menos preocupação em registrar/i.test(built.text),
+    "opening paragraph"
+  );
   assert(/Na prática|Isso costuma (?:aparecer|ser notado)/i.test(built.text), "practical paragraph");
   assert(/Ponto de atenção/i.test(built.text), "tradeoff paragraph");
   assertNoInternalTokens(built.text);

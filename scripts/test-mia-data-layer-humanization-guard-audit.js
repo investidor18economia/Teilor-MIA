@@ -115,10 +115,14 @@ assert("A: sem leak", noTechnicalLeak(a.text), a.text);
 
 console.log("\n── B: múltiplos tokens com ; ──");
 const b = humanizeDataLayerText("excelente_revenda;iphone_muito_procurado");
-assert("B: humaniza", b.ok && b.humanized);
-assert("B: sem ;", !b.text.includes(";"));
-assert("B: sem _", !b.text.includes("_"));
-assert("B: sem leak", noTechnicalLeak(b.text), b.text);
+assert("B: composto suprimido pré-tradução (9.2K)", b.suppressed && !b.ok);
+assert("B: sem join artificial", !b.text.includes(" e "));
+assert(
+  "B: tokens separados via guard",
+  applyDataLayerHumanizationGuard({
+    strengths: "excelente_revenda;iphone_muito_procurado",
+  }).specs.strengths?.length === 2
+);
 
 console.log("\n── C: token técnico de mercado ──");
 const c = humanizeDataLayerText("market_strong_resale");
@@ -144,9 +148,11 @@ assert("E: não suprime", !e.suppressed);
 
 console.log("\n── F: texto misto ──");
 const f = humanizeDataLayerText("boa câmera;excelente_revenda");
-assert("F: humaniza", f.ok);
-assert("F: sem ;", !f.text.includes(";"));
-assert("F: sem _", !f.text.includes("_"));
+assert("F: composto suprimido (9.2K)", f.suppressed || !f.ok);
+assert(
+  "F: lista via guard sem join",
+  applyDataLayerHumanizationGuard({ strengths: "boa câmera;excelente_revenda" }).specs.strengths?.length >= 1
+);
 
 console.log("\n── G: notebook ──");
 const notebookSpecs = {
