@@ -149,6 +149,10 @@ import {
   buildCommercialFollowUpDeterministicReply,
 } from "../../lib/miaCommercialFollowUpContinuity.js";
 import {
+  applyMergedConstraintsToSessionContext,
+  constraintRefinementToTrace,
+} from "../../lib/miaCommercialConstraintRefinement.js";
+import {
   buildCognitiveRoutingSignalFromTurn,
   intentRecognitionToTrace,
   recognizeMiaIntent,
@@ -30172,6 +30176,71 @@ if (process.env.MIA_DEBUG === "true") {
       commercialEntryGateTracker
     ),
   });
+}
+// ─────────────────────────────────────────────────────────────
+
+// PATCH 11B.3 — Constraint refinement continuity (RF-01)
+const contextualFollowUpEarly = intentRecognitionEarly?.contextualFollowUp || null;
+const constraintRefinementEarly = contextualFollowUpEarly?.constraintRefinement || null;
+
+if (constraintRefinementEarly?.mergedConstraints) {
+  sessionContext = applyMergedConstraintsToSessionContext(
+    sessionContext,
+    constraintRefinementEarly
+  );
+}
+if (constraintRefinementEarly?.selectedProduct?.product_name) {
+  sessionContext = {
+    ...sessionContext,
+    lastBestProduct: constraintRefinementEarly.selectedProduct,
+    lastProductMentioned: constraintRefinementEarly.selectedProduct.product_name,
+  };
+  if (
+    Array.isArray(constraintRefinementEarly.filteredRanking) &&
+    constraintRefinementEarly.filteredRanking.length
+  ) {
+    sessionContext.lastRankingSnapshot = constraintRefinementEarly.filteredRanking;
+    sessionContext.lastProducts = constraintRefinementEarly.filteredRanking;
+  }
+}
+
+const constraintRefinementReplyEarly = buildCommercialFollowUpDeterministicReply(
+  contextualFollowUpEarly,
+  sessionContext
+);
+
+if (constraintRefinementReplyEarly?.reply) {
+  const shouldReturnConstraintRefinementEarly =
+    !!constraintRefinementEarly?.requiresClarification ||
+    (contextualFollowUpEarly?.followUpType === "constraint_refinement" &&
+      constraintRefinementEarly?.detected &&
+      !constraintRefinementEarly?.providerRequired);
+
+  if (shouldReturnConstraintRefinementEarly) {
+    if (process.env.MIA_DEBUG === "true") {
+      pipelineTracer.patch({
+        constraint_refinement: constraintRefinementToTrace(constraintRefinementEarly),
+      });
+    }
+    return sendRuntimeResponse(
+      res,
+      pipelineTracer,
+      {
+        reply: guardMiaReplyForTone(
+          constraintRefinementReplyEarly.reply,
+          conversationalToneProfile
+        ).response,
+        prices: constraintRefinementReplyEarly.prices || [],
+        session_context: sessionContext,
+      },
+      constraintRefinementReplyEarly.responsePath || "constraint_refinement_early",
+      {
+        routingDecision,
+        semanticGovernance: semanticGovernanceRef,
+        finalization: { required: true, applied: true, validatorApplied: true },
+      }
+    );
+  }
 }
 // ─────────────────────────────────────────────────────────────
 
