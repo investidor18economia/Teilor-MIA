@@ -94,13 +94,27 @@ const mixedCases = [
 ];
 for (const text of mixedCases) {
   const r = await apiCall(text, { conversationId: `11b3-mixed-${text.slice(0, 12)}` });
-  record(`mixed: ${text.slice(0, 40)}`, r.m.http200 && (r.m.commercialPermission === "mixed" || r.m.commercialPermission === "allow") && !r.m.replyGenericSocial, r.m);
+  record(
+    `mixed: ${text.slice(0, 40)}`,
+    r.m.http200 &&
+      r.m.replyLen > 40 &&
+      !r.m.replyGenericSocial &&
+      !/^entendo[.!]?$/i.test(r.m.reply),
+    r.m
+  );
 }
 
 const noCtxRefinements = ["tem um mais barato?", "sem iPhone", "quero mais bateria"];
 for (const text of noCtxRefinements) {
   const r = await apiCall(text, { conversationId: `11b3-nctx-${text.slice(0, 8)}` });
-  record(`no ctx: ${text}`, r.m.http200 && r.m.pricesCount === 0 && r.m.paidExternal === 0, r.m);
+  record(
+    `no ctx: ${text}`,
+    r.m.http200 &&
+      r.m.pricesCount === 0 &&
+      r.m.paidExternal === 0 &&
+      (r.m.reply.includes("?") || /qual|refer|orçamento|produto|recomenda/i.test(r.m.reply)),
+    r.m
+  );
 }
 
 const convId = `11b3-refine-${Date.now()}`;
@@ -114,7 +128,14 @@ const refinementFlow = [
 for (const text of refinementFlow) {
   const r = await apiCall(text, { conversationId: convId, sessionContext: session });
   session = r.data?.session_context || session;
-  record(`flow: ${text}`, r.m.http200 && r.m.replyLen > 20 && !r.m.replyGenericSocial, r.m);
+  record(
+    `flow: ${text}`,
+    r.m.http200 &&
+      r.m.replyLen > 20 &&
+      !r.m.replyGenericSocial &&
+      (text !== "sem iPhone" || !/iPhone 13|iPhone 11/i.test(r.m.reply)),
+    r.m
+  );
 }
 
 const passed = results.filter((r) => r.pass).length;
