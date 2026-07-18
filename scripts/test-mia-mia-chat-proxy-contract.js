@@ -104,7 +104,7 @@ function expectEqual(label, actual, expected) {
   expectEqual("prices preserved", parsed.prices.length, 1);
   expectEqual("products preserved", parsed.products.length, 1);
   expectEqual("knowledgeMetadata preserved", parsed.knowledgeMetadata.knowledgeSource, "data_layer");
-  expectTrue("mia_debug preserved", parsed.mia_debug?.runtime_precedence?.path === "test");
+  expectTrue("mia_debug preserved in raw passthrough layer", parsed.mia_debug?.runtime_precedence?.path === "test");
 }
 
 {

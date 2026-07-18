@@ -1,6 +1,5 @@
 /**
- * PATCH UX-1 / 12B — Cognitive loading preview (read-only, zero LLM).
- * Public same-origin endpoint; no client secret required.
+ * PATCH UX-1 / 12B / 12C — Cognitive loading preview (read-only, zero LLM).
  */
 
 import { buildCognitiveLoadingPreview } from "../../lib/miaCognitiveLoadingPreview.js";
@@ -9,18 +8,64 @@ import {
   evaluatePerimeterRateLimit,
   buildPerimeterRateLimit429Payload,
 } from "../../lib/miaPerimeterRateLimit.js";
+import {
+  applyPublicCorsHeaders,
+  applyPublicSecurityHeaders,
+  sendPublicApiError,
+  validatePublicContentType,
+  validatePublicHttpMethod,
+  validatePublicLoadingRequestBody,
+} from "../../lib/miaPublicApiHardening.js";
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "1mb",
+    },
+  },
+};
 
 export default async function handler(req, res) {
+  applyPublicSecurityHeaders(res);
+
   if (req.method === "OPTIONS") {
+    const cors = applyPublicCorsHeaders(req, res);
+    if (cors.crossOrigin && !cors.originAllowed) {
+      return res.status(403).json({
+        error: "origin_not_allowed",
+        reasonCode: "public_api_origin_not_allowed",
+      });
+    }
     res.setHeader("Allow", "POST, OPTIONS");
     return res.status(204).end();
   }
 
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+  const methodCheck = validatePublicHttpMethod(req, ["POST"]);
+  if (!methodCheck.ok) {
+    return sendPublicApiError(res, methodCheck.response, {
+      allowHeader: methodCheck.allowHeader,
+    });
   }
 
-  const body = req.body && typeof req.body === "object" && !Array.isArray(req.body) ? req.body : {};
+  const cors = applyPublicCorsHeaders(req, res);
+  if (cors.crossOrigin && !cors.originAllowed) {
+    return res.status(403).json({
+      error: "origin_not_allowed",
+      reasonCode: "public_api_origin_not_allowed",
+    });
+  }
+
+  const contentTypeCheck = validatePublicContentType(req);
+  if (!contentTypeCheck.ok) {
+    return sendPublicApiError(res, contentTypeCheck.response);
+  }
+
+  const bodyCheck = validatePublicLoadingRequestBody(req.body);
+  if (!bodyCheck.ok) {
+    return sendPublicApiError(res, bodyCheck.response);
+  }
+
+  const body = bodyCheck.body;
   const conversationId = body.conversation_id || body.conversationId || "";
 
   const rateLimit = evaluatePerimeterRateLimit({ req, conversationId });
@@ -37,11 +82,13 @@ export default async function handler(req, res) {
         sessionContext,
       }) || getCognitiveLoadingFallbackState(text);
 
+    applyPublicSecurityHeaders(res, { varyOrigin: cors.crossOrigin && cors.originAllowed });
     return res.status(200).json({
       ...loading,
       readOnly: true,
     });
   } catch {
+    applyPublicSecurityHeaders(res, { varyOrigin: cors.crossOrigin && cors.originAllowed });
     return res.status(200).json(getCognitiveLoadingFallbackState());
   }
 }

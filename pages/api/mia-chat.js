@@ -1,6 +1,5 @@
 /**
- * PATCH 12B — Public perimeter proxy for MIA chat.
- * Browser → rate limit → server-side API_SHARED_KEY → /api/chat-gpt4o passthrough.
+ * PATCH 12B / 12C — Public perimeter proxy for MIA chat.
  */
 
 import {
@@ -8,18 +7,65 @@ import {
   buildPerimeterRateLimit429Payload,
 } from "../../lib/miaPerimeterRateLimit.js";
 import { forwardChatRequestToCore } from "../../lib/miaPerimeterChatProxy.js";
+import {
+  applyPublicCorsHeaders,
+  applyPublicSecurityHeaders,
+  sendPublicApiError,
+  sanitizePublicUpstreamResponse,
+  validatePublicChatRequestBody,
+  validatePublicContentType,
+  validatePublicHttpMethod,
+} from "../../lib/miaPublicApiHardening.js";
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "6mb",
+    },
+  },
+};
 
 export default async function handler(req, res) {
+  applyPublicSecurityHeaders(res);
+
   if (req.method === "OPTIONS") {
+    const cors = applyPublicCorsHeaders(req, res);
+    if (cors.crossOrigin && !cors.originAllowed) {
+      return res.status(403).json({
+        error: "origin_not_allowed",
+        reasonCode: "public_api_origin_not_allowed",
+      });
+    }
     res.setHeader("Allow", "POST, OPTIONS");
     return res.status(204).end();
   }
 
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "method_not_allowed" });
+  const methodCheck = validatePublicHttpMethod(req, ["POST"]);
+  if (!methodCheck.ok) {
+    return sendPublicApiError(res, methodCheck.response, {
+      allowHeader: methodCheck.allowHeader,
+    });
   }
 
-  const body = req.body && typeof req.body === "object" && !Array.isArray(req.body) ? req.body : {};
+  const cors = applyPublicCorsHeaders(req, res);
+  if (cors.crossOrigin && !cors.originAllowed) {
+    return res.status(403).json({
+      error: "origin_not_allowed",
+      reasonCode: "public_api_origin_not_allowed",
+    });
+  }
+
+  const contentTypeCheck = validatePublicContentType(req);
+  if (!contentTypeCheck.ok) {
+    return sendPublicApiError(res, contentTypeCheck.response);
+  }
+
+  const bodyCheck = validatePublicChatRequestBody(req.body);
+  if (!bodyCheck.ok) {
+    return sendPublicApiError(res, bodyCheck.response);
+  }
+
+  const body = bodyCheck.body;
   const conversationId = body.conversation_id || body.conversationId || "";
 
   const rateLimit = evaluatePerimeterRateLimit({ req, conversationId });
@@ -30,14 +76,21 @@ export default async function handler(req, res) {
 
   try {
     const upstream = await forwardChatRequestToCore({ req, body });
+    const sanitized = sanitizePublicUpstreamResponse({
+      status: upstream.status,
+      bodyText: upstream.bodyText,
+      contentType: upstream.headers?.["content-type"] || "application/json",
+    });
 
-    for (const [headerName, headerValue] of Object.entries(upstream.headers || {})) {
-      if (headerValue) {
-        res.setHeader(headerName, headerValue);
-      }
+    res.setHeader("Content-Type", sanitized.contentType || "application/json");
+    applyPublicSecurityHeaders(res, { varyOrigin: cors.crossOrigin && cors.originAllowed });
+
+    const retryAfter = upstream.headers?.["retry-after"];
+    if (retryAfter) {
+      res.setHeader("Retry-After", retryAfter);
     }
 
-    return res.status(upstream.status).send(upstream.bodyText);
+    return res.status(sanitized.status).send(sanitized.bodyText);
   } catch (error) {
     console.error("mia_chat_proxy_upstream_error:", error?.message || error);
     return res.status(502).json({
