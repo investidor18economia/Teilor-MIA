@@ -1,6 +1,6 @@
-export default function handler(req, res) {
-  res.status(200).json({
-    env: process.env.NODE_ENV,
-    vercel_env: process.env.VERCEL_ENV || "local",
-  });
+import { applyInternalSecurityHeaders, sendNotFound } from "../../lib/miaEndpointAccessPolicy.js";
+
+export default async function handler(req, res) {
+  applyInternalSecurityHeaders(res);
+  return sendNotFound(res);
 }

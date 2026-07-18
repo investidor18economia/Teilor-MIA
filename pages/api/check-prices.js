@@ -1,5 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
 import { sendPriceDropEmail } from "../../lib/email";
+import {
+  applyInternalSecurityHeaders,
+  requireCronAuthorization,
+  sendPolicyError,
+  validateHttpMethod,
+} from "../../lib/miaEndpointAccessPolicy.js";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -8,19 +14,27 @@ const supabase = createClient(
 );
 
 export default async function handler(req, res) {
-  try {
-    const { data: wishes } = await supabase
-      .from("wishes")
-      .select("*");
+  applyInternalSecurityHeaders(res);
 
+  const methodCheck = validateHttpMethod(req, ["GET", "POST"]);
+  if (!methodCheck.ok) {
+    return sendPolicyError(res, methodCheck.response, { allowHeader: methodCheck.allowHeader });
+  }
+
+  const auth = requireCronAuthorization(req);
+  if (!auth.ok) {
+    return sendPolicyError(res, auth.response);
+  }
+
+  try {
+    const { data: wishes } = await supabase.from("wishes").select("*");
     const results = [];
 
-    for (const wish of wishes) {
+    for (const wish of wishes || []) {
       const oldPrice = wish.last_price;
       const newPrice = wish.price;
 
       if (oldPrice && newPrice && newPrice < oldPrice) {
-
         const { data: user } = await supabase
           .from("users")
           .select("email")
@@ -38,21 +52,17 @@ export default async function handler(req, res) {
         }
 
         results.push({ id: wish.id, status: "price_drop" });
-
       } else {
         results.push({ id: wish.id, status: "no_change" });
       }
     }
 
-    return res.status(200).json({
-      success: true,
-      results
-    });
-
+    return res.status(200).json({ success: true, results });
   } catch (err) {
     return res.status(500).json({
       success: false,
-      error: err.message
+      error: "internal_error",
+      reasonCode: "internal_error",
     });
   }
 }

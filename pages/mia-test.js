@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const API_KEY = "minha_chave_181199";
-const ENDPOINT = "/api/chat-gpt4o";
+const ENDPOINT = "/api/mia-chat";
 
 const SIGNAL_LABELS = {
   gaming: "🎮 gaming",
@@ -267,12 +266,12 @@ export default function MiaTest() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": API_KEY,
         },
         body: JSON.stringify({
           text: text.trim(),
           user_id: "mia-test-local",
           conversation_id: "mia-test-session",
+          messages: [],
           session_context: sessionContext,
         }),
       });
@@ -602,4 +601,14 @@ export default function MiaTest() {
       `}</style>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const enabled = String(process.env.MIA_DEV_ROUTES_ENABLED || "")
+    .trim()
+    .toLowerCase();
+  if (enabled !== "true" && enabled !== "1" && enabled !== "yes") {
+    return { notFound: true };
+  }
+  return { props: {} };
 }

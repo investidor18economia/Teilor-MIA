@@ -1,4 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
+import {
+  applyInternalSecurityHeaders,
+  sendPolicyError,
+  validateHttpMethod,
+} from "../../lib/miaEndpointAccessPolicy.js";
+import { requireUserSession } from "../../lib/miaUserSessionToken.js";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -7,35 +13,37 @@ const supabase = createClient(
 );
 
 export default async function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-api-key");
+  applyInternalSecurityHeaders(res);
 
-  if (req.method === "OPTIONS") return res.status(200).end();
-  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+  const methodCheck = validateHttpMethod(req, ["POST"]);
+  if (!methodCheck.ok) {
+    return sendPolicyError(res, methodCheck.response, { allowHeader: methodCheck.allowHeader });
+  }
 
   try {
     const { id, user_id } = req.body || {};
-    if (!id) return res.status(400).json({ error: "id is required" });
+    if (!id) return res.status(400).json({ error: "id is required", reasonCode: "invalid_request" });
 
-    const query = supabase.from("wishes").delete().eq("id", id);
+    const session = requireUserSession(req, process.env, user_id);
+    if (!session.ok) {
+      return sendPolicyError(res, session.response);
+    }
 
-    if (user_id) query.eq("user_id", user_id);
-
+    const query = supabase.from("wishes").delete().eq("id", id).eq("user_id", session.userId);
     const { data, error } = await query.select();
 
     if (error) {
       console.error("delete-wish error:", error);
-      return res.status(500).json({ error: "db_error", details: error.message || error });
+      return res.status(500).json({ error: "db_error", reasonCode: "internal_error" });
     }
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ error: "not_found" });
+      return res.status(404).json({ error: "not_found", reasonCode: "resource_not_found" });
     }
 
     return res.status(200).json({ success: true, deleted: data });
   } catch (err) {
     console.error("ERROR /api/delete-wish:", err);
-    return res.status(500).json({ error: String(err) });
+    return res.status(500).json({ error: "internal_error", reasonCode: "internal_error" });
   }
 }

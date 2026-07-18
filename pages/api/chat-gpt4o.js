@@ -27471,22 +27471,33 @@ function createMiaChatPipelineTracer(userMessage = "") {
 }
 
 export default async function handler(req, res) {
-  // CORS — permite testes locais via mia-test.html ou qualquer origem local.
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-api-key, x-mia-test-mode");
+  res.setHeader("Cache-Control", "no-store, max-age=0");
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Referrer-Policy", "no-referrer");
+
   if (req.method === "OPTIONS") {
-    res.status(204).end();
-    return;
+    res.setHeader("Allow", "POST");
+    return void res.status(405).json({
+      error: "method_not_allowed",
+      reasonCode: "internal_api_method_not_allowed",
+    });
   }
 
   if (req.method !== "POST") {
-    return void res.status(405).json({ error: "Method not allowed" });
+    res.setHeader("Allow", "POST");
+    return void res.status(405).json({
+      error: "method_not_allowed",
+      reasonCode: "internal_api_method_not_allowed",
+    });
   }
 
   const clientKey = (req.headers["x-api-key"] || "").toString();
   if (!API_SHARED_KEY || clientKey !== API_SHARED_KEY) {
-    return void res.status(401).json({ error: "invalid_api_key" });
+    return void res.status(401).json({
+      error: "invalid_api_key",
+      reasonCode: "internal_api_auth_invalid",
+    });
   }
 
   runtimeExecutionEnvRef.env = resolveRequestRuntimeExecutionEnv(req);

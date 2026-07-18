@@ -15,6 +15,7 @@ import MIAMenuSymbol from "./MIAMenuSymbol";
 import { getFeedItemGallery } from "../lib/feedImageResolver";
 import { findProductByIdentity, getProductIdentityKey } from "../lib/productIdentity";
 import { loadStoredUser, loadUserProfile, saveStoredUser, saveUserProfile } from "../lib/userProfileStorage";
+import { buildUserSessionHeaders } from "../lib/miaClientSession";
 import { readImageFileAsDataUrl, validateImageFile } from "../lib/chatImageFile";
 import { requestImageAnalysis } from "../lib/imageAnalysisClient";
 import {
@@ -661,6 +662,36 @@ export default function MIAChat() {
     const storedUser = loadStoredUser();
     if (storedUser) setUser(storedUser);
   }, []);
+
+  useEffect(() => {
+    if (!user?.email || user?.session_token) return undefined;
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const resp = await fetch("/api/register-user", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: user.email, name: user.nome || user.name || "" }),
+        });
+        const data = await resp.json();
+        if (cancelled || !data?.success || !data?.session_token) return;
+        const nextUser = {
+          ...user,
+          id: data.user?.id || user.id,
+          session_token: data.session_token,
+        };
+        setUser(nextUser);
+        saveStoredUser(nextUser);
+      } catch {
+        /* keep local user; write endpoints will require re-login */
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [user?.email, user?.id, user?.nome, user?.session_token]);
 
   useEffect(() => {
     if (!user?.id) {
@@ -1438,9 +1469,9 @@ useEffect(() => {
     try {
       const resp = await fetch("/api/delete-wish", {
         method: "POST",
-        headers: {
+        headers: buildUserSessionHeaders(user, {
           "Content-Type": "application/json",
-        },
+        }),
         body: JSON.stringify({
           id: favorite.id,
           user_id: user.id,
@@ -1464,7 +1495,9 @@ useEffect(() => {
 
   useEffect(() => {
     if (user?.id) {
-      fetch(`/api/list-wish?user_id=${encodeURIComponent(user.id)}`)
+      fetch(`/api/list-wish?user_id=${encodeURIComponent(user.id)}`, {
+        headers: buildUserSessionHeaders(user),
+      })
         .then((r) => r.json())
         .then((data) => {
           if (data.success) {
@@ -2357,9 +2390,9 @@ function detectPriorityFromText(text = "") {
     try {
       const resp = await fetch("/api/save-wish", {
         method: "POST",
-        headers: {
+        headers: buildUserSessionHeaders(actingUser, {
           "Content-Type": "application/json",
-        },
+        }),
         body: JSON.stringify({
           user_id: actingUser.id,
           product_name: prod.product_name || prod.title || "Produto",
@@ -2435,9 +2468,9 @@ function detectPriorityFromText(text = "") {
 
     const resp = await fetch("/api/create-price-alert", {
       method: "POST",
-      headers: {
+      headers: buildUserSessionHeaders(actingUser, {
         "Content-Type": "application/json",
-      },
+      }),
       body: JSON.stringify({
         user_id: actingUser.id,
         user_email: actingUser.email || null,
@@ -2599,6 +2632,7 @@ function detectPriorityFromText(text = "") {
           email: data.user.email || emailTrim,
           nome: data.user.name || nameTrim,
           created_at: data.user.created_at || newUser.created_at,
+          session_token: data.session_token || null,
         };
       }
     } catch (e) {
