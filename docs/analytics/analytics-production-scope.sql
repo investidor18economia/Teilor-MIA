@@ -1,0 +1,26 @@
+-- PATCH Analytics 1.3 — Production scope for analytics_events dashboards
+--
+-- session_id = tab session (PATCH 1.1). Never alias as users, DAU, or visitors.
+--
+-- Deterministic exclusions (no query_text heuristics):
+--   1. Server-side QA categories from lib/miaPriceAlertEmailAnalytics.js
+--   2. Server-side QA event_name prefixes (price_drop_email_test_*, price_drop_email_e2e_*)
+--   3. Harness-marked session_started rows (metadata.user_agent = 'test-agent')
+--
+-- Limitation: there is no environment column yet. MIA public events without these
+-- markers are included. Definitive environment tagging belongs to FASE 2 / PATCH 1.4.
+
+-- Reusable predicate (copy into dashboards):
+--   AND NOT (
+--     category IN ('price_alert_email_test', 'price_alert_e2e_test')
+--     OR event_name LIKE 'price_drop_email_test_%'
+--     OR event_name LIKE 'price_drop_email_e2e_%'
+--     OR (
+--       event_name = 'session_started'
+--       AND coalesce(metadata->>'user_agent', '') = 'test-agent'
+--     )
+--   )
+
+-- MIA public product events (lib/miaAnalyticsAllowlist.js):
+--   session_started, mia_question_sent, mia_recommendation_shown,
+--   favorite_created, price_alert_created, offer_click

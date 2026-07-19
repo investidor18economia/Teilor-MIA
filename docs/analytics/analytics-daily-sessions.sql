@@ -1,8 +1,5 @@
--- DEPRECATED (PATCH 1.3)
---
--- Previously mislabeled tab sessions as active users.
--- Use: analytics-daily-sessions.sql
--- Metric: sessoes_unicas_diarias (tab sessions, not users, not daily active users)
+-- PATCH 1.3 — Daily unique tab sessions (NOT users / NOT DAU)
+-- session_id = tab session per PATCH 1.1 / SESSION_ID.md
 
 select
   date(created_at) as dia,
