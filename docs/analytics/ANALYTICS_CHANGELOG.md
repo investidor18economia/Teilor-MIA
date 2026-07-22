@@ -541,6 +541,10 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Princípio:** observação apenas · sem alterar ranking/fallback · evento único parametrizado · retrocompatível · deploy necessário para eventos reais.
 
+**Deploy (2026-07-22):** commit `2072e1d` em `master` → Vercel produção. Validação: 9 eventos reais · dashboards Q1–Q4 OK · smoke produção 4/4 caminhos comerciais instrumentados correlacionados.
+
+**Investigação manual UI (2026-07-22 ~20:05 BRT):** três conversas em `/app-mia` correlacionadas com eventos Supabase (sessão `56e604b4-…`). Dois bugs funcionais **preexistentes** confirmados (iPhone→Samsung, TV→notebook); instrumentação registrou caminho real corretamente. Reprodução sessão limpa confirma bugs independentes de contaminação de sessão. Total eventos: **15**. Status: 🟡 **EM VALIDAÇÃO FINAL / INVESTIGAÇÃO FUNCIONAL** — aprovação formal bloqueada. Evidências: [PATCH_6.4_MANUAL_UI_INVESTIGATION.json](./PATCH_6.4_MANUAL_UI_INVESTIGATION.json) · [PATCH_6.4_PRODUCTION_EVIDENCE.json](./PATCH_6.4_PRODUCTION_EVIDENCE.json).
+
 ---
 
 ## 35. Referências

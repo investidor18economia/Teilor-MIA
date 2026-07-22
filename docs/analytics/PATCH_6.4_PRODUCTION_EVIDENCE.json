@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-07-22T23:30:00.000Z",
+  "investigation_completed_at": "2026-07-22T23:30:00.000Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "patch_status": "EM_VALIDACAO_FINAL_INVESTIGACAO_FUNCIONAL",
+  "deploy_commit": "2072e1d",
+  "total_data_layer_resolution_events": 15,
+  "metrics_updated": {
+    "data_layer_hit_rate": 0.6,
+    "fallback_only_rate": 0.4,
+    "hybrid_rate": 0.6,
+    "partial_coverage_rate": 0.6,
+    "event_version_6_4_0": 15
+  },
+  "automated_smoke": {
+    "session_id": "f3249021-aac4-43a4-808b-811a784ac6ad",
+    "conversation_id": "c3c5dd1e-93c9-4115-b217-ca71b86af3bf",
+    "started_at": "2026-07-22T22:56:57.164Z",
+    "scenarios": [
+      {
+        "id": "P3",
+        "text": "Quero um iPhone até R$ 4.000.",
+        "responseClassification": "PARTIAL_DATA_LAYER",
+        "winner": "Samsung Galaxy S23 FE",
+        "functional_ok": false,
+        "preexisting_bug": "FUNC-64-C1",
+        "persistedEvent": "c91d21ed-f4bc-4548-9717-15ddc91c1f19"
+      },
+      {
+        "id": "P6",
+        "text": "Quero uma televisão de 55 polegadas.",
+        "responseClassification": "FALLBACK_ONLY",
+        "winner_observed_in_reply": "Notebook HP 256R G9",
+        "functional_ok": false,
+        "preexisting_bug": "FUNC-64-C2",
+        "persistedEvent": "0a7c2bfa-c8d5-4dfc-8726-2d3de851c7d3"
+      }
+    ],
+    "total_session_events": 4
+  },
+  "manual_ui_validation": {
+    "session_id": "56e604b4-23a5-4560-ad46-21b5f0ad20ee",
+    "browser_url": "https://economia-ai.vercel.app/app-mia",
+    "timezone": "America/Sao_Paulo",
+    "scenarios": [
+      {
+        "id": "C1",
+        "local_time": "2026-07-22T20:05:00-03:00",
+        "text": "Quero um iPhone até R$ 4.000.",
+        "observed_reply_winner": "Samsung Galaxy S23 FE",
+        "observed_price": "R$ 3.416,15",
+        "conversation_id": "c5d7cfc4-2ca7-4490-81d4-b1d2e6c640f0",
+        "event_id": "5a6eaf92-7b5f-45ec-8fab-604883709809",
+        "event_at": "2026-07-22T23:04:38.096283+00:00",
+        "classification": "PARTIAL_DATA_LAYER",
+        "category": "phone",
+        "response_path": "return_seguro",
+        "candidates_found": 12,
+        "functional_ok": false,
+        "root_cause": "brand_lock_missing_iphone_query",
+        "patch_64_regression": false
+      },
+      {
+        "id": "C2",
+        "local_time": "2026-07-22T20:05:00-03:00",
+        "text": "Quero uma televisão de 55 polegadas.",
+        "observed_reply_winner": "Notebook HP 256R G9",
+        "conversation_id": "4d76dafb-52d4-40c7-9ea7-1c2689308dd5",
+        "event_id": "9d98f991-da1a-4e90-9182-c869e7b724cf",
+        "event_at": "2026-07-22T23:05:38.97247+00:00",
+        "classification": "FALLBACK_ONLY",
+        "category": "tv",
+        "response_path": "commercial_only_fallback",
+        "candidates_found": 0,
+        "functional_ok": false,
+        "root_cause": "productMatchesCategory_uhd_false_positive_on_notebook_gpu",
+        "session_contamination": false,
+        "patch_64_regression": false
+      },
+      {
+        "id": "C3",
+        "local_time": "2026-07-22T20:06:00-03:00",
+        "text": "quero um samsung bom de bateria",
+        "observed_reply_winner": "Samsung Galaxy A15 5G",
+        "conversation_id": "9927780b-7cf0-4367-a19c-0a920bc9cb17",
+        "event_id": "7bb5e84f-d6cd-4a62-b7a2-e79f57bb01dd",
+        "event_at": "2026-07-22T23:06:35.548532+00:00",
+        "classification": "FALLBACK_ONLY",
+        "category": "phone",
+        "response_path": "commercial_only_fallback",
+        "isolation_reason": "accessory_query_main_product_blocked",
+        "functional_ok": true,
+        "path_suboptimal": true,
+        "patch_64_regression": false
+      }
+    ]
+  },
+  "clean_session_reproduction": {
+    "script": "scripts/patch-64-clean-session-reproduction.mjs",
+    "executed_at": "2026-07-22T23:30:00.000Z",
+    "results": [
+      {
+        "id": "clean_tv",
+        "notebook_in_reply": true,
+        "classification": "FALLBACK_ONLY"
+      },
+      {
+        "id": "clean_iphone",
+        "winner": "Samsung Galaxy S23 FE",
+        "classification": "PARTIAL_DATA_LAYER"
+      },
+      {
+        "id": "contaminated_tv_after_iphone",
+        "notebook_in_reply": true,
+        "same_as_clean_tv": true
+      }
+    ]
+  },
+  "investigation_verdict": "A_instrumentacao_correta_bugs_preexistentes",
+  "formal_approval": false
+}
