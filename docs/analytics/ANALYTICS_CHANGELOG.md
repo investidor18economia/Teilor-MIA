@@ -183,6 +183,18 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Merge:** estratégia prospectiva; sem tabela `analytics_identity_links`; sem backfill.
 
+---
+
+## 7. PATCH 3.3A — Authentication Trust Foundation (2026-07-22)
+
+**Problema corrigido:** `/api/register-user` emitia sessão sem prova de posse do e-mail.
+
+**Solução:** OTP por e-mail (Resend) + `mia_auth_challenges` + endpoints `/api/auth/request-code` e `/api/auth/verify-code`.
+
+**Documentação:** [AUTHENTICATION_TRUST_FOUNDATION.md](../auth/AUTHENTICATION_TRUST_FOUNDATION.md)
+
+**Testes:** `npm run test:mia:auth:trust-foundation` (29/29)
+
 **Testes:** 26/26 authenticated-identity; regressões PATCH 3.1–3.2 + suítes Analytics aprovadas.
 
 ---

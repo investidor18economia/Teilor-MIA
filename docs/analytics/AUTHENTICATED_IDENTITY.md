@@ -16,10 +16,10 @@ Consolidar `user_id` como camada de identidade **autenticada** no Analytics, sem
 
 | Atributo | Valor |
 |----------|-------|
-| **Provedor de conta** | MVP Teilor — registro por e-mail via `/api/register-user` |
+| **Provedor de conta** | MVP Teilor — OTP por e-mail via Resend (PATCH 3.3A) |
 | **Identificador imutável** | `public.users.id` (`uuid`, PK) |
-| **Sessão** | Token HMAC emitido pelo servidor (`lib/miaUserSessionToken.js`, PATCH 12D) |
-| **Não utilizado** | Supabase Auth (`auth.users`), OAuth de usuário final, e-mail como ID analítico |
+| **Sessão** | Token HMAC emitido **somente após verificação OTP** (`lib/miaUserSessionToken.js`) |
+| **Pré-requisito** | [AUTHENTICATION_TRUST_FOUNDATION.md](../auth/AUTHENTICATION_TRUST_FOUNDATION.md) |
 
 O token é enviado pelo frontend em `Authorization: Bearer …` (ou `x-mia-session-token`) nos requests de Analytics quando o usuário está logado.
 
@@ -67,10 +67,10 @@ Qualquer `user_id` no body HTTP é **ignorado**.
 Fluxo real:
 
 1. Usuário informa nome + e-mail no popup (`MIAChat.jsx`).
-2. `POST /api/register-user` cria ou recupera linha em `public.users` e devolve `session_token`.
-3. Token + usuário persistidos em `localStorage` (`mia_user`).
-4. Eventos subsequentes enviam o token no header; a API grava `user_id` oficial.
-5. `visitor_id` e `session_id` permanecem conforme ciclo real; `conversation_id` segue o ref in-memory do chat.
+2. `POST /api/auth/request-code` envia OTP por e-mail (hash armazenado; código nunca persistido).
+3. Usuário informa código de 6 dígitos.
+4. `POST /api/auth/verify-code` valida posse, cria/recupera `public.users`, define `email_verified_at`, emite `session_token`.
+5. Eventos subsequentes enviam token no header; a API grava `user_id` oficial.
 
 Não há backfill de eventos anteriores ao login.
 
@@ -189,7 +189,8 @@ Armazenado: `user_id` (UUID pseudônimo interno), `visitor_id`, `session_id`, `c
 
 ## 16. Limitações
 
-- Login MVP: e-mail + nome, sem verificação de e-mail ou senha.
+- Login MVP: OTP por e-mail via Resend; sem senha/OAuth.
+- `/api/register-user` não emite mais sessão (use `/api/auth/request-code` + `/api/auth/verify-code`).
 - `session_started` em reload com usuário já logado depende do token estar presente no momento do mount (token restaurado de `localStorage`).
 - Sem logout server-side de token (expiração por TTL HMAC); logout local remove credencial do browser.
 

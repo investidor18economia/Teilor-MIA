@@ -144,6 +144,13 @@ export default function MIAChat() {
   const [openingTyping, setOpeningTyping] = useState(false);
   const [user, setUser] = useState(null);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const [loginStep, setLoginStep] = useState("email");
+  const [loginChallengeId, setLoginChallengeId] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginName, setLoginName] = useState("");
+  const [loginCode, setLoginCode] = useState("");
+  const [loginBusy, setLoginBusy] = useState(false);
+  const [loginMessage, setLoginMessage] = useState("");
   const [favoritesPanelOpen, setFavoritesPanelOpen] = useState(false);
   const [alertsPanelOpen, setAlertsPanelOpen] = useState(false);
   const [profilePanelOpen, setProfilePanelOpen] = useState(false);
@@ -648,9 +655,20 @@ export default function MIAChat() {
     return { ...base, user_display_name: name };
   }
 
+  function resetLoginFlow() {
+    setLoginStep("email");
+    setLoginChallengeId("");
+    setLoginEmail("");
+    setLoginName("");
+    setLoginCode("");
+    setLoginBusy(false);
+    setLoginMessage("");
+  }
+
   function closeLoginPopup() {
     setShowLoginPopup(false);
     setPendingAction(null);
+    resetLoginFlow();
   }
 
   function scrollToAlertsCreateForm() {
@@ -685,36 +703,6 @@ export default function MIAChat() {
     closeSideMenu();
     showActionToast("Você saiu da sua conta.", "success");
   }
-
-  useEffect(() => {
-    if (!user?.email || user?.session_token) return undefined;
-    let cancelled = false;
-
-    (async () => {
-      try {
-        const resp = await fetch("/api/register-user", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: user.email, name: user.nome || user.name || "" }),
-        });
-        const data = await resp.json();
-        if (cancelled || !data?.success || !data?.session_token) return;
-        const nextUser = {
-          ...user,
-          id: data.user?.id || user.id,
-          session_token: data.session_token,
-        };
-        setUser(nextUser);
-        saveStoredUser(nextUser);
-      } catch {
-        /* keep local user; write endpoints will require re-login */
-      }
-    })();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [user?.email, user?.id, user?.nome, user?.session_token]);
 
   useEffect(() => {
     if (!user?.id) {
@@ -2646,7 +2634,36 @@ function detectPriorityFromText(text = "") {
     }
   }
 
-  async function createUser(email, nome) {
+  function completeAuthenticatedLogin(nextUser, action = pendingAction) {
+    const displayName =
+      nextUser?.nome ||
+      nextUser?.name ||
+      userProfile.displayName ||
+      "";
+
+    saveUserProfile(nextUser.id, { displayName, photoDataUrl: "" });
+    setUserProfile({ displayName, photoDataUrl: "" });
+    setUser(nextUser);
+    saveStoredUser(nextUser);
+    setShowLoginPopup(false);
+    resetLoginFlow();
+    setPendingAction(null);
+
+    if (action) {
+      setTimeout(() => {
+        if (action.type === "favorite") {
+          handleFavorite(action.data, nextUser);
+        } else if (action.type === "monitor") {
+          handleMonitor(action.data, nextUser);
+        } else if (action.type === "create-alert") {
+          setAlertsPanelOpen(true);
+          scrollToAlertsCreateForm();
+        }
+      }, 300);
+    }
+  }
+
+  async function requestAuthCode(email, nome) {
     const nameTrim = String(nome || "").trim();
     const emailTrim = String(email || "").trim().toLowerCase();
 
@@ -2659,53 +2676,116 @@ function detectPriorityFromText(text = "") {
       return;
     }
 
-    const action = pendingAction;
-    let newUser = {
-      id: `local-${Date.now()}`,
-      email: emailTrim,
-      nome: nameTrim,
-      created_at: new Date().toISOString(),
-    };
+    setLoginBusy(true);
+    setLoginMessage("");
 
     try {
-      const resp = await fetch("/api/register-user", {
+      const resp = await fetch("/api/auth/request-code", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: emailTrim, name: nameTrim }),
       });
       const data = await resp.json();
-      if (data?.success && data?.user) {
-        newUser = {
-          id: data.user.id ?? newUser.id,
-          email: data.user.email || emailTrim,
-          nome: data.user.name || nameTrim,
-          created_at: data.user.created_at || newUser.created_at,
-          session_token: data.session_token || null,
-        };
+
+      if (!resp.ok || !data?.success || !data?.challenge_id) {
+        const message =
+          data?.reasonCode === "auth_rate_limited"
+            ? "Muitas tentativas. Aguarde alguns minutos e tente novamente."
+            : data?.reasonCode === "auth_email_unavailable"
+              ? "Não foi possível enviar o código agora. Tente mais tarde."
+              : "Não foi possível enviar o código. Verifique o e-mail e tente novamente.";
+        setLoginMessage(message);
+        showActionToast(message, "error");
+        return;
       }
-    } catch (e) {
-      console.warn("register-user: usando sessão local.", e);
+
+      setLoginEmail(emailTrim);
+      setLoginName(nameTrim);
+      setLoginChallengeId(data.challenge_id);
+      setLoginStep("code");
+      setLoginCode("");
+      setLoginMessage(
+        data.message || "Se o endereço puder receber mensagens, enviaremos um código de verificação."
+      );
+    } catch (error) {
+      console.error("request-code failed:", error);
+      const message = "Erro ao solicitar código. Verifique sua conexão.";
+      setLoginMessage(message);
+      showActionToast(message, "error");
+    } finally {
+      setLoginBusy(false);
+    }
+  }
+
+  async function verifyAuthCode(codeValue = loginCode) {
+    const codeTrim = String(codeValue || "").trim();
+    if (!/^\d{6}$/.test(codeTrim)) {
+      showActionToast("Digite o código de 6 dígitos.", "error");
+      return;
+    }
+    if (!loginChallengeId) {
+      showActionToast("Solicite um novo código para continuar.", "error");
+      setLoginStep("email");
+      return;
     }
 
-    saveUserProfile(newUser.id, { displayName: nameTrim, photoDataUrl: "" });
-    setUserProfile({ displayName: nameTrim, photoDataUrl: "" });
-    setUser(newUser);
-    saveStoredUser(newUser);
-    setShowLoginPopup(false);
-    setPendingAction(null);
+    setLoginBusy(true);
+    setLoginMessage("");
 
-    if (action) {
-      setTimeout(() => {
-        if (action.type === "favorite") {
-          handleFavorite(action.data, newUser);
-        } else if (action.type === "monitor") {
-          handleMonitor(action.data, newUser);
-        } else if (action.type === "create-alert") {
-          setAlertsPanelOpen(true);
-          scrollToAlertsCreateForm();
-        }
-      }, 300);
+    try {
+      const resp = await fetch("/api/auth/verify-code", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          challenge_id: loginChallengeId,
+          code: codeTrim,
+          name: loginName,
+        }),
+      });
+      const data = await resp.json();
+
+      if (!resp.ok || !data?.success || !data?.session_token || !data?.user?.id) {
+        const message =
+          data?.reasonCode === "auth_code_invalid"
+            ? "Código incorreto. Tente novamente."
+            : data?.reasonCode === "auth_challenge_expired"
+              ? "Código expirado. Solicite um novo código."
+              : data?.reasonCode === "auth_challenge_attempts_exceeded"
+                ? "Limite de tentativas atingido. Solicite um novo código."
+                : data?.reasonCode === "auth_challenge_consumed"
+                  ? "Este código já foi usado. Solicite um novo código."
+                  : "Não foi possível verificar o código.";
+        setLoginMessage(message);
+        showActionToast(message, "error");
+        return;
+      }
+
+      const nextUser = {
+        id: data.user.id,
+        email: data.user.email || loginEmail,
+        nome: data.user.name || loginName,
+        created_at: data.user.created_at || new Date().toISOString(),
+        session_token: data.session_token,
+      };
+
+      completeAuthenticatedLogin(nextUser);
+      showActionToast("Conta verificada com sucesso.", "success");
+    } catch (error) {
+      console.error("verify-code failed:", error);
+      const message = "Erro ao verificar código. Verifique sua conexão.";
+      setLoginMessage(message);
+      showActionToast(message, "error");
+    } finally {
+      setLoginBusy(false);
     }
+  }
+
+  async function resendAuthCode() {
+    if (!loginEmail || !loginName) {
+      setLoginStep("email");
+      return;
+    }
+    await requestAuthCode(loginEmail, loginName);
   }
 
   const isIntroState = hasMounted
@@ -3257,52 +3337,117 @@ function detectPriorityFromText(text = "") {
           <div className="mia-login-card">
             <h3 id="mia-login-title" className="mia-login-card-title">{loginSheetTitle}</h3>
             <p className="mia-login-card-hint">{loginSheetHint}</p>
-            <label className="mia-login-field" htmlFor="popupNome">
-              <span className="mia-login-field-label">Seu nome</span>
-              <input
-                id="popupNome"
-                type="text"
-                name="name"
-                autoComplete="name"
-                enterKeyHint="next"
-                placeholder="Como você quer ser chamado"
-                className="mia-login-input"
-              />
-            </label>
-            <label className="mia-login-field" htmlFor="popupEmail">
-              <span className="mia-login-field-label">Seu email</span>
-              <input
-                id="popupEmail"
-                type="email"
-                name="email"
-                autoComplete="email"
-                inputMode="email"
-                enterKeyHint="done"
-                placeholder="seu@email.com"
-                className="mia-login-input"
-              />
-            </label>
-            <div className="mia-login-actions">
-              <button
-                type="button"
-                className="mia-login-btn mia-login-btn--primary"
-                onClick={() =>
-                  createUser(
-                    document.getElementById("popupEmail")?.value,
-                    document.getElementById("popupNome")?.value
-                  )
-                }
-              >
-                Continuar
-              </button>
-              <button
-                type="button"
-                className="mia-login-btn mia-login-btn--ghost"
-                onClick={closeLoginPopup}
-              >
-                Agora não
-              </button>
-            </div>
+            {loginStep === "email" ? (
+              <>
+                <label className="mia-login-field" htmlFor="popupNome">
+                  <span className="mia-login-field-label">Seu nome</span>
+                  <input
+                    id="popupNome"
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    enterKeyHint="next"
+                    placeholder="Como você quer ser chamado"
+                    className="mia-login-input"
+                    defaultValue={loginName}
+                  />
+                </label>
+                <label className="mia-login-field" htmlFor="popupEmail">
+                  <span className="mia-login-field-label">Seu email</span>
+                  <input
+                    id="popupEmail"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    inputMode="email"
+                    enterKeyHint="done"
+                    placeholder="seu@email.com"
+                    className="mia-login-input"
+                    defaultValue={loginEmail}
+                  />
+                </label>
+                {loginMessage ? (
+                  <p className="mia-login-card-hint">{loginMessage}</p>
+                ) : null}
+                <div className="mia-login-actions">
+                  <button
+                    type="button"
+                    className="mia-login-btn mia-login-btn--primary"
+                    disabled={loginBusy}
+                    onClick={() =>
+                      requestAuthCode(
+                        document.getElementById("popupEmail")?.value,
+                        document.getElementById("popupNome")?.value
+                      )
+                    }
+                  >
+                    {loginBusy ? "Enviando código..." : "Enviar código"}
+                  </button>
+                  <button
+                    type="button"
+                    className="mia-login-btn mia-login-btn--ghost"
+                    onClick={closeLoginPopup}
+                    disabled={loginBusy}
+                  >
+                    Agora não
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="mia-login-card-hint">
+                  {loginMessage || "Digite o código de 6 dígitos enviado para seu e-mail."}
+                </p>
+                <label className="mia-login-field" htmlFor="popupCode">
+                  <span className="mia-login-field-label">Código de verificação</span>
+                  <input
+                    id="popupCode"
+                    type="text"
+                    name="one-time-code"
+                    autoComplete="one-time-code"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    maxLength={6}
+                    enterKeyHint="done"
+                    placeholder="000000"
+                    className="mia-login-input"
+                    value={loginCode}
+                    onChange={(event) => setLoginCode(event.target.value.replace(/\D/g, "").slice(0, 6))}
+                  />
+                </label>
+                <div className="mia-login-actions">
+                  <button
+                    type="button"
+                    className="mia-login-btn mia-login-btn--primary"
+                    disabled={loginBusy}
+                    onClick={() => verifyAuthCode(loginCode)}
+                  >
+                    {loginBusy ? "Verificando..." : "Verificar código"}
+                  </button>
+                  <button
+                    type="button"
+                    className="mia-login-btn mia-login-btn--ghost"
+                    disabled={loginBusy}
+                    onClick={resendAuthCode}
+                  >
+                    Reenviar código
+                  </button>
+                  <button
+                    type="button"
+                    className="mia-login-btn mia-login-btn--ghost"
+                    disabled={loginBusy}
+                    onClick={() => {
+                      setLoginStep("email");
+                      setLoginChallengeId("");
+                      setLoginCode("");
+                      setLoginMessage("");
+                    }}
+                  >
+                    Alterar e-mail
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>,
         document.body
