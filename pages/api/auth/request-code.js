@@ -6,6 +6,7 @@ import {
   markAuthChallengeDeliveryFailed,
   reserveAuthChallengeViaRpc,
 } from "../../../lib/miaAuthChallengeStore.js";
+import { mapAuthSecretErrorToPublicResponse } from "../../../lib/miaAuthSecrets.js";
 import { sendAuthLoginOtpEmail, isAuthEmailDeliveryConfigured } from "../../../lib/miaAuthLoginEmail.js";
 import {
   applyInternalSecurityHeaders,
@@ -110,6 +111,17 @@ async function requestCodeHandler(req, res) {
       challenge_id: reserved.challengeId,
     });
   } catch (err) {
+    const secretResponse = mapAuthSecretErrorToPublicResponse(err);
+    if (secretResponse) {
+      logError({
+        event: "auth_request_code_failed",
+        endpoint: "/api/auth/request-code",
+        reasonCode: secretResponse.logReasonCode,
+        message: secretResponse.logReasonCode,
+        status: secretResponse.status,
+      });
+      return res.status(secretResponse.status).json(secretResponse.body);
+    }
     logError({
       event: "auth_request_code_failed",
       endpoint: "/api/auth/request-code",

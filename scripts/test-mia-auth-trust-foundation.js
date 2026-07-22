@@ -19,6 +19,7 @@ import {
   buildAuthRequestRateLimitKeys,
   evaluateDistributedRateLimitBucket,
   hashAuthRateLimitKey,
+  MIA_AUTH_RATE_LIMIT_SCOPES,
   parseAuthRateLimitRpcResult,
 } from "../lib/miaAuthRateLimit.js";
 import {
@@ -35,8 +36,9 @@ import { isAuthEmailDeliveryConfigured } from "../lib/miaAuthLoginEmail.js";
 import registerUserHandler from "../pages/api/register-user.js";
 
 const TEST_ENV = {
-  MIA_USER_SESSION_SECRET: "patch-33a-test-secret",
-  MIA_AUTH_CHALLENGE_SECRET: "patch-33a-challenge-secret",
+  MIA_USER_SESSION_SECRET: "patch-33a-test-session-secret-32chars",
+  MIA_AUTH_OTP_SECRET: "patch-33a-test-otp-secret-32chars-min-x",
+  MIA_AUTH_RATE_LIMIT_SECRET: "patch-33a-test-rate-secret-32chars-min",
 };
 
 const USER_U1 = "11111111-2222-4333-8444-555555555555";
@@ -172,7 +174,7 @@ console.log("\nPATCH 3.3A — authentication trust foundation tests\n");
   assert("first three email requests allowed", okCount === MIA_AUTH_REQUEST_MAX_PER_EMAIL);
   assert("fourth email request blocked", blocked.allowed === false);
   assert("rate limit rpc parser handles 429", parsed.ok === false);
-  assert("rate key uses HMAC not raw email", !hashAuthRateLimitKey("request_email", email, TEST_ENV).includes("@"));
+  assert("rate key uses HMAC not raw email", !hashAuthRateLimitKey(MIA_AUTH_RATE_LIMIT_SCOPES.REQUEST_EMAIL, email, TEST_ENV).includes("@"));
 }
 
 // Delivery gate

@@ -211,7 +211,19 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
-## 9. Próximo patch
+## 10. PATCH 3.3A.2 — Cryptographic Secret Separation (2026-07-22)
+
+**Problema corrigido:** reutilização de `API_SHARED_KEY` entre sessão, OTP e rate limit.
+
+**Solução:** segredos exclusivos `MIA_USER_SESSION_SECRET`, `MIA_AUTH_OTP_SECRET`, `MIA_AUTH_RATE_LIMIT_SECRET` sem fallback cruzado.
+
+**Documentação:** [CRYPTOGRAPHIC_SECRET_POLICY.md](../auth/CRYPTOGRAPHIC_SECRET_POLICY.md)
+
+**Testes:** `npm run test:mia:auth:secret-separation`
+
+---
+
+## 11. Próximo patch
 
 **PATCH 3.4 — Retention Foundation** (roadmap oficial)
 

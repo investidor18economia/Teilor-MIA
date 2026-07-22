@@ -2,6 +2,7 @@ import { supabase } from "../../../lib/supabaseClient";
 import { verifyAuthChallengeViaRpc } from "../../../lib/miaAuthChallengeStore.js";
 import { resolveVerifiedUser } from "../../../lib/miaAuthUser.js";
 import { issueUserSessionToken } from "../../../lib/miaUserSessionToken.js";
+import { mapAuthSecretErrorToPublicResponse } from "../../../lib/miaAuthSecrets.js";
 import {
   applyInternalSecurityHeaders,
   sendPolicyError,
@@ -90,6 +91,17 @@ async function verifyCodeHandler(req, res) {
       session_token: sessionToken,
     });
   } catch (err) {
+    const secretResponse = mapAuthSecretErrorToPublicResponse(err);
+    if (secretResponse) {
+      logError({
+        event: "auth_verify_code_failed",
+        endpoint: "/api/auth/verify-code",
+        reasonCode: secretResponse.logReasonCode,
+        message: secretResponse.logReasonCode,
+        status: secretResponse.status,
+      });
+      return res.status(secretResponse.status).json(secretResponse.body);
+    }
     logError({
       event: "auth_verify_code_failed",
       endpoint: "/api/auth/verify-code",

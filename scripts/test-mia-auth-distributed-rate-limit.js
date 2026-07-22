@@ -19,8 +19,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
 const TEST_ENV = {
-  MIA_AUTH_RATE_LIMIT_SECRET: "patch-33a1-rate-secret",
-  MIA_AUTH_CHALLENGE_SECRET: "patch-33a1-challenge-secret",
+  MIA_AUTH_RATE_LIMIT_SECRET: "patch-33a1-rate-secret-32chars-minimum",
+  MIA_AUTH_OTP_SECRET: "patch-33a1-otp-secret-32chars-minimum-xx",
+  MIA_USER_SESSION_SECRET: "patch-33a1-session-secret-32chars-min",
 };
 
 let passed = 0;
@@ -39,14 +40,14 @@ function assert(label, condition) {
 console.log("\nPATCH 3.3A.1 — distributed auth rate limit tests\n");
 
 {
-  const hashA = hashAuthRateLimitKey("request_email", "user@example.com", TEST_ENV);
-  const hashB = hashAuthRateLimitKey("request_email", "user@example.com", TEST_ENV);
+  const hashA = hashAuthRateLimitKey(MIA_AUTH_RATE_LIMIT_SCOPES.REQUEST_EMAIL, "user@example.com", TEST_ENV);
+  const hashB = hashAuthRateLimitKey(MIA_AUTH_RATE_LIMIT_SCOPES.REQUEST_EMAIL, "user@example.com", TEST_ENV);
   assert("rate key hash is deterministic", hashA === hashB && hashA.length === 64);
   assert("rate key hash hides raw email", !hashA.includes("user@example.com"));
   assert(
     "different scopes produce different hashes",
-    hashAuthRateLimitKey("request_email", "203.0.113.1", TEST_ENV) !==
-      hashAuthRateLimitKey("request_origin", "203.0.113.1", TEST_ENV)
+    hashAuthRateLimitKey(MIA_AUTH_RATE_LIMIT_SCOPES.REQUEST_EMAIL, "203.0.113.1", TEST_ENV) !==
+      hashAuthRateLimitKey(MIA_AUTH_RATE_LIMIT_SCOPES.REQUEST_ORIGIN, "203.0.113.1", TEST_ENV)
   );
 }
 

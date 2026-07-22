@@ -150,7 +150,7 @@ Reutilização retorna `auth_challenge_consumed`.
 
 **PATCH 3.3A.1:** contadores persistidos em Postgres (`mia_auth_rate_limits`) via RPC atômico. Não depende de memória serverless.
 
-Ver [AUTH_ABUSE_PROTECTION.md](./AUTH_ABUSE_PROTECTION.md).
+Ver [AUTH_ABUSE_PROTECTION.md](./AUTH_ABUSE_PROTECTION.md) e [CRYPTOGRAPHIC_SECRET_POLICY.md](./CRYPTOGRAPHIC_SECRET_POLICY.md).
 
 ---
 
@@ -178,7 +178,7 @@ Falha real de envio retorna 503 (não simula sucesso).
 |------|---------------|
 | OTP | **Nunca** persistido; só hash |
 | Challenge hash | `mia_auth_challenges.token_hash` |
-| Segredo HMAC | `MIA_AUTH_CHALLENGE_SECRET` ou fallback session secret |
+| Segredo HMAC OTP | `MIA_AUTH_OTP_SECRET` exclusivo |
 | Logs | Sem OTP, token ou e-mail completo desnecessário |
 
 ---

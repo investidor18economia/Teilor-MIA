@@ -14,7 +14,7 @@ const ROOT = path.resolve(__dirname, "..");
 const PORT = Number(process.env.MIA_LOCKDOWN_HTTP_PORT || 3999);
 const BASE = `http://127.0.0.1:${PORT}`;
 const SECRET = "lockdown-test-secret";
-const SESSION_SECRET = "lockdown-session-secret";
+const SESSION_SECRET = "lockdown-session-secret-32chars-minimum";
 
 let passed = 0;
 let failed = 0;

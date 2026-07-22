@@ -116,7 +116,7 @@ function listApiEndpoints() {
 }
 
 {
-  const env = { MIA_USER_SESSION_SECRET: "session-secret" };
+  const env = { MIA_USER_SESSION_SECRET: "patch-12d-session-secret-32chars-min" };
   const token = issueUserSessionToken("user-123", env);
   const verified = verifyUserSessionToken(token, env);
   const mismatch = requireUserSession(

@@ -42,7 +42,7 @@ Janela alinhada por bucket fixo de 900s (epoch-aligned), global entre instância
 
 ## 4. Chaves hash
 
-- Segredo: `MIA_AUTH_RATE_LIMIT_SECRET` (fallback: challenge/session secret)
+- Segredo: `MIA_AUTH_RATE_LIMIT_SECRET` exclusivo (sem fallback)
 - Formato: `HMAC-SHA256("mia-auth-rate-v1:{scope}:{value}")`
 - Não persiste e-mail bruto nem IP bruto
 

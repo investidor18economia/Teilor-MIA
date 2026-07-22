@@ -22,7 +22,7 @@ import {
 import { validateAnalyticsTrackRequest } from "../lib/miaAnalyticsAllowlist.js";
 
 const TEST_ENV = {
-  MIA_USER_SESSION_SECRET: "patch-33-test-secret",
+  MIA_USER_SESSION_SECRET: "patch-33-test-session-secret-32chars",
 };
 
 const USER_U1 = "11111111-2222-4333-8444-555555555555";
