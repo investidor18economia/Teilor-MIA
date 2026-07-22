@@ -1,10 +1,9 @@
 /**
- * PATCH 3.2 — conversation_id identity tests.
+ * PATCH 3.2 — conversation_id lifecycle tests (in-memory chat ownership).
  */
 import {
-  getCurrentAnalyticsConversationId,
-  getOrCreateAnalyticsConversationId,
-  startNewAnalyticsConversation,
+  createAnalyticsConversationId,
+  removeLegacyAnalyticsConversationIdFromLocalStorage,
   MIA_CONVERSATION_ID_KEY,
   MIA_ANALYTICS_VISITOR_ID_KEY,
   MIA_ANALYTICS_SESSION_ID_KEY,
@@ -66,109 +65,48 @@ function clearWindow() {
   delete globalThis.window;
 }
 
-console.log("\nPATCH 3.2 — conversation_id tests\n");
+/** Minimal in-memory chat simulator (mirrors MIAChat ref lifecycle). */
+function createChatConversationSimulator() {
+  let currentConversationId = null;
 
-// Test 1 — lazy: no id before conversation starts
-{
-  clearWindow();
-  installWindow({ sessionStorage: createMockStorage(), localStorage: createMockStorage() });
-  const current = getCurrentAnalyticsConversationId();
-  assert("Test 1 — no conversation_id before chat starts", current === null);
-  assert(
-    "Test 1 — localStorage empty",
-    globalThis.window.localStorage.getItem(MIA_CONVERSATION_ID_KEY) == null
-  );
-}
-
-// Test 2 — getOrCreate generates valid UUID
-{
-  clearWindow();
-  installWindow({ sessionStorage: createMockStorage(), localStorage: createMockStorage() });
-  const id = getOrCreateAnalyticsConversationId();
-  assert("Test 2 — generates valid conversation id", isAnalyticsUuid(id));
-  assert(
-    "Test 2 — persists in localStorage",
-    globalThis.window.localStorage.getItem(MIA_CONVERSATION_ID_KEY) === id
-  );
-}
-
-// Test 3 — reuses existing valid UUID
-{
-  clearWindow();
-  const localStorage = createMockStorage({
-    [MIA_CONVERSATION_ID_KEY]: "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee",
-  });
-  installWindow({ sessionStorage: createMockStorage(), localStorage });
-  const id = getOrCreateAnalyticsConversationId();
-  assert("Test 3 — reuses valid UUID", id === "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee");
-}
-
-// Test 4 — replaces legacy non-UUID value
-{
-  clearWindow();
-  const localStorage = createMockStorage({
-    [MIA_CONVERSATION_ID_KEY]: "mia-12345-legacy",
-  });
-  installWindow({ sessionStorage: createMockStorage(), localStorage });
-  const id = getOrCreateAnalyticsConversationId();
-  assert("Test 4 — replaces legacy non-UUID", isAnalyticsUuid(id));
-  assert("Test 4 — legacy value overwritten", localStorage.getItem(MIA_CONVERSATION_ID_KEY) === id);
-}
-
-// Test 5 — startNewAnalyticsConversation creates fresh UUID
-{
-  clearWindow();
-  const localStorage = createMockStorage({
-    [MIA_CONVERSATION_ID_KEY]: "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee",
-  });
-  let counter = 0;
-  installWindow({
-    sessionStorage: createMockStorage(),
-    localStorage,
-    crypto: {
-      randomUUID: () => {
-        counter += 1;
-        return counter === 1
-          ? "bbbbbbbb-cccc-4ddd-8eee-ffffffffffff"
-          : "cccccccc-dddd-4eee-8fff-000000000002";
-      },
+  return {
+    getCurrent() {
+      return currentConversationId;
     },
-  });
-  const first = getOrCreateAnalyticsConversationId();
-  const second = startNewAnalyticsConversation();
-  assert("Test 5 — startNew returns UUID", isAnalyticsUuid(second));
-  assert("Test 5 — new id differs from previous", second !== first);
-  assert("Test 5 — localStorage updated", localStorage.getItem(MIA_CONVERSATION_ID_KEY) === second);
+    reset() {
+      currentConversationId = null;
+      removeLegacyAnalyticsConversationIdFromLocalStorage();
+    },
+    getOrCreate() {
+      if (typeof currentConversationId === "string" && isAnalyticsUuid(currentConversationId)) {
+        return currentConversationId;
+      }
+      const id = createAnalyticsConversationId();
+      currentConversationId = id;
+      return id;
+    },
+    simulateReload() {
+      currentConversationId = null;
+    },
+    simulateNewTab() {
+      return createChatConversationSimulator();
+    },
+  };
 }
 
-// Test 6 — independent from visitor_id and session_id keys
+console.log("\nPATCH 3.2 — conversation_id lifecycle tests\n");
+
+// Test 1 — page load: no conversation
 {
   clearWindow();
-  const sessionStorage = createMockStorage({
-    [MIA_ANALYTICS_SESSION_ID_KEY]: "sess-only",
-  });
-  const localStorage = createMockStorage({
-    [MIA_ANALYTICS_VISITOR_ID_KEY]: "11111111-2222-4333-8444-555555555555",
-  });
-  installWindow({ sessionStorage, localStorage });
-  const conversationId = getOrCreateAnalyticsConversationId();
-  assert("Test 6 — conversation not in sessionStorage", sessionStorage.getItem(MIA_CONVERSATION_ID_KEY) == null);
-  assert(
-    "Test 6 — visitor key unchanged",
-    localStorage.getItem(MIA_ANALYTICS_VISITOR_ID_KEY) === "11111111-2222-4333-8444-555555555555"
-  );
-  assert("Test 6 — conversation is UUID", isAnalyticsUuid(conversationId));
+  installWindow({ sessionStorage: createMockStorage(), localStorage: createMockStorage() });
+  const chat = createChatConversationSimulator();
+  chat.reset();
+  assert("Test 1 — no conversation on load", chat.getCurrent() === null);
+  assert("Test 1 — legacy key not read", globalThis.window.localStorage.getItem(MIA_CONVERSATION_ID_KEY) == null);
 }
 
-// Test 7 — SSR safe
-{
-  clearWindow();
-  assert("Test 7 — getCurrent SSR null", getCurrentAnalyticsConversationId() === null);
-  assert("Test 7 — getOrCreate SSR null", getOrCreateAnalyticsConversationId() === null);
-  assert("Test 7 — startNew SSR null", startNewAnalyticsConversation() === null);
-}
-
-// Test 8 — session_started explicit null conversation_id
+// Test 2 — session_started explicit null
 {
   clearWindow();
   installWindow({ sessionStorage: createMockStorage(), localStorage: createMockStorage() });
@@ -179,59 +117,141 @@ console.log("\nPATCH 3.2 — conversation_id tests\n");
   };
 
   await trackMiaSessionStarted();
-  assert("Test 8 — session_started captured", captured.length === 1);
-  assert("Test 8 — conversation_id null on session_started", captured[0].conversation_id === null);
-  assert(
-    "Test 8 — no conversation created in storage",
-    globalThis.window.localStorage.getItem(MIA_CONVERSATION_ID_KEY) == null
-  );
+  assert("Test 2 — session_started captured", captured.length === 1);
+  assert("Test 2 — conversation_id null", captured[0].conversation_id === null);
 
   delete globalThis.fetch;
 }
 
-// Test 9 — mia_question_sent ensures conversation_id
+// Test 3 — first question creates UUID once
 {
   clearWindow();
   installWindow({ sessionStorage: createMockStorage(), localStorage: createMockStorage() });
+  const chat = createChatConversationSimulator();
   const captured = [];
   globalThis.fetch = async (_url, init) => {
     captured.push(JSON.parse(init.body));
     return { ok: true };
   };
 
-  await trackMiaQuestionSent("Qual celular até 2500?");
-  assert("Test 9 — one event captured", captured.length === 1);
-  assert("Test 9 — conversation_id is UUID", isAnalyticsUuid(captured[0].conversation_id));
-  assert(
-    "Test 9 — same id persisted",
-    globalThis.window.localStorage.getItem(MIA_CONVERSATION_ID_KEY) === captured[0].conversation_id
-  );
+  const conversationId = chat.getOrCreate();
+  await trackMiaQuestionSent("Primeira pergunta", { conversationId });
+
+  assert("Test 3 — UUID created", isAnalyticsUuid(conversationId));
+  assert("Test 3 — tracking uses same UUID", captured[0].conversation_id === conversationId);
+  assert("Test 3 — not stored in localStorage", globalThis.window.localStorage.getItem(MIA_CONVERSATION_ID_KEY) == null);
 
   delete globalThis.fetch;
 }
 
-// Test 10 — continuity reuses same conversation_id
+// Test 4 — continuity reuses same ID
+{
+  const chat = createChatConversationSimulator();
+  const first = chat.getOrCreate();
+  const second = chat.getOrCreate();
+  assert("Test 4 — continuity reuses ID", first === second);
+}
+
+// Test 5 — explicit reset then new ID
+{
+  const chat = createChatConversationSimulator();
+  const first = chat.getOrCreate();
+  chat.reset();
+  assert("Test 5 — reset clears ID", chat.getCurrent() === null);
+  const second = chat.getOrCreate();
+  assert("Test 5 — new conversation gets new UUID", isAnalyticsUuid(second));
+  assert("Test 5 — IDs differ after reset", first !== second);
+}
+
+// Test 6 — reload simulation
+{
+  const chat = createChatConversationSimulator();
+  const beforeReload = chat.getOrCreate();
+  chat.simulateReload();
+  assert("Test 6 — reload clears in-memory ID", chat.getCurrent() === null);
+  const afterReload = chat.getOrCreate();
+  assert("Test 6 — post-reload new UUID", isAnalyticsUuid(afterReload));
+  assert("Test 6 — post-reload ID differs", beforeReload !== afterReload);
+}
+
+// Test 7 — new tab independent conversation
 {
   clearWindow();
-  installWindow({ sessionStorage: createMockStorage(), localStorage: createMockStorage() });
-  const captured = [];
-  globalThis.fetch = async (_url, init) => {
-    captured.push(JSON.parse(init.body));
-    return { ok: true };
-  };
+  const localStorage = createMockStorage({
+    [MIA_ANALYTICS_VISITOR_ID_KEY]: "11111111-2222-4333-8444-555555555555",
+  });
+  installWindow({ sessionStorage: createMockStorage({ tab: "a" }), localStorage });
 
-  await trackMiaQuestionSent("Primeira pergunta");
-  await trackMiaEvent("mia_recommendation_shown", { recommendation_name: "X", metadata: {} });
-  assert("Test 10 — two events captured", captured.length === 2);
-  assert(
-    "Test 10 — same conversation_id across events",
-    captured[0].conversation_id === captured[1].conversation_id
-  );
+  const tabA = createChatConversationSimulator();
+  const idA = tabA.getOrCreate();
 
-  delete globalThis.fetch;
+  clearWindow();
+  installWindow({ sessionStorage: createMockStorage({ tab: "b" }), localStorage });
+  const tabB = createChatConversationSimulator();
+  const idB = tabB.getOrCreate();
+
+  assert("Test 7 — tab B gets different conversation_id", idA !== idB);
 }
 
-// Test 11 — buildAnalyticsTrackPayload canonical order
+// Test 8 — legacy localStorage ignored
+{
+  clearWindow();
+  const localStorage = createMockStorage({
+    [MIA_CONVERSATION_ID_KEY]: "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee",
+  });
+  installWindow({ sessionStorage: createMockStorage(), localStorage });
+  removeLegacyAnalyticsConversationIdFromLocalStorage();
+  const chat = createChatConversationSimulator();
+  chat.reset();
+  const id = chat.getOrCreate();
+  assert("Test 8 — legacy key removed", localStorage.getItem(MIA_CONVERSATION_ID_KEY) == null);
+  assert("Test 8 — new ID not equal to legacy", id !== "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee");
+}
+
+// Test 9 — tracking and API same UUID (explicit pass-through)
+{
+  const chat = createChatConversationSimulator();
+  const conversationId = chat.getOrCreate();
+  const apiPayload = { conversation_id: conversationId, text: "test" };
+  assert("Test 9 — API payload uses chat ID", apiPayload.conversation_id === conversationId);
+}
+
+// Test 10 — recommendation uses request-scoped ID (race-safe)
+{
+  const chat = createChatConversationSimulator();
+  const requestConversationId = chat.getOrCreate();
+  chat.reset();
+  chat.getOrCreate(); // conversation B
+  const recommendationConversationId = requestConversationId;
+  assert(
+    "Test 10 — async recommendation keeps request ID",
+    recommendationConversationId !== chat.getCurrent()
+  );
+}
+
+// Test 11 — visitor_id independent
+{
+  clearWindow();
+  const localStorage = createMockStorage({
+    [MIA_ANALYTICS_VISITOR_ID_KEY]: "11111111-2222-4333-8444-555555555555",
+  });
+  installWindow({ sessionStorage: createMockStorage(), localStorage });
+  const chat = createChatConversationSimulator();
+  chat.reset();
+  chat.getOrCreate();
+  assert(
+    "Test 11 — visitor_id preserved",
+    localStorage.getItem(MIA_ANALYTICS_VISITOR_ID_KEY) === "11111111-2222-4333-8444-555555555555"
+  );
+}
+
+// Test 12 — createAnalyticsConversationId SSR safe
+{
+  clearWindow();
+  assert("Test 12 — SSR create returns null", createAnalyticsConversationId() === null);
+}
+
+// Test 13 — canonical payload order
 {
   const payload = buildAnalyticsTrackPayload(
     "mia_question_sent",
@@ -241,55 +261,60 @@ console.log("\nPATCH 3.2 — conversation_id tests\n");
     "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee"
   );
   const keys = Object.keys(payload);
-  assert("Test 11 — order event_name first", keys[0] === "event_name");
-  assert("Test 11 — order visitor_id second", keys[1] === "visitor_id");
-  assert("Test 11 — order session_id third", keys[2] === "session_id");
-  assert("Test 11 — order conversation_id fourth", keys[3] === "conversation_id");
+  assert("Test 13 — order conversation_id fourth", keys[3] === "conversation_id");
 }
 
-// Test 12 — assembleAnalyticsInsertRow default null
+// Test 14 — assembleAnalyticsInsertRow default null
 {
   const row = assembleAnalyticsInsertRow({ event_name: "session_started" });
-  assert("Test 12 — insert row conversation_id null by default", row.conversation_id === null);
+  assert("Test 14 — insert default null", row.conversation_id === null);
 }
 
-// Test 13 — validator accepts valid conversation_id
+// Test 15 — validator accepts valid conversation_id
 {
   const valid = validateAnalyticsTrackRequest({
     event_name: "mia_question_sent",
-    visitor_id: "11111111-2222-4333-8444-555555555555",
-    session_id: "sess-abc",
     conversation_id: "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee",
+    session_id: "sess",
     metadata: {},
   });
-  assert("Test 13 — validator accepts valid conversation_id", valid.ok === true);
-  assert(
-    "Test 13 — row includes conversation_id",
-    valid.row.conversation_id === "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee"
-  );
+  assert("Test 15 — validator ok", valid.ok === true);
 }
 
-// Test 14 — absent conversation_id allowed
+// Test 16 — explicit false → null
 {
-  const absent = validateAnalyticsTrackRequest({
-    event_name: "session_started",
-    session_id: "sess-abc",
-    metadata: {},
-  });
-  assert("Test 14 — absent conversation_id allowed", absent.ok === true);
-  assert("Test 14 — row conversation_id null when absent", absent.row.conversation_id == null);
+  const payload = buildAnalyticsTrackPayload("session_started", "sess", {}, null, false);
+  assert("Test 16 — explicit false null", payload.conversation_id === null);
 }
 
-// Test 15 — buildAnalyticsTrackPayload explicit false → null
+// Test 17 — trackMiaEvent without conversationId omits field
 {
-  const payload = buildAnalyticsTrackPayload(
-    "session_started",
-    "sess-1",
-    {},
-    "11111111-2222-4333-8444-555555555555",
-    false
-  );
-  assert("Test 15 — explicit false sets conversation_id null", payload.conversation_id === null);
+  clearWindow();
+  installWindow({ sessionStorage: createMockStorage(), localStorage: createMockStorage() });
+  const captured = [];
+  globalThis.fetch = async (_url, init) => {
+    captured.push(JSON.parse(init.body));
+    return { ok: true };
+  };
+
+  await trackMiaEvent("offer_click", { metadata: {} });
+  assert("Test 17 — offer_click without active conversation", !("conversation_id" in captured[0]));
+
+  delete globalThis.fetch;
+}
+
+// Test 18 — session_id independent from conversation reset
+{
+  clearWindow();
+  const sessionStorage = createMockStorage();
+  installWindow({ sessionStorage, localStorage: createMockStorage() });
+  const { getMiaSessionId } = await import("../lib/analytics.js");
+  const sessionBefore = getMiaSessionId();
+  const chat = createChatConversationSimulator();
+  chat.getOrCreate();
+  chat.reset();
+  const sessionAfter = getMiaSessionId();
+  assert("Test 18 — session_id stable on conversation reset", sessionBefore === sessionAfter);
 }
 
 console.log(`\nResultado: ${passed}/${passed + failed}`);

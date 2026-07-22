@@ -16,7 +16,7 @@ Complementa — não substitui — `visitor_id`, `session_id` e `user_id`.
 |-------|--------|--------------|-------------|
 | **`visitor_id`** | Navegador/origem (anônimo) | `localStorage` — semanas/meses | Não (nullable no banco) |
 | **`session_id`** | Aba/sessão atual | `sessionStorage` — até fechar aba | Não |
-| **`conversation_id`** | Thread de chat MIA | `localStorage` — até nova conversa ou limpeza | Não (nullable no banco) |
+| **`conversation_id`** | Thread de chat MIA | Memória (`conversationIdRef` em `MIAChat.jsx`) — vida da conversa ativa na aba | Não (nullable no banco) |
 | **`user_id`** | Usuário autenticado Supabase | Conta/login | Não |
 
 ```text
@@ -71,51 +71,44 @@ O `conversation_id` representa **uma conversa específica iniciada pelo usuário
 
 - UUID aleatório via `crypto.randomUUID()` no navegador;
 - criado **somente** quando uma conversa real começa — gatilho oficial: **primeira pergunta aceita para envio**;
-- implementação: `getOrCreateAnalyticsConversationId()` em `lib/analytics.js`, invocado por `trackMiaQuestionSent()` com `{ ensureConversation: true }`;
+- implementação: `getOrCreateCurrentConversationId()` em `components/MIAChat.jsx` (`conversationIdRef`);
+- primitivo: `createAnalyticsConversationId()` em `lib/analytics.js` (sem persistência);
 - **não** é criado no mount da página nem em `session_started`;
 - **não** deriva de conteúdo de mensagem, IP, user-agent ou fingerprinting.
 
-O mesmo UUID é reutilizado pelo chat (`components/MIAChat.jsx` → `resolveConversationIdForSend()`) e pelo Analytics — chave única `mia_conversation_id`.
+O mesmo UUID é passado explicitamente para `/api/mia-chat` e para `trackMiaQuestionSent()` / `trackMiaEvent()`.
 
 ---
 
 ## 5. Persistência
 
-| Chave | Storage | Escopo |
-|-------|---------|--------|
-| `mia_conversation_id` | `localStorage` | origem do site (first-party); **compartilhada com a API MIA** |
+| Armazenamento | Escopo | Duração |
+|---------------|--------|---------|
+| **`conversationIdRef`** (React ref em `MIAChat.jsx`) | Conversa ativa na aba | Vida da instância do componente / conversa em memória |
 
-**Por que `localStorage` (e não `sessionStorage`):**
+**Não** persiste em `localStorage` nem em `sessionStorage`.
 
-- o produto preserva o thread de chat após reload na mesma origem;
-- a mesma chave alimenta `conversation_id` no body de `/api/mia-chat` e nos eventos Analytics;
-- nova aba na mesma origem **compartilha** o mesmo `conversation_id` (comportamento `localStorage`).
+A chave legada `mia_conversation_id` **não é mais fonte de verdade**. `removeLegacyAnalyticsConversationIdFromLocalStorage()` remove valores antigos de forma segura no mount e ao resetar conversa.
 
-Funções oficiais em `lib/analytics.js`:
+**Por que memória (e não storage):**
 
-| Função | Comportamento |
-|--------|---------------|
-| `getCurrentAnalyticsConversationId()` | Lê UUID válido existente; **não cria** |
-| `getOrCreateAnalyticsConversationId()` | Lê ou cria na primeira conversa real |
-| `startNewAnalyticsConversation()` | Substitui por UUID novo (nova conversa explícita) |
-
-Constante exportada: `MIA_CONVERSATION_ID_KEY = "mia_conversation_id"`.
+- mensagens do chat vivem apenas em estado React;
+- reload encerra o histórico visível — o ID não deve sobreviver sozinho;
+- cada aba possui estado React independente — IDs não devem ser compartilhados entre abas.
 
 ---
 
 ## 6. Reutilização
 
-Todos os eventos emitidos **dentro** da conversa ativa devem compartilhar o mesmo `conversation_id`:
+Todos os eventos emitidos **dentro** da conversa ativa compartilham o mesmo `conversation_id`:
 
 | Evento | Resolução |
 |--------|-----------|
-| `mia_question_sent` | `ensureConversation: true` — cria se ausente |
-| `mia_recommendation_shown` | `getCurrentAnalyticsConversationId()` via `trackMiaEvent()` |
-| `offer_click`, `favorite_created`, `price_alert_created` | ID atual se existir em `localStorage`; caso contrário omitido/`null` |
+| `mia_question_sent` | `conversationId` explícito de `resolveConversationIdForSend()` |
+| `mia_recommendation_shown` | `conversationId` capturado no início do request (evita race) |
+| `offer_click`, `favorite_created`, `price_alert_created` | `getCurrentConversationId()` quando conversa ativa |
 
 Ordem canônica no payload: `event_name`, `visitor_id`, `session_id`, `conversation_id`, `user_id`, …
-
-Implementação centralizada em `trackMiaEvent()` → `buildAnalyticsTrackPayload()` (`lib/miaAnalyticsPayload.js`).
 
 ---
 
@@ -125,19 +118,15 @@ Novo UUID **somente** quando o produto inicia um fluxo conversacional novo.
 
 Gatilho oficial implementado:
 
-- **`handleClearLocalCache()`** em `components/MIAChat.jsx` — remove chaves `mia_*` do `localStorage` (exceto preferências e alertas), depois chama **`startNewAnalyticsConversation()`**.
+- **`handleClearLocalCache()`** — limpa mensagens (`setHistory([])`), reseta contexto, invalida `conversationIdRef` via `resetCurrentConversation()`; **próxima pergunta** cria novo UUID (lazy).
 
 Efeitos esperados:
 
 | Identidade | Comportamento |
 |------------|---------------|
-| `visitor_id` | **Inalterado** (recriado apenas se removido do storage) |
+| `visitor_id` | **Inalterado** |
 | `session_id` | **Inalterado** (mesma aba) |
-| `conversation_id` | **Novo UUID** |
-
-A conversa anterior deixa de receber eventos futuros — novos eventos conversacionais usam o ID substituto.
-
-Neste patch **não há** eventos `conversation_started` / `conversation_ended`.
+| `conversation_id` | **Novo UUID** na próxima pergunta |
 
 ---
 
@@ -147,11 +136,9 @@ Neste patch **não há** eventos `conversation_started` / `conversation_ended`.
 |------------|---------------------|
 | `visitor_id` | Preservado (`localStorage`) |
 | `session_id` | Preservado (`sessionStorage`) |
-| `conversation_id` | **Preservado** (`localStorage`) |
+| `conversation_id` | **Perdido** (estado React); próxima pergunta gera **novo UUID** |
 
-Recarregar a página **não** encerra a conversa nem gera novo `conversation_id`.
-
-O histórico de mensagens exibido depende do estado React/backend; o identificador Analytics/API permanece estável enquanto a chave existir.
+Recarregar a página encerra a conversa em memória. O histórico de mensagens **não** é restaurado — reutilizar um ID antigo seria semanticamente incorreto.
 
 ---
 
@@ -159,12 +146,10 @@ O histórico de mensagens exibido depende do estado React/backend; o identificad
 
 | Cenário | `session_id` | `conversation_id` | `visitor_id` |
 |---------|--------------|-------------------|--------------|
-| **Nova aba** (mesma origem) | Novo | Mesmo ( `localStorage` compartilhado ) | Mesmo |
-| **Fechar e reabrir aba** | Novo | Mesmo (se chave não removida) | Mesmo |
-| **Nova conversa explícita** (mesma aba) | Mesmo | Novo | Mesmo |
-| **Limpar `localStorage`** | Depende da aba | Novo na próxima pergunta | Novo se chave visitor removida |
-
-**Limitação documentada:** `localStorage` é compartilhado entre abas da mesma origem — duas abas abertas simultaneamente referenciam o **mesmo** `conversation_id` ativo. Não há sincronização cross-tab além do storage nativo do navegador.
+| **Nova aba** (mesma origem) | Novo | **Novo** (estado React independente) | Mesmo |
+| **Fechar e reabrir aba** | Novo | **Novo** na primeira pergunta | Mesmo |
+| **Nova conversa explícita** (mesma aba) | Mesmo | **Novo** na próxima pergunta | Mesmo |
+| **Reload** | Mesmo | **Novo** na próxima pergunta | Mesmo |
 
 ---
 

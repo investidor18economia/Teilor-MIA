@@ -6,6 +6,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
+  createAnalyticsConversationId,
   getMiaSessionId,
   MIA_ANALYTICS_SESSION_ID_KEY,
   trackMiaQuestionSent,
@@ -75,6 +76,7 @@ console.log("\nPATCH Analytics 1.2 — suggestion tracking tests\n");
   await trackMiaQuestionSent("Quero um notebook para trabalho", {
     userId: null,
     hasImage: false,
+    conversationId: createAnalyticsConversationId(),
   });
 
   assert("Test 1 — manual path records one event", captured.length === 1);
@@ -103,6 +105,7 @@ console.log("\nPATCH Analytics 1.2 — suggestion tracking tests\n");
   await trackMiaQuestionSent("📱 Celular até 2.000", {
     userId: "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee",
     hasImage: false,
+    conversationId: createAnalyticsConversationId(),
   });
 
   assert("Test 2 — suggestion path records one event", captured.length === 1);
@@ -124,7 +127,11 @@ console.log("\nPATCH Analytics 1.2 — suggestion tracking tests\n");
 
   let threw = false;
   try {
-    await trackMiaQuestionSent("teste", { userId: null, hasImage: false });
+    await trackMiaQuestionSent("teste", {
+      userId: null,
+      hasImage: false,
+      conversationId: createAnalyticsConversationId(),
+    });
   } catch {
     threw = true;
   }
@@ -141,7 +148,11 @@ console.log("\nPATCH Analytics 1.2 — suggestion tracking tests\n");
     return { ok: true, status: 200, json: async () => ({ success: true }) };
   };
 
-  await trackMiaQuestionSent("Imagem enviada", { userId: null, hasImage: true });
+  await trackMiaQuestionSent("Imagem enviada", {
+    userId: null,
+    hasImage: true,
+    conversationId: createAnalyticsConversationId(),
+  });
   assert("Test 4 — has_image true when image sent", captured[0]?.metadata?.has_image === true);
 }
 
@@ -163,8 +174,16 @@ console.log("\nPATCH Analytics 1.2 — suggestion tracking tests\n");
   const favoriteFillOnly = favoriteFnSource.includes("setMsg(");
   const favoriteDoesNotTrack = !favoriteFnSource.includes("trackMiaQuestionSent(");
 
+  const enviarPassesConversationId = /async function enviar\([\s\S]*trackMiaQuestionSent\([\s\S]*conversationId/.test(
+    CHAT_SOURCE
+  );
+  const usesInMemoryRef = CHAT_SOURCE.includes("conversationIdRef") &&
+    CHAT_SOURCE.includes("getOrCreateCurrentConversationId");
+
   assert("Test 5 — enviar uses trackMiaQuestionSent", enviarUsesHelper);
   assert("Test 5 — handleSuggestion uses trackMiaQuestionSent", suggestionHandlerUsesHelper);
+  assert("Test 5 — enviar passes conversationId explicitly", enviarPassesConversationId);
+  assert("Test 5 — chat owns in-memory conversation ref", usesInMemoryRef);
   assert("Test 5 — exactly two send tracking call sites", manualCalls === 2);
   assert("Test 5 — no legacy inline mia_question_sent in chat", legacyInline === false);
   assert("Test 5 — suggestion button click does not track directly", suggestionClickDoesNotTrackDirectly);

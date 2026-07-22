@@ -7,6 +7,7 @@ import {
   MIA_ANALYTICS_VISITOR_ID_KEY,
   MIA_ANALYTICS_SESSION_ID_KEY,
   trackMiaEvent,
+  createAnalyticsConversationId,
   trackMiaQuestionSent,
 } from "../lib/analytics.js";
 import {
@@ -199,7 +200,8 @@ console.log("\nPATCH 3.1 — visitor_id tests\n");
     return { ok: true };
   };
 
-  await trackMiaQuestionSent("test");
+  const convId = createAnalyticsConversationId();
+  await trackMiaQuestionSent("test", { conversationId: convId });
   assert("Test 10 — one event captured", captured.length === 1);
   assert("Test 10 — payload includes visitor_id", isAnalyticsUuid(captured[0].visitor_id));
   assert("Test 10 — payload includes session_id", typeof captured[0].session_id === "string");

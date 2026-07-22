@@ -150,14 +150,17 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 | | |
 |---|---|
 | **Objetivo** | Consolidar `session_id` documentalmente e introduzir identidade conversacional `conversation_id`. |
-| **Resultado** | `getOrCreateAnalyticsConversationId()`, `startNewAnalyticsConversation()` em `lib/analytics.js`; chave `mia_conversation_id` compartilhada com API MIA; coluna `conversation_id uuid NULL` (migration `20260721153003`); [CONVERSATION_ID.md](./CONVERSATION_ID.md). |
-| **Impacto** | Aditivo e compatível; 17 colunas totais; Analytics Storage Schema **permanece v1**; `session_started` com `conversation_id` NULL; eventos conversacionais propagam UUID; dados históricos sem backfill. |
+| **Resultado** | Coluna `conversation_id uuid NULL` (migration `20260721153003`); identidade conversacional em memória via `conversationIdRef` (`MIAChat.jsx`); [CONVERSATION_ID.md](./CONVERSATION_ID.md). |
+| **Impacto** | Aditivo e compatível; 17 colunas totais; Analytics Storage Schema **permanece v1**; `session_started` com `conversation_id` NULL; eventos conversacionais propagam UUID explícito; dados históricos sem backfill. |
 
-**Semântica resumida:**
+**Semântica resumida (correção lifecycle — pré-aprovação final):**
 
-- Criação lazy na primeira pergunta (`trackMiaQuestionSent` → `ensureConversation`);
-- Nova conversa via `handleClearLocalCache` / `startNewAnalyticsConversation` em `MIAChat.jsx`;
-- Persistência em `localStorage` — sobrevive reload; compartilhado entre abas mesma origem;
+- Fonte oficial: `conversationIdRef` em `MIAChat.jsx` (memória) — **não** `localStorage`;
+- Criação lazy na primeira pergunta; mesmo UUID para Analytics e `/api/mia-chat`;
+- Reload sem histórico → nova conversa → novo UUID;
+- Nova aba → estado React independente → novo UUID;
+- Nova conversa via `handleClearLocalCache` → `resetCurrentConversation()` → próxima pergunta gera novo UUID;
+- Chave legada `mia_conversation_id` ignorada/removida via `removeLegacyAnalyticsConversationIdFromLocalStorage()`;
 - `session_id` permanece `text` no banco; `conversation_id` é `uuid`.
 
 **Testes:** `scripts/test-mia-analytics-conversation-id.js` (`npm run test:mia:analytics:conversation-id`).

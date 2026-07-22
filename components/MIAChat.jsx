@@ -43,14 +43,14 @@ import {
   extractKnowledgeMetadataFromApiResponse,
   MIA_HOW_IT_WORKS_AUDIT_ANCHOR,
 } from "../lib/miaCommercialKnowledgeTransparency.js";
+import { isAnalyticsUuid } from "../lib/miaAnalyticsPayload.js";
 import {
   trackMiaEvent,
   detectAnalyticsCategory,
   trackMiaQuestionSent,
   trackMiaSessionStarted,
-  getCurrentAnalyticsConversationId,
-  getOrCreateAnalyticsConversationId,
-  startNewAnalyticsConversation,
+  createAnalyticsConversationId,
+  removeLegacyAnalyticsConversationIdFromLocalStorage,
   buildMiaRecommendationShownPayload,
   buildMiaFavoriteCreatedPayload,
   buildMiaPriceAlertCreatedPayload,
@@ -952,13 +952,32 @@ export default function MIAChat() {
 
 useEffect(() => {
   if (typeof window === "undefined") return;
-  conversationIdRef.current = getCurrentAnalyticsConversationId();
+  removeLegacyAnalyticsConversationIdFromLocalStorage();
+  conversationIdRef.current = null;
 }, []);
 
-  function resolveConversationIdForSend() {
-    const conversationId = getOrCreateAnalyticsConversationId();
+  function getCurrentConversationId() {
+    return conversationIdRef.current;
+  }
+
+  function resetCurrentConversation() {
+    conversationIdRef.current = null;
+    removeLegacyAnalyticsConversationIdFromLocalStorage();
+  }
+
+  function getOrCreateCurrentConversationId() {
+    const existing = conversationIdRef.current;
+    if (typeof existing === "string" && isAnalyticsUuid(existing)) {
+      return existing;
+    }
+
+    const conversationId = createAnalyticsConversationId();
     conversationIdRef.current = conversationId;
     return conversationId;
+  }
+
+  function resolveConversationIdForSend() {
+    return getOrCreateCurrentConversationId();
   }
 
      async function processImageFile(file, source = "gallery") {
@@ -1399,9 +1418,10 @@ useEffect(() => {
         keysToRemove.forEach((key) => localStorage.removeItem(key));
 
         clearSessionOpeningState();
-
-        const nextConversationId = startNewAnalyticsConversation();
-        conversationIdRef.current = nextConversationId;
+        resetCurrentConversation();
+        requestIdRef.current += 1;
+        setHistory([]);
+        setSessionContext({});
       }
 
       showActionToast("Cache local limpo com sucesso.", "success");
@@ -2071,6 +2091,7 @@ useEffect(() => {
         trackMiaQuestionSent(pergunta, {
           userId: user ? user.id : null,
           hasImage: false,
+          conversationId,
         });
 
         try {
@@ -2127,7 +2148,8 @@ useEffect(() => {
                 userId: user ? user.id : null,
                 productsCount: productsRaw.length,
                 productNamePrecedence: "card_response",
-              })
+              }),
+              { conversationId }
             );
           }
           const commercialFallback = resolveCommercialFallbackFlag(data);
@@ -2235,6 +2257,7 @@ useEffect(() => {
     trackMiaQuestionSent(pergunta, {
       userId: user ? user.id : null,
       hasImage: !!imageToSend,
+      conversationId,
     });
 
     try {
@@ -2291,7 +2314,8 @@ useEffect(() => {
             userId: user ? user.id : null,
             productsCount: productsRaw.length,
             productNamePrecedence: "standard",
-          })
+          }),
+          { conversationId }
         );
       }
       const commercialFallback = resolveCommercialFallbackFlag(data);
@@ -2435,7 +2459,8 @@ function detectPriorityFromText(text = "") {
             prod,
             userId: actingUser ? actingUser.id : null,
             detectCategory: detectAnalyticsCategory,
-          })
+          }),
+          getCurrentConversationId() ? { conversationId: getCurrentConversationId() } : {}
         );
         showActionToast("⭐ Produto favoritado!", "success");
       } else {
@@ -2504,7 +2529,8 @@ function detectPriorityFromText(text = "") {
         numericPrice,
         actionSource: targetOverride != null ? "alert_form" : "offer_card",
         detectCategory: detectAnalyticsCategory,
-      })
+      }),
+      getCurrentConversationId() ? { conversationId: getCurrentConversationId() } : {}
     );
     
     return true;
@@ -2915,12 +2941,14 @@ function detectPriorityFromText(text = "") {
                        target="_blank"
                        rel="noreferrer"
                        onClick={() => {
+                         const activeConversationId = getCurrentConversationId();
                          trackMiaEvent(
                            "offer_click",
                            buildMiaOfferClickPayload({
                              offerCard,
                              detectCategory: detectAnalyticsCategory,
-                           })
+                           }),
+                           activeConversationId ? { conversationId: activeConversationId } : {}
                          );
                        }}
                      >

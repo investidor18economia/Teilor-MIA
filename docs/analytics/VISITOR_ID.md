@@ -16,7 +16,7 @@ Complementa — não substitui — `session_id` e `user_id`.
 |-------|--------|--------------|-------------|
 | **`visitor_id`** | Navegador/origem (anônimo) | `localStorage` — semanas/meses | Não (nullable no banco) |
 | **`session_id`** | Aba/sessão atual | `sessionStorage` — até fechar aba | Não |
-| **`conversation_id`** | Thread de chat MIA | `localStorage` (`mia_conversation_id`) — até nova conversa | Não (nullable no banco) |
+| **`conversation_id`** | Thread de chat MIA | Memória (`MIAChat.jsx`) — vida da conversa na aba | Não (nullable no banco) |
 | **`user_id`** | Usuário autenticado Supabase | Conta/login | Não |
 
 ```text

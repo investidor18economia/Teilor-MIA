@@ -86,7 +86,9 @@ Ver [SESSION_ID.md](../SESSION_ID.md).
 | **Tipo** | `uuid` |
 | **Obrigatório** | Não |
 | **Descrição** | Identificador anônimo de um fluxo conversacional com a MIA (PATCH 3.2) |
-| **Origem** | `localStorage.mia_conversation_id` via `getOrCreateAnalyticsConversationId()` / `getCurrentAnalyticsConversationId()` |
+| **Origem** | `conversationIdRef` em `MIAChat.jsx` — explícito em `trackMiaQuestionSent()` / `trackMiaEvent()` |
+| **Persistência** | Memória (React ref) — **não** `localStorage` |
+| **Legado** | `mia_conversation_id` removido via `removeLegacyAnalyticsConversationIdFromLocalStorage()` |
 | **Exemplo** | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
 | **Quem popula** | Frontend (eventos conversacionais); API repassa |
 | **Quando nulo** | `session_started`; antes da primeira pergunta; dados históricos; eventos server-side; SSR; storage indisponível |
@@ -100,8 +102,8 @@ Ver [CONVERSATION_ID.md](../CONVERSATION_ID.md).
 | Opção | Efeito |
 |-------|--------|
 | `{ conversationId: false }` | Força `conversation_id = null` (`session_started`) |
-| `{ ensureConversation: true }` | Cria/reutiliza via `getOrCreateAnalyticsConversationId()` (`mia_question_sent`) |
-| default | Inclui ID atual se existir em `localStorage` |
+| `{ conversationId: "<uuid>" }` | UUID explícito passado pelo `MIAChat` |
+| omitido | Campo omitido do payload (eventos sem conversa ativa) |
 
 ---
 

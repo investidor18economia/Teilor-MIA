@@ -34,9 +34,9 @@ conversation_id   → eventos de um fluxo conversacional específico
 | Identidade | Escopo | Storage |
 |------------|--------|---------|
 | `session_id` | Sessão da aba | `sessionStorage` (`mia_session_id`) |
-| `conversation_id` | Thread de chat MIA | `localStorage` (`mia_conversation_id`, compartilhado com API) |
+| `conversation_id` | Thread de chat MIA | Memória (`conversationIdRef` em `MIAChat.jsx`) |
 
-**Múltiplas conversas por sessão:** na mesma aba, o usuário pode iniciar uma nova conversa (ex.: `handleClearLocalCache` → `startNewAnalyticsConversation()`). O `session_id` permanece; o `conversation_id` muda.
+**Múltiplas conversas por sessão:** na mesma aba, o usuário pode iniciar uma nova conversa (ex.: `handleClearLocalCache` → `resetCurrentConversation()`). O `session_id` permanece; o `conversation_id` muda na próxima pergunta.
 
 **Independência:** `session_id` não substitui `conversation_id` e vice-versa. `session_started` registra sessão **sem** conversa (`conversation_id` NULL).
 

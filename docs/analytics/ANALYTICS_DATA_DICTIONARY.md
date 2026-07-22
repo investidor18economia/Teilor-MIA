@@ -95,7 +95,7 @@ Ver [SESSION_ID.md](./SESSION_ID.md).
 | **Default** | — |
 | **Descrição** | Identificador anônimo de um fluxo conversacional com a MIA (PATCH 3.2). Não é sessão, não é visitante, não é usuário autenticado. |
 | **Exemplo** | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
-| **Origem** | `localStorage.mia_conversation_id` via `lib/analytics.js` → API (compartilhado com `/api/mia-chat`) |
+| **Origem** | `conversationIdRef` em `MIAChat.jsx` — passado explicitamente ao Analytics e `/api/mia-chat` |
 | **Quem popula** | Frontend (eventos conversacionais); server-side somente se contexto legítimo |
 | **Quando preenchida** | Após primeira pergunta; eventos derivados da conversa ativa |
 | **Quando nula** | `session_started`; dados históricos; eventos server-side; antes da primeira pergunta |

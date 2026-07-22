@@ -45,7 +45,7 @@ ANALYTICS_CHANGELOG.md
 **Implementação (código, não duplicar na documentação):**
 
 - Payloads: `lib/miaAnalyticsPayload.js` (PATCH 2.2)
-- Identidade: `lib/analytics.js` — `getOrCreateAnalyticsVisitorId()` (PATCH 3.1), `getOrCreateAnalyticsConversationId()` / `startNewAnalyticsConversation()` (PATCH 3.2), `getMiaSessionId()` (PATCH 1.1)
+- Identidade: `lib/analytics.js` — `getOrCreateAnalyticsVisitorId()` (PATCH 3.1), `createAnalyticsConversationId()` (PATCH 3.2); lifecycle em `MIAChat.jsx` (`conversationIdRef`); `getMiaSessionId()` (PATCH 1.1)
 - Frontend: `lib/analytics.js` · Allowlist: `lib/miaAnalyticsAllowlist.js`
 - Server-side: `lib/miaPriceAlertEmailAnalytics.js`
 
@@ -120,8 +120,8 @@ ANALYTICS_CHANGELOG.md
 | Categorias frontend | plural (`smartphones`, `notebooks`, …) | singular (`phone`, `notebook`) |
 | Módulo de payload | `lib/miaAnalyticsPayload.js` | montagem inline duplicada |
 | Chave visitor | `mia_analytics_visitor_id` (`localStorage`) | reutilizar `mia_session_id` |
-| Chave conversa | `mia_conversation_id` (`localStorage`, compartilhada com API MIA) | gerar por evento |
-| Helper conversa | `getOrCreateAnalyticsConversationId()` | ID por pergunta/resposta |
+| Fonte conversa | `conversationIdRef` em `MIAChat.jsx` (memória) | gerar por evento / localStorage legado |
+| Helper conversa | `getOrCreateCurrentConversationId()` | ID por pergunta/resposta |
 | Validação UUID | `isAnalyticsUuid()` | `isValidUuid()` local |
 | Helper visitor | `getOrCreateAnalyticsVisitorId()` | fingerprint, PII |
 | Helpers E2E | sufixo `E2E` (`emitPriceAlertEmailE2EAnalytics`) | `E2e` misto |

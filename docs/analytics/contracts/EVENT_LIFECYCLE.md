@@ -41,7 +41,7 @@ Usuário
    │   lib/analytics.js
    │   • getOrCreateAnalyticsVisitorId() → localStorage
    │   • getMiaSessionId() → sessionStorage
-   │   • getOrCreateAnalyticsConversationId() → localStorage (lazy, PATCH 3.2)
+   │   • conversationIdRef (MIAChat) → memória; passado explicitamente ao tracking (PATCH 3.2)
    │   • trackMiaEvent / trackMiaQuestionSent / trackMiaSessionStarted
    │       ↓
    │   POST /api/analytics/track
@@ -103,7 +103,7 @@ O usuário (ou operador via cron) realiza uma ação observável:
 |------|--------|
 | Mount da aba | `trackMiaSessionStarted()` — `conversation_id` **NULL** |
 | Pergunta (manual ou sugestão) | `trackMiaQuestionSent()` — cria/reutiliza `conversation_id` |
-| Nova conversa (limpar cache) | `startNewAnalyticsConversation()` em `handleClearLocalCache()` |
+| Nova conversa (limpar cache) | `resetCurrentConversation()` em `handleClearLocalCache()` — novo UUID na próxima pergunta |
 | Card exibido | `trackMiaEvent("mia_recommendation_shown", …)` — mesmo `conversation_id` |
 | Favorito | `trackMiaEvent("favorite_created", …)` |
 | Alerta | `trackMiaEvent("price_alert_created", …)` |
@@ -119,7 +119,7 @@ Responsabilidades:
 
 1. **`getMiaSessionId()`** — lê/cria ID em `sessionStorage`; remove legado de `localStorage`.
 2. **`getOrCreateAnalyticsVisitorId()`** — identidade persistente do visitante (PATCH 3.1).
-3. **`getOrCreateAnalyticsConversationId()` / `getCurrentAnalyticsConversationId()` / `startNewAnalyticsConversation()`** — identidade conversacional (PATCH 3.2); chave `mia_conversation_id` compartilhada com `/api/mia-chat`.
+3. **`conversationIdRef` / `getOrCreateCurrentConversationId()`** — identidade conversacional em memória (`MIAChat.jsx`, PATCH 3.2); passada explicitamente ao Analytics e `/api/mia-chat`.
 4. **`trackMiaEvent()`** — monta body via `buildAnalyticsTrackPayload()` (`lib/miaAnalyticsPayload.js`); opções `conversationId` e `ensureConversation`.
 5. **`fetch("/api/analytics/track")`** — POST fire-and-forget; erros → `console.warn` apenas.
 6. **`detectAnalyticsCategory()`** — infere `category` a partir do texto.
@@ -265,25 +265,25 @@ Mount MIAChat
   → visitor_id + session_id; conversation_id NULL
 
 Primeira pergunta
-  → getOrCreateAnalyticsConversationId()
-  → trackMiaQuestionSent({ ensureConversation: true })
-  → conversation_id C1 persistido em localStorage
+  → getOrCreateCurrentConversationId() (conversationIdRef)
+  → trackMiaQuestionSent({ conversationId: C1 })
+  → mesmo C1 em POST /api/mia-chat
 
 Resposta com card
-  → trackMiaEvent("mia_recommendation_shown")
-  → conversation_id C1 (reutilizado)
+  → trackMiaEvent("mia_recommendation_shown", { conversationId: C1 })
+  → conversation_id C1 (capturado no request)
 
 Pergunta de continuidade
-  → trackMiaQuestionSent()
-  → conversation_id C1 (mesmo)
+  → trackMiaQuestionSent({ conversationId: C1 })
 
 Limpar cache local / nova conversa
-  → startNewAnalyticsConversation()
-  → conversation_id C2 (novo UUID)
+  → resetCurrentConversation()
+  → próxima pergunta → conversation_id C2 (novo UUID)
   → visitor_id e session_id inalterados na mesma aba
 
 Reload
-  → conversation_id preservado (localStorage)
+  → histórico React perdido; conversationIdRef perdido
+  → próxima pergunta → conversation_id C3 (novo UUID)
   → session_id preservado (sessionStorage)
 ```
 
