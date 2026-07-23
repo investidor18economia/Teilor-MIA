@@ -45,9 +45,9 @@ async function fetchLifecycleEvents(alertId, userId, sinceIso) {
     .from("analytics_events")
     .select("id,event_name,category,user_id,metadata,created_at")
     .eq("event_name", "mia_price_alert_lifecycle")
-    .eq("user_id", userId)
     .gte("created_at", sinceIso)
     .not("category", "eq", "price_alert_lifecycle_test")
+    .or(`user_id.eq.${userId},metadata->>user_id.eq.${userId}`)
     .order("created_at", { ascending: true });
   if (error) throw new Error(error.message);
   return (data || []).filter(

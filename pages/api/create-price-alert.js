@@ -43,7 +43,7 @@ export default async function handler(req, res) {
     }
 
     if (!session.userId || !product_name) {
-      instrumentPriceAlertLifecycleFromCreation(supabase, {
+      await instrumentPriceAlertLifecycleFromCreation(supabase, {
         body: req.body,
         userId: session.userId ?? null,
         requestAttemptId,
@@ -77,7 +77,7 @@ export default async function handler(req, res) {
 
       if (lookupError) {
         console.error("create-price-alert lookup error:", lookupError);
-        instrumentPriceAlertLifecycleFromCreation(supabase, {
+        await instrumentPriceAlertLifecycleFromCreation(supabase, {
           body: req.body,
           userId: session.userId,
           requestAttemptId,
@@ -89,7 +89,7 @@ export default async function handler(req, res) {
       }
 
       if (Array.isArray(existingAlerts) && existingAlerts.length > 0) {
-        instrumentPriceAlertLifecycleFromCreation(supabase, {
+        await instrumentPriceAlertLifecycleFromCreation(supabase, {
           body: req.body,
           userId: session.userId,
           requestAttemptId,
@@ -108,7 +108,7 @@ export default async function handler(req, res) {
 
     if (error) {
       console.error("create-price-alert error:", error);
-      instrumentPriceAlertLifecycleFromCreation(supabase, {
+      await instrumentPriceAlertLifecycleFromCreation(supabase, {
         body: req.body,
         userId: session.userId,
         requestAttemptId,
@@ -120,7 +120,7 @@ export default async function handler(req, res) {
     }
 
     const createdRow = Array.isArray(data) ? data[0] : data;
-    instrumentPriceAlertLifecycleFromCreation(supabase, {
+    await instrumentPriceAlertLifecycleFromCreation(supabase, {
       body: req.body,
       userId: session.userId,
       requestAttemptId,
