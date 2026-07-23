@@ -20,7 +20,8 @@ acceptance as (
 ),
 reference_day as (
   select coalesce(max((created_at at time zone 'UTC')::date), current_date) as dia_referencia
-  from decision_events
+  from analytics_events
+  where event_name = 'mia_recommendation_decision'
 )
 select r.dia_referencia,
   d.competitiveness,

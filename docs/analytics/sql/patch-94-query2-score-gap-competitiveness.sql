@@ -17,7 +17,7 @@ select r.dia_referencia,
   coalesce(d.metadata->>'runner_up_competitiveness', 'UNKNOWN') as runner_up_competitiveness,
   count(*)::bigint as decision_count,
   round(avg((d.metadata->>'score_gap')::numeric), 2) as avg_score_gap,
-  round(percentile_cont(0.5) within group (order by (d.metadata->>'score_gap')::numeric), 2) as median_score_gap
+  round((percentile_cont(0.5) within group (order by (d.metadata->>'score_gap')::numeric))::numeric, 2) as median_score_gap
 from decision_events d
 cross join reference_day r
 group by 1, 2, 3

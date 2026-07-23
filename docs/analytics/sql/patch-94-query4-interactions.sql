@@ -14,7 +14,8 @@ with acceptance_signals as (
 ),
 reference_day as (
   select coalesce(max((created_at at time zone 'UTC')::date), current_date) as dia_referencia
-  from acceptance_signals
+  from analytics_events
+  where event_name = 'mia_recommendation_acceptance_signal'
 )
 select r.dia_referencia,
   s.signal_target,

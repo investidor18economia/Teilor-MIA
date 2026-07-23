@@ -45,9 +45,12 @@ runner_up_became_winner as (
 reference_day as (
   select coalesce(max((created_at at time zone 'UTC')::date), current_date) as dia_referencia
   from analytics_events where event_name = 'mia_recommendation_decision'
+),
+metric_rows as (
+  select 'selection'::text as tipo, 'decisions_with_runner_up_valid'::text as metrica, count(*)::numeric as valor from decisions
+  union all
+  select 'selection', 'runner_up_acceptance_signals', count(*)::numeric from acceptance_runner_up
+  union all
+  select 'selection', 'runner_up_became_winner', coalesce((select valor from runner_up_became_winner), 0)::numeric
 )
-select r.dia_referencia, 'selection'::text as tipo, 'decisions_with_runner_up_valid'::text as metrica, count(*)::numeric as valor from decisions
-union all
-select r.dia_referencia, 'selection', 'runner_up_acceptance_signals', count(*)::numeric from acceptance_runner_up cross join reference_day r
-union all
-select r.dia_referencia, 'selection', 'runner_up_became_winner', (select valor from runner_up_became_winner) from reference_day r;
+select r.dia_referencia, m.tipo, m.metrica, m.valor from metric_rows m cross join reference_day r order by m.metrica;

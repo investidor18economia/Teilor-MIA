@@ -32,7 +32,8 @@ acceptance_after as (
 ),
 reference_day as (
   select coalesce(max((created_at at time zone 'UTC')::date), current_date) as dia_referencia
-  from rejected
+  from analytics_events
+  where event_name = 'mia_recommendation_rejection_signal'
 ),
 metric_rows as (
   select 'recovery'::text as tipo, 'rejected_decisions'::text as metrica, count(*)::numeric as valor from rejected
