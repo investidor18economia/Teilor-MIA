@@ -327,12 +327,16 @@ Medir estabilidade da plataforma.
 
 Entregas
 
+- respostas (outcomes)
 - erros
 - latência
-- disponibilidade
-- saúde da aplicação
+- disponibilidade e saúde operacional
 
 Patches
+
+PATCH 7.0
+
+Auditoria da Fase 7 e validação do roadmap
 
 PATCH 7.1
 
@@ -348,7 +352,7 @@ Latency Analytics
 
 PATCH 7.4
 
-Health Metrics
+Health Metrics Analytics
 
 PATCH 7.5
 

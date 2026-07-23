@@ -563,6 +563,23 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 36. PATCH 7.0 — Auditoria da Fase 7 e Validação do Roadmap (2026-07-22)
+
+**Objetivo:** validar roadmap da Fase 7 (Reliability Analytics) **antes** de qualquer implementação.
+
+**Entregas:**
+
+- [PATCH_7.0_PHASE_7_ROADMAP_AUDIT.md](./PATCH_7.0_PHASE_7_ROADMAP_AUDIT.md)
+- Atualização [02_analytics_roadmap.md](./02_analytics_roadmap.md) — PATCH 7.0 incluído
+
+**Validação:** auditoria read-only — escopo, arquitetura, dependências, riscos, matriz de implementação, checklist.
+
+**Veredito:** 🟡 **FASE 7 PRONTA COM AJUSTES DOCUMENTAIS** — aguardando aprovação formal para iniciar PATCH 7.1.
+
+**Ajustes pré-7.1:** decisão persistência (recomendado analytics_events); delta vs 6.4/5.1/12E; taxonomia outcome; thresholds latência.
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |
