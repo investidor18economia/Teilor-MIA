@@ -1,0 +1,215 @@
+/* PATCH 11.2 — Teilor em Números (public metrics page) */
+
+.public-metrics-page {
+  min-height: 100dvh;
+  background: linear-gradient(165deg, #041028 0%, #050d1f 42%, #071733 100%);
+  color: #e8f4fc;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.public-metrics-hero {
+  text-align: center;
+  padding: calc(32px + env(safe-area-inset-top, 0px)) 20px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.public-metrics-logo {
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+.public-metrics-hero-title {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f4faff;
+  line-height: 1.1;
+}
+
+.public-metrics-hero-subtitle {
+  margin: 0 auto 12px;
+  max-width: 42ch;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.65;
+  color: #c8dff0;
+}
+
+.public-metrics-hero-meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #8eb4d0;
+}
+
+.public-metrics-main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 48px;
+}
+
+.public-metrics-section {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.public-metrics-section-title {
+  margin: 0 0 24px;
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  font-weight: 700;
+  color: #00c6ff;
+  letter-spacing: -0.02em;
+}
+
+.public-metrics-disclaimer {
+  margin: -12px 0 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 193, 77, 0.35);
+  background: rgba(255, 193, 77, 0.08);
+  color: #ffe8b8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.public-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.public-metrics-card {
+  padding: 24px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(143, 210, 245, 0.18);
+  background: linear-gradient(145deg, rgba(8, 22, 52, 0.92) 0%, rgba(6, 16, 38, 0.96) 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.public-metrics-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 198, 255, 0.35);
+}
+
+.public-metrics-card-value {
+  margin: 0 0 8px;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #f4faff;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.public-metrics-card-title {
+  margin: 0 0 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #00c6ff;
+}
+
+.public-metrics-card-desc {
+  margin: 0 0 12px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #a8c8e0;
+}
+
+.public-metrics-card-source {
+  margin: 0;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6a8fa8;
+}
+
+.public-metrics-card-source span {
+  color: #8eb4d0;
+}
+
+.public-metrics-transparency {
+  padding: 48px 0 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.public-metrics-transparency-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  max-width: 60ch;
+  color: #c8dff0;
+  line-height: 1.75;
+}
+
+.public-metrics-transparency-list li {
+  margin-bottom: 8px;
+}
+
+.public-metrics-footer {
+  text-align: center;
+  padding: 32px 20px calc(32px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.8125rem;
+  color: #6a8fa8;
+}
+
+.public-metrics-footer-link {
+  color: #00c6ff;
+  text-decoration: none;
+}
+
+.public-metrics-footer-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .public-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .public-metrics-hero {
+    padding-top: 24px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .public-metrics-page {
+    background: linear-gradient(165deg, #f0f7ff 0%, #e8f2fa 100%);
+    color: #0a1628;
+  }
+
+  .public-metrics-hero-title,
+  .public-metrics-card-value {
+    color: #041028;
+  }
+
+  .public-metrics-hero-subtitle,
+  .public-metrics-transparency-list {
+    color: #2a4560;
+  }
+
+  .public-metrics-card {
+    background: #fff;
+    border-color: rgba(0, 100, 160, 0.12);
+    box-shadow: 0 4px 24px rgba(0, 40, 80, 0.08);
+  }
+
+  .public-metrics-card-desc {
+    color: #4a6580;
+  }
+
+  .public-metrics-disclaimer {
+    background: rgba(255, 193, 77, 0.15);
+    color: #6b4e00;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .public-metrics-card {
+    transition: none;
+  }
+
+  .public-metrics-card:hover {
+    transform: none;
+  }
+}

@@ -995,6 +995,18 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 60. PATCH 11.2 — Página Pública "Teilor em Números" (2026-07-23)
+
+**Rota:** `/teilor-em-numeros` · ISR 300s · fonte única `GET /api/executive-metrics`
+
+**Arquitetura:** `miaPublicMetricsDisplay.js` · `PublicMetricsPage` · `PublicMetricCard` · sem agregação no frontend
+
+**Documentação:** `PUBLIC_METRICS_PAGE.md`
+
+**Veredito:** 🟢 **PATCH 11.2 APROVADO**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |
