@@ -945,6 +945,24 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 57. PATCH 10.5 — Savings Outcomes & User Value Analytics (2026-07-23)
+
+**Evento:** `mia_user_value_outcome` · `10.5.0` · categoria `user_value`
+
+**Arquitetura:** derivado de offer_set + price intelligence + savings + anti-regret + sinais pós-decisão; hook pós-decisão via acceptance/rejection.
+
+**Camadas:** POTENTIAL / OBSERVED / VERIFIED (`NOT_AVAILABLE`) — nunca misturar POTENTIAL com VERIFIED.
+
+**Score:** `user_value_score` 0–100 observacional (interno) · confiança HIGH/MEDIUM/LOW/UNKNOWN
+
+**SQL:** Q1–Q20 em `docs/analytics/sql/patch-105-query*.sql`
+
+**Testes locais:** `test-mia-analytics-patch-105-user-value-outcome.js` (68/68) · regressões 10.1–10.4 OK
+
+**Veredito:** 🟡 **PATCH 10.5 EM VALIDAÇÃO**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

@@ -176,7 +176,7 @@ assert(
 console.log("\nHooks");
 const offerAnalytics = readFileSync(OFFER_ANALYTICS, "utf8");
 assert("offer set imports savings", offerAnalytics.includes("instrumentSavingsEstimationAnalyticsFromOfferSet"));
-assert("offer set hooks savings emit", offerAnalytics.includes("instrumentSavingsEstimationAnalyticsFromOfferSet(supabase"));
+assert("offer set hooks savings emit", offerAnalytics.includes("emitSavingsEstimationAnalytics(supabase"));
 
 console.log("\nObserve helper");
 const summaries = instrumentSavingsEstimationAnalyticsFromOfferSet(null, {

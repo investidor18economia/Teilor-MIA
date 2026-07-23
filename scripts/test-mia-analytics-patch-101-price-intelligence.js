@@ -144,7 +144,7 @@ console.log("\nHooks");
 const offerAnalytics = readFileSync(OFFER_ANALYTICS, "utf8");
 const chat = readFileSync(CHAT_API, "utf8");
 assert("offer set imports price intelligence", offerAnalytics.includes("instrumentPriceIntelligenceAnalyticsFromOfferSet"));
-assert("offer set hooks emit", offerAnalytics.includes("instrumentPriceIntelligenceAnalyticsFromOfferSet(supabase"));
+assert("offer set hooks emit", offerAnalytics.includes("emitPriceIntelligenceAnalytics(supabase"));
 assert("chat offer set delivery", chat.includes("instrumentOfferSetAnalyticsForDelivery"));
 
 console.log("\nObserve helper");

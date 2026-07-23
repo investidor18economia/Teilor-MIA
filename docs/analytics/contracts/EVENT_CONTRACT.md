@@ -656,6 +656,27 @@ Detalhamento: [PRICE_ALERT_LIFECYCLE_ANALYTICS.md](../PRICE_ALERT_LIFECYCLE_ANAL
 
 Detalhamento: [ANTI_REGRET_FOUNDATION_ANALYTICS.md](../ANTI_REGRET_FOUNDATION_ANALYTICS.md)
 
+### 7.23 Evento server-side — User Value Outcome (`mia_user_value_outcome`) — PATCH 10.5
+
+**Categoria:** `user_value` (produção) · `user_value_test` (smoke)  
+**Writers:** `emitUserValueOutcomeAnalytics` · `scheduleUserValueOutcomeFromPostDecisionSignal`  
+**Versionamento:** `metadata.event_version = "10.5.0"`  
+**Correlação:** `metadata.request_id` · `metadata.decision_request_id` · `session_id` · `conversation_id`
+
+| event_name | Objetivo | Quando dispara |
+|------------|----------|----------------|
+| `mia_user_value_outcome` | Valor entregue observacional por decisão | Após offer_set delivery · pós-decisão enriquecido (async) |
+
+**Camadas de valor:** `POTENTIAL_VALUE` · `OBSERVED_VALUE` · `VERIFIED_VALUE` (`NOT_AVAILABLE`) · `UNKNOWN_VALUE`
+
+**Campos-chave:** `user_value_score` (0–100, interno) · `value_status` (POTENTIAL/OBSERVED/VERIFIED/UNKNOWN) · `value_type` · `value_confidence` · `potential_value_amount` · `observed_value_amount` · `verified_value_amount` (null) · `time_saved_bucket`
+
+**Nunca emitir:** `purchase_confirmed: true` · `value_verified: true` · `roi_assumed: true` · conversão automática OBSERVED→VERIFIED · PII · URLs · nomes de produto
+
+**Deduplicação:** `request_id + decision_request_id + event_name + event_version`
+
+Detalhamento: [SAVINGS_OUTCOMES_USER_VALUE_ANALYTICS.md](../SAVINGS_OUTCOMES_USER_VALUE_ANALYTICS.md)
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |
