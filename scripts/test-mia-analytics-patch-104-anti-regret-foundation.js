@@ -281,7 +281,7 @@ const dedup = buildAntiRegretFoundationDedupKey(
 assert("dedup format", dedup.includes("mia_anti_regret_foundation"));
 
 section("Hooks");
-assert("offer set imports anti-regret", readFileSync(OFFER_SET, "utf8").includes("instrumentAntiRegretFoundationFromOfferSet"));
+assert("offer set imports anti-regret", readFileSync(OFFER_SET, "utf8").includes("emitAntiRegretFoundationAnalytics"));
 assert("acceptance imports anti-regret", readFileSync(ACCEPTANCE, "utf8").includes("scheduleAntiRegretFoundationFromPostDecisionSignal"));
 assert("rejection imports anti-regret", readFileSync(REJECTION, "utf8").includes("scheduleAntiRegretFoundationFromPostDecisionSignal"));
 

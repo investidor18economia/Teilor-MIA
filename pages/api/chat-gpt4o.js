@@ -23448,7 +23448,7 @@ async function runGovernedSocialIntentFlow({
     );
   }
 
-  return void sendRuntimeResponse(
+  return sendRuntimeResponse(
     res,
     pipelineTracer,
     {
@@ -23572,7 +23572,7 @@ async function runNonCommercialAuthorityFastBranch({
         : isBriefIdentity
           ? buildBriefOfficialIdentityReply(identityQuery)
           : buildAboutMiaDeterministicFallback(identityQuery);
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -23630,7 +23630,7 @@ async function runNonCommercialAuthorityFastBranch({
           ? buildAnchoredGreetingFallback(sessionContext)
           : null)
     );
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -23688,7 +23688,7 @@ async function runNonCommercialAuthorityFastBranch({
           ? buildAnchoredAcknowledgementFallback(sessionContext)
           : null)
     );
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -26654,7 +26654,7 @@ function observeDecisionAnalyticsForStabilizedContext({
   return summary;
 }
 
-function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace, extraTrace = {}) {
+async function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace, extraTrace = {}) {
   const _blocked = preventDoubleHttpResponse(runtimeEnforcementRef, res);
   if (_blocked.blocked) return;
 
@@ -26682,7 +26682,7 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
     analyticsContext: _sharedStateForCommercialSearch?.responseAnalytics?.analyticsContext || {},
     body,
   });
-  const _offerSetSummary = instrumentOfferSetAnalyticsForDelivery(supabase, {
+  const _offerSetSummary = await instrumentOfferSetAnalyticsForDelivery(supabase, {
     requestId: _sharedStateForCommercialSearch?.requestId || null,
     analyticsContext: _sharedStateForCommercialSearch?.responseAnalytics?.analyticsContext || {},
     body,
@@ -26745,7 +26745,7 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
   );
 }
 
-function sendRuntimeResponse(
+async function sendRuntimeResponse(
   res,
   pipelineTracer,
   body,
@@ -26781,10 +26781,10 @@ function sendRuntimeResponse(
   const _mode = resolveRuntimeDispatchMode(_responsePath);
 
   if (_mode === "technical") {
-    return __sendRuntimeTechnicalResponse(res, pipelineTracer, _body, _responsePath, options);
+    return await __sendRuntimeTechnicalResponse(res, pipelineTracer, _body, _responsePath, options);
   }
   if (_mode === "pre_cognitive" || _mode === "pre_cognitive_degraded") {
-    return __sendRuntimePreCognitiveFunctionalResponse(
+    return await __sendRuntimePreCognitiveFunctionalResponse(
       res,
       pipelineTracer,
       _body,
@@ -26793,7 +26793,7 @@ function sendRuntimeResponse(
     );
   }
   if (_mode === "commercial_degraded") {
-    return __sendRuntimeCommercialDegradedResponse(
+    return await __sendRuntimeCommercialDegradedResponse(
       res,
       pipelineTracer,
       _body,
@@ -26801,10 +26801,10 @@ function sendRuntimeResponse(
       options
     );
   }
-  return __sendRuntimeGovernedResponse(res, pipelineTracer, _body, _responsePath, options);
+  return await __sendRuntimeGovernedResponse(res, pipelineTracer, _body, _responsePath, options);
 }
 
-function __sendRuntimeTechnicalResponse(
+async function __sendRuntimeTechnicalResponse(
   res,
   pipelineTracer,
   body,
@@ -26848,7 +26848,7 @@ function __sendRuntimeTechnicalResponse(
 
   sealRuntimePayload(runtimeEnforcementRef, _body);
 
-  sendHttpRuntimeResponse(
+  return await sendHttpRuntimeResponse(
     res,
     pipelineTracer,
     _body,
@@ -26858,7 +26858,7 @@ function __sendRuntimeTechnicalResponse(
   );
 }
 
-function __sendRuntimePreCognitiveFunctionalResponse(
+async function __sendRuntimePreCognitiveFunctionalResponse(
   res,
   pipelineTracer,
   body,
@@ -26907,7 +26907,7 @@ function __sendRuntimePreCognitiveFunctionalResponse(
 
   sealRuntimePayload(runtimeEnforcementRef, _body);
 
-  sendHttpRuntimeResponse(
+  return await sendHttpRuntimeResponse(
     res,
     pipelineTracer,
     _body,
@@ -26917,7 +26917,7 @@ function __sendRuntimePreCognitiveFunctionalResponse(
   );
 }
 
-function __sendRuntimeCommercialDegradedResponse(
+async function __sendRuntimeCommercialDegradedResponse(
   res,
   pipelineTracer,
   body,
@@ -27065,7 +27065,7 @@ function __sendRuntimeCommercialDegradedResponse(
 
   sealRuntimePayload(runtimeEnforcementRef, _outBody);
 
-  sendHttpRuntimeResponse(
+  return await sendHttpRuntimeResponse(
     res,
     pipelineTracer,
     _outBody,
@@ -27075,7 +27075,7 @@ function __sendRuntimeCommercialDegradedResponse(
   );
 }
 
-function __sendRuntimeGovernedResponse(
+async function __sendRuntimeGovernedResponse(
   res,
   pipelineTracer,
   body,
@@ -27253,7 +27253,7 @@ function __sendRuntimeGovernedResponse(
 
   sealRuntimePayload(runtimeEnforcementRef, _body);
 
-  sendHttpRuntimeResponse(
+  return await sendHttpRuntimeResponse(
     res,
     pipelineTracer,
     _body,
@@ -27261,7 +27261,6 @@ function __sendRuntimeGovernedResponse(
     _runtimeFinalization.trace,
     extraTrace
   );
-  return;
 }
 
 function pathMatchesSocialBehaviorPath(responsePath = "") {
@@ -27982,7 +27981,7 @@ async function miaChatCoreHandler(req, res) {
       const identified = await identifyProductFromImage(imageBase64, query);
 
       if (!identified?.searchQuery) {
-        return void sendRuntimeResponse(
+        return sendRuntimeResponse(
           res,
           pipelineTracer,
           {
@@ -28015,7 +28014,7 @@ async function miaChatCoreHandler(req, res) {
         : [];
 
       if (!imageProducts.length) {
-        return void sendRuntimeResponse(
+        return sendRuntimeResponse(
           res,
           pipelineTracer,
           {
@@ -28047,7 +28046,7 @@ async function miaChatCoreHandler(req, res) {
 
       const bestImageProduct = imageProducts[0];
 
-      return void sendRuntimeResponse(
+      return sendRuntimeResponse(
         res,
         pipelineTracer,
         {
@@ -28092,7 +28091,7 @@ async function miaChatCoreHandler(req, res) {
     } catch (err) {
       console.error("Erro no fluxo de imagem:", err);
 
-      return void sendRuntimeResponse(
+      return sendRuntimeResponse(
         res,
         pipelineTracer,
         {
@@ -30045,7 +30044,7 @@ if (lockedComparisonContextFromSession) {
 }
 
   if (contextResolution.needsClarification) {
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -30145,7 +30144,7 @@ if (
     { period: getTimePeriod() }
   ).response;
 
-  return void sendRuntimeResponse(
+  return sendRuntimeResponse(
     res,
     pipelineTracer,
     {
@@ -35170,7 +35169,7 @@ if (Array.isArray(products) && products.length > 0) {
     intent !== "comparison" &&
     !routingDecision.allowNewSearch
   ) {
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -35328,7 +35327,7 @@ if (Array.isArray(products) && products.length > 0) {
       sessionContext,
     });
 
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -36154,7 +36153,7 @@ if (!Array.isArray(products) || !products.length) {
       displayProducts: [],
     });
 
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -36200,7 +36199,7 @@ if (!Array.isArray(products) || !products.length) {
       console.warn("🧩 FALLBACK COMERCIAL LOCAL ATIVADO:", localFallbackProducts.length);
       products = localFallbackProducts;
     } else {
-      return void sendRuntimeResponse(
+      return sendRuntimeResponse(
         res,
         pipelineTracer,
         {
@@ -37132,7 +37131,7 @@ if (!finalProducts || finalProducts.length === 0) {
   const impossiblePurchase = detectImpossiblePurchase(resolvedQuery);
 
   if (impossiblePurchase) {
-    return void sendRuntimeResponse(
+    return sendRuntimeResponse(
       res,
       pipelineTracer,
       {
@@ -37312,7 +37311,7 @@ if (weakPurchaseRange) {
     `Entre o que apareceu, o card abaixo foi a opção mais próxima que encontrei, mas eu trataria como alternativa com ressalvas — não como recomendação forte.`;
 
   // 🔒 TRAVA PARA NÃO SOBRESCREVER O ALERTA
-  return void sendRuntimeResponse(
+  return sendRuntimeResponse(
     res,
     pipelineTracer,
     {
