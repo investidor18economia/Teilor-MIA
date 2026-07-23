@@ -1,32 +1,113 @@
 {
   "complement": "11.4-period-offset",
-  "title": "Executive AI Insights — period offset complement",
   "status": "APPROVED",
-  "validated_at": "2026-07-23T21:00:00-03:00",
+  "validated_at": "2026-07-23T23:51:09.317Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "d015295957c6",
-    "supabase_migrations_applied": [
-      "20260723230000_mia_executive_metrics_period_offset_v11_4.sql",
-      "20260723240000_mia_executive_metrics_period_offset_complement_v11_4.sql",
-      "20260723240100_mia_executive_metrics_drop_legacy_rpc_overloads.sql"
-    ]
+    "build": "d0f7abbca1c0"
   },
-  "categories_completed": [
+  "categories": [
     "price_intelligence",
     "savings",
     "anti_regret",
     "user_value"
   ],
-  "all_categories_offset_support": true,
-  "tests": {
-    "unit_complement": { "script": "scripts/test-mia-analytics-patch-114-period-offset-complement.js", "passed": 39, "failed": 0 },
-    "prod_validation": { "script": "scripts/patch-114-complement-production-validation.mjs", "passed": 18, "failed": 0 },
-    "regression_111": 30
+  "checks": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0,
+    "items": [
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=d0f7abbca1c0"
+      },
+      {
+        "label": "price_intelligence current RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "price_intelligence previous RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "price_intelligence offset_days=30",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "price_intelligence distinct windows",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "savings current RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "savings previous RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "savings offset_days=30",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "savings distinct windows",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "anti_regret current RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "anti_regret previous RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "anti_regret offset_days=30",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "anti_regret distinct windows",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "user_value current RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "user_value previous RPC",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "user_value offset_days=30",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "user_value distinct windows",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insights authed check skipped",
+        "pass": true,
+        "detail": "MIA_ADMIN_API_KEY not set"
+      }
+    ]
   },
-  "fixes": [
-    "Removed same-window fallback in miaExecutiveMetricsApi.js when offset fails",
-    "Dropped legacy single-arg RPC overloads to prevent ambiguous function errors"
-  ],
   "verdict": "PATCH 11.4 COMPLEMENT APROVADO"
 }
