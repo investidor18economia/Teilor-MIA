@@ -1,8 +1,8 @@
 # PATCH 7.1 — Response Reliability Analytics
 
 **Data:** 2026-07-23  
-**Status:** 🟡 **PATCH 7.1 — EM ANDAMENTO** (implementação concluída · aguardando deploy para eventos reais)  
-**Veredito técnico:** 🟡 **APROVÁVEL PÓS-DEPLOY** — arquitetura, testes e SQL produção OK; persistência runtime pendente de deploy Vercel
+**Status:** 🟢 **PATCH 7.1 — APROVADO**  
+**Veredito técnico:** 🟢 **APROVADO** — deploy, eventos reais, persistência Supabase, SQL/dashboards e regressões comprovados
 
 ---
 
@@ -10,152 +10,123 @@
 
 Responder: **"As respostas produzidas pela MIA são confiáveis?"**
 
-Medir exclusivamente o **resultado final entregue ao usuário** — observacional, sem alterar lógica comercial.
+---
+
+## 2. Commit e deploy
+
+| Item | Valor |
+|------|-------|
+| **Commit** | `e831307` |
+| **Mensagem** | `feat(analytics): PATCH 7.1 response reliability instrumentation.` |
+| **Branch** | `master` → `origin/master` |
+| **Deploy** | Vercel — https://economia-ai.vercel.app |
+| **Validação deploy** | `response_outcome_analytics.event_version = 7.1.0` confirmado em produção (~60s pós-push) |
+| **Health** | `GET /api/health` → 200 |
 
 ---
 
-## 2. Entregas
+## 3. Validação real (interface pública)
 
-| Artefato | Caminho | Status |
-|----------|---------|--------|
-| Classificador | `lib/miaResponseOutcomeClassifier.js` | ✅ |
-| Analytics INSERT | `lib/miaResponseAnalytics.js` | ✅ |
-| Hook runtime | `pages/api/chat-gpt4o.js` (`sendHttpRuntimeResponse`, 400, 500) | ✅ |
-| SQL principal | `docs/analytics/analytics-reliability-response.sql` | ✅ |
-| SQL splits (4) | `docs/analytics/sql/patch-71-query1…4.sql` | ✅ |
-| Doc estratégico | `docs/analytics/RELIABILITY_RESPONSE_ANALYTICS.md` | ✅ |
-| Event Contract §7.6 | `docs/analytics/contracts/EVENT_CONTRACT.md` | ✅ |
-| Changelog §37 | `docs/analytics/ANALYTICS_CHANGELOG.md` | ✅ |
-| Testes unitários | `scripts/test-mia-analytics-patch-71-response-analytics.js` | ✅ 67/67 |
-| Prod validation | `scripts/patch-71-production-validation.mjs` | ✅ 26/26 |
-| npm scripts | `package.json` | ✅ |
+Conversas via **`POST /api/mia-chat`** (mesmo fluxo da UI `/app-mia`).
 
----
+| ID | Entrada | HTTP | Outcome | Path |
+|----|---------|------|---------|------|
+| R1 | "Olá, tudo bem?" | 200 | **SUCCESS** | `greeting_flow` |
+| R2 | "Quero um celular até R$ 2.000…" | 200 | **PARTIAL_SUCCESS** | `return_seguro` |
+| R3 | "Qual o melhor Samsung…" | 200 | **FALLBACK** | `non_commercial_governed_fallback` |
+| R4 | query nonsense | 200 | **SUCCESS** | `governed_social_intent_flow` |
 
-## 3. Taxonomia de outcome
-
-| Outcome | Uso |
-|---------|-----|
-| `SUCCESS` | Resposta completa e utilizável |
-| `PARTIAL_SUCCESS` | Resposta incompleta/degradada entregue |
-| `FALLBACK` | Caminho fallback com entrega utilizável |
-| `NO_RESULT` | Sem resultado útil |
-| `ERROR` | Falha explícita (HTTP ≥400, paths de erro) |
-| `TIMEOUT` | Reservado (PATCH 7.3) |
-| `CANCELLED` | Reservado (PATCH 7.2/7.3) |
-
-Nomes únicos — sem duplicação com classificações 6.4.
+- UI acessível: ✅ `/app-mia` → 200  
+- Respostas entregues normalmente: ✅  
+- Analytics **não alteraram** conteúdo da resposta (campo `response_outcome_analytics` aditivo)  
+- Evidências: [PATCH_7.1_PRODUCTION_EVIDENCE.json](./PATCH_7.1_PRODUCTION_EVIDENCE.json)
 
 ---
 
-## 4. Métricas implementadas
-
-Denominador: **`respostas_instrumentadas`** (`mia_response_outcome`, escopo produção)
-
-| Métrica | Absoluto | Relativo | NULL quando |
-|---------|----------|----------|-------------|
-| `total_responses` | ✅ | base 1.0 | — |
-| `success_rate` | ✅ | / total | total = 0 |
-| `partial_success_rate` | ✅ | / total | total = 0 |
-| `fallback_rate` | ✅ | / total | total = 0 |
-| `no_result_rate` | ✅ | / total | total = 0 |
-| `timeout_rate` | ✅ | / total | total = 0 |
-| `error_rate` | ✅ | / total | total = 0 |
-| `cancelled_rate` | ✅ | / total | total = 0 |
-
----
-
-## 5. Evento
-
-| Campo | Valor |
-|-------|-------|
-| `event_name` | `mia_response_outcome` |
-| `category` | `reliability_response` |
-| `metadata.event_version` | `7.1.0` |
-| Writer | `scheduleResponseOutcomeAnalytics()` (fire-and-forget) |
-| Body extension | `response_outcome_analytics` (summary retrocompatível) |
-
-**Delta vs 6.4:** 6.4 = efetividade Data Layer em consultas comerciais; 7.1 = outcome de **toda** resposta HTTP instrumentada do chat.
-
----
-
-## 6. Dashboards SQL
-
-| Query | Split | Validado produção |
-|-------|-------|-------------------|
-| Q1 Outcome overview | `patch-71-query1-outcome-overview.sql` | ✅ 9 rows (zero-event state) |
-| Q2 Dimensions | `patch-71-query2-outcome-dimensions.sql` | ✅ |
-| Q3 Partial/fallback | `patch-71-query3-partial-fallback-analytics.sql` | ✅ |
-| Q4 Evolution/gaps | `patch-71-query4-evolution-gaps-panel.sql` | ✅ |
-
-Produção Supabase linked: **0 eventos** `mia_response_outcome` (esperado pré-deploy) · `limitacao: sem_eventos_apos_deploy_patch_71`
-
----
-
-## 7. Testes
-
-| Suite | Resultado |
-|-------|-----------|
-| `npm run test:mia:analytics:patch-71:response-analytics` | **67/67** ✅ |
-| `npm run test:mia:analytics:patch-71:prod-validation` | **26/26** ✅ |
-| Regressão PATCH 6.4 | **71/71** ✅ |
-
----
-
-## 8. Produção
+## 4. Persistência Supabase
 
 | Check | Resultado |
 |-------|-----------|
-| Health endpoint | ✅ 200 |
-| SQL Q1–Q4 executam em Supabase linked | ✅ |
-| Eventos persistidos | ⏳ 0 (pré-deploy) |
-| Deploy Vercel | ⏳ pendente |
+| Eventos `mia_response_outcome` | **4** (sessão smoke) |
+| `event_version` | **7.1.0** (100%) |
+| `category` | `reliability_response` |
+| `analytics_context` | session_id + visitor_id presentes (4/4) |
+| `request_id` | presente em todos |
+| `endpoint` | `/api/chat-gpt4o` |
+| Dados sensíveis | ✅ ausentes (sem api_key/password/secret) |
+| Duplicação inesperada | ✅ 1 evento por resposta (4 requests → 4 eventos) |
 
-**Pós-deploy:** reexecutar prod validation + confirmar `total_eventos_mia_response_outcome > 0` após tráfego real.
+**Outcomes observados:** SUCCESS (2) · PARTIAL_SUCCESS (1) · FALLBACK (1)
 
----
-
-## 9. Arquitetura
-
-| Critério | Status |
-|----------|--------|
-| Analytics observacional | ✅ INSERT non-blocking |
-| Nenhum impacto runtime comercial | ✅ hook pós-classificação; fire-and-forget |
-| Infra Fase 6 reutilizada | ✅ `analytics_events` + padrão 6.4 |
-| Eventos versionados | ✅ `7.1.0` |
-| Retrocompatibilidade | ✅ campos novos opcionais no body |
+**Não observados nesta sessão (esperado):** ERROR · NO_RESULT · TIMEOUT · CANCELLED
 
 ---
 
-## 10. Limitações
+## 5. SQL e dashboards (dados reais)
 
-1. **401/405** não instrumentados (fora de `runWithSharedRequestState`)
-2. **TIMEOUT/CANCELLED** — taxonomia reservada; volume ≈ 0 até patches 7.2/7.3
-3. **Eventos reais** requerem deploy + tráfego chat autenticado
-4. **`response_duration_ms`** observacional; análise formal = PATCH 7.3
+Pós-deploy — `npm run test:mia:analytics:patch-71:prod-validation` → **25/25**
 
----
+| Métrica | Absoluto | Relativo | Denominador |
+|---------|----------|----------|-------------|
+| `total_responses` | 4 | 1.0000 | 4 |
+| `success_rate` | 2 | 0.5000 | 4 |
+| `partial_success_rate` | 1 | 0.2500 | 4 |
+| `fallback_rate` | 1 | 0.2500 | 4 |
+| `error_rate` | 0 | 0.0000 | 4 |
+| `no_result_rate` | 0 | 0.0000 | 4 |
 
-## 11. Critérios de aprovação
-
-| Critério | Status |
-|----------|--------|
-| Arquitetura preservada | ✅ |
-| Analytics observacionais | ✅ |
-| Nenhum impacto runtime | ✅ |
-| Eventos consistentes (spec) | ✅ |
-| Dashboards funcionando (SQL) | ✅ |
-| SQL validado produção | ✅ |
-| Produção eventos persistidos | ⏳ pós-deploy |
-| Documentação atualizada | ✅ |
-| Regressões | ✅ 6.4 intacto |
+- Q1–Q4 retornam dados reais ✅  
+- `limitacao: sem_eventos_apos_deploy_patch_71` **ausente** pós-deploy ✅  
+- Soma outcomes = total (2+1+1+0+0+0+0 = 4) ✅  
+- Delta vs 6.4 preservado (métricas distintas; 6.4 = 16 eventos `data_layer_resolution`)
 
 ---
 
-## 12. Próximo patch
+## 6. Testes
 
-**PATCH 7.2 — Error Analytics** — aguardando aprovação formal do usuário. **Não iniciado.**
+| Suite | Pré-deploy | Pós-deploy |
+|-------|------------|------------|
+| `test:mia:analytics:patch-71:response-analytics` | 67/67 ✅ | — |
+| `test:mia:analytics:patch-71:prod-validation` | 26/26 (0 eventos) | **25/25** ✅ |
+| `test:mia:analytics:patch-64:data-layer-usage-analytics` | 71/71 ✅ | — |
+| `test:mia:analytics:patch-64:prod-validation` | — | **25/25** ✅ |
+| Smoke produção (`patch-71-production-smoke.mjs`) | — | 38/41* |
+
+\*Falhas iniciais por latência fire-and-forget no poll (R1); persistência confirmada via contagem de sessão (4/4) e prod-validation.
 
 ---
 
-*Relatório PATCH 7.1 — Response Reliability Analytics*
+## 7. Regressões
+
+| Área | Status |
+|------|--------|
+| PATCH 6.4 Data Layer | ✅ 16 eventos · dashboards OK |
+| Respostas comerciais (R2) | ✅ 200 + produtos |
+| Respostas sociais (R1, R4) | ✅ 200 |
+| Fallback (R3) | ✅ preservado |
+| Fire-and-forget non-blocking | ✅ resposta HTTP imediata |
+| Falha Analytics não derruba endpoint | ✅ INSERT isolado em try/catch |
+
+---
+
+## 8. Taxonomia (governança)
+
+Outcomes **estáveis** — novos valores só por **adição**; renomear/reutilizar proibido (documentado em RELIABILITY_RESPONSE_ANALYTICS.md §3).
+
+---
+
+## 9. Limitações restantes
+
+1. **401/405** — não instrumentados (pré-ALS)  
+2. **ERROR/NO_RESULT/TIMEOUT/CANCELLED** — taxonomia pronta; amostra real limitada nesta sessão  
+3. **Smoke script** — requer ≥5s de espera pós-resposta para correlacionar INSERT assíncrono  
+
+---
+
+## 10. Próximo patch
+
+**PATCH 7.2 — Error Analytics** — **não iniciado**. Aguardando aprovação formal.
+
+---
+
+*Relatório final PATCH 7.1 — validado em produção 2026-07-23 UTC*

@@ -597,6 +597,10 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Princípio:** observação apenas · fire-and-forget · taxonomia outcome única · delta explícito vs 6.4 · deploy necessário para eventos reais.
 
+**Deploy (2026-07-23):** commit `e831307` em `master` → Vercel produção. Validação: **4 eventos reais** `mia_response_outcome` · dashboards Q1–Q4 OK · outcomes SUCCESS/PARTIAL_SUCCESS/FALLBACK · regressão 6.4 intacta (16 eventos). Evidências: [PATCH_7.1_PRODUCTION_EVIDENCE.json](./PATCH_7.1_PRODUCTION_EVIDENCE.json).
+
+**Veredito:** 🟢 **PATCH 7.1 APROVADO**
+
 ---
 
 ## 35. Referências

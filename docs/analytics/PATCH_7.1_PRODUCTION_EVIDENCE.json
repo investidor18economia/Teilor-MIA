@@ -1,0 +1,130 @@
+{
+  "generated_at": "2026-07-23T00:48:20.478Z",
+  "commit": "e831307",
+  "base_url": "https://economia-ai.vercel.app",
+  "session_id": "eb2f0f35-0a7e-444b-b0ad-84aa56bc5a20",
+  "conversation_id": "a84c871f-3931-4996-abde-5eacbcc63bd2",
+  "visitor_id": "a5dcf687-cf9b-45f4-80f7-1dac1accf6b6",
+  "started_at": "2026-07-23T00:47:45.316Z",
+  "scenarios": [
+    {
+      "id": "R1",
+      "text": "Olá, tudo bem?",
+      "at": "2026-07-23T00:47:45.317Z",
+      "httpStatus": 200,
+      "responseOutcome": "SUCCESS",
+      "responseValidity": "valid",
+      "responsePath": "greeting_flow",
+      "hasReply": true,
+      "hasPrices": false,
+      "persistedEvent": null
+    },
+    {
+      "id": "R2",
+      "text": "Quero um celular até R$ 2.000 com boa câmera.",
+      "at": "2026-07-23T00:47:52.436Z",
+      "httpStatus": 200,
+      "responseOutcome": "PARTIAL_SUCCESS",
+      "responseValidity": "partial",
+      "responsePath": "return_seguro",
+      "hasReply": true,
+      "hasPrices": true,
+      "persistedEvent": {
+        "id": "46b25101-9a25-4b2f-a3c0-f7fca7e92399",
+        "event_name": "mia_response_outcome",
+        "category": "reliability_response",
+        "session_id": "eb2f0f35-0a7e-444b-b0ad-84aa56bc5a20",
+        "visitor_id": "a5dcf687-cf9b-45f4-80f7-1dac1accf6b6",
+        "conversation_id": "a84c871f-3931-4996-abde-5eacbcc63bd2",
+        "query_text": "Olá, tudo bem?",
+        "created_at": "2026-07-23T00:47:52.944989+00:00",
+        "metadata": {
+          "event_version": "7.1.0",
+          "outcome": "SUCCESS",
+          "response_validity": "valid",
+          "response_path": "greeting_flow",
+          "http_status": 200,
+          "request_id": "862897d1-918f-4c78-89f1-889bd27e9850",
+          "endpoint": "/api/chat-gpt4o",
+          "reply_present": true,
+          "products_in_response": 0,
+          "data_layer_correlation_present": false
+        }
+      }
+    },
+    {
+      "id": "R3",
+      "text": "Qual o melhor Samsung para jogos até R$ 3.000?",
+      "at": "2026-07-23T00:48:09.181Z",
+      "httpStatus": 200,
+      "responseOutcome": "FALLBACK",
+      "responseValidity": "valid",
+      "responsePath": "non_commercial_governed_fallback",
+      "hasReply": true,
+      "hasPrices": false,
+      "persistedEvent": {
+        "id": "c46c6b39-2931-4944-b8a8-fbc9724ca82b",
+        "event_name": "mia_response_outcome",
+        "category": "reliability_response",
+        "session_id": "eb2f0f35-0a7e-444b-b0ad-84aa56bc5a20",
+        "visitor_id": "a5dcf687-cf9b-45f4-80f7-1dac1accf6b6",
+        "conversation_id": "a84c871f-3931-4996-abde-5eacbcc63bd2",
+        "query_text": "Qual o melhor Samsung para jogos até R$ 3.000?",
+        "created_at": "2026-07-23T00:48:11.217709+00:00",
+        "metadata": {
+          "event_version": "7.1.0",
+          "outcome": "FALLBACK",
+          "response_validity": "valid",
+          "response_path": "non_commercial_governed_fallback",
+          "http_status": 200,
+          "request_id": "9bcf7a43-c0c3-42a9-8dee-e03798b114da",
+          "endpoint": "/api/chat-gpt4o",
+          "reply_present": true,
+          "products_in_response": 0,
+          "data_layer_correlation_present": false
+        }
+      }
+    },
+    {
+      "id": "R4",
+      "text": "xyzprodutoquenaoexistemiateilor99999",
+      "at": "2026-07-23T00:48:15.105Z",
+      "httpStatus": 200,
+      "responseOutcome": "SUCCESS",
+      "responseValidity": "valid",
+      "responsePath": "governed_social_intent_flow",
+      "hasReply": true,
+      "hasPrices": false,
+      "persistedEvent": {
+        "id": "d500deef-5aca-4b92-b589-51a808c98c3f",
+        "event_name": "mia_response_outcome",
+        "category": "reliability_response",
+        "session_id": "eb2f0f35-0a7e-444b-b0ad-84aa56bc5a20",
+        "visitor_id": "a5dcf687-cf9b-45f4-80f7-1dac1accf6b6",
+        "conversation_id": "a84c871f-3931-4996-abde-5eacbcc63bd2",
+        "query_text": "xyzprodutoquenaoexistemiateilor99999",
+        "created_at": "2026-07-23T00:48:16.465588+00:00",
+        "metadata": {
+          "event_version": "7.1.0",
+          "outcome": "SUCCESS",
+          "response_validity": "valid",
+          "response_path": "governed_social_intent_flow",
+          "http_status": 200,
+          "request_id": "b22085dc-84a3-46e4-b382-f451c3dbc423",
+          "endpoint": "/api/chat-gpt4o",
+          "reply_present": true,
+          "products_in_response": 0,
+          "data_layer_correlation_present": false
+        }
+      }
+    }
+  ],
+  "outcomes_observed": [
+    "SUCCESS",
+    "PARTIAL_SUCCESS",
+    "FALLBACK"
+  ],
+  "total_session_events": 4,
+  "prod_events_since_start": 4,
+  "deploy_ready": true
+}
