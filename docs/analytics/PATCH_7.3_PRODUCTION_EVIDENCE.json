@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-07-23T01:45:32.645Z",
+  "commit": "360768a",
+  "base_url": "https://economia-ai.vercel.app",
+  "health_build": "360768a70d85",
+  "session_id": "dcfe6f01-d576-4385-be63-703399d6ca7c",
+  "started_at": "2026-07-23T01:44:50.714Z",
+  "scenarios": [
+    {
+      "id": "L1",
+      "text": "Olá, tudo bem?",
+      "httpStatus": 200,
+      "latencySummary": {
+        "latency_event_version": "7.3.0",
+        "total_duration_ms": 2161,
+        "latency_band": "ACCEPTABLE",
+        "slow_request": false,
+        "response_path": "greeting_flow"
+      },
+      "persisted": null
+    },
+    {
+      "id": "L2",
+      "text": "Quero um celular até R$ 2.000 com boa câmera.",
+      "httpStatus": 200,
+      "latencySummary": {
+        "latency_event_version": "7.3.0",
+        "total_duration_ms": 6580,
+        "latency_band": "SLOW",
+        "slow_request": true,
+        "response_path": "return_seguro"
+      },
+      "persisted": {
+        "id": "d9b159c5-ef12-4035-81e4-9807a8e333dc",
+        "created_at": "2026-07-23T01:45:17.688745+00:00",
+        "metadata": {
+          "event_version": "7.3.0",
+          "request_id": "79230888-d6d0-4200-a401-3a1d4ea64126",
+          "total_duration_ms": 6580,
+          "latency_band": "SLOW",
+          "slow_request": true,
+          "response_path": "return_seguro",
+          "response_outcome": "PARTIAL_SUCCESS",
+          "stage_count": 11,
+          "measurement_gap_count": 4
+        }
+      }
+    }
+  ],
+  "total_latency_events": 1,
+  "deploy_ready": true
+}

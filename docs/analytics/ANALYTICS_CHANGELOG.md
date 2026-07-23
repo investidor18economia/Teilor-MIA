@@ -643,7 +643,9 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Princípio:** observação only · 1 evento/requisição · delta vs 6.4 `query_duration_ms` · fire-and-forget.
 
-**Status:** 🟡 EM ANDAMENTO — deploy e produção pendentes.
+**Deploy (2026-07-23):** commit `360768a` → Vercel (`build 360768a70d85`). Validação: **1 evento real** `mia_latency_event` (comercial 6580ms · SLOW · PARTIAL_SUCCESS) · summary inline social 2161ms · SQL Q1–Q4 OK · regressões 7.2/7.1/6.4 intactas. Evidências: [PATCH_7.3_PRODUCTION_EVIDENCE.json](./PATCH_7.3_PRODUCTION_EVIDENCE.json).
+
+**Veredito:** 🟢 **PATCH 7.3 APROVADO**
 
 ---
 
