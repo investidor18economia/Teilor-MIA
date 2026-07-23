@@ -456,12 +456,31 @@ Health mede estabilidade operacional (availability, reliability, stability, perf
 
 Detalhamento: [RELIABILITY_HEALTH_ANALYTICS.md](../RELIABILITY_HEALTH_ANALYTICS.md)
 
+### 7.11 Evento server-side — Commercial Search (`mia_commercial_search`) — PATCH 8.1
+
+**Categoria:** `commercial_search` (produção) · `commercial_search_test` (smoke)  
+**Writer:** `emitCommercialSearchAnalytics()` via `pages/api/chat-gpt4o.js`  
+**Versionamento:** `metadata.event_version = "8.1.0"`  
+**Correlação:** `metadata.request_id` ↔ PATCH 6.4 / 7.1 / 7.2 / 7.3
+
+| event_name | Objetivo | Quando dispara |
+|------------|----------|----------------|
+| `mia_commercial_search` | Observar pipeline de busca comercial (query, path, execução, resultados) | Requisição no domínio comercial ou mixed intent com componente comercial |
+
+**Delta 6.4:** `data_layer_resolution` mede efetividade do Data Layer; `mia_commercial_search` mede jornada de busca comercial completa.  
+**Delta 7.x:** reliability mede outcome/erro/latência — não substituir.  
+**Delta 8.2/8.3:** sem detalhes de provider ou oferta individual neste evento.
+
+**Deduplicação:** `request_id + event_name + event_version` — máximo 1 evento por requisição comercial.
+
+Detalhamento: [COMMERCIAL_SEARCH_ANALYTICS.md](../COMMERCIAL_SEARCH_ANALYTICS.md)
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |
 |-----------|---------|
 | **NULL por semântica** | `session_started`; todos os `price_drop_email_*` / `_test_*` / `_e2e_*` |
-| **Obrigatório no fluxo chat** | `mia_question_sent`; `mia_recommendation_shown`; `data_layer_resolution` (quando consulta comercial); `mia_response_outcome` (toda resposta HTTP instrumentada) |
+| **Obrigatório no fluxo chat** | `mia_question_sent`; `mia_recommendation_shown`; `data_layer_resolution` (quando consulta comercial); `mia_commercial_search` (domínio comercial/mixed); `mia_response_outcome` (toda resposta HTTP instrumentada) |
 | **Opcional conforme origem** | `offer_click`, `favorite_created`, `price_alert_created` — presente se conversa ativa em `localStorage` |
 
 Detalhamento: [CONVERSATION_ID.md](../CONVERSATION_ID.md) §10.
@@ -477,7 +496,7 @@ Detalhamento: [CONVERSATION_ID.md](../CONVERSATION_ID.md) §10.
 | Cliente frontend | `lib/analytics.js` |
 | UI MIA | `components/MIAChat.jsx` |
 | API track | `pages/api/analytics/track/index.js` |
-| Analytics server-side | `lib/miaPriceAlertEmailAnalytics.js` · `lib/miaDataLayerUsageAnalytics.js` · `lib/miaResponseAnalytics.js` · `lib/miaErrorAnalytics.js` |
+| Analytics server-side | `lib/miaPriceAlertEmailAnalytics.js` · `lib/miaDataLayerUsageAnalytics.js` · `lib/miaResponseAnalytics.js` · `lib/miaErrorAnalytics.js` · `lib/miaLatencyAnalytics.js` · `lib/miaCommercialSearchAnalytics.js` |
 | Send gate (produção) | `lib/miaPriceAlertSendGate.js` |
 | Analytics Storage Schema | `supabase/migrations/20260719153000_*` + `53002_*` + `53003_*` |
 | Dashboards | [DASHBOARDS.md](../DASHBOARDS.md) |

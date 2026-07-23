@@ -321,6 +321,8 @@ Auditoria Final
 # FASE 7
 ## Reliability Analytics
 
+**Status:** 🟢 **CONCLUÍDA** (PATCH 7.5 — 2026-07-23)
+
 Objetivo
 
 Medir estabilidade da plataforma.
@@ -362,6 +364,8 @@ Auditoria Final
 
 # FASE 8
 ## Commercial Analytics
+
+**Status:** 🟡 **PATCH 8.1 EM VALIDAÇÃO** — PATCH 8.0 APROVADO
 
 Objetivo
 

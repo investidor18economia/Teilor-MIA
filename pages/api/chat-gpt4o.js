@@ -110,6 +110,12 @@ import {
   scheduleLatencyAnalytics,
 } from "../../lib/miaLatencyAnalytics.js";
 import {
+  buildCommercialSearchRecommendationMetadata,
+  initializeCommercialSearchAnalyticsTracking,
+  instrumentCommercialSearchAnalyticsForDelivery,
+  updateCommercialSearchAnalyticsFromPipeline,
+} from "../../lib/miaCommercialSearchAnalytics.js";
+import {
   createLatencyTracker,
   markLatencyStage,
   recordDataLayerStageLatency,
@@ -26498,6 +26504,14 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
 
   markHttpResponseSent(runtimeEnforcementRef);
   const _enforcementTrace = runtimeEnforcementToTrace(runtimeEnforcementRef);
+  const _sharedStateForCommercialSearch = getSharedRequestState();
+  const _commercialSearchSummary = instrumentCommercialSearchAnalyticsForDelivery(supabase, {
+    requestId: _sharedStateForCommercialSearch?.requestId || null,
+    analyticsContext: _sharedStateForCommercialSearch?.responseAnalytics?.analyticsContext || {},
+    body,
+    responsePath,
+    httpStatus: 200,
+  });
   const _responseOutcomeSummary = instrumentResponseOutcomeAnalytics(body, responsePath, {
     httpStatus: 200,
   });
@@ -26513,6 +26527,7 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
     ...(body || {}),
     response_outcome_analytics: _responseOutcomeSummary,
     latency_analytics: buildLatencyRecommendationMetadata(_latencySummary),
+    commercial_search_analytics: buildCommercialSearchRecommendationMetadata(_commercialSearchSummary),
   };
 
   res.status(200).json(
@@ -30426,6 +30441,21 @@ if (process.env.MIA_DEBUG === "true") {
 }
 // ─────────────────────────────────────────────────────────────
 
+initializeCommercialSearchAnalyticsTracking({
+  commercialPermission: intentAuthority?.commercialPermission || null,
+  interactionMode: intentRecognitionEarly?.interactionMode || null,
+  commercialEntryGateResult,
+  originalQuery: query,
+  extractedCommercialQuery: commercialPipelineQuery || null,
+  normalizedCommercialQuery: commercialQuery || commercialPipelineQuery || resolvedQuery || null,
+  mixedSegmentationApplied,
+  validation: mixedSegmentationValidation,
+  commercialIntent: intentRecognitionEarly?.primaryIntent || intent || null,
+  intent,
+  category: detectProductCategory(query) || detectProductCategory(resolvedQuery) || null,
+  productDomain: detectProductCategory(query) || detectProductCategory(resolvedQuery) || null,
+});
+
 // PATCH 11B.3 — Constraint refinement continuity (RF-01)
 const contextualFollowUpEarly = intentRecognitionEarly?.contextualFollowUp || null;
 const constraintRefinementEarly = contextualFollowUpEarly?.constraintRefinement || null;
@@ -34225,6 +34255,14 @@ if (hasPriorityFollowUp) {
   console.log("🔒 FOLLOW-UP DE PRIORIDADE — usando produtos anteriores");
   products = sessionContext.lastProducts;
   finalProducts = Array.isArray(products) ? products : [];
+  updateCommercialSearchAnalyticsFromPipeline({
+    searchExecuted: false,
+    hasPriorityFollowUp: true,
+    resultsCount: finalProducts.length,
+    rankingCompleted: true,
+    category: categoryHintResolved || categoryFromContext || null,
+    productDomain: categoryHintResolved || categoryFromContext || null,
+  });
 
   } else {
   const categoryHint =
@@ -34326,6 +34364,18 @@ if (hasPriorityFollowUp) {
     first: products[0]?.product_name || null,
     score: products[0]?.localFallbackScore || null,
     nudge: products[0]?.archetypeRankingNudge || 0
+  });
+
+  updateCommercialSearchAnalyticsFromPipeline({
+    dataLayerAttempted: true,
+    dataLayerUsedAsPrimarySource,
+    providerContinuationRequired: !dataLayerUsedAsPrimarySource,
+    searchExecuted: true,
+    resultsCount: products.length,
+    rankingCompleted: true,
+    fallbackUsed: !dataLayerUsedAsPrimarySource && products.length > 0,
+    category: categoryHintResolved || categoryHint || null,
+    productDomain: categoryHintResolved || categoryHint || null,
   });
 
   pipelineTracer.patch({

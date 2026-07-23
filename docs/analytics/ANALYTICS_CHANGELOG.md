@@ -669,6 +669,77 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 41. PATCH 7.5 — Auditoria Final da Fase 7 (2026-07-23)
+
+**Objetivo:** auditar a Fase 7 (Reliability Analytics) como sistema único — arquitetura, consistência entre patches, SQL, produção, regressões e documentação. **Sem novas funcionalidades.**
+
+**Entregas:**
+
+- [PHASE_7_FINAL_AUDIT.md](./PHASE_7_FINAL_AUDIT.md) — auditoria técnica completa
+- [PHASE_7_EXECUTIVE_SUMMARY.md](./PHASE_7_EXECUTIVE_SUMMARY.md) — resumo executivo
+- Meta-validação: `scripts/test-mia-analytics-patch-75-phase7-final-audit.js`
+
+**Validação consolidada:**
+
+| Suite | Resultado |
+|-------|-----------|
+| PATCH 6.4 regressão | 71/71 |
+| PATCH 7.1 unit | 67/67 |
+| PATCH 7.2 unit | 53/53 |
+| PATCH 7.3 unit | 65/65 |
+| PATCH 7.4 unit | 54/54 |
+| SQL prod 7.1–7.4 (Q1–Q4) | 97/97 |
+
+**Produção (revalidação):** deploy `f33c4c3` · `/api/health` 200 · eventos: `mia_response_outcome` 11 · `mia_error_event` 2 · `mia_latency_event` 1 · `data_layer_resolution` 20.
+
+**Achados não bloqueantes:** amostra pequena (n=11) · cobertura latência 7.3 parcial (1/11) · 401/405 fora ALS · Data Layer ~5,8s comercial como baseline de performance (PATCH 7.3).
+
+**Correções de código:** nenhuma (arquitetura consistente).
+
+**Veredito:** 🟢 **FASE 7 — RELIABILITY ANALYTICS CONCLUÍDA**
+
+---
+
+## 42. PATCH 8.0 — Auditoria da Fase 8 (2026-07-23)
+
+**Objetivo:** auditar arquitetura comercial existente **antes** de qualquer instrumentação da Fase 8. Sem implementação.
+
+**Entregas:**
+
+- [COMMERCIAL_ANALYTICS_PHASE_AUDIT.md](./COMMERCIAL_ANALYTICS_PHASE_AUDIT.md) — mapa completo: arquitetura, providers, jornada, eventos, gaps, roadmap validado
+
+**Achados principais:**
+
+- Arquitetura comercial mapeada (Router → Data Layer → Providers → Ranking → Offers → Response)
+- Dois modos runtime: `legacy` (default) + `controlled`/`shadow`
+- 5 providers registry + Data Layer + cache interno + LLM fallback
+- Eventos comerciais existentes: frontend (7) + server (`data_layer_resolution`, 7.x reliability)
+- Gaps: provider attempts, search extraction, ranking profile, offer snapshot — **não bloqueantes**
+- Roadmap 8.1 → 8.2 → 8.3 **confirmado** com deltas vs Fases 4–7
+
+**Veredito:** 🟢 **PATCH 8.0 APROVADO** — pronto para PATCH 8.1 (não iniciado)
+
+---
+
+## 43. PATCH 8.1 — Commercial Search Analytics (2026-07-23)
+
+**Objetivo:** observabilidade server-side da busca comercial (`mia_commercial_search` · `8.1.0`).
+
+**Entregas:**
+
+- `lib/miaCommercialSearch*.js` (catalog, sanitizer, classifier, tracker, analytics)
+- Hooks em `pages/api/chat-gpt4o.js` (fire-and-forget)
+- SQL Q1–Q5 · [COMMERCIAL_SEARCH_ANALYTICS.md](./COMMERCIAL_SEARCH_ANALYTICS.md)
+- [PATCH_8_1_COMMERCIAL_SEARCH_ANALYTICS.md](./PATCH_8_1_COMMERCIAL_SEARCH_ANALYTICS.md)
+
+**Delta:** não duplica `data_layer_resolution` (6.4) nem reliability (7.x). Hub `request_id` para 8.2/8.3.
+
+**Testes locais:** 8.1 **60/60** · regressões 6.4 + 7.x intactas.
+
+**Veredito:** 🟡 aguardando validação produção
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |
@@ -679,6 +750,9 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 | [01_analytics_foundation.md](./01_analytics_foundation.md) | Princípios permanentes |
 | [IDENTITY_LAYER.md](./IDENTITY_LAYER.md) | Identity Layer consolidada (PATCH 3.5) |
 | [PATCH_3.6_PHASE_3_FINAL_AUDIT.md](./PATCH_3.6_PHASE_3_FINAL_AUDIT.md) | Auditoria final Fase 3 (PATCH 3.6) |
+| [PHASE_7_FINAL_AUDIT.md](./PHASE_7_FINAL_AUDIT.md) | Auditoria final Fase 7 (PATCH 7.5) |
+| [PHASE_7_EXECUTIVE_SUMMARY.md](./PHASE_7_EXECUTIVE_SUMMARY.md) | Resumo executivo Fase 7 |
+| [COMMERCIAL_ANALYTICS_PHASE_AUDIT.md](./COMMERCIAL_ANALYTICS_PHASE_AUDIT.md) | Auditoria Fase 8 (PATCH 8.0) |
 | [EXECUTIVE_METRICS.md](./EXECUTIVE_METRICS.md) | Governança métricas executivas (PATCH 4.1) |
 | [CONVERSATION_ID.md](./CONVERSATION_ID.md) | Semântica de `conversation_id` (PATCH 3.2) |
 | [CHANGELOG_SUPABASE.md](../infrastructure/CHANGELOG_SUPABASE.md) | Roadmap infraestrutura |
