@@ -1,0 +1,10 @@
+{
+  "alert_id": "08a380c0-27de-42e1-9886-aac437dc1586",
+  "user_id": "8fc065cb-b512-404c-bf82-e513d2c7b6cb",
+  "stages": [
+    "REQUESTED",
+    "CREATED",
+    "ACTIVE"
+  ],
+  "lifecycle_count": 3
+}

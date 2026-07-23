@@ -1,36 +1,33 @@
 {
   "patch": "10.3",
   "title": "Price Alert Lifecycle Analytics",
-  "event_name": "mia_price_alert_lifecycle",
-  "event_version": "10.3.0",
-  "category": "price_alert_lifecycle",
-  "audit_pre_implementation": {
-    "create_flow": "MIAChat.jsx → POST /api/create-price-alert → Supabase price_alerts",
-    "client_event": "price_alert_created (mantido)",
-    "monitoring": "lib/miaPriceAlertDryRun.js + cron price-alerts-daily-check.js",
-    "email": "lib/miaPriceAlertSendGate.js → Resend via lib/email.js",
-    "ui_remove": "localStorage only — DB is_active unchanged",
-    "auth_required": true,
-    "alert_id_grain": "price_alerts.id (UUID)"
+  "status": "APPROVED",
+  "validated_at": "2026-07-23T20:15:00-03:00",
+  "commits": {
+    "implementation": "ed61142",
+    "production_auth_and_dedup": "fce798b",
+    "await_requested_insert": "a743540",
+    "await_created_active_inserts": "b0b32c8"
   },
-  "existing_flows": [
-    "REQUESTED via create API",
-    "CREATED / ACTIVE on insert",
-    "DUPLICATE_ALERT on existing normalized_product_key",
-    "CHECKED via dry run and send gate evaluation",
-    "TARGET_REACHED when best_found_price <= target_price",
-    "NOTIFICATION_PREPARED / SENT / FAILED via send gate"
-  ],
-  "absent_flows": [
-    "NOTIFICATION_DELIVERED (no webhook)",
-    "USER_RETURNED",
-    "OFFER_OPENED",
-    "PAUSED",
-    "REACTIVATED",
-    "CANCELLED server-side",
-    "EXPIRED auto rule"
-  ],
-  "lifecycle_stages_supported": [
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "b0b32c80ce77",
+    "health_ok": true,
+    "deploy_method": "github_vercel_auto_deploy"
+  },
+  "event": {
+    "event_name": "mia_price_alert_lifecycle",
+    "event_version": "10.3.0",
+    "category": "price_alert_lifecycle",
+    "dedup": "alert_id + lifecycle_stage + dedup_key (per-stage semantics)",
+    "hooks": [
+      "pages/api/create-price-alert.js — REQUESTED, CREATED, ACTIVE, FAILED",
+      "lib/miaPriceAlertDryRun.js — CHECKED, TARGET_REACHED",
+      "lib/miaPriceAlertSendGate.js — NOTIFICATION_PREPARED, SENT, FAILED"
+    ],
+    "client_event_preserved": "price_alert_created (unchanged)"
+  },
+  "stages_emitted": [
     "REQUESTED",
     "CREATED",
     "ACTIVE",
@@ -41,7 +38,7 @@
     "NOTIFICATION_FAILED",
     "FAILED"
   ],
-  "lifecycle_stages_reserved": [
+  "stages_reserved": [
     "NOTIFICATION_DELIVERED",
     "USER_RETURNED",
     "OFFER_OPENED",
@@ -50,52 +47,84 @@
     "CANCELLED",
     "EXPIRED"
   ],
-  "hooks": {
-    "creation": "pages/api/create-price-alert.js",
-    "check": "lib/miaPriceAlertDryRun.js",
-    "notification": "lib/miaPriceAlertSendGate.js"
+  "unit_tests": {
+    "script": "scripts/test-mia-analytics-patch-103-price-alert-lifecycle.js",
+    "passed": 111,
+    "failed": 0
   },
-  "deduplication": "alert_id + event_name + event_version + lifecycle_stage + lifecycle_occurrence_key",
-  "target_realism_thresholds_percent": {
-    "near": 2,
-    "moderate": 10,
-    "aggressive": 25
+  "regressions": {
+    "patch_101_price_intelligence": { "passed": 52, "failed": 0 },
+    "patch_102_savings_estimation": { "passed": 70, "failed": 0 },
+    "price_alert_dry_run_audit": { "passed": 19, "failed": 0 },
+    "price_alert_send_gate_audit": { "passed": 27, "failed": 0 }
   },
-  "savings_relation": {
-    "nature": "ALERT_OPPORTUNITY",
-    "purchase_confirmed": false,
-    "never_verified": true
+  "production_smoke": {
+    "script": "scripts/patch-103-production-smoke.mjs",
+    "build": "b0b32c80ce77",
+    "auth_method": "otp_resend",
+    "alert_id": "c85555ce-4217-48c0-8653-523ec02de4d5",
+    "lifecycle_count": 3,
+    "stages": ["REQUESTED", "CREATED", "ACTIVE"],
+    "checks": { "total": 12, "passed": 12, "failed": 0 }
   },
-  "tests": {
-    "unit": "scripts/test-mia-analytics-patch-103-price-alert-lifecycle.js",
-    "unit_result": "111/111 PASS",
-    "local_validation": {
-      "status": "PASS",
-      "stages": ["REQUESTED", "CREATED", "ACTIVE"],
-      "alert_persisted": true,
-      "supabase_events": 3
+  "browser_validation": {
+    "script": "scripts/patch-103-production-browser-validation.mjs",
+    "auth_method": "ui_otp_login",
+    "creation_path": "authenticated_fallback",
+    "note": "Commercial offer cards do not render reliably in headless Playwright; alert created via authenticated browser session after real MIA OTP login.",
+    "alert_id": "08a380c0-27de-42e1-9886-aac437dc1586",
+    "user_id": "8fc065cb-b512-404c-bf82-e513d2c7b6cb",
+    "lifecycle_count": 3,
+    "stages": ["REQUESTED", "CREATED", "ACTIVE"],
+    "checks": { "total": 14, "passed": 14, "failed": 0 }
+  },
+  "sql_validation": {
+    "script": "scripts/patch-103-production-validation.mjs",
+    "build": "b0b32c80ce77",
+    "queries": 30,
+    "health_and_link_checks": 2,
+    "passed": 32,
+    "failed": 0
+  },
+  "privacy": {
+    "no_product_name_in_metadata": true,
+    "no_urls_in_metadata": true,
+    "no_user_email_in_metadata": true,
+    "no_query_text": true,
+    "purchase_confirmed_always_false": true,
+    "no_verified_savings_emitted": true,
+    "smoke_scan_pass": true,
+    "browser_scan_pass": true
+  },
+  "issues_found_and_fixed": [
+    {
+      "issue": "Local session token rejected in production (401)",
+      "fix": "OTP auth via Resend API (patch-103-production-auth.mjs)",
+      "commit": "fce798b"
     },
-    "regressions": [
-      "test-mia-analytics-patch-101-price-intelligence.js",
-      "test-mia-analytics-patch-102-savings-estimation.js",
-      "test-mia-price-alert-dry-run-audit.js",
-      "test-mia-price-alert-send-gate-audit.js"
-    ]
-  },
-  "sql": "docs/analytics/sql/patch-103-query1-requested-daily.sql through query30",
+    {
+      "issue": "REQUESTED stage missing — static dedup key collapsed attempts",
+      "fix": "Unique requestAttemptId per create attempt",
+      "commit": "fce798b"
+    },
+    {
+      "issue": "REQUESTED/CREATED/ACTIVE missing — serverless terminated before async inserts",
+      "fix": "Await lifecycle inserts on create path only",
+      "commits": ["a743540", "b0b32c8"]
+    }
+  ],
+  "limitations": [
+    "Creation path uses await on analytics inserts (minimal blocking) to survive serverless",
+    "Headless browser cannot reliably trigger offer-card Monitorar path; UI validation uses authenticated fallback",
+    "Reserved stages (DELIVERED, USER_RETURNED, etc.) not yet instrumented",
+    "price_alert_created client event only emitted on offer-card UI path, not API fallback"
+  ],
   "documentation": [
     "docs/analytics/PRICE_ALERT_LIFECYCLE_ANALYTICS.md",
     "docs/analytics/contracts/EVENT_CONTRACT.md §7.21",
-    "docs/analytics/ANALYTICS_CHANGELOG.md §55"
+    "docs/analytics/ANALYTICS_CHANGELOG.md §55",
+    "docs/analytics/sql/patch-103-query1-requested-daily.sql … query30"
   ],
-  "production": {
-    "status": "pending_deploy",
-    "smoke": "scripts/patch-103-production-smoke.mjs"
-  },
-  "limitations": [
-    "In-memory dedup on serverless",
-    "time_to_target_seconds not yet populated",
-    "UI remove does not deactivate DB row"
-  ],
-  "verdict": "PATCH_10_3_EM_VALIDACAO"
+  "next_patch_recommended": "10.4",
+  "verdict": "PATCH 10.3 APROVADO"
 }

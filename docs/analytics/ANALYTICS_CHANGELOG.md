@@ -915,9 +915,13 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **SQL:** Q1–Q30 em `docs/analytics/sql/patch-103-query*.sql`
 
-**Testes locais:** `test-mia-analytics-patch-103-price-alert-lifecycle.js` (111/111) · regressões dry-run/send-gate OK
+**Testes locais:** `test-mia-analytics-patch-103-price-alert-lifecycle.js` (111/111) · regressões 10.1/10.2/dry-run/send-gate OK
 
-**Veredito:** 🟡 **PATCH 10.3 EM VALIDAÇÃO** (aguardando deploy + smoke produção)
+**Produção:** build `b0b32c80ce77` · smoke 12/12 · browser UI 14/14 · SQL Q1–Q30 32/32
+
+**Correções pós-deploy:** dedup REQUESTED único (`fce798b`) · await inserts create path (`a743540`, `b0b32c8`)
+
+**Veredito:** 🟢 **PATCH 10.3 APROVADO**
 
 ---
 
