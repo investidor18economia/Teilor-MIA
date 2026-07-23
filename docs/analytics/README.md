@@ -37,7 +37,7 @@ ANALYTICS_DATA_DICTIONARY.md ← colunas PostgreSQL
     ↓
 ANALYTICS_TABLE_REFERENCE.md ← escritores / leitores
     ↓
-SESSION_ID.md · VISITOR_ID.md · CONVERSATION_ID.md · AUTHENTICATED_IDENTITY.md · IDENTITY_LAYER.md · DASHBOARDS.md
+SESSION_ID.md · VISITOR_ID.md · CONVERSATION_ID.md · AUTHENTICATED_IDENTITY.md · IDENTITY_LAYER.md · EXECUTIVE_METRICS.md · DASHBOARDS.md
     ↓
 ANALYTICS_CHANGELOG.md
 ```
@@ -83,7 +83,25 @@ ANALYTICS_CHANGELOG.md
 | [RETENTION_FOUNDATION.md](./RETENTION_FOUNDATION.md) | Fundação de retenção (PATCH 3.4) |
 | [IDENTITY_LAYER.md](./IDENTITY_LAYER.md) | **Identity Layer consolidada (PATCH 3.5)** |
 | [PATCH_3.6_PHASE_3_FINAL_AUDIT.md](./PATCH_3.6_PHASE_3_FINAL_AUDIT.md) | Auditoria final Fase 3 (PATCH 3.6) |
-| [DASHBOARDS.md](./DASHBOARDS.md) | Índice dos dashboards SQL (PATCH 1.3) |
+| [PATCH_4.1_EXECUTIVE_DASHBOARD_AUDIT.md](./PATCH_4.1_EXECUTIVE_DASHBOARD_AUDIT.md) | Auditoria PATCH 4.1 |
+| [PATCH_4.1_PRODUCTION_REPORT.md](./PATCH_4.1_PRODUCTION_REPORT.md) | Relatório produção PATCH 4.1 |
+| [PATCH_4.2_GROWTH_DASHBOARD_AUDIT.md](./PATCH_4.2_GROWTH_DASHBOARD_AUDIT.md) | Auditoria PATCH 4.2 |
+| [GROWTH_DASHBOARD.md](./GROWTH_DASHBOARD.md) | **Dashboard de Crescimento (PATCH 4.2)** |
+| [PATCH_4.3_CONVERSION_DASHBOARD_AUDIT.md](./PATCH_4.3_CONVERSION_DASHBOARD_AUDIT.md) | Auditoria PATCH 4.3 |
+| [CONVERSION_DASHBOARD.md](./CONVERSION_DASHBOARD.md) | **Dashboard de Conversão (PATCH 4.3)** |
+| [PATCH_4.4_PRODUCTS_CATEGORIES_DASHBOARD_AUDIT.md](./PATCH_4.4_PRODUCTS_CATEGORIES_DASHBOARD_AUDIT.md) | Auditoria PATCH 4.4 |
+| [PRODUCTS_CATEGORIES_DASHBOARD.md](./PRODUCTS_CATEGORIES_DASHBOARD.md) | **Dashboard de Produtos e Categorias (PATCH 4.4)** |
+| [PATCH_4.5_DATA_QUALITY_DASHBOARD_AUDIT.md](./PATCH_4.5_DATA_QUALITY_DASHBOARD_AUDIT.md) | Auditoria PATCH 4.5 |
+| [DATA_QUALITY_DASHBOARD.md](./DATA_QUALITY_DASHBOARD.md) | **Dashboard de Qualidade dos Dados (PATCH 4.5)** |
+| [PATCH_4.6_PHASE_4_FINAL_AUDIT.md](./PATCH_4.6_PHASE_4_FINAL_AUDIT.md) | **Auditoria final Fase 4 (PATCH 4.6)** |
+| [PHASE_7_FINAL_AUDIT.md](./PHASE_7_FINAL_AUDIT.md) | **Auditoria final Fase 7 (PATCH 7.5)** |
+| [PHASE_7_EXECUTIVE_SUMMARY.md](./PHASE_7_EXECUTIVE_SUMMARY.md) | Resumo executivo Fase 7 |
+| [RELIABILITY_RESPONSE_ANALYTICS.md](./RELIABILITY_RESPONSE_ANALYTICS.md) | Response Reliability (PATCH 7.1) |
+| [RELIABILITY_ERROR_ANALYTICS.md](./RELIABILITY_ERROR_ANALYTICS.md) | Error Analytics (PATCH 7.2) |
+| [RELIABILITY_LATENCY_ANALYTICS.md](./RELIABILITY_LATENCY_ANALYTICS.md) | Latency Analytics (PATCH 7.3) |
+| [RELIABILITY_HEALTH_ANALYTICS.md](./RELIABILITY_HEALTH_ANALYTICS.md) | Health Metrics (PATCH 7.4) |
+| [EXECUTIVE_METRICS.md](./EXECUTIVE_METRICS.md) | Governança métricas executivas (PATCH 4.1) |
+| [DASHBOARDS.md](./DASHBOARDS.md) | Índice dos dashboards SQL (PATCH 1.3 + 4.1–4.5) |
 
 ### Roadmap e especificação futura (não substituem o contrato atual)
 
@@ -97,6 +115,8 @@ ANALYTICS_CHANGELOG.md
 
 | Arquivo | Descrição |
 |---------|-----------|
+| `analytics-growth-dashboard.sql` | **PATCH 4.2** — Dashboard de crescimento |
+| `analytics-executive-dashboard.sql` | **PATCH 4.1** — Dashboard executivo (DAU/WAU/MAU) |
 | `analytics-overview.sql` | Totais produção |
 | `analytics-daily-sessions.sql` | Sessões únicas por dia |
 | `analytics-categories.sql` | Categorias |
@@ -152,6 +172,8 @@ ANALYTICS_CHANGELOG.md
 | **Identity Layer (documentação oficial)** | [IDENTITY_LAYER.md](./IDENTITY_LAYER.md) |
 | Rodar dashboard SQL | [DASHBOARDS.md](./DASHBOARDS.md) |
 | Histórico de patches | [ANALYTICS_CHANGELOG.md](./ANALYTICS_CHANGELOG.md) |
+| **Reliability Analytics (Fase 7)** | [PHASE_7_FINAL_AUDIT.md](./PHASE_7_FINAL_AUDIT.md) |
+| **Commercial Analytics (Fase 8)** | [COMMERCIAL_SEARCH_ANALYTICS.md](./COMMERCIAL_SEARCH_ANALYTICS.md) · [PATCH_8_1](./PATCH_8_1_COMMERCIAL_SEARCH_ANALYTICS.md) |
 | Roadmap futuro | [02_analytics_roadmap.md](./02_analytics_roadmap.md) |
 | Migrations executáveis | `supabase/migrations/20260719153000_*` + `53001_*` + visitor/conversation + `20260722180000_analytics_retention_foundation_v1.sql` |
 | Operações Supabase | [docs/infrastructure/SUPABASE_OPERATIONS.md](../infrastructure/SUPABASE_OPERATIONS.md) |

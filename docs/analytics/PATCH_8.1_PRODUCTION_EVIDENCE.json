@@ -1,0 +1,442 @@
+{
+  "patch": "8.1",
+  "deploy_build": "e6b5eb123da6",
+  "session_id": "6d06106c-081f-4237-ae14-5238d11c92cd",
+  "scenarios": [
+    {
+      "id": "A",
+      "text": "Quero um celular Samsung bom para jogos até 2500 reais",
+      "status": 200,
+      "inline": {
+        "commercial_search_event_version": "8.1.0",
+        "commercial_search_execution_status": "EXECUTED",
+        "commercial_search_path": "DATA_LAYER_ONLY",
+        "commercial_search_result_status": "RESULTS_FOUND",
+        "commercial_search_results_count": 12,
+        "commercial_search_runtime_mode": "CONTROLLED"
+      },
+      "response_path": "return_seguro",
+      "products_count": 3,
+      "before": "2026-07-23T03:24:06.488Z"
+    },
+    {
+      "id": "B",
+      "text": "Estou cansado de pesquisar, mas preciso de um celular até R$ 2.000 com boa câmera.",
+      "status": 200,
+      "inline": {
+        "commercial_search_event_version": "8.1.0",
+        "commercial_search_execution_status": "NOT_EXECUTED",
+        "commercial_search_path": "NO_SEARCH",
+        "commercial_search_result_status": "NOT_APPLICABLE",
+        "commercial_search_results_count": 0,
+        "commercial_search_runtime_mode": "CONTROLLED"
+      },
+      "response_path": "non_commercial_governed_fallback",
+      "products_count": 0,
+      "before": "2026-07-23T03:24:36.494Z"
+    },
+    {
+      "id": "C",
+      "text": "Samsung Galaxy A15 128GB vale a pena?",
+      "status": 200,
+      "inline": {
+        "commercial_search_event_version": "8.1.0",
+        "commercial_search_execution_status": "NOT_EXECUTED",
+        "commercial_search_path": "NO_SEARCH",
+        "commercial_search_result_status": "NOT_APPLICABLE",
+        "commercial_search_results_count": 0,
+        "commercial_search_runtime_mode": "CONTROLLED"
+      },
+      "response_path": "context_decision_no_search",
+      "products_count": 0,
+      "before": "2026-07-23T03:24:39.919Z"
+    },
+    {
+      "id": "D",
+      "text": "aspirador robô xiaomi barato até 800 reais",
+      "status": 200,
+      "inline": {
+        "commercial_search_event_version": "8.1.0",
+        "commercial_search_execution_status": "EXECUTED",
+        "commercial_search_path": "DATA_LAYER_ONLY",
+        "commercial_search_result_status": "RESULTS_FOUND",
+        "commercial_search_results_count": 12,
+        "commercial_search_runtime_mode": "CONTROLLED"
+      },
+      "response_path": "return_seguro",
+      "products_count": 3,
+      "before": "2026-07-23T03:24:45.551Z"
+    },
+    {
+      "id": "E",
+      "text": "Boa tarde, como você está?",
+      "status": 200,
+      "inline": {},
+      "response_path": "greeting_flow",
+      "products_count": 0,
+      "before": "2026-07-23T03:25:10.539Z"
+    },
+    {
+      "id": "F",
+      "text": "fone bluetooth xyzabc123 inexistente modelo 99999",
+      "status": 200,
+      "inline": {},
+      "response_path": "governed_social_intent_flow",
+      "products_count": 0,
+      "before": "2026-07-23T03:25:16.092Z"
+    }
+  ],
+  "events": [
+    {
+      "event_name": "data_layer_resolution",
+      "event_version": "6.4.0",
+      "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+      "response_path": "return_seguro",
+      "response_classification": "PARTIAL_DATA_LAYER"
+    },
+    {
+      "event_name": "mia_commercial_search",
+      "event_version": "8.1.0",
+      "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+      "intent_type": "COMMERCIAL",
+      "search_execution_status": "EXECUTED",
+      "search_path": "DATA_LAYER_ONLY",
+      "search_result_status": "RESULTS_FOUND",
+      "runtime_mode": "CONTROLLED",
+      "query_change_type": "NONE",
+      "query_changed": false,
+      "provider_continuation_required": false,
+      "results_count": 12,
+      "original_query": "Quero um celular Samsung bom para jogos até 2500 reais",
+      "extracted_commercial_query": null,
+      "normalized_commercial_query": "Quero um celular Samsung bom para jogos até 2500 reais",
+      "data_layer_attempted": true,
+      "termination_stage": "RESPONSE_BUILDER",
+      "response_path": "return_seguro"
+    },
+    {
+      "event_name": "mia_latency_event",
+      "event_version": "7.3.0",
+      "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+      "response_path": "return_seguro"
+    },
+    {
+      "event_name": "mia_response_outcome",
+      "event_version": "7.1.0",
+      "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+      "response_path": "return_seguro",
+      "outcome": "PARTIAL_SUCCESS"
+    },
+    {
+      "event_name": "mia_response_outcome",
+      "event_version": "7.1.0",
+      "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+      "response_path": "non_commercial_governed_fallback",
+      "outcome": "FALLBACK"
+    },
+    {
+      "event_name": "mia_error_event",
+      "event_version": "7.2.0",
+      "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+      "response_path": "non_commercial_governed_fallback"
+    },
+    {
+      "event_name": "mia_latency_event",
+      "event_version": "7.3.0",
+      "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+      "response_path": "non_commercial_governed_fallback"
+    },
+    {
+      "event_name": "mia_error_event",
+      "event_version": "7.2.0",
+      "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+      "response_path": "non_commercial_governed_fallback"
+    },
+    {
+      "event_name": "mia_commercial_search",
+      "event_version": "8.1.0",
+      "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+      "intent_type": "MIXED",
+      "search_execution_status": "NOT_EXECUTED",
+      "search_path": "NO_SEARCH",
+      "search_result_status": "NOT_APPLICABLE",
+      "runtime_mode": "CONTROLLED",
+      "query_change_type": "EXTRACTION",
+      "query_changed": true,
+      "provider_continuation_required": false,
+      "results_count": 0,
+      "original_query": "Estou cansado de pesquisar, mas preciso de um celular até R$ 2.000 com boa câmera.",
+      "extracted_commercial_query": "celular",
+      "normalized_commercial_query": "celular",
+      "data_layer_attempted": false,
+      "termination_stage": "RESPONSE_BUILDER",
+      "response_path": "non_commercial_governed_fallback"
+    },
+    {
+      "event_name": "mia_response_outcome",
+      "event_version": "7.1.0",
+      "request_id": "af98e4ea-e3b2-49ec-8fb3-a4112007c074",
+      "response_path": "context_decision_no_search",
+      "outcome": "SUCCESS"
+    },
+    {
+      "event_name": "mia_latency_event",
+      "event_version": "7.3.0",
+      "request_id": "af98e4ea-e3b2-49ec-8fb3-a4112007c074",
+      "response_path": "context_decision_no_search"
+    },
+    {
+      "event_name": "mia_commercial_search",
+      "event_version": "8.1.0",
+      "request_id": "af98e4ea-e3b2-49ec-8fb3-a4112007c074",
+      "intent_type": "COMMERCIAL",
+      "search_execution_status": "NOT_EXECUTED",
+      "search_path": "NO_SEARCH",
+      "search_result_status": "NOT_APPLICABLE",
+      "runtime_mode": "CONTROLLED",
+      "query_change_type": "NORMALIZATION",
+      "query_changed": true,
+      "provider_continuation_required": false,
+      "results_count": 0,
+      "original_query": "Samsung Galaxy A15 128GB vale a pena?",
+      "extracted_commercial_query": null,
+      "normalized_commercial_query": "Samsung Galaxy A15 128GB vale a pena? preço",
+      "data_layer_attempted": false,
+      "termination_stage": "RESPONSE_BUILDER",
+      "response_path": "context_decision_no_search"
+    },
+    {
+      "event_name": "data_layer_resolution",
+      "event_version": "6.4.0",
+      "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+      "response_path": "return_seguro",
+      "response_classification": "PARTIAL_DATA_LAYER"
+    },
+    {
+      "event_name": "mia_latency_event",
+      "event_version": "7.3.0",
+      "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+      "response_path": "return_seguro"
+    },
+    {
+      "event_name": "mia_commercial_search",
+      "event_version": "8.1.0",
+      "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+      "intent_type": "COMMERCIAL",
+      "search_execution_status": "EXECUTED",
+      "search_path": "DATA_LAYER_ONLY",
+      "search_result_status": "RESULTS_FOUND",
+      "runtime_mode": "CONTROLLED",
+      "query_change_type": "NONE",
+      "query_changed": false,
+      "provider_continuation_required": false,
+      "results_count": 12,
+      "original_query": "aspirador robô xiaomi barato até 800 reais",
+      "extracted_commercial_query": null,
+      "normalized_commercial_query": "aspirador robô xiaomi barato até 800 reais",
+      "data_layer_attempted": true,
+      "termination_stage": "RESPONSE_BUILDER",
+      "response_path": "return_seguro"
+    },
+    {
+      "event_name": "mia_response_outcome",
+      "event_version": "7.1.0",
+      "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+      "response_path": "return_seguro",
+      "outcome": "PARTIAL_SUCCESS"
+    },
+    {
+      "event_name": "mia_response_outcome",
+      "event_version": "7.1.0",
+      "request_id": "4f355e07-a7c5-4223-a04a-581e6e34d977",
+      "response_path": "greeting_flow",
+      "outcome": "SUCCESS"
+    },
+    {
+      "event_name": "mia_latency_event",
+      "event_version": "7.3.0",
+      "request_id": "4f355e07-a7c5-4223-a04a-581e6e34d977",
+      "response_path": "greeting_flow"
+    },
+    {
+      "event_name": "mia_latency_event",
+      "event_version": "7.3.0",
+      "request_id": "9a80f275-cc5e-4356-9a42-6611bd88e4b8",
+      "response_path": "governed_social_intent_flow"
+    },
+    {
+      "event_name": "mia_response_outcome",
+      "event_version": "7.1.0",
+      "request_id": "9a80f275-cc5e-4356-9a42-6611bd88e4b8",
+      "response_path": "governed_social_intent_flow",
+      "outcome": "SUCCESS"
+    }
+  ],
+  "correlation": {
+    "3bbe8bdc-4d90-4097-b765-918188bbc0dd": {
+      "data_layer_resolution": {
+        "event_name": "data_layer_resolution",
+        "event_version": "6.4.0",
+        "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+        "response_path": "return_seguro",
+        "response_classification": "PARTIAL_DATA_LAYER"
+      },
+      "mia_commercial_search": {
+        "event_name": "mia_commercial_search",
+        "event_version": "8.1.0",
+        "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+        "intent_type": "COMMERCIAL",
+        "search_execution_status": "EXECUTED",
+        "search_path": "DATA_LAYER_ONLY",
+        "search_result_status": "RESULTS_FOUND",
+        "runtime_mode": "CONTROLLED",
+        "query_change_type": "NONE",
+        "query_changed": false,
+        "provider_continuation_required": false,
+        "results_count": 12,
+        "original_query": "Quero um celular Samsung bom para jogos até 2500 reais",
+        "extracted_commercial_query": null,
+        "normalized_commercial_query": "Quero um celular Samsung bom para jogos até 2500 reais",
+        "data_layer_attempted": true,
+        "termination_stage": "RESPONSE_BUILDER",
+        "response_path": "return_seguro"
+      },
+      "mia_latency_event": {
+        "event_name": "mia_latency_event",
+        "event_version": "7.3.0",
+        "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+        "response_path": "return_seguro"
+      },
+      "mia_response_outcome": {
+        "event_name": "mia_response_outcome",
+        "event_version": "7.1.0",
+        "request_id": "3bbe8bdc-4d90-4097-b765-918188bbc0dd",
+        "response_path": "return_seguro",
+        "outcome": "PARTIAL_SUCCESS"
+      }
+    },
+    "9ee8c779-a775-4c9e-b8cf-8af7c4966149": {
+      "mia_response_outcome": {
+        "event_name": "mia_response_outcome",
+        "event_version": "7.1.0",
+        "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+        "response_path": "non_commercial_governed_fallback",
+        "outcome": "FALLBACK"
+      },
+      "mia_error_event": {
+        "event_name": "mia_error_event",
+        "event_version": "7.2.0",
+        "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+        "response_path": "non_commercial_governed_fallback"
+      },
+      "mia_latency_event": {
+        "event_name": "mia_latency_event",
+        "event_version": "7.3.0",
+        "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+        "response_path": "non_commercial_governed_fallback"
+      },
+      "mia_commercial_search": {
+        "event_name": "mia_commercial_search",
+        "event_version": "8.1.0",
+        "request_id": "9ee8c779-a775-4c9e-b8cf-8af7c4966149",
+        "intent_type": "MIXED",
+        "search_execution_status": "NOT_EXECUTED",
+        "search_path": "NO_SEARCH",
+        "search_result_status": "NOT_APPLICABLE",
+        "runtime_mode": "CONTROLLED",
+        "query_change_type": "EXTRACTION",
+        "query_changed": true,
+        "provider_continuation_required": false,
+        "results_count": 0,
+        "original_query": "Estou cansado de pesquisar, mas preciso de um celular até R$ 2.000 com boa câmera.",
+        "extracted_commercial_query": "celular",
+        "normalized_commercial_query": "celular",
+        "data_layer_attempted": false,
+        "termination_stage": "RESPONSE_BUILDER",
+        "response_path": "non_commercial_governed_fallback"
+      }
+    },
+    "af98e4ea-e3b2-49ec-8fb3-a4112007c074": {
+      "mia_response_outcome": {
+        "event_name": "mia_response_outcome",
+        "event_version": "7.1.0",
+        "request_id": "af98e4ea-e3b2-49ec-8fb3-a4112007c074",
+        "response_path": "context_decision_no_search",
+        "outcome": "SUCCESS"
+      },
+      "mia_latency_event": {
+        "event_name": "mia_latency_event",
+        "event_version": "7.3.0",
+        "request_id": "af98e4ea-e3b2-49ec-8fb3-a4112007c074",
+        "response_path": "context_decision_no_search"
+      },
+      "mia_commercial_search": {
+        "event_name": "mia_commercial_search",
+        "event_version": "8.1.0",
+        "request_id": "af98e4ea-e3b2-49ec-8fb3-a4112007c074",
+        "intent_type": "COMMERCIAL",
+        "search_execution_status": "NOT_EXECUTED",
+        "search_path": "NO_SEARCH",
+        "search_result_status": "NOT_APPLICABLE",
+        "runtime_mode": "CONTROLLED",
+        "query_change_type": "NORMALIZATION",
+        "query_changed": true,
+        "provider_continuation_required": false,
+        "results_count": 0,
+        "original_query": "Samsung Galaxy A15 128GB vale a pena?",
+        "extracted_commercial_query": null,
+        "normalized_commercial_query": "Samsung Galaxy A15 128GB vale a pena? preço",
+        "data_layer_attempted": false,
+        "termination_stage": "RESPONSE_BUILDER",
+        "response_path": "context_decision_no_search"
+      }
+    },
+    "0d52d963-0ba5-41da-abd3-4538188acd7b": {
+      "data_layer_resolution": {
+        "event_name": "data_layer_resolution",
+        "event_version": "6.4.0",
+        "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+        "response_path": "return_seguro",
+        "response_classification": "PARTIAL_DATA_LAYER"
+      },
+      "mia_latency_event": {
+        "event_name": "mia_latency_event",
+        "event_version": "7.3.0",
+        "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+        "response_path": "return_seguro"
+      },
+      "mia_commercial_search": {
+        "event_name": "mia_commercial_search",
+        "event_version": "8.1.0",
+        "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+        "intent_type": "COMMERCIAL",
+        "search_execution_status": "EXECUTED",
+        "search_path": "DATA_LAYER_ONLY",
+        "search_result_status": "RESULTS_FOUND",
+        "runtime_mode": "CONTROLLED",
+        "query_change_type": "NONE",
+        "query_changed": false,
+        "provider_continuation_required": false,
+        "results_count": 12,
+        "original_query": "aspirador robô xiaomi barato até 800 reais",
+        "extracted_commercial_query": null,
+        "normalized_commercial_query": "aspirador robô xiaomi barato até 800 reais",
+        "data_layer_attempted": true,
+        "termination_stage": "RESPONSE_BUILDER",
+        "response_path": "return_seguro"
+      },
+      "mia_response_outcome": {
+        "event_name": "mia_response_outcome",
+        "event_version": "7.1.0",
+        "request_id": "0d52d963-0ba5-41da-abd3-4538188acd7b",
+        "response_path": "return_seguro",
+        "outcome": "PARTIAL_SUCCESS"
+      }
+    }
+  },
+  "checks": {
+    "total": 32,
+    "passed": 31,
+    "failed": 1
+  }
+}

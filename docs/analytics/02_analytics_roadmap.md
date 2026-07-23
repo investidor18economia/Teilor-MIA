@@ -365,7 +365,7 @@ Auditoria Final
 # FASE 8
 ## Commercial Analytics
 
-**Status:** 🟡 **PATCH 8.1 EM VALIDAÇÃO** — PATCH 8.0 APROVADO
+**Status:** 🟢 **PATCH 8.1 APROVADO** — PATCH 8.2 não iniciado
 
 Objetivo
 

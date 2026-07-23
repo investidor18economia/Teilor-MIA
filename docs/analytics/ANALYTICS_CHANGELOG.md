@@ -736,7 +736,7 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Testes locais:** 8.1 **60/60** · regressões 6.4 + 7.x intactas.
 
-**Veredito:** 🟡 aguardando validação produção
+**Veredito:** 🟢 **PATCH 8.1 APROVADO** — deploy `e6b5eb1` · smoke 10/10 · SQL 27/27 · regressões 370/370
 
 ---
 
