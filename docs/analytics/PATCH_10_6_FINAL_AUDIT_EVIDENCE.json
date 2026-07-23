@@ -1,0 +1,139 @@
+{
+  "patch": "10.6",
+  "phase": "10",
+  "audit_type": "phase_10_final",
+  "status": "APPROVED",
+  "phase_verdict": "FASE 10 CONCLUÍDA E APROVADA",
+  "audit_timestamp": "2026-07-23T22:10:56-03:00",
+  "architecture": {
+    "delivery_chain": "offer_set (await) → price_intelligence → savings_estimation → anti_regret_foundation → user_value_outcome",
+    "alert_parallel": "REQUESTED → CREATED → ACTIVE → CHECKED → TARGET_REACHED → NOTIFICATION_*",
+    "serverless_fix": "commit 5e103f2 — await delivery chain before HTTP response",
+    "post_decision_hooks": ["scheduleAntiRegretFoundationFromPostDecisionSignal", "scheduleUserValueOutcomeFromPostDecisionSignal"]
+  },
+  "events": {
+    "10.1": { "name": "mia_price_intelligence", "version": "10.1.0" },
+    "10.2": { "name": "mia_savings_estimation", "version": "10.2.0" },
+    "10.3": { "name": "mia_price_alert_lifecycle", "version": "10.3.0" },
+    "10.4": { "name": "mia_anti_regret_foundation", "version": "10.4.0" },
+    "10.5": { "name": "mia_user_value_outcome", "version": "10.5.0" }
+  },
+  "contracts": {
+    "location": "docs/analytics/contracts/EVENT_CONTRACT.md §7.19–7.24",
+    "semantic_guards_verified": true,
+    "purchase_confirmed_in_prod": 0,
+    "value_verified_in_prod": 0,
+    "roi_assumed_in_prod": 0,
+    "regret_confirmed_in_prod": 0
+  },
+  "taxonomies": {
+    "price_quality": ["HIGH", "MEDIUM", "LOW", "INVALID", "UNKNOWN"],
+    "savings_type": ["OBSERVED", "UNVERIFIED", "VERIFIED (reserved)"],
+    "value_status": ["POTENTIAL", "OBSERVED", "VERIFIED", "UNKNOWN"],
+    "verified_value": "NOT_AVAILABLE"
+  },
+  "correlation": {
+    "hub_ids": ["request_id", "decision_request_id", "alert_id", "session_id"],
+    "cross_audit_sql": "docs/analytics/sql/patch-106-query3-events-by-request.sql … query8-orphan-ids.sql"
+  },
+  "deduplication": {
+    "10.1_10.4_10.5": "request_id + decision_request_id + event_name + event_version",
+    "10.2": "request_id + savings_type + event_version (2 events possible)",
+    "10.3": "alert_id + lifecycle_stage + lifecycle_occurrence_key"
+  },
+  "serverless": {
+    "await_chain": ["mia_offer_set", "mia_price_intelligence", "mia_savings_estimation", "mia_anti_regret_foundation", "mia_user_value_outcome"],
+    "alert_create_await": true,
+    "alert_scheduler_fire_and_forget": true
+  },
+  "semantic_guards": {
+    "verified_separation": "POTENTIAL/OBSERVED never auto-convert to VERIFIED",
+    "flags_always_false_in_prod": ["purchase_confirmed", "value_verified", "roi_assumed", "regret_confirmed"]
+  },
+  "scores": {
+    "anti_regret_score": { "range": "0-100", "internal_only": true, "uses_ai": false },
+    "user_value_score": { "range": "0-100", "internal_only": true, "uses_ai": false }
+  },
+  "sql": {
+    "patch_queries": 90,
+    "cross_audit_queries": 30,
+    "total": 120,
+    "validation_script": "scripts/patch-106-production-validation.mjs",
+    "passed": 123,
+    "failed": 0,
+    "note": "123 includes health + file count checks"
+  },
+  "privacy": {
+    "scan_script": "scripts/patch-106-phase10-production-audit.mjs",
+    "phase10_leaks": 0,
+    "forbidden_patterns": ["product_name", "https://", "query_text", "user_email", "bearer"]
+  },
+  "unit_tests": {
+    "patch_106_meta": { "script": "scripts/test-mia-analytics-patch-106-phase10-final-audit.js", "passed": 54, "failed": 0 }
+  },
+  "regressions": {
+    "patch_83_offer_analytics": { "passed": 39, "failed": 0 },
+    "patch_84_phase8_audit": { "passed": 62, "failed": 4, "note": "4 failures are git commit hash meta-checks only — non-functional" },
+    "patch_91_decision": { "passed": 54, "failed": 0 },
+    "patch_92_acceptance": { "passed": 52, "failed": 0 },
+    "patch_93_rejection": { "passed": 58, "failed": 0 },
+    "patch_94_runner_up": { "passed": 47, "failed": 0 },
+    "patch_101": { "passed": 52, "failed": 0 },
+    "patch_102": { "passed": 70, "failed": 0 },
+    "patch_103": { "passed": 111, "failed": 0 },
+    "patch_104": { "passed": 68, "failed": 0 },
+    "patch_105": { "passed": 68, "failed": 0 }
+  },
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "e69dfde509fc",
+    "health_ok": true,
+    "audit_script": "scripts/patch-106-phase10-production-audit.mjs",
+    "e2e_checks": { "total": 36, "passed": 36, "failed": 0 },
+    "request_id_commercial": "1d444a23-f96f-481f-bfc6-b4f8e8800e7c",
+    "alert_id": "09275604-ffae-4da2-81dd-ed84de763f39"
+  },
+  "real_scenarios": [
+    "A — commercial chain 8.3→10.5 persisted",
+    "B — social turn no phase10 chain",
+    "C — multi-offer price intelligence",
+    "D — alert REQUESTED/CREATED/ACTIVE",
+    "E — alert failure handled",
+    "F — post-decision refinement HTTP 200",
+    "G — analytics failure isolation (static code audit)"
+  ],
+  "issues_found": [
+    "Supabase 502 transient during SQL validation — mitigated with retry in patch-106-production-validation.mjs",
+    "Cross-audit Q5/Q6/Q16/Q24 CTE syntax — fixed in generate-patch-106-cross-audit-sql.mjs",
+    "Production audit initial alert endpoint wrong (/api/price-alerts) — fixed to /api/create-price-alert"
+  ],
+  "fixes_applied": [
+    "SQL CTE comma syntax for multi-CTE cross-audit queries",
+    "502 retry logic in SQL validation script",
+    "Alert API endpoint correction in production audit script"
+  ],
+  "limitations": [
+    "verified_value_amount remains null — no checkout integration",
+    "Post-decision 10.5 enrichment async — initial emit may stay POTENTIAL",
+    "8.4 meta-audit git commit hash checks drift (non-blocking)",
+    "Alert REQUESTED may not correlate alert_id in all paths"
+  ],
+  "backlog": [
+    "Checkout/marketplace for VERIFIED value",
+    "DB-level dedup for post-decision hooks",
+    "JSONB indexes on decision_request_id and alert_id",
+    "Fase 11 — Teilor em Números dashboards"
+  ],
+  "documentation": [
+    "docs/analytics/PHASE_10_FINAL_MASTER_DOCUMENT.md",
+    "docs/analytics/contracts/EVENT_CONTRACT.md §7.24",
+    "docs/analytics/ANALYTICS_CHANGELOG.md §58",
+    "docs/analytics/sql/patch-106-query1-events-by-version.sql … query30"
+  ],
+  "commits": {
+    "phase_10_implementation": ["a5bf37d", "089f41f", "e69dfde"],
+    "phase_10_6_audit": "pending"
+  },
+  "build": "e69dfde509fc",
+  "final_verdict": "PATCH 10.6 APROVADO — FASE 10 CONCLUÍDA E APROVADA"
+}

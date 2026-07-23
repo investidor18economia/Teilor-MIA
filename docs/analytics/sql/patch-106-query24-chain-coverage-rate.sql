@@ -1,0 +1,52 @@
+-- PATCH 10.6 — Q24 Cobertura da cadeia
+-- PATCH 10.6 cross-audit base
+with phase10 as (
+  select
+    id,
+    created_at,
+    event_name,
+    category,
+    session_id,
+    user_id,
+    metadata->>'request_id' as request_id,
+    metadata->>'decision_request_id' as decision_request_id,
+    metadata->>'event_version' as event_version,
+    metadata->>'alert_id' as alert_id,
+    metadata->>'lifecycle_stage' as lifecycle_stage,
+    metadata->>'value_status' as value_status,
+    metadata->>'savings_type' as savings_type,
+    coalesce((metadata->>'purchase_confirmed')::boolean, false) as purchase_confirmed,
+    coalesce((metadata->>'value_verified')::boolean, false) as value_verified,
+    coalesce((metadata->>'roi_assumed')::boolean, false) as roi_assumed,
+    coalesce((metadata->>'regret_confirmed')::boolean, false) as regret_confirmed,
+    coalesce((metadata->>'satisfaction_assumed')::boolean, false) as satisfaction_assumed,
+    nullif(metadata->>'potential_value_amount', '')::numeric as potential_value_amount,
+    nullif(metadata->>'observed_value_amount', '')::numeric as observed_value_amount,
+    nullif(metadata->>'verified_value_amount', '')::numeric as verified_value_amount,
+    nullif(metadata->>'user_value_score', '')::numeric as user_value_score,
+    nullif(metadata->>'anti_regret_score', '')::numeric as anti_regret_score,
+    metadata
+  from analytics_events
+  where event_name in (
+    'mia_price_intelligence',
+    'mia_savings_estimation',
+    'mia_price_alert_lifecycle',
+    'mia_anti_regret_foundation',
+    'mia_user_value_outcome'
+  )
+  and coalesce(category, '') not like '%_test'
+),
+d as (
+  select decision_request_id from phase10 where decision_request_id is not null group by 1
+), full_chain as (
+  select decision_request_id from phase10 where decision_request_id is not null
+  group by 1
+  having bool_or(event_name='mia_price_intelligence')
+    and bool_or(event_name='mia_savings_estimation')
+    and bool_or(event_name='mia_anti_regret_foundation')
+    and bool_or(event_name='mia_user_value_outcome')
+)
+select count(*)::bigint as decisoes_total,
+  (select count(*)::bigint from full_chain) as cadeia_completa,
+  round(100.0 * (select count(*) from full_chain) / nullif(count(*), 0), 2) as cobertura_pct
+from d;

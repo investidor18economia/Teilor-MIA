@@ -1,0 +1,34 @@
+{
+  "patch": "10.6",
+  "audit_type": "phase_10_final",
+  "audit_timestamp": "2026-07-23T22:10:49.083Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "e69dfde509fc",
+    "health_ok": true
+  },
+  "scenarios": {
+    "A_commercial_chain": {
+      "session_id": "861af89c-11a6-4d45-82a7-5bf0e76cd3b4",
+      "request_id": "1d444a23-f96f-481f-bfc6-b4f8e8800e7c"
+    },
+    "B_social": {
+      "session_id": "66b34d36-ded9-44a5-87f8-31fe7955807f"
+    },
+    "C_multi_offer": {
+      "session_id": "18950d5b-70ac-4aa6-9585-d65b4123f30c",
+      "request_id": "ad2398cc-e52b-4ddb-a79c-e035f8f89d57"
+    },
+    "D_alert": {
+      "alert_id": "09275604-ffae-4da2-81dd-ed84de763f39"
+    },
+    "F_refinement": {
+      "conversation_id": "547519d2-59f7-427a-9d53-d7e058c4c0a1"
+    }
+  },
+  "checks": {
+    "total": 36,
+    "passed": 36,
+    "failed": 0
+  }
+}

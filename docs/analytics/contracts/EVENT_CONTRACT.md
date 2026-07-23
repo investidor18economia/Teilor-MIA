@@ -677,6 +677,16 @@ Detalhamento: [ANTI_REGRET_FOUNDATION_ANALYTICS.md](../ANTI_REGRET_FOUNDATION_AN
 
 Detalhamento: [SAVINGS_OUTCOMES_USER_VALUE_ANALYTICS.md](../SAVINGS_OUTCOMES_USER_VALUE_ANALYTICS.md)
 
+### 7.24 PATCH 10.6 — Auditoria Final da Fase 10
+
+**Escopo:** auditoria cruzada read-only dos eventos 10.1–10.5  
+**Documento mestre:** [PHASE_10_FINAL_MASTER_DOCUMENT.md](../PHASE_10_FINAL_MASTER_DOCUMENT.md)  
+**Evidência:** [PATCH_10_6_FINAL_AUDIT_EVIDENCE.json](../PATCH_10_6_FINAL_AUDIT_EVIDENCE.json)  
+**SQL cruzado:** Q1–Q30 em `docs/analytics/sql/patch-106-query*.sql`  
+**Total SQL Fase 10:** 120 consultas (90 patch + 30 cross-audit)
+
+**Veredito:** 🟢 **FASE 10 CONCLUÍDA E APROVADA**
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |
