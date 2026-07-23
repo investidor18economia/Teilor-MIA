@@ -477,7 +477,7 @@ Anti-Regret Foundation Analytics — 🟢 APROVADO
 
 PATCH 10.5
 
-Savings Outcomes & User Value Analytics — 🟡 EM VALIDAÇÃO
+Savings Outcomes & User Value Analytics — 🟢 APROVADO
 
 PATCH 10.6
 

@@ -959,7 +959,9 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Testes locais:** `test-mia-analytics-patch-105-user-value-outcome.js` (68/68) · regressões 10.1–10.4 OK
 
-**Veredito:** 🟡 **PATCH 10.5 EM VALIDAÇÃO**
+**Produção:** build `a5bf37d32dd5` · smoke 14/14 · SQL Q1–Q20 22/22
+
+**Veredito:** 🟢 **PATCH 10.5 APROVADO**
 
 ---
 

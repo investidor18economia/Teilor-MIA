@@ -35,4 +35,4 @@ with outcomes as (
     and coalesce(metadata->>'event_version', '') = '10.5.0'
     and category not in ('user_value_test')
 )
-select round(corr(anti_regret_score, user_value_score), 4) as correlacao, count(*)::bigint as eventos from outcomes where anti_regret_score is not null and user_value_score is not null;
+select round(corr(anti_regret_score, user_value_score)::numeric, 4) as correlacao, count(*)::bigint as eventos from outcomes where anti_regret_score is not null and user_value_score is not null;

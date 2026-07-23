@@ -1,0 +1,158 @@
+{
+  "patch": "10.5",
+  "title": "Savings Outcomes & User Value Analytics",
+  "status": "APPROVED",
+  "validated_at": "2026-07-23T21:52:00-03:00",
+  "commits": {
+    "implementation": "a5bf37d",
+    "sql_q12_fix": "pending"
+  },
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "a5bf37d32dd5",
+    "health_ok": true,
+    "deploy_method": "github_vercel_auto_deploy"
+  },
+  "event": {
+    "event_name": "mia_user_value_outcome",
+    "event_version": "10.5.0",
+    "category": "user_value",
+    "dedup": "request_id + decision_request_id + event_name + event_version",
+    "hooks": [
+      "instrumentOfferSetAnalyticsForDelivery → emitUserValueOutcomeAnalytics (await)",
+      "observeAcceptanceSignalAnalytics → scheduleUserValueOutcomeFromPostDecisionSignal",
+      "observeRejectionSignalAnalytics → scheduleUserValueOutcomeFromPostDecisionSignal"
+    ]
+  },
+  "audit_pre_implementation": {
+    "patches_reviewed": ["10.1", "10.2", "10.3", "10.4"],
+    "signals_reviewed": [
+      "mia_recommendation_acceptance_signal",
+      "mia_recommendation_rejection_signal",
+      "offer_click",
+      "favorite_created",
+      "mia_price_alert_lifecycle",
+      "mia_recommendation_decision"
+    ],
+    "evidence_layers": {
+      "POTENTIAL": ["price intelligence", "savings estimation", "offer_set comparison"],
+      "OBSERVED": ["acceptance signals", "offer_click", "favorite", "alert TARGET_REACHED"],
+      "VERIFIED": "NOT_AVAILABLE — no checkout or purchase confirmation integration",
+      "UNAVAILABLE": ["purchase confirmation", "ROI", "satisfaction", "verified savings"]
+    },
+    "no_duplication": "Outcome summary derives from upstream metadata only; does not replay full upstream payloads"
+  },
+  "architecture": {
+    "libs": [
+      "lib/miaUserValueOutcomeCatalog.js",
+      "lib/miaUserValueOutcomeClassifier.js",
+      "lib/miaUserValueOutcomeAnalytics.js"
+    ],
+    "delivery_chain": "offer_set → price_intelligence → savings → anti_regret → user_value_outcome (await)",
+    "fire_and_forget": "Failures swallowed; no impact on decision engine, ranking, or response builder"
+  },
+  "score": {
+    "field": "user_value_score",
+    "range": "0-100",
+    "base": 40,
+    "internal_only": true,
+    "component_weights": {
+      "PRICE": 15,
+      "SAVINGS": 20,
+      "ALERTS": 15,
+      "DECISION": 10,
+      "FAVORITES": 8,
+      "OFFER_CLICKS": 8,
+      "ANTI_REGRET": 12,
+      "CONFIDENCE": 7
+    },
+    "formula_location": "lib/miaUserValueOutcomeClassifier.js"
+  },
+  "value_layers": {
+    "POTENTIAL_VALUE": "Opportunity found — no purchase assumed",
+    "OBSERVED_VALUE": "Objective outcome observed — still no purchase assumed",
+    "VERIFIED_VALUE": "NOT_AVAILABLE",
+    "UNKNOWN_VALUE": "Insufficient evidence"
+  },
+  "outcome_status": ["POTENTIAL", "OBSERVED", "VERIFIED", "UNKNOWN"],
+  "value_types": [
+    "PRICE_OPPORTUNITY",
+    "PRICE_DROP",
+    "TIME_SAVED",
+    "DECISION_SUPPORT",
+    "ALERT_SUCCESS",
+    "PRODUCT_DISCOVERY",
+    "CONFIDENCE_GAIN",
+    "UNKNOWN"
+  ],
+  "unit_tests": {
+    "script": "scripts/test-mia-analytics-patch-105-user-value-outcome.js",
+    "passed": 68,
+    "failed": 0
+  },
+  "regressions": {
+    "patch_101_price_intelligence": { "passed": 52, "failed": 0 },
+    "patch_102_savings_estimation": { "passed": 70, "failed": 0 },
+    "patch_103_price_alert_lifecycle": { "passed": 111, "failed": 0 },
+    "patch_104_anti_regret_foundation": { "passed": 68, "failed": 0 }
+  },
+  "production_smoke": {
+    "script": "scripts/patch-105-production-smoke.mjs",
+    "build": "a5bf37d32dd5",
+    "request_id": "17c14633-4592-4a74-aa62-86561feec177",
+    "session_id": "26933a24-5113-4184-a1f7-e91c9aa1d3ef",
+    "outcome_count": 1,
+    "user_value_score": 66,
+    "value_status": "POTENTIAL",
+    "value_layer": "POTENTIAL_VALUE",
+    "verified_value_amount": null,
+    "checks": { "total": 14, "passed": 14, "failed": 0 }
+  },
+  "sql_validation": {
+    "script": "scripts/patch-105-production-validation.mjs",
+    "build": "a5bf37d32dd5",
+    "queries": 20,
+    "health_and_link_checks": 2,
+    "passed": 22,
+    "failed": 0,
+    "fix_applied": "Q12 corr() cast to numeric for PostgreSQL round()"
+  },
+  "privacy": {
+    "no_product_name_in_metadata": true,
+    "no_urls_in_metadata": true,
+    "no_user_email_in_metadata": true,
+    "no_query_text": true,
+    "verified_value_amount_always_null": true,
+    "purchase_confirmed_always_false": true,
+    "value_verified_always_false": true,
+    "roi_assumed_always_false": true,
+    "smoke_scan_pass": true
+  },
+  "issues_found_and_fixed": [
+    {
+      "issue": "SQL Q12 round(corr()) failed in PostgreSQL",
+      "cause": "round(double precision, integer) does not exist",
+      "fix": "Cast corr result to numeric before round",
+      "scope": "patch-105-query12-anti-regret-correlation.sql"
+    },
+    {
+      "issue": "Regression tests 10.1/10.2 hook assertions stale after 10.4 emit refactor",
+      "fix": "Updated assertions to emitPriceIntelligenceAnalytics / emitSavingsEstimationAnalytics"
+    }
+  ],
+  "limitations": [
+    "verified_value_amount remains null — no checkout or marketplace confirmation",
+    "OBSERVED never auto-converts to VERIFIED",
+    "user_value_score is internal observational metric — not ROI or confirmed savings",
+    "Primary emit at commercial delivery; post-decision enrichment async if not yet emitted",
+    "time_saved_bucket is observational depth proxy — not measured minutes"
+  ],
+  "documentation": [
+    "docs/analytics/SAVINGS_OUTCOMES_USER_VALUE_ANALYTICS.md",
+    "docs/analytics/contracts/EVENT_CONTRACT.md §7.23",
+    "docs/analytics/ANALYTICS_CHANGELOG.md §57",
+    "docs/analytics/sql/patch-105-query1-potential-value-avg.sql … query20"
+  ],
+  "next_patch_recommended": "10.6",
+  "verdict": "PATCH 10.5 APROVADO"
+}
