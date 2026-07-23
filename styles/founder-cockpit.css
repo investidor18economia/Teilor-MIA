@@ -351,3 +351,140 @@
     transition: none;
   }
 }
+
+/* PATCH 11.4 — Executive AI Insights */
+.founder-insights-section {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 8px;
+}
+
+.founder-insights-notice {
+  margin: 0 0 20px;
+  font-size: 0.8125rem;
+  color: #8eb4d0;
+  max-width: 65ch;
+  line-height: 1.55;
+}
+
+.founder-insights-summary {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 198, 255, 0.2);
+  background: rgba(4, 16, 38, 0.7);
+}
+
+.founder-insights-summary h3 {
+  margin: 0 0 10px;
+  font-size: 1.125rem;
+  color: #f4faff;
+}
+
+.founder-insights-summary p {
+  margin: 0 0 8px;
+  color: #c8dff0;
+  line-height: 1.6;
+}
+
+.founder-insights-meta {
+  font-size: 0.75rem !important;
+  color: #7a9bb8 !important;
+}
+
+.founder-insights-state {
+  color: #a8c8e0;
+  font-size: 0.875rem;
+}
+
+.founder-insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.founder-insight-card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(6, 20, 45, 0.75);
+}
+
+.founder-insight--critical {
+  border-color: rgba(255, 90, 90, 0.45);
+}
+
+.founder-insight--warning {
+  border-color: rgba(255, 193, 77, 0.4);
+}
+
+.founder-insight--opportunity {
+  border-color: rgba(109, 255, 176, 0.35);
+}
+
+.founder-insight--info {
+  border-color: rgba(0, 198, 255, 0.2);
+}
+
+.founder-insight-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.founder-insight-badge {
+  color: #00c6ff;
+  font-weight: 700;
+}
+
+.founder-insight-category {
+  color: #8eb4d0;
+}
+
+.founder-insight-confidence {
+  color: #6a8fa8;
+}
+
+.founder-insight-title {
+  margin: 0 0 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #f4faff;
+}
+
+.founder-insight-hypothesis {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  color: #ffe8b8;
+}
+
+.founder-insight-disclaimers {
+  margin: 0 0 8px;
+  padding-left: 1.1rem;
+  font-size: 0.75rem;
+  color: #a8c8e0;
+}
+
+.founder-insight-expand {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #00c6ff;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.founder-insight-evidence {
+  margin: 10px 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.6875rem;
+  color: #7a9bb8;
+  font-family: ui-monospace, monospace;
+}
+

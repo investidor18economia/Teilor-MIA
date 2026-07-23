@@ -1023,6 +1023,18 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 62. PATCH 11.4 — Executive AI Insights (2026-07-23)
+
+**Endpoint:** `GET /api/founder/executive-insights` · motor determinístico · LLM opcional
+
+**Arquitetura:** `miaExecutiveInsightsEngine.js` · comparação de períodos no backend · integração Cockpit
+
+**Documentação:** `EXECUTIVE_AI_INSIGHTS.md`
+
+**Veredito:** 🟢 **PATCH 11.4 APROVADO**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

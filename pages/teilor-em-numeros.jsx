@@ -34,7 +34,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      page,
+      page: JSON.parse(JSON.stringify(page, (_k, v) => (v === undefined ? null : v))),
       fetchError,
       fetchedAt: new Date().toISOString(),
     },

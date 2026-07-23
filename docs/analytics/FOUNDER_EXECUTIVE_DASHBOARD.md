@@ -35,7 +35,8 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 ## Módulos
 
-1. **Visão geral** — 8 KPIs executivos  
+1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
+2. **Visão geral** — 8 KPIs executivos  
 2. **Plataforma** — sessões, visitantes, conversas, perguntas  
 3. **Recomendações** — geradas, runner-up, taxas  
 4. **Comercial** — ofertas, cliques, favoritos, alertas  

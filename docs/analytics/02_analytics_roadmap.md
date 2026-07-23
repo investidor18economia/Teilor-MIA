@@ -517,7 +517,7 @@ Dashboard Executivo do Fundador — 🟢 APROVADO
 
 PATCH 11.4
 
-Resumo Inteligente da MIA
+Resumo Inteligente da MIA (Executive AI Insights) — 🟢 APROVADO
 
 PATCH 11.5
 

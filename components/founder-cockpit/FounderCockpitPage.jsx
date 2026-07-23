@@ -1,3 +1,4 @@
+import FounderExecutiveInsights from "./FounderExecutiveInsights.jsx";
 import FounderKpiStrip from "./FounderKpiStrip.jsx";
 import FounderModuleSection from "./FounderModuleSection.jsx";
 import FounderPeriodFilter from "./FounderPeriodFilter.jsx";
@@ -53,6 +54,7 @@ export default function FounderCockpitPage({ cockpit, subject }) {
       </header>
 
       <main className="founder-cockpit-main">
+        <FounderExecutiveInsights selectedDays={meta.reference_period_days} />
         <FounderKpiStrip overview={overview} />
         {moduleList.map((module) => (
           <FounderModuleSection key={module.id} module={module} />
