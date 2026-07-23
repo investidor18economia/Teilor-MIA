@@ -341,6 +341,23 @@ Ver [RELIABILITY_RESPONSE_ANALYTICS.md](./RELIABILITY_RESPONSE_ANALYTICS.md).
 
 Ver [RELIABILITY_ERROR_ANALYTICS.md](./RELIABILITY_ERROR_ANALYTICS.md).
 
+#### PATCH 7.4 — Health snapshot (`7.4.0`, SQL-derived)
+
+**Não persiste linha em `analytics_events`.** Indicadores calculados via SQL sobre 7.1 + 7.2 + 7.3.
+
+| Indicador | Fonte | Descrição |
+|-----------|-------|-----------|
+| `health_status` | Q1 SQL | HEALTHY · DEGRADED · UNSTABLE · CRITICAL · INSUFFICIENT_DATA |
+| `availability_rate` | 7.1 outcomes | Respostas não-ERROR / volume |
+| `success_rate` / `partial_success_rate` | 7.1 | Outcomes |
+| `error_rate` | 7.1 + 7.2 | Erros / volume |
+| `recovered_error_rate` | 7.2 | Erros recuperados |
+| `latency_p95` / `latency_p99` | 7.3 | Percentis latência |
+| `slow_request_rate` | 7.3 | Requisições lentas |
+| `analytics_gap_rate` | 7.1 vs 7.3 | Respostas sem evento latência |
+
+Ver [RELIABILITY_HEALTH_ANALYTICS.md](./RELIABILITY_HEALTH_ANALYTICS.md).
+
 ---
 
 ### `created_at`

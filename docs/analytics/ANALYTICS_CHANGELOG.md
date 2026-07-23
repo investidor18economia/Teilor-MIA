@@ -663,9 +663,9 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Decisão:** **sem evento runtime** — Health SQL-derived (`7.4.0` snapshot lógico).
 
-**Testes:** `npm run test:mia:analytics:patch-74:health-analytics` · `npm run test:mia:analytics:patch-74:prod-validation`
+**Deploy (2026-07-23):** commit `59fcf22`. Validação SQL produção: **24/24** · `health_status=CRITICAL` (availability 81.8% · n=11) · Q1–Q4 OK · zero alteração runtime · regressões 7.3/7.2/7.1/6.4 intactas. Evidências: [PATCH_7.4_PRODUCTION_EVIDENCE.json](./PATCH_7.4_PRODUCTION_EVIDENCE.json).
 
-**Status:** 🟡 EM ANDAMENTO — validação produção pendente.
+**Veredito:** 🟢 **PATCH 7.4 APROVADO**
 
 ---
 
