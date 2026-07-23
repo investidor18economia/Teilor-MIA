@@ -8,6 +8,7 @@ import "../styles/mia-typography.css";
 import "../styles/mia-home-polish.css";
 import "../styles/app-mia.css";
 import "../styles/public-metrics.css";
+import "../styles/founder-cockpit.css";
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;

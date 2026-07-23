@@ -123,6 +123,8 @@
     "test:mia:analytics:patch-111:prod-validation": "node scripts/patch-111-production-validation.mjs",
     "test:mia:analytics:patch-112:public-metrics-page": "node scripts/test-mia-analytics-patch-112-public-metrics-page.js",
     "test:mia:analytics:patch-112:prod-smoke": "node scripts/patch-112-production-smoke.mjs",
+    "test:mia:analytics:patch-113:founder-executive-cockpit": "node scripts/test-mia-analytics-patch-113-founder-executive-cockpit.js",
+    "test:mia:analytics:patch-113:prod-smoke": "node scripts/patch-113-production-smoke.mjs",
     "test:mia:analytics:patch-34:prod-smoke": "node scripts/patch-34-production-smoke.mjs",
     "test:mia:auth:secret-separation": "node scripts/test-mia-auth-secret-separation.js",
     "test:mia:auth:trust-foundation": "node scripts/test-mia-auth-trust-foundation.js",

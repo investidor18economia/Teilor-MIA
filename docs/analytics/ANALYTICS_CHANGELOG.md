@@ -1007,6 +1007,20 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Veredito:** 🟢 **PATCH 11.2 APROVADO**
 
+---
+
+## 61. PATCH 11.3 — Cockpit Executivo do Fundador (2026-07-23)
+
+**Rota:** `/cockpit-fundador` · SSR autenticado · fonte única `GET /api/executive-metrics`
+
+**Arquitetura:** `miaFounderAccess.js` · `miaFounderCockpitDisplay.js` · gate cookie · 8 módulos + KPIs
+
+**Documentação:** `FOUNDER_EXECUTIVE_DASHBOARD.md`
+
+**Veredito:** 🟢 **PATCH 11.3 APROVADO**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |
