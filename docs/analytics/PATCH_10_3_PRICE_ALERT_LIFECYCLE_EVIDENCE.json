@@ -1,0 +1,101 @@
+{
+  "patch": "10.3",
+  "title": "Price Alert Lifecycle Analytics",
+  "event_name": "mia_price_alert_lifecycle",
+  "event_version": "10.3.0",
+  "category": "price_alert_lifecycle",
+  "audit_pre_implementation": {
+    "create_flow": "MIAChat.jsx → POST /api/create-price-alert → Supabase price_alerts",
+    "client_event": "price_alert_created (mantido)",
+    "monitoring": "lib/miaPriceAlertDryRun.js + cron price-alerts-daily-check.js",
+    "email": "lib/miaPriceAlertSendGate.js → Resend via lib/email.js",
+    "ui_remove": "localStorage only — DB is_active unchanged",
+    "auth_required": true,
+    "alert_id_grain": "price_alerts.id (UUID)"
+  },
+  "existing_flows": [
+    "REQUESTED via create API",
+    "CREATED / ACTIVE on insert",
+    "DUPLICATE_ALERT on existing normalized_product_key",
+    "CHECKED via dry run and send gate evaluation",
+    "TARGET_REACHED when best_found_price <= target_price",
+    "NOTIFICATION_PREPARED / SENT / FAILED via send gate"
+  ],
+  "absent_flows": [
+    "NOTIFICATION_DELIVERED (no webhook)",
+    "USER_RETURNED",
+    "OFFER_OPENED",
+    "PAUSED",
+    "REACTIVATED",
+    "CANCELLED server-side",
+    "EXPIRED auto rule"
+  ],
+  "lifecycle_stages_supported": [
+    "REQUESTED",
+    "CREATED",
+    "ACTIVE",
+    "CHECKED",
+    "TARGET_REACHED",
+    "NOTIFICATION_PREPARED",
+    "NOTIFICATION_SENT",
+    "NOTIFICATION_FAILED",
+    "FAILED"
+  ],
+  "lifecycle_stages_reserved": [
+    "NOTIFICATION_DELIVERED",
+    "USER_RETURNED",
+    "OFFER_OPENED",
+    "PAUSED",
+    "REACTIVATED",
+    "CANCELLED",
+    "EXPIRED"
+  ],
+  "hooks": {
+    "creation": "pages/api/create-price-alert.js",
+    "check": "lib/miaPriceAlertDryRun.js",
+    "notification": "lib/miaPriceAlertSendGate.js"
+  },
+  "deduplication": "alert_id + event_name + event_version + lifecycle_stage + lifecycle_occurrence_key",
+  "target_realism_thresholds_percent": {
+    "near": 2,
+    "moderate": 10,
+    "aggressive": 25
+  },
+  "savings_relation": {
+    "nature": "ALERT_OPPORTUNITY",
+    "purchase_confirmed": false,
+    "never_verified": true
+  },
+  "tests": {
+    "unit": "scripts/test-mia-analytics-patch-103-price-alert-lifecycle.js",
+    "unit_result": "111/111 PASS",
+    "local_validation": {
+      "status": "PASS",
+      "stages": ["REQUESTED", "CREATED", "ACTIVE"],
+      "alert_persisted": true,
+      "supabase_events": 3
+    },
+    "regressions": [
+      "test-mia-analytics-patch-101-price-intelligence.js",
+      "test-mia-analytics-patch-102-savings-estimation.js",
+      "test-mia-price-alert-dry-run-audit.js",
+      "test-mia-price-alert-send-gate-audit.js"
+    ]
+  },
+  "sql": "docs/analytics/sql/patch-103-query1-requested-daily.sql through query30",
+  "documentation": [
+    "docs/analytics/PRICE_ALERT_LIFECYCLE_ANALYTICS.md",
+    "docs/analytics/contracts/EVENT_CONTRACT.md §7.21",
+    "docs/analytics/ANALYTICS_CHANGELOG.md §55"
+  ],
+  "production": {
+    "status": "pending_deploy",
+    "smoke": "scripts/patch-103-production-smoke.mjs"
+  },
+  "limitations": [
+    "In-memory dedup on serverless",
+    "time_to_target_seconds not yet populated",
+    "UI remove does not deactivate DB row"
+  ],
+  "verdict": "PATCH_10_3_EM_VALIDACAO"
+}

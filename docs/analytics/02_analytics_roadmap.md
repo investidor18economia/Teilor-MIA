@@ -469,7 +469,7 @@ Savings Estimation & Confidence Analytics — 🟢 APROVADO
 
 PATCH 10.3
 
-Price Alert Lifecycle Analytics
+Price Alert Lifecycle Analytics — 🟡 EM VALIDAÇÃO
 
 PATCH 10.4
 

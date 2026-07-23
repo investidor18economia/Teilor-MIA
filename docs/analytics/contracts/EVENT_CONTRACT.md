@@ -614,6 +614,29 @@ Detalhamento: [PRICE_INTELLIGENCE_ANALYTICS.md](../PRICE_INTELLIGENCE_ANALYTICS.
 
 Detalhamento: [SAVINGS_ESTIMATION_AND_CONFIDENCE_ANALYTICS.md](../SAVINGS_ESTIMATION_AND_CONFIDENCE_ANALYTICS.md)
 
+### 7.21 Evento server-side — Price Alert Lifecycle (`mia_price_alert_lifecycle`) — PATCH 10.3
+
+**Categoria:** `price_alert_lifecycle` (produção) · `price_alert_lifecycle_test` (smoke)  
+**Writers:** `instrumentPriceAlertLifecycleFromCreation` · `instrumentPriceAlertLifecycleFromCheck` · `instrumentPriceAlertLifecycleFromNotification`  
+**Versionamento:** `metadata.event_version = "10.3.0"`  
+**Correlação:** `metadata.alert_id` (grão principal) · `user_id` · `session_id` quando disponível
+
+| event_name | Objetivo | Quando dispara |
+|------------|----------|----------------|
+| `mia_price_alert_lifecycle` | Observar transições reais do ciclo de vida do alerta | Create API · dry run · send gate |
+
+**Stages emitidos:** `REQUESTED` · `CREATED` · `ACTIVE` · `CHECKED` · `TARGET_REACHED` · `NOTIFICATION_PREPARED` · `NOTIFICATION_SENT` · `NOTIFICATION_FAILED` · `FAILED`
+
+**Stages reservados:** `NOTIFICATION_DELIVERED` · `USER_RETURNED` · `OFFER_OPENED` · `PAUSED` · `REACTIVATED` · `CANCELLED` · `EXPIRED`
+
+**Compatibilidade:** `price_alert_created` (client) permanece inalterado.
+
+**Deduplicação:** `alert_id + event_name + event_version + lifecycle_stage + lifecycle_occurrence_key`
+
+**Nunca emitir:** entrega de e-mail sem webhook · retorno/clique como compra · `VERIFIED` savings
+
+Detalhamento: [PRICE_ALERT_LIFECYCLE_ANALYTICS.md](../PRICE_ALERT_LIFECYCLE_ANALYTICS.md)
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |

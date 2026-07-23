@@ -903,6 +903,24 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 55. PATCH 10.3 — Price Alert Lifecycle Analytics (2026-07-23)
+
+**Evento:** `mia_price_alert_lifecycle` · `10.3.0` · categoria `price_alert_lifecycle`
+
+**Arquitetura:** hooks aditivos em create-price-alert, dry run e send gate — sem alterar fluxo funcional; `price_alert_created` mantido.
+
+**Stages:** REQUESTED → CREATED → ACTIVE → CHECKED → TARGET_REACHED → NOTIFICATION_* (PREPARED/SENT/FAILED)
+
+**Reservados:** NOTIFICATION_DELIVERED, USER_RETURNED, OFFER_OPENED, PAUSED, REACTIVATED, CANCELLED, EXPIRED
+
+**SQL:** Q1–Q30 em `docs/analytics/sql/patch-103-query*.sql`
+
+**Testes locais:** `test-mia-analytics-patch-103-price-alert-lifecycle.js` (111/111) · regressões dry-run/send-gate OK
+
+**Veredito:** 🟡 **PATCH 10.3 EM VALIDAÇÃO** (aguardando deploy + smoke produção)
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

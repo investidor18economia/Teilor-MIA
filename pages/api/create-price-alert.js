@@ -4,6 +4,11 @@ import {
   normalizePriceAlertProductKey,
 } from "../../lib/miaPriceAlertsSafety.js";
 import {
+  MIA_ALERT_CREATION_FAILURE_REASON,
+  MIA_ALERT_FAILURE_STAGE,
+} from "../../lib/miaPriceAlertLifecycleCatalog.js";
+import { instrumentPriceAlertLifecycleFromCreation } from "../../lib/miaPriceAlertLifecycleAnalytics.js";
+import {
   applyInternalSecurityHeaders,
   sendPolicyError,
   validateHttpMethod,
@@ -36,6 +41,13 @@ export default async function handler(req, res) {
     }
 
     if (!session.userId || !product_name) {
+      instrumentPriceAlertLifecycleFromCreation(supabase, {
+        body: req.body,
+        userId: session.userId ?? null,
+        failed: true,
+        failureStage: MIA_ALERT_FAILURE_STAGE.CREATION,
+        failureReason: MIA_ALERT_CREATION_FAILURE_REASON.VALIDATION_FAILED,
+      });
       return res.status(400).json({ error: "Missing required fields", reasonCode: "invalid_request" });
     }
 
@@ -62,10 +74,23 @@ export default async function handler(req, res) {
 
       if (lookupError) {
         console.error("create-price-alert lookup error:", lookupError);
+        instrumentPriceAlertLifecycleFromCreation(supabase, {
+          body: req.body,
+          userId: session.userId,
+          failed: true,
+          failureStage: MIA_ALERT_FAILURE_STAGE.PERSISTENCE,
+          failureReason: MIA_ALERT_CREATION_FAILURE_REASON.PERSISTENCE_FAILED,
+        });
         return res.status(500).json({ error: "Failed to lookup alert", reasonCode: "internal_error" });
       }
 
       if (Array.isArray(existingAlerts) && existingAlerts.length > 0) {
+        instrumentPriceAlertLifecycleFromCreation(supabase, {
+          body: req.body,
+          userId: session.userId,
+          alertRow: existingAlerts[0],
+          duplicate: true,
+        });
         return res.status(200).json({
           success: true,
           already_exists: true,
@@ -78,8 +103,23 @@ export default async function handler(req, res) {
 
     if (error) {
       console.error("create-price-alert error:", error);
+      instrumentPriceAlertLifecycleFromCreation(supabase, {
+        body: req.body,
+        userId: session.userId,
+        failed: true,
+        failureStage: MIA_ALERT_FAILURE_STAGE.PERSISTENCE,
+        failureReason: MIA_ALERT_CREATION_FAILURE_REASON.PERSISTENCE_FAILED,
+      });
       return res.status(500).json({ error: "Failed to create alert", reasonCode: "internal_error" });
     }
+
+    const createdRow = Array.isArray(data) ? data[0] : data;
+    instrumentPriceAlertLifecycleFromCreation(supabase, {
+      body: req.body,
+      userId: session.userId,
+      alertRow: createdRow,
+      duplicate: false,
+    });
 
     return res.status(200).json({
       success: true,
