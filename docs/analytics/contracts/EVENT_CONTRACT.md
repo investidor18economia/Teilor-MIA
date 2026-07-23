@@ -129,7 +129,7 @@ Todo evento possui:
 | Origem | Eventos |
 |--------|---------|
 | Browser → API | 7 eventos da allowlist pública |
-| Backend (service role) | 12 eventos server-side (`price_drop_email_*` + `data_layer_resolution` + `mia_response_outcome`) |
+| Backend (service role) | 13 eventos server-side (`price_drop_email_*` + `data_layer_resolution` + `mia_response_outcome` + `mia_error_event`) |
 | Operador / cron | Indiretamente via módulos de price alert |
 
 ### Quem **consome** eventos
@@ -409,6 +409,23 @@ Detalhamento: [DATA_LAYER_USAGE_ANALYTICS.md](../DATA_LAYER_USAGE_ANALYTICS.md)
 
 Detalhamento: [RELIABILITY_RESPONSE_ANALYTICS.md](../RELIABILITY_RESPONSE_ANALYTICS.md)
 
+### 7.8 Evento server-side — Error reliability (`mia_error_event`) — PATCH 7.2
+
+**Categoria:** `reliability_error` (produção) · `reliability_error_test` (smoke)  
+**Writer:** `emitErrorAnalytics()` via `pages/api/chat-gpt4o.js`  
+**Versionamento:** `metadata.event_version = "7.2.0"`  
+**Correlação 7.1:** `metadata.request_id` ↔ `mia_response_outcome`
+
+| event_name | Objetivo | Quando dispara |
+|------------|----------|----------------|
+| `mia_error_event` | Registrar erro técnico, camada, severidade e recuperação | HTTP ≥400 instrumentado; paths de erro; sinais recuperados do runtime enforcement |
+
+**Taxonomias:** `error_type` · `error_layer` · `severity` · `reason_code` · `recovered` · `recovery_method`
+
+**Deduplicação:** `request_id + error_layer + reason_code` por requisição.
+
+Detalhamento: [RELIABILITY_ERROR_ANALYTICS.md](../RELIABILITY_ERROR_ANALYTICS.md)
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |
@@ -430,7 +447,7 @@ Detalhamento: [CONVERSATION_ID.md](../CONVERSATION_ID.md) §10.
 | Cliente frontend | `lib/analytics.js` |
 | UI MIA | `components/MIAChat.jsx` |
 | API track | `pages/api/analytics/track/index.js` |
-| Analytics server-side | `lib/miaPriceAlertEmailAnalytics.js` · `lib/miaDataLayerUsageAnalytics.js` · `lib/miaResponseAnalytics.js` |
+| Analytics server-side | `lib/miaPriceAlertEmailAnalytics.js` · `lib/miaDataLayerUsageAnalytics.js` · `lib/miaResponseAnalytics.js` · `lib/miaErrorAnalytics.js` |
 | Send gate (produção) | `lib/miaPriceAlertSendGate.js` |
 | Analytics Storage Schema | `supabase/migrations/20260719153000_*` + `53002_*` + `53003_*` |
 | Dashboards | [DASHBOARDS.md](../DASHBOARDS.md) |

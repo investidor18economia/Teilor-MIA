@@ -603,6 +603,27 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 38. PATCH 7.2 — Error Reliability Analytics (2026-07-23)
+
+**Objetivo:** medir erros técnicos e operacionais — camada, severidade, recuperação — correlacionados com PATCH 7.1.
+
+**Entregas:**
+
+- [RELIABILITY_ERROR_ANALYTICS.md](./RELIABILITY_ERROR_ANALYTICS.md)
+- [analytics-reliability-error.sql](./analytics-reliability-error.sql)
+- Runtime: `lib/miaErrorReasonCodeCatalog.js` · `lib/miaErrorClassifier.js` · `lib/miaErrorAnalytics.js`
+- Queries split: `sql/patch-72-query1-error-overview.sql` … `query4`
+- [PATCH_7.2_ERROR_ANALYTICS.md](./PATCH_7.2_ERROR_ANALYTICS.md)
+- Event Contract §7.8 — `mia_error_event` (`event_version: 7.2.0`)
+
+**Testes:** `npm run test:mia:analytics:patch-72:error-analytics` · `npm run test:mia:analytics:patch-72:prod-validation`
+
+**Princípio:** observação only · deduplicação por request/layer/reason · delta vs 7.1 · fire-and-forget.
+
+**Status:** 🟡 EM ANDAMENTO — deploy e produção pendentes.
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

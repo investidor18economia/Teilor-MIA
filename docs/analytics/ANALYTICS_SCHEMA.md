@@ -273,6 +273,7 @@ Resumo:
 - `price_drop_email_test_*`, `price_drop_email_e2e_*`
 - `data_layer_resolution` (PATCH 6.4)
 - `mia_response_outcome` (PATCH 7.1)
+- `mia_error_event` (PATCH 7.2)
 
 A tabela **aceita** qualquer `event_name` inserido por código autorizado; a allowlist restringe apenas o endpoint público.
 

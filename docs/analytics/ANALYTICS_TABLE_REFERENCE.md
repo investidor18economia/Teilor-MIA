@@ -50,6 +50,7 @@ Armazenar eventos observacionais de produto e eventos técnicos legítimos para 
 | `lib/miaPriceAlertEmailAnalytics.js` | INSERT direto | `service_role` |
 | `lib/miaDataLayerUsageAnalytics.js` | INSERT direto (PATCH 6.4) | `service_role` |
 | `lib/miaResponseAnalytics.js` | INSERT direto (PATCH 7.1) | `service_role` |
+| `lib/miaErrorAnalytics.js` | INSERT direto (PATCH 7.2) | `service_role` |
 | Cron / admin price alerts | Indireto via módulos acima | `service_role` |
 
 **Não grava:** browser, `anon`, `authenticated` (acesso direto bloqueado pós-migration 53001).

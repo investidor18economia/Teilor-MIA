@@ -327,6 +327,20 @@ Server-side remove chaves proibidas (`email`, `token`, `secret`, etc.).
 
 Ver [RELIABILITY_RESPONSE_ANALYTICS.md](./RELIABILITY_RESPONSE_ANALYTICS.md).
 
+#### Chaves PATCH 7.2 — `mia_error_event` (`event_version: 7.2.0`)
+
+| Chave | Tipo | Descrição |
+|-------|------|-----------|
+| `error_type` | string | VALIDATION_ERROR · PROVIDER_ERROR · … |
+| `error_layer` | string | HTTP · PROVIDER · CONTRACTS · … |
+| `severity` | string | INFO · WARNING · ERROR · CRITICAL |
+| `reason_code` | string | Código runtime catalogado |
+| `recovered` | boolean | Falha recuperada |
+| `recovery_method` | string | fallback · graceful_degradation · none · … |
+| `response_outcome` | string | Correlação PATCH 7.1 |
+
+Ver [RELIABILITY_ERROR_ANALYTICS.md](./RELIABILITY_ERROR_ANALYTICS.md).
+
 ---
 
 ### `created_at`

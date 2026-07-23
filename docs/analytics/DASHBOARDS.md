@@ -7,7 +7,7 @@
 | **Operacional (Fase 4)** | O que aconteceu? | 4.1–4.5 dashboards SQL |
 | **Estratégica (Fase 5)** | O que isso significa? | 5.1–5.4 analytics estratégico |
 | **Data Layer (Fase 6)** | Cobertura · qualidade · estatísticas · **uso runtime** | 6.1 · 6.2 · 6.3 · **6.4** |
-| **Reliability (Fase 7)** | Confiabilidade das respostas entregues | **7.1** (response outcomes) |
+| **Reliability (Fase 7)** | Confiabilidade das respostas · **erros técnicos** | **7.1** · **7.2** |
 
 ## Sessão vs visitante vs usuário
 
@@ -42,6 +42,7 @@ Migrations: `supabase/migrations/20260719153000_*` + `20260719153001_*` (PATCH 1
 | `analytics-data-layer-statistics.sql` | **PATCH 6.3** — estatísticas Data Layer (inventário · distribuição · concentração) |
 | `analytics-data-layer-usage.sql` | **PATCH 6.4** — uso e efetividade Data Layer (runtime · fallback · cobertura prática) |
 | `analytics-reliability-response.sql` | **PATCH 7.1** — confiabilidade de resposta (outcomes · taxas · evolução) |
+| `analytics-reliability-error.sql` | **PATCH 7.2** — confiabilidade de erro (tipo · camada · recuperação · correlação 7.1) |
 | `analytics-buying-intent-strategic.sql` | **PATCH 5.4** — intenção de compra estratégica (sinais · antecedentes · tendências) |
 | `analytics-conversion-strategic.sql` | **PATCH 5.3** — funil estratégico (gargalos · cohorts · tendências) |
 | `analytics-conversation-strategic.sql` | **PATCH 5.2** — conversation estratégico (profundidade · recorrência · tendências) |

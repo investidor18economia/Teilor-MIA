@@ -100,6 +100,10 @@ import {
   buildResponseOutcomeAnalyticsPayload,
   scheduleResponseOutcomeAnalytics,
 } from "../../lib/miaResponseAnalytics.js";
+import {
+  scheduleExplicitErrorAnalytics,
+  scheduleRuntimeRecoveredErrorAnalytics,
+} from "../../lib/miaErrorAnalytics.js";
 import { isAnalyticsUuid } from "../../lib/miaAnalyticsPayload.js";
 import {
   buildFallbackCandidateIsolationDiagnostics,
@@ -26383,6 +26387,43 @@ function instrumentResponseOutcomeAnalytics(body, responsePath, options = {}) {
   return built.summary;
 }
 
+function instrumentErrorAnalyticsForDelivery(body, responsePath, options = {}) {
+  const input = collectResponseOutcomeAnalyticsInput(body, responsePath, options);
+  const outcomeSummary = options.responseOutcomeSummary || null;
+  const fullInput = {
+    requestId: input.requestId,
+    analyticsContext: input.analyticsContext,
+    query: input.query,
+    responsePath,
+    endpoint: input.endpoint,
+    httpStatus: options.httpStatus ?? 200,
+    reasonCode: options.reasonCode ?? null,
+    responseOutcome: outcomeSummary?.outcome ?? options.responseOutcome ?? null,
+    fallbackUsed: (outcomeSummary?.outcome ?? options.responseOutcome) === "FALLBACK",
+    responseDelivered:
+      options.responseDelivered != null
+        ? !!options.responseDelivered
+        : (options.httpStatus ?? 200) < 500,
+  };
+
+  scheduleRuntimeRecoveredErrorAnalytics(supabase, runtimeEnforcementRef, fullInput);
+
+  const normalizedPath = String(responsePath || "").toLowerCase();
+  const outcome = fullInput.responseOutcome;
+  if (
+    (options.httpStatus ?? 200) >= 400 ||
+    outcome === "ERROR" ||
+    normalizedPath.endsWith("_failed") ||
+    normalizedPath.endsWith("_error") ||
+    normalizedPath === "commercial_provider_unavailable"
+  ) {
+    scheduleExplicitErrorAnalytics(supabase, {
+      ...fullInput,
+      reasonCode: fullInput.reasonCode || responsePath,
+    });
+  }
+}
+
 function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace, extraTrace = {}) {
   const _blocked = preventDoubleHttpResponse(runtimeEnforcementRef, res);
   if (_blocked.blocked) return;
@@ -26400,6 +26441,10 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
   const _enforcementTrace = runtimeEnforcementToTrace(runtimeEnforcementRef);
   const _responseOutcomeSummary = instrumentResponseOutcomeAnalytics(body, responsePath, {
     httpStatus: 200,
+  });
+  instrumentErrorAnalyticsForDelivery(body, responsePath, {
+    httpStatus: 200,
+    responseOutcomeSummary: _responseOutcomeSummary,
   });
   const _responseBody = {
     ...(body || {}),
@@ -27594,7 +27639,7 @@ async function miaChatCoreHandler(req, res) {
 
     const { text, image_base64 } = req.body || {};
   const query = (text || "").trim();
-  sharedState.responseAnalytics = {
+    sharedState.responseAnalytics = {
     pipelineStartedAt: Date.now(),
     query: query || null,
     analyticsContext: {
@@ -27605,6 +27650,7 @@ async function miaChatCoreHandler(req, res) {
       user_id: isAnalyticsUuid(req.body?.user_id) ? req.body.user_id : null,
     },
   };
+  sharedState.errorAnalytics = { emittedKeys: {} };
   const pipelineTracer = createMiaChatPipelineTracer(query);
   const commercialRequestDedupContext = createCommercialRequestDedupContext({
     requestId: sharedState.requestId || observability?.requestId || `chat-${Date.now()}`,
@@ -27624,6 +27670,12 @@ async function miaChatCoreHandler(req, res) {
     const _emptyQuerySummary = instrumentResponseOutcomeAnalytics(_emptyQueryBody, "empty_query_rejected", {
       httpStatus: 400,
       reasonCode: "chat_empty_query",
+    });
+    instrumentErrorAnalyticsForDelivery(_emptyQueryBody, "empty_query_rejected", {
+      httpStatus: 400,
+      reasonCode: "chat_empty_query",
+      responseOutcomeSummary: _emptyQuerySummary,
+      responseDelivered: true,
     });
     return void res.status(400).json({
       ..._emptyQueryBody,
@@ -37467,6 +37519,12 @@ return void respondWithContract(
     const _errorSummary = instrumentResponseOutcomeAnalytics(_errorBody, "chat_internal_error", {
       httpStatus: 500,
       reasonCode: "chat_internal_error",
+    });
+    instrumentErrorAnalyticsForDelivery(_errorBody, "chat_internal_error", {
+      httpStatus: 500,
+      reasonCode: "chat_internal_error",
+      responseOutcomeSummary: _errorSummary,
+      responseDelivered: true,
     });
     return void res.status(500).json({
       ..._errorBody,
