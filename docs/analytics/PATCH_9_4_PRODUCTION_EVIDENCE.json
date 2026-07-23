@@ -1,0 +1,84 @@
+{
+  "patch": "9.4",
+  "event_name": null,
+  "event_version": "9.4.0",
+  "architecture": "derived_layer_hybrid_d",
+  "implementation_commit": "1a73a05",
+  "sql_fix_commit": null,
+  "evidence_commit": null,
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "health_ok": true,
+    "build": "1a73a053dc28",
+    "smoke_checks": { "total": 8, "passed": 8, "failed": 0 },
+    "sql_queries": { "total": 12, "passed": 12, "failed": 0 }
+  },
+  "unit_tests": {
+    "script": "scripts/test-mia-analytics-patch-94-runner-up-alternative.js",
+    "passed": 47,
+    "failed": 0
+  },
+  "regressions": {
+    "patch_8_1": "60/60",
+    "patch_8_4": "66/66",
+    "patch_9_1": "54/54",
+    "patch_9_2": "52/52",
+    "patch_9_3": "58/58"
+  },
+  "decision_request_id": "77ce7576-1cbe-43bf-ad2e-00c24d8774a5",
+  "runner_up_source": "resolveWinnerAndRunnerUpRanks(rankedProducts, selectedBestProduct)",
+  "runner_up_identity_availability": true,
+  "score_gap_bucket": "WIDE",
+  "runner_up_competitiveness": "DISTANT",
+  "display_delivery_render_states": {
+    "runner_up_present": true,
+    "runner_up_in_display_products": true,
+    "runner_up_in_delivery": true,
+    "display_second_card_is_cognitive_runner_up": true
+  },
+  "inline_runner_up_family": "836a613ebdcf801d",
+  "scenarios_tested": [
+    "commercial decision 9.1 with runner-up enrichment",
+    "inline recommendation_decision_runner_up_product_family",
+    "runner_up_product_family persisted in analytics_events",
+    "second option follow-up HTTP 200",
+    "privacy scan — no product_name or URLs in metadata"
+  ],
+  "decisions": [
+    {
+      "runner_up_present": true,
+      "runner_up_product_family": "836a613ebdcf801d",
+      "runner_up_in_display_products": true,
+      "score_gap_bucket": "WIDE",
+      "runner_up_competitiveness": "DISTANT"
+    }
+  ],
+  "sql_results": {
+    "Q1_runner_up_availability": "5 rows",
+    "Q2_score_gap_competitiveness": "2 rows",
+    "Q3_display_delivery_funnel": "1 row",
+    "Q4_interactions": "2 rows",
+    "Q5_alternative_requests": "3 rows",
+    "Q6_runner_up_selection": "3 rows",
+    "Q7_non_runner_up_alternatives": "0 rows",
+    "Q8_recovery": "5 rows",
+    "Q9_diversity": "1 row",
+    "Q10_decision_source": "2 rows",
+    "Q11_runner_up_quality": "1 row",
+    "Q12_quality_fanout": "3 rows"
+  },
+  "dedup": "derived SQL uses distinct decision_request_id and source_event_id; no new event emission",
+  "fan_out_audit": "Q12 monitors runner_up_equals_winner, display_divergence; CTE pre-aggregation in all queries",
+  "privacy_scan": "passed — no query_text, product_name, bearer tokens, or URLs in metadata",
+  "functional_invariance": "analytics observational only — no routing/ranking/winner/response/SECOND_BEST_DISCOVERY changes",
+  "problems_found": [
+    "SQL Q2 median_score_gap required numeric cast for percentile_cont",
+    "SQL Q4/Q8/Q9/Q10/Q11/Q12 reference_day CTEs referenced derived tables without created_at",
+    "SQL Q6 union required metric_rows pattern for GROUP BY compliance"
+  ],
+  "limitations_non_blocking": [
+    "lastRankingSnapshot (SECOND_BEST_DISCOVERY) may diverge from cognitive runner-up",
+    "SECOND_BEST_DISCOVERY does not emit 9.1 decision event",
+    "UNRESOLVED match excluded from official runner-up selection rate"
+  ]
+}

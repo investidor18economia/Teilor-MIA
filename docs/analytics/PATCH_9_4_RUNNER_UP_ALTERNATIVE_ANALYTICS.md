@@ -1,7 +1,7 @@
 # PATCH 9.4 — Runner-up and Alternative Analytics
 
 **Camada:** derivada (9.1 enriquecido + SQL Q1–Q12) · **Versão catálogo:** `9.4.0`  
-**Status:** 🟡 **IMPLEMENTADO** (aguardando produção)
+**Status:** 🟢 **APROVADO**
 
 ## Decisão arquitetural — Modelo Híbrido Derivado (Alternativa D)
 

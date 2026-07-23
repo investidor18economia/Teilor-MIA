@@ -849,7 +849,7 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Arquitetura:** modelo derivado — enriquecimento 9.1 + interpretação 9.2/9.3 + SQL Q1–Q12. Sem evento novo.
 
-**Veredito:** 🟡 **PATCH 9.4 IMPLEMENTADO** — aguardando deploy/evidência produção
+**Veredito:** 🟢 **PATCH 9.4 APROVADO** — produção validada (build `1a73a053dc28`, smoke 8/8, SQL 12/12)
 
 ---
 
