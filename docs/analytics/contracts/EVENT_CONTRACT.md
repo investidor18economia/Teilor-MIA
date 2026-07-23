@@ -493,6 +493,23 @@ Detalhamento: [COMMERCIAL_SEARCH_ANALYTICS.md](../COMMERCIAL_SEARCH_ANALYTICS.md
 
 Detalhamento: [PROVIDER_ANALYTICS.md](../PROVIDER_ANALYTICS.md)
 
+### 7.13 Evento server-side — Offer Set (`mia_offer_set`) — PATCH 8.3
+
+**Categoria:** `offer_set` (produção) · `offer_set_test` (smoke)  
+**Writer:** `emitOfferSetAnalytics()` via `pages/api/chat-gpt4o.js`  
+**Versionamento:** `metadata.event_version = "8.3.0"`  
+**Correlação:** `metadata.request_id` ↔ PATCH 8.1 / 8.2 / 7.x
+
+| event_name | Objetivo | Quando dispara |
+|------------|----------|----------------|
+| `mia_offer_set` | Observar funil agregado de ofertas (counts, winner, preços, diversidade) | Pipeline comercial alcançado e resposta finalizada |
+
+**Deduplicação:** `request_id + event_name + event_version` — máximo 1 evento por requisição.
+
+**Delta 8.1/8.2:** busca e providers permanecem nos eventos anteriores; 8.3 cobre ofertas entregues.
+
+Detalhamento: [OFFER_ANALYTICS.md](../OFFER_ANALYTICS.md)
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |

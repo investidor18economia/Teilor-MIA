@@ -759,6 +759,24 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 45. PATCH 8.3 — Offer Analytics (2026-07-23)
+
+**Objetivo:** observabilidade agregada do pipeline de ofertas (`mia_offer_set` · `8.3.0`).
+
+**Entregas:**
+
+- `lib/miaOfferSet*.js`, `lib/miaOfferIdentity.js`
+- Hooks pipeline + delivery em `pages/api/chat-gpt4o.js`
+- SQL Q1–Q7 · [OFFER_ANALYTICS.md](./OFFER_ANALYTICS.md)
+
+**Modelo:** 1 evento agregado por `request_id` (sem evento por oferta individual).
+
+**Testes locais:** 8.3 **39/39** · regressões 8.1+8.2 intactas.
+
+**Veredito:** 🟡 **EM IMPLEMENTAÇÃO / AGUARDANDO DEPLOY**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

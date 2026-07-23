@@ -122,6 +122,13 @@ import {
   observeLegacyProviderAttempt,
 } from "../../lib/miaProviderAttemptAnalytics.js";
 import {
+  buildOfferSetRecommendationMetadata,
+  initializeOfferSetAnalyticsTracking,
+  instrumentOfferSetAnalyticsForDelivery,
+  updateOfferSetAnalyticsFromPipeline,
+  updateOfferSetAnalyticsFromSelection,
+} from "../../lib/miaOfferSetAnalytics.js";
+import {
   createLatencyTracker,
   markLatencyStage,
   recordDataLayerStageLatency,
@@ -2027,6 +2034,16 @@ console.log("🧪 ROUTER NORMALIZED PRODUCTS:", normalizedProducts.length);
 console.log("🧪 ROUTER FIRST:", normalizedProducts[0]);
 
 const dedupedProducts = dedupeCommercialProducts(normalizedProducts, limit);
+
+updateOfferSetAnalyticsFromPipeline({
+  pipelineReached: true,
+  rawOffersCount: allProducts.length,
+  normalizedOffersCount: normalizedProducts.length,
+  mergedOffersCount: normalizedProducts.length,
+  deduplicatedOffersCount: dedupedProducts.length,
+  removedDuplicateCount: Math.max(0, normalizedProducts.length - dedupedProducts.length),
+  dedupObserved: normalizedProducts.length > dedupedProducts.length,
+});
 
 console.log("🧪 ROUTER DEDUPED PRODUCTS:", dedupedProducts.length);
 console.log("🧪 ROUTER DEDUPED FIRST:", dedupedProducts[0]);
@@ -26567,6 +26584,13 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
     analyticsContext: _sharedStateForCommercialSearch?.responseAnalytics?.analyticsContext || {},
     body,
   });
+  const _offerSetSummary = instrumentOfferSetAnalyticsForDelivery(supabase, {
+    requestId: _sharedStateForCommercialSearch?.requestId || null,
+    analyticsContext: _sharedStateForCommercialSearch?.responseAnalytics?.analyticsContext || {},
+    body,
+    responsePath,
+    commercialSearchSummary: _commercialSearchSummary,
+  });
   const _responseOutcomeSummary = instrumentResponseOutcomeAnalytics(body, responsePath, {
     httpStatus: 200,
   });
@@ -26584,6 +26608,7 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
     latency_analytics: buildLatencyRecommendationMetadata(_latencySummary),
     commercial_search_analytics: buildCommercialSearchRecommendationMetadata(_commercialSearchSummary),
     provider_attempt_analytics: buildProviderAttemptRecommendationMetadata(_providerAttemptSummaries),
+    offer_set_analytics: buildOfferSetRecommendationMetadata(_offerSetSummary),
   };
 
   res.status(200).json(
@@ -30517,6 +30542,12 @@ initializeProviderAttemptAnalyticsTracking({
   requestId: getSharedRequestState()?.requestId || null,
   analyticsContext: getSharedRequestState()?.responseAnalytics?.analyticsContext || {},
 });
+initializeOfferSetAnalyticsTracking({
+  commercialPermission: intentAuthority?.commercialPermission || null,
+  interactionMode: intentRecognitionEarly?.interactionMode || null,
+  requestId: getSharedRequestState()?.requestId || null,
+  analyticsContext: getSharedRequestState()?.responseAnalytics?.analyticsContext || {},
+});
 
 // PATCH 11B.3 — Constraint refinement continuity (RF-01)
 const contextualFollowUpEarly = intentRecognitionEarly?.contextualFollowUp || null;
@@ -34325,6 +34356,15 @@ if (hasPriorityFollowUp) {
     category: categoryHintResolved || categoryFromContext || null,
     productDomain: categoryHintResolved || categoryFromContext || null,
   });
+  updateOfferSetAnalyticsFromPipeline({
+    pipelineReached: finalProducts.length > 0,
+    rawOffersCount: finalProducts.length,
+    normalizedOffersCount: finalProducts.length,
+    rankedOffersCount: finalProducts.length,
+    eligibleOffersCount: finalProducts.length,
+    rankingObserved: finalProducts.length > 0,
+    rankedOffersSample: finalProducts.slice(0, 12),
+  });
 
   } else {
   const categoryHint =
@@ -34395,6 +34435,13 @@ if (hasPriorityFollowUp) {
 
   console.log("Produtos encontrados:", rawProducts.length);
 
+  updateOfferSetAnalyticsFromPipeline({
+    pipelineReached: true,
+    rawOffersCount: rawProducts.length,
+    dataLayerUsedAsPrimarySource,
+    providerContinuationRequired: !dataLayerUsedAsPrimarySource,
+  });
+
   if (dataLayerProducts.length > 0) {
     products = rankProductsUnderContract(
       rawProducts,
@@ -34438,6 +34485,16 @@ if (hasPriorityFollowUp) {
     fallbackUsed: !dataLayerUsedAsPrimarySource && products.length > 0,
     category: categoryHintResolved || categoryHint || null,
     productDomain: categoryHintResolved || categoryHint || null,
+  });
+  updateOfferSetAnalyticsFromPipeline({
+    normalizedOffersCount: products.length,
+    rankedOffersCount: products.length,
+    eligibleOffersCount: products.length,
+    rankingObserved: products.length > 0,
+    rankedOffersSample: products.slice(0, 12),
+    fallbackUsed: !dataLayerUsedAsPrimarySource && products.length > 0,
+    dataLayerUsedAsPrimarySource,
+    providerContinuationRequired: !dataLayerUsedAsPrimarySource,
   });
 
   pipelineTracer.patch({
@@ -35002,6 +35059,10 @@ if (Array.isArray(products) && products.length > 0) {
   selectedBestProduct = sanitizeWinnerProduct(selectedBestProduct, {
     rawMessage: query,
     commercialSearchQuery: commercialPipelineQuery || resolvedQuery,
+  });
+  updateOfferSetAnalyticsFromSelection({
+    displayProducts,
+    selectedBestProduct,
   });
   if (specificProductLock?.active) {
     const refreshedDisplay = applySpecificProductLockToProducts(displayProducts, specificProductLock);
