@@ -981,6 +981,18 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 59. PATCH 11.1 — API Executiva de Métricas (2026-07-23)
+
+**Endpoint:** `GET /api/executive-metrics` · `metrics_version` `11.1.0`
+
+**Arquitetura:** RPC Supabase por categoria · cache in-memory TTL · resposta parcial em falha
+
+**Documentação:** `EXECUTIVE_METRICS_API.md`
+
+**Veredito:** 🟡 **PATCH 11.1 EM VALIDAÇÃO**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

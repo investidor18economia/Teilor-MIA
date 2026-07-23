@@ -687,6 +687,18 @@ Detalhamento: [SAVINGS_OUTCOMES_USER_VALUE_ANALYTICS.md](../SAVINGS_OUTCOMES_USE
 
 **Veredito:** 🟢 **FASE 10 CONCLUÍDA E APROVADA**
 
+### 7.25 PATCH 11.1 — API Executiva de Métricas (`GET /api/executive-metrics`)
+
+**Tipo:** read-only aggregate API · **não** emite eventos  
+**Versionamento:** `metrics_version = "11.1.0"`  
+**Fonte:** RPC `mia_executive_metrics_*` sobre `analytics_events` (production scope)
+
+**Grupos:** platform · conversation · recommendation · commerce · alerts · price_intelligence · savings · anti_regret · user_value · system
+
+**Nunca retornar:** eventos individuais · PII · IDs correlacionáveis · query · URLs
+
+Detalhamento: [EXECUTIVE_METRICS_API.md](../EXECUTIVE_METRICS_API.md)
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |
