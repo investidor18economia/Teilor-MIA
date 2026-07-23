@@ -102,8 +102,11 @@ assert("price medium", priceFollowUp?.signal_strength === MIA_ACCEPTANCE_SIGNAL_
 const constraint = classifyAcceptanceSignalFromFollowUp(COMMERCIAL_FOLLOW_UP_TYPES.CONSTRAINT_REFINEMENT, {});
 assert("constraint excluded", constraint == null);
 
-const runnerUp = classifyAcceptanceSignalFromFollowUp(COMMERCIAL_FOLLOW_UP_TYPES.RUNNER_UP_FOLLOW_UP, {});
-assert("runner-up follow-up excluded", runnerUp == null);
+const runnerUp = classifyAcceptanceSignalFromFollowUp(COMMERCIAL_FOLLOW_UP_TYPES.RUNNER_UP_FOLLOW_UP, {
+  runnerUpProductFamilyHash: "runner-hash",
+});
+assert("runner-up follow-up enabled", runnerUp?.signal_target === MIA_ACCEPTANCE_SIGNAL_TARGETS.RUNNER_UP);
+assert("runner-up comparison request", runnerUp?.signal_type === MIA_ACCEPTANCE_SIGNAL_TYPES.COMPARISON_REQUESTED);
 
 console.log("\nCorrelation");
 const high = resolveAcceptanceCorrelation("req-1");

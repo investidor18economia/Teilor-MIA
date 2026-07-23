@@ -431,7 +431,7 @@ Recommendation Rejection and Abandonment Signals — 🟢 APROVADO (`mia_recomme
 
 PATCH 9.4
 
-Runner-up Analytics
+Runner-up and Alternative Analytics — 🟡 IMPLEMENTADO (camada derivada · catálogo `9.4.0`)
 
 PATCH 9.5
 

@@ -561,6 +561,14 @@ Detalhamento: [RECOMMENDATION_ACCEPTANCE_ANALYTICS.md](../RECOMMENDATION_ACCEPTA
 
 Detalhamento: [RECOMMENDATION_REJECTION_ABANDONMENT_ANALYTICS.md](../RECOMMENDATION_REJECTION_ABANDONMENT_ANALYTICS.md)
 
+### 7.17 PATCH 9.4 — Runner-up / Alternative Analytics (camada derivada)
+
+**Sem evento novo.** Enriquecimento additive em `mia_recommendation_decision` (9.1.0) + derivação SQL sobre 9.1/9.2/9.3.
+
+Campos additive: `runner_up_product_family`, `runner_up_in_display_products`, `score_gap_bucket`, `runner_up_competitiveness`, diversidade winner/runner-up.
+
+Detalhamento: [RUNNER_UP_ALTERNATIVE_ANALYTICS.md](../RUNNER_UP_ALTERNATIVE_ANALYTICS.md)
+
 ### 7.7 Classificação de `conversation_id` (PATCH 3.2)
 
 | Categoria | Eventos |
@@ -582,7 +590,7 @@ Detalhamento: [CONVERSATION_ID.md](../CONVERSATION_ID.md) §10.
 | Cliente frontend | `lib/analytics.js` |
 | UI MIA | `components/MIAChat.jsx` |
 | API track | `pages/api/analytics/track/index.js` |
-| Analytics server-side | `lib/miaPriceAlertEmailAnalytics.js` · `lib/miaDataLayerUsageAnalytics.js` · `lib/miaResponseAnalytics.js` · `lib/miaErrorAnalytics.js` · `lib/miaLatencyAnalytics.js` · `lib/miaCommercialSearchAnalytics.js` · `lib/miaRecommendationDecisionAnalytics.js` · `lib/miaRecommendationAcceptanceAnalytics.js` · `lib/miaRecommendationRejectionAnalytics.js` |
+| Analytics server-side | `lib/miaPriceAlertEmailAnalytics.js` · … · `lib/miaRecommendationRejectionAnalytics.js` · `lib/miaRecommendationAlternativeAnalytics.js` |
 | Send gate (produção) | `lib/miaPriceAlertSendGate.js` |
 | Analytics Storage Schema | `supabase/migrations/20260719153000_*` + `53002_*` + `53003_*` |
 | Dashboards | [DASHBOARDS.md](../DASHBOARDS.md) |

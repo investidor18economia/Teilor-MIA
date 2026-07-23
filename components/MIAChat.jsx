@@ -723,6 +723,8 @@ export default function MIAChat() {
         decision_source: rd.recommendation_decision_source ?? null,
         decision_event_version: rd.recommendation_decision_event_version ?? "9.1.0",
         winner_product_family: rd.recommendation_decision_winner_product_family ?? null,
+        runner_up_product_family: rd.recommendation_decision_runner_up_product_family ?? null,
+        runnerUpProductFamilyHash: rd.recommendation_decision_runner_up_product_family ?? null,
         decision_at_ms: decisionAtMs,
       },
     };

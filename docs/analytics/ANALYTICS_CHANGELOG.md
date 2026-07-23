@@ -843,6 +843,16 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 50. PATCH 9.4 — Runner-up and Alternative Analytics (2026-07-23)
+
+**Objetivo:** analisar runner-up cognitivo vs alternativas exibidas/selecionadas sem recalcular ranking.
+
+**Arquitetura:** modelo derivado — enriquecimento 9.1 + interpretação 9.2/9.3 + SQL Q1–Q12. Sem evento novo.
+
+**Veredito:** 🟡 **PATCH 9.4 IMPLEMENTADO** — aguardando deploy/evidência produção
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

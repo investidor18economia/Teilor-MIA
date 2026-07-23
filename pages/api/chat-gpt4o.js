@@ -21222,6 +21222,8 @@ const context = {
     sessionContext?.lastRecommendationDecisionSource || null,
   lastRecommendationDecisionWinnerFamily:
     sessionContext?.lastRecommendationDecisionWinnerFamily || null,
+  lastRecommendationDecisionRunnerUpFamily:
+    sessionContext?.lastRecommendationDecisionRunnerUpFamily || null,
 };
 
   for (let i = messages.length - 1; i >= 0; i--) {
@@ -26728,6 +26730,8 @@ function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, trace,
         _recommendationDecisionSummary?.decision_source ?? null,
       lastRecommendationDecisionWinnerFamily:
         _recommendationDecisionSummary?.winner_product_family ?? null,
+      lastRecommendationDecisionRunnerUpFamily:
+        _recommendationDecisionSummary?.runner_up_product_family ?? null,
     };
   }
 
@@ -30698,6 +30702,7 @@ if (
     decisionAtMs: sessionContext?.lastRecommendationDecisionAtMs ?? null,
     signalAtMs: Date.now(),
     winnerProductFamilyHash: sessionContext?.lastRecommendationDecisionWinnerFamily || null,
+    runnerUpProductFamilyHash: sessionContext?.lastRecommendationDecisionRunnerUpFamily || null,
     category: sessionContext?.lastCategory || null,
     commercialDomain: true,
   });
