@@ -58,7 +58,14 @@ Gerar o primeiro **Release Candidate (RC)** oficial, reproduzível e rastreável
 
 ## Commit e Tag RC
 
-Registrados em `docs/analytics/PATCH_12_5_RELEASE_CANDIDATE_EVIDENCE.json` após execução do patch.
+| Campo | Valor |
+|-------|-------|
+| **Commit RC (tagged)** | `d6cccb9b143b45a7b1060edf8db241849281df27` |
+| **Tag** | `v1.0.0-rc1` |
+| **Branch** | `master` |
+| **Deploy live** | `288d04fbf98575d7f9084c13d8e5faf79b0e4131` (docs-only delta pós-tag) |
+| **Build ID (prod)** | `288d04fbf985` |
+| **Data** | 2026-07-24 |
 
 ---
 
