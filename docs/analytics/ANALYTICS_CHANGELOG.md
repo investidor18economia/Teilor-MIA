@@ -1121,6 +1121,24 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 69. PATCH 12.6 — Validação em Produção (2026-07-24)
+
+**Escopo:** runner produção (`test-mia-patch-126-production-validation-runner.mjs`), RC confirmation, environment, health×3, HTTP contracts, analytics 6 eventos, matriz conversacional 16 grupos + 10/15 turnos, Data Layer samples, commercial, favoritos/alertas, metrics, estabilidade.
+
+**Artefatos:** `docs/MVP_PRODUCTION_VALIDATION.md` · `PATCH_12_6_PRODUCTION_VALIDATION_EVIDENCE.json`
+
+**Scripts:** `npm run test:mia:patch-126:production-validation`
+
+**Veredito automação:** 64/72 checks, 57 fluxos, 0 P0/P1, latência p95 ~6079ms.
+
+**Veredito patch:** 🟡 **PATCH 12.6 AGUARDANDO VALIDAÇÃO MANUAL** — checklist desktop/mobile/console pendente.
+
+**P2 revalidados:** P2-126-001 (priority social fallback), Moto G84 catálogo, x-powered-by.
+
+**Próximo:** concluir checklist manual → PATCH 12.7.
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |
