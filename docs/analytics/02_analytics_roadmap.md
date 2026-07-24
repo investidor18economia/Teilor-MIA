@@ -542,11 +542,11 @@ Auditoria Arquitetural Geral — 🟢 APROVADO
 
 PATCH 12.2
 
-Testes Unitários Gerais — 🟢 APROVADO
+Testes Unitários Gerais — 🟢 APROVADO EM PRODUÇÃO — OFICIALMENTE ENCERRADO
 
 PATCH 12.3
 
-Testes de Integração Gerais
+Testes de Integração Gerais — 🟢 APROVADO
 
 PATCH 12.4
 

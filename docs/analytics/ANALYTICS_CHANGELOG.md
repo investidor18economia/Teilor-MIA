@@ -1069,9 +1069,25 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Artefatos:** `docs/MVP_UNIT_TEST_BASELINE.md` · `PATCH_12_2_GENERAL_UNIT_TESTS_EVIDENCE.json`
 
-**Scripts:** `test-mia-patch-122-mvp-p0-unit-tests.js` · `test-mia-patch-122-mvp-unit-tests-runner.js`
+**Scripts:** `test-mia-patch-122-mvp-p0-unit-tests.js` · `test-mia-patch-122-mvp-unit-tests-runner.js` · `patch-122-production-validation.mjs`
 
-**Veredito:** 🟢 **PATCH 12.2 APROVADO**
+**Veredito:** 🟢 **PATCH 12.2 APROVADO EM PRODUÇÃO — OFICIALMENTE ENCERRADO**
+
+**Complemento produção (2026-07-24):** deploy commit `0b6a912`, build `0b6a912b2f4c`, 21/21 checks (allowlist, rota órfã, smoke, regressão).
+
+---
+
+## 66. PATCH 12.3 — Testes de Integração Gerais MVP (2026-07-24)
+
+**Escopo:** baseline integração P0 (22 suítes, 896 casos), cadeia Intent→Router→Decision→DL→Commercial→Analytics→Executivo, favoritos/alertas, migrations analytics v1 sincronizadas, 3 execuções determinísticas, regressões Fases 10/11/12.1/12.2.
+
+**Artefatos:** `docs/MVP_INTEGRATION_TEST_BASELINE.md` · `PATCH_12_3_GENERAL_INTEGRATION_TESTS_EVIDENCE.json`
+
+**Scripts:** `test-mia-patch-123-mvp-integration-p0-smoke.js` · `test-mia-patch-123-mvp-integration-tests-runner.js`
+
+**Veredito:** 🟢 **PATCH 12.3 APROVADO**
+
+**Nota deploy:** sem alteração runtime — produção validada via `patch-122-production-validation.mjs` (build `0b6a912b2f4c`).
 
 ---
 

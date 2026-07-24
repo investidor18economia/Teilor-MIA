@@ -465,21 +465,21 @@ test("G.1 — ALTERNATIVE_REQUEST NÃO está em COGNITIVE_BRIDGE_ALLOWLIST [gap 
   };
 });
 
-test("G.2 — OBJECTION NÃO está em COGNITIVE_BRIDGE_ALLOWLIST [gap documentado]", () => {
-  const notInAllowlist = !COGNITIVE_BRIDGE_ALLOWLIST.has("OBJECTION");
+test("G.2 — OBJECTION está em COGNITIVE_BRIDGE_ALLOWLIST [gap fechado PATCH 11A+]", () => {
+  const inAllowlist = COGNITIVE_BRIDGE_ALLOWLIST.has("OBJECTION");
   return {
-    ok: notInAllowlist,
-    flags: notInAllowlist ? [FLAGS.ROUTING_ANCHOR_MISSING] : [],
-    detail: `OBJECTION in allowlist: ${COGNITIVE_BRIDGE_ALLOWLIST.has("OBJECTION")} → gap real`,
+    ok: inAllowlist,
+    flags: [],
+    detail: `OBJECTION in allowlist: ${COGNITIVE_BRIDGE_ALLOWLIST.has("OBJECTION")}`,
   };
 });
 
-test("G.3 — PRIORITY_SHIFT NÃO está em COGNITIVE_BRIDGE_ALLOWLIST [gap documentado]", () => {
-  const notInAllowlist = !COGNITIVE_BRIDGE_ALLOWLIST.has("PRIORITY_SHIFT");
+test("G.3 — PRIORITY_SHIFT está em COGNITIVE_BRIDGE_ALLOWLIST [gap fechado PATCH 11A+]", () => {
+  const inAllowlist = COGNITIVE_BRIDGE_ALLOWLIST.has("PRIORITY_SHIFT");
   return {
-    ok: notInAllowlist,
-    flags: notInAllowlist ? [FLAGS.ROUTING_ANCHOR_MISSING] : [],
-    detail: `PRIORITY_SHIFT in allowlist: ${COGNITIVE_BRIDGE_ALLOWLIST.has("PRIORITY_SHIFT")} → gap real`,
+    ok: inAllowlist,
+    flags: [],
+    detail: `PRIORITY_SHIFT in allowlist: ${COGNITIVE_BRIDGE_ALLOWLIST.has("PRIORITY_SHIFT")}`,
   };
 });
 

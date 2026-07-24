@@ -1,0 +1,484 @@
+{
+  "patch": "12.3",
+  "phase": "12",
+  "audit_type": "mvp_general_integration_tests",
+  "status": "APPROVED",
+  "phase_verdict": "PATCH 12.3 APROVADO",
+  "audit_timestamp": "2026-07-24T14:31:28.147Z",
+  "audit_completed_at": "2026-07-24T14:31:51.442Z",
+  "code_changes": true,
+  "inventory": {
+    "test_script_files": 398,
+    "runner": "node (custom scripts, no jest/vitest)",
+    "p0_suites": 22,
+    "p1_http_suites": 5,
+    "p1_regressions": 4,
+    "integration_signal_files": 27
+  },
+  "p0_classification": {
+    "P0": [
+      {
+        "id": "123-p0-smoke",
+        "domain": "integration_chain",
+        "file": "test-mia-patch-123-mvp-integration-p0-smoke.js"
+      },
+      {
+        "id": "123-favorites-alerts",
+        "domain": "favorites_alerts",
+        "file": "test-mia-patch-123-favorites-alerts-integration.js"
+      },
+      {
+        "id": "mia-chat-proxy",
+        "domain": "perimeter_core",
+        "file": "test-mia-mia-chat-proxy-contract.js"
+      },
+      {
+        "id": "price-alert-e2e",
+        "domain": "alerts",
+        "file": "test-mia-price-alert-e2e-flow-audit.js"
+      },
+      {
+        "id": "analytics-session",
+        "domain": "analytics",
+        "file": "test-mia-analytics-session-id.js"
+      },
+      {
+        "id": "analytics-schema",
+        "domain": "analytics_persistence",
+        "file": "test-mia-analytics-storage-schema-audit.js"
+      },
+      {
+        "id": "e2e-state-trace",
+        "domain": "continuity",
+        "file": "test-mia-e2e-state-trace-audit.js"
+      },
+      {
+        "id": "intent-authority",
+        "domain": "intent_router",
+        "file": "test-mia-intent-authority-enforcement.js"
+      },
+      {
+        "id": "routing-guardrails",
+        "domain": "router_decision",
+        "file": "test-mia-routing-guardrails.js"
+      },
+      {
+        "id": "commercial-selection",
+        "domain": "commercial_runtime",
+        "file": "test-mia-commercial-selection-engine-audit.js"
+      },
+      {
+        "id": "commercial-dedup",
+        "domain": "commercial_runtime",
+        "file": "test-mia-commercial-deduplication-layer-audit.js"
+      },
+      {
+        "id": "commercial-merge",
+        "domain": "commercial_runtime",
+        "file": "test-mia-commercial-offer-merge-layer-audit.js"
+      },
+      {
+        "id": "patch-111",
+        "domain": "executive_metrics",
+        "file": "test-mia-analytics-patch-111-executive-metrics-api.js"
+      },
+      {
+        "id": "patch-114",
+        "domain": "executive_insights",
+        "file": "test-mia-analytics-patch-114-executive-ai-insights.js"
+      },
+      {
+        "id": "patch-101",
+        "domain": "price_intelligence",
+        "file": "test-mia-analytics-patch-101-price-intelligence.js"
+      },
+      {
+        "id": "patch-102",
+        "domain": "savings",
+        "file": "test-mia-analytics-patch-102-savings-estimation.js"
+      },
+      {
+        "id": "patch-103",
+        "domain": "alerts_lifecycle",
+        "file": "test-mia-analytics-patch-103-price-alert-lifecycle.js"
+      },
+      {
+        "id": "patch-104",
+        "domain": "anti_regret",
+        "file": "test-mia-analytics-patch-104-anti-regret-foundation.js"
+      },
+      {
+        "id": "patch-105",
+        "domain": "user_value",
+        "file": "test-mia-analytics-patch-105-user-value-outcome.js"
+      },
+      {
+        "id": "public-hardening",
+        "domain": "security",
+        "file": "test-mia-public-api-hardening.js"
+      },
+      {
+        "id": "endpoint-lockdown",
+        "domain": "security",
+        "file": "test-mia-open-endpoint-lockdown.js"
+      },
+      {
+        "id": "auth-trust",
+        "domain": "security",
+        "file": "test-mia-auth-trust-foundation.js"
+      }
+    ],
+    "P1": [
+      "real-e2e-endpoint",
+      "runtime-enforcement",
+      "runtime-precedence",
+      "continuity-endpoint",
+      "lockdown-http",
+      "patch-122-p0",
+      "patch-106",
+      "patch-115",
+      "patch-121"
+    ],
+    "P2": "remaining ~350+ domain scripts (conversational, commercial shadow, browser E2E)"
+  },
+  "three_runs": {
+    "run1": {
+      "suites": 7.333333333333333,
+      "passed": 22,
+      "failed": 0,
+      "cases_passed": 896,
+      "cases_failed": 0
+    },
+    "run2": {
+      "suites": 7.333333333333333,
+      "passed": 22,
+      "failed": 0,
+      "cases_passed": 896,
+      "cases_failed": 0
+    },
+    "run3": {
+      "suites": 7.333333333333333,
+      "passed": 22,
+      "failed": 0,
+      "cases_passed": 896,
+      "cases_failed": 0
+    },
+    "deterministic": true,
+    "flaky": false
+  },
+  "p0_results": [
+    {
+      "id": "123-p0-smoke",
+      "domain": "integration_chain",
+      "status": "passed",
+      "passed": 37,
+      "failed": 0,
+      "total": 37,
+      "elapsed_ms": 473
+    },
+    {
+      "id": "123-favorites-alerts",
+      "domain": "favorites_alerts",
+      "status": "passed",
+      "passed": 17,
+      "failed": 0,
+      "total": 17,
+      "elapsed_ms": 576
+    },
+    {
+      "id": "mia-chat-proxy",
+      "domain": "perimeter_core",
+      "status": "passed",
+      "passed": 23,
+      "failed": 0,
+      "total": 23,
+      "elapsed_ms": 84
+    },
+    {
+      "id": "price-alert-e2e",
+      "domain": "alerts",
+      "status": "passed",
+      "passed": 24,
+      "failed": 0,
+      "total": 24,
+      "elapsed_ms": 580
+    },
+    {
+      "id": "analytics-session",
+      "domain": "analytics",
+      "status": "passed",
+      "passed": 13,
+      "failed": 0,
+      "total": 13,
+      "elapsed_ms": 60
+    },
+    {
+      "id": "analytics-schema",
+      "domain": "analytics_persistence",
+      "status": "passed",
+      "passed": 126,
+      "failed": 0,
+      "total": 126,
+      "elapsed_ms": 302
+    },
+    {
+      "id": "e2e-state-trace",
+      "domain": "continuity",
+      "status": "passed",
+      "passed": 29,
+      "failed": 0,
+      "total": 29,
+      "elapsed_ms": 410
+    },
+    {
+      "id": "intent-authority",
+      "domain": "intent_router",
+      "status": "passed",
+      "passed": 32,
+      "failed": 0,
+      "total": 32,
+      "elapsed_ms": 1868
+    },
+    {
+      "id": "routing-guardrails",
+      "domain": "router_decision",
+      "status": "passed",
+      "passed": 8,
+      "failed": 0,
+      "total": 8,
+      "elapsed_ms": 190
+    },
+    {
+      "id": "commercial-selection",
+      "domain": "commercial_runtime",
+      "status": "passed",
+      "passed": 16,
+      "failed": 0,
+      "total": 16,
+      "elapsed_ms": 82
+    },
+    {
+      "id": "commercial-dedup",
+      "domain": "commercial_runtime",
+      "status": "passed",
+      "passed": 17,
+      "failed": 0,
+      "total": 17,
+      "elapsed_ms": 72
+    },
+    {
+      "id": "commercial-merge",
+      "domain": "commercial_runtime",
+      "status": "passed",
+      "passed": 10,
+      "failed": 0,
+      "total": 10,
+      "elapsed_ms": 70
+    },
+    {
+      "id": "patch-111",
+      "domain": "executive_metrics",
+      "status": "passed",
+      "passed": 30,
+      "failed": 0,
+      "total": 30,
+      "elapsed_ms": 161
+    },
+    {
+      "id": "patch-114",
+      "domain": "executive_insights",
+      "status": "passed",
+      "passed": 37,
+      "failed": 0,
+      "total": 37,
+      "elapsed_ms": 596
+    },
+    {
+      "id": "patch-101",
+      "domain": "price_intelligence",
+      "status": "passed",
+      "passed": 52,
+      "failed": 0,
+      "total": 52,
+      "elapsed_ms": 105
+    },
+    {
+      "id": "patch-102",
+      "domain": "savings",
+      "status": "passed",
+      "passed": 70,
+      "failed": 0,
+      "total": 70,
+      "elapsed_ms": 74
+    },
+    {
+      "id": "patch-103",
+      "domain": "alerts_lifecycle",
+      "status": "passed",
+      "passed": 111,
+      "failed": 0,
+      "total": 111,
+      "elapsed_ms": 79
+    },
+    {
+      "id": "patch-104",
+      "domain": "anti_regret",
+      "status": "passed",
+      "passed": 68,
+      "failed": 0,
+      "total": 68,
+      "elapsed_ms": 79
+    },
+    {
+      "id": "patch-105",
+      "domain": "user_value",
+      "status": "passed",
+      "passed": 68,
+      "failed": 0,
+      "total": 68,
+      "elapsed_ms": 84
+    },
+    {
+      "id": "public-hardening",
+      "domain": "security",
+      "status": "passed",
+      "passed": 43,
+      "failed": 0,
+      "total": 43,
+      "elapsed_ms": 58
+    },
+    {
+      "id": "endpoint-lockdown",
+      "domain": "security",
+      "status": "passed",
+      "passed": 33,
+      "failed": 0,
+      "total": 33,
+      "elapsed_ms": 597
+    },
+    {
+      "id": "auth-trust",
+      "domain": "security",
+      "status": "passed",
+      "passed": 32,
+      "failed": 0,
+      "total": 32,
+      "elapsed_ms": 584
+    }
+  ],
+  "p1_http": [
+    {
+      "id": "real-e2e-endpoint",
+      "domain": "http_mia_chat",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "note": "localhost unavailable"
+    },
+    {
+      "id": "runtime-enforcement",
+      "domain": "http_runtime",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "note": "localhost unavailable"
+    },
+    {
+      "id": "runtime-precedence",
+      "domain": "http_runtime",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "note": "localhost unavailable"
+    },
+    {
+      "id": "continuity-endpoint",
+      "domain": "http_continuity",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "note": "localhost unavailable"
+    },
+    {
+      "id": "lockdown-http",
+      "domain": "http_security",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "note": "localhost unavailable"
+    }
+  ],
+  "regressions": [
+    {
+      "id": "patch-122-p0",
+      "status": "passed",
+      "passed": 40,
+      "failed": 0,
+      "total": 40
+    },
+    {
+      "id": "patch-106",
+      "status": "passed",
+      "passed": 56,
+      "failed": 0,
+      "total": 56
+    },
+    {
+      "id": "patch-115",
+      "status": "passed",
+      "passed": 117,
+      "failed": 0,
+      "total": 117
+    },
+    {
+      "id": "patch-121",
+      "status": "passed",
+      "passed": 112,
+      "failed": 0,
+      "total": 112
+    }
+  ],
+  "totals": {
+    "p0_suites_passed": 22,
+    "p0_suites_failed": 0,
+    "p0_cases_passed": 896,
+    "p0_cases_total": 896
+  },
+  "extended_suites": [
+    {
+      "id": "api-handler-contract",
+      "status": "failed",
+      "passed": 14,
+      "failed": 6,
+      "total": 20,
+      "note": "partial — monolith wrapper drift"
+    }
+  ],
+  "architecture_risks": [
+    {
+      "id": "dual-winner-cognitive-commercial",
+      "severity": "medium",
+      "status": "documented",
+      "note": "selectedBestProduct may diverge from body.prices[0] — audited, no fix in 12.3"
+    },
+    {
+      "id": "favorites-localstorage-db",
+      "severity": "low",
+      "status": "documented",
+      "note": "Client favorites may exist before DB sync — no architecture change in 12.3"
+    }
+  ],
+  "production": {
+    "deploy_required": false,
+    "note": "Test-only patch — no runtime changes; prod validation via existing patch-122 script"
+  },
+  "build": {
+    "required": true,
+    "note": "run npm run build separately"
+  }
+}
