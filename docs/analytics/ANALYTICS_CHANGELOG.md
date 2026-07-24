@@ -1051,6 +1051,18 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 64. PATCH 12.1 — Auditoria Arquitetural Geral MVP (2026-07-24)
+
+**Escopo:** arquitetura full-stack, fluxo MIA, Decision Engine, Data Layer, contracts, APIs, frontend, banco, analytics, adapters, segurança, performance, código morto, dívida técnica, produção.
+
+**Artefatos:** `docs/architecture/MVP_ARCHITECTURE_AUDIT_REPORT.md` · `PATCH_12_1_ARCHITECTURE_AUDIT_EVIDENCE.json`
+
+**Scripts:** `test-mia-analytics-patch-121-mvp-architecture-audit.js` · `patch-121-mvp-architecture-production-audit.mjs`
+
+**Veredito:** 🟢 **PATCH 12.1 APROVADO**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

@@ -528,33 +528,33 @@ Auditoria Final da Fase 11 — 🟢 APROVADO
 ---
 
 # FASE 12
-## Auditoria Final Geral
+## MVP Release Candidate (RC)
 
 Objetivo
 
-Validar toda a arquitetura antes de considerar o Analytics concluído.
+Validar toda a arquitetura antes do lançamento do MVP.
 
 Patches
 
 PATCH 12.1
 
-Auditoria Arquitetural
+Auditoria Arquitetural Geral — 🟢 APROVADO
 
 PATCH 12.2
 
-Testes Unitários
+Testes Unitários Gerais
 
 PATCH 12.3
 
-Testes de Integração
+Testes de Integração Gerais
 
 PATCH 12.4
 
-Testes de Regressão
+Regressão Completa do MVP
 
 PATCH 12.5
 
-Deploy
+Deploy Release Candidate
 
 PATCH 12.6
 
@@ -562,15 +562,15 @@ Validação em Produção
 
 PATCH 12.7
 
-Conversa Real pela Interface da MIA
+Validação com Usuários Reais
 
 PATCH 12.8
 
-Aprovação Final
+Go / No-Go do MVP
 
 Critério de conclusão
 
-O Analytics encontra-se validado, documentado, estável e pronto para evolução contínua.
+O MVP encontra-se validado, documentado, estável e pronto para lançamento.
 
 ---
 
