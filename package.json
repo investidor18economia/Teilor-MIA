@@ -133,6 +133,8 @@
     "test:mia:analytics:patch-115:prod-audit": "node scripts/patch-115-phase11-production-audit.mjs",
     "test:mia:analytics:patch-121:mvp-architecture-audit": "node scripts/test-mia-analytics-patch-121-mvp-architecture-audit.js",
     "test:mia:analytics:patch-121:prod-audit": "node scripts/patch-121-mvp-architecture-production-audit.mjs",
+    "test:mia:patch-122:p0-unit-tests": "node scripts/test-mia-patch-122-mvp-p0-unit-tests.js",
+    "test:mia:patch-122:mvp-unit-tests": "node scripts/test-mia-patch-122-mvp-unit-tests-runner.js",
     "test:mia:analytics:patch-34:prod-smoke": "node scripts/patch-34-production-smoke.mjs",
     "test:mia:auth:secret-separation": "node scripts/test-mia-auth-secret-separation.js",
     "test:mia:auth:trust-foundation": "node scripts/test-mia-auth-trust-foundation.js",

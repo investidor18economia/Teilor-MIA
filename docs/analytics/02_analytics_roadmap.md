@@ -542,7 +542,7 @@ Auditoria Arquitetural Geral — 🟢 APROVADO
 
 PATCH 12.2
 
-Testes Unitários Gerais
+Testes Unitários Gerais — 🟢 APROVADO
 
 PATCH 12.3
 

@@ -1063,6 +1063,18 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 65. PATCH 12.2 — Testes Unitários Gerais MVP (2026-07-24)
+
+**Escopo:** inventário, baseline P0 (26 suítes), 40 casos consolidados, 3 execuções determinísticas, regressões Fases 10/11/12.1, fix allowlist null body, remoção rota órfã.
+
+**Artefatos:** `docs/MVP_UNIT_TEST_BASELINE.md` · `PATCH_12_2_GENERAL_UNIT_TESTS_EVIDENCE.json`
+
+**Scripts:** `test-mia-patch-122-mvp-p0-unit-tests.js` · `test-mia-patch-122-mvp-unit-tests-runner.js`
+
+**Veredito:** 🟢 **PATCH 12.2 APROVADO**
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

@@ -92,7 +92,7 @@ const ANALYTICS_EMIT = [
 ];
 
 const DEAD_CODE_CATALOG = [
-  { path: "pages/api/pages/api/test-economia.js", reason: "orphan nested route — blocked by middleware" },
+  { path: "pages/api/pages/api/test-economia.js", reason: "orphan nested route — removed PATCH 12.2", expectExists: false },
   { path: "pages/api/test-mia.js", reason: "legacy test — blocked by middleware in prod" },
   { path: "pages/api/test-economia.js", reason: "legacy test — blocked by middleware in prod" },
   { path: "pages/api/test-serp.js", reason: "legacy test — blocked by middleware in prod" },
@@ -259,8 +259,9 @@ ok("observability wrapper", read("pages/api/executive-metrics.js").includes("wit
 console.log("\nDead code catalog (document only — not removed)");
 for (const item of DEAD_CODE_CATALOG) {
   const exists = existsSync(join(ROOT, item.path));
-  findings.dead_code.push({ ...item, exists });
-  ok(`cataloged ${item.path}`, exists, item.reason);
+  const expectExists = item.expectExists !== false;
+  findings.dead_code.push({ ...item, exists, removed: item.expectExists === false && !exists });
+  ok(`cataloged ${item.path}`, expectExists ? exists : !exists, item.reason);
 }
 
 console.log("\nTechnical debt flags (catalog only)");
