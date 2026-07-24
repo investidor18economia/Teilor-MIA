@@ -558,7 +558,7 @@ Deploy Release Candidate — 🟢 APROVADO — MVP RC1 (`v1.0.0-rc1`)
 
 PATCH 12.6
 
-Validação em Produção — 🟡 AGUARDANDO VALIDAÇÃO MANUAL (automação 0 P0/P1)
+Validação em Produção — 🟡 AGUARDANDO VALIDAÇÃO MANUAL RESIDUAL (API 0 P0/P1 · Browser 196/196)
 
 PATCH 12.7
 

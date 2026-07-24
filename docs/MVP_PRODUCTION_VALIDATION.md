@@ -2,7 +2,7 @@
 
 **Patch:** 12.6 — Validação em Produção  
 **Fase:** 12 — MVP Release Candidate  
-**Status:** 🟡 **AGUARDANDO VALIDAÇÃO MANUAL** (automação produção: 64/72 checks, 0 P0/P1)  
+**Status:** 🟡 **AGUARDANDO APENAS VALIDAÇÃO MANUAL RESIDUAL** (API: 64/72 · Browser: 196/196 · 0 P0/P1)  
 **RC validado:** MVP RC1 · `v1.0.0-rc1`  
 **Commit RC (runtime):** `d6cccb9b143b45a7b1060edf8db241849281df27`  
 **Build produção (live):** `33464830ad8a` (docs-only delta pós-tag — runtime inalterado)  
@@ -66,7 +66,56 @@ Características:
 
 ---
 
-| Grupo | Cobertura |
+## Validação automatizada de navegador (PATCH 12.6 complemento)
+
+```bash
+npm run test:mia:patch-126:browser-validation
+```
+
+**Script:** `scripts/test-mia-patch-126-browser-validation.mjs`  
+**Ferramenta:** Playwright 1.61.1 (Chromium headless)  
+**URL:** https://economia-ai.vercel.app/app-mia  
+**Execuções:** 3 × ~5 min (~866s total)
+
+| Métrica | Resultado |
+|---------|-----------|
+| Checks browser | **196/196** |
+| Viewports | 6 (3 desktop + 3 mobile) |
+| Fluxos UI | 6 + conversa 10 turnos (primary viewports) |
+| P0/P1/P2 browser | 0 / 0 / 0 |
+| Console errors relevantes | 0 |
+| Network failures | 1 (`/api/mia-cognitive-loading` ERR_ABORTED — não bloqueante) |
+| Screenshots | 16 em `docs/evidence/patch-12-6/browser/` |
+
+### Viewports
+
+| ID | Tamanho | Escopo |
+|----|---------|--------|
+| desktop-1366 | 1366×768 | smoke |
+| desktop-1440 | 1440×900 | **full** (6 fluxos + 10 turnos) |
+| desktop-1920 | 1920×1080 | smoke |
+| mobile-360 | 360×800 | smoke |
+| mobile-390 | 390×844 | **full** |
+| mobile-412 | 412×915 | smoke |
+
+### Validado automaticamente
+
+- Carregamento, input, botão envio, loading, resposta, cards, scroll, overflow horizontal
+- Conversação UI: saudação, genérica, produto, comparação, mista, 10 turnos
+- Console limpo (sem TypeError/hydration/React errors)
+- Network sem 5xx em `/api/mia-chat`
+- A11y básica (nome acessível send/input — P2)
+
+### Não executado
+
+- Lighthouse / axe (opcional P2)
+- Puppeteer (Playwright preferido)
+
+**Relatório:** `docs/evidence/patch-12-6/browser/browser-validation-report.json`
+
+---
+
+## Matriz API (automática)
 |-------|-----------|
 | RC confirmation | health, build lineage, runtime delta |
 | Environment | HTTPS, headers, app-mia, cockpit noindex |
@@ -100,38 +149,51 @@ Características:
 
 ---
 
-## Manual Checklist {#manual-checklist}
+## Manual Checklist Residual {#manual-checklist-residual}
 
-**Obrigatório para aprovação final do PATCH 12.6.** O runner automatiza API/HTML probe; estes itens exigem navegador real.
+Itens **não** validáveis automaticamente. O browser runner já aprovou layout, envio, loading, cards, scroll, console e network.
+
+- [ ] **Fluidez subjetiva** — sensação de velocidade/responsividade em uso real
+- [ ] **Teclado virtual real** — comportamento em dispositivo físico (iOS/Android)
+- [ ] **Toque e gestos** — alvos de toque percebidos em hardware real
+- [ ] **Links externos** — experiência ao abrir oferta/affiliate em nova aba
+- [ ] **Julgamento humano** — continuidade conversacional e qualidade copy
+- [ ] **Inspeção visual final** — polish estético subjetivo pós-RC
+
+**Registro:** data, build (`/api/health`), observações breves.
+
+---
+
+## Manual Checklist (legado — substituído pelo residual) {#manual-checklist}
+
+> A maior parte desta seção foi **automatizada** pelo browser runner (196/196). Use apenas `#manual-checklist-residual` acima.
 
 ### Desktop (`/app-mia`)
 
-- [ ] Página carrega sem erro visual
-- [ ] Campo de pergunta visível e funcional
-- [ ] Envio dispara loading e retorna resposta
-- [ ] Cards comerciais (quando existirem) renderizam preço/loja/link/imagem
-- [ ] Runner-up visível quando aplicável
-- [ ] Scroll funciona sem quebra de layout
-- [ ] Links externos abrem corretamente
-- [ ] Console DevTools: sem erros JS críticos
-- [ ] Network: sem 5xx inesperados durante conversa normal
+- [x] ~~Página carrega~~ (automático)
+- [x] ~~Campo de pergunta visível~~ (automático)
+- [x] ~~Envio/loading/resposta~~ (automático)
+- [x] ~~Cards comerciais~~ (automático quando presentes)
+- [ ] Runner-up visível quando aplicável (inspeção humana)
+- [x] ~~Scroll/overflow~~ (automático)
+- [ ] Links externos abrem corretamente (residual)
+- [x] ~~Console sem erros críticos~~ (automático)
+- [x] ~~Network sem 5xx~~ (automático)
 
 ### Mobile (viewport ~390px)
 
-- [ ] Sem overflow horizontal
-- [ ] Campo de texto e teclado utilizáveis
-- [ ] Botões e cards legíveis
-- [ ] Loaders visíveis
-- [ ] Scroll natural
+- [x] ~~Sem overflow horizontal~~ (automático 360/390/412)
+- [ ] Teclado virtual real (residual)
+- [x] ~~Cards legíveis~~ (automático mobile-390)
+- [x] ~~Loaders~~ (automático)
+- [x] ~~Scroll~~ (automático)
 
 ### Conversação manual (amostra)
 
-- [ ] Saudação → resposta social
-- [ ] Pergunta comercial → resposta coerente
-- [ ] Comparação → vencedor claro
-- [ ] Contestação → resposta argumentativa (não só social genérica)
-
-**Registro:** marcar data, build (`/api/health`), observações.
+- [x] ~~Saudação~~ (automático)
+- [x] ~~Pergunta comercial~~ (automático)
+- [x] ~~Comparação~~ (automático)
+- [ ] Contestação argumentativa (julgmento humano — API P2-126-001)
 
 ---
 

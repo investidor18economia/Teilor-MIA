@@ -1131,11 +1131,13 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 **Veredito automação:** 64/72 checks, 57 fluxos, 0 P0/P1, latência p95 ~6079ms.
 
-**Veredito patch:** 🟡 **PATCH 12.6 AGUARDANDO VALIDAÇÃO MANUAL** — checklist desktop/mobile/console pendente.
+**Veredito patch:** 🟡 **PATCH 12.6 AGUARDANDO APENAS VALIDAÇÃO MANUAL RESIDUAL**
+
+**Complemento browser (2026-07-24):** Playwright 1.61.1 · 196/196 checks · 6 viewports · 3 execuções · 16 screenshots · 0 P0/P1 browser.
 
 **P2 revalidados:** P2-126-001 (priority social fallback), Moto G84 catálogo, x-powered-by.
 
-**Próximo:** concluir checklist manual → PATCH 12.7.
+**Próximo:** checklist residual humano → PATCH 12.7.
 
 ---
 
