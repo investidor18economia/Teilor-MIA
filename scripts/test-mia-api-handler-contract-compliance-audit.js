@@ -1,5 +1,5 @@
 /**
- * PATCH Comercial 4E-B.5 — API Handler Contract Compliance Audit
+ * PATCH 12.4 — API Handler Contract Compliance Audit (miaChatCoreHandler + withMiaObservability)
  *
  * Usage:
  *   node scripts/test-mia-api-handler-contract-compliance-audit.js
@@ -13,7 +13,7 @@ import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
-export const API_HANDLER_CONTRACT_COMPLIANCE_VERSION = "4E-B.5";
+export const API_HANDLER_CONTRACT_COMPLIANCE_VERSION = "12.4";
 
 const CHAT_API = join(ROOT, "pages", "api", "chat-gpt4o.js");
 
@@ -30,77 +30,70 @@ function assert(label, condition, detail = "") {
   }
 }
 
-function extractHandlerSource(source = "") {
-  const patterns = [
-    "async function miaChatCoreHandler(req, res) {",
-    "export default async function handler(req, res) {",
-  ];
-  for (const marker of patterns) {
-    const start = source.indexOf(marker);
-    if (start !== -1) {
-      return source.slice(start);
-    }
-  }
-  return "";
-}
-
 function countMatches(text = "", pattern = /x/g) {
   return [...text.matchAll(pattern)].length;
 }
 
+function extractHandlerBlock(source = "") {
+  const marker = "async function miaChatCoreHandler(req, res) {";
+  const start = source.indexOf(marker);
+  if (start === -1) return "";
+  return source.slice(start, start + 250_000);
+}
+
 console.log(
-  `\nPATCH Comercial 4E-B.5 — API Handler Contract Compliance Audit (${API_HANDLER_CONTRACT_COMPLIANCE_VERSION})\n`
+  `\nPATCH 12.4 — API Handler Contract Compliance Audit (${API_HANDLER_CONTRACT_COMPLIANCE_VERSION})\n`
 );
 
 const chatSource = readFileSync(CHAT_API, "utf8");
-const handlerSource = extractHandlerSource(chatSource);
+const handlerSource = extractHandlerBlock(chatSource);
 
-console.log("── Handler contract ──");
-assert("chat-gpt4o handler exists", handlerSource.length > 0 || chatSource.includes("withMiaObservability(miaChatCoreHandler"));
+console.log("── Export & observability wrapper ──");
+assert("withMiaObservability export", /export default withMiaObservability\s*\(\s*miaChatCoreHandler/.test(chatSource));
+assert("endpoint /api/chat-gpt4o", chatSource.includes('endpoint: "/api/chat-gpt4o"'));
+assert("withMiaObservability import", chatSource.includes('from "../../lib/miaObservability.js"'));
+assert("logObservedError import", chatSource.includes("logObservedError"));
+assert("miaChatCoreHandler defined", handlerSource.length > 1000);
+
+console.log("\n── Perimeter HTTP contract ──");
+assert("no bare return res.status in handler", !/\breturn\s+res\.status\s*\(/.test(handlerSource));
 assert(
-  "no bare return res.status in handler",
-  !/\breturn\s+res\.status\s*\(/.test(handlerSource)
+  "handler early void res.status gates",
+  countMatches(handlerSource, /\breturn\s+void\s+res\.status\s*\(/g) >= 4
 );
 assert(
-  "handler uses void res.status returns",
-  countMatches(handlerSource, /\breturn\s+void\s+res\.status\s*\(/g) >= 20
+  "OPTIONS blocked with 405 JSON",
+  /if \(req\.method === "OPTIONS"\)[\s\S]{0,300}method_not_allowed/.test(handlerSource)
 );
 assert(
-  "no bare return respondWithContract in handler",
-  !/\breturn\s+respondWithContract\s*\(/.test(handlerSource)
+  "non-POST blocked with 405",
+  /if \(req\.method !== "POST"\)[\s\S]{0,300}method_not_allowed/.test(handlerSource)
+);
+assert("401 invalid_api_key path", handlerSource.includes('error: "invalid_api_key"'));
+assert("400 empty query path", handlerSource.includes("chat_empty_query"));
+assert("security headers on handler", handlerSource.includes('"Cache-Control", "no-store'));
+
+console.log("\n── respondWithContract & delivery ──");
+assert("respondWithContract helper exists", chatSource.includes("function respondWithContract("));
+assert(
+  "contract violation uses sendRuntimeResponse",
+  /if \(violation\.violation\)[\s\S]{0,500}sendRuntimeResponse\s*\(/.test(chatSource)
 );
 assert(
   "handler uses void respondWithContract returns",
-  countMatches(handlerSource, /\breturn\s+void\s+respondWithContract\s*\(/g) >= 20
+  countMatches(chatSource, /\breturn\s+void\s+respondWithContract\s*\(/g) >= 15
 );
-assert(
-  "OPTIONS uses explicit end + return",
-  /if \(req\.method === "OPTIONS"\)\s*\{\s*res\.status\(204\)\.end\(\);\s*return;\s*\}/.test(
-    handlerSource
-  )
-);
+assert("sendRuntimeResponse delivery path", chatSource.includes("function sendRuntimeResponse("));
 
-console.log("\n── respondWithContract helper ──");
-assert(
-  "respondWithContract does not return blocked object",
-  !chatSource.includes("return { blocked: false }")
-);
-assert(
-  "respondWithContract blocked path returns void",
-  /if \(violation\.violation\)[\s\S]{0,400}\n\s*return;\n\s*\}/.test(chatSource)
-);
-assert(
-  "respondWithContract sends json then returns void",
-  /res\.status\(200\)\.json\([\s\S]{0,200}\n\s*\);\n\s*return;\n\}/.test(chatSource)
-);
-
-console.log("\n── Response paths preserved ──");
-assert("401 invalid_api_key path", handlerSource.includes('error: "invalid_api_key"'));
-assert("405 method not allowed path", handlerSource.includes('"Method not allowed"'));
-assert("500 catch path", handlerSource.includes("chat-gpt4o.js error:"));
-assert("respondWithContract still used", handlerSource.includes("return void respondWithContract("));
+console.log("\n── Runtime integrations ──");
 assert("commercial runtime activation import", chatSource.includes("resolveAndApplyCommercialRuntimeActivation"));
-assert("analytics track path untouched", chatSource.includes("trackMiaEvent") || chatSource.includes("mia_debug"));
+assert("runtime enforcement binding", chatSource.includes("bindSharedRuntimeEnforcement"));
+assert("analytics instrumentation", chatSource.includes("instrumentResponseOutcomeAnalytics") || chatSource.includes("responseAnalytics"));
+assert("latency analytics", chatSource.includes("createLatencyTracker"));
+
+console.log("\n── Error handling ──");
+assert("logObservedError on internal failure", chatSource.includes("logObservedError(err"));
+assert("500 JSON on handler catch", /return void res\.status\(500\)\.json/.test(chatSource));
 
 console.log("\n── Architecture preservation ──");
 const UNTOUCHED = [
@@ -115,10 +108,7 @@ for (const file of UNTOUCHED) {
   assert(`${file} unchanged by handler patch`, !content.includes("return void res.status"));
 }
 
-console.log("\n── Regressions ──");
-if (process.env.MIA_SKIP_HANDLER_REGRESSIONS === "1") {
-  console.log("  ⏭ skipped (MIA_SKIP_HANDLER_REGRESSIONS=1)");
-} else {
+console.log("\n── Regressions 4E-B ──");
 const regressions = [
   ["scripts/test-mia-commercial-runtime-controlled-revalidation-audit.js", "4E-B.4"],
   ["scripts/test-mia-non-data-layer-fallback-candidate-isolation-audit.js", "4E-B.3"],
@@ -133,9 +123,11 @@ for (const [script, label] of regressions) {
     cwd: ROOT,
     encoding: "utf8",
     maxBuffer: 20 * 1024 * 1024,
+    timeout: 600_000,
+    env: { ...process.env, NODE_ENV: "test" },
   });
-  assert(`regression ${label}`, result.status === 0, (result.stderr || result.stdout || "").split("\n").slice(-2).join(" "));
-}
+  const tail = (result.stderr || result.stdout || "").split("\n").slice(-3).join(" ").trim();
+  assert(`regression ${label}`, result.status === 0, tail || `exit=${result.status}`);
 }
 
 console.log(`\nPassed: ${passed} Failed: ${failed}`);

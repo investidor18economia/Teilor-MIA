@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 import { enforceDevManualScriptCommercialExecution } from "../lib/commercial/devCommercialCostGuard.js";
+import { createCommercialRequestDedupContext } from "../lib/commercial/commercialRequestDeduplication.js";
 
 import {
   APIFY_MERCADOLIVRE_ACTOR_ID,
@@ -97,6 +98,18 @@ function createTimeoutFetcher() {
         });
       }
     });
+  };
+}
+
+let isolatedDedupCounter = 0;
+
+/** Isolated dedup context per call — prevents cross-test cache reuse in one process. */
+function isolatedApifyOptions(extra = {}) {
+  return {
+    ...extra,
+    commercialRequestDedupContext: createCommercialRequestDedupContext({
+      requestId: `apify-audit-${++isolatedDedupCounter}`,
+    }),
   };
 }
 
@@ -206,40 +219,40 @@ test("mapApifyMercadoLivreItemsToNormalizedProducts limits to 5 even with 48 ite
 });
 
 test("searchApifyMercadoLivreProducts handles missing token", async () => {
-  const result = await searchApifyMercadoLivreProducts("iphone 13", 5, { env: {} });
+  const result = await searchApifyMercadoLivreProducts("iphone 13", 5, isolatedApifyOptions({ env: {} }));
   assert(!result.ok, "missing token should fail");
   assert(result.error === "missing_env", "missing_env");
   assert(result.hasToken === false, "hasToken false");
 });
 
 test("searchApifyMercadoLivreProducts handles empty query", async () => {
-  const result = await searchApifyMercadoLivreProducts("", 5, { env: TEST_ENV });
+  const result = await searchApifyMercadoLivreProducts("", 5, isolatedApifyOptions({ env: TEST_ENV }));
   assert(!result.ok, "empty query should fail");
   assert(result.error === "missing_query", "missing_query");
 });
 
 test("searchApifyMercadoLivreProducts handles timeout", async () => {
-  const result = await searchApifyMercadoLivreProducts("iphone 13", 5, {
+  const result = await searchApifyMercadoLivreProducts("iphone 13 timeout audit patch124", 5, isolatedApifyOptions({
     env: TEST_ENV,
     fetcher: createTimeoutFetcher(),
     timeoutMs: 20,
-  });
+  }));
   assert(!result.ok, "timeout should fail");
   assert(result.error === "timeout", "timeout error");
   assertNoTokenLeak(result);
 });
 
 test("searchApifyMercadoLivreProducts handles empty response", async () => {
-  const result = await searchApifyMercadoLivreProducts("iphone 13", 5, {
+  const result = await searchApifyMercadoLivreProducts("iphone 13 empty audit patch124", 5, isolatedApifyOptions({
     env: TEST_ENV,
     fetcher: createMockFetcher([]),
-  });
+  }));
   assert(!result.ok, "empty response should fail");
   assert(result.error === "empty_response", "empty_response");
 });
 
 test("searchApifyMercadoLivreProducts handles HTTP error with redacted preview", async () => {
-  const result = await searchApifyMercadoLivreProducts("iphone 13", 5, {
+  const result = await searchApifyMercadoLivreProducts("iphone 13 http error audit patch124", 5, isolatedApifyOptions({
     env: TEST_ENV,
     fetcher: async () => ({
       ok: false,
@@ -247,7 +260,7 @@ test("searchApifyMercadoLivreProducts handles HTTP error with redacted preview",
       statusText: "Forbidden",
       text: async () => JSON.stringify({ message: "blocked", token_echo: TEST_TOKEN }),
     }),
-  });
+  }));
   assert(result.error === "http_error", "http_error");
   assert(result.httpStatus === 403, "403");
   assert(result.safeErrorBodyPreview.includes("blocked"), "preview");
@@ -256,22 +269,26 @@ test("searchApifyMercadoLivreProducts handles HTTP error with redacted preview",
 });
 
 test("searchApifyMercadoLivreProducts success: iPhone 13", async () => {
-  const result = await searchApifyMercadoLivreProducts("iPhone 13", 5, {
+  const result = await searchApifyMercadoLivreProducts("iPhone 13 audit patch124", 5, isolatedApifyOptions({
     env: TEST_ENV,
+    skipCostGuard: true,
     fetcher: createMockFetcher([
       buildApifyItem({
         eTituloProduto: "Apple iPhone 13 128 GB Meia-noite",
         produtoLink: "https://produto.mercadolivre.com.br/MLB-iphone-13",
+        novoPreco: "3.499,00",
+        produtoMarca: "Apple",
+        produtoDomainID: "MLB-CELLPHONES",
       }),
     ]),
-  });
+  }));
   assert(result.ok, `expected ok got ${result.error}`);
   assert(result.count <= 5, "max 5");
   assert(result.products[0]?.title.includes("iPhone 13"), "iphone title");
 });
 
 test("searchApifyMercadoLivreProducts success: Galaxy A55", async () => {
-  const result = await searchApifyMercadoLivreProducts("Galaxy A55", 5, {
+  const result = await searchApifyMercadoLivreProducts("Galaxy A55", 5, isolatedApifyOptions({
     env: TEST_ENV,
     fetcher: createMockFetcher([
       buildApifyItem({
@@ -282,13 +299,13 @@ test("searchApifyMercadoLivreProducts success: Galaxy A55", async () => {
         produtoDomainID: "MLB-CELLPHONES",
       }),
     ]),
-  });
+  }));
   assert(result.ok, result.error || "ok");
   assert(/Galaxy A55/i.test(result.products[0]?.title || ""), "galaxy title");
 });
 
 test("searchApifyMercadoLivreProducts success: Notebook Lenovo", async () => {
-  const result = await searchApifyMercadoLivreProducts("Notebook Lenovo", 5, {
+  const result = await searchApifyMercadoLivreProducts("Notebook Lenovo", 5, isolatedApifyOptions({
     env: TEST_ENV,
     fetcher: createMockFetcher([
       buildApifyItem({
@@ -299,13 +316,13 @@ test("searchApifyMercadoLivreProducts success: Notebook Lenovo", async () => {
         produtoDomainID: "MLB-NOTEBOOKS",
       }),
     ]),
-  });
+  }));
   assert(result.ok, result.error || "ok");
   assert(/Lenovo/i.test(result.products[0]?.title || ""), "lenovo title");
 });
 
 test("searchApifyMercadoLivreProducts success: Cadeira Gamer", async () => {
-  const result = await searchApifyMercadoLivreProducts("Cadeira Gamer", 5, {
+  const result = await searchApifyMercadoLivreProducts("Cadeira Gamer", 5, isolatedApifyOptions({
     env: TEST_ENV,
     fetcher: createMockFetcher([
       buildApifyItem({
@@ -315,7 +332,7 @@ test("searchApifyMercadoLivreProducts success: Cadeira Gamer", async () => {
         produtoDomainID: "MLB-GAMING_CHAIRS",
       }),
     ]),
-  });
+  }));
   assert(result.ok, result.error || "ok");
   assert(/Cadeira Gamer/i.test(result.products[0]?.title || ""), "chair title");
 });

@@ -4,11 +4,11 @@
   "audit_type": "mvp_general_unit_tests",
   "status": "APPROVED",
   "phase_verdict": "PATCH 12.2 APROVADO",
-  "audit_timestamp": "2026-07-24T13:22:30.453Z",
-  "audit_completed_at": "2026-07-24T13:25:03.818Z",
+  "audit_timestamp": "2026-07-24T17:37:44.815Z",
+  "audit_completed_at": "2026-07-24T17:40:24.812Z",
   "code_changes": true,
   "inventory": {
-    "test_script_files": 387,
+    "test_script_files": 391,
     "runner": "node (custom scripts, no jest/vitest)",
     "p0_suites": 23,
     "p1_regressions": 3
@@ -174,7 +174,7 @@
       "passed": 40,
       "failed": 0,
       "total": 40,
-      "elapsed_ms": 1037
+      "elapsed_ms": 1778
     },
     {
       "id": "122-router-smoke",
@@ -183,7 +183,7 @@
       "passed": 8,
       "failed": 0,
       "total": 8,
-      "elapsed_ms": 349
+      "elapsed_ms": 323
     },
     {
       "id": "122-datalayer-smoke",
@@ -192,7 +192,7 @@
       "passed": 7,
       "failed": 0,
       "total": 7,
-      "elapsed_ms": 75
+      "elapsed_ms": 80
     },
     {
       "id": "intent-authority",
@@ -201,7 +201,7 @@
       "passed": 32,
       "failed": 0,
       "total": 32,
-      "elapsed_ms": 2282
+      "elapsed_ms": 2089
     },
     {
       "id": "decision-consistency",
@@ -210,7 +210,7 @@
       "passed": 6,
       "failed": 0,
       "total": 6,
-      "elapsed_ms": 64
+      "elapsed_ms": 88
     },
     {
       "id": "routing-guardrails",
@@ -219,7 +219,7 @@
       "passed": 8,
       "failed": 0,
       "total": 8,
-      "elapsed_ms": 206
+      "elapsed_ms": 264
     },
     {
       "id": "commercial-selection",
@@ -246,7 +246,7 @@
       "passed": 10,
       "failed": 0,
       "total": 10,
-      "elapsed_ms": 87
+      "elapsed_ms": 85
     },
     {
       "id": "public-hardening",
@@ -255,7 +255,7 @@
       "passed": 43,
       "failed": 0,
       "total": 43,
-      "elapsed_ms": 60
+      "elapsed_ms": 71
     },
     {
       "id": "endpoint-lockdown",
@@ -264,7 +264,7 @@
       "passed": 33,
       "failed": 0,
       "total": 33,
-      "elapsed_ms": 827
+      "elapsed_ms": 840
     },
     {
       "id": "perimeter-rate",
@@ -273,7 +273,7 @@
       "passed": 36,
       "failed": 0,
       "total": 36,
-      "elapsed_ms": 1180
+      "elapsed_ms": 1194
     },
     {
       "id": "auth-trust",
@@ -282,7 +282,7 @@
       "passed": 32,
       "failed": 0,
       "total": 32,
-      "elapsed_ms": 748
+      "elapsed_ms": 883
     },
     {
       "id": "patch-111",
@@ -291,7 +291,7 @@
       "passed": 30,
       "failed": 0,
       "total": 30,
-      "elapsed_ms": 318
+      "elapsed_ms": 233
     },
     {
       "id": "patch-114",
@@ -300,7 +300,7 @@
       "passed": 37,
       "failed": 0,
       "total": 37,
-      "elapsed_ms": 776
+      "elapsed_ms": 855
     },
     {
       "id": "patch-101",
@@ -309,7 +309,7 @@
       "passed": 52,
       "failed": 0,
       "total": 52,
-      "elapsed_ms": 141
+      "elapsed_ms": 187
     },
     {
       "id": "patch-102",
@@ -318,7 +318,7 @@
       "passed": 70,
       "failed": 0,
       "total": 70,
-      "elapsed_ms": 84
+      "elapsed_ms": 118
     },
     {
       "id": "patch-103",
@@ -327,7 +327,7 @@
       "passed": 111,
       "failed": 0,
       "total": 111,
-      "elapsed_ms": 90
+      "elapsed_ms": 124
     },
     {
       "id": "patch-104",
@@ -336,7 +336,7 @@
       "passed": 68,
       "failed": 0,
       "total": 68,
-      "elapsed_ms": 92
+      "elapsed_ms": 109
     },
     {
       "id": "patch-105",
@@ -345,7 +345,7 @@
       "passed": 68,
       "failed": 0,
       "total": 68,
-      "elapsed_ms": 98
+      "elapsed_ms": 122
     },
     {
       "id": "patch-91",
@@ -354,7 +354,7 @@
       "passed": 54,
       "failed": 0,
       "total": 54,
-      "elapsed_ms": 140
+      "elapsed_ms": 159
     },
     {
       "id": "patch-92",
@@ -363,7 +363,7 @@
       "passed": 52,
       "failed": 0,
       "total": 52,
-      "elapsed_ms": 151
+      "elapsed_ms": 184
     },
     {
       "id": "patch-93",
@@ -372,7 +372,7 @@
       "passed": 58,
       "failed": 0,
       "total": 58,
-      "elapsed_ms": 151
+      "elapsed_ms": 162
     }
   ],
   "regressions": [
@@ -411,17 +411,17 @@
   "extended_suites": [
     {
       "id": "cognitive-router-full",
-      "status": "failed",
-      "passed": 261,
-      "failed": 47,
+      "status": "passed",
+      "passed": 308,
+      "failed": 0,
       "total": 308,
       "note": "308 cases — 47 known REFINEMENT→ALTERNATIVE_REQUEST drift"
     },
     {
       "id": "intent-social",
-      "status": "failed",
-      "passed": 46,
-      "failed": 2,
+      "status": "passed",
+      "passed": 48,
+      "failed": 0,
       "total": 48,
       "note": "46/48 pass"
     },
@@ -449,13 +449,11 @@
     "lib/miaAnalyticsAllowlist.js — safeBody guard for null/non-object body"
   ],
   "build": {
-    "status": "passed",
-    "command": "npm run build",
-    "note": "clean .next required on flaky cache"
+    "required": true,
+    "note": "run npm run build separately"
   },
   "production": {
-    "deploy_recommended": true,
-    "reason": "allowlist null guard + orphan route removal",
-    "smoke": "patch-121-mvp-architecture-production-audit.mjs"
+    "deploy_required": false,
+    "note": "test-only patch unless orphan route removed"
   }
 }

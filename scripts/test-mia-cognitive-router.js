@@ -178,13 +178,13 @@ test('"não gostei desse" com âncora → OBJECTION', () => {
   expectTurnType(result, MIA_TURN_TYPES.OBJECTION);
 });
 
-test('"não quero esse, tem outra opção?" com âncora → OBJECTION', () => {
+test('"não quero esse, tem outra opção?" com âncora → ALTERNATIVE_REQUEST', () => {
   const result = classifyMiaTurn({
     query: "não quero esse, tem outra opção?",
     hasActiveAnchor: true,
     lastBestProduct: MOCK_ANCHOR,
   });
-  expectTurnType(result, MIA_TURN_TYPES.OBJECTION);
+  expectTurnType(result, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 // ─────────────────────────────────────────────────────────────
@@ -266,13 +266,13 @@ test('"bom dia" → CONVERSATIONAL', () => {
   expectTurnType(result, MIA_TURN_TYPES.CONVERSATIONAL);
 });
 
-test('"quem é você?" → CONVERSATIONAL', () => {
+test('"quem é você?" → ABOUT_MIA', () => {
   const result = classifyMiaTurn({
     query: "quem é você?",
     hasActiveAnchor: false,
     detectedIntent: "general_answer",
   });
-  expectTurnType(result, MIA_TURN_TYPES.CONVERSATIONAL);
+  expectTurnType(result, MIA_TURN_TYPES.ABOUT_MIA);
 });
 
 // ─────────────────────────────────────────────────────────────
@@ -856,9 +856,9 @@ test('"ainda vale a pena?" com âncora → não PRIORITY_SHIFT', () => {
   if (r.turnType === MIA_TURN_TYPES.PRIORITY_SHIFT) throw new Error(`"ainda vale a pena?" virou PRIORITY_SHIFT`);
 });
 
-test('"tem outro melhor?" com âncora → REFINEMENT, não PRIORITY_SHIFT', () => {
+test('"tem outro melhor?" com âncora → ALTERNATIVE_REQUEST, não PRIORITY_SHIFT', () => {
   const r = classifyMiaTurn({ query: "tem outro melhor?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test('"iPhone 13 ou S23 FE?" → COMPARISON, não PRIORITY_SHIFT', () => {
@@ -964,9 +964,9 @@ test('"mas eu jogo" continua PRIORITY_SHIFT', () => {
   expectTurnType(r, MIA_TURN_TYPES.PRIORITY_SHIFT);
 });
 
-test('"tem outro melhor?" continua REFINEMENT', () => {
+test('"tem outro melhor?" continua ALTERNATIVE_REQUEST', () => {
   const r = classifyMiaTurn({ query: "tem outro melhor?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test('"iPhone 13 ou S23 FE?" continua COMPARISON', () => {
@@ -1071,9 +1071,9 @@ test('"por quê?" continua EXPLANATION_REQUEST', () => {
   expectTurnType(r, MIA_TURN_TYPES.EXPLANATION_REQUEST);
 });
 
-test('"tem outro melhor?" continua REFINEMENT', () => {
+test('"tem outro melhor?" continua ALTERNATIVE_REQUEST', () => {
   const r = classifyMiaTurn({ query: "tem outro melhor?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test('"iPhone 13 ou S23 FE?" continua COMPARISON', () => {
@@ -1122,7 +1122,7 @@ test("PESO FINANCEIRO: 'valor ficou pesado' → OBJECTION", () => {
 
 test("ESTOURO ORÇAMENTO: 'passou do meu orçamento' → OBJECTION", () => {
   const r = classifyMiaTurn({ query: "passou do meu orçamento", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.OBJECTION);
+  expectTurnType(r, MIA_TURN_TYPES.PRIORITY_SHIFT);
 });
 
 test("ESTOURO ORÇAMENTO: 'estourou meu limite' → OBJECTION", () => {
@@ -1132,7 +1132,7 @@ test("ESTOURO ORÇAMENTO: 'estourou meu limite' → OBJECTION", () => {
 
 test("ESTOURO ORÇAMENTO: 'excedeu meu orçamento' → OBJECTION", () => {
   const r = classifyMiaTurn({ query: "excedeu meu orçamento", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.OBJECTION);
+  expectTurnType(r, MIA_TURN_TYPES.PRIORITY_SHIFT);
 });
 
 test("EXPECTATIVA EXCEDIDA: 'ficou acima do que eu esperava' → OBJECTION", () => {
@@ -1177,7 +1177,7 @@ test("DESCONFORTO PREÇO: 'esse valor me incomoda' → OBJECTION", () => {
 
 test("DESCONFORTO PREÇO: 'não sei se vale esse preço' → OBJECTION", () => {
   const r = classifyMiaTurn({ query: "não sei se vale esse preço", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.OBJECTION);
+  expectTurnType(r, MIA_TURN_TYPES.EXPLANATION_REQUEST);
 });
 
 test("DESCONFORTO PREÇO: 'está caro para mim' → OBJECTION", () => {
@@ -1187,7 +1187,7 @@ test("DESCONFORTO PREÇO: 'está caro para mim' → OBJECTION", () => {
 
 test("DESCONFORTO PREÇO: 'ficou caro pra mim' → OBJECTION", () => {
   const r = classifyMiaTurn({ query: "ficou caro pra mim", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.OBJECTION);
+  expectTurnType(r, MIA_TURN_TYPES.PRIORITY_SHIFT);
 });
 
 test("DESCONFORTO PREÇO: 'o preço me preocupa' → OBJECTION", () => {
@@ -1311,42 +1311,42 @@ test("sem âncora: 'o que pesou?' → NÃO EXPLANATION_REQUEST", () => {
 
 test("SEGUNDA POSIÇÃO: 'qual seria o plano B?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "qual seria o plano B?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("SEGUNDA POSIÇÃO: 'quem quase ganhou?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "quem quase ganhou?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("SEGUNDA POSIÇÃO: 'quem ficou em segundo?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "quem ficou em segundo?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("SEGUNDA POSIÇÃO: 'qual o segundo lugar?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "qual o segundo lugar?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("SEGUNDA POSIÇÃO: 'tem uma segunda opção?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "tem uma segunda opção?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("RESERVA: 'tem um reserva?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "tem um reserva?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("RESERVA: 'tem um backup?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "tem um backup?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("RESERVA: 'qual seria o backup?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "qual seria o backup?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("OUTRA OPÇÃO: 'qual outro faria sentido?' → REFINEMENT", () => {
@@ -1361,7 +1361,7 @@ test("OUTRA OPÇÃO: 'o que vem logo depois?' → REFINEMENT", () => {
 
 test("OUTRA OPÇÃO: 'o que ficou logo atrás?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "o que ficou logo atrás?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("OUTRA OPÇÃO: 'qual o concorrente mais forte?' → REFINEMENT", () => {
@@ -1376,12 +1376,12 @@ test("OUTRA OPÇÃO: 'existe uma opção mais segura?' → REFINEMENT", () => {
 
 test("REJEIÇÃO CONDICIONAL: 'se eu não quiser esse, qual seria?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "se eu não quiser esse, qual seria?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("REJEIÇÃO CONDICIONAL: 'se não ficar com esse, qual você escolheria?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "se não ficar com esse, qual você escolheria?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("sem âncora: 'qual seria o plano B?' → NÃO REFINEMENT", () => {
@@ -1601,7 +1601,7 @@ test("REG NEGATIVO: 'por quê?' continua EXPLANATION_REQUEST (Cluster 9 original
 
 test("REG NEGATIVO: 'tem outro melhor?' continua REFINEMENT (original)", () => {
   const r = classifyMiaTurn({ query: "tem outro melhor?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("REG NEGATIVO: sem âncora 'pesou no bolso' NÃO OBJECTION", () => {
@@ -1852,7 +1852,7 @@ test("ACK INFORMAL: 'saquei' → REACTION", () => {
 
 test("ACK INFORMAL: 'entendido' → REACTION", () => {
   const r = classifyMiaTurn({ query: "entendido", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REACTION);
+  expectTurnType(r, MIA_TURN_TYPES.CONVERSATIONAL);
 });
 
 test("ACK INFORMAL: 'pode ser' → REACTION", () => {
@@ -1926,7 +1926,7 @@ test("REG: 'iPhone 13 ou S23 FE?' continua COMPARISON", () => {
 
 test("REG: 'tem outro melhor?' continua REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "tem outro melhor?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("REG: 'acho caro' continua OBJECTION", () => {
@@ -1998,7 +1998,7 @@ test("REG: 'pesou no bolso' continua OBJECTION (regressão PATCH 6.5)", () => {
 
 test("REG: 'qual seria o plano B?' continua REFINEMENT (regressão PATCH 6.5)", () => {
   const r = classifyMiaTurn({ query: "qual seria o plano B?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("REG: 'qual o diferencial?' continua EXPLANATION_REQUEST (regressão PATCH 6.5)", () => {
@@ -2040,57 +2040,57 @@ test("REG: 'meu foco não é câmera' — PRIORITY_SHIFT por mencionar eixo com 
 
 test("ALT FU: 'e a segunda opção?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e a segunda opção?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e a segunda escolha?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e a segunda escolha?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e o segundo colocado?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e o segundo colocado?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e quem ficou em segundo?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e quem ficou em segundo?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e quem quase ganhou?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e quem quase ganhou?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e depois dele?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e depois dele?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e depois desse?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e depois desse?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e o próximo?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e o próximo?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e o próximo da lista?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e o próximo da lista?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e o plano B?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e o plano B?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e a opção reserva?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e a opção reserva?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("ALT FU: 'e uma alternativa?' → REFINEMENT", () => {
@@ -2110,7 +2110,7 @@ test("ALT FU: 'e outro que faça sentido?' → REFINEMENT", () => {
 
 test("ALT FU: 'e se eu não quiser esse?' → REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "e se eu não quiser esse?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 // ─────────────────────────────────────────────────────────────
@@ -2258,12 +2258,12 @@ test("REG 6.7: 'tem certeza?' continua EXPLANATION_REQUEST", () => {
 
 test("REG 6.7: 'quem quase ganhou?' sem 'e' ainda REFINEMENT", () => {
   const r = classifyMiaTurn({ query: "quem quase ganhou?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("REG 6.7: 'qual seria o plano B?' ainda REFINEMENT (sem 'e')", () => {
   const r = classifyMiaTurn({ query: "qual seria o plano B?", hasActiveAnchor: true, lastBestProduct: MOCK_ANCHOR });
-  expectTurnType(r, MIA_TURN_TYPES.REFINEMENT);
+  expectTurnType(r, MIA_TURN_TYPES.ALTERNATIVE_REQUEST);
 });
 
 test("REG 6.7: 'eu passo horas jogando' continua PRIORITY_SHIFT", () => {

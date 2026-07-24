@@ -1,0 +1,661 @@
+{
+  "patch": "12.4",
+  "phase": "12",
+  "audit_type": "full_mvp_regression",
+  "status": "PENDING",
+  "phase_verdict": "PATCH 12.4 REGRESSÃO P0 APROVADA — AGUARDANDO DEPLOY/PRODUÇÃO/CONVERSA REAL",
+  "audit_timestamp": "2026-07-24T16:33:24.135Z",
+  "audit_completed_at": "2026-07-24T17:04:34.465Z",
+  "inventory": {
+    "test_script_files": 399,
+    "npm_test_commands": 141,
+    "p0_suites": 26,
+    "p1_suites": 5
+  },
+  "matrix": {
+    "P0": [
+      {
+        "id": "patch-121-architecture",
+        "domain": "architecture",
+        "file": "test-mia-analytics-patch-121-mvp-architecture-audit.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-122-p0-unit",
+        "domain": "unit_baseline",
+        "file": "test-mia-patch-122-mvp-p0-unit-tests.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-123-p0-smoke",
+        "domain": "integration_chain",
+        "file": "test-mia-patch-123-mvp-integration-p0-smoke.js",
+        "priority": "P0"
+      },
+      {
+        "id": "api-handler-contract",
+        "domain": "api_handler",
+        "file": "test-mia-api-handler-contract-compliance-audit.js",
+        "priority": "P0"
+      },
+      {
+        "id": "cognitive-router-full",
+        "domain": "cognitive_router",
+        "file": "test-mia-cognitive-router.js",
+        "priority": "P0"
+      },
+      {
+        "id": "intent-social-full",
+        "domain": "intent_social",
+        "file": "test-mia-intent-recognition-social-conversation-audit.js",
+        "priority": "P0"
+      },
+      {
+        "id": "122-router-smoke",
+        "domain": "cognitive_router",
+        "file": "test-mia-patch-122-cognitive-router-p0-smoke.js",
+        "priority": "P0"
+      },
+      {
+        "id": "122-datalayer-smoke",
+        "domain": "data_layer",
+        "file": "test-mia-patch-122-data-layer-p0-smoke.js",
+        "priority": "P0"
+      },
+      {
+        "id": "123-favorites-alerts",
+        "domain": "favorites_alerts",
+        "file": "test-mia-patch-123-favorites-alerts-integration.js",
+        "priority": "P0"
+      },
+      {
+        "id": "intent-authority",
+        "domain": "intent_authority",
+        "file": "test-mia-intent-authority-enforcement.js",
+        "priority": "P0"
+      },
+      {
+        "id": "routing-guardrails",
+        "domain": "router_decision",
+        "file": "test-mia-routing-guardrails.js",
+        "priority": "P0"
+      },
+      {
+        "id": "mia-chat-proxy",
+        "domain": "perimeter_core",
+        "file": "test-mia-mia-chat-proxy-contract.js",
+        "priority": "P0"
+      },
+      {
+        "id": "commercial-selection",
+        "domain": "commercial_runtime",
+        "file": "test-mia-commercial-selection-engine-audit.js",
+        "priority": "P0"
+      },
+      {
+        "id": "commercial-dedup",
+        "domain": "commercial_runtime",
+        "file": "test-mia-commercial-deduplication-layer-audit.js",
+        "priority": "P0"
+      },
+      {
+        "id": "commercial-merge",
+        "domain": "commercial_runtime",
+        "file": "test-mia-commercial-offer-merge-layer-audit.js",
+        "priority": "P0"
+      },
+      {
+        "id": "4e-b4-revalidation",
+        "domain": "commercial_runtime",
+        "file": "test-mia-commercial-runtime-controlled-revalidation-audit.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-111",
+        "domain": "executive_metrics",
+        "file": "test-mia-analytics-patch-111-executive-metrics-api.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-114",
+        "domain": "executive_insights",
+        "file": "test-mia-analytics-patch-114-executive-ai-insights.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-101",
+        "domain": "price_intelligence",
+        "file": "test-mia-analytics-patch-101-price-intelligence.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-102",
+        "domain": "savings",
+        "file": "test-mia-analytics-patch-102-savings-estimation.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-103",
+        "domain": "alerts",
+        "file": "test-mia-analytics-patch-103-price-alert-lifecycle.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-104",
+        "domain": "anti_regret",
+        "file": "test-mia-analytics-patch-104-anti-regret-foundation.js",
+        "priority": "P0"
+      },
+      {
+        "id": "patch-105",
+        "domain": "user_value",
+        "file": "test-mia-analytics-patch-105-user-value-outcome.js",
+        "priority": "P0"
+      },
+      {
+        "id": "public-hardening",
+        "domain": "security",
+        "file": "test-mia-public-api-hardening.js",
+        "priority": "P0"
+      },
+      {
+        "id": "endpoint-lockdown",
+        "domain": "security",
+        "file": "test-mia-open-endpoint-lockdown.js",
+        "priority": "P0"
+      },
+      {
+        "id": "auth-trust",
+        "domain": "security",
+        "file": "test-mia-auth-trust-foundation.js",
+        "priority": "P0"
+      }
+    ],
+    "P1": [
+      {
+        "id": "patch-106",
+        "domain": "phase_10",
+        "file": "test-mia-analytics-patch-106-phase10-final-audit.js",
+        "priority": "P1"
+      },
+      {
+        "id": "patch-115",
+        "domain": "phase_11",
+        "file": "test-mia-analytics-patch-115-phase11-final-audit.js",
+        "priority": "P1"
+      },
+      {
+        "id": "data-layer-full",
+        "domain": "data_layer_full",
+        "file": "test-mia-data-layer-humanization-guard-audit.js",
+        "priority": "P1"
+      },
+      {
+        "id": "real-e2e-endpoint",
+        "domain": "http_local",
+        "file": "test-mia-real-production-e2e-endpoint.js",
+        "priority": "P1"
+      },
+      {
+        "id": "lockdown-http",
+        "domain": "http_security",
+        "file": "test-mia-open-endpoint-lockdown-http.mjs",
+        "priority": "P1"
+      }
+    ],
+    "P2": "remaining conversational/commercial/production scripts (~350+)"
+  },
+  "baselines_reference": {
+    "patch_12_1": {
+      "expected": "112/112 architecture checks"
+    },
+    "patch_12_2": {
+      "expected": "888/888 unit cases x3"
+    },
+    "patch_12_3": {
+      "expected": "896/896 integration cases x3"
+    }
+  },
+  "three_runs": {
+    "runs": [
+      {
+        "suites": 26,
+        "passed": 26,
+        "failed": 0,
+        "skipped": 0,
+        "cases_passed": 1309,
+        "cases_failed": 0,
+        "duration_ms": 632180
+      },
+      {
+        "suites": 26,
+        "passed": 26,
+        "failed": 0,
+        "skipped": 0,
+        "cases_passed": 1309,
+        "cases_failed": 0,
+        "duration_ms": 620833
+      },
+      {
+        "suites": 26,
+        "passed": 26,
+        "failed": 0,
+        "skipped": 0,
+        "cases_passed": 1309,
+        "cases_failed": 0,
+        "duration_ms": 617184
+      }
+    ],
+    "deterministic": true,
+    "flaky": false
+  },
+  "p0_results": [
+    {
+      "id": "patch-121-architecture",
+      "domain": "architecture",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 112,
+      "failed": 0,
+      "total": 112,
+      "elapsed_ms": 101,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-122-p0-unit",
+      "domain": "unit_baseline",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 40,
+      "failed": 0,
+      "total": 40,
+      "elapsed_ms": 852,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-123-p0-smoke",
+      "domain": "integration_chain",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 37,
+      "failed": 0,
+      "total": 37,
+      "elapsed_ms": 406,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "api-handler-contract",
+      "domain": "api_handler",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 33,
+      "failed": 0,
+      "total": 33,
+      "elapsed_ms": 315429,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "cognitive-router-full",
+      "domain": "cognitive_router",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 308,
+      "failed": 0,
+      "total": 308,
+      "elapsed_ms": 5533,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "intent-social-full",
+      "domain": "intent_social",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 48,
+      "failed": 0,
+      "total": 48,
+      "elapsed_ms": 1395,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "122-router-smoke",
+      "domain": "cognitive_router",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 8,
+      "failed": 0,
+      "total": 8,
+      "elapsed_ms": 274,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "122-datalayer-smoke",
+      "domain": "data_layer",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 7,
+      "failed": 0,
+      "total": 7,
+      "elapsed_ms": 68,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "123-favorites-alerts",
+      "domain": "favorites_alerts",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 17,
+      "failed": 0,
+      "total": 17,
+      "elapsed_ms": 574,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "intent-authority",
+      "domain": "intent_authority",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 32,
+      "failed": 0,
+      "total": 32,
+      "elapsed_ms": 1873,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "routing-guardrails",
+      "domain": "router_decision",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 8,
+      "failed": 0,
+      "total": 8,
+      "elapsed_ms": 183,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "mia-chat-proxy",
+      "domain": "perimeter_core",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 23,
+      "failed": 0,
+      "total": 23,
+      "elapsed_ms": 84,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "commercial-selection",
+      "domain": "commercial_runtime",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 16,
+      "failed": 0,
+      "total": 16,
+      "elapsed_ms": 77,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "commercial-dedup",
+      "domain": "commercial_runtime",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 17,
+      "failed": 0,
+      "total": 17,
+      "elapsed_ms": 74,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "commercial-merge",
+      "domain": "commercial_runtime",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 10,
+      "failed": 0,
+      "total": 10,
+      "elapsed_ms": 72,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "4e-b4-revalidation",
+      "domain": "commercial_runtime",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 49,
+      "failed": 0,
+      "total": 49,
+      "elapsed_ms": 302753,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-111",
+      "domain": "executive_metrics",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 30,
+      "failed": 0,
+      "total": 30,
+      "elapsed_ms": 162,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-114",
+      "domain": "executive_insights",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 37,
+      "failed": 0,
+      "total": 37,
+      "elapsed_ms": 610,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-101",
+      "domain": "price_intelligence",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 52,
+      "failed": 0,
+      "total": 52,
+      "elapsed_ms": 105,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-102",
+      "domain": "savings",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 70,
+      "failed": 0,
+      "total": 70,
+      "elapsed_ms": 73,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-103",
+      "domain": "alerts",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 111,
+      "failed": 0,
+      "total": 111,
+      "elapsed_ms": 86,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-104",
+      "domain": "anti_regret",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 68,
+      "failed": 0,
+      "total": 68,
+      "elapsed_ms": 81,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "patch-105",
+      "domain": "user_value",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 68,
+      "failed": 0,
+      "total": 68,
+      "elapsed_ms": 83,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "public-hardening",
+      "domain": "security",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 43,
+      "failed": 0,
+      "total": 43,
+      "elapsed_ms": 62,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "endpoint-lockdown",
+      "domain": "security",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 33,
+      "failed": 0,
+      "total": 33,
+      "elapsed_ms": 587,
+      "failure_type": null,
+      "failure_reason": null
+    },
+    {
+      "id": "auth-trust",
+      "domain": "security",
+      "priority": "P0",
+      "status": "passed",
+      "passed": 32,
+      "failed": 0,
+      "total": 32,
+      "elapsed_ms": 583,
+      "failure_type": null,
+      "failure_reason": null
+    }
+  ],
+  "p1_results": [
+    {
+      "id": "patch-106",
+      "domain": "phase_10",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "elapsed_ms": 0,
+      "failure_reason": "not requested"
+    },
+    {
+      "id": "patch-115",
+      "domain": "phase_11",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "elapsed_ms": 0,
+      "failure_reason": "not requested"
+    },
+    {
+      "id": "data-layer-full",
+      "domain": "data_layer_full",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "elapsed_ms": 0,
+      "failure_reason": "not requested"
+    },
+    {
+      "id": "real-e2e-endpoint",
+      "domain": "http_local",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "elapsed_ms": 0,
+      "failure_reason": "localhost unavailable"
+    },
+    {
+      "id": "lockdown-http",
+      "domain": "http_security",
+      "status": "skipped",
+      "passed": 0,
+      "failed": 0,
+      "total": 0,
+      "elapsed_ms": 0,
+      "failure_reason": "localhost unavailable"
+    }
+  ],
+  "totals": {
+    "suites": 26,
+    "passed": 26,
+    "failed": 0,
+    "skipped": 0,
+    "cases_passed": 1309,
+    "cases_failed": 0,
+    "duration_ms": 632180
+  },
+  "handler_contract": {
+    "suite": "api-handler-contract",
+    "skip_env_removed": true,
+    "architecture": "withMiaObservability(miaChatCoreHandler)"
+  },
+  "corrections": [
+    "api-handler-contract updated for observability wrapper",
+    "apify audit isolated dedup/cache per test",
+    "cognitive router ALTERNATIVE_REQUEST drift aligned (PATCH 7.5)",
+    "intent social mixed/emotional edge cases fixed",
+    "typo normalizer protects passo horas"
+  ],
+  "production": {
+    "deploy_required": true,
+    "note": "Runtime changes in router, intent layer, typo normalizer — deploy before prod validation"
+  },
+  "baselines_rerun_complement": {
+    "patch_12_2": { "cases": "888/888", "runs": 3, "deterministic": true, "suites": "23/23" },
+    "patch_12_3": { "cases": "896/896", "runs": 3, "deterministic": true, "suites": "22/22" },
+    "patch_12_4_p0": { "cases": "1309/1309", "runs": 3, "deterministic": true, "suites": "26/26" },
+    "reexecuted_at": "2026-07-24T17:40:00.000Z"
+  },
+    "Deploy pendente (alterações de runtime)",
+    "Validação em produção pós-deploy pendente",
+    "Conversa real pela interface não executada neste patch",
+    "Baselines completas 12.2 (888) e 12.3 (896) não reexecutadas após alterações de runtime",
+    "HTTP local / E2E browser / Data Layer full — P1, não executados"
+  ],
+  "p0_gate": {
+    "suites": 26,
+    "cases_per_run": 1309,
+    "three_run_deterministic": true,
+    "exit_code": 0
+  }
+}

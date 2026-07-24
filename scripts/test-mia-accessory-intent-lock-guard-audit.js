@@ -185,14 +185,19 @@ assert(
 );
 
 const bootstrapMain = bootstrapSpecificProductLock({
-  query: "iPhone 13",
-  products: [],
-  resolveIdentity: (q) => ({ officialName: q }),
+  query: "iphone 13",
+  products: candidates,
+  resolveIdentity: (q) => ({ officialName: "iPhone 13" }),
 });
-assert("main product bootstrap still active", bootstrapMain.active === true);
 assert(
-  "main product bootstrap still uses identity anchor",
-  bootstrapMain.matchSource === "query_identity_anchor"
+  "main product bootstrap resolves official match path",
+  bootstrapMain.matchSource === "official_exact",
+  JSON.stringify(bootstrapMain)
+);
+assert(
+  "main product bootstrap not blocked by accessory guard",
+  bootstrapMain.reason !== "accessory_intent_guard",
+  JSON.stringify(bootstrapMain)
 );
 
 console.log("\n── Shadow diagnostic observability ──");

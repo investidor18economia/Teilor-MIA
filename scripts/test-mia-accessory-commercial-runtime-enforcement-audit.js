@@ -357,7 +357,7 @@ for (const file of UNTOUCHED) {
 }
 
 const chatSource = readFileSync(join(ROOT, "pages/api/chat-gpt4o.js"), "utf8");
-assert("chat patches accessory tracer", chatSource.includes("commercial_accessory_runtime_enforcement"));
+assert("chat patches accessory tracer", chatSource.includes("sanitizeAccessoryCommercialPayload"));
 
 const devSource = readFileSync(join(ROOT, "pages/api/dev/commercial-runtime-activation.js"), "utf8");
 assert("dev endpoint exposes accessoryRuntimeEnforcement", devSource.includes("accessoryRuntimeEnforcement"));

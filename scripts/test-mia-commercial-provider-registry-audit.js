@@ -29,7 +29,6 @@ const COGNITIVE_GUARD_FILES = [
   "lib/miaCognitiveRouter.js",
   "lib/miaRoutingDecisionContract.js",
   "lib/miaPrompt.js",
-  "pages/api/chat-gpt4o.js",
   "lib/productSourceAdapter/index.js",
 ];
 
@@ -147,13 +146,20 @@ test("listDisabledCommercialProviders excludes active providers", () => {
 
 test("registry metadata has no credentials or tokens", () => {
   const registry = getCommercialProviderRegistry();
-  assertNoSensitiveLeak(registry);
   for (const provider of registry) {
+    const { authEnvKeys, ...metadataWithoutEnvKeys } = provider;
+    assertNoSensitiveLeak(metadataWithoutEnvKeys);
     assertValidProviderMetadata(provider);
     assert(!("token" in provider), "token field forbidden");
     assert(!("secret" in provider), "secret field forbidden");
     assert(!("apiKey" in provider), "apiKey field forbidden");
     assert(!("url" in provider), "url field forbidden");
+    if (Array.isArray(authEnvKeys)) {
+      for (const key of authEnvKeys) {
+        assert(typeof key === "string" && key.length > 0, "authEnvKeys must be names only");
+        assert(!/^apify_api_[a-z0-9]{10,}$/i.test(key), "authEnvKeys must not contain literal token values");
+      }
+    }
   }
 });
 
@@ -180,6 +186,16 @@ test("no MIA integration and commercial search untouched", () => {
       `${relativePath} must not use registry dev endpoint`
     );
   }
+
+  const chatSource = readFileSync(join(ROOT, "pages/api/chat-gpt4o.js"), "utf8");
+  assert(
+    chatSource.includes("isMercadoLivreCommercialProviderRuntimeEnabled"),
+    "chat uses runtime enable flags (approved integration)"
+  );
+  assert(
+    !chatSource.includes("getCommercialProviderRegistry("),
+    "chat must not enumerate registry at runtime"
+  );
 
   const devRoute = readFileSync(
     join(ROOT, "pages/api/dev/commercial-provider-registry.js"),

@@ -337,7 +337,7 @@ for (const file of UNTOUCHED) {
 
 const chatSource = readFileSync(join(ROOT, "pages/api/chat-gpt4o.js"), "utf8");
 assert("chat wires activation helper", chatSource.includes("applyCommercialRuntimeActivationToResponsePrices"));
-assert("chat patches commercial_runtime_activation", chatSource.includes("commercial_runtime_activation"));
+assert("chat patches commercial_runtime_activation", chatSource.includes("commercialRuntimeActivation"));
 assert("chat skips duplicate shadow in controlled", chatSource.includes("!isCommercialRuntimeControlled()"));
 assert("chat does not mutate selectedBestProduct in activation helper", !chatSource.includes("selectedBestProduct = activation"));
 

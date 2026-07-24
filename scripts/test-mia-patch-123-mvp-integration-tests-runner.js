@@ -125,7 +125,6 @@ function runSuite(suite, timeoutMs = 180_000) {
     env: {
       ...process.env,
       NODE_ENV: "test",
-      ...(suite.id === "api-handler-contract" ? { MIA_SKIP_HANDLER_REGRESSIONS: "1" } : {}),
     },
     timeout: effectiveTimeout,
   });
