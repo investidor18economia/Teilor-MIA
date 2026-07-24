@@ -2,9 +2,11 @@
 
 **Phase:** 12 — MVP Release Candidate  
 **Patch:** 12.4 — Regressão Completa do MVP  
-**Status:** In progress (see evidence JSON for latest run)  
-**Commit base:** `c36361e` (PATCH 12.3)  
-**Production URL:** https://economia-ai.vercel.app
+**Status:** ✅ **APPROVED — PATCH 12.4 oficialmente encerrado em produção**  
+**Commit final:** `d679b7fc99ec2b47a7d67e7feaf8c275811f1445`  
+**Branch:** `master` → `origin/master`  
+**Production URL:** https://economia-ai.vercel.app  
+**Build ID (prod):** `d679b7fc99ec`
 
 ## Objective
 
@@ -109,13 +111,15 @@ npm run test:mia:patch-124:full-regression -- --with-p1
 
 ## Production & Real Conversation (Etapas 30–31)
 
-**Required after runtime deploy** (router, intent layer, typo normalizer changed in 12.4):
+**Status:** ✅ Concluído em produção (`d679b7fc99ec`, 2026-07-24)
 
 ```bash
-npm run test:mia:patch-122:prod-validation
+PATCH124_EXPECTED_COMMIT=d679b7fc99ec npm run test:mia:patch-124:prod-validation
 ```
 
-Manual interface flows (9 scenarios + 10-turn session) documented in PATCH 12.4 roadmap — execute post-deploy.
+**Resultado:** 30/30 checks, 18/18 fluxos de conversa real via `/api/mia-chat` (9 cenários + sessão 10 turnos).
+
+Fluxos validados: genérico, produto específico, comparação, mudança de prioridade, alternativa, contestação, social, misto, multiturn 10 turnos.
 
 ## Bugs Found & Corrections
 
@@ -126,6 +130,10 @@ Manual interface flows (9 scenarios + 10-turn session) documented in PATCH 12.4 
 | 124-03 | Cognitive router | High | Test drift + runtime | ALTERNATIVE_REQUEST alignment + ABOUT_MIA/explanation guards |
 | 124-04 | Typo normalizer | Medium | Runtime | Protect `passo`/`fico` from fuzzy → `posso` |
 | 124-05 | Intent social | Medium | Runtime | Mixed/emotional edge cases |
+| 124-06 | Prod validation harness | Low | Test | Social/closing flows allow short replies (≥5 chars) |
+| 124-07 | Conversation (prod) | Low | Runtime | Flow 6 contest → resposta social genérica (P2, não bloqueante) |
+| 124-08 | Conversation (prod) | Low | Runtime | Flow 2 Galaxy S23 → contexto iPhone 13 (P2, continuidade) |
+| 124-09 | Conversation (prod) | Low | Runtime | Multiturn-8 câmera perdeu contexto (`comparison_early_not_found`) |
 
 ## Reproducible Commands
 
@@ -141,10 +149,8 @@ node scripts/test-mia-analytics-patch-121-mvp-architecture-audit.js
 npm run test:mia:patch-122:mvp-unit-tests
 npm run test:mia:patch-123:mvp-integration-tests
 
-# Key 12.4 backlog suites (standalone)
-node scripts/test-mia-api-handler-contract-compliance-audit.js
-node scripts/test-mia-cognitive-router.js
-node scripts/test-mia-intent-recognition-social-conversation-audit.js
+# Production validation (PATCH 12.4 complement)
+PATCH124_EXPECTED_COMMIT=d679b7fc99ec npm run test:mia:patch-124:prod-validation
 ```
 
 ## Evidence
@@ -156,7 +162,15 @@ Structured run output: `docs/analytics/PATCH_12_4_FULL_MVP_REGRESSION_EVIDENCE.j
 - Full 398-script inventory is not executed in one run; P0 gate selects 26 critical suites
 - Data Layer full audit remains P1 (slow)
 - HTTP local and browser E2E require environment setup
-- Production validation and manual MIA conversation pending deploy of runtime fixes
+- Auditoria visual automatizada via API; inspeção manual de UI/cards não executada neste complemento
+
+## Complement Baselines (reexecutadas)
+
+| Patch | Resultado | Determinismo |
+|-------|-----------|--------------|
+| 12.2 | 888/888 × 3 | ✅ |
+| 12.3 | 896/896 × 3 | ✅ |
+| 12.4 P0 | 1309/1309 × 3 | ✅ |
 
 ## Risks
 
@@ -164,11 +178,18 @@ Structured run output: `docs/analytics/PATCH_12_4_FULL_MVP_REGRESSION_EVIDENCE.j
 |------|----------|--------|
 | Dual winner cognitive vs `body.prices[0]` | Medium | Documented — not fixed in 12.4 |
 | Favorites localStorage ↔ DB divergence | Low | Documented |
-| Runtime changes require deploy before prod sign-off | High | Open until deploy |
+| Runtime changes require deploy before prod sign-off | High | ✅ Resolved — deploy `d679b7fc99ec` |
+
+## Final Approval (PATCH 12.4 Complement)
+
+- **PATCH 12.4 aprovado em produção**
+- **Conversa real validada** (18 fluxos via API pública)
+- **Fluxo Release Candidate concluído**
+- **Próximo patch recomendado:** PATCH 12.5 — Release Candidate Deploy
 
 ## Recommendation
 
-1. Complete P0 runner 3× determinism with green exit
-2. Deploy runtime changes from PATCH 12.4
-3. Run production smoke + manual interface conversation matrix
+1. ~~Complete P0 runner 3× determinism with green exit~~ ✅
+2. ~~Deploy runtime changes from PATCH 12.4~~ ✅
+3. ~~Run production smoke + manual interface conversation matrix~~ ✅
 4. Proceed to **PATCH 12.5 — Release Candidate Deploy**

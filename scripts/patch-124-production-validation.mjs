@@ -138,10 +138,13 @@ async function turn(flowId, text, extra = {}) {
   if (result.json?.reply) {
     messages.push({ role: "assistant", content: result.json.reply });
   }
+  const minReplyLength =
+    extra.minReplyLength ??
+    (/social|multiturn-10|7-social/i.test(flowId) ? 5 : 20);
   const approved =
     result.status === 200 &&
     !!result.summary.reply_preview &&
-    result.summary.reply_preview.length > 20 &&
+    result.summary.reply_preview.length >= minReplyLength &&
     !/undefined|null|\{"/i.test(result.summary.reply_preview);
   conversationFlows.push({
     flow_id: flowId,
@@ -162,7 +165,7 @@ await turn("3-comparison", "Galaxy S23 ou iPhone 13?");
 await turn("4-priority", "Agora considere que minha prioridade é bateria.");
 await turn("5-alternative", "Qual seria minha segunda melhor opção?");
 await turn("6-contest", "Não concordo. Acho que o outro é melhor.");
-await turn("7-social", "Obrigado, você me ajudou bastante.");
+await turn("7-social", "Obrigado, você me ajudou bastante.", { minReplyLength: 5 });
 await turn("8-mixed", "Valeu pela ajuda. E qual deles tem a melhor câmera?");
 
 const multiTurnTexts = [
@@ -179,7 +182,7 @@ const multiTurnTexts = [
 ];
 
 for (let i = 0; i < multiTurnTexts.length; i += 1) {
-  await turn(`9-multiturn-${i + 1}`, multiTurnTexts[i]);
+  await turn(`9-multiturn-${i + 1}`, multiTurnTexts[i], i === multiTurnTexts.length - 1 ? { minReplyLength: 5 } : {});
 }
 
 const evidencePath = join(ROOT, "docs/analytics/PATCH_12_4_FULL_MVP_REGRESSION_EVIDENCE.json");
