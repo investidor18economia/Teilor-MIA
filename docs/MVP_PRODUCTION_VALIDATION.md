@@ -2,7 +2,8 @@
 
 **Patch:** 12.6 — Validação em Produção  
 **Fase:** 12 — MVP Release Candidate  
-**Status:** 🟡 **AGUARDANDO APENAS VALIDAÇÃO MANUAL RESIDUAL** (API: 64/72 · Browser: 196/196 · 0 P0/P1)  
+**Status:** ✅ **PATCH 12.6 APROVADO EM PRODUÇÃO — OFICIALMENTE ENCERRADO**  
+**Validação:** API 64/72 (0 P0/P1) · Browser 196/196 · Manual residual ✅ (2026-07-24)  
 **RC validado:** MVP RC1 · `v1.0.0-rc1`  
 **Commit RC (runtime):** `d6cccb9b143b45a7b1060edf8db241849281df27`  
 **Build produção (live):** `33464830ad8a` (docs-only delta pós-tag — runtime inalterado)  
@@ -151,16 +152,20 @@ npm run test:mia:patch-126:browser-validation
 
 ## Manual Checklist Residual {#manual-checklist-residual}
 
-Itens **não** validáveis automaticamente. O browser runner já aprovou layout, envio, loading, cards, scroll, console e network.
+**Status:** ✅ **CONCLUÍDO** (2026-07-24 — validação do usuário)
 
-- [ ] **Fluidez subjetiva** — sensação de velocidade/responsividade em uso real
-- [ ] **Teclado virtual real** — comportamento em dispositivo físico (iOS/Android)
-- [ ] **Toque e gestos** — alvos de toque percebidos em hardware real
-- [ ] **Links externos** — experiência ao abrir oferta/affiliate em nova aba
-- [ ] **Julgamento humano** — continuidade conversacional e qualidade copy
-- [ ] **Inspeção visual final** — polish estético subjetivo pós-RC
+| Item | Resultado |
+|------|-----------|
+| Fluidez subjetiva | ✅ Aprovado |
+| Teclado virtual (celular) | ✅ Aprovado |
+| Toques, gestos e scroll | ✅ Aprovado |
+| Links externos | ✅ Aprovado |
+| Continuidade e copy | ✅ Aprovado |
+| Polimento visual final | ✅ Aprovado |
 
-**Registro:** data, build (`/api/health`), observações breves.
+**Problemas encontrados:** nenhum.
+
+**Conclusão:** Release Candidate validado em produção. Sem bloqueadores de usabilidade, comportamento, aparência ou continuidade.
 
 ---
 
@@ -230,6 +235,8 @@ Procedimento documentado em `docs/MVP_RELEASE_CANDIDATE.md`. Não executado nest
 
 ---
 
-## Próximo Patch
+## Veredito
 
-**PATCH 12.7 — Validação com Usuários Reais** (após aprovação formal do 12.6)
+🟢 **PATCH 12.6 APROVADO EM PRODUÇÃO — OFICIALMENTE ENCERRADO**  
+🟢 **RELEASE CANDIDATE VALIDADO EM PRODUÇÃO**  
+🟢 **PRONTO PARA O PATCH 12.7 — VALIDAÇÃO COM USUÁRIOS REAIS**

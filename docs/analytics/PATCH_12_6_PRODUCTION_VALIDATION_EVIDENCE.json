@@ -2,8 +2,8 @@
   "patch": "12.6",
   "phase": "12",
   "audit_type": "production_validation",
-  "status": "AWAITING_MANUAL_RESIDUAL",
-  "phase_verdict": "PATCH 12.6 AGUARDANDO APENAS VALIDAÇÃO MANUAL RESIDUAL",
+  "status": "APPROVED_PRODUCTION",
+  "phase_verdict": "PATCH 12.6 APROVADO EM PRODUÇÃO — OFICIALMENTE ENCERRADO",
   "rc": {
     "version": "1.0.0-rc1",
     "tag": "v1.0.0-rc1",
@@ -1538,14 +1538,20 @@
     "http_500_count": 0
   },
   "manual_validation": {
-    "required": true,
+    "required": false,
+    "completed_at": "2026-07-24T20:08:00.000Z",
+    "validated_by": "user",
     "checklist_doc": "docs/MVP_PRODUCTION_VALIDATION.md#manual-checklist-residual",
-    "pending_items": [
-      "Subjective visual fluency and polish on physical device",
-      "Real mobile keyboard behavior and touch targets feel",
-      "External affiliate link experience in real browser tab",
-      "Human judgment of conversation continuity quality"
-    ],
+    "items": {
+      "fluidez": "approved",
+      "teclado_mobile": "approved",
+      "toques_gestos_scroll": "approved",
+      "links_externos": "approved",
+      "continuidade_copy": "approved",
+      "polimento_visual": "approved"
+    },
+    "problems_found": 0,
+    "verdict": "APPROVED",
     "automated_browser_complete": true
   },
   "feature_freeze": {
@@ -1563,8 +1569,13 @@
   "final_approval": {
     "automated_at": "2026-07-24T19:15:55.653Z",
     "automated_verdict": "0 P0/P1 — automação aprovada",
-    "manual_verdict": "PENDING",
-    "next_patch_after_manual": "12.7 — Validação com Usuários Reais"
+    "browser_validated_at": "2026-07-24T20:00:03.745Z",
+    "browser_verdict": "196/196 checks — 0 P0/P1",
+    "manual_validated_at": "2026-07-24T20:08:00.000Z",
+    "manual_verdict": "APPROVED — validação residual concluída sem bloqueadores",
+    "approved_at": "2026-07-24T20:08:00.000Z",
+    "verdict": "PATCH 12.6 OFICIALMENTE APROVADO E ENCERRADO",
+    "next_patch": "12.7 — Validação com Usuários Reais"
   },
   "browser_validation": {
     "patch": "12.6",
