@@ -7,6 +7,13 @@
   "rc_version": "MVP RC1",
   "semver": "1.0.0-rc1",
   "tag": "v1.0.0-rc1",
+  "commit": {
+    "hash": "d6cccb9b143b45a7b1060edf8db241849281df27",
+    "short": "d6cccb9",
+    "branch": "master",
+    "date": "2026-07-24T18:15:00.000Z",
+    "message": "release(mvp): cut v1.0.0-rc1 Release Candidate with feature freeze"
+  },
   "audit_timestamp": "2026-07-24T18:10:00.000Z",
   "feature_freeze": {
     "active": true,
