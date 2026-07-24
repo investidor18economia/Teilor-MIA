@@ -1,0 +1,135 @@
+{
+  "patch": "12.5",
+  "phase": "12",
+  "audit_type": "release_candidate_deploy",
+  "status": "PENDING",
+  "phase_verdict": "PATCH 12.5 EM EXECUÇÃO",
+  "rc_version": "MVP RC1",
+  "semver": "1.0.0-rc1",
+  "tag": "v1.0.0-rc1",
+  "audit_timestamp": "2026-07-24T18:10:00.000Z",
+  "feature_freeze": {
+    "active": true,
+    "since_patch": "12.5",
+    "rules": [
+      "no_new_features",
+      "no_architecture_changes",
+      "no_cosmetic_without_bug",
+      "critical_fixes_only_with_regression"
+    ]
+  },
+  "pre_rc_audit": {
+    "patches": {
+      "12.1": {
+        "status": "APPROVED",
+        "commit": "bf96549",
+        "build": "513ed81753fe",
+        "evidence": "docs/analytics/PATCH_12_1_ARCHITECTURE_AUDIT_EVIDENCE.json"
+      },
+      "12.2": {
+        "status": "APPROVED",
+        "commit": "0b6a912",
+        "build": "0b6a912b2f4c",
+        "evidence": "docs/analytics/PATCH_12_2_GENERAL_UNIT_TESTS_EVIDENCE.json"
+      },
+      "12.3": {
+        "status": "APPROVED",
+        "commit": "c36361e",
+        "evidence": "docs/analytics/PATCH_12_3_GENERAL_INTEGRATION_TESTS_EVIDENCE.json"
+      },
+      "12.4": {
+        "status": "APPROVED_PRODUCTION",
+        "commit_runtime": "d679b7f",
+        "commit_docs": "bb02961",
+        "build": "d679b7fc99ec",
+        "evidence": "docs/analytics/PATCH_12_4_FULL_MVP_REGRESSION_EVIDENCE.json"
+      }
+    },
+    "blockers_p0_p1": []
+  },
+  "repository_audit": {
+    "branch": "master",
+    "committed_tree_clean": true,
+    "working_tree_notes": [
+      "12 modified files local drift (analytics SQL/docs) — not in RC commit",
+      "100+ untracked analytics WIP files — backlog, excluded from RC",
+      ".tmp-acc.txt / .tmp-acc2.txt — temp files, excluded",
+      "docs/analytics/sql/undefined — orphan filename, excluded"
+    ],
+    "secrets_scan": "no_real_secrets_found",
+    "critical_todos_fixmes": "none_found",
+    "large_files": "none_blocking"
+  },
+  "baselines_frozen": {
+    "architecture": { "patch": "12.1", "cases": "112/112", "frozen": true },
+    "unit": { "patch": "12.2", "cases": "888/888", "runs": 3, "frozen": true },
+    "integration": { "patch": "12.3", "cases": "896/896", "runs": 3, "frozen": true },
+    "regression": { "patch": "12.4", "cases": "1309/1309", "suites": 26, "runs": 3, "frozen": true }
+  },
+  "checklist_rc": {
+    "architecture": "pass",
+    "build": "pending",
+    "deploy": "pending",
+    "production": "pending",
+    "security": "pending",
+    "analytics": "pending",
+    "executive_metrics": "pending",
+    "insights": "pending",
+    "commercial_runtime": "pass",
+    "data_layer": "pass",
+    "conversation": "pass",
+    "documentation": "pending",
+    "backups": "pass",
+    "git": "pending",
+    "rollback": "pass",
+    "observability": "pending"
+  },
+  "rollback": {
+    "documented": true,
+    "procedure_validated": true,
+    "executed": false,
+    "reference_commit_pre_rc": "bb02961"
+  },
+  "backups": {
+    "github_remote": "https://github.com/investidor18economia/Teilor-MIA.git",
+    "migrations_count": 13,
+    "evidence_files": [
+      "PATCH_12_1_ARCHITECTURE_AUDIT_EVIDENCE.json",
+      "PATCH_12_2_GENERAL_UNIT_TESTS_EVIDENCE.json",
+      "PATCH_12_3_GENERAL_INTEGRATION_TESTS_EVIDENCE.json",
+      "PATCH_12_4_FULL_MVP_REGRESSION_EVIDENCE.json",
+      "PATCH_12_5_RELEASE_CANDIDATE_EVIDENCE.json"
+    ],
+    "recovery": "git clone → checkout v1.0.0-rc1 → npm ci → npm run build → vercel deploy"
+  },
+  "known_risks": [
+    { "id": "P2-124-007", "severity": "P2", "description": "Contest flow social misroute" },
+    { "id": "P2-124-008", "severity": "P2", "description": "Product context drift in session" },
+    { "id": "P2-124-009", "severity": "P2", "description": "Multiturn camera context loss" },
+    { "id": "RC-01", "severity": "P2", "description": "Dual winner cognitive vs prices[0]" },
+    { "id": "RC-02", "severity": "P2", "description": "Favorites localStorage vs DB" },
+    { "id": "RC-03", "severity": "P2", "description": "Untracked analytics WIP in working tree" }
+  ],
+  "backlog": [
+    "PATCH 12.6 — Validação em Produção",
+    "PATCH 12.7 — Validação com Usuários Reais",
+    "PATCH 12.8 — Go / No-Go MVP"
+  ],
+  "documentation": {
+    "mvp_release_candidate": "docs/MVP_RELEASE_CANDIDATE.md",
+    "roadmap_updated": "docs/analytics/02_analytics_roadmap.md",
+    "changelog_updated": "docs/analytics/ANALYTICS_CHANGELOG.md"
+  },
+  "build": {
+    "status": "passed",
+    "clean_next_and_cache": true,
+    "duration_sec": 33,
+    "warnings": ["caniuse-lite outdated"],
+    "errors": 0,
+    "local_only": true
+  },
+  "production": {
+    "url": "https://economia-ai.vercel.app",
+    "platform": "vercel"
+  }
+}

@@ -1091,6 +1091,36 @@ Patches de infraestrutura Supabase (SUPABASE-01 → 08) estão em [docs/infrastr
 
 ---
 
+## 67. PATCH 12.4 — Regressão Completa do MVP (2026-07-24)
+
+**Escopo:** gate P0 regressão (26 suítes, 1309 casos × 3), api-handler-contract, cognitive router full, intent social, commercial runtime, baselines 12.2/12.3 reexecutadas, conversa real produção.
+
+**Artefatos:** `docs/MVP_FULL_REGRESSION_BASELINE.md` · `PATCH_12_4_FULL_MVP_REGRESSION_EVIDENCE.json`
+
+**Scripts:** `test-mia-patch-124-full-mvp-regression-runner.js` · `patch-124-production-validation.mjs`
+
+**Veredito:** 🟢 **PATCH 12.4 APROVADO EM PRODUÇÃO — OFICIALMENTE ENCERRADO**
+
+**Deploy:** commit `d679b7f`, build `d679b7fc99ec`, 30/30 checks produção, 18/18 fluxos conversa real.
+
+---
+
+## 68. PATCH 12.5 — Deploy Release Candidate (2026-07-24)
+
+**Escopo:** feature freeze, auditoria repositório, versionamento MVP RC1, tag `v1.0.0-rc1`, build/deploy RC, smoke produção, baselines congeladas, checklist RC, rollback documentado.
+
+**Artefatos:** `docs/MVP_RELEASE_CANDIDATE.md` · `PATCH_12_5_RELEASE_CANDIDATE_EVIDENCE.json`
+
+**Scripts:** `patch-125-rc-smoke.mjs`
+
+**Veredito:** 🟢 **PATCH 12.5 APROVADO — RELEASE CANDIDATE GERADO**
+
+**Feature freeze:** ativo — somente correções críticas com regressão.
+
+**Próximo:** PATCH 12.6 — Validação em Produção.
+
+---
+
 ## 35. Referências
 
 | Documento | Conteúdo |

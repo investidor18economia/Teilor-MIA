@@ -550,11 +550,11 @@ Testes de Integração Gerais — 🟢 APROVADO
 
 PATCH 12.4
 
-Regressão Completa do MVP
+Regressão Completa do MVP — 🟢 APROVADO EM PRODUÇÃO — OFICIALMENTE ENCERRADO
 
 PATCH 12.5
 
-Deploy Release Candidate
+Deploy Release Candidate — 🟢 APROVADO — MVP RC1 (`v1.0.0-rc1`)
 
 PATCH 12.6
 
