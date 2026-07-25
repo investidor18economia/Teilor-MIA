@@ -3,10 +3,10 @@
   "phase": "final_phase_audit",
   "version": "3.7.0",
   "status": "APPROVED",
-  "finished_at": "2026-07-25T20:46:57.771Z",
+  "finished_at": "2026-07-25T21:09:56.088Z",
   "summary": {
-    "passed": 33,
-    "total": 33,
+    "passed": 34,
+    "total": 34,
     "failed": 0
   },
   "p36_002": {
@@ -110,6 +110,13 @@
       "id": "37.3.Vou usar mai",
       "category": "refinement",
       "label": "Vou usar mais para faculdade.",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "37.3.Agora bateri",
+      "category": "refinement",
+      "label": "Agora bateria é mais importante.",
       "pass": true,
       "detail": ""
     },

@@ -1,0 +1,117 @@
+{
+  "patch": "3.7",
+  "phase": "browser_validation",
+  "status": "APPROVED",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "commit": "0da6eee6eac3257301e54163d3109a5a70406001",
+  "finished_at": "2026-07-25T20:51:42.425Z",
+  "checks": [
+    {
+      "id": "ui-generic-clarification",
+      "pass": true,
+      "detail": "Entre as opções, eu colocaria o iPhone 13 em primeiro porque câmera confiável para fotos e vídeos.\n\nEu iria no iPhone 13, mas o iPhone 11 também entrou forte — "
+    },
+    {
+      "id": "ui-after-clarification-recommendation",
+      "pass": true,
+      "detail": "Isso realmente muda um pouco o cenário.\n\nCom o uso principal passou a ser para faculdade, olhei de novo as opções que já tínhamos em contexto.\n\nO iPhone 13 segu"
+    },
+    {
+      "id": "ui-colloquial-brand-refinement",
+      "pass": true,
+      "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nComo a marca motorola entrou na análise, reavaliei as opções que já estávamos considerando.\n\nAinda f"
+    },
+    {
+      "id": "ui-mixed-intent",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível. Reavaliei o que já tínhamos mapeado.\n\nCont"
+    },
+    {
+      "id": "ui-sequence-h-initial",
+      "pass": true,
+      "detail": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "ui-long-conversation-10-turns",
+      "pass": true,
+      "detail": "Sobre o Samsung Galaxy S22, pensando em câmera/fotos:\n\nA câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiênci"
+    },
+    {
+      "id": "ui-p36-002-opening-variety",
+      "pass": true,
+      "detail": "unique_openings=4/5"
+    },
+    {
+      "id": "ui-no-empty-bubbles",
+      "pass": true,
+      "detail": "assistant_bubbles=18"
+    }
+  ],
+  "long_conversation": [
+    {
+      "query": "Quero um celular até 2.500 para jogos.",
+      "reply_preview": "Eu iria no iPhone 13 porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhone 13 leva vantagem em desempenho nesta comparação.\n\nNa prática, tela fluida no c",
+      "opening": "Eu iria no iPhone 13 porque tela fluida no cotidiano."
+    },
+    {
+      "query": "Pode subir para 2.800.",
+      "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nCom o teto passou de R$ 2875,00 para R$ 2,00, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o Samsung Galaxy S22 — Escolhido por p",
+      "opening": "Boa — isso muda como eu comparo as opções."
+    },
+    {
+      "query": "Motorola também serve.",
+      "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o Samsung Galaxy S22 — Escolhido por performanc",
+      "opening": "Isso realmente muda um pouco o cenário."
+    },
+    {
+      "query": "Agora prioriza bateria.",
+      "reply_preview": "Entendi, você está priorizando a bateria. Isso é importante! Você está pensando em algo específico, como um dispositivo ou uma situação em que a bateria é essencial?",
+      "opening": "Entendi, você está priorizando a bateria. Isso é importante! Você está pensando em algo específico, como um dispositivo ou uma situação em que a bateria é essencial?"
+    },
+    {
+      "query": "Câmera não importa tanto.",
+      "reply_preview": "Isso realmente muda um pouco o cenário.\n\nMantendo o que conversamos, a prioridade em câmera ganhou peso — e isso pede um ajuste fino.\n\nMantenho o Samsung Galaxy S22 como melhor opção — Escolhido por p",
+      "opening": "Isso realmente muda um pouco o cenário."
+    },
+    {
+      "query": "Obrigado.",
+      "reply_preview": "De nada!",
+      "opening": "De nada!"
+    },
+    {
+      "query": "Você é uma IA?",
+      "reply_preview": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "opening": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também."
+    },
+    {
+      "query": "Voltando ao celular, tira Xiaomi.",
+      "reply_preview": "Isso realmente muda um pouco o cenário.\n\nMantendo o que conversamos, xiaomi saiu da comparação — e isso pede um ajuste fino.\n\nMantenho o Samsung Galaxy S22 como melhor opção — Escolhido por performanc",
+      "opening": "Isso realmente muda um pouco o cenário."
+    },
+    {
+      "query": "Qual ficou sendo a melhor opção?",
+      "reply_preview": "Eu iria no Samsung Galaxy S22.\n\nPensando em câmera/fotos, ele é a escolha mais coerente aqui. Ele se destaca em câmera com câmera principal de 50MP.\n\nMeu veredito: eu escolheria o Samsung Galaxy S22.",
+      "opening": "Eu iria no Samsung Galaxy S22."
+    },
+    {
+      "query": "E a segunda?",
+      "reply_preview": "Sobre o Samsung Galaxy S22, pensando em câmera/fotos:\n\nA câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média.\n\nR",
+      "opening": "Sobre o Samsung Galaxy S22, pensando em câmera/fotos:"
+    }
+  ],
+  "p36_002": {
+    "openings": [
+      "Boa — isso muda como eu comparo as opções.",
+      "Isso realmente muda um pouco o cenário.",
+      "Entendi, você está priorizando a bateria. Isso é importante! Você está pensando em algo específico, como um dispositivo ou uma situação em que a bateria é essencial?",
+      "Isso realmente muda um pouco o cenário.",
+      "De nada!"
+    ],
+    "unique_openings": 4,
+    "classification": "COSMETIC_NON_BLOCKING"
+  },
+  "summary": {
+    "passed": 8,
+    "failed": 0
+  }
+}

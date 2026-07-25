@@ -1,9 +1,38 @@
 {
   "patch": "3.7",
   "phase": "pending_issues",
-  "finished_at": "2026-07-25T20:47:00.708Z",
-  "blocking": [],
-  "non_blocking": [],
-  "out_of_scope": [],
-  "note": "Updated after production and browser validation"
+  "finished_at": "2026-07-25T21:15:00.000Z",
+  "blocking": [
+    {
+      "id": "P37-DEPLOY-001",
+      "problem": "Correções locais (budget 'para N mil', priority 'Agora bateria é mais importante') não estão em produção",
+      "impact": "Produção ainda em build f1bcf6f1203e; push para master bloqueado aguardando aprovação",
+      "evidence": "PATCH_3_7_PRODUCTION_EVIDENCE.json deploy_build=f1bcf6f1203e, commit local=0da6eee+",
+      "patch": "3.7",
+      "blocking": true,
+      "resolution": "Aprovar git push origin master e reexecutar patch-37-production-validation.mjs"
+    }
+  ],
+  "non_blocking": [
+    {
+      "id": "P36-002",
+      "problem": "Repetição ocasional de abertura humanizada em refinamentos consecutivos",
+      "impact": "Cosmético — variedade suficiente na prática",
+      "evidence": "Local: 3/5 unique openings; Produção P36-002: 7/7 unique; Browser: 4/5 unique",
+      "classification": "COSMETIC_NON_BLOCKING",
+      "blocking": false,
+      "examples": [
+        "Isso realmente muda um pouco o cenário.",
+        "Boa — isso muda como eu comparo as opções."
+      ]
+    },
+    {
+      "id": "P37-BROWSER-RATE-LIMIT",
+      "problem": "Sequence-H no browser pode receber rate-limit em sessão longa",
+      "impact": "Intermitente em testes browser consecutivos; não reproduzido na API isolada",
+      "evidence": "PATCH_3_7_BROWSER_EVIDENCE.json ui-sequence-h-initial",
+      "blocking": false
+    }
+  ],
+  "out_of_scope": []
 }

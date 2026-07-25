@@ -101,7 +101,7 @@ await sleep(4000);
 const seqHReply = await send("quero um cell ate 2500");
 checks.push({
   id: "ui-sequence-h-initial",
-  pass: isGood(seqHReply) && !/qual recomendação anterior/i.test(seqHReply),
+  pass: isGood(seqHReply) && !/qual recomendação anterior|várias mensagens em sequência|aguarde alguns segundos/i.test(seqHReply),
   detail: seqHReply.slice(0, 160),
 });
 

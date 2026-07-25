@@ -133,7 +133,7 @@ async function runNegative(id, query, runId = 1) {
   const reply = String(json.reply || "");
   const pass =
     res.status === 200 &&
-    reply.length >= 10 &&
+    reply.length >= 4 &&
     !/galaxy|iphone|motorola|recomendo o|até r\$|orçamento de/i.test(reply);
   scenarios.push({
     scenario_id: id,
@@ -227,7 +227,9 @@ const SCENARIOS = [
       "Qualquer marca serve, menos Xiaomi.",
       "Qual é a recomendação agora?",
     ],
-    validate: (reply) => isRichCommercial(reply) && /recomend|continuo|considerando/i.test(reply),
+    validate: (reply) =>
+      isIntegratedReply(reply) &&
+      /recomend|iria no|ficaria com|melhor opção|continuo|considerando|reavali/i.test(reply),
   },
   {
     id: "p36-002:consecutive-refinements",

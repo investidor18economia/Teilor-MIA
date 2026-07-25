@@ -169,6 +169,7 @@ const REFINE_CASES = [
   ["Tira Xiaomi.", (c) => c.excludedBrands.includes("xiaomi")],
   ["Qualquer marca serve.", (c) => !c.preferredBrands.length],
   ["Vou usar mais para faculdade.", (c) => /facul/.test(c.useCase || "")],
+  ["Agora bateria é mais importante.", (c) => (c.desiredAttributes || []).includes("battery")],
 ];
 for (const [msg, check] of REFINE_CASES) {
   test(`37.3.${msg.slice(0, 12)}`, "refinement", msg, () => {

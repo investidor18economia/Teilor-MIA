@@ -2,7 +2,7 @@
   "patch": "3.7",
   "phase": "long_conversations",
   "status": "PENDING_PRODUCTION",
-  "finished_at": "2026-07-25T20:47:00.708Z",
+  "finished_at": "2026-07-25T21:09:59.313Z",
   "scenarios": [
     {
       "id": "long-a",

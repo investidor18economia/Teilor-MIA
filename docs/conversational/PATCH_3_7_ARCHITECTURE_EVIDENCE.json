@@ -2,9 +2,9 @@
   "patch": "3.7",
   "phase": "architecture_audit",
   "status": "APPROVED",
-  "finished_at": "2026-07-25T20:47:00.706Z",
-  "commit": "184ea85918e3c5d0fa27547fdd4f14ec23b6d47b",
-  "build": "184ea85918e3",
+  "finished_at": "2026-07-25T21:09:59.311Z",
+  "commit": "0da6eee6eac3257301e54163d3109a5a70406001",
+  "build": "0da6eee6eac3",
   "principles": {
     "mia_owns_intelligence": true,
     "llm_only_verbalizes": true,
@@ -38,7 +38,7 @@
       "script": "scripts/test-mia-patch-37-final-phase-audit.js",
       "pass": true,
       "exit_code": 0,
-      "output_tail": "  ✓ pode aumentar pra 2500\n\n════════════════════════════════════════════════════════════\n  PATCH 3.7 Local Audit: 33/33 passed\n  P36-002: COSMETIC_NON_BLOCKING (3/5 unique openings)\n"
+      "output_tail": "  ✓ pode aumentar pra 2500\n\n════════════════════════════════════════════════════════════\n  PATCH 3.7 Local Audit: 34/34 passed\n  P36-002: COSMETIC_NON_BLOCKING (3/5 unique openings)\n"
     },
     {
       "script": "scripts/test-mia-patch-36-general-regression-audit.js",
