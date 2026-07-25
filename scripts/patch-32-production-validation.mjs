@@ -92,6 +92,7 @@ async function runMultiStep(def) {
     }
     if (step.expectNoOffers) pass = pass && !(json.prices?.length > 0);
     if (step.expectOffers) pass = pass && (json.prices?.length > 0);
+    if (step.expectCommercialReply) pass = pass && String(json.reply || "").length >= 20;
     if (step.expectNoInstitutional) {
       const reply = String(json.reply || "");
       pass = pass && !INSTITUTIONAL_FALLBACK_RE.test(reply);
@@ -195,8 +196,9 @@ await runMultiStep({
     { text: "oi", expectNoOffers: true, expectWinnerPreserved: false },
     {
       text: "quero notebook ate 4000",
-      expectOffers: true,
       expectNoInstitutional: true,
+      expectWinnerPreserved: true,
+      expectCommercialReply: true,
     },
   ],
 });
