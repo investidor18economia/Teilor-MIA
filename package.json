@@ -161,6 +161,7 @@
     "test:mia:conv:patch-35b:prod-validation": "node scripts/patch-35b-production-validation.mjs",
     "test:mia:conv:patch-35b:browser-validation": "node scripts/patch-35b-browser-validation.mjs",
     "test:mia:conv:patch-36:general-regression-audit": "node scripts/test-mia-patch-36-general-regression-audit.js",
+    "test:mia:conv:patch-36:mixed-intent-audit": "node scripts/test-mia-patch-36-mixed-intent-audit.js",
     "test:mia:conv:patch-36:run-all-regressions": "node scripts/patch-36-run-all-regressions.mjs",
     "test:mia:conv:patch-36:prod-validation": "node scripts/patch-36-production-validation.mjs",
     "test:mia:conv:patch-36:browser-validation": "node scripts/patch-36-browser-validation.mjs",

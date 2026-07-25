@@ -9,6 +9,7 @@ import {
   CONSTRAINT_REFINEMENT_VERSION,
   REFINEMENT_TYPES,
   extractCommercialRefinement,
+  extractCommercialRefinements,
   resolveCommercialConstraintRefinement,
   buildConstraintRefinementDeterministicReply,
 } from "../lib/miaCommercialConstraintRefinement.js";
@@ -28,7 +29,7 @@ import {
   buildHumanizedRefinementTransition,
 } from "../lib/miaVerbalizerHumanization.js";
 
-export const PATCH_36_VERSION = "3.6.0";
+export const PATCH_36_VERSION = "3.6.1";
 
 let total = 0;
 let passed = 0;
@@ -340,23 +341,28 @@ test("3.6.10", "brand negation excludes motorola", () => {
 });
 
 section("3.6.11 — Mixed intent (Sequence F)");
-test("3.6.11", "budget relax + brand restriction both detected", () => {
-  const relax = extractCommercialRefinement(
-    "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
-    SESSION
-  );
-  const brand = extractCommercialRefinement(
-    "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
-    SESSION
-  );
+test("3.6.11", "budget relax + brand restriction both applied", () => {
+  const msg =
+    "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.";
+  const refs = extractCommercialRefinements(msg, SESSION);
+  const r = resolveCommercialConstraintRefinement({
+    message: msg,
+    sessionContext: SESSION,
+    hasValidContext: true,
+    baselineProduct: SESSION.lastBestProduct,
+  });
   return (
-    relax.refinementType === REFINEMENT_TYPES.RELAX_CONSTRAINT ||
-    brand.detected
+    refs.length >= 2 &&
+    refs.some((x) => x.refinementType === REFINEMENT_TYPES.RELAX_CONSTRAINT) &&
+    refs.some((x) => x.brandRestriction || x.refinementType === REFINEMENT_TYPES.POSITIVE_BRAND_REFINEMENT) &&
+    r.mergedConstraints.preferredBrands.includes("samsung") &&
+    r.mergedConstraints.preferredBrands.includes("motorola") &&
+    r.mergedConstraints.budgetMax > 3000
   );
 });
 
 section("3.6.12 — Regression guards");
-test("3.6.12", "constraint module version 3.6.0", () => CONSTRAINT_REFINEMENT_VERSION === "3.6.0");
+test("3.6.12", "constraint module version 3.6.1", () => CONSTRAINT_REFINEMENT_VERSION === "3.6.1");
 
 console.log(`\n${"═".repeat(60)}`);
 console.log(`  PATCH 3.6 Audit: ${passed}/${total} passed`);

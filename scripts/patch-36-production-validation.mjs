@@ -84,7 +84,12 @@ async function runMultiTurn(def) {
     });
     lastReply = String(json.reply || "");
     sessionContext = json.session_context || sessionContext;
-    trace.push({ query, status: res.status, reply_preview: lastReply.slice(0, 160) });
+    trace.push({
+      query,
+      status: res.status,
+      reply_preview: lastReply.slice(0, 160),
+      session_context: sessionContext,
+    });
     if (res.status !== 200) break;
     if (i < def.turns.length - 1) await new Promise((r) => setTimeout(r, CHAT_DELAY_MS));
   }
@@ -147,6 +152,23 @@ await runMultiTurn({
     "Quero um celular Samsung até 3 mil.",
     "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
   ],
+  validate: (reply, trace) => {
+    const ctx = trace[1]?.session_context || {};
+    const constraints = ctx.lastCommercialConstraints || ctx.commercialConstraints || {};
+    const brands = constraints.preferredBrands || [];
+    const budget = constraints.budgetMax;
+    const mentionsBoth =
+      /samsung/i.test(reply) &&
+      /motorola/i.test(reply) &&
+      (/passar|flex|orçamento|teto|3450|3\.450|um pouco/i.test(reply) ||
+        (typeof budget === "number" && budget > 3000));
+    const contextOk =
+      brands.includes("samsung") &&
+      brands.includes("motorola") &&
+      typeof budget === "number" &&
+      budget > 3000;
+    return isRichCommercial(reply) && (mentionsBoth || contextOk);
+  },
 });
 
 await runMultiTurn({

@@ -254,7 +254,7 @@ test("qualquer marca serve still remove constraint", () => {
   const r = extractCommercialRefinement("qualquer marca serve", BASE_CTX);
   return r.refinementType === REFINEMENT_TYPES.REMOVE_CONSTRAINT;
 });
-test("version is 3.6.0", () => CONSTRAINT_REFINEMENT_VERSION === "3.6.0");
+test("version is 3.6.1", () => CONSTRAINT_REFINEMENT_VERSION === "3.6.1");
 
 console.log(`\n${"═".repeat(60)}`);
 console.log(`  PATCH 3.4b Audit: ${passed}/${total} passed`);
