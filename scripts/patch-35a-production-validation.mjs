@@ -55,8 +55,12 @@ function isRichCommercialReply(reply = "") {
   const r = String(reply || "").trim();
   if (r.length < 40) return false;
   if (SHALLOW.test(r.split("\n")[0])) return false;
-  return /reavali|mantenho|mudaria|orçamento|marca|uso|recomend|lider|passa a|continua|tradeoff|porque|pois/i.test(
-    r
+  return (
+    r.length >= 40 &&
+    !SHALLOW.test(r.split("\n")[0]) &&
+    /reavali|mantenho|mudaria|orçamento|marca|uso|recomend|lider|passa a|continua|tradeoff|porque|pois|eu iria|custo-benef|equil[ií]brio|principal motivo|entrou na an[aá]lise|flex[ií]vel/i.test(
+      r
+    )
   );
 }
 
