@@ -3,7 +3,7 @@
   "phase": "final_phase_audit",
   "version": "3.7.0",
   "status": "APPROVED",
-  "finished_at": "2026-07-25T21:09:56.088Z",
+  "finished_at": "2026-07-25T23:34:55.906Z",
   "summary": {
     "passed": 34,
     "total": 34,
@@ -12,7 +12,7 @@
   "p36_002": {
     "classification": "COSMETIC_NON_BLOCKING",
     "openings": [
-      "Isso realmente muda um pouco o cenário.",
+      "Esse ajuste muda o recorte da escolha.",
       "Com essa informação consigo refinar melhor a recomendação.",
       "Com essa informação consigo refinar melhor a recomendação.",
       "Com essa informação consigo refinar melhor a recomendação.",
@@ -190,7 +190,7 @@
       "pass": true,
       "detail": "",
       "openings": [
-        "Isso realmente muda um pouco o cenário.",
+        "Esse ajuste muda o recorte da escolha.",
         "Com essa informação consigo refinar melhor a recomendação.",
         "Com essa informação consigo refinar melhor a recomendação.",
         "Com essa informação consigo refinar melhor a recomendação.",

@@ -2,8 +2,9 @@
 
 **Patch:** 2.6 — Baseline Conversacional  
 **Fase:** 2 — Classificação e Priorização (encerrada)  
-**Próxima fase:** Conv-Phase 3 — Correções Conversacionais  
+**Conv-Phase 3:** Correções Conversacionais — **✅ ENCERRADA** (2026-07-25 · build `c77b76649224`)  
 **Status:** 🟢 Baseline congelado — referência permanente pré-implementação  
+**Pós-Fase 3:** ver `CONV_PHASE_3_CLOSURE.md` e `PATCH_3_7_FINAL_AUDIT_REPORT.md`  
 **Data de congelamento:** 2026-07-25  
 **RC de referência:** MVP RC1 · `v1.0.0-rc1` · commit `d6cccb9`  
 **Autoridade arquitetural:** documentos mestres em `docs/documentos master mestres pra dar contexto/`
@@ -765,4 +766,4 @@ Consultar **antes de merge, após implementação e na auditoria 3.7**.
 
 ---
 
-*Baseline Conversacional Oficial — PATCH 2.6 · Congelado em 2026-07-25 · Pré Conv-Phase 3*
+*Baseline Conversacional Oficial — PATCH 2.6 · Congelado em 2026-07-25 · Conv-Phase 3 encerrada em 2026-07-25 (PATCH 3.7 APROVADO)*

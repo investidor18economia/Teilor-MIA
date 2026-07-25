@@ -2,9 +2,9 @@
   "patch": "3.7",
   "phase": "architecture_audit",
   "status": "APPROVED",
-  "finished_at": "2026-07-25T21:09:59.311Z",
-  "commit": "0da6eee6eac3257301e54163d3109a5a70406001",
-  "build": "0da6eee6eac3",
+  "finished_at": "2026-07-25T23:34:59.120Z",
+  "commit": "c77b766492241d76ccf8a93bf0fe2cec6eec11fc",
+  "build": "c77b76649224",
   "principles": {
     "mia_owns_intelligence": true,
     "llm_only_verbalizes": true,
@@ -113,6 +113,12 @@
       "output_tail": "\nPATCH 11B.3 tests: 101 passed, 0 failed\n"
     },
     {
+      "script": "scripts/test-mia-commercial-follow-up-continuity.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "Grupo G — generalização categorias\n  ✓ geladeira runner-up\n\nResultado: 25 passed, 0 failed\n\n"
+    },
+    {
       "script": "scripts/test-mia-patch-122-data-layer-p0-smoke.js",
       "pass": true,
       "exit_code": 0,
@@ -120,8 +126,8 @@
     }
   ],
   "summary": {
-    "total": 14,
-    "passed": 14,
+    "total": 15,
+    "passed": 15,
     "failed": 0
   }
 }
