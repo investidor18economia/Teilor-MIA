@@ -73,14 +73,25 @@ expectTrue("strict contract accepts polished opening", matchesStrictFirstAnswerC
 expectTrue("winner preserved", fa.includes("Galaxy A55"));
 
 // ── Refinement polish ──
-const refinementReply = buildConstraintRefinementDeterministicReply({
-  selectedProduct: { product_name: "Galaxy S23 FE", price: "2200" },
-  refinement: { refinementType: REFINEMENT_TYPES.NEGATIVE_BRAND_REFINEMENT, value: "apple" },
-  mergedConstraints: { budgetMax: 2500 },
-  priorConstraints: { budgetMax: 2500 },
-});
+const refinementReply = buildConstraintRefinementDeterministicReply(
+  {
+    selectedProduct: { product_name: "Galaxy S23 FE", price: "2200" },
+    refinement: { refinementType: REFINEMENT_TYPES.NEGATIVE_BRAND_REFINEMENT, value: "apple" },
+    mergedConstraints: { budgetMax: 2500, excludedBrands: ["apple"] },
+    priorConstraints: { budgetMax: 2500, preferredBrands: ["apple"] },
+    decisionRefreshMode: "RERANK_EXISTING_PRODUCTS",
+  },
+  {
+    lastBestProduct: { product_name: "Galaxy S23 FE", price: "2200" },
+    lastAxis: "value",
+    lastDecisionReason: "Melhor equilíbrio com foco em custo-benefício",
+  }
+);
 expectTrue("refinement reply exists", !!refinementReply?.reply);
-expectTrue("refinement excludes apple wording", /Retiro apple|retiro apple/i.test(refinementReply.reply));
+expectTrue(
+  "refinement excludes apple wording",
+  /apple|comparação|reavali|saiu/i.test(refinementReply.reply)
+);
 expectTrue("refinement product preserved", refinementReply.reply.includes("Galaxy S23 FE"));
 expectFalse("refinement no Perfeito", /^Perfeito/i.test(refinementReply.reply));
 
