@@ -93,6 +93,16 @@ async function runMultiTurn(def) {
     pass = pass && Number(sessionContext?.budgetMax || sessionContext?.lastCommercialConstraints?.budgetMax) >= def.expectBudgetInSession;
   }
   if (def.expectReplyPattern) pass = pass && def.expectReplyPattern.test(lastReply);
+  if (def.expectBrandMerge) {
+    const brands =
+      sessionContext?.lastCommercialConstraints?.preferredBrands ||
+      sessionContext?.preferredBrands ||
+      [];
+    pass =
+      pass &&
+      brands.includes("samsung") &&
+      brands.includes("motorola");
+  }
   if (def.expectOffersOnLastTurn) pass = pass && (lastJson.prices?.length || 0) > 0;
   if (def.expectNoFullBlock) pass = pass && lastReply.length >= 20;
 
@@ -124,7 +134,7 @@ await runMultiTurn({
     { query: "Quero um celular Samsung até R$ 3.000." },
     { query: "Pode ser Motorola também." },
   ],
-  expectReplyPattern: /motorola|edge|moto/i,
+  expectBrandMerge: true,
   expectNoFullBlock: true,
 });
 

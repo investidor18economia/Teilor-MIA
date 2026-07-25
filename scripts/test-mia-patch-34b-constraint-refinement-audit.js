@@ -117,12 +117,17 @@ test("pode ser Motorola também adds brand", () => {
     r.value === "motorola"
   );
 });
-test("brand relax merges preferredBrands", () => {
+test("brand relax infers anchor brand from lastBestProduct", () => {
+  const ctx = {
+    ...BASE_CTX,
+    lastCommercialConstraints: { category: "phone", budgetMax: 3000 },
+    lastBestProduct: { product_name: "Samsung Galaxy S23 FE", price: "2200" },
+  };
   const resolved = resolveCommercialConstraintRefinement({
     message: "Pode ser Motorola também",
-    sessionContext: BASE_CTX,
+    sessionContext: ctx,
     hasValidContext: true,
-    baselineProduct: BASE_CTX.lastBestProduct,
+    baselineProduct: ctx.lastBestProduct,
   });
   const brands = resolved.mergedConstraints?.preferredBrands || [];
   return brands.includes("samsung") && brands.includes("motorola");
