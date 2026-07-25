@@ -1,0 +1,127 @@
+{
+  "patch": "3.7",
+  "phase": "architecture_audit",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T20:47:00.706Z",
+  "commit": "184ea85918e3c5d0fa27547fdd4f14ec23b6d47b",
+  "build": "184ea85918e3",
+  "principles": {
+    "mia_owns_intelligence": true,
+    "llm_only_verbalizes": true,
+    "no_parallel_router": true,
+    "no_llm_decision": true,
+    "no_phrase_hardcodes": true,
+    "winner_authority_intact": true
+  },
+  "pipeline": [
+    "User Message",
+    "Input Normalization",
+    "Intent Recognition",
+    "Intent Authority",
+    "Mixed Segmentation",
+    "Clarification Gates",
+    "Commercial Entry / Follow-Up Classification",
+    "Context Resolution",
+    "Constraint Refinement",
+    "Decision Refresh",
+    "Decision Engine",
+    "Decision Facts",
+    "Commercial Explanation",
+    "Narrative",
+    "Verbalizer / Humanization",
+    "Final Response",
+    "Context Persistence",
+    "Next Turn"
+  ],
+  "regression_results": [
+    {
+      "script": "scripts/test-mia-patch-37-final-phase-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ pode aumentar pra 2500\n\n════════════════════════════════════════════════════════════\n  PATCH 3.7 Local Audit: 33/33 passed\n  P36-002: COSMETIC_NON_BLOCKING (3/5 unique openings)\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-36-general-regression-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ constraint module version 3.7.0+\n\n════════════════════════════════════════════════════════════\n  PATCH 3.6 Audit: 40/40 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-36-mixed-intent-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ mixed intent infers budget from prior query when constraints empty\n\n════════════════════════════════════════════════════════════\n  Mixed Intent Audit: 15/15 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-36-sequence-h-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ mixed-2 still refinement with anchor\n\n════════════════════════════════════════════════════════════\n  Sequence-H Audit: 39/39 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-31-commercial-entry-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ 6.1: deny path invariants\n\n============================================================\nResultado PATCH 3.1: 18 passed, 0 failed\nPATCH 3.1 COMMERCIAL ENTRY: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-32-conversational-continuity-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "PATCH 3.2 audit: 22/22 passed, 0 failed\n============================================================\n\nPATCH 3.2 CONVERSATIONAL CONTINUITY: APROVADO\n\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-33-product-resolution-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "============================================================\nPATCH 3.3 AUDIT: 28/28 passed\n\nVeredito: APROVADO\n\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-34a-clarification-gates-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "============================================================\nPATCH 3.4a AUDIT: 18/18 passed\n\nVeredito: APROVADO\n\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-34b-constraint-refinement-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ version is 3.7.0+\n\n════════════════════════════════════════════════════════════\n  PATCH 3.4b Audit: 18/18 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-35a-decision-facts-narrative-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ social ack without commercial context still works\n\n════════════════════════════════════════════════════════════\n  PATCH 3.5a Audit: 15/15 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-35b-verbalizer-humanization-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✓ narrative version is 3.5b.0\n\n════════════════════════════════════════════════════════════\n  PATCH 3.5b Audit: 30/30 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-conversation-polish.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "COMPARATIVE_RUNNER_UP_AUDIT {\"version\":\"10.1C.1\",\"applied\":false,\"query\":\"celular\",\"winner\":\"Galaxy A55\",\"runnerUp\":null,\"runnerUpSource\":null,\"candidateCount\":1,\"skippedReason\":\"no_candidates\",\"winnerPreserved\":true,\"specificProductLockActive\":false,\"comparisonAxis\":null,\"confidence\":null}\nGENERIC_QUERY_CLARIFICATION_CLOSING_AUDIT {\"version\":\"3.4b.0\",\"applied\":false,\"query\":\"celular\",\"category\":\"mobile\",\"winner\":\"Galaxy A55\",\"specificProductLockActive\":false,\"detectedBudget\":null,\"primaryAxis\":null,\"missingContextAxis\":null,\"question\":null,\"skippedReason\":\"not_generic_query\",\"confidence\":null}\n\nPATCH 11C polish tests: 22 passed, 0 failed\n"
+    },
+    {
+      "script": "scripts/test-mia-natural-conversation-and-constraint-refinement.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "\nPATCH 11B.3 tests: 101 passed, 0 failed\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-122-data-layer-p0-smoke.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "  ✅ guard null safe\n  ✅ no invented specs empty\n\nResult: 7 passed, 0 failed\n\n"
+    }
+  ],
+  "summary": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "patch": "3.7",
+  "phase": "semantic_generalization",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T20:47:00.708Z",
+  "families_tested": [
+    "commercial_entry",
+    "budget_refinement",
+    "brand_refinement",
+    "use_case_refinement",
+    "mixed_intent",
+    "negative_controls"
+  ],
+  "note": "Full matrix validated via patch-37 local audit + production validation"
+}
