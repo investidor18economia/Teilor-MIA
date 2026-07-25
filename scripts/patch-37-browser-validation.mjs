@@ -166,12 +166,25 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
     trace.push({ query: turn, opening: firstLine(r.reply), reply_preview: r.reply.slice(0, 200), rate_limited: r.rate_limited });
   }
   const last = trace[trace.length - 1];
+  const returnCommercialTurn = trace.find((t) => /voltando ao celular/i.test(t.query || ""));
+  const postReturnTurn = trace[trace.length - 2];
+  const casualReturnReply =
+    postReturnTurn?.reply_preview ||
+    returnCommercialTurn?.reply_preview ||
+    last?.reply_preview ||
+    "";
   const openings = trace.slice(1, 6).map((t) => t.opening);
   const uniqueOpenings = new Set(openings).size;
   const anyRateLimit = trace.some((t) => t.rate_limited);
   recordCheck("ui-long-conversation-10-turns", isGood(last?.reply_preview || "") && trace.length === 10 && !anyRateLimit, last?.reply_preview);
   recordCheck("ui-p36-002-opening-variety", uniqueOpenings >= 2 && !anyRateLimit, `unique_openings=${uniqueOpenings}/${openings.length}`, { openings });
-  recordCheck("ui-casual-return-commercial", /xiaomi|recomend|melhor|segunda|opção/i.test(last?.reply_preview || "") && !anyRateLimit, last?.reply_preview);
+  recordCheck(
+    "ui-casual-return-commercial",
+    isGood(casualReturnReply) &&
+      !anyRateLimit &&
+      /iphone|galaxy|samsung|motorola|recomend|opção|indic|melhor/i.test(casualReturnReply),
+    casualReturnReply
+  );
   flows.push({ ...flow, trace, rate_limit_events: trace.filter((t) => t.rate_limited).length });
 }
 
