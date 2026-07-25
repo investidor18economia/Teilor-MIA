@@ -29,7 +29,7 @@ import {
   buildHumanizedRefinementTransition,
 } from "../lib/miaVerbalizerHumanization.js";
 
-export const PATCH_36_VERSION = "3.6.1";
+export const PATCH_36_VERSION = "3.6.2";
 
 let total = 0;
 let passed = 0;
@@ -362,7 +362,7 @@ test("3.6.11", "budget relax + brand restriction both applied", () => {
 });
 
 section("3.6.12 — Regression guards");
-test("3.6.12", "constraint module version 3.6.1", () => CONSTRAINT_REFINEMENT_VERSION === "3.6.1");
+test("3.6.12", "constraint module version 3.6.2", () => CONSTRAINT_REFINEMENT_VERSION === "3.6.2");
 
 console.log(`\n${"═".repeat(60)}`);
 console.log(`  PATCH 3.6 Audit: ${passed}/${total} passed`);

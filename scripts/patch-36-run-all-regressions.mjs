@@ -13,6 +13,7 @@ const ROOT = join(__dirname, "..");
 const suites = [
   "scripts/test-mia-patch-36-general-regression-audit.js",
   "scripts/test-mia-patch-36-mixed-intent-audit.js",
+  "scripts/test-mia-patch-36-sequence-h-audit.js",
   "scripts/test-mia-patch-31-commercial-entry-audit.js",
   "scripts/test-mia-patch-32-conversational-continuity-audit.js",
   "scripts/test-mia-patch-33-product-resolution-audit.js",
