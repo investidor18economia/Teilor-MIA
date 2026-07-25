@@ -1,0 +1,166 @@
+{
+  "patch": "3.4a",
+  "phase": "production_validation",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T16:34:36.478Z",
+  "finished_at": "2026-07-25T16:35:49.266Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "deploy_build": "001b7b7dff7d",
+  "summary": {
+    "passed": 9,
+    "failed": 0,
+    "p0_failed": 0,
+    "scenarios": 6
+  },
+  "checks": [
+    {
+      "id": "health",
+      "pass": true,
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T16:34:37.627Z\",\"build\":\"001b7b7dff7d\"}",
+      "severity": "P0",
+      "at": "2026-07-25T16:34:37.323Z"
+    },
+    {
+      "id": "sufficient:celular-ate-2000",
+      "pass": true,
+      "detail": "offers=3 elapsed=9727ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:34:47.051Z"
+    },
+    {
+      "id": "insufficient:celular-sem-budget",
+      "pass": true,
+      "detail": "offers=0 elapsed=852ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:34:53.413Z"
+    },
+    {
+      "id": "comparison:entre-s24-iphone15",
+      "pass": true,
+      "detail": "offers=0 elapsed=3405ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:35:02.329Z"
+    },
+    {
+      "id": "partial:notebook-edicao",
+      "pass": true,
+      "detail": "offers=0 elapsed=338ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:35:08.167Z"
+    },
+    {
+      "id": "vague:algo-bom",
+      "pass": true,
+      "detail": "offers=0 elapsed=631ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:35:14.309Z"
+    },
+    {
+      "id": "follow-up:no-budget-reask",
+      "pass": true,
+      "detail": "Buscando algo mais em conta — o iPhone 11 passa a liderar entre as opções restantes.",
+      "severity": "P0",
+      "at": "2026-07-25T16:35:35.268Z"
+    },
+    {
+      "id": "regression:patch-3.3-iphone15",
+      "pass": true,
+      "detail": "offers=3",
+      "severity": "P0",
+      "at": "2026-07-25T16:35:41.372Z"
+    },
+    {
+      "id": "regression:patch-3.2-continuity-seed",
+      "pass": true,
+      "detail": "iPhone 13",
+      "severity": "P0",
+      "at": "2026-07-25T16:35:49.266Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "sufficient:celular-ate-2000",
+      "query": "Quero um celular até R$ 2.000.",
+      "pass": true,
+      "reply_preview": "Entre as opções, eu colocaria o iPhone 13 em primeiro porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhone 13 leva vantagem em desempenho nesta comparação.\n\nNa prática, tel",
+      "offers": 3,
+      "elapsed_ms": 9727
+    },
+    {
+      "scenario_id": "insufficient:celular-sem-budget",
+      "query": "Quero um celular.",
+      "pass": true,
+      "reply_preview": "Qual faixa de preço ou prioridade você quer considerar para esse phone?",
+      "offers": 0,
+      "elapsed_ms": 852
+    },
+    {
+      "scenario_id": "comparison:entre-s24-iphone15",
+      "query": "Entre S24 e iPhone 15.",
+      "pass": true,
+      "reply_preview": "Consigo comparar, mas não encontrei \"iPhone 15\" com segurança no catálogo da MIA ainda. Me manda o nome um pouco mais completo para eu fechar a comparação.",
+      "offers": 0,
+      "elapsed_ms": 3405
+    },
+    {
+      "scenario_id": "partial:notebook-edicao",
+      "query": "Quero um notebook para edição.",
+      "pass": true,
+      "reply_preview": "Entendi o uso. Qual faixa de preço você quer considerar para esse notebook?",
+      "offers": 0,
+      "elapsed_ms": 338
+    },
+    {
+      "scenario_id": "vague:algo-bom",
+      "query": "quero algo bom",
+      "pass": true,
+      "reply_preview": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+      "offers": 0,
+      "elapsed_ms": 631
+    },
+    {
+      "scenario_id": "follow-up:no-budget-reask",
+      "pass": true,
+      "reply_preview": "Buscando algo mais em conta — o iPhone 11 passa a liderar entre as opções restantes."
+    }
+  ],
+  "latencies_ms": [
+    {
+      "status": 200,
+      "elapsed_ms": 9727
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 852
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 3405
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 338
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 631
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 9338
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 605
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6104
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7894
+    }
+  ],
+  "baseline_reference": "docs/conversational/CONVERSATIONAL_BASELINE.md"
+}

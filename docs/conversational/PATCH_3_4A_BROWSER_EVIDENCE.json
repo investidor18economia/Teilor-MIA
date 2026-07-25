@@ -1,0 +1,25 @@
+{
+  "patch": "3.4a",
+  "phase": "browser_validation",
+  "status": "APPROVED",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "finished_at": "2026-07-25T16:36:07.073Z",
+  "checks": [
+    {
+      "id": "ui-clarify-vague-celular",
+      "pass": true
+    },
+    {
+      "id": "ui-proceed-with-budget",
+      "pass": true
+    },
+    {
+      "id": "ui-comparison-no-clarify",
+      "pass": true
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0
+  }
+}
