@@ -2,7 +2,9 @@
   "patch": "3.5a",
   "phase": "local_audit",
   "status": "APPROVED",
-  "finished_at": "2026-07-25T17:15:00.000Z",
+  "finished_at": "2026-07-25T18:10:00.000Z",
+  "deploy_build": "cd0c0f08fa30",
+  "commits": ["027681a", "cd0c0f0"],
   "problem": "CONV-P-E02 — Pipeline decide corretamente mas verbalização rasa (Faz sentido / Esse ponto pesa)",
   "root_cause": "Decision facts existiam na session e no refinement result mas não eram transportados até polish/verbalização; selectHumanAck usava templates genéricos sem contexto comercial",
   "solution": "miaDecisionFactsNarrative.js transporta facts existentes; buildCommercialRefinementNarrative explica mudança→consequência→continuidade; selectHumanAck bloqueia shallow ack quando há contexto comercial",
@@ -21,7 +23,9 @@
     "patch_34b_regression": "18/18",
     "natural_conversation_refinement": "101/101",
     "patch_34a_regression": "18/18",
-    "p0_smoke": "7/7"
+    "p0_smoke": "7/7",
+    "production_validation": "7/7",
+    "browser_validation": "1/1"
   },
   "verdict": "APROVADO"
 }

@@ -1,0 +1,18 @@
+{
+  "patch": "3.5a",
+  "phase": "browser_validation",
+  "status": "APPROVED",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "finished_at": "2026-07-25T18:11:27.453Z",
+  "checks": [
+    {
+      "id": "ui-budget-refinement-rich-explanation",
+      "pass": true,
+      "detail": "Agora mudou um detalhe importante na busca.\n\nComo o teto ficou em R$ 2500,00, eu reavaliei as opções que já tínhamos em contexto.\n\nMantenho o iPhone 13 na frente — Escolhido por pe"
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 0
+  }
+}

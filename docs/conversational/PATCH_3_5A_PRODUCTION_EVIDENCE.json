@@ -1,0 +1,146 @@
+{
+  "patch": "3.5a",
+  "phase": "production_validation",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T18:09:38.072Z",
+  "finished_at": "2026-07-25T18:11:15.282Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "deploy_build": "cd0c0f08fa30",
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "p0_failed": 0,
+    "scenarios": 4
+  },
+  "checks": [
+    {
+      "id": "health",
+      "pass": true,
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T18:09:39.250Z\",\"build\":\"cd0c0f08fa30\"}",
+      "severity": "P0",
+      "at": "2026-07-25T18:09:39.293Z"
+    },
+    {
+      "id": "explanation:budget-increase",
+      "pass": true,
+      "detail": "Agora mudou um detalhe importante na busca.\n\nComo o teto ficou em R$ 2500,00, eu reavaliei as opções que já tínhamos em contexto.\n\nMantenho ",
+      "severity": "P0",
+      "at": "2026-07-25T18:09:56.037Z"
+    },
+    {
+      "id": "explanation:brand-samsung-also-motorola",
+      "pass": true,
+      "detail": "Agora mudou um detalhe importante na busca.\n\nComo a marca motorola entrou na análise, eu reavaliei as opções que já tínhamos em contexto.\n\nM",
+      "severity": "P0",
+      "at": "2026-07-25T18:10:16.969Z"
+    },
+    {
+      "id": "explanation:use-case-faculdade",
+      "pass": true,
+      "detail": "Agora mudou um detalhe importante na busca.\n\nComo o uso principal passou a ser faculdade, eu reavaliei as opções que já tínhamos em contexto",
+      "severity": "P0",
+      "at": "2026-07-25T18:10:35.884Z"
+    },
+    {
+      "id": "explanation:budget-flex",
+      "pass": true,
+      "detail": "Agora mudou um detalhe importante na busca.\n\nComo o orçamento ficou um pouco mais flexível, eu reavaliei as opções que já tínhamos em contex",
+      "severity": "P0",
+      "at": "2026-07-25T18:10:54.886Z"
+    },
+    {
+      "id": "regression:patch-3.4b-notebook-partial",
+      "pass": true,
+      "detail": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD porque combina com o foc",
+      "severity": "P0",
+      "at": "2026-07-25T18:11:02.719Z"
+    },
+    {
+      "id": "regression:patch-3.3-iphone15",
+      "pass": true,
+      "detail": "offers=3",
+      "severity": "P0",
+      "at": "2026-07-25T18:11:15.282Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "explanation:budget-increase",
+      "pass": true,
+      "turns": [
+        "Quero um celular até R$ 2.000.",
+        "Na verdade pode ser até R$ 2.500."
+      ],
+      "reply_preview": "Agora mudou um detalhe importante na busca.\n\nComo o teto ficou em R$ 2500,00, eu reavaliei as opções que já tínhamos em contexto.\n\nMantenho o iPhone 13 na frente — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nO que continua v"
+    },
+    {
+      "scenario_id": "explanation:brand-samsung-also-motorola",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até R$ 3.000.",
+        "Pode ser Motorola também."
+      ],
+      "reply_preview": "Agora mudou um detalhe importante na busca.\n\nComo a marca motorola entrou na análise, eu reavaliei as opções que já tínhamos em contexto.\n\nMantenho o Samsung Galaxy S23 FE na frente — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demai"
+    },
+    {
+      "scenario_id": "explanation:use-case-faculdade",
+      "pass": true,
+      "turns": [
+        "Quero um celular para jogos até R$ 2.500.",
+        "Na verdade vou usar para faculdade."
+      ],
+      "reply_preview": "Agora mudou um detalhe importante na busca.\n\nComo o uso principal passou a ser faculdade, eu reavaliei as opções que já tínhamos em contexto.\n\nMantenho o iPhone 13 na frente — Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite.\n\nO que continua va"
+    },
+    {
+      "scenario_id": "explanation:budget-flex",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até R$ 3.000.",
+        "Pode passar um pouco dos 3 mil."
+      ],
+      "reply_preview": "Agora mudou um detalhe importante na busca.\n\nComo o orçamento ficou um pouco mais flexível, eu reavaliei as opções que já tínhamos em contexto.\n\nMantenho o Samsung Galaxy S23 FE na frente — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo"
+    }
+  ],
+  "latencies_ms": [
+    {
+      "status": 200,
+      "elapsed_ms": 8240
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2995
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8946
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 970
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6968
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 925
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6722
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1274
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2327
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7052
+    }
+  ]
+}
