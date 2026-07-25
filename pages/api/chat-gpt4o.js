@@ -25191,6 +25191,20 @@ function resolveSearchBehaviorMode(query = "", querySignals = {}, options = {}) 
   if (isExplicitComparisonQuery(q)) return "recommend";
 
   const activeSignals = countActiveQuerySignals(querySignals);
+  const explicitCategory = detectProductCategory(q);
+
+  if (
+    explicitCategory &&
+    !extractBudget(q) &&
+    !detectUserPriority(q) &&
+    !queryMentionsSpecificModel(q) &&
+    /\b(quero|preciso|to procurando|tô procurando|me indica|me indique|indica|recomenda|recomende|procura|procurar)\b/.test(
+      q
+    ) &&
+    activeSignals === 0
+  ) {
+    return "cautious_recommend";
+  }
 
   if (isVagueCommercialQuery(q) && activeSignals === 0) {
     return "guide";
@@ -29962,7 +29976,19 @@ if (lockedComparisonContextFromSession) {
     intentRecognitionEarly?.requiresClarification &&
     intentRecognitionEarly?.interactionMode === "mixed";
 
-  if (
+  const categoryOnlyPartialProceed =
+    clarificationGateResult.decision?.needsClarification &&
+    clarificationGateResult.decision?.preconditions?.isCategoryOnlyVague;
+
+  if (categoryOnlyPartialProceed) {
+    contextResolution.needsClarification = false;
+    contextResolution.clarificationDeferred = true;
+    contextResolution.genericQueryPartialProceed = true;
+    contextResolution.partialProceedMissingSlots =
+      clarificationGateResult.decision?.missingSlots || [];
+    contextResolution.clarificationMessage =
+      clarificationGateResult.decision?.clarificationMessage || null;
+  } else if (
     mixedClarifyDefer &&
     clarificationGateResult.decision?.needsClarification &&
     !clarificationGateResult.decision?.preconditions?.isCategoryOnlyVague
