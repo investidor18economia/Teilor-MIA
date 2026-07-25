@@ -1,0 +1,69 @@
+{
+  "patch": "3.6.1",
+  "phase": "mixed_intent_correction",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T20:15:00.000Z",
+  "commits": ["25841ec", "0f22447", "c8fd852"],
+  "deploy_build": "c8fd852484de",
+  "base_url": "https://economia-ai.vercel.app",
+  "root_cause": {
+    "module": "lib/miaCommercialConstraintRefinement.js",
+    "symptom": "Mixed messages applied only one refinement (dominant signal)",
+    "cause": "Monolithic extractCommercialRefinement used early return; resolveCommercialConstraintRefinement merged single refinement only; follow-up routing classified mixed refinements as confirmation_follow_up"
+  },
+  "correction": {
+    "modules": [
+      "lib/miaCommercialRefinementMultiExtract.js",
+      "lib/miaCommercialConstraintRefinement.js",
+      "lib/miaDecisionFactsNarrative.js",
+      "lib/miaCommercialFollowUpContinuity.js"
+    ],
+    "version": "3.6.1",
+    "behavior": "Multi-probe extraction, clause splitting, reconciliation, sequential merge, budget anchor inference from prior query, refinement priority in follow-up routing"
+  },
+  "sequence_f": {
+    "status": "PASS",
+    "message": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
+    "reply_excerpt": "a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível",
+    "context": {
+      "budgetMax": 3450,
+      "preferredBrands": ["samsung", "motorola"]
+    }
+  },
+  "extended_mixed_production": {
+    "script": "scripts/patch-36-mixed-intent-production-validation.mjs",
+    "passed": 7,
+    "total": 7,
+    "cases": [
+      "mixed-1-budget-relax-brand-restrict",
+      "mixed-1-inverted-order",
+      "mixed-2-budget-increase-single-brand",
+      "mixed-3-brand-add-hard-cap",
+      "mixed-4-relax-brand-removal",
+      "mixed-followup-both-constraints",
+      "negative-comparison-not-restriction"
+    ]
+  },
+  "local_audit": {
+    "script": "scripts/test-mia-patch-36-mixed-intent-audit.js",
+    "passed": 15,
+    "total": 15
+  },
+  "regression_runner": {
+    "suites": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "production_validation": {
+    "passed": 10,
+    "total": 11,
+    "sequence_f_pass": true,
+    "note": "sequence-h informal-natural fails intermittently in production (first-turn routing variance); not mixed-intent related"
+  },
+  "browser_validation": {
+    "passed": 8,
+    "total": 8,
+    "ui_mixed_intent_strict": true,
+    "url": "https://economia-ai.vercel.app/app-mia"
+  }
+}

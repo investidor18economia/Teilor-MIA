@@ -2,7 +2,7 @@
   "patch": "3.6",
   "phase": "regression_runner",
   "status": "APPROVED",
-  "finished_at": "2026-07-25T19:28:24.954Z",
+  "finished_at": "2026-07-25T20:15:40.678Z",
   "summary": {
     "total": 12,
     "passed": 12,
@@ -19,7 +19,7 @@
       "script": "scripts/test-mia-patch-36-mixed-intent-audit.js",
       "pass": true,
       "exit_code": 0,
-      "output_tail": "════════════════════════════════════════════════════════════\n  Mixed Intent Audit: 14/14 passed\n  VERDICT: APROVADO\n"
+      "output_tail": "════════════════════════════════════════════════════════════\n  Mixed Intent Audit: 15/15 passed\n  VERDICT: APROVADO\n"
     },
     {
       "script": "scripts/test-mia-patch-31-commercial-entry-audit.js",

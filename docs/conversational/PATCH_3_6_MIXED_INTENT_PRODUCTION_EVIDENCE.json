@@ -1,0 +1,3914 @@
+{
+  "patch": "3.6.1",
+  "phase": "mixed_intent_production_validation",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T20:05:51.673Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "deploy_build": "c8fd852484de",
+  "commit": "25841ec",
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  },
+  "results": [
+    {
+      "id": "mixed-1-budget-relax-brand-restrict",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil para jogos.",
+        "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil para jogos.",
+          "status": 200,
+          "reply_preview": "Eu iria no Samsung Galaxy S22 porque portabilidade equilibrada.\n\nEu escolhi o Samsung Galaxy S22, mas o Samsung Galaxy S23 FE chegou perto. A diferença é que menos preocupação em registrar bons moment",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "Samsung Galaxy S22",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA"
+            },
+            "lastProductMentioned": "Samsung Galaxy S22",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "performance",
+            "lastTopic": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Partidas longas sem sentir que o celular chegou no limite",
+            "lastArchetype": "power_intensity",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Se custo-benefício pesar mais para você, vale olhar também o Galaxy S23 FE.",
+            "lastDecisionReason": "Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "tela",
+              "câmera"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S22",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s22:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "decisao|entrega|equilibrada|galaxy|minha|portabilidade|samsung|segura",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "assim|pratica",
+                  "textHash": "assim|pratica",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "textHash": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "celular|compacto|funciona|importa|melhor|premium",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "anuncio|aparece|atencao|claro|confirmacao|criteriosa|faixa|gastar|merece|nessa|pegar|precisa",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+              "lastWinnerName": "Samsung Galaxy S22",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 1,
+              "lastTransition": {
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "Samsung Galaxy S22",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "return_seguro"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "b7aa20a0-5951-4fec-b89b-707d69b38de2",
+            "lastRecommendationDecisionAtMs": 1785009805982,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
+            "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        },
+        {
+          "query": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
+          "status": 200,
+          "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível. Reavaliei o que já tínhamos mapeado.\n\nCont",
+          "session_context": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "Quero um celular Samsung até 3 mil para jogos."
+              },
+              {
+                "role": "user",
+                "content": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola."
+              }
+            ],
+            "lastCategory": "phone",
+            "lastProducts": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "Samsung Galaxy S22",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA",
+              "score": null,
+              "isWinner": true
+            },
+            "lastIntent": "search",
+            "lastPriority": "performance",
+            "lastTopic": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastProductMentioned": "Samsung Galaxy S22",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Partidas longas sem sentir que o celular chegou no limite",
+            "lastArchetype": "power_intensity",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Se custo-benefício pesar mais para você, vale olhar também o Galaxy S23 FE.",
+            "lastDecisionReason": "Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "tela",
+              "câmera"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S22",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s22:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "decisao|entrega|equilibrada|galaxy|minha|portabilidade|samsung|segura",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "assim|pratica",
+                  "textHash": "assim|pratica",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "textHash": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "celular|compacto|funciona|importa|melhor|premium",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "anuncio|aparece|atencao|claro|confirmacao|criteriosa|faixa|gastar|merece|nessa|pegar|precisa",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+              "lastWinnerName": "Samsung Galaxy S22",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "user_display_name": "",
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "b7aa20a0-5951-4fec-b89b-707d69b38de2",
+            "lastRecommendationDecisionAtMs": 1785009805982,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
+            "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
+            "budgetMax": 3450,
+            "lastBudget": null,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 3450,
+              "preferredBrands": [
+                "samsung",
+                "motorola"
+              ],
+              "excludedBrands": [],
+              "desiredAttributes": [
+                "performance"
+              ],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": null,
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "Samsung Galaxy S22",
+              "version": "3.6.1",
+              "updatedAt": 1785009813689
+            },
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 2,
+              "lastTransition": {
+                "type": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "intent_authority",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S22",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "non_commercial_governed_fallback"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastQuery": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
+            "_continuityVersion": "3.2.0",
+            "_transportVersion": "3.2.0",
+            "intentDiscoveryPending": false,
+            "intentDiscoveryResolved": true,
+            "lastIntentDiscoveryProbe": ""
+          },
+          "constraints": {
+            "category": "phone",
+            "budgetMax": 3450,
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "desiredAttributes": [
+              "performance"
+            ],
+            "specifications": [],
+            "sizePreference": null,
+            "useCase": null,
+            "pricePreference": null,
+            "baselinePrice": null,
+            "baselineProductName": "Samsung Galaxy S22",
+            "version": "3.6.1",
+            "updatedAt": 1785009813689
+          }
+        }
+      ],
+      "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível. Reavaliei o que já tínhamos mapeado.\n\nContinuo indicando o Samsung Galaxy S22 — Escolhido por performance: Partidas longas"
+    },
+    {
+      "id": "mixed-1-inverted-order",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil para jogos.",
+        "Quero continuar só entre Samsung e Motorola, mas pode passar um pouco dos 3 mil."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil para jogos.",
+          "status": 200,
+          "reply_preview": "Eu iria no Samsung Galaxy S22 porque portabilidade equilibrada.\n\nEu escolhi o Samsung Galaxy S22, mas o Samsung Galaxy S23 FE chegou perto. A diferença é que menos preocupação em registrar bons moment",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "Samsung Galaxy S22",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA"
+            },
+            "lastProductMentioned": "Samsung Galaxy S22",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "performance",
+            "lastTopic": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Partidas longas sem sentir que o celular chegou no limite",
+            "lastArchetype": "power_intensity",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Se custo-benefício pesar mais para você, vale olhar também o Galaxy S23 FE.",
+            "lastDecisionReason": "Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "tela",
+              "câmera"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S22",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s22:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "decisao|entrega|equilibrada|galaxy|minha|portabilidade|samsung|segura",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "assim|pratica",
+                  "textHash": "assim|pratica",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "textHash": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "celular|compacto|funciona|importa|melhor|premium",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "anuncio|aparece|atencao|claro|confirmacao|criteriosa|faixa|gastar|merece|nessa|pegar|precisa",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+              "lastWinnerName": "Samsung Galaxy S22",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 1,
+              "lastTransition": {
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "Samsung Galaxy S22",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "return_seguro"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "6b3c4481-e143-472f-91b0-bf9a2a4aa4d4",
+            "lastRecommendationDecisionAtMs": 1785009825049,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
+            "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        },
+        {
+          "query": "Quero continuar só entre Samsung e Motorola, mas pode passar um pouco dos 3 mil.",
+          "status": 200,
+          "reply_preview": "Esse detalhe faz diferença na análise.\n\nMantendo o que conversamos, a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível — e isso pede um ajuste fino.\n\nMantenho o Sams",
+          "session_context": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "Quero um celular Samsung até 3 mil para jogos."
+              },
+              {
+                "role": "user",
+                "content": "Quero continuar só entre Samsung e Motorola, mas pode passar um pouco dos 3 mil."
+              }
+            ],
+            "lastCategory": "phone",
+            "lastProducts": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "Samsung Galaxy S22",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA",
+              "score": null,
+              "isWinner": true
+            },
+            "lastIntent": "search",
+            "lastPriority": "performance",
+            "lastTopic": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastProductMentioned": "Samsung Galaxy S22",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Partidas longas sem sentir que o celular chegou no limite",
+            "lastArchetype": "power_intensity",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Se custo-benefício pesar mais para você, vale olhar também o Galaxy S23 FE.",
+            "lastDecisionReason": "Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "tela",
+              "câmera"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S22",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s22:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "decisao|entrega|equilibrada|galaxy|minha|portabilidade|samsung|segura",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "assim|pratica",
+                  "textHash": "assim|pratica",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "textHash": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "celular|compacto|funciona|importa|melhor|premium",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "anuncio|aparece|atencao|claro|confirmacao|criteriosa|faixa|gastar|merece|nessa|pegar|precisa",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+              "lastWinnerName": "Samsung Galaxy S22",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "user_display_name": "",
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "6b3c4481-e143-472f-91b0-bf9a2a4aa4d4",
+            "lastRecommendationDecisionAtMs": 1785009825049,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
+            "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
+            "budgetMax": 3450,
+            "lastBudget": null,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 3450,
+              "preferredBrands": [
+                "samsung",
+                "motorola"
+              ],
+              "excludedBrands": [],
+              "desiredAttributes": [
+                "performance"
+              ],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": null,
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "Samsung Galaxy S22",
+              "version": "3.6.1",
+              "updatedAt": 1785009832770
+            },
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 2,
+              "lastTransition": {
+                "type": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "intent_authority",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S22",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "non_commercial_governed_fallback"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastQuery": "Quero continuar só entre Samsung e Motorola, mas pode passar um pouco dos 3 mil.",
+            "_continuityVersion": "3.2.0",
+            "_transportVersion": "3.2.0",
+            "intentDiscoveryPending": false,
+            "intentDiscoveryResolved": true,
+            "lastIntentDiscoveryProbe": ""
+          },
+          "constraints": {
+            "category": "phone",
+            "budgetMax": 3450,
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "desiredAttributes": [
+              "performance"
+            ],
+            "specifications": [],
+            "sizePreference": null,
+            "useCase": null,
+            "pricePreference": null,
+            "baselinePrice": null,
+            "baselineProductName": "Samsung Galaxy S22",
+            "version": "3.6.1",
+            "updatedAt": 1785009832770
+          }
+        }
+      ],
+      "reply_preview": "Esse detalhe faz diferença na análise.\n\nMantendo o que conversamos, a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível — e isso pede um ajuste fino.\n\nMantenho o Samsung Galaxy S22 como melhor opção — Escolhido por performance: Partidas longas se"
+    },
+    {
+      "id": "mixed-2-budget-increase-single-brand",
+      "pass": true,
+      "turns": [
+        "Quero um celular até 3 mil.",
+        "Pode subir até 3.300, mas só quero Samsung."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular até 3 mil.",
+          "status": 200,
+          "reply_preview": "Eu iria no iPhone 13 porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhone 13 leva vantagem em desempenho nesta comparação.\n\nNa prática, tela fluida no c",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "iPhone 13",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA"
+            },
+            "lastProductMentioned": "iPhone 13",
+            "lastProducts": [
+              {
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "",
+            "lastTopic": "Quero um celular até 3 mil.",
+            "lastQuery": "Quero um celular até 3 mil.",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "longevidade",
+              "tela"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "iPhone 13",
+              "axisKey": "performance",
+              "decisionContextKey": "iphone 13:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "camera|combina|confiavel|desempenho|fotos|iphone|nessa|parece|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "arrependimento|atencao|cobre|desempenho|encaixa|ninguem|nisso|pagar|presta|prioriza|quase|risco",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "arrependimento|atencao|cobre|desempenho|encaixa|ninguem|nisso|pagar|presta|prioriza|quase|risco",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "ganha|resumindo",
+                  "textHash": "ganha|resumindo",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "cotidiano|fluida|ganha",
+                  "textHash": "cotidiano|fluida|ganha",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "desempenho",
+                  "textHash": "desempenho",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|camera|categoria|confiavel|fotos|preco|rivais|tambem|troca|videos",
+                  "textHash": "abaixo|autonomia|camera|categoria|confiavel|fotos|preco|rivais|tambem|troca|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|costuma|decisao|enganar|exatamente|faixa|merece|nessa|nuance",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "compacto|demais|flagship|limitado|parecer|pratica|servir|vantagem",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "criteriosa|faixa|gastar|nessa|pegar|precisa",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular até 3 mil.",
+              "lastWinnerName": "iPhone 13",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 1,
+              "lastTransition": {
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "iPhone 13",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "return_seguro"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "b9892567-e781-41fe-adf7-5e686aa22d35",
+            "lastRecommendationDecisionAtMs": 1785009844185,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
+            "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        },
+        {
+          "query": "Pode subir até 3.300, mas só quero Samsung.",
+          "status": 200,
+          "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: o teto passou de R$ 3300,00 para R$ 3300,00; a busca ficou restrita a samsung. Reavaliei o que já tínhamos mapeado.\n\nMantenho o S",
+          "session_context": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "Quero um celular até 3 mil."
+              },
+              {
+                "role": "user",
+                "content": "Pode subir até 3.300, mas só quero Samsung."
+              }
+            ],
+            "lastCategory": "phone",
+            "lastProducts": [
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 3,
+              "product_name": "Samsung Galaxy S23 FE",
+              "price": "1799",
+              "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+              "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+              "source": "Carrefour",
+              "score": null,
+              "isWinner": false
+            },
+            "lastIntent": "search",
+            "lastPriority": "",
+            "lastTopic": "Quero um celular até 3 mil.",
+            "lastProductMentioned": "Samsung Galaxy S23 FE",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "longevidade",
+              "tela"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "iPhone 13",
+              "axisKey": "performance",
+              "decisionContextKey": "iphone 13:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "camera|combina|confiavel|desempenho|fotos|iphone|nessa|parece|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "arrependimento|atencao|cobre|desempenho|encaixa|ninguem|nisso|pagar|presta|prioriza|quase|risco",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "arrependimento|atencao|cobre|desempenho|encaixa|ninguem|nisso|pagar|presta|prioriza|quase|risco",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "ganha|resumindo",
+                  "textHash": "ganha|resumindo",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "cotidiano|fluida|ganha",
+                  "textHash": "cotidiano|fluida|ganha",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "desempenho",
+                  "textHash": "desempenho",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|camera|categoria|confiavel|fotos|preco|rivais|tambem|troca|videos",
+                  "textHash": "abaixo|autonomia|camera|categoria|confiavel|fotos|preco|rivais|tambem|troca|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|costuma|decisao|enganar|exatamente|faixa|merece|nessa|nuance",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "compacto|demais|flagship|limitado|parecer|pratica|servir|vantagem",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "criteriosa|faixa|gastar|nessa|pegar|precisa",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular até 3 mil.",
+              "lastWinnerName": "iPhone 13",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "user_display_name": "",
+            "lastRankingSnapshot": [
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "b9892567-e781-41fe-adf7-5e686aa22d35",
+            "lastRecommendationDecisionAtMs": 1785009844185,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
+            "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
+            "budgetMax": 3300,
+            "lastBudget": null,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 3300,
+              "preferredBrands": [
+                "samsung"
+              ],
+              "excludedBrands": [],
+              "desiredAttributes": [],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": null,
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "iPhone 13",
+              "version": "3.6.1",
+              "updatedAt": 1785009851755
+            },
+            "preferredBrands": [
+              "samsung"
+            ],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 2,
+              "lastTransition": {
+                "type": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "intent_authority",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S23 FE",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "non_commercial_governed_fallback"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastQuery": "Pode subir até 3.300, mas só quero Samsung.",
+            "_continuityVersion": "3.2.0",
+            "_transportVersion": "3.2.0"
+          },
+          "constraints": {
+            "category": "phone",
+            "budgetMax": 3300,
+            "preferredBrands": [
+              "samsung"
+            ],
+            "excludedBrands": [],
+            "desiredAttributes": [],
+            "specifications": [],
+            "sizePreference": null,
+            "useCase": null,
+            "pricePreference": null,
+            "baselinePrice": null,
+            "baselineProductName": "iPhone 13",
+            "version": "3.6.1",
+            "updatedAt": 1785009851755
+          }
+        }
+      ],
+      "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: o teto passou de R$ 3300,00 para R$ 3300,00; a busca ficou restrita a samsung. Reavaliei o que já tínhamos mapeado.\n\nMantenho o Samsung Galaxy S23 FE como melhor opção — Escolhido por performance: Tarefas exig"
+    },
+    {
+      "id": "mixed-3-brand-add-hard-cap",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil.",
+        "Motorola também serve, porém não quero passar de 2.500."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "Samsung Galaxy S23 FE",
+              "price": "1799",
+              "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+              "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+              "source": "Carrefour"
+            },
+            "lastProductMentioned": "Samsung Galaxy S23 FE",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br"
+              },
+              {
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "",
+            "lastTopic": "Quero um celular Samsung até 3 mil.",
+            "lastQuery": "Quero um celular Samsung até 3 mil.",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "custo-benefício",
+              "tela",
+              "longevidade"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S23 FE",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s23 fe:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "budget",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "equilibrar|orcamento|preco|seguranca",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "alguns|decisao|entrega|galaxy|minha|preco|rivais|samsung|segura",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "textHash": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "textHash": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acessivel|comprar|flagship|preco|principal|sensacao|sentido",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil.",
+              "lastWinnerName": "Samsung Galaxy S23 FE",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 1,
+              "lastTransition": {
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "Samsung Galaxy S23 FE",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "return_seguro"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "14b996cc-0be9-43f8-a15d-8e2439af5e28",
+            "lastRecommendationDecisionAtMs": 1785009863437,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
+            "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        },
+        {
+          "query": "Motorola também serve, porém não quero passar de 2.500.",
+          "status": 200,
+          "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom o teto passou de R$ 3000,00 para R$ 2500,00; a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nO Samsung Galaxy S23",
+          "session_context": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "Quero um celular Samsung até 3 mil."
+              },
+              {
+                "role": "user",
+                "content": "Motorola também serve, porém não quero passar de 2.500."
+              }
+            ],
+            "lastCategory": "phone",
+            "lastProducts": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "Samsung Galaxy S23 FE",
+              "price": "1799",
+              "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+              "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+              "source": "Carrefour",
+              "score": null,
+              "isWinner": true
+            },
+            "lastIntent": "context_analysis",
+            "lastPriority": "",
+            "lastTopic": "Quero um celular Samsung até 3 mil.",
+            "lastProductMentioned": "Samsung Galaxy S23 FE",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "custo-benefício",
+              "tela",
+              "longevidade"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S23 FE",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s23 fe:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "budget",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "equilibrar|orcamento|preco|seguranca",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "alguns|decisao|entrega|galaxy|minha|preco|rivais|samsung|segura",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "textHash": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "textHash": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acessivel|comprar|flagship|preco|principal|sensacao|sentido",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil.",
+              "lastWinnerName": "Samsung Galaxy S23 FE",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "user_display_name": "",
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "14b996cc-0be9-43f8-a15d-8e2439af5e28",
+            "lastRecommendationDecisionAtMs": 1785009863437,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
+            "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
+            "budgetMax": 2500,
+            "lastBudget": null,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 2500,
+              "preferredBrands": [
+                "samsung",
+                "motorola"
+              ],
+              "excludedBrands": [],
+              "desiredAttributes": [],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": null,
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "Samsung Galaxy S23 FE",
+              "version": "3.6.1",
+              "updatedAt": 1785009872093
+            },
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 2,
+              "lastTransition": {
+                "type": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "intent_authority",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S23 FE",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "non_commercial_governed_fallback"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastQuery": "Motorola também serve, porém não quero passar de 2.500.",
+            "_continuityVersion": "3.2.0",
+            "_transportVersion": "3.2.0"
+          },
+          "constraints": {
+            "category": "phone",
+            "budgetMax": 2500,
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "desiredAttributes": [],
+            "specifications": [],
+            "sizePreference": null,
+            "useCase": null,
+            "pricePreference": null,
+            "baselinePrice": null,
+            "baselineProductName": "Samsung Galaxy S23 FE",
+            "version": "3.6.1",
+            "updatedAt": 1785009872093
+          }
+        }
+      ],
+      "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom o teto passou de R$ 3000,00 para R$ 2500,00; a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nO Samsung Galaxy S23 FE segue na frente — Escolhido por performance: Tarefas exigentes sem sentir qu"
+    },
+    {
+      "id": "mixed-4-relax-brand-removal",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil.",
+        "Pode ser mais caro se compensar, mas tira Xiaomi."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "Samsung Galaxy S23 FE",
+              "price": "1799",
+              "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+              "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+              "source": "Carrefour"
+            },
+            "lastProductMentioned": "Samsung Galaxy S23 FE",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br"
+              },
+              {
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "",
+            "lastTopic": "Quero um celular Samsung até 3 mil.",
+            "lastQuery": "Quero um celular Samsung até 3 mil.",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "custo-benefício",
+              "tela",
+              "longevidade"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S23 FE",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s23 fe:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "budget",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "equilibrar|orcamento|preco|seguranca",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "alguns|decisao|entrega|galaxy|minha|preco|rivais|samsung|segura",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "textHash": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "textHash": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acessivel|comprar|flagship|preco|principal|sensacao|sentido",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil.",
+              "lastWinnerName": "Samsung Galaxy S23 FE",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 1,
+              "lastTransition": {
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "Samsung Galaxy S23 FE",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "return_seguro"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "90ed444c-7884-4f15-9bbc-fd2b1ee559a4",
+            "lastRecommendationDecisionAtMs": 1785009883484,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
+            "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        },
+        {
+          "query": "Pode ser mais caro se compensar, mas tira Xiaomi.",
+          "status": 200,
+          "reply_preview": "Isso realmente muda um pouco o cenário.\n\nMantendo o que conversamos, xiaomi saiu da comparação; o orçamento ficou um pouco mais flexível — e isso pede um ajuste fino.\n\nContinuo indicando o Samsung Gal",
+          "session_context": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "Quero um celular Samsung até 3 mil."
+              },
+              {
+                "role": "user",
+                "content": "Pode ser mais caro se compensar, mas tira Xiaomi."
+              }
+            ],
+            "lastCategory": "phone",
+            "lastProducts": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "Samsung Galaxy S23 FE",
+              "price": "1799",
+              "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+              "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+              "source": "Carrefour",
+              "score": null,
+              "isWinner": true
+            },
+            "lastIntent": "decision",
+            "lastPriority": "value",
+            "lastTopic": "Quero um celular Samsung até 3 mil.",
+            "lastProductMentioned": "Samsung Galaxy S23 FE",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "custo-benefício",
+              "tela",
+              "longevidade"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S23 FE",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s23 fe:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "budget",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "equilibrar|orcamento|preco|seguranca",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "alguns|decisao|entrega|galaxy|minha|preco|rivais|samsung|segura",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "textHash": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "textHash": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acessivel|comprar|flagship|preco|principal|sensacao|sentido",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil.",
+              "lastWinnerName": "Samsung Galaxy S23 FE",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "user_display_name": "",
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "90ed444c-7884-4f15-9bbc-fd2b1ee559a4",
+            "lastRecommendationDecisionAtMs": 1785009883484,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
+            "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
+            "budgetMax": 3450,
+            "lastBudget": null,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 3450,
+              "preferredBrands": [],
+              "excludedBrands": [
+                "xiaomi"
+              ],
+              "desiredAttributes": [
+                "value"
+              ],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": null,
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "Samsung Galaxy S23 FE",
+              "version": "3.6.1",
+              "updatedAt": 1785009893507
+            },
+            "preferredBrands": [],
+            "excludedBrands": [
+              "xiaomi"
+            ],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 2,
+              "lastTransition": {
+                "type": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "intent_authority",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S23 FE",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "non_commercial_governed_fallback"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastQuery": "Pode ser mais caro se compensar, mas tira Xiaomi.",
+            "_continuityVersion": "3.2.0",
+            "_transportVersion": "3.2.0",
+            "intentDiscoveryPending": false,
+            "intentDiscoveryResolved": true,
+            "lastIntentDiscoveryProbe": ""
+          },
+          "constraints": {
+            "category": "phone",
+            "budgetMax": 3450,
+            "preferredBrands": [],
+            "excludedBrands": [
+              "xiaomi"
+            ],
+            "desiredAttributes": [
+              "value"
+            ],
+            "specifications": [],
+            "sizePreference": null,
+            "useCase": null,
+            "pricePreference": null,
+            "baselinePrice": null,
+            "baselineProductName": "Samsung Galaxy S23 FE",
+            "version": "3.6.1",
+            "updatedAt": 1785009893507
+          }
+        }
+      ],
+      "reply_preview": "Isso realmente muda um pouco o cenário.\n\nMantendo o que conversamos, xiaomi saiu da comparação; o orçamento ficou um pouco mais flexível — e isso pede um ajuste fino.\n\nContinuo indicando o Samsung Galaxy S23 FE — Escolhido por performance: Tarefas exigentes sem sentir que o apare"
+    },
+    {
+      "id": "mixed-followup-both-constraints",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil para jogos.",
+        "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
+        "E entre as opções que sobraram, qual tem melhor bateria?"
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil para jogos.",
+          "status": 200,
+          "reply_preview": "Eu iria no Samsung Galaxy S22 porque portabilidade equilibrada.\n\nEu escolhi o Samsung Galaxy S22, mas o Samsung Galaxy S23 FE chegou perto. A diferença é que menos preocupação em registrar bons moment",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "Samsung Galaxy S22",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA"
+            },
+            "lastProductMentioned": "Samsung Galaxy S22",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "performance",
+            "lastTopic": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Partidas longas sem sentir que o celular chegou no limite",
+            "lastArchetype": "power_intensity",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Se custo-benefício pesar mais para você, vale olhar também o Galaxy S23 FE.",
+            "lastDecisionReason": "Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "tela",
+              "câmera"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S22",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s22:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "decisao|entrega|equilibrada|galaxy|minha|portabilidade|samsung|segura",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "assim|pratica",
+                  "textHash": "assim|pratica",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "textHash": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "celular|compacto|funciona|importa|melhor|premium",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "anuncio|aparece|atencao|claro|confirmacao|criteriosa|faixa|gastar|merece|nessa|pegar|precisa",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+              "lastWinnerName": "Samsung Galaxy S22",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 1,
+              "lastTransition": {
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "Samsung Galaxy S22",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "return_seguro"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "c6fd3b44-d1a2-4955-b8f0-4a53fc55132c",
+            "lastRecommendationDecisionAtMs": 1785009904924,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
+            "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        },
+        {
+          "query": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
+          "status": 200,
+          "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível. Reavaliei o que já tínhamos mapeado.\n\nCont",
+          "session_context": {
+            "messages": [
+              {
+                "role": "user",
+                "content": "Quero um celular Samsung até 3 mil para jogos."
+              },
+              {
+                "role": "user",
+                "content": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola."
+              }
+            ],
+            "lastCategory": "phone",
+            "lastProducts": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "Samsung Galaxy S22",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA",
+              "score": null,
+              "isWinner": true
+            },
+            "lastIntent": "search",
+            "lastPriority": "performance",
+            "lastTopic": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastProductMentioned": "Samsung Galaxy S22",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Partidas longas sem sentir que o celular chegou no limite",
+            "lastArchetype": "power_intensity",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Se custo-benefício pesar mais para você, vale olhar também o Galaxy S23 FE.",
+            "lastDecisionReason": "Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "tela",
+              "câmera"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S22",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s22:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "decisao|entrega|equilibrada|galaxy|minha|portabilidade|samsung|segura",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "assim|pratica",
+                  "textHash": "assim|pratica",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "textHash": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "celular|compacto|funciona|importa|melhor|premium",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "anuncio|aparece|atencao|claro|confirmacao|criteriosa|faixa|gastar|merece|nessa|pegar|precisa",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+              "lastWinnerName": "Samsung Galaxy S22",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "user_display_name": "",
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "c6fd3b44-d1a2-4955-b8f0-4a53fc55132c",
+            "lastRecommendationDecisionAtMs": 1785009904924,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
+            "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
+            "budgetMax": 3450,
+            "lastBudget": null,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 3450,
+              "preferredBrands": [
+                "samsung",
+                "motorola"
+              ],
+              "excludedBrands": [],
+              "desiredAttributes": [
+                "performance"
+              ],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": null,
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "Samsung Galaxy S22",
+              "version": "3.6.1",
+              "updatedAt": 1785009912667
+            },
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 2,
+              "lastTransition": {
+                "type": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "intent_authority",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S22",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "non_commercial_governed_fallback"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastQuery": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
+            "_continuityVersion": "3.2.0",
+            "_transportVersion": "3.2.0",
+            "intentDiscoveryPending": false,
+            "intentDiscoveryResolved": true,
+            "lastIntentDiscoveryProbe": ""
+          },
+          "constraints": {
+            "category": "phone",
+            "budgetMax": 3450,
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "desiredAttributes": [
+              "performance"
+            ],
+            "specifications": [],
+            "sizePreference": null,
+            "useCase": null,
+            "pricePreference": null,
+            "baselinePrice": null,
+            "baselineProductName": "Samsung Galaxy S22",
+            "version": "3.6.1",
+            "updatedAt": 1785009912667
+          }
+        },
+        {
+          "query": "E entre as opções que sobraram, qual tem melhor bateria?",
+          "status": 200,
+          "reply_preview": "Eu iria no Samsung Galaxy S22.\n\nPensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3700 mAh.\n\nComparando com o Samsung Galaxy S23 FE: - Em bate",
+          "session_context": {
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "Samsung Galaxy S22",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA",
+              "score": null,
+              "isWinner": true
+            },
+            "lastProductMentioned": "Samsung Galaxy S22",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S22",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S21+",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "battery",
+            "lastTopic": "Quero um celular Samsung até 3 mil para jogos.",
+            "lastQuery": "E entre as opções que sobraram, qual tem melhor bateria?",
+            "lastInteractionType": "context_decision",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Partidas longas sem sentir que o celular chegou no limite",
+            "lastArchetype": "power_intensity",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Se custo-benefício pesar mais para você, vale olhar também o Galaxy S23 FE.",
+            "lastDecisionReason": "Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "tela",
+              "câmera"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S22",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s22:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "decisao|entrega|equilibrada|galaxy|minha|portabilidade|samsung|segura",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acabam|esquecem|menos|momentos|muitos|olhando|precisar|preco|preocupacao|registrar|repetir|varias",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "assim|pratica",
+                  "textHash": "assim|pratica",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "textHash": "abaixo|autonomia|categoria|equilibrada|portabilidade",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "celular|compacto|funciona|importa|melhor|premium",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "anuncio|aparece|atencao|claro|confirmacao|criteriosa|faixa|gastar|merece|nessa|pegar|precisa",
+                  "productKey": "Samsung Galaxy S22",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil para jogos.",
+              "lastWinnerName": "Samsung Galaxy S22",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": 3450,
+            "lastBudget": 3450,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 3450,
+              "preferredBrands": [
+                "samsung",
+                "motorola"
+              ],
+              "excludedBrands": [],
+              "desiredAttributes": [
+                "performance"
+              ],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": null,
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "Samsung Galaxy S22",
+              "version": "3.6.1",
+              "updatedAt": 1785009912667
+            },
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 3,
+              "lastTransition": {
+                "type": "context_decision",
+                "responsePath": "context_decision_no_search",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "context_decision",
+                "responsePath": "context_decision_no_search",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S22",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "context_decision",
+                "lastConversationalIntent": null,
+                "responsePath": "context_decision_no_search"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "c6fd3b44-d1a2-4955-b8f0-4a53fc55132c",
+            "lastRecommendationDecisionAtMs": 1785009904924,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
+            "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {
+            "category": "phone",
+            "budgetMax": 3450,
+            "preferredBrands": [
+              "samsung",
+              "motorola"
+            ],
+            "excludedBrands": [],
+            "desiredAttributes": [
+              "performance"
+            ],
+            "specifications": [],
+            "sizePreference": null,
+            "useCase": null,
+            "pricePreference": null,
+            "baselinePrice": null,
+            "baselineProductName": "Samsung Galaxy S22",
+            "version": "3.6.1",
+            "updatedAt": 1785009912667
+          }
+        }
+      ],
+      "reply_preview": "Eu iria no Samsung Galaxy S22.\n\nPensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3700 mAh.\n\nComparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 74 do Samsung Galaxy S22. "
+    },
+    {
+      "id": "negative-comparison-not-restriction",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil.",
+        "Samsung ou Motorola, qual é melhor?"
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "Samsung Galaxy S23 FE",
+              "price": "1799",
+              "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+              "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+              "source": "Carrefour"
+            },
+            "lastProductMentioned": "Samsung Galaxy S23 FE",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br"
+              },
+              {
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "search",
+            "lastPriority": "",
+            "lastTopic": "Quero um celular Samsung até 3 mil.",
+            "lastQuery": "Quero um celular Samsung até 3 mil.",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "custo-benefício",
+              "tela",
+              "longevidade"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S23 FE",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s23 fe:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "budget",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "equilibrar|orcamento|preco|seguranca",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "alguns|decisao|entrega|galaxy|minha|preco|rivais|samsung|segura",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "textHash": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "textHash": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acessivel|comprar|flagship|preco|principal|sensacao|sentido",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil.",
+              "lastWinnerName": "Samsung Galaxy S23 FE",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 1,
+              "lastTransition": {
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "Samsung Galaxy S23 FE",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "search",
+                "lastConversationalIntent": null,
+                "responsePath": "return_seguro"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "d1aff450-3b8c-4da6-8a6b-85b72576502a",
+            "lastRecommendationDecisionAtMs": 1785009935112,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
+            "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        },
+        {
+          "query": "Samsung ou Motorola, qual é melhor?",
+          "status": 200,
+          "reply_preview": "Eu iria no Samsung Galaxy S23 FE.\n\nO principal motivo é o equilíbrio geral, com destaque em custo-benefício. Ele entrega score de custo-benefício 89, o que pesa a favor.\n\nComparando com o Samsung Gala",
+          "session_context": {
+            "lastBestProduct": {
+              "product_name": "Samsung Galaxy S23 FE",
+              "price": "1799",
+              "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+              "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+              "source": "Carrefour"
+            },
+            "lastProductMentioned": "Samsung Galaxy S23 FE",
+            "lastProducts": [
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              },
+              {
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br"
+              },
+              {
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "Samsung Galaxy A35 5G",
+                "price": "1299",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy A35 5G preço&prds=productid:16298723166771373845,headlineOfferDocid:16298723166771373845,imageDocid:5196452885042822779,rds:PC_17235610256742029209|PROD_PC_17235610256742029209,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBHOE-N8XnnCt7RG0vjRQ2ZtSLRzPEvqochW2805LOOS9qBxMwyOLPeo1DetqCi42zsqxbThk6taXFqGet6mB7lznMcU0Vxg",
+                "source": "jufap.com.br",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Redmi Note 13",
+                "price": "1212.69",
+                "link": "https://www.google.com/search?ibp=oshop&q=Redmi Note 13 preço&prds=catalogid:11106581540621229040,productid:4087167201946188608,headlineOfferDocid:13174928853325924458,imageDocid:15579131272923734022,gpcid:10404933360210357094,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTsmjtsgZCm_Jejpo_EciMyHYgUFu7kwlWG3-U8OkfrBHlXYK0lS8bTb-ztfCxAyWsZNIcwWxp_WoHAj9iK7vwf3DvtASWkUahWPeECbPy0MFdEK9ZxKQ8l",
+                "source": "Bludiode European Transactions",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastCategory": "phone",
+            "lastIntent": "comparison",
+            "lastPriority": "",
+            "lastTopic": "Quero um celular Samsung até 3 mil.",
+            "lastQuery": "Samsung ou Motorola, qual é melhor?",
+            "lastInteractionType": "context_decision",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastArchetype": "",
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "custo-benefício",
+              "tela",
+              "longevidade"
+            ],
+            "lastWinnerSacrifices": [],
+            "lastDecisionChange": null,
+            "lastPreviousAxis": "",
+            "lastPreviousPriority": "",
+            "lastComparisonProducts": [],
+            "lastComparisonQuery": "",
+            "comparisonContextLocked": false,
+            "contexts": [],
+            "activeContextKey": "",
+            "activeContextType": "",
+            "activeContextStrength": "",
+            "lastContextualAxis": "",
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "Samsung Galaxy S23 FE",
+              "axisKey": "performance",
+              "decisionContextKey": "samsung galaxy s23 fe:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "budget",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "equilibrar|orcamento|preco|seguranca",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "alguns|decisao|entrega|galaxy|minha|preco|rivais|samsung|segura",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "ajudou|barreira|compra|disputa|estourar|fechar|ganhar|inicial|menos|orcamento|pesou|varias",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "textHash": "barreira|compra|estourar|fechar|inicial|menos|orcamento",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "textHash": "acessivel|aparelho|combinar|descrito|exigido|flagship|limite|menos|perfil|sensacao|sensacao|tambem",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "acessivel|comprar|flagship|preco|principal|sensacao|sentido",
+                  "productKey": "Samsung Galaxy S23 FE",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "Quero um celular Samsung até 3 mil.",
+              "lastWinnerName": "Samsung Galaxy S23 FE",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
+            "lastArgumentMemoryPressure": "low",
+            "miaBrain": null,
+            "activeMiaRole": "",
+            "budgetMax": null,
+            "lastBudget": null,
+            "lastCommercialConstraints": null,
+            "preferredBrands": [],
+            "excludedBrands": [],
+            "semanticStateProvenance": {
+              "version": "11A.7",
+              "turnIndex": 2,
+              "lastTransition": {
+                "type": "context_decision",
+                "responsePath": "context_decision_no_search",
+                "authority": "mia_intent_recognition",
+                "reasonCodes": [],
+                "invalidations": []
+              },
+              "commercialAnchor": {
+                "source": "context_decision",
+                "responsePath": "context_decision_no_search",
+                "authority": "preserved",
+                "productName": "Samsung Galaxy S23 FE",
+                "invalidated": false
+              },
+              "comparison": null,
+              "mixed": null,
+              "conversational": {
+                "lastInteractionType": "context_decision",
+                "lastConversationalIntent": null,
+                "responsePath": "context_decision_no_search"
+              }
+            },
+            "mixedConversationalState": null,
+            "lastRecommendationDecisionRequestId": "d1aff450-3b8c-4da6-8a6b-85b72576502a",
+            "lastRecommendationDecisionAtMs": 1785009935112,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
+            "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
+          },
+          "constraints": {}
+        }
+      ],
+      "reply_preview": "Eu iria no Samsung Galaxy S23 FE.\n\nO principal motivo é o equilíbrio geral, com destaque em custo-benefício. Ele entrega score de custo-benefício 89, o que pesa a favor.\n\nComparando com o Samsung Galaxy A35 5G: - Em câmera, o Samsung Galaxy S23 FE leva vantagem: 84 contra 80 do S"
+    }
+  ]
+}

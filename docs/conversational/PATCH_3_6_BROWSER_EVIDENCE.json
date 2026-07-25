@@ -3,7 +3,7 @@
   "phase": "browser_validation",
   "status": "APPROVED",
   "url": "https://economia-ai.vercel.app/app-mia",
-  "finished_at": "2026-07-25T19:00:24.295Z",
+  "finished_at": "2026-07-25T20:08:03.979Z",
   "checks": [
     {
       "id": "ui-generic-clarification",
@@ -28,7 +28,7 @@
     {
       "id": "ui-mixed-intent",
       "pass": true,
-      "detail": "Isso realmente muda um pouco o cenário.\n\nCom o orçamento ficou um pouco mais flexível, olhei de novo as opções que já tínhamos em contexto.\n\nO Samsung Galaxy S2"
+      "detail": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a busca ficou restrita a samsung e motorola; o orçamento ficou um pouco mais flexível. Reavaliei o que já tínhamos mapeado.\n\nMant"
     },
     {
       "id": "ui-commercial-entry",
