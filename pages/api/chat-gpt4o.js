@@ -384,6 +384,10 @@ import {
   commercialOfferMatchesQueryCore,
 } from "../../lib/miaCommercialNewSearchResetGuard.js";
 import {
+  resolveProductIdentityFromQuery,
+  extractProductMentionFromQuery,
+} from "../../lib/miaProductIdentityResolution.js";
+import {
   applySpecificProductLockToProducts,
   bootstrapSpecificProductLock,
   enforceSpecificProductLockWinner,
@@ -6008,6 +6012,22 @@ function resolveMiaProductIdentity(productName = "") {
     };
   }
 
+  const identity = resolveProductIdentityFromQuery(officialName, {
+    familyKeyResolver: (name) => getProductFamilyKey(name) || "",
+  });
+
+  if (identity.resolvedFrom === "variant_rule" || identity.resolvedFrom === "direct_name") {
+    return {
+      officialName: identity.officialName,
+      displayName: identity.displayName,
+      shortName: identity.shortName,
+      modelKey:
+        identity.modelKey ||
+        getProductFamilyKey(identity.officialName) ||
+        normalizeProductKey(identity.officialName),
+    };
+  }
+
   const stripped = officialName
     .replace(/\b\d+\s?gb\b/gi, "")
     .replace(/\b\d+\s?tb\b/gi, "")
@@ -6019,96 +6039,6 @@ function resolveMiaProductIdentity(productName = "") {
     .replace(/\busado\b/gi, "")
     .replace(/\s+/g, " ")
     .trim();
-
-  const normalized = normalizeQuery(stripped);
-
-  const variantRules = [
-    {
-      test: /\b(?:samsung\s+)?galaxy\s+s(\d{1,3})\s*ultra\b/i,
-      display: (m) => `Galaxy S${m[1]} Ultra`,
-      short: (m) => `S${m[1]} Ultra`
-    },
-    {
-      test: /\b(?:samsung\s+)?galaxy\s+s(\d{1,3})\s*\+(?=\s|$|[,\.;)\]])/i,
-      display: (m) => `Galaxy S${m[1]}+`,
-      short: (m) => `S${m[1]}+`
-    },
-    {
-      test: /\b(?:samsung\s+)?galaxy\s+s(\d{1,3})\s*plus\b/i,
-      display: (m) => `Galaxy S${m[1]}+`,
-      short: (m) => `S${m[1]}+`
-    },
-    {
-      test: /\b(?:samsung\s+)?galaxy\s+s(\d{1,3})\s*fe\b/i,
-      display: (m) => `Galaxy S${m[1]} FE`,
-      short: (m) => `S${m[1]} FE`
-    },
-    {
-      test: /\b(?:samsung\s+)?galaxy\s+s(\d{1,3})(?!\s*(?:\+|fe|ultra|plus)\b)/i,
-      display: (m) => `Galaxy S${m[1]}`,
-      short: (m) => `S${m[1]}`
-    },
-    {
-      test: /\b(?:samsung\s+)?galaxy\s+a(\d{1,3})\b/i,
-      display: (m) => `Galaxy A${m[1]}`,
-      short: (m) => `A${m[1]}`
-    },
-    {
-      test: /\biphone\s*(\d{1,2})\s*pro\s*max\b/i,
-      display: (m) => `iPhone ${m[1]} Pro Max`,
-      short: (m) => `iPhone ${m[1]} Pro Max`
-    },
-    {
-      test: /\biphone\s*(\d{1,2})\s*pro\b/i,
-      display: (m) => `iPhone ${m[1]} Pro`,
-      short: (m) => `iPhone ${m[1]} Pro`
-    },
-    {
-      test: /\biphone\s*(\d{1,2})\s*plus\b/i,
-      display: (m) => `iPhone ${m[1]} Plus`,
-      short: (m) => `iPhone ${m[1]} Plus`
-    },
-    {
-      test: /\biphone\s*(\d{1,2})\b/i,
-      display: (m) => `iPhone ${m[1]}`,
-      short: (m) => `iPhone ${m[1]}`
-    },
-    {
-      test: /\bmoto\s+g(\d{1,3})\b/i,
-      display: (m) => `Moto G${m[1]}`,
-      short: (m) => `G${m[1]}`
-    },
-    {
-      test: /\bredmi\s+note\s*(\d{1,3})\b/i,
-      display: (m) => `Redmi Note ${m[1]}`,
-      short: (m) => `Note ${m[1]}`
-    },
-    {
-      test: /\bpoco\s+([a-z]?\d{1,3})\b/i,
-      display: (m) => `Poco ${String(m[1]).toUpperCase()}`,
-      short: (m) => `Poco ${String(m[1]).toUpperCase()}`
-    }
-  ];
-
-  for (const rule of variantRules) {
-    const match = stripped.match(rule.test);
-
-    if (match) {
-      const displayName = rule.display(match);
-      const shortName = rule.short(match);
-      const modelKey =
-        getProductFamilyKey(officialName) ||
-        normalizeProductKey(officialName) ||
-        normalizeQuery(displayName).replace(/\s+/g, "_");
-
-      return {
-        officialName,
-        displayName,
-        shortName,
-        modelKey
-      };
-    }
-  }
 
   const words = stripped.split(/\s+/).filter(Boolean);
   const displayName =
