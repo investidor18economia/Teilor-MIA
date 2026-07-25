@@ -140,6 +140,8 @@
     "test:mia:patch-124:full-regression": "node scripts/test-mia-patch-124-full-mvp-regression-runner.js",
     "test:mia:patch-124:full-regression:once": "node scripts/test-mia-patch-124-full-mvp-regression-runner.js --once",
     "test:mia:patch-124:prod-validation": "node scripts/patch-124-production-validation.mjs",
+    "test:mia:conv:patch-31:commercial-entry": "node scripts/test-mia-patch-31-commercial-entry-audit.js",
+    "test:mia:conv:patch-31:prod-validation": "node scripts/patch-31-production-validation.mjs",
     "test:mia:patch-125:rc-smoke": "node scripts/patch-125-rc-smoke.mjs",
     "test:mia:patch-126:production-validation": "node scripts/test-mia-patch-126-production-validation-runner.mjs",
     "test:mia:patch-126:browser-validation": "node scripts/test-mia-patch-126-browser-validation.mjs",

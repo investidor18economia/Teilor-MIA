@@ -28493,6 +28493,7 @@ if (lockedComparisonContextFromSession) {
         contextAction: contextActionEarly,
         contextResolution,
         query,
+        intentRecognition: intentRecognitionEarly,
       });
 
       if (authorityApplied.intent !== intent) {

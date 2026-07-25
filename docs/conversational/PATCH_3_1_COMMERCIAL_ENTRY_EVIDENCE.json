@@ -1,0 +1,82 @@
+{
+  "patch": "3.1",
+  "title": "Commercial Entry Corrections",
+  "status": "APPROVED",
+  "date": "2026-07-25",
+  "baseline_reference": "docs/conversational/CONVERSATIONAL_BASELINE.md",
+  "architecture_preserved": {
+    "single_pipeline": true,
+    "mia_owns_intelligence": true,
+    "llm_only_verbalizes": true,
+    "no_parallel_brain": true,
+    "cognitive_router_shadow": true
+  },
+  "root_causes_addressed": [
+    {
+      "id": "RC-3.1-01",
+      "component": "applyIntentAuthorityToPipeline",
+      "problem": "Legacy resolveContextQuery left shouldSkipProductSearch=true after commercial authority ALLOW/MIXED",
+      "fix": "Commercial entry reconciliation patch clears legacy skip and opens pipeline"
+    },
+    {
+      "id": "RC-3.1-02",
+      "component": "resolveCommercialPermissionFromRecognition",
+      "problem": "Mixed + requiresClarification denied commercial entry despite commercial relevance",
+      "fix": "Allow MIXED when commercialIntent or commercialRelevance >= 0.35"
+    },
+    {
+      "id": "RC-3.1-03",
+      "component": "resolveInteractionMode",
+      "problem": "Active commercial ask could default to social when social score low but not dominant",
+      "fix": "Commercial ask + relevance >= 0.35 routes to COMMERCE before social default"
+    },
+    {
+      "id": "RC-3.1-04",
+      "component": "scoreCommercialRelevance",
+      "problem": "Category in message without handler signals under-scored commercial relevance",
+      "fix": "Boost when category token + active commercial ask co-present"
+    }
+  ],
+  "files_modified": [
+    "lib/miaCommercialEntryReconciliation.js",
+    "lib/miaIntentAuthority.js",
+    "lib/miaIntentRecognitionLayer.js",
+    "pages/api/chat-gpt4o.js",
+    "scripts/test-mia-patch-31-commercial-entry-audit.js",
+    "docs/conversational/PATCH_3_1_COMMERCIAL_ENTRY_EVIDENCE.json"
+  ],
+  "tests": {
+    "patch_31_audit": { "passed": 18, "failed": 0 },
+    "intent_authority_11A1": { "passed": 32, "failed": 0 },
+    "intent_social_11A": { "passed": 48, "failed": 0 },
+    "routing_guardrails": { "passed": true },
+    "mia_chat_proxy": { "passed": 23, "failed": 0 }
+  },
+  "smoke_p0_local_endpoint": {
+    "base_url": "http://localhost:3002/api/mia-chat",
+    "scenarios": [
+      { "id": "commercial-direct", "status": 200, "hasPrices": true, "entry_ok": true },
+      { "id": "social", "status": 200, "hasPrices": false, "entry_ok": true },
+      { "id": "post-purchase", "status": 200, "hasPrices": false, "entry_ok": true },
+      { "id": "mixed", "status": 200, "hasPrices": false, "entry_ok": true },
+      { "id": "specific", "status": 200, "hasPrices": false, "entry_ok": true },
+      { "id": "topic-switch", "status": 200, "hasPrices": false, "entry_ok": true }
+    ]
+  },
+  "conv_p_problems_targeted": [
+    "CONV-P-A01",
+    "CONV-P-A02",
+    "CONV-P-A03",
+    "CONV-P-A04",
+    "CONV-P-A05",
+    "CONV-P-A06",
+    "CONV-P-A07"
+  ],
+  "conv_ok_preserved": [
+    "CONV-OK-10",
+    "CONV-OK-11",
+    "CONV-OK-12",
+    "CONV-OK-50",
+    "CONV-OK-51"
+  ]
+}
