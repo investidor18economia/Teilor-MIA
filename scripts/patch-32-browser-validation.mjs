@@ -72,7 +72,7 @@ checks.push({
   winner: r2.session?.lastBestProduct?.product_name || null,
 });
 
-const r3 = await sendUiMessage("oi", { reload: false });
+const r3 = await sendUiMessage("oi", { reload: true });
 checks.push({
   id: "ui-social",
   pass: r3.status === 200 && r3.cards === 0,
