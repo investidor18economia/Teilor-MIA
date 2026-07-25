@@ -1,0 +1,31 @@
+{
+  "patch": "3.3",
+  "phase": "browser_validation",
+  "status": "APPROVED",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "finished_at": "2026-07-25T16:19:27.427Z",
+  "checks": [
+    {
+      "id": "ui-iphone-15-lock",
+      "pass": true,
+      "cards": 1,
+      "winner": null
+    },
+    {
+      "id": "ui-s24-constraint",
+      "pass": true,
+      "cards": 0,
+      "mention": "Galaxy S24"
+    },
+    {
+      "id": "ui-comparison-flow",
+      "pass": true,
+      "cards": 0,
+      "comparisonLocked": true
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0
+  }
+}

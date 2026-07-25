@@ -1,0 +1,208 @@
+{
+  "patch": "3.3",
+  "phase": "production_validation",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T16:15:28.269Z",
+  "finished_at": "2026-07-25T16:17:06.936Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "deploy_build": "e9a3f4e21040",
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "p0_failed": 0,
+    "scenarios": 6
+  },
+  "checks": [
+    {
+      "id": "health",
+      "pass": true,
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T16:15:29.890Z\",\"build\":\"e9a3f4e21040\"}",
+      "severity": "P0",
+      "at": "2026-07-25T16:15:29.410Z"
+    },
+    {
+      "id": "baseline:galaxy-s24-ultra",
+      "pass": true,
+      "detail": "card=null elapsed=2704ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:15:32.115Z"
+    },
+    {
+      "id": "baseline:alias-s24",
+      "pass": true,
+      "detail": "card=null elapsed=1886ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:15:39.511Z"
+    },
+    {
+      "id": "baseline:iphone-15",
+      "pass": true,
+      "detail": "card=iPhone 15 elapsed=6656ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:15:51.672Z"
+    },
+    {
+      "id": "baseline:product-plus-constraint",
+      "pass": true,
+      "detail": "card=Galaxy S24 elapsed=5603ms",
+      "severity": "P0",
+      "at": "2026-07-25T16:16:02.784Z"
+    },
+    {
+      "id": "scenario:comparison:iphone-vs-galaxy",
+      "pass": true,
+      "detail": "2 steps",
+      "severity": "P0",
+      "at": "2026-07-25T16:16:22.601Z"
+    },
+    {
+      "id": "scenario:follow-up:after-comparison",
+      "pass": true,
+      "detail": "2 steps",
+      "severity": "P0",
+      "at": "2026-07-25T16:16:44.873Z"
+    },
+    {
+      "id": "regression:patch-3.2-establish",
+      "pass": true,
+      "detail": "winner=iPhone 13",
+      "severity": "P0",
+      "at": "2026-07-25T16:16:52.679Z"
+    },
+    {
+      "id": "regression:patch-3.2-follow-up",
+      "pass": true,
+      "detail": "winner=iPhone 11",
+      "severity": "P0",
+      "at": "2026-07-25T16:16:58.708Z"
+    },
+    {
+      "id": "regression:patch-3.1-commercial",
+      "pass": true,
+      "detail": "offers=3",
+      "severity": "P0",
+      "at": "2026-07-25T16:17:06.935Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "baseline:galaxy-s24-ultra",
+      "query": "Galaxy S24 Ultra",
+      "pass": true,
+      "status": 200,
+      "elapsed_ms": 2704,
+      "card": "",
+      "reply_preview": "Você mencionou o Galaxy S24 Ultra. Está interessado em saber mais sobre ele ou tem alguma dúvida específica?"
+    },
+    {
+      "scenario_id": "baseline:alias-s24",
+      "query": "S24",
+      "pass": true,
+      "status": 200,
+      "elapsed_ms": 1886,
+      "card": "",
+      "reply_preview": "Oi! Você mencionou \"S24\". Poderia me dar mais detalhes sobre o que você está procurando ou se refere a algo específico?"
+    },
+    {
+      "scenario_id": "baseline:iphone-15",
+      "query": "iPhone 15",
+      "pass": true,
+      "status": 200,
+      "elapsed_ms": 6656,
+      "card": "iPhone 15",
+      "reply_preview": "A escolha mais equilibrada aqui é o iPhone 15 porque combina com o foco principal desta busca.\n\nO Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria "
+    },
+    {
+      "scenario_id": "baseline:product-plus-constraint",
+      "query": "S24 com boa bateria",
+      "pass": true,
+      "status": 200,
+      "elapsed_ms": 5603,
+      "card": "Galaxy S24",
+      "reply_preview": "Entre as opções, eu colocaria o Galaxy S24 em primeiro porque atende diretamente o modelo que você citou nesta busca.\n\nNa prática, escolher o modelo certo evita cair em alternativa parecida que não er"
+    },
+    {
+      "scenario_id": "comparison:iphone-vs-galaxy",
+      "steps": [
+        {
+          "text": "iPhone 15 vs Galaxy S24",
+          "pass": true,
+          "card": "",
+          "elapsed_ms": 1680
+        },
+        {
+          "text": "qual é melhor?",
+          "pass": true,
+          "card": "",
+          "elapsed_ms": 1613
+        }
+      ],
+      "pass": true
+    },
+    {
+      "scenario_id": "follow-up:after-comparison",
+      "steps": [
+        {
+          "text": "compare iPhone 13 e Galaxy A54",
+          "pass": true,
+          "card": "iPhone 13",
+          "elapsed_ms": 5947
+        },
+        {
+          "text": "e o outro?",
+          "pass": true,
+          "card": "iPhone 13",
+          "elapsed_ms": 5316
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "latencies_ms": [
+    {
+      "status": 200,
+      "elapsed_ms": 2704
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1886
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6656
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5603
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1680
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1613
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5947
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5316
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7806
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 526
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8227
+    }
+  ],
+  "baseline_reference": "docs/conversational/CONVERSATIONAL_BASELINE.md"
+}
