@@ -1,0 +1,175 @@
+{
+  "patch": "3.5b",
+  "phase": "production_validation",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T18:28:30.990Z",
+  "finished_at": "2026-07-25T18:30:23.623Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "deploy_build": "ba6f2160a43d",
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "p0_failed": 0,
+    "scenarios": 5
+  },
+  "checks": [
+    {
+      "id": "health",
+      "pass": true,
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T18:28:32.250Z\",\"build\":\"ba6f2160a43d\"}",
+      "severity": "P0",
+      "at": "2026-07-25T18:28:32.315Z"
+    },
+    {
+      "id": "humanization:budget-increase",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nCom o teto ficou em R$ 2500,00, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria ",
+      "severity": "P0",
+      "at": "2026-07-25T18:28:50.370Z"
+    },
+    {
+      "id": "humanization:brand-samsung-also-motorola",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nMantendo o que conversamos, a marca motorola entrou na análise — e isso pede um ajuste fino.\n\nContin",
+      "severity": "P0",
+      "at": "2026-07-25T18:29:09.259Z"
+    },
+    {
+      "id": "humanization:use-case-faculdade",
+      "pass": true,
+      "detail": "Boa — isso muda como eu comparo as opções.\n\nComo o uso principal passou a ser faculdade, reavaliei as opções que já estávamos considerando.\n",
+      "severity": "P0",
+      "at": "2026-07-25T18:29:28.248Z"
+    },
+    {
+      "id": "humanization:budget-flex",
+      "pass": true,
+      "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nMantendo o que conversamos, o orçamento ficou um pouco mais flexível — e isso pe",
+      "severity": "P0",
+      "at": "2026-07-25T18:29:45.582Z"
+    },
+    {
+      "id": "humanization:informal-budget",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nCom o teto ficou em R$ 2500,00, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria ",
+      "severity": "P0",
+      "at": "2026-07-25T18:30:02.220Z"
+    },
+    {
+      "id": "regression:patch-3.5a-facts-still-rich",
+      "pass": true,
+      "detail": "Neste cenário, o Samsung Galaxy S23 FE faz mais sentido porque menos barreira inicial para fechar a ",
+      "severity": "P0",
+      "at": "2026-07-25T18:30:15.812Z"
+    },
+    {
+      "id": "regression:patch-3.4b-notebook-partial",
+      "pass": true,
+      "detail": "A escolha mais equilibrada aqui é o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD",
+      "severity": "P0",
+      "at": "2026-07-25T18:30:23.622Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "humanization:budget-increase",
+      "pass": true,
+      "turns": [
+        "Quero um celular até R$ 2.000.",
+        "Na verdade pode ser até R$ 2.500."
+      ],
+      "reply_preview": "Esse detalhe faz diferença na análise.\n\nCom o teto ficou em R$ 2500,00, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nO restante do critério",
+      "opening": "Esse detalhe faz diferença na análise."
+    },
+    {
+      "scenario_id": "humanization:brand-samsung-also-motorola",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até R$ 3.000.",
+        "Pode ser Motorola também."
+      ],
+      "reply_preview": "Esse detalhe faz diferença na análise.\n\nMantendo o que conversamos, a marca motorola entrou na análise — e isso pede um ajuste fino.\n\nContinuo indicando o Samsung Galaxy S23 FE — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nM",
+      "opening": "Esse detalhe faz diferença na análise."
+    },
+    {
+      "scenario_id": "humanization:use-case-faculdade",
+      "pass": true,
+      "turns": [
+        "Quero um celular para jogos até R$ 2.500.",
+        "Na verdade vou usar para faculdade."
+      ],
+      "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nComo o uso principal passou a ser faculdade, reavaliei as opções que já estávamos considerando.\n\nO iPhone 13 segue na frente — Escolhido por performance: Partidas longas sem sentir que o celular chegou no limite.\n\nO restante do critério",
+      "opening": "Boa — isso muda como eu comparo as opções."
+    },
+    {
+      "scenario_id": "humanization:budget-flex",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até R$ 3.000.",
+        "Pode passar um pouco dos 3 mil."
+      ],
+      "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nMantendo o que conversamos, o orçamento ficou um pouco mais flexível — e isso pede um ajuste fino.\n\nMantenho o Samsung Galaxy S23 FE como melhor opção — Escolhido por performance: Tarefas exigentes sem sentir que o apare",
+      "opening": "Com essa informação consigo refinar melhor a recomendação."
+    },
+    {
+      "scenario_id": "humanization:informal-budget",
+      "pass": true,
+      "turns": [
+        "Quero um celular até R$ 2.000.",
+        "até 2.500 na real"
+      ],
+      "reply_preview": "Esse detalhe faz diferença na análise.\n\nCom o teto ficou em R$ 2500,00, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nO restante do critério",
+      "opening": "Esse detalhe faz diferença na análise."
+    }
+  ],
+  "latencies_ms": [
+    {
+      "status": 200,
+      "elapsed_ms": 10612
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1934
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6491
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1384
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7378
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 599
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5251
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1057
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5136
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 490
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8092
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2303
+    }
+  ]
+}

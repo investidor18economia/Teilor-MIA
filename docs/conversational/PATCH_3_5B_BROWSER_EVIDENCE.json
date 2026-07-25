@@ -1,0 +1,25 @@
+{
+  "patch": "3.5b",
+  "phase": "browser_validation",
+  "status": "APPROVED",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "finished_at": "2026-07-25T18:31:19.809Z",
+  "checks": [
+    {
+      "id": "ui-budget-refinement-humanized",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nCom o teto ficou em R$ 2500,00, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iPhone 13 — Escolhido por performa",
+      "opening": "Esse detalhe faz diferença na análise."
+    },
+    {
+      "id": "ui-brand-refinement-humanized",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nMantendo o que conversamos, a marca motorola entrou na análise — e isso pede um ajuste fino.\n\nContinuo indicando o Samsung Galaxy S23 FE — E",
+      "opening": "Esse detalhe faz diferença na análise."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 0
+  }
+}
