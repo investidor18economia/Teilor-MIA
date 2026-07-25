@@ -12,7 +12,6 @@ import MIASettingsPanel from "./MIASettingsPanel";
 import MIAHelpPanel from "./MIAHelpPanel";
 import FeedPanel from "./FeedPanel";
 import MIAMenuSymbol from "./MIAMenuSymbol";
-import { MIA_AVATAR_ALT } from "../lib/brandAssets";
 import { getFeedItemGallery } from "../lib/feedImageResolver";
 import { findProductByIdentity, getProductIdentityKey } from "../lib/productIdentity";
 import { loadStoredUser, loadUserProfile, saveStoredUser, saveUserProfile, clearStoredUser } from "../lib/userProfileStorage";
@@ -26,10 +25,6 @@ import {
   getOpeningTypingDelayMs,
   resolveStoredSessionOpening
 } from "../lib/miaOpeningSystem";
-import {
-  computeMiaHomeIntroState,
-  handleMiaOverlayDismiss,
-} from "../lib/miaHomeIntroState";
 import { getCognitiveLoadingFallbackState } from "../lib/miaCognitiveLoading.js";
 import {
   shouldUseStructuredParagraphs,
@@ -1678,25 +1673,6 @@ useEffect(() => {
     };
   }, [hasMounted, greetingShown]);
 
-  useEffect(() => {
-    if (!hasMounted || !greetingShown) return;
-
-    const hasOpening = history.some((item) => item?.isMiaOpening && item?.resposta);
-    const hasUserConversation = history.some(
-      (item) =>
-        item?.pergunta ||
-        item?.offerCard ||
-        (item?.resposta && !item?.isMiaOpening && !item?.assistantTemp)
-    );
-
-    if (hasOpening || hasUserConversation) return;
-
-    const storedOpening = resolveStoredSessionOpening();
-    setHistory([
-      buildOpeningHistoryEntry(storedOpening || buildMiaOpening()),
-    ]);
-  }, [hasMounted, greetingShown, history]);
-
   function scrollToCurrentMiaFocus(behavior = "smooth") {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -2888,24 +2864,28 @@ function detectPriorityFromText(text = "") {
     await requestAuthCode(loginEmail, loginName);
   }
 
-  const { isIntroState, isConversationMode } = computeMiaHomeIntroState({
-    hasMounted,
-    greetingShown,
-    history,
+  const isIntroState = hasMounted
+    && history.length === 1
+    && history[0]?.resposta
+    && !history[0]?.pergunta
+    && !history[0]?.offerCard;
+
+  const hasConversationResponse = hasMounted && history.some((item, index) => {
+    if (!item?.resposta) return false;
+    if (item.pergunta || item.offerCard) return true;
+    return index > 0;
   });
+
+  const isConversationMode = hasMounted && hasConversationResponse;
 
   useEffect(() => {
     if (typeof document === "undefined") return undefined;
     document.body.classList.toggle("mia-app-intro", Boolean(isIntroState));
     document.body.classList.toggle("mia-app-conversation", Boolean(isConversationMode));
-  }, [isIntroState, isConversationMode]);
-
-  useEffect(() => {
-    if (typeof document === "undefined") return undefined;
     return () => {
       document.body.classList.remove("mia-app-intro", "mia-app-conversation");
     };
-  }, []);
+  }, [isIntroState, isConversationMode]);
 
   const introSuggestions = [
     "📱 Celular até 2.000",
@@ -2964,7 +2944,7 @@ function detectPriorityFromText(text = "") {
             {isConversationMode ? (
               <>
                 <div className="mia-chat-header-logo mia-chat-header-logo--compact">
-                  <MIAAvatar size="compact" alt={MIA_AVATAR_ALT} />
+                  <MIAAvatar size="compact" alt="Assistente MIΛ" />
                 </div>
                 <div className="mia-chat-header-copy mia-chat-header-copy--compact">
                   <div className="mia-chat-header-title-row">
@@ -2977,7 +2957,7 @@ function detectPriorityFromText(text = "") {
             ) : (
               <>
                 <div className="mia-chat-header-logo">
-                  <MIAAvatar size="header" alt={MIA_AVATAR_ALT} />
+                  <MIAAvatar size="header" alt="Assistente MIΛ" />
                 </div>
                 <div className="mia-chat-header-copy">
                   <div className="mia-chat-header-title-row">
@@ -3252,7 +3232,7 @@ function detectPriorityFromText(text = "") {
               </div>
             )}
 
-            {isIntroState && i === 0 && item.resposta && item.isMiaOpening && (
+            {i === 0 && item.resposta && history.length === 1 && (
               <div className="mia-empty-welcome mia-empty-welcome--after-opening">
                 <p className="mia-empty-welcome-title">Comece por aqui</p>
                 <p className="mia-empty-welcome-hint">Toque em uma sugestão ou conte para a MIA o que você está pensando em comprar.</p>
@@ -3555,7 +3535,7 @@ function detectPriorityFromText(text = "") {
         <>
           <div
             className="mia-drawer-overlay"
-            onPointerDown={(event) => handleMiaOverlayDismiss(event, closeSideMenu)}
+            onClick={closeSideMenu}
             aria-hidden="true"
           />
           <nav
@@ -3722,7 +3702,7 @@ function detectPriorityFromText(text = "") {
         <>
           <div
             className="mia-panel-overlay"
-            onPointerDown={(event) => handleMiaOverlayDismiss(event, closeHubPanelFromDrawer)}
+            onClick={closeHubPanelFromDrawer}
             aria-hidden="true"
           />
 
