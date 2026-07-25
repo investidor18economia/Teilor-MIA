@@ -1,0 +1,43 @@
+{
+  "patch": "3.6.2",
+  "phase": "sequence_h_correction",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T20:40:00.000Z",
+  "commit": "f1bcf6f",
+  "deploy_build": "f1bcf6f1203e",
+  "root_cause": {
+    "module": "lib/miaCommercialFollowUpContinuity.js + lib/miaCommercialConstraintRefinement.js",
+    "symptom": "Turn 1 informal commercial entry returned 'Isso se refere a qual recomendação anterior?'",
+    "cause": "Patch 3.6.1 prioritized extractCommercialRefinement before commercial entry routing; 'quero um cell ate 2500' matched budget_refinement (ate cue) and was classified as constraint_refinement without session anchor, triggering clarification instead of commercial pipeline"
+  },
+  "correction": {
+    "modules": [
+      "lib/miaCommercialConstraintRefinement.js",
+      "lib/miaCommercialRefinementMultiExtract.js",
+      "lib/miaCommercialFollowUpContinuity.js",
+      "lib/miaIntentRecognitionLayer.js"
+    ],
+    "version": "3.6.2",
+    "behavior": "isInitialCommercialEntryMessage() blocks refinement extraction on first-turn entry; classifyCommercialFollowUpType requires session anchor for constraint_refinement; informal commercial ask patterns extended"
+  },
+  "production_validation": {
+    "runs": 2,
+    "passed": 11,
+    "total": 11,
+    "sequence_h_pass": true,
+    "sequence_f_pass": true
+  },
+  "browser_validation": {
+    "passed": 8,
+    "total": 8
+  },
+  "mixed_intent_production": {
+    "passed": 7,
+    "total": 7
+  },
+  "local_audit": {
+    "script": "scripts/test-mia-patch-36-sequence-h-audit.js",
+    "passed": 39,
+    "total": 39
+  }
+}

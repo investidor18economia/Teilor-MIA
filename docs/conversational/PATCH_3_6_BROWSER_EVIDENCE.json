@@ -3,7 +3,7 @@
   "phase": "browser_validation",
   "status": "APPROVED",
   "url": "https://economia-ai.vercel.app/app-mia",
-  "finished_at": "2026-07-25T20:08:03.979Z",
+  "finished_at": "2026-07-25T20:35:25.978Z",
   "checks": [
     {
       "id": "ui-generic-clarification",

@@ -1,94 +1,94 @@
 {
   "patch": "3.6",
   "phase": "production_validation",
-  "status": "REJECTED",
-  "started_at": "2026-07-25T20:11:22.940Z",
-  "finished_at": "2026-07-25T20:15:14.167Z",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T20:29:36.477Z",
+  "finished_at": "2026-07-25T20:33:31.611Z",
   "base_url": "https://economia-ai.vercel.app",
-  "deploy_build": "c8fd852484de",
+  "deploy_build": "f1bcf6f1203e",
   "summary": {
-    "passed": 10,
-    "failed": 1,
-    "p0_failed": 1,
+    "passed": 11,
+    "failed": 0,
+    "p0_failed": 0,
     "scenarios": 10
   },
   "checks": [
     {
       "id": "health",
       "pass": true,
-      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T20:11:23.137Z\",\"build\":\"c8fd852484de\"}",
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T20:29:36.767Z\",\"build\":\"f1bcf6f1203e\"}",
       "severity": "P0",
-      "at": "2026-07-25T20:11:23.253Z"
+      "at": "2026-07-25T20:29:36.920Z"
     },
     {
       "id": "sequence-a:generic-clarify",
       "pass": true,
       "detail": "Isso realmente muda um pouco o cenário.\n\nCom o uso principal passou a ser para faculdade, olhei de novo as opções que já tínhamos em context",
       "severity": "P0",
-      "at": "2026-07-25T20:11:40.872Z"
+      "at": "2026-07-25T20:29:54.599Z"
     },
     {
       "id": "sequence-b:successive-refinements",
       "pass": true,
-      "detail": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é especialmente relevante para uso ",
+      "detail": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é especialmente relevante para quem",
       "severity": "P0",
-      "at": "2026-07-25T20:12:21.359Z"
+      "at": "2026-07-25T20:30:34.054Z"
     },
     {
       "id": "sequence-c:budget-correction",
       "pass": true,
       "detail": "Isso realmente muda um pouco o cenário.\n\nMantendo o que conversamos, o teto passou de R$ 2000,00 para R$ 2500,00 — e isso pede um ajuste fin",
       "severity": "P0",
-      "at": "2026-07-25T20:12:40.674Z"
+      "at": "2026-07-25T20:30:52.803Z"
     },
     {
       "id": "sequence-d:brand-negation",
       "pass": true,
       "detail": "Boa — isso muda como eu comparo as opções.\n\nMantendo o que conversamos, motorola saiu da comparação — e isso pede um ajuste fino.\n\nMantenho ",
       "severity": "P0",
-      "at": "2026-07-25T20:13:05.974Z"
+      "at": "2026-07-25T20:31:17.836Z"
     },
     {
       "id": "sequence-e:hard-vs-flex-budget",
       "pass": true,
       "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nComo o orçamento ficou um pouco mais flexível, reavaliei as opções que já estáva",
       "severity": "P0",
-      "at": "2026-07-25T20:13:25.093Z"
+      "at": "2026-07-25T20:31:37.352Z"
     },
     {
       "id": "sequence-f:mixed-intent",
       "pass": true,
       "detail": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a busca ficou restrita a samsung e motorola; o orçamento ficou um pou",
       "severity": "P0",
-      "at": "2026-07-25T20:13:43.910Z"
+      "at": "2026-07-25T20:31:57.157Z"
     },
     {
       "id": "colloquial:motorola-tbm-serve",
       "pass": true,
       "detail": "Esse ajuste muda o recorte da escolha.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ",
       "severity": "P0",
-      "at": "2026-07-25T20:14:03.614Z"
+      "at": "2026-07-25T20:32:15.723Z"
     },
     {
       "id": "colloquial:pode-aumentar-pra-2500",
       "pass": true,
       "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nMantendo o que conversamos, o teto passou de R$ 2000,00 para R$ 2500,00 — e isso",
       "severity": "P0",
-      "at": "2026-07-25T20:14:21.512Z"
+      "at": "2026-07-25T20:32:33.239Z"
     },
     {
       "id": "sequence-g:specific-product-followup",
       "pass": true,
       "detail": "Me conta um pouco mais do que você precisa que eu te ajudo.",
       "severity": "P0",
-      "at": "2026-07-25T20:14:50.999Z"
+      "at": "2026-07-25T20:33:02.342Z"
     },
     {
       "id": "sequence-h:informal-natural",
-      "pass": false,
-      "detail": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+      "pass": true,
+      "detail": "Boa — isso muda como eu comparo as opções.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAi",
       "severity": "P0",
-      "at": "2026-07-25T20:15:08.662Z"
+      "at": "2026-07-25T20:33:26.105Z"
     }
   ],
   "scenarios": [
@@ -330,8 +330,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "443a93bf-ccd5-4a15-ba2d-f9b21e275bfa",
-            "lastRecommendationDecisionAtMs": 1785010287733,
+            "lastRecommendationDecisionRequestId": "087c653c-5743-4ad0-8c42-83a9f3b38df0",
+            "lastRecommendationDecisionAtMs": 1785011380897,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -560,8 +560,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "443a93bf-ccd5-4a15-ba2d-f9b21e275bfa",
-            "lastRecommendationDecisionAtMs": 1785010287733,
+            "lastRecommendationDecisionRequestId": "087c653c-5743-4ad0-8c42-83a9f3b38df0",
+            "lastRecommendationDecisionAtMs": 1785011380897,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -579,8 +579,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010294715
+              "version": "3.6.2",
+              "updatedAt": 1785011388246
             },
             "preferredBrands": [],
             "excludedBrands": [],
@@ -839,8 +839,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "443a93bf-ccd5-4a15-ba2d-f9b21e275bfa",
-            "lastRecommendationDecisionAtMs": 1785010287733,
+            "lastRecommendationDecisionRequestId": "087c653c-5743-4ad0-8c42-83a9f3b38df0",
+            "lastRecommendationDecisionAtMs": 1785011380897,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -858,8 +858,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010300743
+              "version": "3.6.2",
+              "updatedAt": 1785011394466
             },
             "preferredBrands": [],
             "excludedBrands": [],
@@ -1140,8 +1140,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "825989e9-198f-426a-b8ae-169b578111ff",
-            "lastRecommendationDecisionAtMs": 1785010312951,
+            "lastRecommendationDecisionRequestId": "2200ec33-2f78-47c7-ae5c-52807b255ba5",
+            "lastRecommendationDecisionAtMs": 1785011405880,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -1350,8 +1350,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "825989e9-198f-426a-b8ae-169b578111ff",
-            "lastRecommendationDecisionAtMs": 1785010312951,
+            "lastRecommendationDecisionRequestId": "2200ec33-2f78-47c7-ae5c-52807b255ba5",
+            "lastRecommendationDecisionAtMs": 1785011405880,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -1374,8 +1374,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010320785
+              "version": "3.6.2",
+              "updatedAt": 1785011413719
             },
             "preferredBrands": [
               "apple",
@@ -1620,8 +1620,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "825989e9-198f-426a-b8ae-169b578111ff",
-            "lastRecommendationDecisionAtMs": 1785010312951,
+            "lastRecommendationDecisionRequestId": "2200ec33-2f78-47c7-ae5c-52807b255ba5",
+            "lastRecommendationDecisionAtMs": 1785011405880,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -1644,8 +1644,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010327322
+              "version": "3.6.2",
+              "updatedAt": 1785011420123
             },
             "preferredBrands": [
               "apple",
@@ -1894,8 +1894,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "825989e9-198f-426a-b8ae-169b578111ff",
-            "lastRecommendationDecisionAtMs": 1785010312951,
+            "lastRecommendationDecisionRequestId": "2200ec33-2f78-47c7-ae5c-52807b255ba5",
+            "lastRecommendationDecisionAtMs": 1785011405880,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -1918,8 +1918,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010333352
+              "version": "3.6.2",
+              "updatedAt": 1785011426259
             },
             "preferredBrands": [
               "apple",
@@ -1963,7 +1963,7 @@
         {
           "query": "Câmera não é tão importante.",
           "status": 200,
-          "reply_preview": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é especialmente relevante para uso em faculdade, onde v",
+          "reply_preview": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é especialmente relevante para quem vai usar o celular ",
           "session_context": {
             "lastBestProduct": {
               "rank": 1,
@@ -2163,8 +2163,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010333352
+              "version": "3.6.2",
+              "updatedAt": 1785011426259
             },
             "preferredBrands": [
               "apple",
@@ -2197,8 +2197,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "825989e9-198f-426a-b8ae-169b578111ff",
-            "lastRecommendationDecisionAtMs": 1785010312951,
+            "lastRecommendationDecisionRequestId": "2200ec33-2f78-47c7-ae5c-52807b255ba5",
+            "lastRecommendationDecisionAtMs": 1785011405880,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -2208,7 +2208,7 @@
           }
         }
       ],
-      "reply_preview": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é especialmente relevante para uso em faculdade, onde você pode precisar de um celular que aguente bem multitarefas e aplicativos pesados.\n\nEmbora a câmera não seja uma priori"
+      "reply_preview": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é especialmente relevante para quem vai usar o celular para faculdade, pois você terá um desempenho sólido em multitarefas e aplicativos pesados.\n\nEmbora o foco seja em jogos,"
     },
     {
       "scenario_id": "sequence-c:budget-correction",
@@ -2457,8 +2457,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "e5eb9f32-7a7f-443d-bc6b-225beb19382f",
-            "lastRecommendationDecisionAtMs": 1785010352883,
+            "lastRecommendationDecisionRequestId": "0029407a-3d88-4c32-8851-5095a30c9764",
+            "lastRecommendationDecisionAtMs": 1785011445108,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -2697,8 +2697,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "e5eb9f32-7a7f-443d-bc6b-225beb19382f",
-            "lastRecommendationDecisionAtMs": 1785010352883,
+            "lastRecommendationDecisionRequestId": "0029407a-3d88-4c32-8851-5095a30c9764",
+            "lastRecommendationDecisionAtMs": 1785011445108,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -2716,8 +2716,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010360553
+              "version": "3.6.2",
+              "updatedAt": 1785011452687
             },
             "preferredBrands": [],
             "excludedBrands": [],
@@ -2993,8 +2993,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "173ef607-c671-42b0-bb85-0085543a4882",
-            "lastRecommendationDecisionAtMs": 1785010372181,
+            "lastRecommendationDecisionRequestId": "5a00eae2-1941-4575-a8c9-f7d6716526d0",
+            "lastRecommendationDecisionAtMs": 1785011464217,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -3234,8 +3234,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "173ef607-c671-42b0-bb85-0085543a4882",
-            "lastRecommendationDecisionAtMs": 1785010372181,
+            "lastRecommendationDecisionRequestId": "5a00eae2-1941-4575-a8c9-f7d6716526d0",
+            "lastRecommendationDecisionAtMs": 1785011464217,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -3468,8 +3468,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "173ef607-c671-42b0-bb85-0085543a4882",
-            "lastRecommendationDecisionAtMs": 1785010372181,
+            "lastRecommendationDecisionRequestId": "5a00eae2-1941-4575-a8c9-f7d6716526d0",
+            "lastRecommendationDecisionAtMs": 1785011464217,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -3489,8 +3489,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S23 FE",
-              "version": "3.6.1",
-              "updatedAt": 1785010385844
+              "version": "3.6.2",
+              "updatedAt": 1785011477708
             },
             "preferredBrands": [],
             "excludedBrands": [
@@ -3767,8 +3767,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "a3c7d193-6a86-4d23-ab94-eada279ddd27",
-            "lastRecommendationDecisionAtMs": 1785010397225,
+            "lastRecommendationDecisionRequestId": "6bc1583b-7d99-4e63-9d18-a830eff2177c",
+            "lastRecommendationDecisionAtMs": 1785011489626,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -3997,8 +3997,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "a3c7d193-6a86-4d23-ab94-eada279ddd27",
-            "lastRecommendationDecisionAtMs": 1785010397225,
+            "lastRecommendationDecisionRequestId": "6bc1583b-7d99-4e63-9d18-a830eff2177c",
+            "lastRecommendationDecisionAtMs": 1785011489626,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -4016,8 +4016,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S23 FE",
-              "version": "3.6.1",
-              "updatedAt": 1785010404961
+              "version": "3.6.2",
+              "updatedAt": 1785011497224
             },
             "preferredBrands": [],
             "excludedBrands": [],
@@ -4292,8 +4292,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "b9602a6e-2f7b-4b4f-9ef7-e46add1f1181",
-            "lastRecommendationDecisionAtMs": 1785010416306,
+            "lastRecommendationDecisionRequestId": "de273625-9274-4af2-ba1c-db1c660eb798",
+            "lastRecommendationDecisionAtMs": 1785011509606,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -4502,8 +4502,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "b9602a6e-2f7b-4b4f-9ef7-e46add1f1181",
-            "lastRecommendationDecisionAtMs": 1785010416306,
+            "lastRecommendationDecisionRequestId": "de273625-9274-4af2-ba1c-db1c660eb798",
+            "lastRecommendationDecisionAtMs": 1785011509606,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -4524,8 +4524,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S23 FE",
-              "version": "3.6.1",
-              "updatedAt": 1785010423782
+              "version": "3.6.2",
+              "updatedAt": 1785011517038
             },
             "preferredBrands": [
               "samsung",
@@ -4803,8 +4803,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "a235be08-ef0d-4a44-9e64-f01ada7b4bac",
-            "lastRecommendationDecisionAtMs": 1785010436024,
+            "lastRecommendationDecisionRequestId": "1c15c76f-999f-43c5-b83d-7953f39909d6",
+            "lastRecommendationDecisionAtMs": 1785011528286,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -5013,8 +5013,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "a235be08-ef0d-4a44-9e64-f01ada7b4bac",
-            "lastRecommendationDecisionAtMs": 1785010436024,
+            "lastRecommendationDecisionRequestId": "1c15c76f-999f-43c5-b83d-7953f39909d6",
+            "lastRecommendationDecisionAtMs": 1785011528286,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -5035,8 +5035,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S23 FE",
-              "version": "3.6.1",
-              "updatedAt": 1785010443493
+              "version": "3.6.2",
+              "updatedAt": 1785011535608
             },
             "preferredBrands": [
               "samsung",
@@ -5314,8 +5314,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "108cf872-c675-4b79-946f-c5e4eaa42347",
-            "lastRecommendationDecisionAtMs": 1785010454044,
+            "lastRecommendationDecisionRequestId": "168b196c-f3f2-4dd0-9cee-17793fe39292",
+            "lastRecommendationDecisionAtMs": 1785011545578,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -5544,8 +5544,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "108cf872-c675-4b79-946f-c5e4eaa42347",
-            "lastRecommendationDecisionAtMs": 1785010454044,
+            "lastRecommendationDecisionRequestId": "168b196c-f3f2-4dd0-9cee-17793fe39292",
+            "lastRecommendationDecisionAtMs": 1785011545578,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -5563,8 +5563,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785010461378
+              "version": "3.6.2",
+              "updatedAt": 1785011553122
             },
             "preferredBrands": [],
             "excludedBrands": [],
@@ -5850,8 +5850,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "80b4f82a-7133-4f88-88b4-1122509005d0",
-            "lastRecommendationDecisionAtMs": 1785010473770,
+            "lastRecommendationDecisionRequestId": "9d586e92-e232-4d38-b82b-fcfc7f792e44",
+            "lastRecommendationDecisionAtMs": 1785011564968,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -6099,8 +6099,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "80b4f82a-7133-4f88-88b4-1122509005d0",
-            "lastRecommendationDecisionAtMs": 1785010473770,
+            "lastRecommendationDecisionRequestId": "9d586e92-e232-4d38-b82b-fcfc7f792e44",
+            "lastRecommendationDecisionAtMs": 1785011564968,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -6350,8 +6350,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "80b4f82a-7133-4f88-88b4-1122509005d0",
-            "lastRecommendationDecisionAtMs": 1785010473770,
+            "lastRecommendationDecisionRequestId": "9d586e92-e232-4d38-b82b-fcfc7f792e44",
+            "lastRecommendationDecisionAtMs": 1785011564968,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -6365,7 +6365,7 @@
     },
     {
       "scenario_id": "sequence-h:informal-natural",
-      "pass": false,
+      "pass": true,
       "turns": [
         "quero um cell ate 2500",
         "na real e pra facul",
@@ -6375,29 +6375,88 @@
         {
           "query": "quero um cell ate 2500",
           "status": 200,
-          "reply_preview": "Isso se refere a qual recomendação anterior?",
+          "reply_preview": "Pelo que mapeei, o iPhone 13 combina melhor porque tela fluida no cotidiano.\n\nEu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vanta",
           "session_context": {
-            "messages": [
+            "lastBestProduct": {
+              "product_name": "iPhone 13",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA"
+            },
+            "lastProductMentioned": "iPhone 13",
+            "lastProducts": [
               {
-                "role": "user",
-                "content": "quero um cell ate 2500"
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA"
+              },
+              {
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour"
+              }
+            ],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
               }
             ],
             "lastCategory": "phone",
-            "lastProducts": [],
-            "lastBestProduct": null,
             "lastIntent": "search",
             "lastPriority": "",
             "lastTopic": "quero um cell ate 2500",
-            "lastProductMentioned": "",
-            "lastInteractionType": "",
-            "lastAxis": "",
-            "lastMainConsequence": "",
+            "lastQuery": "quero um cell ate 2500",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
             "lastArchetype": "",
-            "lastBehaviorMode": "",
-            "lastTradeoff": "",
-            "lastDecisionReason": "",
-            "lastWinnerAdvantages": [],
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "longevidade",
+              "tela"
+            ],
             "lastWinnerSacrifices": [],
             "lastDecisionChange": null,
             "lastPreviousAxis": "",
@@ -6410,18 +6469,117 @@
             "activeContextType": "",
             "activeContextStrength": "",
             "lastContextualAxis": "",
-            "miaArgumentMemory": null,
-            "lastArgumentMemoryTurn": 0,
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "iPhone 13",
+              "axisKey": "performance",
+              "decisionContextKey": "iphone 13:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "camera|combina|confiavel|desempenho|ficou|fotos|iphone|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "arrependimento|cobre|desempenho|detalhe|encaixa|gente|ignora|muita|pagar|pediu|prioriza|risco",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "arrependimento|cobre|desempenho|detalhe|encaixa|gente|ignora|muita|pagar|pediu|prioriza|risco",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "cotidiano|fluida",
+                  "textHash": "cotidiano|fluida",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "desempenho",
+                  "textHash": "desempenho",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|camera|categoria|confiavel|fotos|ganha|preco|rivais|tambem|videos",
+                  "textHash": "abaixo|autonomia|camera|categoria|confiavel|fotos|ganha|preco|rivais|tambem|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "compacto|comprar|flagship|preco|principal|sentido",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "criteriosa|faixa|gastar|nessa|pegar|precisa",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "quero um cell ate 2500",
+              "lastWinnerName": "iPhone 13",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
             "lastArgumentMemoryPressure": "low",
             "miaBrain": null,
             "activeMiaRole": "",
-            "user_display_name": "",
-            "lastRankingSnapshot": null,
-            "lastRecommendationDecisionRequestId": null,
-            "lastRecommendationDecisionAtMs": null,
-            "lastRecommendationDecisionSource": null,
-            "lastRecommendationDecisionWinnerFamily": null,
-            "lastRecommendationDecisionRunnerUpFamily": null,
             "budgetMax": null,
             "lastBudget": null,
             "lastCommercialConstraints": null,
@@ -6431,31 +6589,42 @@
               "version": "11A.7",
               "turnIndex": 1,
               "lastTransition": {
-                "type": "preserve",
-                "responsePath": "non_commercial_governed_fallback",
-                "authority": "intent_authority",
+                "type": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "mia_intent_recognition",
                 "reasonCodes": [],
                 "invalidations": []
               },
-              "commercialAnchor": null,
+              "commercialAnchor": {
+                "source": "commercial_pipeline",
+                "responsePath": "return_seguro",
+                "authority": "validated_commercial_pipeline",
+                "productName": "iPhone 13",
+                "invalidated": false
+              },
               "comparison": null,
               "mixed": null,
               "conversational": {
-                "lastInteractionType": null,
+                "lastInteractionType": "search",
                 "lastConversationalIntent": null,
-                "responsePath": "non_commercial_governed_fallback"
+                "responsePath": "return_seguro"
               }
             },
             "mixedConversationalState": null,
-            "lastQuery": "quero um cell ate 2500",
-            "_continuityVersion": "3.2.0",
-            "_transportVersion": "3.2.0"
+            "lastRecommendationDecisionRequestId": "c6c4c464-bd82-4ebe-9696-504c7d33874a",
+            "lastRecommendationDecisionAtMs": 1785011592784,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
+            "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
+            "user_display_name": "",
+            "lastHumanObjective": "purchase_help",
+            "lastInteractionMode": "commerce"
           }
         },
         {
           "query": "na real e pra facul",
           "status": 200,
-          "reply_preview": "Isso se refere a qual recomendação anterior?",
+          "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nEsse ponto entrou no critério: o uso principal passou a ser facul. Reavaliei o que já tínhamos mapea",
           "session_context": {
             "messages": [
               {
@@ -6468,20 +6637,64 @@
               }
             ],
             "lastCategory": "phone",
-            "lastProducts": [],
-            "lastBestProduct": null,
-            "lastIntent": "clarification",
+            "lastProducts": [
+              {
+                "rank": 1,
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "iPhone 13",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA",
+              "score": null,
+              "isWinner": true
+            },
+            "lastIntent": "search",
             "lastPriority": "",
             "lastTopic": "quero um cell ate 2500",
-            "lastProductMentioned": "",
-            "lastInteractionType": "",
-            "lastAxis": "",
-            "lastMainConsequence": "",
+            "lastProductMentioned": "iPhone 13",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
             "lastArchetype": "",
-            "lastBehaviorMode": "",
-            "lastTradeoff": "",
-            "lastDecisionReason": "",
-            "lastWinnerAdvantages": [],
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "longevidade",
+              "tela"
+            ],
             "lastWinnerSacrifices": [],
             "lastDecisionChange": null,
             "lastPreviousAxis": "",
@@ -6494,21 +6707,172 @@
             "activeContextType": "",
             "activeContextStrength": "",
             "lastContextualAxis": "",
-            "miaArgumentMemory": null,
-            "lastArgumentMemoryTurn": 0,
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "iPhone 13",
+              "axisKey": "performance",
+              "decisionContextKey": "iphone 13:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "camera|combina|confiavel|desempenho|ficou|fotos|iphone|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "arrependimento|cobre|desempenho|detalhe|encaixa|gente|ignora|muita|pagar|pediu|prioriza|risco",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "arrependimento|cobre|desempenho|detalhe|encaixa|gente|ignora|muita|pagar|pediu|prioriza|risco",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "cotidiano|fluida",
+                  "textHash": "cotidiano|fluida",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "desempenho",
+                  "textHash": "desempenho",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|camera|categoria|confiavel|fotos|ganha|preco|rivais|tambem|videos",
+                  "textHash": "abaixo|autonomia|camera|categoria|confiavel|fotos|ganha|preco|rivais|tambem|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "compacto|comprar|flagship|preco|principal|sentido",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "criteriosa|faixa|gastar|nessa|pegar|precisa",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "quero um cell ate 2500",
+              "lastWinnerName": "iPhone 13",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
             "lastArgumentMemoryPressure": "low",
             "miaBrain": null,
             "activeMiaRole": "",
             "user_display_name": "",
-            "lastRankingSnapshot": null,
-            "lastRecommendationDecisionRequestId": null,
-            "lastRecommendationDecisionAtMs": null,
-            "lastRecommendationDecisionSource": null,
-            "lastRecommendationDecisionWinnerFamily": null,
-            "lastRecommendationDecisionRunnerUpFamily": null,
-            "budgetMax": null,
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              },
+              {
+                "rank": 3,
+                "product_name": "Samsung Galaxy S23 FE",
+                "price": "1799",
+                "link": "https://www.google.com/search?ibp=oshop&q=Samsung Galaxy S23 FE preço&prds=catalogid:10034048784436529111,productid:8193015866409405684,headlineOfferDocid:13734756394036201270,imageDocid:10705631401528235657,rds:PC_6185279726844231230|PROD_PC_6185279726844231230,gpcid:6185279726844231230,mid:576462461160273199,pvt:hg&hl=pt&gl=br&udm=28",
+                "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5lRrSrY8rt5OLQyt9i1glHmw1CoOsbjpPgnpbEr-W97rMWgofO8tvQZbPep96tgUt8MOSnkISO3eeC1xBhLJKqtJXEjWdYugC39kHETmGctjEoHz9zg-Prw",
+                "source": "Carrefour",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "c6c4c464-bd82-4ebe-9696-504c7d33874a",
+            "lastRecommendationDecisionAtMs": 1785011592784,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
+            "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
+            "budgetMax": 2500,
             "lastBudget": null,
-            "lastCommercialConstraints": null,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 2500,
+              "preferredBrands": [],
+              "excludedBrands": [],
+              "desiredAttributes": [],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": "facul",
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "iPhone 13",
+              "version": "3.6.2",
+              "updatedAt": 1785011599887
+            },
             "preferredBrands": [],
             "excludedBrands": [],
             "semanticStateProvenance": {
@@ -6521,11 +6885,17 @@
                 "reasonCodes": [],
                 "invalidations": []
               },
-              "commercialAnchor": null,
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "iPhone 13",
+                "invalidated": false
+              },
               "comparison": null,
               "mixed": null,
               "conversational": {
-                "lastInteractionType": null,
+                "lastInteractionType": "search",
                 "lastConversationalIntent": null,
                 "responsePath": "non_commercial_governed_fallback"
               }
@@ -6539,7 +6909,7 @@
         {
           "query": "moto tb serve",
           "status": 200,
-          "reply_preview": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+          "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iP",
           "session_context": {
             "messages": [
               {
@@ -6549,23 +6919,61 @@
               {
                 "role": "user",
                 "content": "na real e pra facul"
+              },
+              {
+                "role": "user",
+                "content": "moto tb serve"
               }
             ],
             "lastCategory": "phone",
-            "lastProducts": [],
-            "lastBestProduct": null,
-            "lastIntent": "clarification",
+            "lastProducts": [
+              {
+                "rank": 1,
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastBestProduct": {
+              "rank": 1,
+              "product_name": "iPhone 13",
+              "price": null,
+              "link": null,
+              "thumbnail": null,
+              "source": "Data Layer MIA",
+              "score": null,
+              "isWinner": true
+            },
+            "lastIntent": "context_analysis",
             "lastPriority": "",
             "lastTopic": "quero um cell ate 2500",
-            "lastProductMentioned": "",
-            "lastInteractionType": "",
-            "lastAxis": "",
-            "lastMainConsequence": "",
+            "lastProductMentioned": "iPhone 13",
+            "lastInteractionType": "search",
+            "lastAxis": "performance",
+            "lastMainConsequence": "Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
             "lastArchetype": "",
-            "lastBehaviorMode": "",
-            "lastTradeoff": "",
-            "lastDecisionReason": "",
-            "lastWinnerAdvantages": [],
+            "lastBehaviorMode": "recommend",
+            "lastTradeoff": "Menos sensação de limite quando o aparelho é exigido.",
+            "lastDecisionReason": "Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais",
+            "lastWinnerAdvantages": [
+              "desempenho",
+              "longevidade",
+              "tela"
+            ],
             "lastWinnerSacrifices": [],
             "lastDecisionChange": null,
             "lastPreviousAxis": "",
@@ -6578,164 +6986,313 @@
             "activeContextType": "",
             "activeContextStrength": "",
             "lastContextualAxis": "",
-            "miaArgumentMemory": null,
-            "lastArgumentMemoryTurn": 0,
+            "miaArgumentMemory": {
+              "version": "9.1J.2",
+              "productKey": "iPhone 13",
+              "axisKey": "performance",
+              "decisionContextKey": "iphone 13:performance",
+              "turns": 1,
+              "repetitionPressure": "low",
+              "usedAxes": [
+                "performance"
+              ],
+              "signatures": [
+                {
+                  "argumentType": "decision",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "camera|combina|confiavel|desempenho|ficou|fotos|iphone|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "evidence",
+                  "evidenceField": "",
+                  "evidenceHash": "arrependimento|cobre|desempenho|detalhe|encaixa|gente|ignora|muita|pagar|pediu|prioriza|risco",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "arrependimento|cobre|desempenho|detalhe|encaixa|gente|ignora|muita|pagar|pediu|prioriza|risco",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "caminho|seguir",
+                  "textHash": "caminho|seguir",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "cotidiano|fluida",
+                  "textHash": "cotidiano|fluida",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "desempenho",
+                  "textHash": "desempenho",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "tradeoff",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "abaixo|autonomia|camera|categoria|confiavel|fotos|ganha|preco|rivais|tambem|videos",
+                  "textHash": "abaixo|autonomia|camera|categoria|confiavel|fotos|ganha|preco|rivais|tambem|videos",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "authority",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "antes|atencao|compra|confirmacao|detalhe|lembrar|merece",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "stakes",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "compacto|comprar|flagship|preco|principal|sentido",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                },
+                {
+                  "argumentType": "support",
+                  "evidenceField": "",
+                  "evidenceHash": "",
+                  "insightHash": "",
+                  "tradeoffKey": "",
+                  "textHash": "criteriosa|faixa|gastar|nessa|pegar|precisa",
+                  "productKey": "iPhone 13",
+                  "axisKey": "performance"
+                }
+              ],
+              "lastQuery": "quero um cell ate 2500",
+              "lastWinnerName": "iPhone 13",
+              "lastPriority": "performance",
+              "lastMode": "FIRST_RECOMMENDATION"
+            },
+            "lastArgumentMemoryTurn": 1,
             "lastArgumentMemoryPressure": "low",
             "miaBrain": null,
             "activeMiaRole": "",
             "user_display_name": "",
-            "lastRankingSnapshot": null,
-            "lastRecommendationDecisionRequestId": null,
-            "lastRecommendationDecisionAtMs": null,
-            "lastRecommendationDecisionSource": null,
-            "lastRecommendationDecisionWinnerFamily": null,
-            "lastRecommendationDecisionRunnerUpFamily": null,
-            "budgetMax": null,
-            "lastBudget": null,
-            "lastCommercialConstraints": null,
-            "preferredBrands": [],
+            "lastRankingSnapshot": [
+              {
+                "rank": 1,
+                "product_name": "iPhone 13",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": true
+              },
+              {
+                "rank": 2,
+                "product_name": "iPhone 11",
+                "price": null,
+                "link": null,
+                "thumbnail": null,
+                "source": "Data Layer MIA",
+                "score": null,
+                "isWinner": false
+              }
+            ],
+            "lastRecommendationDecisionRequestId": "c6c4c464-bd82-4ebe-9696-504c7d33874a",
+            "lastRecommendationDecisionAtMs": 1785011592784,
+            "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
+            "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
+            "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
+            "budgetMax": 2500,
+            "lastBudget": 2500,
+            "lastCommercialConstraints": {
+              "category": "phone",
+              "budgetMax": 2500,
+              "preferredBrands": [
+                "apple",
+                "motorola"
+              ],
+              "excludedBrands": [],
+              "desiredAttributes": [],
+              "specifications": [],
+              "sizePreference": null,
+              "useCase": "facul",
+              "pricePreference": null,
+              "baselinePrice": null,
+              "baselineProductName": "iPhone 13",
+              "version": "3.6.2",
+              "updatedAt": 1785011605882
+            },
+            "preferredBrands": [
+              "apple",
+              "motorola"
+            ],
             "excludedBrands": [],
             "semanticStateProvenance": {
               "version": "11A.7",
               "turnIndex": 3,
               "lastTransition": {
-                "type": "social_governed",
-                "responsePath": "needs_clarification",
-                "authority": "mia_intent_recognition",
-                "reasonCodes": [
-                  "social_transition_preserves_commercial_history"
-                ],
+                "type": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "intent_authority",
+                "reasonCodes": [],
                 "invalidations": []
               },
-              "commercialAnchor": null,
+              "commercialAnchor": {
+                "source": "preserve",
+                "responsePath": "non_commercial_governed_fallback",
+                "authority": "preserved",
+                "productName": "iPhone 13",
+                "invalidated": false
+              },
               "comparison": null,
               "mixed": null,
               "conversational": {
-                "lastInteractionType": null,
+                "lastInteractionType": "search",
                 "lastConversationalIntent": null,
-                "responsePath": "needs_clarification"
+                "responsePath": "non_commercial_governed_fallback"
               }
             },
             "mixedConversationalState": null,
             "lastQuery": "na real e pra facul",
             "_continuityVersion": "3.2.0",
-            "_transportVersion": "3.2.0",
-            "lastHumanObjective": "clarify_message",
-            "lastInteractionMode": "clarification"
+            "_transportVersion": "3.2.0"
           }
         }
       ],
-      "reply_preview": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir."
+      "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nMantendo t"
     }
   ],
   "latencies_ms": [
     {
       "status": 200,
-      "elapsed_ms": 5718
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 361
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 531
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 8118
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 908
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 1033
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 509
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 2383
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 7315
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 984
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 7228
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 663
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 879
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 7167
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 934
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 6920
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 880
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 7880
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 814
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 6189
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 692
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 8070
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 4299
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 598
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 319
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 338
+      "elapsed_ms": 5461
     },
     {
       "status": 200,
       "elapsed_ms": 468
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 736
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7409
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 812
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 904
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 624
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2165
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6846
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 887
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7191
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 497
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 830
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7594
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 900
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8108
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 671
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6839
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 706
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5886
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 610
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7493
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 4594
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 476
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6177
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 456
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 595
     }
   ]
 }

@@ -2,9 +2,9 @@
   "patch": "3.6.1",
   "phase": "mixed_intent_production_validation",
   "status": "APPROVED",
-  "finished_at": "2026-07-25T20:05:51.673Z",
+  "finished_at": "2026-07-25T20:37:56.602Z",
   "base_url": "https://economia-ai.vercel.app",
-  "deploy_build": "c8fd852484de",
+  "deploy_build": "f1bcf6f1203e",
   "commit": "25841ec",
   "summary": {
     "passed": 7,
@@ -229,8 +229,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "b7aa20a0-5951-4fec-b89b-707d69b38de2",
-            "lastRecommendationDecisionAtMs": 1785009805982,
+            "lastRecommendationDecisionRequestId": "623427eb-233a-4351-99b1-0541cb9fee9f",
+            "lastRecommendationDecisionAtMs": 1785011732220,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
             "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
@@ -440,8 +440,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "b7aa20a0-5951-4fec-b89b-707d69b38de2",
-            "lastRecommendationDecisionAtMs": 1785009805982,
+            "lastRecommendationDecisionRequestId": "623427eb-233a-4351-99b1-0541cb9fee9f",
+            "lastRecommendationDecisionAtMs": 1785011732220,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
             "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
@@ -464,8 +464,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S22",
-              "version": "3.6.1",
-              "updatedAt": 1785009813689
+              "version": "3.6.2",
+              "updatedAt": 1785011739918
             },
             "preferredBrands": [
               "samsung",
@@ -522,8 +522,8 @@
             "pricePreference": null,
             "baselinePrice": null,
             "baselineProductName": "Samsung Galaxy S22",
-            "version": "3.6.1",
-            "updatedAt": 1785009813689
+            "version": "3.6.2",
+            "updatedAt": 1785011739918
           }
         }
       ],
@@ -746,8 +746,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "6b3c4481-e143-472f-91b0-bf9a2a4aa4d4",
-            "lastRecommendationDecisionAtMs": 1785009825049,
+            "lastRecommendationDecisionRequestId": "82eae6b0-f636-457e-95e0-14bb43072b7a",
+            "lastRecommendationDecisionAtMs": 1785011751063,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
             "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
@@ -957,8 +957,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "6b3c4481-e143-472f-91b0-bf9a2a4aa4d4",
-            "lastRecommendationDecisionAtMs": 1785009825049,
+            "lastRecommendationDecisionRequestId": "82eae6b0-f636-457e-95e0-14bb43072b7a",
+            "lastRecommendationDecisionAtMs": 1785011751063,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
             "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
@@ -981,8 +981,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S22",
-              "version": "3.6.1",
-              "updatedAt": 1785009832770
+              "version": "3.6.2",
+              "updatedAt": 1785011758827
             },
             "preferredBrands": [
               "samsung",
@@ -1039,8 +1039,8 @@
             "pricePreference": null,
             "baselinePrice": null,
             "baselineProductName": "Samsung Galaxy S22",
-            "version": "3.6.1",
-            "updatedAt": 1785009832770
+            "version": "3.6.2",
+            "updatedAt": 1785011758827
           }
         }
       ],
@@ -1293,8 +1293,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "b9892567-e781-41fe-adf7-5e686aa22d35",
-            "lastRecommendationDecisionAtMs": 1785009844185,
+            "lastRecommendationDecisionRequestId": "0dfc9b26-9483-4fae-931b-55153b8c5460",
+            "lastRecommendationDecisionAtMs": 1785011770338,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -1494,8 +1494,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "b9892567-e781-41fe-adf7-5e686aa22d35",
-            "lastRecommendationDecisionAtMs": 1785009844185,
+            "lastRecommendationDecisionRequestId": "0dfc9b26-9483-4fae-931b-55153b8c5460",
+            "lastRecommendationDecisionAtMs": 1785011770338,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "032795c93b9fbdd1",
             "lastRecommendationDecisionRunnerUpFamily": "80e08a325f3a6ab7",
@@ -1515,8 +1515,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "iPhone 13",
-              "version": "3.6.1",
-              "updatedAt": 1785009851755
+              "version": "3.6.2",
+              "updatedAt": 1785011778086
             },
             "preferredBrands": [
               "samsung"
@@ -1566,8 +1566,8 @@
             "pricePreference": null,
             "baselinePrice": null,
             "baselineProductName": "iPhone 13",
-            "version": "3.6.1",
-            "updatedAt": 1785009851755
+            "version": "3.6.2",
+            "updatedAt": 1785011778086
           }
         }
       ],
@@ -1810,8 +1810,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "14b996cc-0be9-43f8-a15d-8e2439af5e28",
-            "lastRecommendationDecisionAtMs": 1785009863437,
+            "lastRecommendationDecisionRequestId": "79fe8ee2-f7bd-46a6-b1dc-935ab0fd7cca",
+            "lastRecommendationDecisionAtMs": 1785011789959,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -2021,8 +2021,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "14b996cc-0be9-43f8-a15d-8e2439af5e28",
-            "lastRecommendationDecisionAtMs": 1785009863437,
+            "lastRecommendationDecisionRequestId": "79fe8ee2-f7bd-46a6-b1dc-935ab0fd7cca",
+            "lastRecommendationDecisionAtMs": 1785011789959,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -2043,8 +2043,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S23 FE",
-              "version": "3.6.1",
-              "updatedAt": 1785009872093
+              "version": "3.6.2",
+              "updatedAt": 1785011798606
             },
             "preferredBrands": [
               "samsung",
@@ -2096,8 +2096,8 @@
             "pricePreference": null,
             "baselinePrice": null,
             "baselineProductName": "Samsung Galaxy S23 FE",
-            "version": "3.6.1",
-            "updatedAt": 1785009872093
+            "version": "3.6.2",
+            "updatedAt": 1785011798606
           }
         }
       ],
@@ -2340,8 +2340,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "90ed444c-7884-4f15-9bbc-fd2b1ee559a4",
-            "lastRecommendationDecisionAtMs": 1785009883484,
+            "lastRecommendationDecisionRequestId": "db1aae4e-1953-47ec-9277-94316153b159",
+            "lastRecommendationDecisionAtMs": 1785011809756,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -2551,8 +2551,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "90ed444c-7884-4f15-9bbc-fd2b1ee559a4",
-            "lastRecommendationDecisionAtMs": 1785009883484,
+            "lastRecommendationDecisionRequestId": "db1aae4e-1953-47ec-9277-94316153b159",
+            "lastRecommendationDecisionAtMs": 1785011809756,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -2574,8 +2574,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S23 FE",
-              "version": "3.6.1",
-              "updatedAt": 1785009893507
+              "version": "3.6.2",
+              "updatedAt": 1785011819538
             },
             "preferredBrands": [],
             "excludedBrands": [
@@ -2630,8 +2630,8 @@
             "pricePreference": null,
             "baselinePrice": null,
             "baselineProductName": "Samsung Galaxy S23 FE",
-            "version": "3.6.1",
-            "updatedAt": 1785009893507
+            "version": "3.6.2",
+            "updatedAt": 1785011819538
           }
         }
       ],
@@ -2855,8 +2855,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "c6fd3b44-d1a2-4955-b8f0-4a53fc55132c",
-            "lastRecommendationDecisionAtMs": 1785009904924,
+            "lastRecommendationDecisionRequestId": "4eb64171-28ce-4dd1-9fc7-a2fedce73902",
+            "lastRecommendationDecisionAtMs": 1785011831386,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
             "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
@@ -3066,8 +3066,8 @@
                 "isWinner": false
               }
             ],
-            "lastRecommendationDecisionRequestId": "c6fd3b44-d1a2-4955-b8f0-4a53fc55132c",
-            "lastRecommendationDecisionAtMs": 1785009904924,
+            "lastRecommendationDecisionRequestId": "4eb64171-28ce-4dd1-9fc7-a2fedce73902",
+            "lastRecommendationDecisionAtMs": 1785011831386,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
             "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
@@ -3090,8 +3090,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S22",
-              "version": "3.6.1",
-              "updatedAt": 1785009912667
+              "version": "3.6.2",
+              "updatedAt": 1785011838659
             },
             "preferredBrands": [
               "samsung",
@@ -3148,8 +3148,8 @@
             "pricePreference": null,
             "baselinePrice": null,
             "baselineProductName": "Samsung Galaxy S22",
-            "version": "3.6.1",
-            "updatedAt": 1785009912667
+            "version": "3.6.2",
+            "updatedAt": 1785011838659
           }
         },
         {
@@ -3352,8 +3352,8 @@
               "pricePreference": null,
               "baselinePrice": null,
               "baselineProductName": "Samsung Galaxy S22",
-              "version": "3.6.1",
-              "updatedAt": 1785009912667
+              "version": "3.6.2",
+              "updatedAt": 1785011838659
             },
             "preferredBrands": [
               "samsung",
@@ -3386,8 +3386,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "c6fd3b44-d1a2-4955-b8f0-4a53fc55132c",
-            "lastRecommendationDecisionAtMs": 1785009904924,
+            "lastRecommendationDecisionRequestId": "4eb64171-28ce-4dd1-9fc7-a2fedce73902",
+            "lastRecommendationDecisionAtMs": 1785011831386,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "5fb6eff5ac739ee2",
             "lastRecommendationDecisionRunnerUpFamily": "836a613ebdcf801d",
@@ -3412,8 +3412,8 @@
             "pricePreference": null,
             "baselinePrice": null,
             "baselineProductName": "Samsung Galaxy S22",
-            "version": "3.6.1",
-            "updatedAt": 1785009912667
+            "version": "3.6.2",
+            "updatedAt": 1785011838659
           }
         }
       ],
@@ -3656,8 +3656,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "d1aff450-3b8c-4da6-8a6b-85b72576502a",
-            "lastRecommendationDecisionAtMs": 1785009935112,
+            "lastRecommendationDecisionRequestId": "8ac3345f-03dd-411f-8c09-479822e0b9da",
+            "lastRecommendationDecisionAtMs": 1785011860198,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",
@@ -3896,8 +3896,8 @@
               }
             },
             "mixedConversationalState": null,
-            "lastRecommendationDecisionRequestId": "d1aff450-3b8c-4da6-8a6b-85b72576502a",
-            "lastRecommendationDecisionAtMs": 1785009935112,
+            "lastRecommendationDecisionRequestId": "8ac3345f-03dd-411f-8c09-479822e0b9da",
+            "lastRecommendationDecisionAtMs": 1785011860198,
             "lastRecommendationDecisionSource": "COGNITIVE_PRIMARY",
             "lastRecommendationDecisionWinnerFamily": "836a613ebdcf801d",
             "lastRecommendationDecisionRunnerUpFamily": "78660c1b4e14aa8e",

@@ -1,9 +1,9 @@
 {
-  "patch": "3.6.1",
+  "patch": "3.6.2",
   "phase": "pending_issues",
   "status": "NO_BLOCKING_PENDENCIES",
-  "finished_at": "2026-07-25T20:15:00.000Z",
-  "deploy_build": "c8fd852484de",
+  "finished_at": "2026-07-25T20:40:00.000Z",
+  "deploy_build": "f1bcf6f1203e",
   "items": [
     {
       "id": "P36-002",
@@ -12,23 +12,23 @@
       "correct_patch": "PATCH 3.7 ou incremento em miaVerbalizerHumanization",
       "reason_not_fixed_now": "Seed por sourceMessage melhorou diversidade; turn-index exigiria transporte de contador de turno sem nova memória",
       "future_closure_criteria": "Sequência de 4+ refinamentos de orçamento deve produzir ≥3 aberturas distintas determinísticas"
-    },
+    }
+  ],
+  "resolved_in_3_6_2": [
     {
       "id": "P36-003",
-      "problem": "sequence-h informal-natural falha intermitentemente em produção quando o primeiro turno coloquial é roteado para clarificação de referência sem âncora comercial",
-      "impact": "Baixo — não afeta mixed intent; ocorre em validação automatizada sob carga",
-      "correct_patch": "PATCH 3.7 — robustez de entrada comercial coloquial",
-      "reason_not_fixed_now": "Fora do escopo bloqueante de mixed intent; mixed intent 7/7 e Sequência F estáveis",
-      "future_closure_criteria": "Três execuções consecutivas de sequence-h verdes em produção"
+      "problem": "sequence-h informal falhava em produção — primeiro turno classificado como constraint_refinement sem âncora",
+      "resolution": "isInitialCommercialEntryMessage guard + classifyCommercialFollowUpType requires session anchor; detectActiveCommercialAsk extended for informal cues",
+      "closed_at": "2026-07-25T20:40:00.000Z",
+      "production_validation": "11/11 PASS (2 consecutive runs)"
     }
   ],
   "resolved_in_3_6_1": [
     {
       "id": "P36-001",
-      "problem": "Mixed intent com restrição de marcas em uma única frase resolvia apenas o sinal dominante",
-      "resolution": "Multi-refinement extractor + sequential merge + budget anchor inference + follow-up routing priority",
-      "closed_at": "2026-07-25T20:15:00.000Z",
-      "evidence": "PATCH_3_6_MIXED_INTENT_EVIDENCE.json, PATCH_3_6_MIXED_INTENT_PRODUCTION_EVIDENCE.json"
+      "problem": "Mixed intent resolvia apenas sinal dominante",
+      "resolution": "Multi-refinement extractor + sequential merge",
+      "closed_at": "2026-07-25T22:30:00.000Z"
     }
   ]
 }
