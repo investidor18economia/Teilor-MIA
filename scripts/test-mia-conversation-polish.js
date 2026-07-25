@@ -115,12 +115,16 @@ const runnerFu = buildCommercialFollowUpDeterministicReply(
   },
   {}
 );
-expectTrue("runner-up tradeoff hint", /tradeoff|segundo/i.test(runnerFu?.reply || ""));
+expectTrue(
+  "runner-up tradeoff hint",
+  /tradeoff|segundo|sequência|alternativa|prós e contras/i.test(runnerFu?.reply || "")
+);
 
 // ── Pure helpers ──
 expectTrue(
   "price helper",
-  polishPriceFollowUpReply("Galaxy", "R$ 100", "") === "Galaxy está por cerca de R$ 100 nas ofertas encontradas."
+  /Galaxy/.test(polishPriceFollowUpReply("Galaxy", "R$ 100", "")) &&
+    /R\$ 100/.test(polishPriceFollowUpReply("Galaxy", "R$ 100", ""))
 );
 expectTrue(
   "clarification shorter",

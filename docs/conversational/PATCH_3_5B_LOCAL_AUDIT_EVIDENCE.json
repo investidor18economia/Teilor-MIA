@@ -1,0 +1,52 @@
+{
+  "patch": "3.5b",
+  "phase": "local_audit",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T18:30:00.000Z",
+  "modules": {
+    "miaVerbalizerHumanization.js": "3.5b.0",
+    "miaDecisionFactsNarrative.js": "3.5b.0",
+    "miaConversationPolish.js": "3.5b.0"
+  },
+  "audits": [
+    {
+      "script": "test-mia-patch-35b-verbalizer-humanization-audit.js",
+      "passed": 30,
+      "total": 30,
+      "verdict": "APROVADO"
+    },
+    {
+      "script": "test-mia-patch-35a-decision-facts-narrative-audit.js",
+      "passed": 15,
+      "total": 15,
+      "verdict": "APROVADO",
+      "note": "regression after 3.5b humanization layer"
+    },
+    {
+      "script": "test-mia-conversation-polish.js",
+      "passed": 22,
+      "total": 22,
+      "verdict": "APROVADO"
+    },
+    {
+      "script": "test-mia-patch-34b-constraint-refinement-audit.js",
+      "passed": 18,
+      "total": 18,
+      "verdict": "APROVADO"
+    },
+    {
+      "script": "test-mia-natural-conversation-and-constraint-refinement.js",
+      "passed": 101,
+      "total": 101,
+      "verdict": "APROVADO"
+    },
+    {
+      "script": "test-mia-patch-122-data-layer-p0-smoke.js",
+      "passed": 7,
+      "total": 7,
+      "verdict": "APROVADO"
+    }
+  ],
+  "architecture_preserved": true,
+  "decision_logic_changed": false
+}
