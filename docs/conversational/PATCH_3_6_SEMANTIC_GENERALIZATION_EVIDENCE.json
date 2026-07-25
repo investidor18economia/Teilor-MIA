@@ -1,0 +1,35 @@
+{
+  "patch": "3.6",
+  "phase": "semantic_generalization",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T19:05:00.000Z",
+  "families_tested": [
+    "product_mention",
+    "clarification",
+    "budget_increase",
+    "budget_reduction",
+    "budget_relaxation",
+    "hard_budget_limit",
+    "brand_addition",
+    "brand_removal",
+    "use_case_change",
+    "priority_deprioritize",
+    "correction",
+    "negation",
+    "colloquial_informal",
+    "mixed_intent_partial"
+  ],
+  "positive_variations_count": 28,
+  "negative_controls_count": 6,
+  "colloquial_phrases_fixed": [
+    "motorola tbm serve",
+    "moto tb serve",
+    "pode aumentar pra 2500",
+    "da pra subir pra 2500",
+    "na real é pra facul",
+    "se passa um pouco ta tranquilo",
+    "pode ser mais caro se compensar"
+  ],
+  "audit_script": "scripts/test-mia-patch-36-general-regression-audit.js",
+  "audit_result": "40/40 passed"
+}

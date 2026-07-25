@@ -1,0 +1,24 @@
+{
+  "patch": "3.6",
+  "phase": "pending_issues",
+  "status": "NO_BLOCKING_PENDENCIES",
+  "finished_at": "2026-07-25T19:00:00.000Z",
+  "items": [
+    {
+      "id": "P36-001",
+      "problem": "Mixed intent com restrição de marcas em uma única frase ainda resolve apenas o sinal dominante (relax de orçamento) no pipeline de refinamento unitário",
+      "impact": "Baixo — em produção a conversa multi-turn preserva contexto; frases mixed complexas podem não aplicar ambos os sinais na mesma passagem",
+      "correct_patch": "PATCH 3.7 ou extensão de Mixed Intent Segmentation",
+      "reason_not_fixed_now": "Escopo 3.6 cobriu detecção coloquial e integração; segmentação mixed completa exige camada dedicada sem hardcode",
+      "future_closure_criteria": "Mensagens mixed de orçamento+marca devem atualizar budgetMax e preferredBrands na mesma passagem com testes de generalização"
+    },
+    {
+      "id": "P36-002",
+      "problem": "Variação de abertura humanizada ainda pode repetir em refinamentos consecutivos do mesmo tipo (ex.: orçamento)",
+      "impact": "Cosmético — não afeta decisão; perceptível em conversas longas com múltiplos ajustes de teto",
+      "correct_patch": "PATCH 3.7 ou incremento em miaVerbalizerHumanization",
+      "reason_not_fixed_now": "Seed por sourceMessage melhorou diversidade; turn-index exigiria transporte de contador de turno sem nova memória",
+      "future_closure_criteria": "Sequência de 4+ refinamentos de orçamento deve produzir ≥3 aberturas distintas determinísticas"
+    }
+  ]
+}

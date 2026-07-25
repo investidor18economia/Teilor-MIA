@@ -1,0 +1,79 @@
+{
+  "patch": "3.6",
+  "phase": "regression_runner",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T18:46:00.998Z",
+  "summary": {
+    "total": 11,
+    "passed": 11,
+    "failed": 0
+  },
+  "results": [
+    {
+      "script": "scripts/test-mia-patch-36-general-regression-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "════════════════════════════════════════════════════════════\n  PATCH 3.6 Audit: 40/40 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-31-commercial-entry-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "============================================================\nResultado PATCH 3.1: 18 passed, 0 failed\nPATCH 3.1 COMMERCIAL ENTRY: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-32-conversational-continuity-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "\nPATCH 3.2 CONVERSATIONAL CONTINUITY: APROVADO\n\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-33-product-resolution-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "\nVeredito: APROVADO\n\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-34a-clarification-gates-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "\nVeredito: APROVADO\n\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-34b-constraint-refinement-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "════════════════════════════════════════════════════════════\n  PATCH 3.4b Audit: 18/18 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-35a-decision-facts-narrative-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "════════════════════════════════════════════════════════════\n  PATCH 3.5a Audit: 15/15 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-35b-verbalizer-humanization-audit.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "════════════════════════════════════════════════════════════\n  PATCH 3.5b Audit: 30/30 passed\n  VERDICT: APROVADO\n"
+    },
+    {
+      "script": "scripts/test-mia-conversation-polish.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "GENERIC_QUERY_CLARIFICATION_CLOSING_AUDIT {\"version\":\"3.4b.0\",\"applied\":false,\"query\":\"celular\",\"category\":\"mobile\",\"winner\":\"Galaxy A55\",\"specificProductLockActive\":false,\"detectedBudget\":null,\"primaryAxis\":null,\"missingContextAxis\":null,\"question\":null,\"skippedReason\":\"not_generic_query\",\"confidence\":null}\n\nPATCH 11C polish tests: 22 passed, 0 failed\n"
+    },
+    {
+      "script": "scripts/test-mia-natural-conversation-and-constraint-refinement.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "\nPATCH 11B.3 tests: 101 passed, 0 failed\n"
+    },
+    {
+      "script": "scripts/test-mia-patch-122-data-layer-p0-smoke.js",
+      "pass": true,
+      "exit_code": 0,
+      "output_tail": "\nResult: 7 passed, 0 failed\n\n"
+    }
+  ]
+}

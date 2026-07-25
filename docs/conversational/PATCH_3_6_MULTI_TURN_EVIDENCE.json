@@ -1,0 +1,28 @@
+{
+  "patch": "3.6",
+  "phase": "multi_turn_local",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T19:05:00.000Z",
+  "sequences": [
+    {
+      "id": "sequence-b",
+      "turns": [
+        "Motorola também serve.",
+        "Pode passar um pouco dos 3 mil.",
+        "Na verdade vou usar mais para faculdade."
+      ],
+      "result": "PASS — contexto incremental preservado (marca + uso)"
+    },
+    {
+      "id": "sequence-c",
+      "turns": ["Meu orçamento é até 2 mil.", "Corrigindo, quis dizer 2.500."],
+      "result": "PASS — budgetMax substituído para 2500"
+    },
+    {
+      "id": "sequence-d",
+      "turns": ["Pensando melhor, não quero Motorola."],
+      "result": "PASS — exclusão de marca detectada"
+    }
+  ],
+  "audit_script": "scripts/test-mia-patch-36-general-regression-audit.js"
+}
