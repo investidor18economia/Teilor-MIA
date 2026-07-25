@@ -201,7 +201,7 @@ test("1.3: budget_guide not overridden by commercial authority", () => {
   );
 });
 test("1.4: reconciliation version exported", () => {
-  expect(COMMERCIAL_ENTRY_RECONCILIATION_VERSION, "3.1.0");
+  expect(COMMERCIAL_ENTRY_RECONCILIATION_VERSION, "3.4a.0");
 });
 
 console.log("\nGrupo 2 — Smoke P0 baseline scenarios");

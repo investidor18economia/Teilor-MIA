@@ -388,6 +388,9 @@ import {
   extractProductMentionFromQuery,
 } from "../../lib/miaProductIdentityResolution.js";
 import {
+  applyClarificationGateToContextResolution,
+} from "../../lib/miaClarificationGates.js";
+import {
   applySpecificProductLockToProducts,
   bootstrapSpecificProductLock,
   enforceSpecificProductLockWinner,
@@ -29942,6 +29945,65 @@ if (lockedComparisonContextFromSession) {
   }
   // ─────────────────────────────────────────────────────────────
 
+  const clarificationGateResult = applyClarificationGateToContextResolution(
+    contextResolution,
+    {
+      query,
+      resolvedQuery,
+      sessionContext,
+      intentRecognition: intentRecognitionEarly,
+      forceComparisonLock: !!contextResolution.lockedComparisonFollowUp,
+    }
+  );
+
+  const commercialPermission = intentAuthority?.commercialPermission || null;
+  const mixedClarifyDefer =
+    (commercialPermission === "allow" || commercialPermission === "mixed") &&
+    intentRecognitionEarly?.requiresClarification &&
+    intentRecognitionEarly?.interactionMode === "mixed";
+
+  if (
+    mixedClarifyDefer &&
+    clarificationGateResult.decision?.needsClarification &&
+    !clarificationGateResult.decision?.preconditions?.isCategoryOnlyVague
+  ) {
+    contextResolution.needsClarification = false;
+    contextResolution.clarificationDeferred = true;
+    contextResolution.clarificationMessage =
+      clarificationGateResult.decision?.clarificationMessage || null;
+  } else {
+    Object.assign(contextResolution, clarificationGateResult.contextResolution);
+  }
+  if (process.env.MIA_DEBUG === "true" && clarificationGateResult.applied) {
+    pipelineTracer.patch({
+      clarification_gate: {
+        version: clarificationGateResult.decision?.version,
+        needsClarification: clarificationGateResult.decision?.needsClarification,
+        reasonCode: clarificationGateResult.reasonCode,
+        missingSlots: clarificationGateResult.decision?.missingSlots,
+      },
+    });
+  }
+
+  if (contextResolution.needsClarification) {
+    return sendRuntimeResponse(
+      res,
+      pipelineTracer,
+      {
+        reply:
+          contextResolution.clarificationMessage ||
+          "Me conta um pouco mais do que você precisa que eu te ajudo.",
+        prices: [],
+        session_context: req.body?.session_context || sessionContext,
+      },
+      "needs_clarification",
+      {
+        routingDecision: semanticGovernanceRef.finalRoutingDecision,
+        finalization: { required: true, applied: true },
+      }
+    );
+  }
+
   if (
     contextResolution.directReply &&
     !contextResolution.lockedComparisonFollowUp &&
@@ -30010,24 +30072,7 @@ if (lockedComparisonContextFromSession) {
   contextResolution.directReply = null;
 }
 
-  if (contextResolution.needsClarification) {
-    return sendRuntimeResponse(
-      res,
-      pipelineTracer,
-      {
-        reply: contextResolution.clarificationMessage,
-        prices: [],
-        session_context: req.body?.session_context || {},
-      },
-      "needs_clarification",
-      {
-        routingDecision: semanticGovernanceRef.finalRoutingDecision,
-        finalization: { required: true, applied: true },
-      }
-    );
-  }
-
-const userStyle = detectUserStyle(resolvedQuery);
+  const userStyle = detectUserStyle(resolvedQuery);
 
 pipelineTracer.patch({
   resolved_query: resolvedQuery,
