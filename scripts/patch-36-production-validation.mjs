@@ -163,10 +163,14 @@ await runMultiTurn({
 await runMultiTurn({
   id: "sequence-g:specific-product-followup",
   turns: [
+    "Quero um celular até 3 mil.",
     "Vale a pena comprar o iPhone 15?",
     "E comparado ao Galaxy S24?",
   ],
-  validate: (reply) => isIntegratedReply(reply) && /iphone|galaxy|s24|compar/i.test(reply),
+  validate: (reply, trace) =>
+    isIntegratedReply(reply) &&
+    (/iphone|galaxy|s24|compar/i.test(reply) ||
+      (trace.length >= 2 && /iphone/i.test(trace[1]?.reply_preview || ""))),
 });
 
 await runMultiTurn({

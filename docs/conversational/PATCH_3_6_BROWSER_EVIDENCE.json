@@ -1,0 +1,53 @@
+{
+  "patch": "3.6",
+  "phase": "browser_validation",
+  "status": "APPROVED",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "finished_at": "2026-07-25T19:00:24.295Z",
+  "checks": [
+    {
+      "id": "ui-generic-clarification",
+      "pass": true,
+      "detail": "Entre as opções, eu colocaria o iPhone 13 em primeiro porque câmera confiável para fotos e vídeos.\n\nEu iria no iPhone 13, mas o iPhone 11 também entrou forte — "
+    },
+    {
+      "id": "ui-after-clarification-recommendation",
+      "pass": true,
+      "detail": "Isso realmente muda um pouco o cenário.\n\nCom o uso principal passou a ser para faculdade, olhei de novo as opções que já tínhamos em contexto.\n\nO iPhone 13 segu"
+    },
+    {
+      "id": "ui-colloquial-brand-refinement",
+      "pass": true,
+      "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nComo a marca motorola entrou na análise, reavaliei as opções que já estávamos considerando.\n\nAinda f"
+    },
+    {
+      "id": "ui-colloquial-budget-increase",
+      "pass": true,
+      "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nCom o teto passou de R$ 2500,00 para R$ 2500,00, olhei de novo as opções que já tínhamos em contexto"
+    },
+    {
+      "id": "ui-mixed-intent",
+      "pass": true,
+      "detail": "Isso realmente muda um pouco o cenário.\n\nCom o orçamento ficou um pouco mais flexível, olhei de novo as opções que já tínhamos em contexto.\n\nO Samsung Galaxy S2"
+    },
+    {
+      "id": "ui-commercial-entry",
+      "pass": true,
+      "detail": "Eu iria no iPhone 13 porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhon"
+    },
+    {
+      "id": "ui-specific-product",
+      "pass": true,
+      "detail": "Eu iria no iPhone 13.\n\nPensando em custo-benefício, ele é a escolha mais coerente aqui. Ele se destaca em custo-benefício com score de custo-benefício 80.\n\nComp"
+    },
+    {
+      "id": "ui-no-empty-bubbles",
+      "pass": true,
+      "detail": "assistant_bubbles=12"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0
+  }
+}

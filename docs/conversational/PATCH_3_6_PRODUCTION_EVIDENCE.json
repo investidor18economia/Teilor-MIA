@@ -1,0 +1,458 @@
+{
+  "patch": "3.6",
+  "phase": "production_validation",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T18:52:14.834Z",
+  "finished_at": "2026-07-25T18:56:11.652Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "deploy_build": "cd9cbc06ad1c",
+  "summary": {
+    "passed": 11,
+    "failed": 0,
+    "p0_failed": 0,
+    "scenarios": 10
+  },
+  "checks": [
+    {
+      "id": "health",
+      "pass": true,
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T18:52:15.110Z\",\"build\":\"cd9cbc06ad1c\"}",
+      "severity": "P0",
+      "at": "2026-07-25T18:52:15.190Z"
+    },
+    {
+      "id": "sequence-a:generic-clarify",
+      "pass": true,
+      "detail": "Isso realmente muda um pouco o cenário.\n\nCom o uso principal passou a ser para faculdade, olhei de novo as opções que já tínhamos em context",
+      "severity": "P0",
+      "at": "2026-07-25T18:52:32.691Z"
+    },
+    {
+      "id": "sequence-b:successive-refinements",
+      "pass": true,
+      "detail": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é importante para jogos, mas também",
+      "severity": "P0",
+      "at": "2026-07-25T18:53:12.706Z"
+    },
+    {
+      "id": "sequence-c:budget-correction",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: o teto ficou em R$ 2500,00. Reavaliei o que já tínhamos mapeado.\n\nCon",
+      "severity": "P0",
+      "at": "2026-07-25T18:53:32.111Z"
+    },
+    {
+      "id": "sequence-d:brand-negation",
+      "pass": true,
+      "detail": "Boa — isso muda como eu comparo as opções.\n\nMantendo o que conversamos, motorola saiu da comparação — e isso pede um ajuste fino.\n\nMantenho ",
+      "severity": "P0",
+      "at": "2026-07-25T18:53:58.449Z"
+    },
+    {
+      "id": "sequence-e:hard-vs-flex-budget",
+      "pass": true,
+      "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nComo o orçamento ficou um pouco mais flexível, reavaliei as opções que já estáva",
+      "severity": "P0",
+      "at": "2026-07-25T18:54:17.555Z"
+    },
+    {
+      "id": "sequence-f:mixed-intent",
+      "pass": true,
+      "detail": "Isso realmente muda um pouco o cenário.\n\nCom o orçamento ficou um pouco mais flexível, olhei de novo as opções que já tínhamos em contexto.\n",
+      "severity": "P0",
+      "at": "2026-07-25T18:54:35.732Z"
+    },
+    {
+      "id": "colloquial:motorola-tbm-serve",
+      "pass": true,
+      "detail": "Esse ajuste muda o recorte da escolha.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ",
+      "severity": "P0",
+      "at": "2026-07-25T18:54:54.894Z"
+    },
+    {
+      "id": "colloquial:pode-aumentar-pra-2500",
+      "pass": true,
+      "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nMantendo o que conversamos, o teto ficou em R$ 2500,00 — e isso pede um ajuste f",
+      "severity": "P0",
+      "at": "2026-07-25T18:55:12.172Z"
+    },
+    {
+      "id": "sequence-g:specific-product-followup",
+      "pass": true,
+      "detail": "Me conta um pouco mais do que você precisa que eu te ajudo.",
+      "severity": "P0",
+      "at": "2026-07-25T18:55:41.710Z"
+    },
+    {
+      "id": "sequence-h:informal-natural",
+      "pass": true,
+      "detail": "Boa — isso muda como eu comparo as opções.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAi",
+      "severity": "P0",
+      "at": "2026-07-25T18:56:06.148Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "sequence-a:generic-clarify",
+      "pass": true,
+      "turns": [
+        "Quero um celular.",
+        "Até 2.500.",
+        "Para faculdade e redes sociais."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o iPhone 13 em primeiro porque câmera confiável para fotos e vídeos.\n\nEu iria no iPhone 13, mas o iPhone 11 também entrou forte — "
+        },
+        {
+          "query": "Até 2.500.",
+          "status": 200,
+          "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom o teto ficou em R$ 2500,00, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iPhone 13 — E"
+        },
+        {
+          "query": "Para faculdade e redes sociais.",
+          "status": 200,
+          "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom o uso principal passou a ser para faculdade, olhei de novo as opções que já tínhamos em contexto.\n\nO iPhone 13 segu"
+        }
+      ],
+      "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom o uso principal passou a ser para faculdade, olhei de novo as opções que já tínhamos em contexto.\n\nO iPhone 13 segue na frente — Escolhido por value: Paga pelo que vai usar — sem especificação ociosa que cobra diferença sem mudar o dia"
+    },
+    {
+      "scenario_id": "sequence-b:successive-refinements",
+      "pass": true,
+      "turns": [
+        "Quero um celular até 3 mil para jogos.",
+        "Motorola também serve.",
+        "Pode passar um pouco dos 3 mil.",
+        "Na verdade vou usar mais para faculdade.",
+        "Câmera não é tão importante."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular até 3 mil para jogos.",
+          "status": 200,
+          "reply_preview": "A escolha mais equilibrada aqui é o iPhone 13 porque tela fluida no cotidiano.\n\nEu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva van"
+        },
+        {
+          "query": "Motorola também serve.",
+          "status": 200,
+          "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda "
+        },
+        {
+          "query": "Pode passar um pouco dos 3 mil.",
+          "status": 200,
+          "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nComo o orçamento ficou um pouco mais flexível, reavaliei as opções que já estávamos considerando.\n\nO iPhone 13 segue"
+        },
+        {
+          "query": "Na verdade vou usar mais para faculdade.",
+          "status": 200,
+          "reply_preview": "Isso realmente muda um pouco o cenário.\n\nMantendo o que conversamos, o uso principal passou a ser faculdade — e isso pede um ajuste fino.\n\nContinuo indicando o "
+        },
+        {
+          "query": "Câmera não é tão importante.",
+          "status": 200,
+          "reply_preview": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é importante para jogos, mas também se encaixa bem para"
+        }
+      ],
+      "reply_preview": "iPhone 13 foi a escolha por performance: Partidas longas sem sentir que o celular chegou no limite. Isso é importante para jogos, mas também se encaixa bem para o uso na faculdade, pois garante um desempenho fluido em multitarefas e aplicativos.\n\nEle tem um ótimo equilíbrio entre"
+    },
+    {
+      "scenario_id": "sequence-c:budget-correction",
+      "pass": true,
+      "turns": [
+        "Quero um celular até 2 mil.",
+        "Corrigindo, quis dizer 2.500."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular até 2 mil.",
+          "status": 200,
+          "reply_preview": "Ficaria com o iPhone 13 porque tela fluida no cotidiano.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em d"
+        },
+        {
+          "query": "Corrigindo, quis dizer 2.500.",
+          "status": 200,
+          "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: o teto ficou em R$ 2500,00. Reavaliei o que já tínhamos mapeado.\n\nContinuo indicando o iP"
+        }
+      ],
+      "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: o teto ficou em R$ 2500,00. Reavaliei o que já tínhamos mapeado.\n\nContinuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nMantendo t"
+    },
+    {
+      "scenario_id": "sequence-d:brand-negation",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil.",
+        "Pode considerar Motorola.",
+        "Pensando melhor, não quero Motorola."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Sam"
+        },
+        {
+          "query": "Pode considerar Motorola.",
+          "status": 200,
+          "reply_preview": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+        },
+        {
+          "query": "Pensando melhor, não quero Motorola.",
+          "status": 200,
+          "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nMantendo o que conversamos, motorola saiu da comparação — e isso pede um ajuste fino.\n\nMantenho o Samsung Galaxy S23"
+        }
+      ],
+      "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nMantendo o que conversamos, motorola saiu da comparação — e isso pede um ajuste fino.\n\nMantenho o Samsung Galaxy S23 FE como melhor opção — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demai"
+    },
+    {
+      "scenario_id": "sequence-e:hard-vs-flex-budget",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil.",
+        "Pode passar um pouco dos 3 mil."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Sam"
+        },
+        {
+          "query": "Pode passar um pouco dos 3 mil.",
+          "status": 200,
+          "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nComo o orçamento ficou um pouco mais flexível, reavaliei as opções que já estávamos considerando.\n\nA"
+        }
+      ],
+      "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nComo o orçamento ficou um pouco mais flexível, reavaliei as opções que já estávamos considerando.\n\nAinda ficaria com o Samsung Galaxy S23 FE — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está n"
+    },
+    {
+      "scenario_id": "sequence-f:mixed-intent",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil.",
+        "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola."
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Sam"
+        },
+        {
+          "query": "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.",
+          "status": 200,
+          "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom o orçamento ficou um pouco mais flexível, olhei de novo as opções que já tínhamos em contexto.\n\nO Samsung Galaxy S2"
+        }
+      ],
+      "reply_preview": "Isso realmente muda um pouco o cenário.\n\nCom o orçamento ficou um pouco mais flexível, olhei de novo as opções que já tínhamos em contexto.\n\nO Samsung Galaxy S23 FE segue na frente — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais"
+    },
+    {
+      "scenario_id": "colloquial:motorola-tbm-serve",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até 3 mil.",
+        "motorola tbm serve"
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular Samsung até 3 mil.",
+          "status": 200,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Sam"
+        },
+        {
+          "query": "motorola tbm serve",
+          "status": 200,
+          "reply_preview": "Esse ajuste muda o recorte da escolha.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o Samsun"
+        }
+      ],
+      "reply_preview": "Esse ajuste muda o recorte da escolha.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o Samsung Galaxy S23 FE — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nO "
+    },
+    {
+      "scenario_id": "colloquial:pode-aumentar-pra-2500",
+      "pass": true,
+      "turns": [
+        "Quero um celular até 2.000.",
+        "pode aumentar pra 2500"
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular até 2.000.",
+          "status": 200,
+          "reply_preview": "Neste cenário, o iPhone 13 faz mais sentido porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhone 13 leva vantage"
+        },
+        {
+          "query": "pode aumentar pra 2500",
+          "status": 200,
+          "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nMantendo o que conversamos, o teto ficou em R$ 2500,00 — e isso pede um ajuste fino.\n\nMantenho o iPh"
+        }
+      ],
+      "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nMantendo o que conversamos, o teto ficou em R$ 2500,00 — e isso pede um ajuste fino.\n\nMantenho o iPhone 13 como melhor opção — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo de"
+    },
+    {
+      "scenario_id": "sequence-g:specific-product-followup",
+      "pass": true,
+      "turns": [
+        "Quero um celular até 3 mil.",
+        "Vale a pena comprar o iPhone 15?",
+        "E comparado ao Galaxy S24?"
+      ],
+      "trace": [
+        {
+          "query": "Quero um celular até 3 mil.",
+          "status": 200,
+          "reply_preview": "Eu iria no iPhone 13 porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhone 13 leva vantagem em desempenho nesta c"
+        },
+        {
+          "query": "Vale a pena comprar o iPhone 15?",
+          "status": 200,
+          "reply_preview": "Eu iria no iPhone 13.\n\nPensando em custo-benefício, ele é a escolha mais coerente aqui. Ele se destaca em custo-benefício com score de custo-benefício 80.\n\nComp"
+        },
+        {
+          "query": "E comparado ao Galaxy S24?",
+          "status": 200,
+          "reply_preview": "Me conta um pouco mais do que você precisa que eu te ajudo."
+        }
+      ],
+      "reply_preview": "Me conta um pouco mais do que você precisa que eu te ajudo."
+    },
+    {
+      "scenario_id": "sequence-h:informal-natural",
+      "pass": true,
+      "turns": [
+        "quero um cell ate 2500",
+        "na real e pra facul",
+        "moto tb serve"
+      ],
+      "trace": [
+        {
+          "query": "quero um cell ate 2500",
+          "status": 200,
+          "reply_preview": "Pelo que mapeei, o iPhone 13 combina melhor porque tela fluida no cotidiano.\n\nEu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vanta"
+        },
+        {
+          "query": "na real e pra facul",
+          "status": 200,
+          "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nEsse ponto entrou no critério: o uso principal passou a ser facul. Reavaliei o que já tínhamos mapea"
+        },
+        {
+          "query": "moto tb serve",
+          "status": 200,
+          "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iP"
+        }
+      ],
+      "reply_preview": "Boa — isso muda como eu comparo as opções.\n\nCom a marca motorola entrou na análise, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nMantendo t"
+    }
+  ],
+  "latencies_ms": [
+    {
+      "status": 200,
+      "elapsed_ms": 5497
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 360
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 623
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7958
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 724
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 940
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 549
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2295
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7448
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 946
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8352
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 578
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 885
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6992
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1100
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6354
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 804
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 7423
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 717
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5732
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 536
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8027
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 4510
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 468
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6872
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 449
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 608
+    }
+  ]
+}

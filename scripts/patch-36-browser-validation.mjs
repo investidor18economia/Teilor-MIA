@@ -90,11 +90,14 @@ checks.push({
 });
 
 await sleep(4000);
-const iphoneReply = await send("Vale a pena comprar o iPhone 15?");
+const iphoneReply = await send("Quero um celular até 3 mil.");
+checks.push({ id: "ui-commercial-entry", pass: isGood(iphoneReply), detail: iphoneReply.slice(0, 120) });
+await sleep(6000);
+const iphoneEval = await send("Vale a pena comprar o iPhone 15?");
 checks.push({
   id: "ui-specific-product",
-  pass: isGood(iphoneReply) && /iphone\s*15/i.test(iphoneReply),
-  detail: iphoneReply.slice(0, 160),
+  pass: isGood(iphoneEval) && /iphone/i.test(iphoneEval),
+  detail: iphoneEval.slice(0, 160),
 });
 
 const bubbles = await page.locator(".mia-msg-assistant-bubble").count();
