@@ -85,8 +85,12 @@ await sleep(6000);
 const multiReply = await send("Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.");
 checks.push({
   id: "ui-mixed-intent",
-  pass: isGood(multiReply),
-  detail: multiReply.slice(0, 160),
+  pass:
+    isGood(multiReply) &&
+    /samsung/i.test(multiReply) &&
+    /motorola/i.test(multiReply) &&
+    /orçamento|passar|flex|teto|3450|3\.450|um pouco/i.test(multiReply),
+  detail: multiReply.slice(0, 200),
 });
 
 await sleep(4000);

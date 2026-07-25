@@ -163,6 +163,22 @@ test("informal: pode ir ate 3300 mas so samsung", () => {
   return r.mergedConstraints.budgetMax === 3300 && r.mergedConstraints.preferredBrands.includes("samsung");
 });
 
+test("mixed intent infers budget from prior query when constraints empty", () => {
+  const session = {
+    lastBestProduct: { product_name: "Samsung Galaxy S23 FE", price: "2200" },
+    lastQuery: "Quero um celular Samsung até 3 mil para jogos.",
+    lastTopic: "Quero um celular Samsung até 3 mil para jogos.",
+    lastCommercialConstraints: null,
+  };
+  const msg =
+    "Pode passar um pouco dos 3 mil, mas quero continuar só entre Samsung e Motorola.";
+  const r = resolveMixed(msg, session);
+  return (
+    r.mergedConstraints.budgetMax === 3450 &&
+    r.mergedConstraints.preferredBrands.includes("motorola")
+  );
+});
+
 console.log(`\n${"═".repeat(60)}`);
 console.log(`  Mixed Intent Audit: ${passed}/${total} passed`);
 if (failures.length) {
