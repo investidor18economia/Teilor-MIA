@@ -26,6 +26,7 @@ const suites = [
   "scripts/test-mia-patch-35b-verbalizer-humanization-audit.js",
   "scripts/test-mia-conversation-polish.js",
   "scripts/test-mia-natural-conversation-and-constraint-refinement.js",
+  "scripts/test-mia-commercial-follow-up-continuity.js",
   "scripts/test-mia-patch-122-data-layer-p0-smoke.js",
 ];
 
