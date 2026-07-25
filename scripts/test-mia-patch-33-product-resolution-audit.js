@@ -16,6 +16,7 @@ import {
   resolveProductIdentityFromQuery,
   extractProductMentionFromQuery,
   buildProductResolutionKeys,
+  detectImplicitProductEvaluationQuery,
 } from "../lib/miaProductIdentityResolution.js";
 import {
   SPECIFIC_PRODUCT_RESOLUTION_LOCK_VERSION,
@@ -179,6 +180,10 @@ test("buildProductResolutionKeys includes canonical forms", () => {
   const keys = buildProductResolutionKeys("G84");
   return keys.keys.some((k) => k.includes("moto g84") || k.includes("g84"));
 });
+
+section("3.3h — Implicit product + attribute commercial entry");
+test("S24 com boa bateria detected as implicit product evaluation", () =>
+  detectImplicitProductEvaluationQuery("S24 com boa bateria"));
 
 section("3.3g — Regression guards");
 test("isGenericProductSearchQuery still blocks generic", () =>
