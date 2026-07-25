@@ -12,6 +12,7 @@ import MIASettingsPanel from "./MIASettingsPanel";
 import MIAHelpPanel from "./MIAHelpPanel";
 import FeedPanel from "./FeedPanel";
 import MIAMenuSymbol from "./MIAMenuSymbol";
+import { MIA_AVATAR_ALT } from "../lib/brandAssets";
 import { getFeedItemGallery } from "../lib/feedImageResolver";
 import { findProductByIdentity, getProductIdentityKey } from "../lib/productIdentity";
 import { loadStoredUser, loadUserProfile, saveStoredUser, saveUserProfile, clearStoredUser } from "../lib/userProfileStorage";
@@ -25,6 +26,10 @@ import {
   getOpeningTypingDelayMs,
   resolveStoredSessionOpening
 } from "../lib/miaOpeningSystem";
+import {
+  computeMiaHomeIntroState,
+  handleMiaOverlayDismiss,
+} from "../lib/miaHomeIntroState";
 import { getCognitiveLoadingFallbackState } from "../lib/miaCognitiveLoading.js";
 import {
   shouldUseStructuredParagraphs,
@@ -60,6 +65,10 @@ import {
   getOrCreateAnalyticsVisitorId,
 } from "../lib/analytics";
 import { buildDataLayerUsageRecommendationMetadata } from "../lib/miaDataLayerUsageAnalytics.js";
+import {
+  mergeSessionContextFromApiResponse,
+  pickSessionContextForTransport,
+} from "../lib/miaSessionContextTransport.js";
 const PLACEHOLDER_PHRASES = [
   "Estou pensando em comprar um celular até R$ 2.000",
   "Qual notebook faz sentido para trabalhar?",
@@ -655,9 +664,19 @@ export default function MIAChat() {
     : "Faça login para salvar favoritos e personalizar sua experiência.";
 
   function buildApiSessionContext(base = sessionContext) {
+    const transported = pickSessionContextForTransport(base);
     const name = userProfile.displayName?.trim() || user?.nome?.trim() || "";
-    if (!name) return base;
-    return { ...base, user_display_name: name };
+    if (!name) return transported;
+    return { ...transported, user_display_name: name };
+  }
+
+  function applySessionContextFromApiResponse(data, pergunta, productsRaw) {
+    setSessionContext((prev) =>
+      mergeSessionContextFromApiResponse(prev, data?.session_context, {
+        pergunta,
+        productsRaw,
+      })
+    );
   }
 
   function resetLoginFlow() {
@@ -1659,6 +1678,25 @@ useEffect(() => {
     };
   }, [hasMounted, greetingShown]);
 
+  useEffect(() => {
+    if (!hasMounted || !greetingShown) return;
+
+    const hasOpening = history.some((item) => item?.isMiaOpening && item?.resposta);
+    const hasUserConversation = history.some(
+      (item) =>
+        item?.pergunta ||
+        item?.offerCard ||
+        (item?.resposta && !item?.isMiaOpening && !item?.assistantTemp)
+    );
+
+    if (hasOpening || hasUserConversation) return;
+
+    const storedOpening = resolveStoredSessionOpening();
+    setHistory([
+      buildOpeningHistoryEntry(storedOpening || buildMiaOpening()),
+    ]);
+  }, [hasMounted, greetingShown, history]);
+
   function scrollToCurrentMiaFocus(behavior = "smooth") {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -2207,27 +2245,12 @@ useEffect(() => {
             const data = await resp.json();
       captureDecisionContextFromApiResponse(data);
       const productsRaw = extractApiProducts(data);
-      const detectedPriority = detectPriorityFromText(pergunta);
 
       setSelectedImageBase64("");
       setSelectedImagePreview("");
       setImageAttachmentMeta(null);
 
-      if (data.session_context) {
-        setSessionContext(data.session_context);
-      } else {
-        setSessionContext((prev) => ({
-          ...prev,
-          lastQuery: pergunta,
-
-          // 🔥 PRIORIDADE (A CORREÇÃO MAIS IMPORTANTE)
-          lastPriority: detectedPriority || prev.lastPriority || "",
-
-          lastProducts: productsRaw.length > 0 ? productsRaw : prev.lastProducts,
-          lastBestProduct: productsRaw.length > 0 ? productsRaw[0] : prev.lastBestProduct,
-          lastInteractionType: productsRaw.length > 0 ? "search" : prev.lastInteractionType
-        }));
-      }
+      applySessionContextFromApiResponse(data, pergunta, productsRaw);
           const finalResponse = extractApiReply(data);
           const cardProduct = resolveOfferCardForTurn(
             productsRaw.length > 0 ? productsRaw[0] : null,
@@ -2374,27 +2397,12 @@ useEffect(() => {
       const data = await resp.json();
       captureDecisionContextFromApiResponse(data);
       const productsRaw = extractApiProducts(data);
-      const detectedPriority = detectPriorityFromText(pergunta);
 
       setSelectedImageBase64("");
       setSelectedImagePreview("");
       setImageAttachmentMeta(null);
 
-      if (data.session_context) {
-        setSessionContext(data.session_context);
-      } else {
-        setSessionContext((prev) => ({
-          ...prev,
-          lastQuery: pergunta,
-
-          // 🔥 PRIORIDADE (A CORREÇÃO MAIS IMPORTANTE)
-          lastPriority: detectedPriority || prev.lastPriority || "",
-
-          lastProducts: productsRaw.length > 0 ? productsRaw : prev.lastProducts,
-          lastBestProduct: productsRaw.length > 0 ? productsRaw[0] : prev.lastBestProduct,
-          lastInteractionType: productsRaw.length > 0 ? "search" : prev.lastInteractionType
-        }));
-      }
+      applySessionContextFromApiResponse(data, pergunta, productsRaw);
       const finalResponse = extractApiReply(data);
       const cardProduct = resolveOfferCardForTurn(
         productsRaw.length > 0 ? productsRaw[0] : null,
@@ -2880,28 +2888,24 @@ function detectPriorityFromText(text = "") {
     await requestAuthCode(loginEmail, loginName);
   }
 
-  const isIntroState = hasMounted
-    && history.length === 1
-    && history[0]?.resposta
-    && !history[0]?.pergunta
-    && !history[0]?.offerCard;
-
-  const hasConversationResponse = hasMounted && history.some((item, index) => {
-    if (!item?.resposta) return false;
-    if (item.pergunta || item.offerCard) return true;
-    return index > 0;
+  const { isIntroState, isConversationMode } = computeMiaHomeIntroState({
+    hasMounted,
+    greetingShown,
+    history,
   });
-
-  const isConversationMode = hasMounted && hasConversationResponse;
 
   useEffect(() => {
     if (typeof document === "undefined") return undefined;
     document.body.classList.toggle("mia-app-intro", Boolean(isIntroState));
     document.body.classList.toggle("mia-app-conversation", Boolean(isConversationMode));
+  }, [isIntroState, isConversationMode]);
+
+  useEffect(() => {
+    if (typeof document === "undefined") return undefined;
     return () => {
       document.body.classList.remove("mia-app-intro", "mia-app-conversation");
     };
-  }, [isIntroState, isConversationMode]);
+  }, []);
 
   const introSuggestions = [
     "📱 Celular até 2.000",
@@ -2960,7 +2964,7 @@ function detectPriorityFromText(text = "") {
             {isConversationMode ? (
               <>
                 <div className="mia-chat-header-logo mia-chat-header-logo--compact">
-                  <MIAAvatar size="compact" alt="Assistente MIΛ" />
+                  <MIAAvatar size="compact" alt={MIA_AVATAR_ALT} />
                 </div>
                 <div className="mia-chat-header-copy mia-chat-header-copy--compact">
                   <div className="mia-chat-header-title-row">
@@ -2973,7 +2977,7 @@ function detectPriorityFromText(text = "") {
             ) : (
               <>
                 <div className="mia-chat-header-logo">
-                  <MIAAvatar size="header" alt="Assistente MIΛ" />
+                  <MIAAvatar size="header" alt={MIA_AVATAR_ALT} />
                 </div>
                 <div className="mia-chat-header-copy">
                   <div className="mia-chat-header-title-row">
@@ -3248,7 +3252,7 @@ function detectPriorityFromText(text = "") {
               </div>
             )}
 
-            {i === 0 && item.resposta && history.length === 1 && (
+            {isIntroState && i === 0 && item.resposta && item.isMiaOpening && (
               <div className="mia-empty-welcome mia-empty-welcome--after-opening">
                 <p className="mia-empty-welcome-title">Comece por aqui</p>
                 <p className="mia-empty-welcome-hint">Toque em uma sugestão ou conte para a MIA o que você está pensando em comprar.</p>
@@ -3551,7 +3555,7 @@ function detectPriorityFromText(text = "") {
         <>
           <div
             className="mia-drawer-overlay"
-            onClick={closeSideMenu}
+            onPointerDown={(event) => handleMiaOverlayDismiss(event, closeSideMenu)}
             aria-hidden="true"
           />
           <nav
@@ -3718,7 +3722,7 @@ function detectPriorityFromText(text = "") {
         <>
           <div
             className="mia-panel-overlay"
-            onClick={closeHubPanelFromDrawer}
+            onPointerDown={(event) => handleMiaOverlayDismiss(event, closeHubPanelFromDrawer)}
             aria-hidden="true"
           />
 

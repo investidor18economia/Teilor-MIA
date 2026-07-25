@@ -446,6 +446,13 @@ import {
   shouldSkipCommercialProductPipeline
 } from "../../lib/miaRoutingGuardrails";
 import {
+  finalizeSessionContextTransport,
+} from "../../lib/miaSessionContextTransport.js";
+import {
+  buildContinuityPreservedSessionContext,
+  rehydrateContinuityFromIncoming,
+} from "../../lib/miaConversationContinuity.js";
+import {
   attachDecisionConsistencyToTrace,
   buildDecisionConsistencySnapshot,
   extractMentionedProductFromReply,
@@ -21224,6 +21231,30 @@ const context = {
     sessionContext?.lastRecommendationDecisionWinnerFamily || null,
   lastRecommendationDecisionRunnerUpFamily:
     sessionContext?.lastRecommendationDecisionRunnerUpFamily || null,
+
+  budgetMax: sessionContext?.budgetMax ?? sessionContext?.lastBudget ?? null,
+  lastBudget: sessionContext?.lastBudget ?? sessionContext?.budgetMax ?? null,
+  lastCommercialConstraints:
+    sessionContext?.lastCommercialConstraints &&
+    typeof sessionContext.lastCommercialConstraints === "object"
+      ? sessionContext.lastCommercialConstraints
+      : null,
+  preferredBrands: Array.isArray(sessionContext?.preferredBrands)
+    ? sessionContext.preferredBrands
+    : [],
+  excludedBrands: Array.isArray(sessionContext?.excludedBrands)
+    ? sessionContext.excludedBrands
+    : [],
+  semanticStateProvenance:
+    sessionContext?.semanticStateProvenance &&
+    typeof sessionContext.semanticStateProvenance === "object"
+      ? sessionContext.semanticStateProvenance
+      : null,
+  mixedConversationalState:
+    sessionContext?.mixedConversationalState &&
+    typeof sessionContext.mixedConversationalState === "object"
+      ? sessionContext.mixedConversationalState
+      : null,
 };
 
   for (let i = messages.length - 1; i >= 0; i--) {
@@ -21304,7 +21335,7 @@ console.log("🧠 SESSION CONTEXT REHYDRATION 5.2.5.3.1:", {
       : 0
 });
 
-return context;
+return rehydrateContinuityFromIncoming(context, sessionContext);
 }
 
 const API_SHARED_KEY = process.env.API_SHARED_KEY;
@@ -27356,13 +27387,18 @@ function respondWithContract(
   let body = ensureSessionContextOnPayload(payload, routingDecision, fallbackSession);
 
   if (body.session_context) {
+    const contractedSession = applyContractToSessionContext(
+      body.session_context,
+      routingDecision,
+      contractApply || {}
+    );
     body = {
       ...body,
-      session_context: applyContractToSessionContext(
-        body.session_context,
-        routingDecision,
-        contractApply || {}
-      )
+      session_context: finalizeSessionContextTransport(
+        contractedSession,
+        sessionBefore || fallbackSession || {},
+        routingDecision
+      ),
     };
   }
 
@@ -30151,13 +30187,16 @@ if (
     {
       reply: legacyInstitutionalReply,
       prices: [],
-      session_context: {
-        ...sessionContext,
-        lastProducts: [],
-        lastBestProduct: null,
-        lastCategory: "",
-        lastInteractionType: "general_answer",
-      },
+      session_context: buildContinuityPreservedSessionContext(
+        req.body?.session_context || sessionContext,
+        {
+          lastProducts: [],
+          lastBestProduct: null,
+          lastCategory: "",
+          lastInteractionType: "general_answer",
+        },
+        { preserveAnchor: false, preserveRanking: false, preserveComparison: false }
+      ),
     },
     "general_answer",
     {
