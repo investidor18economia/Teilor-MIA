@@ -1,0 +1,24 @@
+{
+  "patch": "3.4b",
+  "phase": "browser_validation",
+  "status": "APPROVED",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "deploy_build": "4ca098d614f1",
+  "finished_at": "2026-07-25T17:00:39.235Z",
+  "checks": [
+    {
+      "id": "ui-generic-notebook-partial",
+      "pass": true,
+      "detail": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD porque combina com o foco principal desta busca.\n\nEu escolhi o Notebook Gamer Lenovo"
+    },
+    {
+      "id": "ui-budget-refinement-follow-up",
+      "pass": true,
+      "detail": "Com teto de R$ 2500,00 — o iPhone 13 passa a liderar entre as opções restantes dentro do seu orçamento."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 0
+  }
+}

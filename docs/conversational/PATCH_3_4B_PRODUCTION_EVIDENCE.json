@@ -1,0 +1,157 @@
+{
+  "patch": "3.4b",
+  "phase": "production_validation",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T16:58:19.671Z",
+  "finished_at": "2026-07-25T16:59:55.226Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "deploy_build": "4ca098d614f1",
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "p0_failed": 0,
+    "scenarios": 4
+  },
+  "checks": [
+    {
+      "id": "health",
+      "pass": true,
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T16:58:20.526Z\",\"build\":\"4ca098d614f1\"}",
+      "severity": "P0",
+      "at": "2026-07-25T16:58:20.368Z"
+    },
+    {
+      "id": "refinement:budget-override-2500",
+      "pass": true,
+      "detail": "Com teto de R$ 2500,00 — o iPhone 13 passa a liderar entre as opções restantes dentro do seu orçamento.",
+      "severity": "P0",
+      "at": "2026-07-25T16:58:33.806Z"
+    },
+    {
+      "id": "refinement:brand-also-motorola",
+      "pass": true,
+      "detail": "Priorizo motorola — o Samsung Galaxy S23 FE passa a liderar entre as opções restantes.",
+      "severity": "P0",
+      "at": "2026-07-25T16:58:51.421Z"
+    },
+    {
+      "id": "refinement:use-case-faculdade",
+      "pass": true,
+      "detail": "Entendi! Usar algo para a faculdade pode ser bem prático. Se precisar de dicas ou sugestões sobre como organizar seu material ou o que levar",
+      "severity": "P0",
+      "at": "2026-07-25T16:59:10.314Z"
+    },
+    {
+      "id": "generic-closing:notebook-partial",
+      "pass": true,
+      "detail": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD porque combina com o foco principal desta busca.\n\nEu escolhi o N",
+      "severity": "P0",
+      "at": "2026-07-25T16:59:18.383Z"
+    },
+    {
+      "id": "regression:patch-3.4a-clarify-celular",
+      "pass": true,
+      "detail": "Neste cenário, o iPhone 13 faz mais sentido porque câmera confiável para fotos e vídeos.\n\nEu iria no",
+      "severity": "P0",
+      "at": "2026-07-25T16:59:30.085Z"
+    },
+    {
+      "id": "regression:patch-3.3-iphone15",
+      "pass": true,
+      "detail": "offers=3",
+      "severity": "P0",
+      "at": "2026-07-25T16:59:41.194Z"
+    },
+    {
+      "id": "regression:patch-3.2-continuity-seed",
+      "pass": true,
+      "detail": "iPhone 13",
+      "severity": "P0",
+      "at": "2026-07-25T16:59:55.226Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "refinement:budget-override-2500",
+      "pass": true,
+      "turns": [
+        "Quero um celular até R$ 2.000.",
+        "Na verdade pode ser até R$ 2.500."
+      ],
+      "reply_preview": "Com teto de R$ 2500,00 — o iPhone 13 passa a liderar entre as opções restantes dentro do seu orçamento.",
+      "offers": 0,
+      "session_budget": 2500
+    },
+    {
+      "scenario_id": "refinement:brand-also-motorola",
+      "pass": true,
+      "turns": [
+        "Quero um celular Samsung até R$ 3.000.",
+        "Pode ser Motorola também."
+      ],
+      "reply_preview": "Priorizo motorola — o Samsung Galaxy S23 FE passa a liderar entre as opções restantes.",
+      "offers": 0,
+      "session_budget": null
+    },
+    {
+      "scenario_id": "refinement:use-case-faculdade",
+      "pass": true,
+      "turns": [
+        "Quero um celular para jogos até R$ 2.500.",
+        "Na verdade vou usar para faculdade."
+      ],
+      "reply_preview": "Entendi! Usar algo para a faculdade pode ser bem prático. Se precisar de dicas ou sugestões sobre como organizar seu material ou o que levar, é só falar!",
+      "offers": 0,
+      "session_budget": null
+    },
+    {
+      "scenario_id": "generic-closing:notebook-partial",
+      "pass": true,
+      "reply_preview": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD porque combina com o foco principal desta busca.\n\nEu escolhi o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB",
+      "offers": 0
+    }
+  ],
+  "latencies_ms": [
+    {
+      "status": 200,
+      "elapsed_ms": 6629
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1301
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5678
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 922
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6136
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1739
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2564
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6191
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5599
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8517
+    }
+  ],
+  "baseline_reference": "docs/conversational/CONVERSATIONAL_BASELINE.md"
+}

@@ -153,6 +153,7 @@
     "test:mia:conv:patch-34a:browser-validation": "node scripts/patch-34a-browser-validation.mjs",
     "test:mia:conv:patch-34b:constraint-refinement-audit": "node scripts/test-mia-patch-34b-constraint-refinement-audit.js",
     "test:mia:conv:patch-34b:prod-validation": "node scripts/patch-34b-production-validation.mjs",
+    "test:mia:conv:patch-34b:browser-validation": "node scripts/patch-34b-browser-validation.mjs",
     "test:mia:patch-125:rc-smoke": "node scripts/patch-125-rc-smoke.mjs",
     "test:mia:patch-126:production-validation": "node scripts/test-mia-patch-126-production-validation-runner.mjs",
     "test:mia:patch-126:browser-validation": "node scripts/test-mia-patch-126-browser-validation.mjs",

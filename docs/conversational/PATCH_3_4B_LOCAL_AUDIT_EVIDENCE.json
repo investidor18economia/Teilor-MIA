@@ -1,0 +1,57 @@
+{
+  "patch": "3.4b",
+  "phase": "local_audit",
+  "status": "APPROVED",
+  "finished_at": "2026-07-25T17:00:00.000Z",
+  "deploy_build": "4ca098d614f1",
+  "commits": ["8633fa4", "4ca098d"],
+  "components": [
+    {
+      "component": "Constraint Refinement",
+      "problem": "Budget override parsed as brand; brand relax did not merge; use case faculdade undetected",
+      "root_cause": "Pattern order, RELAX without brand merge, narrow USE_CASE_PATTERN",
+      "fix": "tryExtractBudgetRefinement, brandAlsoMatch with inferredPriorBrand, expanded use cases",
+      "version": "3.4b.0"
+    },
+    {
+      "component": "Decision Refresh",
+      "problem": "Stale decision after constraint change (CONV-P-D06)",
+      "root_cause": "Misclassified refinements skipped merge/refresh pipeline",
+      "fix": "Correct extraction enables REUSE/RERANK/RUN_GOVERNED in resolveRefinementDecisionRefresh",
+      "version": "3.4b.0"
+    },
+    {
+      "component": "Decision Flow",
+      "problem": "Brand também lost anchor brand from prior recommendation",
+      "root_cause": "Samsung not persisted in lastCommercialConstraints on turn 1",
+      "fix": "inferredPriorBrand from lastBestProduct on pode ser X também",
+      "version": "3.4b.0"
+    },
+    {
+      "component": "Generic Query Closing",
+      "problem": "Category-only queries fully blocked (CONV-P-D05)",
+      "root_cause": "Clarification ASK + guide mode prevented partial recommend",
+      "fix": "categoryOnlyPartialProceed defer, cautious_recommend, budget-axis closing",
+      "version": "3.4b.0"
+    }
+  ],
+  "tests": {
+    "patch_34b_audit": "18/18",
+    "natural_conversation_constraint_refinement": "101/101",
+    "generic_query_closing_audit": "12/12",
+    "patch_34a_regression": "18/18",
+    "p0_smoke_patch_122": "7/7",
+    "production_validation": "8/8",
+    "browser_validation": "2/2"
+  },
+  "architecture_preserved": {
+    "no_new_decision_engine": true,
+    "no_new_router": true,
+    "no_new_memory": true,
+    "clarification_gates_unmodified": true,
+    "product_resolution_unmodified": true,
+    "commercial_entry_unmodified": true,
+    "llm_verbalizes_only": true
+  },
+  "verdict": "APROVADO"
+}
