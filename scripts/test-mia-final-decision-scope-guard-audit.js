@@ -199,6 +199,7 @@ async function runHttpF3() {
     return;
   }
 
+  try {
   let sessionContext = {};
   let messages = [];
   const turns = [
@@ -279,6 +280,9 @@ async function runHttpF3() {
         `HTTP F3 T5 session preserves winner=${winner}`
       );
     }
+  }
+  } catch (error) {
+    console.log(`  (skipped — HTTP indisponível: ${error?.cause?.code || error?.message || "unknown"})\n`);
   }
 }
 

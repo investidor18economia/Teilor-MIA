@@ -192,7 +192,7 @@ test("runner-up follow-up mentions tradeoff when available", () => {
 });
 
 section("3.5a.6 — Regression guards");
-test("version is 3.5b.0", () => DECISION_FACTS_NARRATIVE_VERSION === "3.5b.0");
+test("version is 4A.2.0", () => DECISION_FACTS_NARRATIVE_VERSION === "4A.2.0");
 test("social ack without commercial context still works", () => {
   const ack = selectHumanAck({ anchors: ["cansaco"], message: "estou cansado" });
   return ack.length > 5;

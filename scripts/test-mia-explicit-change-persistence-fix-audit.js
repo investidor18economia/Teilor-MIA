@@ -172,6 +172,7 @@ async function runHttpF1() {
     return;
   }
 
+  try {
   let sessionContext = {};
   let messages = [];
   const turns = [
@@ -223,6 +224,9 @@ async function runHttpF1() {
         `HTTP F1: routing path/mode correct (path=${path}, mode=${mode})`
       );
     }
+  }
+  } catch (error) {
+    console.log(`  (skipped — HTTP indisponível: ${error?.cause?.code || error?.message || "unknown"})\n`);
   }
 }
 

@@ -173,6 +173,8 @@
     "test:mia:conv:patch-37:run-final-audit": "node scripts/patch-37-run-final-audit.mjs",
     "test:mia:conv:patch-37:prod-validation": "node scripts/patch-37-production-validation.mjs",
     "test:mia:conv:patch-37:browser-validation": "node scripts/patch-37-browser-validation.mjs",
+    "test:mia:conv:patch-41a:semantic-decision-contract-audit": "node scripts/test-mia-patch-41a-semantic-decision-contract-audit.js",
+    "test:mia:conv:patch-42:structured-decision-facts-audit": "node scripts/test-mia-patch-42-structured-decision-facts-audit.js",
     "test:mia:patch-125:rc-smoke": "node scripts/patch-125-rc-smoke.mjs",
     "test:mia:patch-126:production-validation": "node scripts/test-mia-patch-126-production-validation-runner.mjs",
     "test:mia:patch-126:browser-validation": "node scripts/test-mia-patch-126-browser-validation.mjs",

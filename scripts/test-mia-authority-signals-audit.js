@@ -292,6 +292,10 @@ function runRegression(script) {
     encoding: "utf8",
     stdio: "pipe",
     cwd: ROOT,
+    env: {
+      ...process.env,
+      MIA_RUN_PRIOR_AUDITS: "0",
+    },
   });
   const ok = result.status === 0;
   console.log(`${ok ? "PASS" : "FAIL"} ${script}`);

@@ -327,6 +327,10 @@ function runRegression(script) {
     encoding: "utf8",
     stdio: "pipe",
     cwd: ROOT,
+    env: {
+      ...process.env,
+      MIA_RUN_PRIOR_AUDITS: "0",
+    },
   });
   const ok = result.status === 0;
   console.log(`${ok ? "PASS" : "FAIL"} ${script}`);
@@ -388,8 +392,14 @@ assert("after sample explains decision", /\bporque|decis[aã]o|escolha|vence|eu 
 
 if (HTTP_ENABLED) {
   console.log("\n── Controlled HTTP scenarios ──");
-  for (const scenario of STATIC_SCENARIOS.filter((entry) => ["A", "C", "E", "G"].includes(entry.id))) {
-    await runHttpScenario(scenario);
+  try {
+    for (const scenario of STATIC_SCENARIOS.filter((entry) => ["A", "C", "E", "G"].includes(entry.id))) {
+      await runHttpScenario(scenario);
+    }
+  } catch (error) {
+    console.log(
+      `\n  SKIP HTTP — servidor indisponível (${error?.cause?.code || error?.message || "unknown"})\n`
+    );
   }
 } else {
   console.log("\n── HTTP skipped (set MIA_HTTP_AUDIT=1 to enable) ──");

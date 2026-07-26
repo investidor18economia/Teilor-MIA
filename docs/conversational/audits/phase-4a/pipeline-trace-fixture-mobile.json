@@ -1,0 +1,77 @@
+﻿{
+  "patch": "4A.0B",
+  "query": "Quero um celular bom para o dia a dia",
+  "stages": {
+    "rawDataLayer": {
+      "official_name": "iPhone 15",
+      "category": "mobile",
+      "strengths": [
+        "tela fluida",
+        "boa autonomia"
+      ],
+      "weaknesses": [
+        "carregamento mais lento"
+      ],
+      "ideal_for": [
+        "uso cotidiano"
+      ]
+    },
+    "translatedConsequences": {
+      "strengths": [
+        {
+          "type": "strength",
+          "sourceToken": "tela_fluida",
+          "consequence": "mais sensa├º├úo de fluidez na navega├º├úo e nas intera├º├Áes do dia a dia"
+        },
+        {
+          "type": "strength",
+          "sourceToken": "boa_autonomia",
+          "consequence": "menos depend├¬ncia do carregador no dia a dia"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "weakness",
+          "sourceToken": "carregamento_mais_lento",
+          "consequence": "uma ren├║ncia percept├¡vel que vale pesar antes de fechar a compra"
+        }
+      ],
+      "idealFor": [
+        {
+          "type": "ideal_for",
+          "sourceToken": "uso_cotidiano",
+          "consequence": "combina com o perfil de uso descrito"
+        }
+      ],
+      "avoidIf": [],
+      "notes": [],
+      "riskNotes": []
+    },
+    "structuredExplanationFacts": {
+      "strengthConsequences": [
+        "mais sensa├º├úo de fluidez na navega├º├úo e nas intera├º├Áes do dia a dia",
+        "menos depend├¬ncia do carregador no dia a dia"
+      ],
+      "weaknessConsequences": [
+        "uma ren├║ncia percept├¡vel que vale pesar antes de fechar a compra"
+      ]
+    },
+    "semanticFamilyAllocation": {
+      "gains": [
+        "tela fluida no cotidiano",
+        "carregamento mais lento que rivais recentes"
+      ],
+      "candidatePoolSize": 2
+    },
+    "firstAnswerGains": [
+      "tela fluida no cotidiano",
+      "carregamento mais lento que rivais recentes"
+    ],
+    "finalReply": "Entre as op├º├Áes, eu colocaria o iPhone 15 em primeiro porque tela fluida no cotidiano.\n\nNa pr├ítica, tela fluida no cotidiano tende a aparecer no uso real ÔÇö n├úo s├│ no an├║ncio.\n\nÔ£à O que voc├¬ ganha\n\nÔÇó Tela fluida no cotidiano.\n\nÔÇó Carregamento mais lento que rivais recentes.\n\nÔÜá´©Å O que voc├¬ abre m├úo\n\nÔÇó Carregamento mais lento.\n\nMesmo com carregamento mais lento, eu manteria o iPhone 15 porque tela fluida no cotidiano."
+  },
+  "literalnessMarkers": {
+    "display_smoothness_compaction": "tela fluida no cotidiano",
+    "repeatedInReply": 4,
+    "naPraticaTemplate": true
+  }
+}

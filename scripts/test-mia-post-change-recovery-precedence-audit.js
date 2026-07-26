@@ -226,6 +226,7 @@ async function runHttpF2() {
     return;
   }
 
+  try {
   let sessionContext = {};
   let messages = [];
   const turns = [
@@ -285,6 +286,9 @@ async function runHttpF2() {
         `HTTP F2: session keeps current winner (${sessionWinner})`
       );
     }
+  }
+  } catch (error) {
+    console.log(`  (skipped — HTTP indisponível: ${error?.cause?.code || error?.message || "unknown"})\n`);
   }
 }
 

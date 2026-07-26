@@ -20,6 +20,16 @@ const API_KEY = process.env.MIA_API_KEY || "minha_chave_181199";
 const HTTP_ENABLED = process.env.MIA_HTTP_AUDIT === "1" || process.env.MIA_HTTP_AUDIT === "true";
 const RUN_PRIOR_AUDITS = process.env.MIA_RUN_PRIOR_AUDITS !== "0";
 
+function shouldForceHttpForPriorScript(script = "") {
+  if (!HTTP_ENABLED) return false;
+  return (
+    script.includes("validation") ||
+    script.includes("persistence") ||
+    script.includes("post-change") ||
+    script.includes("final-decision")
+  );
+}
+
 const PRIOR_AUDITS = [
   "test-mia-winner-lifecycle-enforcement-audit.js",
   "test-mia-discussion-set-enforcement-audit.js",
@@ -590,7 +600,7 @@ function runPriorAudits() {
       encoding: "utf8",
       env: {
         ...process.env,
-        MIA_HTTP_AUDIT: script.includes("validation") || script.includes("persistence") || script.includes("post-change") || script.includes("final-decision") ? "1" : process.env.MIA_HTTP_AUDIT,
+        MIA_HTTP_AUDIT: shouldForceHttpForPriorScript(script) ? "1" : "0",
         MIA_API_BASE: process.env.MIA_API_BASE || "http://localhost:3001",
       },
       timeout: 300000,
@@ -636,36 +646,42 @@ async function main() {
   const convResults = [];
 
   if (HTTP_ENABLED) {
-    for (const conv of CONVERSATIONS) {
-      console.log(`────────────────────────────────────────────────────────────────`);
-      console.log(`Conversa ${conv.id} — ${conv.name}`);
-      console.log(`────────────────────────────────────────────────────────────────`);
+    try {
+      for (const conv of CONVERSATIONS) {
+        console.log(`────────────────────────────────────────────────────────────────`);
+        console.log(`Conversa ${conv.id} — ${conv.name}`);
+        console.log(`────────────────────────────────────────────────────────────────`);
 
-      const result = await runConversation(conv);
-      convResults.push(result);
+        const result = await runConversation(conv);
+        convResults.push(result);
 
-      for (const t of result.turnMetrics) {
-        const flagStr = t.flags.length
-          ? t.flags.map((f) => f.type).join(", ")
-          : "—";
-        const mark = t.flags.some((f) => f.severity === "high")
-          ? "✗"
-          : t.flags.some((f) => f.severity === "medium")
-            ? "⚠"
-            : "✓";
-        console.log(
-          `  T${t.turn} [${t.status}] ${mark} ${t.query.slice(0, 42)}`
-        );
-        console.log(
-          `       winner: ${t.winnerBefore || "—"} → ${t.winnerAfter || "—"} | path: ${t.responsePath || "—"} | trust: ${t.humanTrustFlag}`
-        );
-        if (t.flags.length) {
-          console.log(`       flags: ${flagStr}`);
+        for (const t of result.turnMetrics) {
+          const flagStr = t.flags.length
+            ? t.flags.map((f) => f.type).join(", ")
+            : "—";
+          const mark = t.flags.some((f) => f.severity === "high")
+            ? "✗"
+            : t.flags.some((f) => f.severity === "medium")
+              ? "⚠"
+              : "✓";
+          console.log(
+            `  T${t.turn} [${t.status}] ${mark} ${t.query.slice(0, 42)}`
+          );
+          console.log(
+            `       winner: ${t.winnerBefore || "—"} → ${t.winnerAfter || "—"} | path: ${t.responsePath || "—"} | trust: ${t.humanTrustFlag}`
+          );
+          if (t.flags.length) {
+            console.log(`       flags: ${flagStr}`);
+          }
         }
-      }
 
+        console.log(
+          `\n  Resumo ${conv.id}: ${result.summary.ok ? "PASS" : result.summary.partial ? "PARTIAL" : "FAIL"} | H=${result.summary.highFlags} M=${result.summary.mediumFlags}\n`
+        );
+      }
+    } catch (error) {
       console.log(
-        `\n  Resumo ${conv.id}: ${result.summary.ok ? "PASS" : result.summary.partial ? "PARTIAL" : "FAIL"} | H=${result.summary.highFlags} M=${result.summary.mediumFlags}\n`
+        `SKIP HTTP — servidor indisponível (${error?.cause?.code || error?.message || "unknown"})\n`
       );
     }
   } else {

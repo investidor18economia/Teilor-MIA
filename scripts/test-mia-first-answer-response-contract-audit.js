@@ -10,6 +10,7 @@ import {
   FIRST_ANSWER_RESPONSE_CONTRACT_VERSION,
   applyFirstAnswerResponseContract,
   buildFirstAnswerStructuredReply,
+  hasFirstAnswerStructure,
   isFalseSacrificeText,
   sanitizeDisplaySource,
   sanitizeFirstAnswerReplyText,
@@ -71,7 +72,8 @@ const structured = buildFirstAnswerStructuredReply({
     "Menos sensação de limite quando o aparelho é exigido",
   ]),
 });
-assert("has opening", /Eu iria no iPhone 15 porque/i.test(structured));
+assert("has opening", hasFirstAnswerStructure(structured));
+assert("opening names winner", /iPhone 15/i.test(structured));
 assert("has gains block", /O que voc[eê] ganha/i.test(structured));
 assert("has sacrifice block", /O que voc[eê] abre m[aã]o/i.test(structured));
 assert("has closing", /Mesmo com/i.test(structured) && /eu manteria o iPhone 15/i.test(structured));
