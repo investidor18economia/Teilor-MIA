@@ -59,6 +59,20 @@ function ok(label, cond) {
   }
 }
 
+/** Verifica que o commit existe e é ancestral de HEAD (não depende de janela rasa do log). */
+function isCommitReachableFromHead(ref) {
+  try {
+    const full = execSync(`git rev-parse --verify ${ref}`, {
+      cwd: ROOT,
+      encoding: "utf8",
+    }).trim();
+    execSync(`git merge-base --is-ancestor ${full} HEAD`, { cwd: ROOT, stdio: "pipe" });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 console.log("\nPATCH 7.5 — Phase 7 final audit meta-validation\n");
 
 console.log("Documentation");
@@ -93,10 +107,9 @@ ok("contract 7.2 event", contract.includes("mia_error_event"));
 ok("contract 7.3 event", contract.includes("mia_latency_event"));
 ok("contract 7.4 sql-derived", contract.includes("7.10") || contract.includes("SQL-derived"));
 
-console.log("\nGit phase 7 commits present");
-const log = execSync("git log --oneline -20", { cwd: ROOT, encoding: "utf8" });
+console.log("\nGit phase 7 commits present (reachable from HEAD)");
 for (const hash of ["e831307", "c541010", "360768a", "59fcf22"]) {
-  ok(`commit ${hash}`, log.includes(hash.slice(0, 7)));
+  ok(`commit ${hash} reachable from HEAD`, isCommitReachableFromHead(hash));
 }
 
 console.log(`\nMeta-validation: ${passed}/${passed + failed}\n`);

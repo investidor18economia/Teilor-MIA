@@ -66,6 +66,20 @@ function ok(label, cond) {
   }
 }
 
+/** Verifica que o commit existe e é ancestral de HEAD (não depende de janela rasa do log). */
+function isCommitReachableFromHead(ref) {
+  try {
+    const full = execSync(`git rev-parse --verify ${ref}`, {
+      cwd: ROOT,
+      encoding: "utf8",
+    }).trim();
+    execSync(`git merge-base --is-ancestor ${full} HEAD`, { cwd: ROOT, stdio: "pipe" });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function globOne(pattern) {
   const dir = join(ANALYTICS, "sql");
   const prefix = pattern.replace("*", "");
@@ -120,10 +134,16 @@ ok("contract 9.4 derived", contract.includes("7.17"));
 const q8 = readFileSync(join(sqlDir, "patch-94-query8-recovery.sql"), "utf8");
 ok("Q8 recovery joins replacement_decision", q8.includes("replacement_decision = a.metadata->>'decision_request_id'"));
 
-console.log("\nPhase 9 commits present");
-const log = execSync("git log --oneline -30", { cwd: ROOT, encoding: "utf8" });
-for (const prefix of ["9.1", "9.2", "9.3", "9.4"]) {
-  ok(`phase 9 patch ${prefix} in history`, /recommendation|runner-up|rejection|acceptance/i.test(log));
+console.log("\nPhase 9 implementation commits (reachable from HEAD)");
+/** Hashes oficiais — PATCH_9_5_FINAL_AUDIT_EVIDENCE.json · implementation_commits_in_scope */
+const PHASE9_IMPLEMENTATION_COMMITS = [
+  ["9.1", "2585c8e"],
+  ["9.2", "cc72675"],
+  ["9.3", "e117854"],
+  ["9.4", "1a73a05"],
+];
+for (const [patch, hash] of PHASE9_IMPLEMENTATION_COMMITS) {
+  ok(`phase 9 patch ${patch} commit ${hash} reachable from HEAD`, isCommitReachableFromHead(hash));
 }
 
 console.log(`\nResult: ${passed} passed, ${failed} failed\n`);

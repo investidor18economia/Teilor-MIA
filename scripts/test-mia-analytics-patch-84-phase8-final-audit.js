@@ -86,6 +86,20 @@ function ok(label, cond) {
   }
 }
 
+/** Verifica que o commit existe e é ancestral de HEAD (não depende de janela rasa do log). */
+function isCommitReachableFromHead(ref) {
+  try {
+    const full = execSync(`git rev-parse --verify ${ref}`, {
+      cwd: ROOT,
+      encoding: "utf8",
+    }).trim();
+    execSync(`git merge-base --is-ancestor ${full} HEAD`, { cwd: ROOT, stdio: "pipe" });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 console.log("\nPATCH 8.4 — Phase 8 final audit meta-validation\n");
 
 console.log("Documentation");
@@ -145,10 +159,9 @@ ok("8.2 void schedule", paA.includes("void emitProviderAttemptAnalytics"));
 const osA = readFileSync(join(ROOT, "lib/miaOfferSetAnalytics.js"), "utf8");
 ok("8.3 void schedule", osA.includes("void emitOfferSetAnalytics"));
 
-console.log("\nGit phase 8 commits");
-const log = execSync("git log --oneline -25", { cwd: ROOT, encoding: "utf8" });
+console.log("\nGit phase 8 commits (reachable from HEAD)");
 for (const hash of ["e6b5eb1", "43974ea", "2158de6", "23320b8"]) {
-  ok(`commit ${hash}`, log.includes(hash.slice(0, 7)));
+  ok(`commit ${hash} reachable from HEAD`, isCommitReachableFromHead(hash));
 }
 
 console.log(`\nResultado: ${passed} passed, ${failed} failed\n`);
