@@ -50,4 +50,14 @@ StructuredDecisionFacts → miaNarrativePlanner → NarrativePlan → consumidor
 
 ## 5. Veredito
 
-**APROVADA** — após deploy e validação produção.
+**APROVADA** — deploy `fefd397bfeeb`, produção 12/12, interface local 12/12.
+
+## 6. Deploy e validação
+
+| Etapa | Resultado |
+|-------|-----------|
+| Commit | `fefd397` |
+| Build Vercel | `fefd397bfeeb` |
+| Produção API | **12/12** |
+| Interface local | **12/12** (`localhost:3004/app-mia`) |
+| Evidências | `evidence/PATCH_4A_4_NARRATIVE_PLANNER_EVIDENCE.json` |

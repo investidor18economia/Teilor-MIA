@@ -1,0 +1,29 @@
+{
+  "patch": "4A.4",
+  "phase": "narrative_planner_closure",
+  "status": "APROVADA",
+  "planner_version": "4A.4.0",
+  "commit": "fefd397bfeeb",
+  "deploy_build": "fefd397bfeeb",
+  "base_url": "https://economia-ai.vercel.app",
+  "local_url": "http://localhost:3004/app-mia",
+  "finished_at": "2026-07-26T21:38:00.000Z",
+  "audits": {
+    "patch_44_narrative_planner": { "passed": 36, "failed": 0 },
+    "patch_41a": { "passed": 30, "failed": 0 },
+    "patch_42": { "passed": 30, "failed": 0 },
+    "patch_43": { "passed": 21, "failed": 0 },
+    "patch_4a2vf": { "passed": 60, "failed": 0 },
+    "patch_35a": { "passed": 15, "failed": 0 },
+    "patch_34b": { "passed": 18, "failed": 0 },
+    "patch_32": { "passed": 22, "failed": 0 }
+  },
+  "build": "PASS",
+  "local_browser": { "script": "patch-4a2v-browser-validation.mjs", "passed": 12, "failed": 0 },
+  "production_validation": { "script": "patch-4a2v-production-validation.mjs", "passed": 12, "failed": 0 },
+  "architecture": {
+    "module": "lib/miaNarrativePlanner.js",
+    "flow": "StructuredDecisionFacts → NarrativePlan → consumers → verbalizer (4A.5 deferred)"
+  },
+  "readiness_4a5": "PRONTA"
+}
