@@ -167,6 +167,10 @@ import {
   contextualSynthesisToTrace,
 } from "../../lib/miaContextualDecisionSynthesis.js";
 import {
+  narrativePlanToOrderedLegacyStrings,
+  narrativePlanToVerbalizationOrder,
+} from "../../lib/miaNarrativePlanner.js";
+import {
   appendUserIntentDiscovery,
   resolveIntentDiscoverySessionClear,
 } from "../../lib/miaUserIntentDiscoveryLayer.js";
@@ -35603,7 +35607,22 @@ if (Array.isArray(products) && products.length > 0) {
       category: detectProductCategory(resolvedQuery) || sessionContext.lastCategory || "",
       primaryAxis: searchCognition.primaryAxis || activePriority || currentPriority || "",
       sourceOrigin: selectedBestProduct?.isDataLayerProduct ? "data_layer" : "commercial",
+      responsePath: "return_seguro",
+      hasWinner: true,
     });
+
+    if (contextualDecisionSynthesis?.narrativePlan && specialistPresentation?.tradeoff) {
+      const ordered = narrativePlanToOrderedLegacyStrings(
+        contextualDecisionSynthesis.narrativePlan
+      );
+      specialistPresentation.tradeoff.narrativePlan = contextualDecisionSynthesis.narrativePlan;
+      if (ordered.gains.length) {
+        specialistPresentation.tradeoff.gains = ordered.gains;
+      }
+      if (ordered.sacrifices.length) {
+        specialistPresentation.tradeoff.sacrifices = ordered.sacrifices;
+      }
+    }
   }
 
   if (hasCommercialWinner && !specialistDecisionExplanationApplied) {
@@ -36018,6 +36037,7 @@ if (Array.isArray(products) && products.length > 0) {
       lastSemanticSacrificeUnits: contextualDecisionSynthesis?.sacrificeUnits || [],
       lastStructuredDecisionFacts:
         contextualDecisionSynthesis?.structuredDecisionFacts || null,
+      lastNarrativePlan: contextualDecisionSynthesis?.narrativePlan || null,
       lastTopic: resolvedQuery,
       // PATCH 7.4 — persist ranked snapshot at the search write-point.
       // displayProducts is still score-enriched here (localFallbackScore / score).
