@@ -109,13 +109,23 @@ Evidência: `evidence/PATCH_4A_2VF_BROWSER_EVIDENCE.json`
 
 ## 8. Deploy e produção
 
-*(Atualizar após push com commit publicado e score 12/12 em produção.)*
+| Campo | Valor |
+|-------|-------|
+| Commit | `b0908f0b993a` |
+| Push | `master` → `origin/master` |
+| Build publicado (`/api/health`) | `b0908f0b993a` |
+| Browser produção | **12/12** |
+| API produção (`patch-4a2v-production-validation.mjs`) | **12/12** |
+
+Evidências:
+- `evidence/PATCH_4A_2VF_BROWSER_EVIDENCE.json` (local)
+- `evidence/PATCH_4A_2VF_PRODUCTION_EVIDENCE.json` (produção)
 
 ---
 
 ## 9. Veredito
 
-**APROVADA** — após confirmação de deploy e 12/12 em produção.
+**APROVADA**
 
 ---
 

@@ -1,0 +1,27 @@
+{
+  "patch": "4A.2VF",
+  "mode": "production",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "commit": "b0908f0b993a",
+  "validated_at": "2026-07-26T20:05:00.000Z",
+  "browser_score": "12/12",
+  "scenarios_passed": [
+    "s1-generic-balanced",
+    "s2-priority-explicit",
+    "s3-priority-informal",
+    "s4-product-lock",
+    "s5-comparison",
+    "s6-contestation",
+    "s7-priority-change",
+    "s8-new-options",
+    "s9-typo-language",
+    "s10-other-category",
+    "multitempo-8-turns",
+    "ui-no-empty-bubbles"
+  ],
+  "original_failures_fixed": {
+    "priority": "bateria é minha prioridade",
+    "product_lock": "o Galaxy A55 vale a pena?",
+    "contestation": "mas eu achei o S23 FE melhor"
+  }
+}
