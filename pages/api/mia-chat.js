@@ -11,6 +11,7 @@ import {
   applyPublicCorsHeaders,
   applyPublicSecurityHeaders,
   sendPublicApiError,
+  sendPublicApiOriginRejected,
   sanitizePublicUpstreamResponse,
   validatePublicChatRequestBody,
   validatePublicContentType,
@@ -33,9 +34,9 @@ export default withMiaObservability(async function miaChatHandler(req, res) {
   if (req.method === "OPTIONS") {
     const cors = applyPublicCorsHeaders(req, res);
     if (cors.crossOrigin && !cors.originAllowed) {
-      return res.status(403).json({
-        error: "origin_not_allowed",
-        reasonCode: "public_api_origin_not_allowed",
+      return sendPublicApiOriginRejected(res, {
+        endpoint: "/api/mia-chat",
+        origin: cors.origin,
       });
     }
     res.setHeader("Allow", "POST, OPTIONS");
@@ -51,9 +52,9 @@ export default withMiaObservability(async function miaChatHandler(req, res) {
 
   const cors = applyPublicCorsHeaders(req, res);
   if (cors.crossOrigin && !cors.originAllowed) {
-    return res.status(403).json({
-      error: "origin_not_allowed",
-      reasonCode: "public_api_origin_not_allowed",
+    return sendPublicApiOriginRejected(res, {
+      endpoint: "/api/mia-chat",
+      origin: cors.origin,
     });
   }
 

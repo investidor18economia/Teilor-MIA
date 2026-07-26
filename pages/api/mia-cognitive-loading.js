@@ -12,6 +12,7 @@ import {
   applyPublicCorsHeaders,
   applyPublicSecurityHeaders,
   sendPublicApiError,
+  sendPublicApiOriginRejected,
   validatePublicContentType,
   validatePublicHttpMethod,
   validatePublicLoadingRequestBody,
@@ -32,9 +33,9 @@ export default withMiaObservability(async function miaCognitiveLoadingHandler(re
   if (req.method === "OPTIONS") {
     const cors = applyPublicCorsHeaders(req, res);
     if (cors.crossOrigin && !cors.originAllowed) {
-      return res.status(403).json({
-        error: "origin_not_allowed",
-        reasonCode: "public_api_origin_not_allowed",
+      return sendPublicApiOriginRejected(res, {
+        endpoint: "/api/mia-cognitive-loading",
+        origin: cors.origin,
       });
     }
     res.setHeader("Allow", "POST, OPTIONS");
@@ -50,9 +51,9 @@ export default withMiaObservability(async function miaCognitiveLoadingHandler(re
 
   const cors = applyPublicCorsHeaders(req, res);
   if (cors.crossOrigin && !cors.originAllowed) {
-    return res.status(403).json({
-      error: "origin_not_allowed",
-      reasonCode: "public_api_origin_not_allowed",
+    return sendPublicApiOriginRejected(res, {
+      endpoint: "/api/mia-cognitive-loading",
+      origin: cors.origin,
     });
   }
 

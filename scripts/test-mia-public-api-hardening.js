@@ -5,6 +5,7 @@ import {
   PUBLIC_API_REASON_CODES,
   applyPublicCorsHeaders,
   isJsonContentType,
+  isLocalDevelopmentOrigin,
   isPublicDebugEnabled,
   resolveAllowedOrigins,
   sanitizePublicChatResponsePayload,
@@ -161,6 +162,36 @@ function mockRes() {
   const res = mockRes();
   const local = applyPublicCorsHeaders({ headers: { origin: "http://localhost:3000" } }, res);
   expectTrue("localhost allowed", local.originAllowed === true);
+}
+
+{
+  const res = mockRes();
+  const altPort = applyPublicCorsHeaders(
+    { headers: { origin: "http://localhost:3002" } },
+    res,
+    { NODE_ENV: "development" }
+  );
+  expectTrue("localhost alternate dev port allowed", altPort.originAllowed === true);
+  expectEqual(
+    "localhost alternate dev port header",
+    res.headers["access-control-allow-origin"],
+    "http://localhost:3002"
+  );
+}
+
+{
+  const res = mockRes();
+  const blockedAltPort = applyPublicCorsHeaders(
+    { headers: { origin: "http://localhost:3002" } },
+    res,
+    { NODE_ENV: "production" }
+  );
+  expectTrue("production blocks unlisted localhost port", blockedAltPort.originAllowed === false);
+}
+
+{
+  expectTrue("detect localhost dev origin", isLocalDevelopmentOrigin("http://127.0.0.1:3002") === true);
+  expectTrue("reject evil origin helper", isLocalDevelopmentOrigin("https://evil.example") === false);
 }
 
 {
