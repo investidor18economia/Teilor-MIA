@@ -26,10 +26,18 @@ import {
   resolveMiaEmailPublicBaseUrl,
   validatePriceDropEmailPayload,
 } from "../lib/miaPriceDropEmailTemplate.js";
+import { MIA_AVATAR_PRIMARY_SRC } from "../lib/brandAssets.js";
 import { sendPriceDropEmail } from "../lib/email.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
+
+const LEGACY_EMAIL_LOGO_PATH = "/branding/mia-logo.png";
+
+/** URL absoluta oficial do avatar MIA — derivada de brandAssets. */
+function officialBrandAvatarUrl(base) {
+  return new URL(MIA_AVATAR_PRIMARY_SRC, `${String(base).replace(/\/$/, "")}/`).toString();
+}
 
 const ORIGINAL_SEND_FLAG = process.env.MIA_PRICE_DROP_EMAIL_SEND_ENABLED;
 
@@ -92,8 +100,13 @@ test("sem cor externa #0070f3 no módulo de e-mail", () => {
   assert(!templateJs.includes("#0070f3"), "template.js");
 });
 
+test("identidade oficial: template alinhado a brandAssets", () => {
+  assert(MIA_EMAIL_LOGO_PUBLIC_PATH === MIA_AVATAR_PRIMARY_SRC, "logo path from brandAssets");
+  assert(MIA_AVATAR_PRIMARY_SRC === "/brand/avatars/mia-avatar-primary.png", "canonical avatar path");
+});
+
 test("logo oficial existe localmente", () => {
-  assert(miaEmailLogoFileExists() === true, "mia-logo.png");
+  assert(miaEmailLogoFileExists() === true, "mia-avatar-primary.png");
 });
 
 test("payload válido gera HTML institucional", () => {
@@ -103,7 +116,7 @@ test("payload válido gera HTML institucional", () => {
     oldPrice: 3499,
     newPrice: 2999,
     link: "https://loja.example.com/iphone-13",
-    logoUrl: "https://app.example.com/branding/mia-logo.png",
+    logoUrl: officialBrandAvatarUrl("https://app.example.com"),
   });
 
   assert(result.ok === true, "ok");
@@ -118,8 +131,12 @@ test("payload válido gera HTML institucional", () => {
   assert(result.html.includes("-webkit-text-fill-color:transparent"), "institutional gradient text");
   assert(result.html.includes("#72D4A8"), "signature color");
   assert(result.html.includes("#061F3A"), "headline block bg");
-  assert(result.html.includes('src="https://app.example.com/branding/mia-logo.png"'), "absolute logo src");
-  assert(!result.html.includes('src="/branding/mia-logo.png"'), "no relative logo src");
+  assert(
+    result.html.includes(`src="${officialBrandAvatarUrl("https://app.example.com")}"`),
+    "absolute logo src"
+  );
+  assert(!result.html.includes(`src="${MIA_AVATAR_PRIMARY_SRC}"`), "no relative logo src");
+  assert(!result.html.includes(LEGACY_EMAIL_LOGO_PATH), "no legacy logo path");
   assert(result.html.includes("#FF6B6B"), "old price color");
   assert(result.html.includes("#5FD68A"), "new price color");
   assert(result.html.includes("💰 Boa notícia: o preço caiu"), "headline with emoji");
@@ -247,24 +264,27 @@ test("PATCH 10.1B: resolve logo URL absoluta por env", () => {
   try {
     process.env.MIA_PUBLIC_APP_URL = "https://teilor.com.br";
     const url = resolveMiaEmailLogoUrl();
-    assert(url === "https://teilor.com.br/branding/mia-logo.png", "mia public app url");
+    assert(url === officialBrandAvatarUrl("https://teilor.com.br"), "mia public app url");
     assert(/^https:\/\//.test(url), "https absolute");
+    assert(!url.includes(LEGACY_EMAIL_LOGO_PATH), "no legacy branding path");
 
     delete process.env.MIA_PUBLIC_APP_URL;
     process.env.NEXT_PUBLIC_SITE_URL = "https://economia-ai.vercel.app";
     const siteUrl = resolveMiaEmailLogoUrl();
     assert(
-      siteUrl === "https://economia-ai.vercel.app/branding/mia-logo.png",
+      siteUrl === officialBrandAvatarUrl("https://economia-ai.vercel.app"),
       "next public site url"
     );
+    assert(!siteUrl.includes(LEGACY_EMAIL_LOGO_PATH), "no legacy branding path on site url");
 
     delete process.env.NEXT_PUBLIC_SITE_URL;
     process.env.VERCEL_URL = "economia-ai.vercel.app";
     const vercelUrl = resolveMiaEmailLogoUrl();
     assert(
-      vercelUrl === "https://economia-ai.vercel.app/branding/mia-logo.png",
+      vercelUrl === officialBrandAvatarUrl("https://economia-ai.vercel.app"),
       "vercel url with https prefix"
     );
+    assert(!vercelUrl.includes(LEGACY_EMAIL_LOGO_PATH), "no legacy branding path on vercel url");
   } finally {
     for (const [key, value] of Object.entries(original)) {
       if (value == null) delete process.env[key];
@@ -309,7 +329,7 @@ test("PATCH 10.1B: headline e hierarquia visual", () => {
     oldPriceLabel: "R$ 199,00",
     newPriceLabel: "R$ 149,00",
     link: "https://example.com/fone",
-    logoUrl: "https://app.example.com/branding/mia-logo.png",
+    logoUrl: officialBrandAvatarUrl("https://app.example.com"),
   });
 
   assert(html.includes("#00C6FF"), "headline color");
@@ -321,7 +341,7 @@ test("PATCH 10.1B: headline e hierarquia visual", () => {
   assert(html.includes("As recomendações são feitas pensando em você e nos seus interesses."), "institutional manifesto");
   assert(!html.includes("#F4E8D4"), "no legacy institutional color");
   assert(html.includes("color:#72D4A8"), "signature");
-  assert(html.includes(MIA_EMAIL_LOGO_PUBLIC_PATH.slice(1)), "logo path segment");
+  assert(html.includes(MIA_AVATAR_PRIMARY_SRC.slice(1)), "logo path segment");
   assert(normalizeMiaEmailPublicBaseUrl("teilor.com.br") === "https://teilor.com.br", "base normalize");
 });
 
@@ -350,10 +370,11 @@ test("PATCH 10.1A: produto com destaque premium", () => {
     oldPriceLabel: "R$ 2.499,00",
     newPriceLabel: "R$ 2.199,00",
     link: "https://example.com/tv",
-    logoUrl: "https://app.example.com/branding/mia-logo.png",
+    logoUrl: officialBrandAvatarUrl("https://app.example.com"),
   });
   assert(html.includes("font-size:20px") && html.includes("font-weight:700"), "product emphasis");
   assert(html.includes('bgcolor="#050D1F"') || html.includes("background-color:#050D1F"), "logo header bg");
+  assert(!html.includes(LEGACY_EMAIL_LOGO_PATH), "no legacy logo path");
 });
 
 test("compatibilidade: HTML table-based inline", () => {
