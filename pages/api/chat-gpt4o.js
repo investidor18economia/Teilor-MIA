@@ -386,6 +386,9 @@ import {
 import {
   resolveProductIdentityFromQuery,
   extractProductMentionFromQuery,
+  isSpecificProductEvaluationQuery,
+  resolveSpecificProductEvaluationAnchorQuery,
+  productOfferMatchesQueryIdentity,
 } from "../../lib/miaProductIdentityResolution.js";
 import {
   applyClarificationGateToContextResolution,
@@ -1572,7 +1575,10 @@ async function resolveSpecificProductLockForPipeline({
   categoryHint = "",
   hasActiveAnchor = false,
 } = {}) {
-  if (hasActiveAnchor && detectsAnchoredComparisonIntent(query, { hasActiveAnchor: true })) {
+  const lockQuery =
+    resolveSpecificProductEvaluationAnchorQuery(query) || query;
+
+  if (hasActiveAnchor && detectsAnchoredComparisonIntent(lockQuery, { hasActiveAnchor: true })) {
     return {
       active: false,
       version: SPECIFIC_PRODUCT_RESOLUTION_LOCK_VERSION,
@@ -1586,8 +1592,25 @@ async function resolveSpecificProductLockForPipeline({
 
   const resolveIdentity = (q) => resolveMiaProductIdentity(q);
 
+  if (isSpecificProductEvaluationQuery(query) || isSpecificProductEvaluationQuery(lockQuery)) {
+    const evalLock = bootstrapSpecificProductLock({
+      query: lockQuery,
+      products,
+      resolveIdentity,
+    });
+    if (evalLock.active) return evalLock;
+    if (dataLayerProducts.length) {
+      const evalDataLock = bootstrapSpecificProductLock({
+        query: lockQuery,
+        products: dataLayerProducts,
+        resolveIdentity,
+      });
+      if (evalDataLock.active) return evalDataLock;
+    }
+  }
+
   let lock = bootstrapSpecificProductLock({
-    query,
+    query: lockQuery,
     products,
     resolveIdentity,
   });
@@ -1595,18 +1618,18 @@ async function resolveSpecificProductLockForPipeline({
 
   if (dataLayerProducts.length) {
     lock = bootstrapSpecificProductLock({
-      query,
+      query: lockQuery,
       products: dataLayerProducts,
       resolveIdentity,
     });
     if (lock.active) return lock;
   }
 
-  if (isGenericProductSearchQuery(query)) {
+  if (isGenericProductSearchQuery(lockQuery)) {
     return lock;
   }
 
-  const identity = resolveMiaProductIdentity(query);
+  const identity = resolveMiaProductIdentity(lockQuery);
   const anchorName = cleanTitle(identity?.officialName || "");
   if (!anchorName) return lock;
 
@@ -1617,14 +1640,14 @@ async function resolveSpecificProductLockForPipeline({
   ) {
     const exactProduct = buildDataLayerProductFromSpecs(exactSpecs, categoryHint);
     lock = resolveSpecificProductLock({
-      query,
+      query: lockQuery,
       products: [exactProduct, ...products],
     });
     if (lock.active) return lock;
   }
 
   lock = bootstrapSpecificProductLock({
-    query,
+    query: lockQuery,
     products,
     resolveIdentity,
   });
@@ -21904,6 +21927,7 @@ function getDetectedUseIntent(query) {
   }
 
   if (/barato|barata|menor preco|menor preço|economia|custo beneficio|custo-beneficio|compensa|vale a pena/.test(q)) {
+    if (isSpecificProductEvaluationQuery(query)) return "";
     return "value";
   }
 
@@ -24580,6 +24604,8 @@ function hasStrongShoppingSignal(text = "") {
 }
 
 function isContextDecision(query = "") {
+  if (isSpecificProductEvaluationQuery(query)) return false;
+
   const q = normalizeQuery(query);
 
   return (
@@ -30309,7 +30335,10 @@ pipelineTracer.patch({
 });
 
 const looksLikeShortPriorityFollowUp =
-  looksLikeShortPriorityFollowUpShape && !hasExplicitNewSearchSignal;
+  looksLikeShortPriorityFollowUpShape &&
+  !hasExplicitNewSearchSignal &&
+  !isSpecificProductEvaluationQuery(query) &&
+  !isSpecificProductEvaluationQuery(resolvedQuery);
 
 const rawSessionContext = req.body?.session_context || {};
 
@@ -30404,6 +30433,15 @@ const isComparisonFollowUpOverride =
   });
 
 let contextAction = detectContextAction(query, intent, contextResolution);
+
+if (
+  isSpecificProductEvaluationQuery(query) ||
+  isSpecificProductEvaluationQuery(resolvedQuery)
+) {
+  contextResolution.shouldSkipProductSearch = false;
+  contextResolution.directReply = null;
+  contextResolution.needsClarification = false;
+}
 
 // ─────────────────────────────────────────────────────────────
 // PATCH 5.6D — Cognitive ContextAction Guard
@@ -34600,7 +34638,11 @@ if (hasPriorityFollowUp) {
     "";
   categoryHintResolved = categoryHint;
 
-  const dataLayerSearchQuery = commercialPipelineQuery || resolvedQuery;
+  const specificEvalSearchQuery =
+    resolveSpecificProductEvaluationAnchorQuery(query) ||
+    resolveSpecificProductEvaluationAnchorQuery(resolvedQuery);
+  const dataLayerSearchQuery =
+    specificEvalSearchQuery || commercialPipelineQuery || resolvedQuery;
   const dataLayerProductsRaw = await searchUniversalDataLayer(dataLayerSearchQuery, {
     limit: 12,
     categoryHint
@@ -35340,6 +35382,9 @@ if (Array.isArray(products) && products.length > 0) {
   if (
     commercialOfferReset.shouldReset &&
     selectedBestProduct &&
+    !specificProductLock?.active &&
+    !productOfferMatchesQueryIdentity(selectedBestProduct, query) &&
+    !productOfferMatchesQueryIdentity(selectedBestProduct, resolvedQuery) &&
     !commercialOfferMatchesQueryCore(selectedBestProduct, resolvedQuery)
   ) {
     selectedBestProduct = null;

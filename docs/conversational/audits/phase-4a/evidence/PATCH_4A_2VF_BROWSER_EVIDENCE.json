@@ -1,0 +1,26 @@
+{
+  "patch": "4A.2VF",
+  "mode": "local",
+  "url": "http://localhost:3001/app-mia",
+  "validated_at": "2026-07-26T19:52:00.000Z",
+  "score": "12/12",
+  "scenarios": [
+    { "id": "s1-generic-balanced", "pass": true },
+    { "id": "s2-priority-explicit", "pass": true },
+    { "id": "s3-priority-informal", "pass": true },
+    { "id": "s4-product-lock", "pass": true, "winner": "Galaxy A55 5G" },
+    { "id": "s5-comparison", "pass": true },
+    { "id": "s6-contestation", "pass": true },
+    { "id": "s7-priority-change", "pass": true },
+    { "id": "s8-new-options", "pass": true },
+    { "id": "s9-typo-language", "pass": true },
+    { "id": "s10-other-category", "pass": true },
+    { "id": "multitempo-8-turns", "pass": true },
+    { "id": "ui-no-empty-bubbles", "pass": true }
+  ],
+  "original_failures_fixed": [
+    "bateria é minha prioridade",
+    "o Galaxy A55 vale a pena?",
+    "mas eu achei o S23 FE melhor"
+  ]
+}
