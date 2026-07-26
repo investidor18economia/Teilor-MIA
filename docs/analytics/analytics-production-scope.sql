@@ -22,6 +22,8 @@
 --     )
 --   )
 
--- MIA public product events (lib/miaAnalyticsAllowlist.js):
---   session_started, mia_question_sent, mia_recommendation_shown,
---   favorite_created, price_alert_created, offer_click
+-- MIA public product events (lib/miaAnalyticsAllowlist.js — 7 eventos):
+--   session_started, user_authenticated, mia_question_sent,
+--   mia_recommendation_shown, favorite_created, price_alert_created, offer_click
+--
+-- Executive metrics (PATCH 4.1): docs/analytics/EXECUTIVE_METRICS.md
