@@ -4,50 +4,9 @@
   "audit_type": "mvp_architecture_general",
   "status": "APPROVED",
   "phase_verdict": "PATCH 12.1 APROVADO",
-  "audit_timestamp": "2026-07-24T12:59:34.645Z",
-  "audit_completed_at": "2026-07-24T12:59:40.943Z",
+  "audit_timestamp": "2026-07-24T13:26:56.133Z",
+  "audit_completed_at": "2026-07-24T13:27:01.774Z",
   "code_changes": false,
-  "report": "docs/architecture/MVP_ARCHITECTURE_AUDIT_REPORT.md",
-  "inventory": {
-    "api_routes": 59,
-    "analytics_catalogs": 18,
-    "supabase_migrations": 11,
-    "lib_modules_approx": 226
-  },
-  "static_audit": {
-    "script": "scripts/test-mia-analytics-patch-121-mvp-architecture-audit.js",
-    "passed": 112,
-    "failed": 0
-  },
-  "regressions": {
-    "patch_115_phase11": { "passed": 117, "failed": 0 },
-    "patch_106_phase10": { "passed": 56, "failed": 0 }
-  },
-  "dead_code_catalog": [
-    { "path": "pages/api/pages/api/test-economia.js", "reason": "orphan nested route" },
-    { "path": "pages/api/test-mia.js", "reason": "legacy test — middleware blocked" },
-    { "path": "pages/api/test-economia.js", "reason": "legacy test — middleware blocked" },
-    { "path": "pages/api/test-serp.js", "reason": "legacy test — middleware blocked" },
-    { "path": "pages/api/env.js", "reason": "debug env — middleware blocked" }
-  ],
-  "technical_debt": {
-    "critical": [],
-    "high": [],
-    "medium": [
-      "Monolith chat-gpt4o.js (~38k lines)",
-      "Dual winner cognitive vs commercial display"
-    ],
-    "low": [
-      "In-memory cache not shared across serverless",
-      "Alert UI localStorage vs DB split",
-      "Orphan route pages/api/pages/api/test-economia.js"
-    ]
-  },
-  "risks_mvp": {
-    "blocking": [],
-    "important": ["dual_winner_cognitive_vs_commercial", "monolith_cold_start"],
-    "accepted_for_rc": true
-  },
   "production": {
     "base_url": "https://economia-ai.vercel.app",
     "build": "513ed81753fe"
@@ -76,7 +35,7 @@
     "mia_chat_post_only": true
   },
   "performance": {
-    "executive_metrics_ms": 2919
+    "executive_metrics_ms": 2492
   },
   "checks": {
     "total": 14,
@@ -131,7 +90,7 @@
       {
         "label": "executive-metrics latency",
         "pass": true,
-        "detail": "1198ms"
+        "detail": "676ms"
       },
       {
         "label": "teilor-em-numeros 200",

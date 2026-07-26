@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-07-23T01:23:19.823Z",
+  "commit": "c541010",
+  "base_url": "https://economia-ai.vercel.app",
+  "health_build": "c541010c8ef4",
+  "session_id": "6a9f8c48-6d2a-4596-bd2f-7808dce73dac",
+  "conversation_id": "d21b4de8-6baf-4a4f-b1f2-3b727d541de6",
+  "started_at": "2026-07-23T01:22:29.777Z",
+  "scenarios": [
+    {
+      "id": "E1_empty_query_mia_chat",
+      "at": "2026-07-23T01:22:29.778Z",
+      "httpStatus": 400,
+      "reasonCode": "chat_empty_query",
+      "responseOutcome": "ERROR",
+      "requestId": "07e07ad0-a5be-4262-8398-19909156bcc8",
+      "persistedError": null
+    },
+    {
+      "id": "E2_empty_query_core_direct",
+      "at": "2026-07-23T01:22:43.302Z",
+      "httpStatus": 400,
+      "requestId": "518ab9d7-af87-4eac-b8e8-1c4f0d48efab",
+      "persistedError": null
+    },
+    {
+      "id": "C1_commercial",
+      "httpStatus": 200,
+      "errorEvents": 1,
+      "outcome": "PARTIAL_SUCCESS"
+    },
+    {
+      "id": "C2_social",
+      "httpStatus": 200,
+      "errorEvents": 0,
+      "outcome": "SUCCESS"
+    },
+    {
+      "id": "CORR_E1_outcome",
+      "requestId": "07e07ad0-a5be-4262-8398-19909156bcc8",
+      "outcome": "ERROR"
+    }
+  ],
+  "error_events_session": [
+    {
+      "id": "79796902-ee92-47c6-818b-8ee61956bda7",
+      "event_name": "mia_error_event",
+      "category": "reliability_error",
+      "session_id": "6a9f8c48-6d2a-4596-bd2f-7808dce73dac",
+      "created_at": "2026-07-23T01:22:43.831944+00:00",
+      "metadata": {
+        "event_version": "7.2.0",
+        "request_id": "07e07ad0-a5be-4262-8398-19909156bcc8",
+        "endpoint": "/api/chat-gpt4o",
+        "http_status": 400,
+        "error_type": "VALIDATION_ERROR",
+        "error_layer": "HTTP",
+        "reason_code": "chat_empty_query",
+        "severity": "INFO",
+        "recovered": true,
+        "recovery_method": "none",
+        "fallback_used": false,
+        "response_delivered": true,
+        "response_outcome": "ERROR"
+      }
+    },
+    {
+      "id": "77eeadca-d42d-45c6-9aae-f2a931e192dd",
+      "event_name": "mia_error_event",
+      "category": "reliability_error",
+      "session_id": "6a9f8c48-6d2a-4596-bd2f-7808dce73dac",
+      "created_at": "2026-07-23T01:22:56.423831+00:00",
+      "metadata": {
+        "event_version": "7.2.0",
+        "request_id": "518ab9d7-af87-4eac-b8e8-1c4f0d48efab",
+        "endpoint": "/api/chat-gpt4o",
+        "http_status": 400,
+        "error_type": "VALIDATION_ERROR",
+        "error_layer": "HTTP",
+        "reason_code": "chat_empty_query",
+        "severity": "INFO",
+        "recovered": true,
+        "recovery_method": "none",
+        "fallback_used": false,
+        "response_delivered": true,
+        "response_outcome": "ERROR"
+      }
+    }
+  ],
+  "total_error_events": 2,
+  "request_ids": [
+    "07e07ad0-a5be-4262-8398-19909156bcc8",
+    "518ab9d7-af87-4eac-b8e8-1c4f0d48efab"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "patch": "10.0",
+  "audit_type": "price_savings_alerts_architecture",
+  "status": "APROVADO",
+  "audit_date": "2026-07-23",
+  "code_changes": false,
+  "architecture_audited": {
+    "price_flow": "Providers → normalize → merge/select → rank → winner → runtime activation → body.prices[0] → MIAChat",
+    "authoritative_display_price": "body.prices[0].price after applyCommercialRuntimeActivationToResponsePrices",
+    "cognitive_winner": "selectedBestProduct (may diverge from prices[0] in controlled mode)"
+  },
+  "sources": {
+    "serpapi_google_shopping": { "price": true, "promotional": false, "shipping": false, "currency": "BRL" },
+    "dataforseo": { "price": true, "promotional": true, "old_price_field": true, "displayed": false, "currency": "BRL_only" },
+    "mercado_livre": { "price": true, "shipping": true, "currency": "BRL" },
+    "apify_ml": { "price": true, "via": "merge_layer" },
+    "data_layer": { "native_price": false, "enriched_by_providers": true }
+  },
+  "price_concepts_found": {
+    "current_offer_price": true,
+    "minimum_maximum_average_median": true,
+    "original_promotional_raw": "partial_dataforseo_only",
+    "installments_shipping": "analytics_count_only",
+    "pix_coupon_freight_inclusive": false,
+    "unavailable_price_fallback": true,
+    "alert_target_current": true,
+    "estimated_savings_ui": true,
+    "verified_savings": false,
+    "price_history_baseline": false
+  },
+  "normalization": {
+    "canonical": "lib/productSourceAdapter/normalizeProduct.js",
+    "currency": "BRL_only",
+    "fx_conversion": false,
+    "parallel_parsers_risk": true
+  },
+  "ranking_price_role": {
+    "primary_rank_key": "localFallbackScore_specs_not_price",
+    "budget_constraint_nudges": true,
+    "commercial_selection_price_weight": "40_percent",
+    "data_layer_pick": "lowest_price"
+  },
+  "display_authority": {
+    "final": "body.prices[0].price",
+    "last_numeric_mutation": "applyCommercialRuntimeActivationToResponsePrices",
+    "objects": {
+      "offers": "internal_pipeline",
+      "displayProducts": "top_3_cognitive",
+      "body_prices": "client_facing_cards",
+      "selectedBestProduct": "decision_identity_9_1"
+    }
+  },
+  "alerts_state": {
+    "create_ui_api_db": true,
+    "list_delete_sync_api": false,
+    "ui_storage": "localStorage_mia_price_alerts",
+    "db_table": "price_alerts",
+    "scheduler": "vercel_cron_daily_12UTC",
+    "monitoring": "miaPriceAlertDryRun_shadow_pipeline",
+    "email_dispatch": "gated_default_off",
+    "delivery_logs": "price_alert_delivery_logs",
+    "analytics_client": "price_alert_created",
+    "analytics_email": "price_drop_email_*"
+  },
+  "favorites_state": {
+    "crud_supabase": true,
+    "table": "wishes",
+    "analytics_create": "favorite_created",
+    "analytics_remove": false,
+    "server_dedup": false
+  },
+  "economy_state": {
+    "estimated_savings_ui": {
+      "file": "lib/miaEstimatedSavings.js",
+      "percent_range": "4_to_6_percent",
+      "verified": false,
+      "label": "percepcao_nao_economia_real"
+    },
+    "offer_set_delta": {
+      "event": "mia_offer_set",
+      "fields": ["winner_vs_minimum_delta", "winner_vs_minimum_delta_percent"]
+    },
+    "real_savings_analytics": false
+  },
+  "anti_regret_state": {
+    "chat_intent": true,
+    "alert_price_drop": true,
+    "analytics_foundation": false,
+    "price_volatility_tracking": false
+  },
+  "phase_8_9_correlation": {
+    "reuse_ids": ["request_id", "decision_request_id", "session_id", "user_id"],
+    "price_authority_event": "mia_offer_set_8.3.0",
+    "decision_event": "mia_recommendation_decision_9.1.0",
+    "price_signals_9_2_9_3": ["PRICE_ALERT_CREATED", "PRICE_REQUESTED", "PRICE_REJECTION"],
+    "join_recipe": "offer_set.request_id = decision.request_id = decision_request_id downstream"
+  },
+  "contracts_reused": [
+    "mia_offer_set",
+    "mia_recommendation_decision",
+    "mia_recommendation_acceptance_signal",
+    "mia_recommendation_rejection_signal",
+    "price_alert_created",
+    "price_drop_email_sent",
+    "favorite_created"
+  ],
+  "risks": {
+    "blocking_for_official_savings_metrics": ["estimated_savings_ui_not_verified"],
+    "important": [
+      "dual_winner_cognitive_vs_commercial",
+      "alert_ui_db_split",
+      "promotional_baseline_not_displayed",
+      "parallel_price_parsers"
+    ],
+    "backlog": [
+      "freight_unknown_in_display",
+      "offer_sample_bias_max_6",
+      "price_alert_created_on_already_exists",
+      "client_offer_click_missing_decision_request_id"
+    ]
+  },
+  "opportunities_phase_10": {
+    "10.1": "price_intelligence_quality_from_offer_set",
+    "10.2": "savings_verified_vs_estimated_confidence",
+    "10.3": "alert_lifecycle_analytics",
+    "10.4": "anti_regret_price_correlation",
+    "10.5": "savings_outcomes_user_value",
+    "10.6": "phase_10_final_audit"
+  },
+  "limitations": [
+    "No price history time series",
+    "No verified savings computation",
+    "Runner-up price not persisted",
+    "Budget amount not persisted (boolean only)",
+    "price_alerts/wishes DDL not in supabase/migrations"
+  ],
+  "documentation": "docs/analytics/PRICE_ARCHITECTURE_AUDIT.md",
+  "next_patches_recommended": ["10.1", "10.2", "10.3", "10.4", "10.5", "10.6"]
+}

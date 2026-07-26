@@ -1,10 +1,10 @@
 {
   "complement": "11.4-period-offset",
   "status": "APPROVED",
-  "validated_at": "2026-07-23T23:51:09.317Z",
+  "validated_at": "2026-07-23T23:55:38.086Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "d0f7abbca1c0"
+    "build": "513ed81753fe"
   },
   "categories": [
     "price_intelligence",
@@ -20,7 +20,7 @@
       {
         "label": "health 200",
         "pass": true,
-        "detail": "build=d0f7abbca1c0"
+        "detail": "build=513ed81753fe"
       },
       {
         "label": "price_intelligence current RPC",
