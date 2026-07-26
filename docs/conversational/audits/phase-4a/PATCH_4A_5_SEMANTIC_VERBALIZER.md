@@ -61,4 +61,15 @@ PATCH 4A.8 (personalização por intenção/perfil sobre variationProfile)
 
 ## 6. Veredito
 
-Ver seção de evidências JSON após deploy.
+**APROVADA** — deploy `5e6ad85a5ac2`, produção API 12/12, interface local 12/12, interface real 12/12.
+
+## 7. Deploy e validação
+
+| Etapa | Resultado |
+|-------|-----------|
+| Commit | `5e6ad85` |
+| Build Vercel | `5e6ad85a5ac2` |
+| Produção API | **12/12** |
+| Interface local | **12/12** |
+| Interface real | **12/12** |
+| Evidências | `evidence/PATCH_4A_5_SEMANTIC_VERBALIZER_EVIDENCE.json` |

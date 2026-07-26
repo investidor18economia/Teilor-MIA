@@ -1,0 +1,51 @@
+{
+  "patch": "4A.5",
+  "phase": "semantic_verbalizer_closure",
+  "status": "APROVADA",
+  "verbalizer_version": "4A.5.0",
+  "commit": "5e6ad85a5ac2",
+  "deploy_build": "5e6ad85a5ac2",
+  "base_url": "https://economia-ai.vercel.app",
+  "local_url": "http://localhost:3005/app-mia",
+  "finished_at": "2026-07-26T22:05:00.000Z",
+  "audits": {
+    "patch_45_semantic_verbalizer": { "passed": 26, "failed": 0 },
+    "patch_44_narrative_planner": { "passed": 36, "failed": 0 },
+    "patch_43_contextual_synthesis": { "passed": 21, "failed": 0 },
+    "patch_42_structured_decision_facts": { "passed": 30, "failed": 0 },
+    "patch_41a_semantic_contract": { "passed": 30, "failed": 0 },
+    "patch_4a2vf_product_lock": { "passed": 60, "failed": 0 },
+    "patch_35a_decision_facts_narrative": { "passed": 15, "failed": 0 },
+    "patch_34b_constraint_refinement": { "passed": 18, "failed": 0 },
+    "patch_32_continuity": { "passed": 22, "failed": 0 }
+  },
+  "build": "PASS",
+  "local_browser": {
+    "script": "patch-4a2v-browser-validation.mjs",
+    "url": "http://localhost:3005/app-mia",
+    "passed": 12,
+    "failed": 0
+  },
+  "production_validation": {
+    "script": "patch-4a2v-production-validation.mjs",
+    "passed": 12,
+    "failed": 0,
+    "deploy_commit_match": true
+  },
+  "production_browser": {
+    "script": "patch-4a2v-browser-validation.mjs",
+    "url": "https://economia-ai.vercel.app/app-mia",
+    "passed": 12,
+    "failed": 0
+  },
+  "architecture": {
+    "module": "lib/miaSemanticVerbalizer.js",
+    "flow": "StructuredDecisionFacts → NarrativePlan → VerbalizationPlan → LLM",
+    "principle": "MIA owns the intelligence. The LLM only verbalizes."
+  },
+  "fixes_in_patch": [
+    "tradeoffs mapped from narrativePlan.tradeoffs (not deduped sections only)",
+    "negated worry phrases excluded from reassuring profile (sem me preocupar)"
+  ],
+  "readiness_4a6": "PRONTA"
+}
