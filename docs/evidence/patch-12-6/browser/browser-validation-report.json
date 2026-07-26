@@ -31,7 +31,7 @@
     "total": 6
   },
   "flows": 6,
-  "started_at": "2026-07-24T20:00:03.745Z",
+  "started_at": "2026-07-25T04:15:20.087Z",
   "totals": {
     "checks": 196,
     "passed": 196,
@@ -44,18 +44,18 @@
   "run_summaries": [
     {
       "run": 1,
-      "elapsed_ms": 268800,
-      "at": "2026-07-24T19:50:00.809Z"
+      "elapsed_ms": 251717,
+      "at": "2026-07-25T04:05:31.350Z"
     },
     {
       "run": 2,
-      "elapsed_ms": 301088,
-      "at": "2026-07-24T19:55:04.912Z"
+      "elapsed_ms": 291339,
+      "at": "2026-07-25T04:10:25.693Z"
     },
     {
       "run": 3,
-      "elapsed_ms": 295827,
-      "at": "2026-07-24T20:00:03.745Z"
+      "elapsed_ms": 291389,
+      "at": "2026-07-25T04:15:20.086Z"
     }
   ],
   "checks": [
@@ -63,9 +63,9 @@
       "section": "desktop-1366",
       "label": "page load",
       "pass": true,
-      "detail": "3434ms",
+      "detail": "397ms",
       "severity": "P1",
-      "at": "2026-07-24T19:45:36.738Z"
+      "at": "2026-07-25T04:01:20.225Z"
     },
     {
       "section": "desktop-1366",
@@ -73,7 +73,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:45:36.754Z"
+      "at": "2026-07-25T04:01:20.239Z"
     },
     {
       "section": "desktop-1366",
@@ -81,7 +81,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:45:36.754Z"
+      "at": "2026-07-25T04:01:20.239Z"
     },
     {
       "section": "desktop-1366",
@@ -89,7 +89,7 @@
       "pass": true,
       "detail": "scroll=1366/1366",
       "severity": "P1",
-      "at": "2026-07-24T19:45:36.754Z"
+      "at": "2026-07-25T04:01:20.239Z"
     },
     {
       "section": "desktop-1366",
@@ -97,287 +97,287 @@
       "pass": true,
       "detail": "Opa!",
       "severity": "P1",
-      "at": "2026-07-24T19:45:41.681Z"
+      "at": "2026-07-25T04:01:22.401Z"
     },
     {
       "section": "desktop-1440",
+      "label": "page load",
+      "pass": true,
+      "detail": "588ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:23.299Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:23.310Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:23.310Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=1440/1440",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:23.310Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow greeting",
+      "pass": true,
+      "detail": "2848ms cards=0",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:26.258Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow generic",
+      "pass": true,
+      "detail": "9399ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:35.658Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "loading appears",
+      "pass": true,
+      "detail": "165ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:35.658Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "cards rendered",
+      "pass": true,
+      "detail": "1",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:35.896Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has name",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:35.896Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has price or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:35.896Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has image or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:35.896Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow specific",
+      "pass": true,
+      "detail": "6535ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:42.652Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "cards rendered",
+      "pass": true,
+      "detail": "1",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:42.652Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has name",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:42.652Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has price or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:42.652Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has image or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:42.652Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow comparison",
+      "pass": true,
+      "detail": "7263ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:50.087Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "cards rendered",
+      "pass": true,
+      "detail": "2",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:50.087Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has name",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:50.087Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has price or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:50.087Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has image or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:50.087Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow mixed",
+      "pass": true,
+      "detail": "8919ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:59.210Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "cards rendered",
+      "pass": true,
+      "detail": "2",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:59.210Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has name",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:01:59.210Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has price or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:59.210Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "card has image or fallback",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:01:59.210Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "long conversation 10 turns",
+      "pass": true,
+      "detail": "executed",
+      "severity": "P1",
+      "at": "2026-07-25T04:03:25.555Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "scroll progressed",
+      "pass": true,
+      "detail": "0→0",
+      "severity": "P2",
+      "at": "2026-07-25T04:03:25.555Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "input after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:03:25.556Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no overflow after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:03:25.556Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "a11y send accessible name",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:03:25.677Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "a11y input label",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:03:25.677Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no critical console errors",
+      "pass": true,
+      "detail": "clean",
+      "severity": "P1",
+      "at": "2026-07-25T04:03:25.677Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no critical network failures",
+      "pass": true,
+      "detail": "0 anomalies",
+      "severity": "P1",
+      "at": "2026-07-25T04:03:25.677Z"
+    },
+    {
+      "section": "desktop-1920",
       "label": "page load",
       "pass": true,
       "detail": "305ms",
       "severity": "P1",
-      "at": "2026-07-24T19:45:42.326Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:42.338Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:42.338Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=1440/1440",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:42.338Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow greeting",
-      "pass": true,
-      "detail": "3755ms cards=0",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:46.210Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow generic",
-      "pass": true,
-      "detail": "10131ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:56.341Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "loading appears",
-      "pass": true,
-      "detail": "119ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:56.341Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "cards rendered",
-      "pass": true,
-      "detail": "1",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:56.511Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has name",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:45:56.511Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has price or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:45:56.511Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has image or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:45:56.511Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow specific",
-      "pass": true,
-      "detail": "6096ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:02.801Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "cards rendered",
-      "pass": true,
-      "detail": "1",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:02.801Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has name",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:02.801Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has price or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:46:02.801Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has image or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:46:02.801Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow comparison",
-      "pass": true,
-      "detail": "6763ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:09.721Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "cards rendered",
-      "pass": true,
-      "detail": "2",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:09.721Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has name",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:09.721Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has price or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:46:09.721Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has image or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:46:09.721Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow mixed",
-      "pass": true,
-      "detail": "8489ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:18.363Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "cards rendered",
-      "pass": true,
-      "detail": "2",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:18.363Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has name",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:46:18.363Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has price or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:46:18.363Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "card has image or fallback",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:46:18.363Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "long conversation 10 turns",
-      "pass": true,
-      "detail": "executed",
-      "severity": "P1",
-      "at": "2026-07-24T19:47:53.008Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "scroll progressed",
-      "pass": true,
-      "detail": "0→0",
-      "severity": "P2",
-      "at": "2026-07-24T19:47:53.008Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "input after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:47:53.009Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no overflow after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:47:53.009Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "a11y send accessible name",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:47:53.160Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "a11y input label",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:47:53.161Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no critical console errors",
-      "pass": true,
-      "detail": "clean",
-      "severity": "P1",
-      "at": "2026-07-24T19:47:53.161Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no critical network failures",
-      "pass": true,
-      "detail": "0 anomalies",
-      "severity": "P1",
-      "at": "2026-07-24T19:47:53.161Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "page load",
-      "pass": true,
-      "detail": "304ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:47:53.687Z"
+      "at": "2026-07-25T04:03:26.183Z"
     },
     {
       "section": "desktop-1920",
@@ -385,7 +385,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:47:53.699Z"
+      "at": "2026-07-25T04:03:26.194Z"
     },
     {
       "section": "desktop-1920",
@@ -393,7 +393,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:47:53.700Z"
+      "at": "2026-07-25T04:03:26.194Z"
     },
     {
       "section": "desktop-1920",
@@ -401,7 +401,7 @@
       "pass": true,
       "detail": "scroll=1920/1920",
       "severity": "P1",
-      "at": "2026-07-24T19:47:53.700Z"
+      "at": "2026-07-25T04:03:26.194Z"
     },
     {
       "section": "desktop-1920",
@@ -409,15 +409,15 @@
       "pass": true,
       "detail": "Opa!",
       "severity": "P1",
-      "at": "2026-07-24T19:47:56.582Z"
+      "at": "2026-07-25T04:03:28.337Z"
     },
     {
       "section": "mobile-360",
       "label": "page load",
       "pass": true,
-      "detail": "298ms",
+      "detail": "274ms",
       "severity": "P1",
-      "at": "2026-07-24T19:47:57.317Z"
+      "at": "2026-07-25T04:03:28.923Z"
     },
     {
       "section": "mobile-360",
@@ -425,7 +425,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:47:57.334Z"
+      "at": "2026-07-25T04:03:28.933Z"
     },
     {
       "section": "mobile-360",
@@ -433,7 +433,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:47:57.334Z"
+      "at": "2026-07-25T04:03:28.934Z"
     },
     {
       "section": "mobile-360",
@@ -441,7 +441,7 @@
       "pass": true,
       "detail": "scroll=360/360",
       "severity": "P1",
-      "at": "2026-07-24T19:47:57.334Z"
+      "at": "2026-07-25T04:03:28.934Z"
     },
     {
       "section": "mobile-360",
@@ -449,15 +449,15 @@
       "pass": true,
       "detail": "Opa!",
       "severity": "P1",
-      "at": "2026-07-24T19:47:59.359Z"
+      "at": "2026-07-25T04:03:30.925Z"
     },
     {
       "section": "mobile-390",
       "label": "page load",
       "pass": true,
-      "detail": "282ms",
+      "detail": "300ms",
       "severity": "P1",
-      "at": "2026-07-24T19:47:59.899Z"
+      "at": "2026-07-25T04:03:31.434Z"
     },
     {
       "section": "mobile-390",
@@ -465,7 +465,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:47:59.911Z"
+      "at": "2026-07-25T04:03:31.445Z"
     },
     {
       "section": "mobile-390",
@@ -473,7 +473,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:47:59.911Z"
+      "at": "2026-07-25T04:03:31.445Z"
     },
     {
       "section": "mobile-390",
@@ -481,31 +481,31 @@
       "pass": true,
       "detail": "scroll=390/390",
       "severity": "P1",
-      "at": "2026-07-24T19:47:59.911Z"
+      "at": "2026-07-25T04:03:31.445Z"
     },
     {
       "section": "mobile-390",
       "label": "flow greeting",
       "pass": true,
-      "detail": "2512ms cards=0",
+      "detail": "2399ms cards=0",
       "severity": "P1",
-      "at": "2026-07-24T19:48:02.459Z"
+      "at": "2026-07-25T04:03:33.883Z"
     },
     {
       "section": "mobile-390",
       "label": "flow generic",
       "pass": true,
-      "detail": "8797ms cards=1",
+      "detail": "6828ms cards=1",
       "severity": "P1",
-      "at": "2026-07-24T19:48:11.257Z"
+      "at": "2026-07-25T04:03:40.711Z"
     },
     {
       "section": "mobile-390",
       "label": "loading appears",
       "pass": true,
-      "detail": "102ms",
+      "detail": "17ms",
       "severity": "P1",
-      "at": "2026-07-24T19:48:11.257Z"
+      "at": "2026-07-25T04:03:40.711Z"
     },
     {
       "section": "mobile-390",
@@ -513,7 +513,7 @@
       "pass": true,
       "detail": "1",
       "severity": "P1",
-      "at": "2026-07-24T19:48:11.325Z"
+      "at": "2026-07-25T04:03:40.777Z"
     },
     {
       "section": "mobile-390",
@@ -521,7 +521,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:48:11.325Z"
+      "at": "2026-07-25T04:03:40.777Z"
     },
     {
       "section": "mobile-390",
@@ -529,7 +529,7 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:11.325Z"
+      "at": "2026-07-25T04:03:40.777Z"
     },
     {
       "section": "mobile-390",
@@ -537,15 +537,15 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:11.325Z"
+      "at": "2026-07-25T04:03:40.777Z"
     },
     {
       "section": "mobile-390",
       "label": "flow specific",
       "pass": true,
-      "detail": "6207ms cards=1",
+      "detail": "5769ms cards=1",
       "severity": "P1",
-      "at": "2026-07-24T19:48:17.598Z"
+      "at": "2026-07-25T04:03:46.610Z"
     },
     {
       "section": "mobile-390",
@@ -553,7 +553,7 @@
       "pass": true,
       "detail": "1",
       "severity": "P1",
-      "at": "2026-07-24T19:48:17.598Z"
+      "at": "2026-07-25T04:03:46.610Z"
     },
     {
       "section": "mobile-390",
@@ -561,7 +561,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:48:17.598Z"
+      "at": "2026-07-25T04:03:46.610Z"
     },
     {
       "section": "mobile-390",
@@ -569,7 +569,7 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:17.598Z"
+      "at": "2026-07-25T04:03:46.610Z"
     },
     {
       "section": "mobile-390",
@@ -577,15 +577,15 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:17.598Z"
+      "at": "2026-07-25T04:03:46.610Z"
     },
     {
       "section": "mobile-390",
       "label": "flow comparison",
       "pass": true,
-      "detail": "7788ms cards=2",
+      "detail": "6889ms cards=2",
       "severity": "P1",
-      "at": "2026-07-24T19:48:25.449Z"
+      "at": "2026-07-25T04:03:53.567Z"
     },
     {
       "section": "mobile-390",
@@ -593,7 +593,7 @@
       "pass": true,
       "detail": "2",
       "severity": "P1",
-      "at": "2026-07-24T19:48:25.449Z"
+      "at": "2026-07-25T04:03:53.567Z"
     },
     {
       "section": "mobile-390",
@@ -601,7 +601,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:48:25.449Z"
+      "at": "2026-07-25T04:03:53.567Z"
     },
     {
       "section": "mobile-390",
@@ -609,7 +609,7 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:25.449Z"
+      "at": "2026-07-25T04:03:53.567Z"
     },
     {
       "section": "mobile-390",
@@ -617,15 +617,15 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:25.449Z"
+      "at": "2026-07-25T04:03:53.567Z"
     },
     {
       "section": "mobile-390",
       "label": "flow mixed",
       "pass": true,
-      "detail": "8283ms cards=2",
+      "detail": "8763ms cards=2",
       "severity": "P1",
-      "at": "2026-07-24T19:48:33.793Z"
+      "at": "2026-07-25T04:04:02.388Z"
     },
     {
       "section": "mobile-390",
@@ -633,7 +633,7 @@
       "pass": true,
       "detail": "2",
       "severity": "P1",
-      "at": "2026-07-24T19:48:33.794Z"
+      "at": "2026-07-25T04:04:02.389Z"
     },
     {
       "section": "mobile-390",
@@ -641,7 +641,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T19:48:33.794Z"
+      "at": "2026-07-25T04:04:02.389Z"
     },
     {
       "section": "mobile-390",
@@ -649,7 +649,7 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:33.794Z"
+      "at": "2026-07-25T04:04:02.389Z"
     },
     {
       "section": "mobile-390",
@@ -657,7 +657,7 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T19:48:33.794Z"
+      "at": "2026-07-25T04:04:02.389Z"
     },
     {
       "section": "mobile-390",
@@ -665,871 +665,7 @@
       "pass": true,
       "detail": "executed",
       "severity": "P1",
-      "at": "2026-07-24T19:49:57.987Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "scroll progressed",
-      "pass": true,
-      "detail": "2374→6660",
-      "severity": "P2",
-      "at": "2026-07-24T19:49:57.987Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "input after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:57.988Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no overflow after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:57.988Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "a11y send accessible name",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:49:58.059Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "a11y input label",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:49:58.059Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no critical console errors",
-      "pass": true,
-      "detail": "clean",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:58.059Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no critical network failures",
-      "pass": true,
-      "detail": "0 anomalies",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:58.059Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "page load",
-      "pass": true,
-      "detail": "369ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:58.666Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:58.679Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:58.679Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=412/412",
-      "severity": "P1",
-      "at": "2026-07-24T19:49:58.679Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:00.730Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "page load",
-      "pass": true,
-      "detail": "322ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:04.297Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:04.308Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:04.309Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=1366/1366",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:04.309Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:06.411Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "page load",
-      "pass": true,
-      "detail": "325ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:06.930Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:06.942Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:06.942Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=1440/1440",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:06.942Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow greeting",
-      "pass": true,
-      "detail": "2443ms cards=0",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:09.385Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow generic",
-      "pass": true,
-      "detail": "7683ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:22.075Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow specific",
-      "pass": true,
-      "detail": "6374ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:33.460Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow comparison",
-      "pass": true,
-      "detail": "7239ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:45.704Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow mixed",
-      "pass": true,
-      "detail": "7958ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:50:58.677Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "long conversation 10 turns",
-      "pass": true,
-      "detail": "executed",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:32.906Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "scroll progressed",
-      "pass": true,
-      "detail": "0→0",
-      "severity": "P2",
-      "at": "2026-07-24T19:52:32.906Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "input after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:32.907Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no overflow after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:32.907Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "a11y send accessible name",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:52:32.909Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "a11y input label",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:52:32.909Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no critical console errors",
-      "pass": true,
-      "detail": "clean",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:32.909Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no critical network failures",
-      "pass": true,
-      "detail": "0 anomalies",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:32.909Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "page load",
-      "pass": true,
-      "detail": "333ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:33.511Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:33.523Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:33.523Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=1920/1920",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:33.523Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:35.676Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "page load",
-      "pass": true,
-      "detail": "349ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:36.234Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:36.249Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:36.249Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=360/360",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:36.249Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:38.602Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "page load",
-      "pass": true,
-      "detail": "294ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:39.116Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:39.127Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:39.128Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=390/390",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:39.128Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow greeting",
-      "pass": true,
-      "detail": "2709ms cards=0",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:41.837Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow generic",
-      "pass": true,
-      "detail": "8746ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:52:55.595Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow specific",
-      "pass": true,
-      "detail": "6554ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:53:07.157Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow comparison",
-      "pass": true,
-      "detail": "6939ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:53:19.103Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow mixed",
-      "pass": true,
-      "detail": "9456ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:53:33.568Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "long conversation 10 turns",
-      "pass": true,
-      "detail": "executed",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.041Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "scroll progressed",
-      "pass": true,
-      "detail": "2374→6660",
-      "severity": "P2",
-      "at": "2026-07-24T19:55:02.041Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "input after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.044Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no overflow after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.044Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "a11y send accessible name",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:55:02.046Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "a11y input label",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:55:02.046Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no critical console errors",
-      "pass": true,
-      "detail": "clean",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.046Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no critical network failures",
-      "pass": true,
-      "detail": "0 anomalies",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.046Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "page load",
-      "pass": true,
-      "detail": "370ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.676Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.699Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.699Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=412/412",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:02.699Z"
-    },
-    {
-      "section": "mobile-412",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:04.859Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "page load",
-      "pass": true,
-      "detail": "359ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:08.453Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:08.467Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:08.467Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=1366/1366",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:08.467Z"
-    },
-    {
-      "section": "desktop-1366",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:10.698Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "page load",
-      "pass": true,
-      "detail": "343ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:11.274Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:11.287Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:11.287Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=1440/1440",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:11.288Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow greeting",
-      "pass": true,
-      "detail": "2440ms cards=0",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:13.728Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow generic",
-      "pass": true,
-      "detail": "7867ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:26.608Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow specific",
-      "pass": true,
-      "detail": "8693ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:40.301Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow comparison",
-      "pass": true,
-      "detail": "7392ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:55:52.706Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "flow mixed",
-      "pass": true,
-      "detail": "10525ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:56:08.235Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "long conversation 10 turns",
-      "pass": true,
-      "detail": "executed",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:33.674Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "scroll progressed",
-      "pass": true,
-      "detail": "0→0",
-      "severity": "P2",
-      "at": "2026-07-24T19:57:33.674Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "input after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:33.676Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no overflow after long chat",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:33.676Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "a11y send accessible name",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:57:33.677Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "a11y input label",
-      "pass": true,
-      "detail": "",
-      "severity": "P2",
-      "at": "2026-07-24T19:57:33.678Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no critical console errors",
-      "pass": true,
-      "detail": "clean",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:33.678Z"
-    },
-    {
-      "section": "desktop-1440",
-      "label": "no critical network failures",
-      "pass": true,
-      "detail": "0 anomalies",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:33.678Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "page load",
-      "pass": true,
-      "detail": "353ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:34.316Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:34.330Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:34.330Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=1920/1920",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:34.330Z"
-    },
-    {
-      "section": "desktop-1920",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:36.469Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "page load",
-      "pass": true,
-      "detail": "411ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:37.084Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:37.098Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:37.099Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=360/360",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:37.099Z"
-    },
-    {
-      "section": "mobile-360",
-      "label": "greeting smoke",
-      "pass": true,
-      "detail": "Opa!",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:39.562Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "page load",
-      "pass": true,
-      "detail": "306ms",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:40.104Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "input visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:40.120Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "send visible",
-      "pass": true,
-      "detail": "",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:40.120Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "no horizontal overflow",
-      "pass": true,
-      "detail": "scroll=390/390",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:40.120Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow greeting",
-      "pass": true,
-      "detail": "2590ms cards=0",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:42.710Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow generic",
-      "pass": true,
-      "detail": "9253ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:57:56.965Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow specific",
-      "pass": true,
-      "detail": "5845ms cards=1",
-      "severity": "P1",
-      "at": "2026-07-24T19:58:07.824Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow comparison",
-      "pass": true,
-      "detail": "7211ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:58:20.050Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "flow mixed",
-      "pass": true,
-      "detail": "8416ms cards=2",
-      "severity": "P1",
-      "at": "2026-07-24T19:58:33.470Z"
-    },
-    {
-      "section": "mobile-390",
-      "label": "long conversation 10 turns",
-      "pass": true,
-      "detail": "executed",
-      "severity": "P1",
-      "at": "2026-07-24T20:00:00.864Z"
+      "at": "2026-07-25T04:05:28.542Z"
     },
     {
       "section": "mobile-390",
@@ -1537,7 +673,7 @@
       "pass": true,
       "detail": "2396→6682",
       "severity": "P2",
-      "at": "2026-07-24T20:00:00.865Z"
+      "at": "2026-07-25T04:05:28.542Z"
     },
     {
       "section": "mobile-390",
@@ -1545,7 +681,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T20:00:00.868Z"
+      "at": "2026-07-25T04:05:28.543Z"
     },
     {
       "section": "mobile-390",
@@ -1553,7 +689,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T20:00:00.868Z"
+      "at": "2026-07-25T04:05:28.543Z"
     },
     {
       "section": "mobile-390",
@@ -1561,7 +697,7 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T20:00:00.870Z"
+      "at": "2026-07-25T04:05:28.609Z"
     },
     {
       "section": "mobile-390",
@@ -1569,7 +705,7 @@
       "pass": true,
       "detail": "",
       "severity": "P2",
-      "at": "2026-07-24T20:00:00.870Z"
+      "at": "2026-07-25T04:05:28.609Z"
     },
     {
       "section": "mobile-390",
@@ -1577,7 +713,7 @@
       "pass": true,
       "detail": "clean",
       "severity": "P1",
-      "at": "2026-07-24T20:00:00.870Z"
+      "at": "2026-07-25T04:05:28.609Z"
     },
     {
       "section": "mobile-390",
@@ -1585,15 +721,15 @@
       "pass": true,
       "detail": "0 anomalies",
       "severity": "P1",
-      "at": "2026-07-24T20:00:00.870Z"
+      "at": "2026-07-25T04:05:28.609Z"
     },
     {
       "section": "mobile-412",
       "label": "page load",
       "pass": true,
-      "detail": "367ms",
+      "detail": "306ms",
       "severity": "P1",
-      "at": "2026-07-24T20:00:01.635Z"
+      "at": "2026-07-25T04:05:29.127Z"
     },
     {
       "section": "mobile-412",
@@ -1601,7 +737,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T20:00:01.648Z"
+      "at": "2026-07-25T04:05:29.138Z"
     },
     {
       "section": "mobile-412",
@@ -1609,7 +745,7 @@
       "pass": true,
       "detail": "",
       "severity": "P1",
-      "at": "2026-07-24T20:00:01.648Z"
+      "at": "2026-07-25T04:05:29.138Z"
     },
     {
       "section": "mobile-412",
@@ -1617,7 +753,7 @@
       "pass": true,
       "detail": "scroll=412/412",
       "severity": "P1",
-      "at": "2026-07-24T20:00:01.648Z"
+      "at": "2026-07-25T04:05:29.138Z"
     },
     {
       "section": "mobile-412",
@@ -1625,7 +761,871 @@
       "pass": true,
       "detail": "Opa!",
       "severity": "P1",
-      "at": "2026-07-24T20:00:03.699Z"
+      "at": "2026-07-25T04:05:31.260Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "page load",
+      "pass": true,
+      "detail": "336ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:34.877Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:34.893Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:34.893Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=1366/1366",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:34.893Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:36.913Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "page load",
+      "pass": true,
+      "detail": "353ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:37.534Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:37.544Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:37.544Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=1440/1440",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:37.544Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow greeting",
+      "pass": true,
+      "detail": "2400ms cards=0",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:39.944Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow generic",
+      "pass": true,
+      "detail": "7356ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:05:52.300Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow specific",
+      "pass": true,
+      "detail": "6393ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:06:03.704Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow comparison",
+      "pass": true,
+      "detail": "6611ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:06:15.323Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow mixed",
+      "pass": true,
+      "detail": "8473ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:06:28.803Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "long conversation 10 turns",
+      "pass": true,
+      "detail": "executed",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.403Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "scroll progressed",
+      "pass": true,
+      "detail": "0→0",
+      "severity": "P2",
+      "at": "2026-07-25T04:08:03.403Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "input after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.404Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no overflow after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.405Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "a11y send accessible name",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:08:03.406Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "a11y input label",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:08:03.406Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no critical console errors",
+      "pass": true,
+      "detail": "clean",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.406Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no critical network failures",
+      "pass": true,
+      "detail": "0 anomalies",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.406Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "page load",
+      "pass": true,
+      "detail": "298ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.877Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.887Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.887Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=1920/1920",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:03.887Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:05.852Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "page load",
+      "pass": true,
+      "detail": "249ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:06.269Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:06.280Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:06.280Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=360/360",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:06.280Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:08.215Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "page load",
+      "pass": true,
+      "detail": "254ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:08.634Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:08.645Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:08.646Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=390/390",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:08.646Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow greeting",
+      "pass": true,
+      "detail": "2386ms cards=0",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:11.032Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow generic",
+      "pass": true,
+      "detail": "7026ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:23.073Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow specific",
+      "pass": true,
+      "detail": "6134ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:34.211Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow comparison",
+      "pass": true,
+      "detail": "7392ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:08:46.606Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow mixed",
+      "pass": true,
+      "detail": "8528ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:09:00.142Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "long conversation 10 turns",
+      "pass": true,
+      "detail": "executed",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.182Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "scroll progressed",
+      "pass": true,
+      "detail": "2322→6630",
+      "severity": "P2",
+      "at": "2026-07-25T04:10:23.182Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "input after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.183Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no overflow after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.183Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "a11y send accessible name",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:10:23.184Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "a11y input label",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:10:23.184Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no critical console errors",
+      "pass": true,
+      "detail": "clean",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.184Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no critical network failures",
+      "pass": true,
+      "detail": "0 anomalies",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.184Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "page load",
+      "pass": true,
+      "detail": "299ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.666Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.678Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.678Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=412/412",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:23.678Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:25.654Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "page load",
+      "pass": true,
+      "detail": "272ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:29.107Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:29.119Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:29.119Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=1366/1366",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:29.119Z"
+    },
+    {
+      "section": "desktop-1366",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:31.062Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "page load",
+      "pass": true,
+      "detail": "319ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:31.561Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:31.573Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:31.573Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=1440/1440",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:31.573Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow greeting",
+      "pass": true,
+      "detail": "2340ms cards=0",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:33.913Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow generic",
+      "pass": true,
+      "detail": "6616ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:45.529Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow specific",
+      "pass": true,
+      "detail": "6268ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:10:56.806Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow comparison",
+      "pass": true,
+      "detail": "6307ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:11:08.124Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "flow mixed",
+      "pass": true,
+      "detail": "8856ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:11:21.991Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "long conversation 10 turns",
+      "pass": true,
+      "detail": "executed",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:57.926Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "scroll progressed",
+      "pass": true,
+      "detail": "0→0",
+      "severity": "P2",
+      "at": "2026-07-25T04:12:57.926Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "input after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:57.927Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no overflow after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:57.927Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "a11y send accessible name",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:12:57.928Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "a11y input label",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:12:57.928Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no critical console errors",
+      "pass": true,
+      "detail": "clean",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:57.928Z"
+    },
+    {
+      "section": "desktop-1440",
+      "label": "no critical network failures",
+      "pass": true,
+      "detail": "0 anomalies",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:57.928Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "page load",
+      "pass": true,
+      "detail": "328ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:58.443Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:58.454Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:58.454Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=1920/1920",
+      "severity": "P1",
+      "at": "2026-07-25T04:12:58.454Z"
+    },
+    {
+      "section": "desktop-1920",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:00.423Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "page load",
+      "pass": true,
+      "detail": "273ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:00.870Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:00.880Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:00.880Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=360/360",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:00.880Z"
+    },
+    {
+      "section": "mobile-360",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:02.817Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "page load",
+      "pass": true,
+      "detail": "260ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:03.248Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:03.259Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:03.259Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=390/390",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:03.259Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow greeting",
+      "pass": true,
+      "detail": "2319ms cards=0",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:05.578Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow generic",
+      "pass": true,
+      "detail": "7639ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:18.229Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow specific",
+      "pass": true,
+      "detail": "5898ms cards=1",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:29.127Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow comparison",
+      "pass": true,
+      "detail": "7247ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:41.378Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "flow mixed",
+      "pass": true,
+      "detail": "8231ms cards=2",
+      "severity": "P1",
+      "at": "2026-07-25T04:13:54.615Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "long conversation 10 turns",
+      "pass": true,
+      "detail": "executed",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:17.660Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "scroll progressed",
+      "pass": true,
+      "detail": "2300→6608",
+      "severity": "P2",
+      "at": "2026-07-25T04:15:17.660Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "input after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:17.661Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no overflow after long chat",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:17.661Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "a11y send accessible name",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:15:17.662Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "a11y input label",
+      "pass": true,
+      "detail": "",
+      "severity": "P2",
+      "at": "2026-07-25T04:15:17.662Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no critical console errors",
+      "pass": true,
+      "detail": "clean",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:17.662Z"
+    },
+    {
+      "section": "mobile-390",
+      "label": "no critical network failures",
+      "pass": true,
+      "detail": "0 anomalies",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:17.662Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "page load",
+      "pass": true,
+      "detail": "256ms",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:18.098Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "input visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:18.109Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "send visible",
+      "pass": true,
+      "detail": "",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:18.110Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "no horizontal overflow",
+      "pass": true,
+      "detail": "scroll=412/412",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:18.110Z"
+    },
+    {
+      "section": "mobile-412",
+      "label": "greeting smoke",
+      "pass": true,
+      "detail": "Opa!",
+      "severity": "P1",
+      "at": "2026-07-25T04:15:20.036Z"
     }
   ],
   "issues": [],
@@ -1643,7 +1643,7 @@
         "method": "POST",
         "status": "failed",
         "failure": "net::ERR_ABORTED",
-        "viewport": "desktop-1440",
+        "viewport": "mobile-390",
         "run": 1
       }
     ]
