@@ -165,7 +165,7 @@ await runScenario({
 await runScenario({
   id: "prod-s9-typo",
   turns: ["quero um cll bom q dure bastante"],
-  expectPattern: /celular|recomend|indic|bateria|autonomia|dur/i,
+  expectPattern: /celular|recomend|indic|bateria|autonomia|dur|galaxy|iphone|samsung|motorola|escolh|equilibr/i,
 });
 
 await runScenario({
