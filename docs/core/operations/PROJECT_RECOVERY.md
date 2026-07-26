@@ -129,18 +129,20 @@ O backup deve ser armazenado em local diferente da pasta de desenvolvimento.
 
 Sempre preservar os documentos principais do projeto.
 
-Arquivos essenciais:
+Arquivos essenciais (fonte de verdade):
 
 ```text
-mia_architecture.md
-mia_engineering_rules.md
-mia_roadmap.md
+docs/core/architecture/MIA_ARCHITECTURE.md
+docs/core/rules/MIA_ENGINEERING_RULES.md
+docs/core/roadmap/MIA_ROADMAP.md
+docs/core/README.md
 ```
 
 Também fazem parte da documentação oficial:
 
 ```text
 docs/architecture/
+docs/core/operations/PROJECT_RECOVERY.md
 ```
 
 e todos os documentos de arquitetura criados após o Bloco 12.

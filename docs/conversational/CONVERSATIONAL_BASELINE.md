@@ -7,13 +7,13 @@
 **Pós-Fase 3:** ver `CONV_PHASE_3_CLOSURE.md` e `PATCH_3_7_FINAL_AUDIT_REPORT.md`  
 **Data de congelamento:** 2026-07-25  
 **RC de referência:** MVP RC1 · `v1.0.0-rc1` · commit `d6cccb9`  
-**Autoridade arquitetural:** documentos mestres em `docs/documentos master mestres pra dar contexto/`
+**Autoridade arquitetural:** documentos mestres em [`docs/core/`](../core/)
 
 | Documento mestre | Caminho |
 |------------------|---------|
-| Arquitetura | `mia_architecture_md_complete.md` |
-| Engenharia | `mia_engineering_rules_md_complete.md` |
-| Roadmap | `mia_roadmap_md_complete.md` |
+| Arquitetura | [`docs/core/architecture/MIA_ARCHITECTURE.md`](../core/architecture/MIA_ARCHITECTURE.md) |
+| Engenharia | [`docs/core/rules/MIA_ENGINEERING_RULES.md`](../core/rules/MIA_ENGINEERING_RULES.md) |
+| Roadmap | [`docs/core/roadmap/MIA_ROADMAP.md`](../core/roadmap/MIA_ROADMAP.md) |
 
 **Trabalho de referência:** PATCH 1.1 → 1.8 (inventário) · PATCH 2.1 → 2.5 (classificação, auditoria, priorização, roadmap, auditoria final)
 
@@ -741,7 +741,7 @@ Consultar **antes de merge, após implementação e na auditoria 3.7**.
 | Known Limitations | `docs/architecture/KNOWN_LIMITATIONS.md` |
 | MVP Production Validation | `docs/MVP_PRODUCTION_VALIDATION.md` |
 | Full MVP Regression Runner | `scripts/test-mia-patch-124-full-mvp-regression-runner.js` |
-| Documentos mestres | `docs/documentos master mestres pra dar contexto/` |
+| Documentos mestres | [`docs/core/`](../core/) |
 
 ## Apêndice B — Mapeamento problema → patch
 

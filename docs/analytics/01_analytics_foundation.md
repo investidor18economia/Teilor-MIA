@@ -513,8 +513,8 @@ Sempre.
 
 Este documento deve ser utilizado em conjunto com:
 
-- mia_engineering_rules.md
-- mia_architecture.md
-- mia_roadmap.md
+- [MIA_ENGINEERING_RULES.md](../core/rules/MIA_ENGINEERING_RULES.md)
+- [MIA_ARCHITECTURE.md](../core/architecture/MIA_ARCHITECTURE.md)
+- [MIA_ROADMAP.md](../core/roadmap/MIA_ROADMAP.md)
 - 02_analytics_roadmap.md
 - 03_analytics_specification.md

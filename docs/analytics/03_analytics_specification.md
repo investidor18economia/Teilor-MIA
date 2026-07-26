@@ -17,9 +17,9 @@ Documento relacionado:
 
 - 01_analytics_foundation.md
 - 02_analytics_roadmap.md
-- mia_architecture.md
-- mia_engineering_rules.md
-- mia_roadmap.md
+- [MIA_ARCHITECTURE.md](../core/architecture/MIA_ARCHITECTURE.md)
+- [MIA_ENGINEERING_RULES.md](../core/rules/MIA_ENGINEERING_RULES.md)
+- [MIA_ROADMAP.md](../core/roadmap/MIA_ROADMAP.md)
 
 ---
 

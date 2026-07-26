@@ -48,6 +48,21 @@ Suíte completa validada: **233/233**.
 
 ---
 
+## Documentação Mestre (Core)
+
+Documentos centrais de arquitetura proprietária, regras, roadmap e operações:
+
+| Documento | Conteúdo |
+|---|---|
+| [MIA_ARCHITECTURE.md](docs/core/architecture/MIA_ARCHITECTURE.md) | Arquitetura proprietária da MIA |
+| [MIA_ENGINEERING_RULES.md](docs/core/rules/MIA_ENGINEERING_RULES.md) | Regras permanentes de engenharia |
+| [MIA_ROADMAP.md](docs/core/roadmap/MIA_ROADMAP.md) | Roadmap oficial de desenvolvimento |
+| [PROJECT_RECOVERY.md](docs/core/operations/PROJECT_RECOVERY.md) | Recuperação, Git e backup |
+
+Diretório: [`docs/core/`](docs/core/)
+
+---
+
 ## Arquitetura
 
 A MIA opera em camadas de produção definidas no **Bloco 12**:
@@ -103,7 +118,7 @@ Documentação oficial consolidada (roadmap SUPABASE-01 → 08 concluído):
 
 | Documento | Conteúdo |
 |---|---|
-| [PROJECT_RECOVERY.md](docs/infrastructure/PROJECT_RECOVERY.md) | Recuperação completa do projeto |
+| [PROJECT_RECOVERY.md](docs/core/operations/PROJECT_RECOVERY.md) | Recuperação completa do projeto |
 | [SUPABASE_OPERATIONS.md](docs/infrastructure/SUPABASE_OPERATIONS.md) | Manual operacional (CLI, backup, repair) |
 | [SUPABASE_ARCHITECTURE.md](docs/infrastructure/SUPABASE_ARCHITECTURE.md) | Arquitetura local/remota |
 | [SUPABASE_MIGRATIONS.md](docs/infrastructure/SUPABASE_MIGRATIONS.md) | As 10 migrations oficiais |

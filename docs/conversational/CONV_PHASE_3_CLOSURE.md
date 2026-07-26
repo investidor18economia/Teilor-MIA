@@ -68,7 +68,7 @@ Ambos aprovados com evidências dedicadas.
 
 - Baseline pré-implementação: `docs/conversational/CONVERSATIONAL_BASELINE.md`
 - Evidências: `docs/conversational/PATCH_3_*`
-- Master roadmap: `docs/documentos master mestres pra dar contexto/mia_roadmap_md_complete.md`
+- Master roadmap: [`docs/core/roadmap/MIA_ROADMAP.md`](../core/roadmap/MIA_ROADMAP.md)
 
 ---
 
