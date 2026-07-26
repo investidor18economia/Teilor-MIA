@@ -1,97 +1,97 @@
 {
   "patch": "4A.2V",
   "phase": "production_validation",
-  "status": "REJECTED",
+  "status": "APPROVED",
   "base_url": "https://economia-ai.vercel.app",
-  "local_commit": "6526785c66b723ce1a4d5460d93f0e8aea3e5acf",
-  "expected_commit": "6526785c66b723ce1a4d5460d93f0e8aea3e5acf",
-  "deploy_build": "6526785c66b7",
-  "finished_at": "2026-07-26T18:50:46.773Z",
+  "local_commit": "5acbd9b213b3865ac151d506e0b4ad99b8d98f6c",
+  "expected_commit": "5acbd9b",
+  "deploy_build": "5acbd9b213b3",
+  "finished_at": "2026-07-26T20:35:03.864Z",
   "checks": [
     {
       "id": "health",
       "pass": true,
-      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-26T18:47:56.906Z\",\"build\":\"6526785c66b7\"}",
-      "build": "6526785c66b7",
-      "at": "2026-07-26T18:47:57.122Z"
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-26T20:32:00.428Z\",\"build\":\"5acbd9b213b3\"}",
+      "build": "5acbd9b213b3",
+      "at": "2026-07-26T20:32:00.542Z"
     },
     {
       "id": "deploy-commit-match",
       "pass": true,
-      "detail": "expected=6526785c66b723ce1a4d5460d93f0e8aea3e5acf published=6526785c66b7",
-      "expected": "6526785c66b723ce1a4d5460d93f0e8aea3e5acf",
-      "published": "6526785c66b7",
-      "at": "2026-07-26T18:47:57.124Z"
+      "detail": "expected=5acbd9b published=5acbd9b213b3",
+      "expected": "5acbd9b",
+      "published": "5acbd9b213b3",
+      "at": "2026-07-26T20:32:00.543Z"
     },
     {
       "id": "prod-s1-generic",
       "pass": true,
       "detail": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G8",
       "turns": 1,
-      "at": "2026-07-26T18:47:58.726Z"
+      "at": "2026-07-26T20:32:03.173Z"
     },
     {
       "id": "prod-s2-priority-explicit",
-      "pass": false,
-      "detail": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+      "pass": true,
+      "detail": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado.\n\nContinuo indic",
       "turns": 2,
-      "at": "2026-07-26T18:48:11.186Z"
+      "at": "2026-07-26T20:32:16.394Z"
     },
     {
       "id": "prod-s3-priority-informal",
       "pass": true,
       "detail": "Com essa informação consigo refinar melhor a recomendação.\n\nEsse ponto entrou no critério: procurando saiu da comparação. Reavaliei o que já tínhamos mapeado.\n\n",
       "turns": 2,
-      "at": "2026-07-26T18:48:26.014Z"
+      "at": "2026-07-26T20:32:30.539Z"
     },
     {
       "id": "prod-s4-product",
-      "pass": false,
-      "detail": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro.",
+      "pass": true,
+      "detail": "Pelo que mapeei, o Galaxy A55 5G combina melhor porque visual mais confortável durante o uso prolongado.\n\nQuase te recomendaria o Samsung Galaxy S23 FE; só não ",
       "turns": 1,
-      "at": "2026-07-26T18:48:28.248Z"
+      "at": "2026-07-26T20:32:36.214Z"
     },
     {
       "id": "prod-s5-comparison",
       "pass": true,
       "detail": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de ",
       "turns": 1,
-      "at": "2026-07-26T18:48:33.658Z"
+      "at": "2026-07-26T20:32:44.333Z"
     },
     {
       "id": "prod-s6-contestation",
-      "pass": false,
-      "detail": "Bom saber que melhorou um pouco.",
+      "pass": true,
+      "detail": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de ",
       "turns": 2,
-      "at": "2026-07-26T18:48:49.116Z"
+      "at": "2026-07-26T20:33:04.031Z"
     },
     {
       "id": "prod-s7-priority-change",
       "pass": true,
       "detail": "Esse ajuste muda o recorte da escolha.\n\nEsse ponto entrou no critério: a prioridade em câmera ganhou peso. Reavaliei o que já tínhamos mapeado.\n\nMantenho o iPho",
       "turns": 2,
-      "at": "2026-07-26T18:49:02.155Z"
+      "at": "2026-07-26T20:33:18.710Z"
     },
     {
       "id": "prod-s8-new-options",
       "pass": true,
-      "detail": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nQuase te recomendaria o ",
+      "detail": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque o Samsung Galaxy S23 FE responde ao que você pediu.\n\nQuase te recomendaria o Samsung Ga",
       "turns": 2,
-      "at": "2026-07-26T18:49:24.207Z"
+      "at": "2026-07-26T20:33:38.193Z"
     },
     {
       "id": "prod-s9-typo",
       "pass": true,
-      "detail": "Eu iria no Samsung Galaxy S23 FE porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu iria no Samsung Galaxy S23 FE, mas o Samsung G",
+      "detail": "Neste cenário, o Samsung Galaxy S23 FE faz mais sentido porque o Samsung Galaxy S23 FE responde ao que você pediu.\n\nEu iria no Samsung Galaxy S23 FE, mas o Sams",
       "turns": 1,
-      "at": "2026-07-26T18:49:30.562Z"
+      "at": "2026-07-26T20:33:44.696Z"
     },
     {
       "id": "prod-multitempo-8",
       "pass": true,
       "detail": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de ",
       "turns": 8,
-      "at": "2026-07-26T18:50:46.773Z"
+      "at": "2026-07-26T20:35:03.864Z"
     }
   ],
   "scenarios": [
@@ -102,26 +102,26 @@
         {
           "query": "quero um celular bom e equilibrado",
           "status": 200,
-          "elapsed": 1600,
+          "elapsed": 2629,
           "reply_preview": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
         }
       ]
     },
     {
       "id": "prod-s2-priority-explicit",
-      "pass": false,
+      "pass": true,
       "turns": [
         {
           "query": "Quero um celular até 2.500.",
           "status": 200,
-          "elapsed": 5019,
-          "reply_preview": "A escolha mais equilibrada aqui é o iPhone 13 porque tela fluida no cotidiano.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta co"
+          "elapsed": 5602,
+          "reply_preview": "Neste cenário, o iPhone 13 faz mais sentido porque mais margem de tranquilidade quando o uso deixa de ser básico.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 l"
         },
         {
           "query": "bateria é minha prioridade",
           "status": 200,
-          "elapsed": 435,
-          "reply_preview": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+          "elapsed": 611,
+          "reply_preview": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado.\n\nContinuo indicando o iPhone 13 — Escolhido por perform"
         }
       ]
     },
@@ -132,26 +132,26 @@
         {
           "query": "Quero um celular até 2.500.",
           "status": 200,
-          "elapsed": 6885,
-          "reply_preview": "A escolha mais equilibrada aqui é o iPhone 13 porque tela fluida no cotidiano.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta co"
+          "elapsed": 6505,
+          "reply_preview": "Neste cenário, o iPhone 13 faz mais sentido porque mais margem de tranquilidade quando o uso deixa de ser básico.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 l"
         },
         {
           "query": "não quero viver procurando tomada",
           "status": 200,
-          "elapsed": 941,
+          "elapsed": 626,
           "reply_preview": "Com essa informação consigo refinar melhor a recomendação.\n\nEsse ponto entrou no critério: procurando saiu da comparação. Reavaliei o que já tínhamos mapeado.\n\nMantenho o iPhone 13 como melhor opção —"
         }
       ]
     },
     {
       "id": "prod-s4-product",
-      "pass": false,
+      "pass": true,
       "turns": [
         {
           "query": "o Galaxy A55 vale a pena?",
           "status": 200,
-          "elapsed": 2233,
-          "reply_preview": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro."
+          "elapsed": 5675,
+          "reply_preview": "Pelo que mapeei, o Galaxy A55 5G combina melhor porque visual mais confortável durante o uso prolongado.\n\nQuase te recomendaria o Samsung Galaxy S23 FE; só não fiz isso porque menos dependência do car"
         }
       ]
     },
@@ -162,26 +162,26 @@
         {
           "query": "A55 ou S23 FE?",
           "status": 200,
-          "elapsed": 5410,
+          "elapsed": 8118,
           "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G.\n\nO que você ganha: ganha "
         }
       ]
     },
     {
       "id": "prod-s6-contestation",
-      "pass": false,
+      "pass": true,
       "turns": [
         {
           "query": "A55 ou S23 FE?",
           "status": 200,
-          "elapsed": 5180,
+          "elapsed": 6378,
           "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G.\n\nO que você ganha: ganha "
         },
         {
           "query": "mas eu achei o S23 FE melhor",
           "status": 200,
-          "elapsed": 3275,
-          "reply_preview": "Bom saber que melhorou um pouco."
+          "elapsed": 6305,
+          "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G.\n\nO que você ganha: você l"
         }
       ]
     },
@@ -192,13 +192,13 @@
         {
           "query": "Quero um celular até 2.500.",
           "status": 200,
-          "elapsed": 4757,
-          "reply_preview": "A escolha mais equilibrada aqui é o iPhone 13 porque tela fluida no cotidiano.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta co"
+          "elapsed": 6345,
+          "reply_preview": "Neste cenário, o iPhone 13 faz mais sentido porque mais margem de tranquilidade quando o uso deixa de ser básico.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 l"
         },
         {
           "query": "pensando melhor, câmera é mais importante",
           "status": 200,
-          "elapsed": 1280,
+          "elapsed": 1324,
           "reply_preview": "Esse ajuste muda o recorte da escolha.\n\nEsse ponto entrou no critério: a prioridade em câmera ganhou peso. Reavaliei o que já tínhamos mapeado.\n\nMantenho o iPhone 13 como melhor opção — Escolhido por "
         }
       ]
@@ -210,14 +210,14 @@
         {
           "query": "Quero um celular Samsung até 3 mil.",
           "status": 200,
-          "elapsed": 8686,
-          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy"
+          "elapsed": 5795,
+          "reply_preview": "Eu iria no Samsung até 3 mil. porque atende diretamente o modelo que você citou nesta busca.\n\nO Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o "
         },
         {
           "query": "quero buscar opções novas",
           "status": 200,
-          "elapsed": 6364,
-          "reply_preview": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nQuase te recomendaria o Samsung Galaxy A35 5G; só não fiz isso p"
+          "elapsed": 6680,
+          "reply_preview": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque o Samsung Galaxy S23 FE responde ao que você pediu.\n\nQuase te recomendaria o Samsung Galaxy A35 5G; só não fiz isso porque meno"
         }
       ]
     },
@@ -228,8 +228,8 @@
         {
           "query": "quero um cll bom q dure bastante",
           "status": 200,
-          "elapsed": 6355,
-          "reply_preview": "Eu iria no Samsung Galaxy S23 FE porque menos barreira inicial para fechar a compra sem estourar o orçamento.\n\nEu iria no Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G também entrou forte — menos"
+          "elapsed": 6502,
+          "reply_preview": "Neste cenário, o Samsung Galaxy S23 FE faz mais sentido porque o Samsung Galaxy S23 FE responde ao que você pediu.\n\nEu iria no Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G também entrou forte — "
         }
       ]
     },
@@ -240,49 +240,49 @@
         {
           "query": "quero um celular bom e equilibrado",
           "status": 200,
-          "elapsed": 1500,
+          "elapsed": 1419,
           "reply_preview": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
         },
         {
           "query": "bateria é minha prioridade",
           "status": 200,
-          "elapsed": 1234,
-          "reply_preview": "Entendi, ter uma bateria confiável é super importante, principalmente se você depende dela o dia todo. Se precisar de dicas ou informações sobre como cuidar melhor da bateria, é só falar!"
+          "elapsed": 407,
+          "reply_preview": "Isso vale para a recomendação que já vimos ou para uma busca nova?"
         },
         {
           "query": "e a câmera?",
           "status": 200,
-          "elapsed": 297,
+          "elapsed": 337,
           "reply_preview": "Me explica um pouco melhor o que você quer analisar ou comparar, que eu te ajudo."
         },
         {
           "query": "A55 ou S23 FE?",
           "status": 200,
-          "elapsed": 7284,
+          "elapsed": 6084,
           "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G.\n\nO que você ganha: ganha "
         },
         {
           "query": "mas eu achei o S23 FE melhor",
           "status": 200,
-          "elapsed": 3663,
-          "reply_preview": "Bom saber que melhorou um pouco."
+          "elapsed": 5869,
+          "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G.\n\nO que você ganha: você l"
         },
         {
           "query": "pensando melhor, não jogo muito",
           "status": 200,
-          "elapsed": 1636,
-          "reply_preview": "Bom saber que melhorou um pouco."
+          "elapsed": 5870,
+          "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nResumindo a decisão entre os dois: iria de Galaxy A55 5G.\n\nO que você ganha: você leva menos dependência do c"
         },
         {
           "query": "quero ver outras opções",
           "status": 200,
-          "elapsed": 4825,
+          "elapsed": 4712,
           "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G.\n\nO que você ganha: você l"
         },
         {
           "query": "qual você escolheria no meu lugar?",
           "status": 200,
-          "elapsed": 6736,
+          "elapsed": 5410,
           "reply_preview": "Minha escolha: Galaxy A55 5G\n\n⏳ Vai durar mais anos? Galaxy A55 5G\n\nBateria Galaxy A55 5G\n\nSe eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G.\n\nO que você ganha: você l"
         }
       ]
@@ -291,96 +291,96 @@
   "latencies": [
     {
       "status": 200,
-      "elapsed_ms": 1600
+      "elapsed_ms": 2629
     },
     {
       "status": 200,
-      "elapsed_ms": 5019
+      "elapsed_ms": 5602
     },
     {
       "status": 200,
-      "elapsed_ms": 435
+      "elapsed_ms": 611
     },
     {
       "status": 200,
-      "elapsed_ms": 6885
+      "elapsed_ms": 6505
     },
     {
       "status": 200,
-      "elapsed_ms": 941
+      "elapsed_ms": 626
     },
     {
       "status": 200,
-      "elapsed_ms": 2233
+      "elapsed_ms": 5675
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 8118
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6378
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6305
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6345
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1324
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5795
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6680
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6502
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1419
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 407
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 337
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 6084
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5869
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 5870
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 4712
     },
     {
       "status": 200,
       "elapsed_ms": 5410
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 5180
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 3275
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 4757
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 1280
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 8686
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 6364
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 6355
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 1500
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 1234
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 297
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 7284
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 3663
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 1636
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 4825
-    },
-    {
-      "status": 200,
-      "elapsed_ms": 6736
     }
   ],
   "summary": {
     "total": 12,
-    "passed": 9,
-    "failed": 3
+    "passed": 12,
+    "failed": 0
   }
 }

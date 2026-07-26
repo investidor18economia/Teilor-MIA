@@ -1,0 +1,50 @@
+{
+  "patch": "4A.3",
+  "phase": "contextual_synthesis_closure",
+  "status": "APROVADA",
+  "synthesis_version": "4A.3.0",
+  "commit": "5acbd9b213b3865ac151d506e0b4ad99b8d98f6c",
+  "deploy_build": "5acbd9b213b3",
+  "base_url": "https://economia-ai.vercel.app",
+  "finished_at": "2026-07-26T20:35:03.864Z",
+  "audits": {
+    "patch_43_contextual_synthesis": { "passed": 21, "failed": 0 },
+    "patch_41a_semantic_contract": { "passed": 30, "failed": 0 },
+    "patch_42_structured_facts": { "passed": 30, "failed": 0 },
+    "patch_4a2vf_real_intent_product_lock": { "passed": 60, "failed": 0 },
+    "patch_35a_decision_facts_narrative": { "passed": 15, "failed": 0 },
+    "patch_35b_verbalizer_humanization": { "passed": 30, "failed": 0 },
+    "patch_34b_constraint_refinement": { "passed": 18, "failed": 0 },
+    "patch_32_continuity": { "passed": 22, "failed": 0 }
+  },
+  "build": "PASS",
+  "production_validation": {
+    "script": "patch-4a2v-production-validation.mjs",
+    "expected_commit": "5acbd9b",
+    "published_build": "5acbd9b213b3",
+    "passed": 12,
+    "failed": 0
+  },
+  "architecture": {
+    "before": "Parallel pipelines per data origin (strings, mainConsequence, partial structured facts)",
+    "after": "All sources → miaContextualDecisionSynthesis → SemanticDecisionUnit → StructuredDecisionFacts → unified consumers",
+    "legacy_adapter": { "isPrimaryTruth": false }
+  },
+  "modules_created": [
+    "lib/miaContextualDecisionSynthesis.js"
+  ],
+  "modules_wired": [
+    "lib/miaTradeoffCommunicationLayer.js",
+    "lib/miaSpecialistPresentationContract.js",
+    "lib/miaSessionContextTransport.js",
+    "lib/miaDecisionFactsNarrative.js",
+    "lib/miaFirstAnswerResponseContract.js",
+    "lib/miaSpecialistDecisionExplanationLayer.js",
+    "pages/api/chat-gpt4o.js"
+  ],
+  "limitations": [
+    "LLM verbalizer still receives legacy adapter strings (PATCH 4A.4 deferred)",
+    "Comparison layer without full semantic allocation benefits from session persistence"
+  ],
+  "readiness_4a4": "PRONTA"
+}
