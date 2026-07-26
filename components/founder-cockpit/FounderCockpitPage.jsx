@@ -2,6 +2,7 @@ import FounderExecutiveInsights from "./FounderExecutiveInsights.jsx";
 import FounderKpiStrip from "./FounderKpiStrip.jsx";
 import FounderModuleSection from "./FounderModuleSection.jsx";
 import FounderPeriodFilter from "./FounderPeriodFilter.jsx";
+import { TEILOR_LOGO_ALT, TEILOR_LOGO_PRIMARY_SRC } from "../../lib/brandAssets";
 
 export default function FounderCockpitPage({ cockpit, subject }) {
   const { meta, overview, modules } = cockpit;
@@ -26,7 +27,7 @@ export default function FounderCockpitPage({ cockpit, subject }) {
       <header className="founder-cockpit-header">
         <div className="founder-cockpit-header-row">
           <div>
-            <img src="/teilor-logo.svg" alt="Teilor" width={140} height={32} />
+            <img src={TEILOR_LOGO_PRIMARY_SRC} alt={TEILOR_LOGO_ALT} width={56} height={56} />
             <h1>Cockpit Executivo</h1>
             <p className="founder-cockpit-subtitle">
               Indicadores consolidados para decisão — fonte única: API Executiva de Métricas.

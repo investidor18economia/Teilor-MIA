@@ -1,4 +1,5 @@
 import PublicMetricCard from "./PublicMetricCard.jsx";
+import { TEILOR_LOGO_ALT, TEILOR_LOGO_PRIMARY_SRC } from "../../lib/brandAssets";
 
 /**
  * @param {{ id: string, title: string, cards: object[], disclaimer?: string }} section
@@ -41,7 +42,7 @@ export default function PublicMetricsPage({ page }) {
   return (
     <div className="public-metrics-page">
       <header className="public-metrics-hero">
-        <img src="/teilor-logo.svg" alt="Teilor" className="public-metrics-logo" width={160} height={36} />
+        <img src={TEILOR_LOGO_PRIMARY_SRC} alt={TEILOR_LOGO_ALT} className="public-metrics-logo" width={64} height={64} />
         <h1 className="public-metrics-hero-title">{hero.title}</h1>
         <p className="public-metrics-hero-subtitle">{hero.subtitle}</p>
         {meta.reference_period_days ? (

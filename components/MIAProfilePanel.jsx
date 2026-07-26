@@ -1,5 +1,6 @@
 import MIAWordmark from "./MIAWordmark";
 import MIAAvatar from "./MIAAvatar";
+import { MIA_AVATAR_ALT } from "../lib/brandAssets";
 
 const BUILT_ITEMS = [
   {
@@ -129,7 +130,7 @@ export default function MIAProfilePanel({
       <div className="mia-profile-hub-header">
         <div className="mia-profile-hub-header-copy">
           <div className="mia-profile-hub-mia-mark" aria-hidden="true">
-            <MIAAvatar size="profile" alt="MIΛ" />
+            <MIAAvatar size="profile" alt={MIA_AVATAR_ALT} />
           </div>
           <p className="mia-profile-hub-eyebrow">Central Teilor</p>
           <h4 className="mia-profile-hub-title">Seu Espaço na Teilor</h4>

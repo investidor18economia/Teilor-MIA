@@ -1,6 +1,6 @@
 import { MIA_SYMBOL_SRC } from "../lib/miaSymbol";
 
-/** Ícone padronizado da MIΛ em botões do menu/drawer. */
+/** Ícone padronizado da MIA (avatar) em botões do menu/drawer. */
 export default function MIAMenuSymbol({ className = "" }) {
   return (
     <span className={`mia-menu-symbol${className ? ` ${className}` : ""}`} aria-hidden="true">

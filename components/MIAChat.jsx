@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import OfferImageLightbox, { getOfferCardImages } from "./OfferImageLightbox";
 import MIAAvatar from "./MIAAvatar";
+import { MIA_AVATAR_ALT } from "../lib/brandAssets";
 import MIAWordmark from "./MIAWordmark";
 import ChatImageAttachment from "./ChatImageAttachment";
 import MIAFavoritesPanel from "./MIAFavoritesPanel";
@@ -2944,7 +2945,7 @@ function detectPriorityFromText(text = "") {
             {isConversationMode ? (
               <>
                 <div className="mia-chat-header-logo mia-chat-header-logo--compact">
-                  <MIAAvatar size="compact" alt="Assistente MIΛ" />
+                  <MIAAvatar size="compact" alt={MIA_AVATAR_ALT} />
                 </div>
                 <div className="mia-chat-header-copy mia-chat-header-copy--compact">
                   <div className="mia-chat-header-title-row">
@@ -2957,7 +2958,7 @@ function detectPriorityFromText(text = "") {
             ) : (
               <>
                 <div className="mia-chat-header-logo">
-                  <MIAAvatar size="header" alt="Assistente MIΛ" />
+                  <MIAAvatar size="header" alt={MIA_AVATAR_ALT} />
                 </div>
                 <div className="mia-chat-header-copy">
                   <div className="mia-chat-header-title-row">

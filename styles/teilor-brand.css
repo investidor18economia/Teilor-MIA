@@ -50,9 +50,9 @@
 }
 
 .teilor-brand-logo {
-  width: min(200px, 52vw);
+  width: min(120px, 28vw);
   height: auto;
-  max-height: 36px;
+  max-height: 120px;
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
@@ -136,8 +136,8 @@
   }
 
   .teilor-brand-logo {
-    width: min(240px, 32vw);
-    max-height: 44px;
+    width: min(120px, 24vw);
+    max-height: 120px;
   }
 
   .teilor-brand-logo-wrap {
@@ -173,8 +173,8 @@
   }
 
   .teilor-brand-logo {
-    width: min(176px, 48vw);
-    max-height: 32px;
+    width: min(96px, 32vw);
+    max-height: 96px;
   }
 
   .teilor-brand-logo-wrap {

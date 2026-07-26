@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TEILOR_LOGO_ALT, TEILOR_LOGO_PRIMARY_SRC } from "../lib/brandAssets";
 
 const BRAND_TAGLINES = [
   "A referência em IA para compras online",
@@ -44,11 +45,11 @@ export default function TeilorBrandHero() {
       </p>
       <div className="teilor-brand-logo-wrap">
         <img
-          src="/teilor-logo.png"
-          alt="Teilor"
+          src={TEILOR_LOGO_PRIMARY_SRC}
+          alt={TEILOR_LOGO_ALT}
           className="teilor-brand-logo"
-          width={340}
-          height={73}
+          width={120}
+          height={120}
           decoding="async"
         />
       </div>

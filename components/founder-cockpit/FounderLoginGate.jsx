@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TEILOR_LOGO_ALT, TEILOR_LOGO_PRIMARY_SRC } from "../../lib/brandAssets";
 
 export default function FounderLoginGate() {
   const [adminKey, setAdminKey] = useState("");
@@ -31,7 +32,7 @@ export default function FounderLoginGate() {
   return (
     <div className="founder-cockpit-page founder-cockpit-page--gate">
       <header className="founder-cockpit-header">
-        <img src="/teilor-logo.svg" alt="Teilor" width={140} height={32} />
+        <img src={TEILOR_LOGO_PRIMARY_SRC} alt={TEILOR_LOGO_ALT} width={56} height={56} />
         <h1>Cockpit Executivo</h1>
         <p>Acesso restrito ao fundador. Autentique-se para continuar.</p>
       </header>

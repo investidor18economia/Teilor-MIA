@@ -17,6 +17,7 @@
 .public-metrics-logo {
   margin-bottom: 24px;
   opacity: 0.95;
+  object-fit: contain;
 }
 
 .public-metrics-hero-title {
