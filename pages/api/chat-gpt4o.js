@@ -170,6 +170,7 @@ import {
   narrativePlanToOrderedLegacyStrings,
   narrativePlanToVerbalizationOrder,
 } from "../../lib/miaNarrativePlanner.js";
+import { verbalizationPlanToLlmContract } from "../../lib/miaSemanticVerbalizer.js";
 import {
   appendUserIntentDiscovery,
   resolveIntentDiscoverySessionClear,
@@ -35609,6 +35610,11 @@ if (Array.isArray(products) && products.length > 0) {
       sourceOrigin: selectedBestProduct?.isDataLayerProduct ? "data_layer" : "commercial",
       responsePath: "return_seguro",
       hasWinner: true,
+      query: resolvedQuery,
+      querySignals: earlyQuerySignals,
+      safetyAntiregret: !!searchCognition?.safetyAntiregret,
+      specificProductLockActive: !!specificProductLock?.active,
+      isFollowUp: !!sessionContext?.lastBestProduct?.product_name && !routingDecision?.allowNewSearch,
     });
 
     if (contextualDecisionSynthesis?.narrativePlan && specialistPresentation?.tradeoff) {
@@ -35616,11 +35622,30 @@ if (Array.isArray(products) && products.length > 0) {
         contextualDecisionSynthesis.narrativePlan
       );
       specialistPresentation.tradeoff.narrativePlan = contextualDecisionSynthesis.narrativePlan;
+      specialistPresentation.tradeoff.verbalizationPlan =
+        contextualDecisionSynthesis.verbalizationPlan || null;
       if (ordered.gains.length) {
         specialistPresentation.tradeoff.gains = ordered.gains;
       }
       if (ordered.sacrifices.length) {
         specialistPresentation.tradeoff.sacrifices = ordered.sacrifices;
+      }
+      if (contextualDecisionSynthesis.verbalizationPlan?.sections?.length) {
+        const verbalOrdered = {
+          gains: [
+            contextualDecisionSynthesis.verbalizationPlan.mainMessage?.text,
+            ...(contextualDecisionSynthesis.verbalizationPlan.supportingMessages || []).map(
+              (entry) => entry.text
+            ),
+          ].filter(Boolean),
+          sacrifices: (contextualDecisionSynthesis.verbalizationPlan.tradeoffs || [])
+            .map((entry) => entry.text)
+            .filter(Boolean),
+        };
+        if (verbalOrdered.gains.length) specialistPresentation.tradeoff.gains = verbalOrdered.gains;
+        if (verbalOrdered.sacrifices.length) {
+          specialistPresentation.tradeoff.sacrifices = verbalOrdered.sacrifices;
+        }
       }
     }
   }
@@ -36038,6 +36063,7 @@ if (Array.isArray(products) && products.length > 0) {
       lastStructuredDecisionFacts:
         contextualDecisionSynthesis?.structuredDecisionFacts || null,
       lastNarrativePlan: contextualDecisionSynthesis?.narrativePlan || null,
+      lastVerbalizationPlan: contextualDecisionSynthesis?.verbalizationPlan || null,
       lastTopic: resolvedQuery,
       // PATCH 7.4 — persist ranked snapshot at the search write-point.
       // displayProducts is still score-enriched here (localFallbackScore / score).
