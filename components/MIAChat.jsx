@@ -26,6 +26,10 @@ import {
   getOpeningTypingDelayMs,
   resolveStoredSessionOpening
 } from "../lib/miaOpeningSystem";
+import {
+  computeMiaHomeIntroState,
+  handleMiaOverlayDismiss,
+} from "../lib/miaHomeIntroState.js";
 import { getCognitiveLoadingFallbackState } from "../lib/miaCognitiveLoading.js";
 import {
   shouldUseStructuredParagraphs,
@@ -2865,19 +2869,11 @@ function detectPriorityFromText(text = "") {
     await requestAuthCode(loginEmail, loginName);
   }
 
-  const isIntroState = hasMounted
-    && history.length === 1
-    && history[0]?.resposta
-    && !history[0]?.pergunta
-    && !history[0]?.offerCard;
-
-  const hasConversationResponse = hasMounted && history.some((item, index) => {
-    if (!item?.resposta) return false;
-    if (item.pergunta || item.offerCard) return true;
-    return index > 0;
+  const { isIntroState, isConversationMode } = computeMiaHomeIntroState({
+    hasMounted,
+    greetingShown,
+    history,
   });
-
-  const isConversationMode = hasMounted && hasConversationResponse;
 
   useEffect(() => {
     if (typeof document === "undefined") return undefined;
@@ -3233,7 +3229,7 @@ function detectPriorityFromText(text = "") {
               </div>
             )}
 
-            {i === 0 && item.resposta && history.length === 1 && (
+            {i === 0 && item.resposta && isIntroState && (
               <div className="mia-empty-welcome mia-empty-welcome--after-opening">
                 <p className="mia-empty-welcome-title">Comece por aqui</p>
                 <p className="mia-empty-welcome-hint">Toque em uma sugestão ou conte para a MIA o que você está pensando em comprar.</p>
@@ -3536,7 +3532,7 @@ function detectPriorityFromText(text = "") {
         <>
           <div
             className="mia-drawer-overlay"
-            onClick={closeSideMenu}
+            onClick={(event) => handleMiaOverlayDismiss(event, closeSideMenu)}
             aria-hidden="true"
           />
           <nav
@@ -3703,7 +3699,7 @@ function detectPriorityFromText(text = "") {
         <>
           <div
             className="mia-panel-overlay"
-            onClick={closeHubPanelFromDrawer}
+            onClick={(event) => handleMiaOverlayDismiss(event, closeHubPanelFromDrawer)}
             aria-hidden="true"
           />
 
