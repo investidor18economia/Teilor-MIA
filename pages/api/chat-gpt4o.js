@@ -163,6 +163,10 @@ import {
   shouldApplySpecialistDecisionExplanation,
 } from "../../lib/miaSpecialistDecisionExplanationLayer.js";
 import {
+  buildContextualDecisionSynthesisPayload,
+  contextualSynthesisToTrace,
+} from "../../lib/miaContextualDecisionSynthesis.js";
+import {
   appendUserIntentDiscovery,
   resolveIntentDiscoverySessionClear,
 } from "../../lib/miaUserIntentDiscoveryLayer.js";
@@ -35522,6 +35526,7 @@ if (Array.isArray(products) && products.length > 0) {
   let specialistPresentation = null;
   let specialistSensationBridge = null;
   let specialistAuthorityBridge = null;
+  let contextualDecisionSynthesis = null;
   let commercialEnrichApplied = false;
   const hasCommercialWinner = !!cleanTitle(selectedBestProduct?.product_name || "");
 
@@ -35573,6 +35578,32 @@ if (Array.isArray(products) && products.length > 0) {
     }
   } else {
     specialistDecisionExplanationSkipReason = "no_winner";
+  }
+
+  if (hasCommercialWinner) {
+    const tradeoffStructured =
+      specialistPresentation?.tradeoff?.structuredDecisionFacts || null;
+    contextualDecisionSynthesis = buildContextualDecisionSynthesisPayload({
+      structuredDecisionFacts: tradeoffStructured,
+      gainUnits: specialistPresentation?.tradeoff?.semanticUnits || [],
+      sacrificeUnits: specialistPresentation?.tradeoff?.semanticSacrificeUnits || [],
+      gainStrings:
+        specialistPresentation?.tradeoff?.gains ||
+        _decisionMemEnrich.lastWinnerAdvantages ||
+        [],
+      sacrificeStrings:
+        specialistPresentation?.tradeoff?.sacrifices ||
+        _decisionMemEnrich.lastWinnerSacrifices ||
+        [],
+      trustedSpecs: selectedBestProduct?.trustedSpecs || null,
+      searchCognition,
+      decisionMemory: _decisionMemEnrich,
+      sessionContext,
+      productName: selectedBestProduct?.product_name || "",
+      category: detectProductCategory(resolvedQuery) || sessionContext.lastCategory || "",
+      primaryAxis: searchCognition.primaryAxis || activePriority || currentPriority || "",
+      sourceOrigin: selectedBestProduct?.isDataLayerProduct ? "data_layer" : "commercial",
+    });
   }
 
   if (hasCommercialWinner && !specialistDecisionExplanationApplied) {
@@ -35967,11 +35998,26 @@ if (Array.isArray(products) && products.length > 0) {
       lastAxis: searchCognition.primaryAxis || activePriority || "",
       lastArchetype: searchCognition.primaryArchetype || "",
       lastBehaviorMode: searchCognition.behaviorMode || searchBehaviorMode || "",
-      lastMainConsequence: searchCognition.narrativeBlocks?.mainConsequence || "",
-      lastTradeoff: _decisionMemEnrich.lastTradeoff,
-      lastDecisionReason: _decisionMemEnrich.lastDecisionReason,
-      lastWinnerAdvantages: _decisionMemEnrich.lastWinnerAdvantages,
-      lastWinnerSacrifices: _decisionMemEnrich.lastWinnerSacrifices,
+      lastMainConsequence:
+        contextualDecisionSynthesis?.sessionFields?.lastMainConsequence ||
+        searchCognition.narrativeBlocks?.mainConsequence ||
+        "",
+      lastTradeoff:
+        contextualDecisionSynthesis?.sessionFields?.lastTradeoff ||
+        _decisionMemEnrich.lastTradeoff,
+      lastDecisionReason:
+        contextualDecisionSynthesis?.sessionFields?.lastDecisionReason ||
+        _decisionMemEnrich.lastDecisionReason,
+      lastWinnerAdvantages:
+        contextualDecisionSynthesis?.sessionFields?.lastWinnerAdvantages ||
+        _decisionMemEnrich.lastWinnerAdvantages,
+      lastWinnerSacrifices:
+        contextualDecisionSynthesis?.sessionFields?.lastWinnerSacrifices ||
+        _decisionMemEnrich.lastWinnerSacrifices,
+      lastSemanticDecisionUnits: contextualDecisionSynthesis?.gainUnits || [],
+      lastSemanticSacrificeUnits: contextualDecisionSynthesis?.sacrificeUnits || [],
+      lastStructuredDecisionFacts:
+        contextualDecisionSynthesis?.structuredDecisionFacts || null,
       lastTopic: resolvedQuery,
       // PATCH 7.4 — persist ranked snapshot at the search write-point.
       // displayProducts is still score-enriched here (localFallbackScore / score).

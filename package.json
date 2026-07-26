@@ -176,6 +176,7 @@
     "test:mia:conv:patch-41a:semantic-decision-contract-audit": "node scripts/test-mia-patch-41a-semantic-decision-contract-audit.js",
     "test:mia:conv:patch-42:structured-decision-facts-audit": "node scripts/test-mia-patch-42-structured-decision-facts-audit.js",
     "test:mia:conv:patch-4a2vf:real-intent-product-lock-audit": "node scripts/test-mia-patch-4a2vf-real-intent-and-product-lock-audit.js",
+    "test:mia:conv:patch-43:contextual-synthesis-audit": "node scripts/test-mia-patch-43-contextual-synthesis-audit.js",
     "test:mia:patch-125:rc-smoke": "node scripts/patch-125-rc-smoke.mjs",
     "test:mia:patch-126:production-validation": "node scripts/test-mia-patch-126-production-validation-runner.mjs",
     "test:mia:patch-126:browser-validation": "node scripts/test-mia-patch-126-browser-validation.mjs",
