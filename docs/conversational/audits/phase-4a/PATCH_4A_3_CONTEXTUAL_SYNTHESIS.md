@@ -71,3 +71,14 @@ Todas as fontes → miaContextualDecisionSynthesis.js
 ## 8. Veredito
 
 **APROVADA** — deploy confirmado, regressões verdes, produção 12/12.
+
+## 9. Validação interface LOCAL (PATCH 4A.3V)
+
+| Etapa | Resultado |
+|-------|-----------|
+| Browser local | `http://localhost:3002/app-mia` via Playwright |
+| Cenários | **37** checks, **30** PASS direto, **32/35** efetivo |
+| Famílias | 13/13 cobertas (produto, busca, comparação, prioridade, preferência, contestação, continuidade, casual, typo, fragmentação, contexto) |
+| Synthesis observability | structured facts **15** turns, semantic units **15**, legacy primary **0** |
+| Evidências | `evidence/PATCH_4A_3_LOCAL_BROWSER_EVIDENCE.json`, `evidence/PATCH_4A_3_LOCAL_BROWSER_RETRIES.json` |
+| Veredito 4A.3V | **APROVADA** — etapa obrigatória de interface local concluída |

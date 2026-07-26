@@ -1,0 +1,90 @@
+{
+  "finished_at": "2026-07-26T20:59:40.390Z",
+  "results": [
+    {
+      "id": "retry-priority-economizar",
+      "pass": true,
+      "last_reply": "Esse ajuste muda o recorte da escolha.\n\nMantendo o que conversamos, você pediu algo mais em conta que a opção anterior — e isso pede um ajuste fino.\n\nMantenho o iPhone 11 como melhor opção — Escolhido por value: Paga pelo que vai usar — sem especificação ociosa que cobra diferença sem mudar o dia a dia.\n\nFora esse ajus",
+      "trace": [
+        {
+          "q": "preciso trocar de celular",
+          "reply": "Entre as opções, eu colocaria o iPhone 13 em primeiro porque mais margem de tranquilidade quando o uso deixa de ser básico.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porq"
+        },
+        {
+          "q": "quero economizar o máximo possível",
+          "reply": "Esse ajuste muda o recorte da escolha.\n\nMantendo o que conversamos, você pediu algo mais em conta que a opção anterior — e isso pede um ajuste fino.\n\nMantenho o iPhone 11 como melhor opção — Escolhido por value: Paga pel"
+        }
+      ]
+    },
+    {
+      "id": "retry-pref-change-iphone",
+      "pass": false,
+      "last_reply": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque o Samsung Galaxy S23 FE responde ao que você pediu.\n\nEu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o Samsung Galaxy S23 FE leva vantagem em custo-benefício nesta comparação.\n\nNa prática, o responde",
+      "trace": [
+        {
+          "q": "Quero celular Samsung até 2500.",
+          "reply": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE porque o Samsung Galaxy S23 FE responde ao que você pediu.\n\nQuase te recomendaria o Samsung Galaxy A35 5G; só não fiz isso"
+        },
+        {
+          "q": "mudei de ideia, agora quero iPhone",
+          "reply": "Entre as opções, eu colocaria o Samsung Galaxy S23 FE em primeiro porque o Samsung Galaxy S23 FE responde ao que você pediu.\n\nEu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é qu"
+        }
+      ]
+    },
+    {
+      "id": "retry-contest-review",
+      "pass": false,
+      "last_reply": "Agora ficou mais claro o que você procura.",
+      "trace": [
+        {
+          "q": "Galaxy A55 vale a pena?",
+          "reply": "Entre as opções, eu colocaria o Galaxy A55 5G em primeiro porque visual mais confortável durante o uso prolongado.\n\nEu iria no Galaxy A55 5G, mas o Samsung Galaxy S23 FE também ent"
+        },
+        {
+          "q": "mas vi um review diferente, achei o A35 melhor",
+          "reply": "Agora ficou mais claro o que você procura."
+        }
+      ]
+    },
+    {
+      "id": "retry-contest-samsung",
+      "pass": false,
+      "last_reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "trace": [
+        {
+          "q": "iPhone 15 vs Galaxy S24 qual escolher?",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+        },
+        {
+          "q": "prefiro esse da Samsung na real",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+        }
+      ]
+    },
+    {
+      "id": "retry-continuity-flow",
+      "pass": false,
+      "last_reply": "Claro, vamos continuar.",
+      "trace": [
+        {
+          "q": "A55 ou S23 FE?",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+        },
+        {
+          "q": "e o outro?",
+          "reply": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir."
+        },
+        {
+          "q": "explica melhor por quê?",
+          "reply": "Para decidir entre o A55 e o S23 FE, considere suas prioridades. O S23 FE geralmente oferece melhor desempenho e câmeras, enquanto o A55 pode ser mais acessível e atender bem para "
+        },
+        {
+          "q": "continua",
+          "reply": "Claro, vamos continuar."
+        }
+      ]
+    }
+  ],
+  "passed": 1,
+  "total": 5
+}
