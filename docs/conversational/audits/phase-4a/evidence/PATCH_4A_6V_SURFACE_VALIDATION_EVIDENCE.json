@@ -1,0 +1,520 @@
+{
+  "patch": "4A.6V",
+  "phase": "surface_validation",
+  "status": "BLOQUEADA",
+  "mode": "local",
+  "base_url": "http://localhost:3008",
+  "commit": "c8798b8bf94d5b70a8cffc92ddb014407a63250b",
+  "finished_at": "2026-07-27T05:45:20.095Z",
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6
+  },
+  "scenarios": [
+    {
+      "id": "c1-budget-explore",
+      "title": "Cenário 1 — recomendação até 2 mil + follow-ups",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "Qual celular você recomenda até 2 mil?",
+          "assistant": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca.\n\nO iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? — é exatamente o modelo que você pediu nesta busca.\n\nEscolher o modelo certo evita cair em alternativa parecida que não era o que você pediu.\n\n✅ O que você ganha\n\n• Atende diretamente o modelo que você citou nesta busca.\n\n⚠️ O que você abre mão\n\n• O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir.\n\nMesmo com esse ponto de atenção, eu manteria o Qual celular você recomenda até 2 mil? — atende diretamente o modelo que você citou nesta busca.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? — é exatamente o modelo que você pediu nesta busca. Escolher o modelo certo evita cair em alternativa parecida que não era o que você pediu. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo com esse ponto de atenção, eu manteria o Qual celular você recomenda até 2 mil? — atende diretamente o modelo que você citou nesta busca."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "Por quê?",
+          "assistant": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia.\n\nO iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? Por quê? — é exatamente o modelo que você pediu nesta busca.\n\nNo uso real, isso se traduz em mais folga no uso pesado do dia a dia — isso tende a aparecer no uso real, não só no anúncio.\n\n✅ O que você ganha\n\n• No uso real, isso se traduz em mais folga no uso pesado do dia a dia.\n\n⚠️ O que você abre mão\n\n• Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir.\n\nMesmo com vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Qual celular você recomenda até 2 mil? Por quê? — no uso real, isso se traduz em mais folga no uso pesado do dia a dia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? Por quê? — é exatamente o modelo que você pediu nesta busca. No uso real, isso se traduz em mais folga no uso pesado do dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo com vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Qual celular você recomenda até 2 mil? Por quê? — no uso real, isso se traduz em mais folga no uso pesado do dia a dia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "E o lado ruim?",
+          "assistant": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "Continua.",
+          "assistant": "Minha escolha: iPhone 13\n\n️ Tela iPhone 13\n\nBateria iPhone 13\n\n⏳ Vai durar mais anos? iPhone 13\n\nResumindo a decisão entre os dois: iria de iPhone 13.\n\nO que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes\n\nO que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ Vai durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Minha escolha: iPhone 13"
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "user": "Mas se câmera for prioridade?",
+          "assistant": "Minha escolha: Google Pixel 2\n\n⏳ Vai durar mais anos? iPhone 13\n\nBateria iPhone 13\n\nDesempenho iPhone 13\n\nFechando a comparação pensando no uso real: iria de Google Pixel 2.\n\nO que você ganha: você leva mais tranquilidade na hora de registrar momentos importantes\n\nO que abre mão: ️ abre mão de bateria_limitada;sem_ultrawide;sem_5g ️ também pode exigir recarga mais cedo quando o uso fica intenso",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Minha escolha: Google Pixel 2 ⏳ Vai durar mais anos? iPhone 13 Bateria iPhone 13 Desempenho iPhone 13 Fechando a comparação pensando no uso real: iria de Google Pixel 2. O que você ganha: você leva mais tranquilidade na hora de registrar momentos importantes O que abre mão: ️ abre mão de bateria_limitada;sem_ultrawide;sem_5g ️ também pode exigir recarga mais cedo quando o uso fica intenso"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Minha escolha: Google Pixel 2"
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c2-product-lock-why",
+      "title": "Cenário 2 — product lock repetido",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.\n\nQuase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.\n\nA autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio.\n\n✅ O que você ganha\n\n• A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.\n\n• Visual mais confortável durante o uso prolongado.\n\n⚠️ O que você abre mão\n\n• Pode parecer menos fluida para quem veio de experiências mais rápidas.\n\n• Pode pesar na decisão: pesado.\n\nMesmo com pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. • Visual mais confortável durante o uso prolongado. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • Pode pesar na decisão: pesado. Mesmo com pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "Por que escolheu esse?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "Por que escolheu esse?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "Por que escolheu esse?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c3-comparison",
+      "title": "Cenário 3 — comparação A56 vs Edge 60",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "Galaxy A56 vs Motorola Edge 60, qual você prefere?",
+          "assistant": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "e na prática, qual leva vantagem?",
+          "assistant": "Agora ficou mais claro o que você procura.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c4-priority-change",
+      "title": "Cenário 4 — mudança de prioridade",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular até 2500",
+          "assistant": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado.\n\nEu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação.\n\nVisual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio.\n\n✅ O que você ganha\n\n• Visual mais confortável durante o uso prolongado.\n\n• Mais margem de tranquilidade quando o uso deixa de ser básico.\n\n• No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes.\n\n⚠️ O que você abre mão\n\n• Pode pedir mais atenção à autonomia em dias mais longos.\n\n• O custo tende a pesar mais na comparação com rivais parecidos.\n\nMesmo com pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — visual mais confortável durante o uso prolongado.\n\nNessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Visual mais confortável durante o uso prolongado. • Mais margem de tranquilidade quando o uso deixa de ser básico. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo com pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — visual mais confortável durante o uso prolongado. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "bateria é minha prioridade",
+          "assistant": "Esse detalhe faz diferença na análise.\n\nEsse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado.\n\nContinuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nO restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00.\n\npode pedir mais atenção à autonomia em dias mais longos",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Esse detalhe faz diferença na análise."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "na verdade câmera importa mais",
+          "assistant": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Isso se conecta bem ao seu foco em câmera, já que o iPhone 13 tem uma das melhores câmeras da sua faixa de preço, com qualidade de fotos impressionante, especialmente em condições de pouca luz.\n\nEmbora a autonomia possa exigir um pouco mais de atenção em dias mais longos, a qualidade da câmera e a performance geral fazem dele uma escolha sólida para quem prioriza fotos. Se você quiser, posso verificar se há outras opções que também se destaquem na câmera.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Isso se conecta bem ao seu foco em câmera, já que o iPhone 13 tem uma das melhores câmeras da sua faixa de preço, com qualidade de fotos impressionante, especialmente em condições de pouca luz. Embora a autonomia possa exigir um pouco mais de atenção em dias mais longos, a qualidade da câmera e a performance geral fazem dele uma escolha sólida para quem prioriza fotos. Se você quiser, posso verificar se há outras opções que também se destaquem na câmera."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Isso se conecta bem ao seu foco em câmera, já que o iPhone 13 tem uma das melhores câmeras da sua faixa de preço, com qualidade de fotos impressionante, especialmente em condições de pouca luz."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c5-contestation",
+      "title": "Cenário 5 — contestação",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.\n\nQuase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.\n\nA autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio.\n\n✅ O que você ganha\n\n• A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.\n\n• Visual mais confortável durante o uso prolongado.\n\n⚠️ O que você abre mão\n\n• Pode parecer menos fluida para quem veio de experiências mais rápidas.\n\n• Pode pesar na decisão: pesado.\n\nMesmo com pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. • Visual mais confortável durante o uso prolongado. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • Pode pesar na decisão: pesado. Mesmo com pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "mas eu achei o S23 FE melhor",
+          "assistant": "Entendi o que mudou — isso conta.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c6-long-continuity",
+      "title": "Cenário 6 — continuidade 8 turnos",
+      "environment": "local",
+      "pass": false,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular até 2000",
+          "assistant": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado.\n\nQuase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação.\n\nVisual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio.\n\n✅ O que você ganha\n\n• Visual mais confortável durante o uso prolongado.\n\n• Mais margem de tranquilidade quando o uso deixa de ser básico.\n\n• No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes.\n\n⚠️ O que você abre mão\n\n• Pode pedir mais atenção à autonomia em dias mais longos.\n\n• O custo tende a pesar mais na comparação com rivais parecidos.\n\nMesmo com pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — visual mais confortável durante o uso prolongado.\n\nCom esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Visual mais confortável durante o uso prolongado. • Mais margem de tranquilidade quando o uso deixa de ser básico. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo com pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — visual mais confortável durante o uso prolongado. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "uso muito fora de casa",
+          "assistant": "Entendi o que mudou — isso conta.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "e mais barato?",
+          "assistant": "Esse ajuste muda o recorte da escolha.\n\nCom você pediu algo mais em conta que a opção anterior, olhei de novo as opções que já tínhamos em contexto.\n\nAinda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais.\n\nO restante do critério permanece: o foco em desempenho e a faixa até R$ 2000,00.\n\npode pedir mais atenção à autonomia em dias mais longos",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Esse ajuste muda o recorte da escolha. Com você pediu algo mais em conta que a opção anterior, olhei de novo as opções que já tínhamos em contexto. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2000,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Esse ajuste muda o recorte da escolha."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "quem ficou logo atrás?",
+          "assistant": "Agora ficou mais claro o que você procura.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "user": "e a bateria dele?",
+          "assistant": "Sobre o iPhone 11, pensando em bateria/autonomia:\n\nEsse modelo tem 3110mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia.\n\nResumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Sobre o iPhone 11, pensando em bateria/autonomia: Esse modelo tem 3110mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Sobre o iPhone 11, pensando em bateria/autonomia:"
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 6,
+          "user": "continua",
+          "assistant": "Claro, sigo aqui.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Claro, sigo aqui."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Claro, sigo aqui."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": false
+        },
+        {
+          "turn": 7,
+          "user": "pode ser Motorola também",
+          "assistant": "Eu iria no iPhone 11.\n\nPensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh.\n\nComparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício.\n\nMeu veredito: eu escolheria o iPhone 11.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o iPhone 11."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Eu iria no iPhone 11."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 8,
+          "user": "então qual fica?",
+          "assistant": "Entendi o que mudou — isso conta.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

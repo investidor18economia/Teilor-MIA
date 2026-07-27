@@ -23,10 +23,13 @@ import {
   buildVerbalizationStyleGovernancePayload,
   buildVerbalizationStylePolicy,
   buildVariationConstraints,
+  detectArtificialBecauseFragment,
   detectCrystallizedFrame,
+  detectDominantOpeningTemplate,
   detectLiteralFragment,
   extractRecentPatternContext,
   hasVerbalizationStyleGovernance,
+  rewriteConsequenceForSpeech,
   surfaceRewriteFragment,
   styleGovernanceToLlmContract,
   updateRecentVerbalizationPatterns,
@@ -36,6 +39,7 @@ import {
 import { buildContextualDecisionSynthesisPayload } from "../lib/miaContextualDecisionSynthesis.js";
 import { extractGainsAndSacrificesFromProduct } from "../lib/miaFirstAnswerResponseContract.js";
 import { buildFirstAnswerStructuredReply } from "../lib/miaFirstAnswerResponseContract.js";
+import { resolveComparativeRunnerUpReasoning } from "../lib/miaComparativeRunnerUpReasoning.js";
 import { collectDecisionFactsFromSession } from "../lib/miaDecisionFactsNarrative.js";
 import { buildSpecialistPresentationContract } from "../lib/miaSpecialistPresentationContract.js";
 import { SESSION_CONTEXT_TRANSPORT_FIELDS } from "../lib/miaSessionContextTransport.js";
@@ -246,7 +250,59 @@ assert("informal fragment rewrite", informal.length > 10);
 const abbrev = surfaceRewriteFragment("bat forte", { effectKey: "battery_autonomy" });
 assert("abbrev rewrite", /bateria|autonomia|bat/i.test(abbrev));
 
-console.log("\n" + "═".repeat(60));
+console.log("\n── PATCH 4A.6V surface fixes ──");
+const batterySpeech = rewriteConsequenceForSpeech("menos dependência do carregador no dia a dia");
+assert("rewrite menos dependência", !/^menos dependência/i.test(batterySpeech));
+assert("no artificial porque menos", !detectArtificialBecauseFragment(`Eu iria no X porque ${batterySpeech}`).detected || !/\bporque\s+menos/i.test(`Eu iria no X. ${batterySpeech}.`));
+const opening = buildFirstAnswerStructuredReply({
+  winnerName: "Galaxy A55",
+  query: "o Galaxy A55 vale a pena?",
+  gains: ["menos dependência do carregador no dia a dia"],
+  sacrifices: ["a navegação pode parecer menos fluida para quem veio de telas mais rápidas"],
+});
+assert("first answer no porque menos", !detectArtificialBecauseFragment(opening).detected);
+assert("first answer no dominant template", !detectDominantOpeningTemplate(opening).detected);
+const runnerUpResult = resolveComparativeRunnerUpReasoning({
+  query: "o Galaxy A55 vale a pena?",
+  winner: {
+    product_name: "Galaxy A55 5G",
+    trustedSpecs: {
+      official_name: "Galaxy A55 5G",
+      strengths: ["menos dependência do carregador no dia a dia"],
+      scores: { battery: 82, performance: 70 },
+    },
+    scoreEngine: { scores: { battery: 82, performance: 70 } },
+  },
+  rankedCandidates: [
+    {
+      product_name: "Galaxy A55 5G",
+      trustedSpecs: {
+        official_name: "Galaxy A55 5G",
+        strengths: ["menos dependência do carregador no dia a dia"],
+      },
+      scoreEngine: { scores: { battery: 82, performance: 70 } },
+    },
+    {
+      product_name: "Samsung Galaxy S23 FE",
+      trustedSpecs: {
+        official_name: "Samsung Galaxy S23 FE",
+        strengths: ["câmera confiável para fotos e vídeos"],
+        scores: { battery: 75, performance: 78 },
+      },
+      scoreEngine: { scores: { battery: 75, performance: 78 } },
+    },
+  ],
+  primaryAxis: "battery",
+});
+assert("runner-up paragraph applied", runnerUpResult.applied === true);
+assert(
+  "runner-up no artificial porque menos",
+  !detectArtificialBecauseFragment(runnerUpResult.reason || "").detected
+);
+assert(
+  "runner-up no raw menos dependência",
+  !/\bporque\s+menos dependência/i.test(runnerUpResult.reason || "")
+);
 console.log(`PATCH 4A.6 Audit: ${passed}/${passed + failed} passed`);
 if (failed) {
   console.log("FAILURES DETECTED");
