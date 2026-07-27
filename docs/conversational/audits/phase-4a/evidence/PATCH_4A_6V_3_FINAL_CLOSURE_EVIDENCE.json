@@ -1,0 +1,2278 @@
+{
+  "patch": "4A.6V.3",
+  "phase": "final_surface_closure_validation",
+  "status": "APROVADA",
+  "mode": "local",
+  "base_url": "http://localhost:3008",
+  "commit": "292aca40fa5077b1bf809571149738d34356474b",
+  "finished_at": "2026-07-27T15:14:46.765Z",
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  },
+  "scenarios": [
+    {
+      "id": "c1-budget-explore",
+      "title": "Cenário 1 — recomendação até 2 mil + follow-ups",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "Qual celular você recomenda até 2 mil?",
+          "assistant": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Qual celular você recomenda até 2 mil? — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Qual celular você recomenda até 2 mil? — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Qual celular você recomenda até 2 mil? — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Qual celular você recomenda até 2 mil? — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "preco": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Ficaria com o Qual celular você recomenda até 2 mil? por um motivo claro: atende diretamente o modelo que você citou nesta busca. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Qual celular você recomenda até 2 mil? — o ganho principal ainda pesa mais do que essa renúncia."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "preco": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "Por quê?",
+          "assistant": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? Por quê? — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo reconhecendo que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Qual celular você recomenda até 2 mil? Por quê? — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? Por quê? — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo reconhecendo que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Qual celular você recomenda até 2 mil? Por quê? — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? Por quê? — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo reconhecendo que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Qual celular você recomenda até 2 mil? Por quê? — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? Por quê? — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo reconhecendo que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Qual celular você recomenda até 2 mil? Por quê? — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "preco": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Ficaria com o Qual celular você recomenda até 2 mil? Por quê? por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O iPhone 13 também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Qual celular você recomenda até 2 mil? Por quê? — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo reconhecendo que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Qual celular você recomenda até 2 mil? Por quê? — o ganho principal ainda pesa mais do que essa renúncia."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "preco": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "E o lado ruim?",
+          "assistant": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "Continua.",
+          "assistant": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ Vai durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ Vai durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ Vai durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ Vai durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.033,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "autonomia": 1,
+                "camera": 1,
+                "visual": 1,
+                "preco": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ Vai durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.033,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 1,
+                  "camera": 1,
+                  "visual": 1,
+                  "preco": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "user": "Mas se câmera for prioridade?",
+          "assistant": "Minha escolha: Google Pixel 2 ⏳ Vai durar mais anos? iPhone 13 Bateria iPhone 13 Desempenho iPhone 13 Fechando a comparação pensando no uso real: iria de Google Pixel 2. O que você ganha: você leva mais tranquilidade na hora de registrar momentos importantes O que abre mão: ️ abre mão de bateria_limitada;sem_ultrawide;sem_5g ️ também pode exigir recarga mais cedo quando o uso fica intenso",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Minha escolha: Google Pixel 2 ⏳ Vai durar mais anos? iPhone 13 Bateria iPhone 13 Desempenho iPhone 13 Fechando a comparação pensando no uso real: iria de Google Pixel 2. O que você ganha: você leva mais tranquilidade na hora de registrar momentos importantes O que abre mão: ️ abre mão de bateria_limitada;sem_ultrawide;sem_5g ️ também pode exigir recarga mais cedo quando o uso fica intenso"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Minha escolha: Google Pixel 2 ⏳ Vai durar mais anos? iPhone 13 Bateria iPhone 13 Desempenho iPhone 13 Fechando a comparação pensando no uso real: iria de Google Pixel 2. O que você ganha: você leva mais tranquilidade na hora de registrar momentos importantes O que abre mão: ️ abre mão de bateria_limitada;sem_ultrawide;sem_5g ️ também pode exigir recarga mais cedo quando o uso fica intenso"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Minha escolha: Google Pixel 2 ⏳ Vai durar mais anos? iPhone 13 Bateria iPhone 13 Desempenho iPhone 13 Fechando a comparação pensando no uso real: iria de Google Pixel 2. O que você ganha: você leva mais tranquilidade na hora de registrar momentos importantes O que abre mão: ️ abre mão de bateria_limitada;sem_ultrawide;sem_5g ️ também pode exigir recarga mais cedo quando o uso fica intenso"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Minha escolha: Google Pixel 2 ⏳ Vai durar mais anos? iPhone 13 Bateria iPhone 13 Desempenho iPhone 13 Fechando a comparação pensando no uso real: iria de Google Pixel 2. O que você ganha: você leva mais tranquilidade na hora de registrar momentos importantes O que abre mão: ️ abre mão de bateria_limitada;sem_ultrawide;sem_5g ️ também pode exigir recarga mais cedo quando o uso fica intenso"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c2-product-lock-why",
+      "title": "Cenário 2 — product lock repetido",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.022,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 2
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 1,
+                "visual": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.022,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 2
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 1,
+                  "visual": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "Por que escolheu esse?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "Por que escolheu esse?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "Por que escolheu esse?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c3-comparison",
+      "title": "Cenário 3 — comparação A56 vs Edge 60",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "Galaxy A56 vs Motorola Edge 60, qual você prefere?",
+          "assistant": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "e na prática, qual leva vantagem?",
+          "assistant": "Agora ficou mais claro o que você procura.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Agora ficou mais claro o que você procura."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c4-priority-change",
+      "title": "Cenário 4 — mudança de prioridade",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular até 2500",
+          "assistant": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.015,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 2
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 1,
+                "camera": 2,
+                "visual": 1,
+                "preco": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.015,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 2
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 1,
+                  "camera": 2,
+                  "visual": 1,
+                  "preco": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "bateria é minha prioridade",
+          "assistant": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 1
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 1
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "na verdade câmera importa mais",
+          "assistant": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Agora, se a câmera é a prioridade, ele ainda se destaca, pois possui um sistema de câmeras avançado que entrega fotos de alta qualidade, especialmente em condições de pouca luz. Embora o iPhone 13 tenha uma boa autonomia, pode pedir mais atenção à bateria em dias mais longos, mas a qualidade das fotos que ele proporciona pode compensar isso. Se você quiser, posso verificar se há outras opções que também atendam bem à câmera nessa faixa de preço.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Agora, se a câmera é a prioridade, ele ainda se destaca, pois possui um sistema de câmeras avançado que entrega fotos de alta qualidade, especialmente em condições de pouca luz. Embora o iPhone 13 tenha uma boa autonomia, pode pedir mais atenção à bateria em dias mais longos, mas a qualidade das fotos que ele proporciona pode compensar isso. Se você quiser, posso verificar se há outras opções que também atendam bem à câmera nessa faixa de preço."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Agora, se a câmera é a prioridade, ele ainda se destaca, pois possui um sistema de câmeras avançado que entrega fotos de alta qualidade, especialmente em condições de pouca luz. Embora o iPhone 13 tenha uma boa autonomia, pode pedir mais atenção à bateria em dias mais longos, mas a qualidade das fotos que ele proporciona pode compensar isso. Se você quiser, posso verificar se há outras opções que também atendam bem à câmera nessa faixa de preço."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Agora, se a câmera é a prioridade, ele ainda se destaca, pois possui um sistema de câmeras avançado que entrega fotos de alta qualidade, especialmente em condições de pouca luz. Embora o iPhone 13 tenha uma boa autonomia, pode pedir mais atenção à bateria em dias mais longos, mas a qualidade das fotos que ele proporciona pode compensar isso. Se você quiser, posso verificar se há outras opções que também atendam bem à câmera nessa faixa de preço."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 1
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 1,
+                "camera": 2,
+                "visual": 1,
+                "preco": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Agora, se a câmera é a prioridade, ele ainda se destaca, pois possui um sistema de câmeras avançado que entrega fotos de alta qualidade, especialmente em condições de pouca luz. Embora o iPhone 13 tenha uma boa autonomia, pode pedir mais atenção à bateria em dias mais longos, mas a qualidade das fotos que ele proporciona pode compensar isso. Se você quiser, posso verificar se há outras opções que também atendam bem à câmera nessa faixa de preço."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 1
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 1,
+                  "camera": 2,
+                  "visual": 1,
+                  "preco": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c5-contestation",
+      "title": "Cenário 5 — contestação",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.022,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 2
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 1,
+                "visual": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.022,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 2
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 1,
+                  "visual": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "mas eu achei o S23 FE melhor",
+          "assistant": "Entendi o que mudou — isso conta.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi o que mudou — isso conta."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c6-long-continuity",
+      "title": "Cenário 6 — continuidade 8 turnos",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular até 2000",
+          "assistant": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.014,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 1,
+                "autonomia": 2
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 1,
+                "camera": 2,
+                "visual": 1,
+                "preco": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "O iPhone 13 faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.014,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 1,
+                  "autonomia": 2
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 1,
+                  "camera": 2,
+                  "visual": 1,
+                  "preco": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "uso muito fora de casa",
+          "assistant": "Entendi o que mudou — isso conta.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi o que mudou — isso conta."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "e mais barato?",
+          "assistant": "Esse ajuste muda o recorte da escolha. Com você pediu algo mais em conta que a opção anterior, olhei de novo as opções que já tínhamos em contexto. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2000,00. pode pedir mais atenção à autonomia em dias mais longos",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Esse ajuste muda o recorte da escolha. Com você pediu algo mais em conta que a opção anterior, olhei de novo as opções que já tínhamos em contexto. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2000,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Esse ajuste muda o recorte da escolha. Com você pediu algo mais em conta que a opção anterior, olhei de novo as opções que já tínhamos em contexto. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2000,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Esse ajuste muda o recorte da escolha. Com você pediu algo mais em conta que a opção anterior, olhei de novo as opções que já tínhamos em contexto. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2000,00. pode pedir mais atenção à autonomia em dias mais longos"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 1
+              },
+              "semanticAxisCounts": {
+                "autonomia": 1,
+                "desempenho": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Esse ajuste muda o recorte da escolha. Com você pediu algo mais em conta que a opção anterior, olhei de novo as opções que já tínhamos em contexto. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2000,00. pode pedir mais atenção à autonomia em dias mais longos"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 1
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 1,
+                  "desempenho": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "quem ficou logo atrás?",
+          "assistant": "Agora ficou mais claro o que você procura.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Agora ficou mais claro o que você procura."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Agora ficou mais claro o que você procura."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "user": "e a bateria dele?",
+          "assistant": "Sobre o iPhone 11, pensando em bateria/autonomia: Esse modelo tem 3110mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Sobre o iPhone 11, pensando em bateria/autonomia: Esse modelo tem 3110mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Sobre o iPhone 11, pensando em bateria/autonomia: Esse modelo tem 3110mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Sobre o iPhone 11, pensando em bateria/autonomia: Esse modelo tem 3110mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 2
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Sobre o iPhone 11, pensando em bateria/autonomia: Esse modelo tem 3110mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 2
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 6,
+          "user": "continua",
+          "assistant": "Continuando com o iPhone 11: visual mais confortável durante o uso prolongado. Quer que eu aprofunde algum ponto?",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Continuando com o iPhone 11: visual mais confortável durante o uso prolongado. Quer que eu aprofunde algum ponto?"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Continuando com o iPhone 11: visual mais confortável durante o uso prolongado. Quer que eu aprofunde algum ponto?"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Continuando com o iPhone 11: visual mais confortável durante o uso prolongado. Quer que eu aprofunde algum ponto?"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "visual": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Continuando com o iPhone 11: visual mais confortável durante o uso prolongado. Quer que eu aprofunde algum ponto?"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "visual": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 7,
+          "user": "pode ser Motorola também",
+          "assistant": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o iPhone 11.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o iPhone 11."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o iPhone 11."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o iPhone 11."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 1
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "preco": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o iPhone 11."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 1
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "preco": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 8,
+          "user": "então qual fica?",
+          "assistant": "Entendi o que mudou — isso conta.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi o que mudou — isso conta."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi o que mudou — isso conta."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c7-continuity-10",
+      "title": "Cenário 7 — continuidade 10 turnos",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.022,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 2
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2,
+                "desempenho": 1,
+                "visual": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.022,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 2
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2,
+                  "desempenho": 1,
+                  "visual": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "por quê?",
+          "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem precisa de um celular que aguente o tranco. Um ponto a considerar é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas o equilíbrio geral que ele oferece compensa essa questão.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem precisa de um celular que aguente o tranco. Um ponto a considerar é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas o equilíbrio geral que ele oferece compensa essa questão."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem precisa de um celular que aguente o tranco. Um ponto a considerar é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas o equilíbrio geral que ele oferece compensa essa questão."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem precisa de um celular que aguente o tranco. Um ponto a considerar é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas o equilíbrio geral que ele oferece compensa essa questão."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 1,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "autonomia": 1,
+                "desempenho": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem precisa de um celular que aguente o tranco. Um ponto a considerar é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas o equilíbrio geral que ele oferece compensa essa questão."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 1,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 1,
+                  "desempenho": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "continua",
+          "assistant": "Com esse contexto, consigo ser mais precisa. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Com esse contexto, consigo ser mais precisa. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Com esse contexto, consigo ser mais precisa. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Com esse contexto, consigo ser mais precisa. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.038,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Com esse contexto, consigo ser mais precisa. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.038,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "explica melhor",
+          "assistant": "Vamos simplificar. Galaxy A55 5G é minha recomendação principal. Na conversa também estão: Samsung Galaxy S23 FE, Samsung Galaxy A35 5G — só para comparar com a referência. Em uma frase: escolhi o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Por isso continuo recomendando o Galaxy A55 5G.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Vamos simplificar. Galaxy A55 5G é minha recomendação principal. Na conversa também estão: Samsung Galaxy S23 FE, Samsung Galaxy A35 5G — só para comparar com a referência. Em uma frase: escolhi o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Por isso continuo recomendando o Galaxy A55 5G."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Vamos simplificar. Galaxy A55 5G é minha recomendação principal. Na conversa também estão: Samsung Galaxy S23 FE, Samsung Galaxy A35 5G — só para comparar com a referência. Em uma frase: escolhi o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Por isso continuo recomendando o Galaxy A55 5G."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Vamos simplificar. Galaxy A55 5G é minha recomendação principal. Na conversa também estão: Samsung Galaxy S23 FE, Samsung Galaxy A35 5G — só para comparar com a referência. Em uma frase: escolhi o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Por isso continuo recomendando o Galaxy A55 5G."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0.037,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 1
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Vamos simplificar. Galaxy A55 5G é minha recomendação principal. Na conversa também estão: Samsung Galaxy S23 FE, Samsung Galaxy A35 5G — só para comparar com a referência. Em uma frase: escolhi o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Por isso continuo recomendando o Galaxy A55 5G."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0.037,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 1
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "user": "e a câmera?",
+          "assistant": "Sobre o Galaxy A55 5G, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Sobre o Galaxy A55 5G, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Sobre o Galaxy A55 5G, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Sobre o Galaxy A55 5G, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "camera": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Sobre o Galaxy A55 5G, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "camera": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 6,
+          "user": "e a bateria?",
+          "assistant": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 2
+              },
+              "semanticAxisCounts": {
+                "autonomia": 2
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 2
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 2
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 7,
+          "user": "mas discordo",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 8,
+          "user": "continua",
+          "assistant": "Continuando com o Galaxy A55 5G: menos dependência do carregador no dia a dia. Quer que eu aprofunde algum ponto?",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Continuando com o Galaxy A55 5G: menos dependência do carregador no dia a dia. Quer que eu aprofunde algum ponto?"
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Continuando com o Galaxy A55 5G: menos dependência do carregador no dia a dia. Quer que eu aprofunde algum ponto?"
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Continuando com o Galaxy A55 5G: menos dependência do carregador no dia a dia. Quer que eu aprofunde algum ponto?"
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {
+                "autonomia": 1
+              },
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Continuando com o Galaxy A55 5G: menos dependência do carregador no dia a dia. Quer que eu aprofunde algum ponto?"
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {
+                  "autonomia": 1
+                },
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 9,
+          "user": "e o lado ruim?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 10,
+          "user": "conclusão",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "artificialBecause": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "dominantOpeningTemplate": {
+              "detected": false,
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "grammar": {
+              "detected": false,
+              "reasons": [],
+              "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+            },
+            "repetition": {
+              "lexicalRepetitionRatio": 0,
+              "structuralFrameCounts": {
+                "mesmoCom": 0,
+                "naPratica": 0,
+                "porOutroLado": 0,
+                "porque": 0,
+                "autonomia": 0
+              },
+              "semanticAxisCounts": {},
+              "duplicateSentenceCount": 0,
+              "dominantPhraseRepeats": 0,
+              "pass": true
+            },
+            "surface": {
+              "grammar": {
+                "detected": false,
+                "reasons": [],
+                "text": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+              },
+              "repetition": {
+                "lexicalRepetitionRatio": 0,
+                "structuralFrameCounts": {
+                  "mesmoCom": 0,
+                  "naPratica": 0,
+                  "porOutroLado": 0,
+                  "porque": 0,
+                  "autonomia": 0
+                },
+                "semanticAxisCounts": {},
+                "duplicateSentenceCount": 0,
+                "dominantPhraseRepeats": 0,
+                "pass": true
+              },
+              "pass": true
+            },
+            "stubContinuation": false,
+            "pass": true
+          },
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

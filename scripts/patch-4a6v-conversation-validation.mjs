@@ -28,8 +28,9 @@ const BASE =
 const CHAT_URL = `${BASE}/api/mia-chat`;
 const DELAY = Number(process.env.PATCH4A6V_CHAT_DELAY_MS || 8000);
 const EVIDENCE_DIR = path.join(ROOT, "docs/conversational/audits/phase-4a/evidence");
-const EVIDENCE = path.join(EVIDENCE_DIR, "PATCH_4A_6V_ROOT_CAUSE_EVIDENCE.json");
-const STUB_CONTINUATION = /^(?:claro,?\s*(?:sigo aqui|posso continuar|vamos lá)|pode continuar)\.?$/i;
+const EVIDENCE = path.join(EVIDENCE_DIR, "PATCH_4A_6V_3_FINAL_CLOSURE_EVIDENCE.json");
+const STUB_CONTINUATION =
+  /^(?:claro,?\s*(?:sigo aqui|posso continuar|vamos l[aá]|vamos continuar|vamos em frente)|vamos continuar|pode continuar)[!.]?$/i;
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
@@ -71,7 +72,8 @@ function analyzeReply(reply = "", userMessage = "") {
   const repetition = computeRepetitionMetrics(reply);
   const surface = validateComposedSurface(reply);
   const stubContinuation =
-    /continua|explica melhor|segue/i.test(userMessage) && STUB_CONTINUATION.test(reply.trim());
+    /continua|explica melhor|segue/i.test(userMessage) &&
+    (STUB_CONTINUATION.test(reply.trim()) || (reply.trim().length < 40 && /^claro/i.test(reply.trim())));
   return {
     artificialBecause: artificial,
     dominantOpeningTemplate: dominantOpening,
@@ -128,7 +130,7 @@ async function runScenario(id, title, turns) {
   return scenarioPass;
 }
 
-console.log(`\nPATCH 4A.6V — Surface validation (${MODE})\nBase: ${BASE}\n`);
+console.log(`\nPATCH 4A.6V.3 — Surface validation (${MODE})\nBase: ${BASE}\n`);
 
 let localCommit = "unknown";
 try {
@@ -211,8 +213,8 @@ results.push(
 const passed = results.filter(Boolean).length;
 const failed = results.length - passed;
 const payload = {
-  patch: "4A.6V",
-  phase: "root_cause_surface_validation",
+  patch: "4A.6V.3",
+  phase: "final_surface_closure_validation",
   status: failed === 0 ? "APROVADA" : "BLOQUEADA",
   mode: MODE,
   base_url: BASE,
@@ -225,6 +227,6 @@ const payload = {
 fs.mkdirSync(EVIDENCE_DIR, { recursive: true });
 fs.writeFileSync(EVIDENCE, JSON.stringify(payload, null, 2));
 
-console.log(`\nPATCH 4A.6V (${MODE}): ${passed}/${results.length} scenarios passed`);
+console.log(`\nPATCH 4A.6V.3 (${MODE}): ${passed}/${results.length} scenarios passed`);
 console.log(`Evidence: ${EVIDENCE}`);
 process.exit(failed ? 1 : 0);

@@ -1,5 +1,5 @@
 /**
- * PATCH 4A.6V — Composition Guard Root-Cause Audit
+ * PATCH 4A.6V.3 — Composition Guard Final Closure Audit
  *
  * Usage: node scripts/test-mia-patch-4a6v-composition-guard-audit.js
  */
@@ -13,12 +13,16 @@ import {
   createCompositionLedger,
   dedupeGainBullets,
   detectBrokenSurfaceGrammar,
+  detectInternalLabelLeakage,
   detectInvalidConcessionGrammar,
+  expandStubContinuationReply,
   formatConcessionPhrase,
+  formatContextualConcessionOpening,
   guardComparativeParagraph,
   pickUnusedGain,
   formatCoherentBecauseClause,
   polishReplySurface,
+  sanitizeInternalLabelText,
   validateComposedSurface,
 } from "../lib/miaVerbalizationCompositionGuard.js";
 import { buildUserConfusionRecoveryReply } from "../lib/miaUserConfusionRecoveryLayer.js";
@@ -37,24 +41,55 @@ function assert(label, condition, detail = "") {
   }
 }
 
-console.log("\nPATCH 4A.6V — Composition Guard Root-Cause Audit\n");
+console.log("\nPATCH 4A.6V.3 — Composition Guard Final Closure Audit\n");
 
 console.log("── Version ──");
-assert("schema version", VERBALIZATION_COMPOSITION_GUARD_VERSION === "4A.6V.2");
+assert("schema version", VERBALIZATION_COMPOSITION_GUARD_VERSION === "4A.6V.3");
 
 console.log("\n── Concession grammar ──");
 const podePhrase = formatConcessionPhrase("Pode parecer menos fluida para quem veio de experiências mais rápidas.");
-assert("pode → saber que", /^saber que pode/i.test(podePhrase));
+assert("pode → sabendo que", /^sabendo que pode/i.test(podePhrase));
+const contextual = formatContextualConcessionOpening(
+  "Pode parecer menos fluida para quem veio de experiências mais rápidas.",
+  "Galaxy A55"
+);
+assert("contextual concession valid", /^(Mesmo sabendo que|Embora possa|Ainda que possa)/i.test(contextual));
 const closing = buildMesmoComClosing({
   winner: "Galaxy A55 5G",
   tradeoff: "Pode parecer menos fluida para quem veio de experiências mais rápidas.",
   reason: "a autonomia costuma ser um ponto forte",
+  seed: "Galaxy A55",
 });
-assert("closing uses Mesmo sabendo", /^Mesmo saber que/i.test(closing));
+assert("closing uses gerund concession", /^(Mesmo sabendo que|Embora possa|Ainda que possa)/i.test(closing));
 assert("no Mesmo com pode", !detectInvalidConcessionGrammar(closing).detected);
+assert("no Mesmo saber infinitive", !/\bmesmo saber que\b/i.test(closing));
 
 const broken = "Mesmo com pode parecer menos fluida, eu manteria o Galaxy A55.";
 assert("detect broken Mesmo com pode", detectInvalidConcessionGrammar(broken).detected);
+const polishedBroken = polishReplySurface(broken);
+assert("polish repairs Mesmo com pode", !detectInvalidConcessionGrammar(polishedBroken).detected);
+
+console.log("\n── Internal label leakage ──");
+const labelLeak = "Pode pesar na decisão: pesado";
+assert("detect label leak", detectInternalLabelLeakage(labelLeak).detected);
+const sanitizedLabel = sanitizeInternalLabelText(labelLeak);
+assert("sanitize label leak", !detectInternalLabelLeakage(sanitizedLabel).detected);
+assert("sanitized label humanized", /peso|uso prolongado/i.test(sanitizedLabel));
+
+console.log("\n── Continuity stubs ──");
+const stub = expandStubContinuationReply("Pode continuar.", {
+  lastBestProduct: { product_name: "Galaxy A55 5G" },
+  explanationCtx: { lastConsequence: "menos dependência do carregador no dia a dia" },
+});
+assert("stub expanded", stub.length >= 40);
+assert("stub references product", /Galaxy A55/i.test(stub));
+const polishedStub = polishReplySurface("Claro, vamos continuar!", {
+  sessionContext: {
+    lastBestProduct: { product_name: "Galaxy A55 5G" },
+    lastMainConsequence: "menos dependência do carregador no dia a dia",
+  },
+});
+assert("polish expands vamos continuar stub", polishedStub.length >= 40);
 
 console.log("\n── Semantic slot dedup ──");
 const ledger = createCompositionLedger();
@@ -105,6 +140,7 @@ assert("surface validation", surface.pass, JSON.stringify(surface));
 
 const metrics = computeRepetitionMetrics(reply);
 assert("dominant phrase repeats controlled", metrics.dominantPhraseRepeats <= 1);
+assert("semantic axis repetition controlled", Object.values(metrics.semanticAxisCounts || {}).every((c) => c < 4));
 
 console.log("\n── Runner-up exclude anchor ──");
 const runnerUp = resolveComparativeRunnerUpReasoning({
@@ -152,6 +188,6 @@ const confusionReply = buildUserConfusionRecoveryReply({
 assert("confusion recovery no porque menos", !detectArtificialBecauseFragment(confusionReply).detected);
 assert("coherent because clause", /continua coerente aqui —/i.test(formatCoherentBecauseClause("Galaxy A55", "menos dependência do carregador")));
 
-console.log(`\nPATCH 4A.6V Composition Guard: ${passed}/${passed + failed} passed`);
+console.log(`\nPATCH 4A.6V.3 Composition Guard: ${passed}/${passed + failed} passed`);
 if (failed) process.exit(1);
 console.log("ALL PASS");

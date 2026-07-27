@@ -23160,12 +23160,17 @@ function buildDeterministicFallback(cso, convStrat) {
   switch (strategy) {
     case "explain_grounded":
     case "style_request_no_context":
-      return mainConsequence || (product && axis ? `${product} — foco em ${axis}.` : "Pode continuar.");
+      if (mainConsequence) return mainConsequence;
+      if (product && axis) return `${product} — foco em ${axis}. Quer que eu detalhe algum ponto?`;
+      return "Posso continuar a partir do que já vimos — quer foco em uso, preço ou algum trade-off?";
 
     case "adjust_style_grounded":
-      return mainConsequence
-        ? `Continuando: ${mainConsequence}.`
-        : product ? `Retomando com ${product}.` : "Pode continuar.";
+      if (mainConsequence && product) {
+        return `Continuando com ${product}: ${mainConsequence.replace(/\.$/, "")}. Quer que eu aprofunde algum ponto?`;
+      }
+      if (mainConsequence) return `Continuando: ${mainConsequence.replace(/\.$/, "")}. Quer que eu aprofunde algum ponto?`;
+      if (product) return `Retomando com ${product}. Quer aprofundar preço, uso no dia a dia ou algum trade-off?`;
+      return "Posso continuar a partir do que já vimos — quer foco em uso, preço ou algum trade-off?";
 
     case "defend_reasoning":
       if (product && mainConsequence) return `A recomendação partiu de ${axis || "uso"}. ${mainConsequence}.`;
@@ -23178,9 +23183,13 @@ function buildDeterministicFallback(cso, convStrat) {
       return "O que especificamente não respondeu o que você precisava?";
 
     case "provide_continuation":
-      return product && axis
-        ? `O foco foi em ${axis}. Pode detalhar o que quer saber sobre o uso?`
-        : "Pode detalhar o que quer saber?";
+      if (product && mainConsequence) {
+        return `Continuando com ${product}: ${mainConsequence.replace(/\.$/, "")}. Quer aprofundar algum ponto específico?`;
+      }
+      if (product && axis) {
+        return `O foco em ${product} segue em ${axis}. Pode detalhar o que quer saber sobre o uso?`;
+      }
+      return "Pode detalhar o que quer saber — uso, preço ou algum trade-off?";
 
     case "guide_with_constraint":
     case "guide_open":
@@ -23191,7 +23200,10 @@ function buildDeterministicFallback(cso, convStrat) {
       return "Posso ajudar com análise de produtos e custo-benefício.";
 
     default:
-      return mainConsequence || "Pode detalhar o que quer saber?";
+      if (product && mainConsequence) {
+        return `Sobre o ${product}: ${mainConsequence.replace(/\.$/, "")}. O que você gostaria de explorar agora?`;
+      }
+      return mainConsequence || "Pode detalhar o que quer saber — uso, preço ou algum trade-off?";
   }
 }
 
@@ -26785,6 +26797,15 @@ async function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, 
     };
   }
 
+  if (_responseBody.reply) {
+    const _finalPolishedReply = polishReplySurface(String(_responseBody.reply), {
+      sessionContext: _responseBody.session_context || null,
+    });
+    if (_finalPolishedReply !== _responseBody.reply) {
+      _responseBody.reply = _finalPolishedReply;
+    }
+  }
+
   res.status(200).json(
     pipelineTracer.enrichResponse(_responseBody, {
       ...extraTrace,
@@ -26806,6 +26827,16 @@ async function sendRuntimeResponse(
 
   let _responsePath = responsePath;
   let _body = { ...(body || {}) };
+
+  if (_body.reply) {
+    const _polishedReply = polishReplySurface(String(_body.reply), {
+      sessionContext: _body.session_context || null,
+    });
+    if (_polishedReply !== _body.reply) {
+      _body = { ..._body, reply: _polishedReply };
+    }
+  }
+
   const _registry = resolveResponsePathRegistry(_responsePath);
 
   if (_registry.failClosed) {
@@ -27707,7 +27738,9 @@ function respondWithContract(
   }
 
   if (body.reply) {
-    const polishedReply = polishReplySurface(String(body.reply));
+    const polishedReply = polishReplySurface(String(body.reply), {
+      sessionContext: body.session_context || null,
+    });
     if (polishedReply !== body.reply) {
       body = { ...body, reply: polishedReply };
       pipelineTracer.patch({ verbalization_surface_polish: { applied: true } });
