@@ -170,7 +170,11 @@ import {
   narrativePlanToOrderedLegacyStrings,
   narrativePlanToVerbalizationOrder,
 } from "../../lib/miaNarrativePlanner.js";
-import { verbalizationPlanToLlmContract } from "../../lib/miaSemanticVerbalizer.js";
+import {
+  buildVerbalizationStyleGovernancePayload,
+  styleGovernanceToLlmContract,
+  updateRecentVerbalizationPatterns,
+} from "../../lib/miaVerbalizationStyleGovernor.js";
 import {
   appendUserIntentDiscovery,
   resolveIntentDiscoverySessionClear,
@@ -9982,7 +9986,9 @@ function buildMiaDecisionBehaviorPayload({
   proprietaryReasoning = null,
   reasoningProfiles = [],
   priority = "",
-  query = ""
+  query = "",
+  verbalizationStyleGovernance = null,
+  sessionContext = null,
 } = {}) {
   const hydratedReasoning = hydrateAxisSignalReasoning(
     proprietaryReasoning,
@@ -10258,7 +10264,16 @@ reasonTags: Array.isArray(miaReasoningProfile?.reasonTags)
   llmCanInventSpecs: false,
   llmCanInventReasons: false,
   llmCanOnlyVerbalize: true,
-  avoidFullRawObjects: true
+  avoidFullRawObjects: true,
+  verbalizationStyleGovernance:
+    verbalizationStyleGovernance?.llmStyleContract ||
+    styleGovernanceToLlmContract(
+      buildVerbalizationStyleGovernancePayload(
+        sessionContext?.lastVerbalizationPlan || null,
+        { query, sessionContext }
+      )?.stylePolicy
+    ) ||
+    null
 }
   };
 }
@@ -10658,6 +10673,21 @@ ANTI-TEMPLATE:
 - Não existe sequência fixa.
 - Não existe “se X, diga Y”.
 - A resposta deve ser construída a partir da intenção, da tensão da decisão e do raciocínio proprietário.
+
+VERBALIZATION STYLE GOVERNANCE (PATCH 4A.6):
+- Preserve semantic meaning from each slot in governance.verbalizationStyleGovernance.
+- Do NOT copy sourceFragment or internal labels mechanically.
+- Rewrite fragments into complete natural Portuguese sentences.
+- Vary sentence structure when safe.
+- Do not add new claims.
+- Do not change recommendation strength.
+- Do not suppress tradeoffs.
+- Do not convert uncertain facts into certainties.
+- Avoid repeating recent sentence frames listed in variationConstraints.avoidSentenceFrames.
+- semanticMeaning must be preserved; redaction may be reconstructed.
+${payload.governance?.verbalizationStyleGovernance ? `
+STYLE CONTRACT:
+${JSON.stringify(payload.governance.verbalizationStyleGovernance, null, 2)}` : ""}
 
 MIA DEEP BEHAVIOR INSTRUCTIONS:
 ${JSON.stringify({
@@ -12099,7 +12129,9 @@ async function generateMiaBehavioralDecisionReply({
   reasoningProfiles = [],
   priority = "",
   query = "",
-  fallbackReply = ""
+  fallbackReply = "",
+  sessionContext = null,
+  verbalizationStyleGovernance = null,
 } = {}) {
   try {
     if (!miaReasoningProfile?.shouldLetLLMWriteNaturally) {
@@ -12111,7 +12143,9 @@ async function generateMiaBehavioralDecisionReply({
       proprietaryReasoning,
       reasoningProfiles,
       priority,
-      query
+      query,
+      sessionContext,
+      verbalizationStyleGovernance,
     });
 
         const messages = buildMiaDecisionBehaviorMessages(payload);
@@ -20304,7 +20338,9 @@ if (decisionAuthority.decisionIsLocked && reasoningWinner) {
         reasoningProfiles,
         priority: decisionAuthority.priority || activePriority,
         query,
-        fallbackReply
+        fallbackReply,
+        sessionContext,
+        verbalizationStyleGovernance: sessionContext?.lastVerbalizationStyleGovernance || null,
       })
     : "";
 
@@ -35624,6 +35660,10 @@ if (Array.isArray(products) && products.length > 0) {
       specialistPresentation.tradeoff.narrativePlan = contextualDecisionSynthesis.narrativePlan;
       specialistPresentation.tradeoff.verbalizationPlan =
         contextualDecisionSynthesis.verbalizationPlan || null;
+      specialistPresentation.tradeoff.verbalizationStyleGovernance =
+        contextualDecisionSynthesis.verbalizationStyleGovernance || null;
+      specialistPresentation.tradeoff.llmStyleContract =
+        contextualDecisionSynthesis.llmStyleContract || null;
       if (ordered.gains.length) {
         specialistPresentation.tradeoff.gains = ordered.gains;
       }
@@ -36064,6 +36104,16 @@ if (Array.isArray(products) && products.length > 0) {
         contextualDecisionSynthesis?.structuredDecisionFacts || null,
       lastNarrativePlan: contextualDecisionSynthesis?.narrativePlan || null,
       lastVerbalizationPlan: contextualDecisionSynthesis?.verbalizationPlan || null,
+      lastVerbalizationStyleGovernance:
+        contextualDecisionSynthesis?.verbalizationStyleGovernance || null,
+      lastVerbalizationPatterns: contextualDecisionSynthesis?.verbalizationStyleGovernance
+        ?.stylePolicy
+        ? updateRecentVerbalizationPatterns(
+            sessionContext,
+            contextualDecisionSynthesis.verbalizationStyleGovernance.stylePolicy,
+            safeReply
+          )
+        : sessionContext?.lastVerbalizationPatterns || null,
       lastTopic: resolvedQuery,
       // PATCH 7.4 — persist ranked snapshot at the search write-point.
       // displayProducts is still score-enriched here (localFallbackScore / score).
