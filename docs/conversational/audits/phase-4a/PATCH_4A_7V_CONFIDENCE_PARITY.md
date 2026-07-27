@@ -8,7 +8,7 @@
 
 ## 1. Veredito
 
-Ver seção 23 após deploy e revalidação REAL.
+**APROVADA** — governança de confiança e paridade LOCAL × REAL comprovadas.
 
 ---
 
@@ -91,14 +91,35 @@ Toda consequência prática estruturada passa por:
 
 ## 7–14. Resultados de validação
 
-Ver evidências:
+| Ambiente | Positivos | Negativos | Runs/cenário | Commit |
+|----------|-----------|-----------|--------------|--------|
+| LOCAL | **5/5** | **2/2** | 2 | `d125c1a` |
+| REAL | **5/5** | **2/2** | 2 | `d125c1a` |
+
+Evidências:
 
 - `evidence/PATCH_4A_7V_LOCAL_CONFIDENCE_PARITY_EVIDENCE.json`
 - `evidence/PATCH_4A_7V_PRODUCTION_CONFIDENCE_PARITY_EVIDENCE.json`
 
+Regressões (todas PASS): 4A.3 21/21, 4A.4 36/36, 4A.5 26/26, 4A.6 50/50, 4A.6V 34/34, 4A.7 32/32, 4A.7V 15/15.
+
 ---
 
-## 15. Componentes alterados
+## 17–21. Git / Deploy
+
+| Etapa | Resultado |
+|-------|-----------|
+| Commit | `d125c1a` |
+| Push | `origin/master` sincronizado |
+| Deploy | Vercel auto-deploy |
+| Build | `/api/health` HTTP 200 |
+| Git | `HEAD == origin/master` |
+
+---
+
+## 23. Veredito final
+
+O PATCH 4A.7 pode ser encerrado oficialmente. O PATCH 4A.7V comprova confiança governada, paridade LOCAL × REAL e bloqueio sistêmico de claims absolutos.
 
 | Arquivo | Alteração |
 |---------|-----------|

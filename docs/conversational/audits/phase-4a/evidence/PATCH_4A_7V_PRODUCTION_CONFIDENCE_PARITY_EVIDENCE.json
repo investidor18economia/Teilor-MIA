@@ -1,0 +1,1370 @@
+{
+  "patch": "4A.7V",
+  "phase": "confidence_parity_validation",
+  "status": "APROVADA",
+  "mode": "production",
+  "base_url": "https://economia-ai.vercel.app",
+  "commit": "d125c1af233219e85011159605a0c569894b40de",
+  "finished_at": "2026-07-27T20:56:47.719Z",
+  "variability": {
+    "runs_per_scenario": 2
+  },
+  "summary": {
+    "positive_passed": 5,
+    "positive_total": 5,
+    "negative_passed": 2,
+    "negative_total": 2,
+    "all_positive_pass": true,
+    "all_negative_pass": true
+  },
+  "scenarios": [
+    {
+      "id": "c1-midrange-spec-why",
+      "title": "Cenário 1 — intermediário + por quê + bateria",
+      "environment": "production",
+      "pass": true,
+      "runs": [
+        {
+          "run": 1,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Galaxy A55 vale a pena?",
+              "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "por quê?",
+              "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem busca um bom equilíbrio entre desempenho e autonomia. Um ponto a considerar é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas no geral, essa escolha oferece um bom custo-benefício.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 3,
+              "user": "e a bateria dele?",
+              "assistant": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Galaxy A55 vale a pena?",
+              "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "por quê?",
+              "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é uma grande vantagem para quem busca praticidade. No entanto, é importante considerar que ele pode parecer menos fluido para quem veio de experiências mais rápidas. Essa escolha oferece um bom equilíbrio entre preço e qualidade, ideal para o uso cotidiano.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 3,
+              "user": "e a bateria dele?",
+              "assistant": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        }
+      ],
+      "variability": {
+        "runs": 2,
+        "passCount": 2
+      }
+    },
+    {
+      "id": "c2-flagship-explore",
+      "title": "Cenário 2 — topo de linha até 2500",
+      "environment": "production",
+      "pass": true,
+      "runs": [
+        {
+          "run": 1,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "quero um celular até 2500",
+              "assistant": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "processor",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a sustentar melhor multitarefa e uso mais exigente no dia a dia",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "battery",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "low",
+                    "practicalMeaning": "a taxa de atualização sugere interações mais fluidas na interface",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "protection",
+                    "confidence": "low",
+                    "practicalMeaning": "a classificação de proteção sugere mais resistência em situações cotidianas de exposição",
+                    "limitations": [
+                      "depende do cenário de uso",
+                      "não elimina risco de dano"
+                    ],
+                    "source": "data_layer_spec"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "iPhone 13",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "bateria é minha prioridade",
+              "assistant": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "iPhone 13",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 3,
+              "user": "e a câmera?",
+              "assistant": "Sobre o iPhone 13, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "iPhone 13",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "quero um celular até 2500",
+              "assistant": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "processor",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a sustentar melhor multitarefa e uso mais exigente no dia a dia",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "battery",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "low",
+                    "practicalMeaning": "a taxa de atualização sugere interações mais fluidas na interface",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "protection",
+                    "confidence": "low",
+                    "practicalMeaning": "a classificação de proteção sugere mais resistência em situações cotidianas de exposição",
+                    "limitations": [
+                      "depende do cenário de uso",
+                      "não elimina risco de dano"
+                    ],
+                    "source": "data_layer_spec"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "iPhone 13",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "bateria é minha prioridade",
+              "assistant": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "iPhone 13",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 3,
+              "user": "e a câmera?",
+              "assistant": "Sobre o iPhone 13, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "iPhone 13",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        }
+      ],
+      "variability": {
+        "runs": 2,
+        "passCount": 2
+      }
+    },
+    {
+      "id": "c3-comparison-practical",
+      "title": "Cenário 3 — comparação prática",
+      "environment": "production",
+      "pass": true,
+      "runs": [
+        {
+          "run": 1,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "Galaxy A56 vs Motorola Edge 60, qual você prefere?",
+              "assistant": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "e na prática, qual leva vantagem?",
+              "assistant": "Agora ficou mais claro o que você procura.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "Galaxy A56 vs Motorola Edge 60, qual você prefere?",
+              "assistant": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "e na prática, qual leva vantagem?",
+              "assistant": "Agora ficou mais claro o que você procura.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        }
+      ],
+      "variability": {
+        "runs": 2,
+        "passCount": 2
+      }
+    },
+    {
+      "id": "c4-contestation",
+      "title": "Cenário 4 — contestação sem exagero",
+      "environment": "production",
+      "pass": true,
+      "runs": [
+        {
+          "run": 1,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Galaxy A55 vale a pena?",
+              "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "mas eu achei o S23 FE melhor",
+              "assistant": "Entendi o que mudou — isso conta.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Galaxy A55 vale a pena?",
+              "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "mas eu achei o S23 FE melhor",
+              "assistant": "Entendi o que mudou — isso conta.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        }
+      ],
+      "variability": {
+        "runs": 2,
+        "passCount": 2
+      }
+    },
+    {
+      "id": "c5-followup-spec",
+      "title": "Cenário 5 — follow-up técnico",
+      "environment": "production",
+      "pass": true,
+      "runs": [
+        {
+          "run": 1,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Galaxy A55 vale a pena?",
+              "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "e a tela?",
+              "assistant": "Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 3,
+              "user": "e o carregamento?",
+              "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Galaxy A55 vale a pena?",
+              "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "aligned",
+                  "details": {
+                    "maxRank": 3,
+                    "minRank": 1,
+                    "consequenceCount": 5
+                  }
+                },
+                "hasPracticalConsequences": true,
+                "practicalConsequences": [
+                  {
+                    "category": "battery",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a reduzir a necessidade de recarga ao longo do dia",
+                    "limitations": [
+                      "depende do uso real",
+                      "otimização de software influencia"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "processor",
+                    "confidence": "low",
+                    "practicalMeaning": "o conjunto de processamento sugere desempenho adequado para uso cotidiano",
+                    "limitations": [
+                      "depende dos aplicativos",
+                      "varia com multitarefa e jogos"
+                    ],
+                    "source": "data_layer_spec"
+                  },
+                  {
+                    "category": "screen",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a entregar leitura e rolagem mais confortáveis no uso diário",
+                    "limitations": [
+                      "depende do conteúdo exibido",
+                      "nem todo app aproveita taxa alta"
+                    ],
+                    "source": "data_layer_knowledge"
+                  },
+                  {
+                    "category": "camera",
+                    "confidence": "high",
+                    "practicalMeaning": "tende a facilitar registros consistentes no dia a dia",
+                    "limitations": [
+                      "depende da cena e da luz",
+                      "resultado varia por aplicativo"
+                    ],
+                    "source": "combined"
+                  },
+                  {
+                    "category": "charging",
+                    "confidence": "medium",
+                    "practicalMeaning": "tende a reduzir o tempo conectado ao carregador",
+                    "limitations": [
+                      "depende do carregador e cabo usados",
+                      "varia com temperatura"
+                    ],
+                    "source": "data_layer_knowledge"
+                  }
+                ],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 2,
+              "user": "e a tela?",
+              "assistant": "Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": false,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            },
+            {
+              "turn": 3,
+              "user": "e o carregamento?",
+              "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": "Galaxy A55 5G",
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        }
+      ],
+      "variability": {
+        "runs": 2,
+        "passCount": 2
+      }
+    },
+    {
+      "id": "n1-sparse-unknown",
+      "title": "Negativo 1 — produto desconhecido / dados limitados",
+      "environment": "production",
+      "pass": true,
+      "runs": [
+        {
+          "run": 1,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Celular XYZ999 desconhecido vale a pena?",
+              "assistant": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "o Celular XYZ999 desconhecido vale a pena?",
+              "assistant": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        }
+      ],
+      "variability": {
+        "runs": 2,
+        "passCount": 2
+      }
+    },
+    {
+      "id": "n2-entry-budget",
+      "title": "Negativo 2 — entrada / evidência limitada",
+      "environment": "production",
+      "pass": true,
+      "runs": [
+        {
+          "run": 1,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "quero um celular bem barato de entrada, até 600 reais",
+              "assistant": "Ficaria com o quero um celular bem barato de entrada, até 600 reais por um motivo claro: atende diretamente o modelo que você citou nesta busca. Como alternativa, eu compararia com o Redmi Note 13 se outro fator pesar mais, mas para a busca direta eu manteria o quero um celular bem barato de entrada, até 600 reais como foco. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o quero um celular bem barato de entrada, até 600 reais — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "transcript": [
+            {
+              "turn": 1,
+              "user": "quero um celular bem barato de entrada, até 600 reais",
+              "assistant": "Ficaria com o quero um celular bem barato de entrada, até 600 reais por um motivo claro: atende diretamente o modelo que você citou nesta busca. Como alternativa, eu compararia com o Redmi Note 13 se outro fator pesar mais, mas para a busca direta eu manteria o quero um celular bem barato de entrada, até 600 reais como foco. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o quero um celular bem barato de entrada, até 600 reais — o ganho principal ainda pesa mais do que essa renúncia.",
+              "analysis": {
+                "bannedAbsolute": false,
+                "inventedChargingMinutes": false,
+                "confidenceAlignment": {
+                  "pass": true,
+                  "reason": "no_consequences",
+                  "details": {}
+                },
+                "hasPracticalConsequences": false,
+                "practicalConsequences": [],
+                "hasHedging": true,
+                "pass": true
+              },
+              "winner": null,
+              "httpStatus": 200,
+              "pass": true
+            }
+          ]
+        }
+      ],
+      "variability": {
+        "runs": 2,
+        "passCount": 2
+      }
+    }
+  ]
+}
