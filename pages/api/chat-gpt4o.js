@@ -36210,6 +36210,8 @@ if (Array.isArray(products) && products.length > 0) {
         ).lastContextualPriorityModel ||
         sessionContext.lastContextualPriorityModel ||
         null,
+      lastDomainKnowledgeModel: contextualDecisionSynthesis?.domainKnowledgeModel || null,
+      lastDomainKnowledgeTrace: contextualDecisionSynthesis?.domainKnowledgeTrace || null,
       lastVerbalizationPatterns: contextualDecisionSynthesis?.verbalizationStyleGovernance
         ?.stylePolicy
         ? updateRecentVerbalizationPatterns(

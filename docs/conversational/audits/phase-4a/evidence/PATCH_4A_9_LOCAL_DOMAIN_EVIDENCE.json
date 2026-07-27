@@ -1,0 +1,295 @@
+{
+  "patch": "4A.9",
+  "phase": "domain_knowledge_validation",
+  "status": "APROVADA",
+  "mode": "local",
+  "base_url": "http://localhost:3008",
+  "commit": "f1ba1cb52abcb7b1790e9c26e4bf72b549e31af8",
+  "finished_at": "2026-07-27T22:16:54.913Z",
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  },
+  "scenarios": [
+    {
+      "id": "p1-galaxy-fe",
+      "title": "Positivo — Galaxy FE",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy S23 FE vale a pena?",
+          "assistant": "Eu iria no Samsung Galaxy S23 FE. A capacidade de bateria sugere mais folga para uso fora de casa. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy S25 FE chegou perto. A diferença é que o Samsung Galaxy S23 FE fecha melhor o custo-benefício para o que você pediu. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A capacidade de bateria sugere mais folga para uso fora de casa. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Ainda que possa não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+          "domain": {
+            "domain": "mobile",
+            "neutral": false,
+            "itemCount": 5,
+            "matchedRules": [
+              "mobile:line:galaxy_fe",
+              "mobile:processor:exynos",
+              "mobile:policy:samsung_updates",
+              "mobile:market:samsung",
+              "mobile:market:samsung_resale"
+            ],
+            "topItems": [
+              {
+                "type": "line_positioning",
+                "origin": "mobile:line:galaxy_fe",
+                "confidence": "medium",
+                "validity": "stable"
+              },
+              {
+                "type": "processor_ecosystem",
+                "origin": "mobile:processor:exynos",
+                "confidence": "medium",
+                "validity": "versioned"
+              },
+              {
+                "type": "update_policy",
+                "origin": "mobile:policy:samsung_updates",
+                "confidence": "medium",
+                "validity": "market_dependent"
+              }
+            ]
+          },
+          "winner": "Samsung Galaxy S23 FE",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p2-snapdragon-exynos",
+      "title": "Positivo — Snapdragon vs Exynos",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular com Snapdragon até 2500",
+          "assistant": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+          "domain": {
+            "domain": "mobile",
+            "neutral": false,
+            "itemCount": 5,
+            "matchedRules": [
+              "mobile:processor:snapdragon",
+              "mobile:policy:samsung_updates",
+              "mobile:market:samsung",
+              "mobile:market:samsung_resale",
+              "mobile:market:iphone"
+            ],
+            "topItems": [
+              {
+                "type": "processor_ecosystem",
+                "origin": "mobile:processor:snapdragon",
+                "confidence": "medium",
+                "validity": "versioned"
+              },
+              {
+                "type": "update_policy",
+                "origin": "mobile:policy:samsung_updates",
+                "confidence": "medium",
+                "validity": "market_dependent"
+              },
+              {
+                "type": "market_behavior",
+                "origin": "mobile:market:samsung",
+                "confidence": "medium",
+                "validity": "market_dependent"
+              }
+            ]
+          },
+          "winner": "iPhone 13",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p3-pixel",
+      "title": "Positivo — Pixel / updates",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Pixel 8 vale a pena?",
+          "assistant": "Pelo que mapeei, o Pixel 8 combina melhor com o que você pediu — no uso real, isso se traduz em mais retorno pelo que vai gastar. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o Pixel 8 — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais retorno pelo que vai gastar. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Ainda que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o Pixel 8 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "domain": {
+            "domain": "mobile",
+            "neutral": false,
+            "itemCount": 2,
+            "matchedRules": [
+              "mobile:line:pixel",
+              "mobile:policy:pixel_updates"
+            ],
+            "topItems": [
+              {
+                "type": "update_policy",
+                "origin": "mobile:line:pixel",
+                "confidence": "medium",
+                "validity": "versioned"
+              },
+              {
+                "type": "update_policy",
+                "origin": "mobile:policy:pixel_updates",
+                "confidence": "medium",
+                "validity": "market_dependent"
+              }
+            ]
+          },
+          "winner": "Pixel 8",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p4-redmi-note",
+      "title": "Positivo — Redmi Note custo-benefício",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Redmi Note 13 vale a pena até 1500?",
+          "assistant": "Eu iria no Redmi Note 13. O custo de entrada tende a ser mais acessível, sem estourar o orçamento. Eu escolhi o Redmi Note 13, mas o Samsung Galaxy S25+ chegou perto. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Menos fricção se você já usa serviços e acessórios compatíveis. ⚠️ O que você abre mão • Pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão. • Pode não acompanhar tarefas mais pesadas com a mesma folga. Ainda que possa não ser o ponto mais forte quando a captura de imagens pesa muito na decisão, eu manteria o Redmi Note 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "domain": {
+            "domain": "mobile",
+            "neutral": false,
+            "itemCount": 3,
+            "matchedRules": [
+              "mobile:line:redmi_note",
+              "mobile:processor:dimensity",
+              "mobile:policy:xiaomi_updates"
+            ],
+            "topItems": [
+              {
+                "type": "value_positioning",
+                "origin": "mobile:line:redmi_note",
+                "confidence": "medium",
+                "validity": "market_dependent"
+              },
+              {
+                "type": "processor_ecosystem",
+                "origin": "mobile:processor:dimensity",
+                "confidence": "medium",
+                "validity": "versioned"
+              },
+              {
+                "type": "update_policy",
+                "origin": "mobile:policy:xiaomi_updates",
+                "confidence": "low",
+                "validity": "market_dependent"
+              }
+            ]
+          },
+          "winner": "Redmi Note 13",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p5-samsung-updates",
+      "title": "Positivo — política de atualização Samsung",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena considerando as atualizações?",
+          "assistant": "O Galaxy A55 5G faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Visual mais confortável durante o uso prolongado. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "domain": {
+            "domain": "mobile",
+            "neutral": false,
+            "itemCount": 6,
+            "matchedRules": [
+              "mobile:line:galaxy_a",
+              "mobile:processor:snapdragon",
+              "mobile:processor:apple_silicon",
+              "mobile:policy:samsung_updates",
+              "mobile:market:samsung",
+              "mobile:market:samsung_resale"
+            ],
+            "topItems": [
+              {
+                "type": "line_positioning",
+                "origin": "mobile:line:galaxy_a",
+                "confidence": "medium",
+                "validity": "stable"
+              },
+              {
+                "type": "processor_ecosystem",
+                "origin": "mobile:processor:snapdragon",
+                "confidence": "medium",
+                "validity": "versioned"
+              },
+              {
+                "type": "processor_ecosystem",
+                "origin": "mobile:processor:apple_silicon",
+                "confidence": "medium",
+                "validity": "versioned"
+              }
+            ]
+          },
+          "winner": "Galaxy A55 5G",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "n1-unknown-product",
+      "title": "Negativo — produto desconhecido",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o ZPhone ZX9000 Ultra vale a pena?",
+          "assistant": "Ficaria com o Motorola Moto G84 por um motivo claro: no dia a dia, isso se traduz em menos aperto para guardar arquivos, apps ou conteúdos acumulados. Eu iria no Motorola Moto G84, mas o Samsung Galaxy S24 Ultra também entrou forte — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Visual mais confortável durante o uso prolongado. ⚠️ O que você abre mão • Pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão. • No dia a dia, isso se traduz em menos aperto para guardar arquivos, apps ou conteúdos acumulados. Ainda que possa não ser o ponto mais forte quando a captura de imagens pesa muito na decisão, eu manteria o Motorola Moto G84 — o ganho principal ainda pesa mais do que essa renúncia. Consigo recomendar algumas opções, mas se você me disser seu orçamento consigo ser bem mais precisa.",
+          "domain": {
+            "domain": "mobile",
+            "neutral": false,
+            "itemCount": 2,
+            "matchedRules": [
+              "mobile:processor:snapdragon",
+              "mobile:policy:motorola_updates"
+            ],
+            "topItems": [
+              {
+                "type": "processor_ecosystem",
+                "origin": "mobile:processor:snapdragon",
+                "confidence": "medium",
+                "validity": "versioned"
+              },
+              {
+                "type": "update_policy",
+                "origin": "mobile:policy:motorola_updates",
+                "confidence": "low",
+                "validity": "market_dependent"
+              }
+            ]
+          },
+          "winner": "Motorola Moto G84",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "n2-unknown-category",
+      "title": "Negativo — categoria sem domínio",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "qual cadeira ergonômica você recomenda para home office?",
+          "assistant": "Pelo que mapeei, o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD combina melhor com o que você pediu — combina com o foco principal desta busca. Eu escolhi o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Monitor Gamer LG UltraGear 27\" Full HD 144Hz chegou perto. A diferença é que ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca.",
+          "domain": null,
+          "winner": "Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD",
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

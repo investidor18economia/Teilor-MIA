@@ -48,7 +48,7 @@ console.log("\nPATCH 4A.8 — Contextual Priority Engine Audit\n");
 
 console.log("── Version ──");
 assert("engine version", CONTEXTUAL_PRIORITY_ENGINE_VERSION === "4A.8.0");
-assert("synthesis version", CONTEXTUAL_DECISION_SYNTHESIS_VERSION === "4A.8.0");
+assert("synthesis version", CONTEXTUAL_DECISION_SYNTHESIS_VERSION === "4A.9.0");
 
 console.log("\n── Model structure ──");
 const gamerModel = buildContextualPriorityModel({
