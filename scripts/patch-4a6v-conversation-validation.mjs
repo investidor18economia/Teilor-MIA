@@ -12,6 +12,11 @@ import {
   detectArtificialBecauseFragment,
   detectDominantOpeningTemplate,
 } from "../lib/miaVerbalizationStyleGovernor.js";
+import {
+  computeRepetitionMetrics,
+  detectBrokenSurfaceGrammar,
+  validateComposedSurface,
+} from "../lib/miaVerbalizationCompositionGuard.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -23,7 +28,8 @@ const BASE =
 const CHAT_URL = `${BASE}/api/mia-chat`;
 const DELAY = Number(process.env.PATCH4A6V_CHAT_DELAY_MS || 8000);
 const EVIDENCE_DIR = path.join(ROOT, "docs/conversational/audits/phase-4a/evidence");
-const EVIDENCE = path.join(EVIDENCE_DIR, "PATCH_4A_6V_SURFACE_VALIDATION_EVIDENCE.json");
+const EVIDENCE = path.join(EVIDENCE_DIR, "PATCH_4A_6V_ROOT_CAUSE_EVIDENCE.json");
+const STUB_CONTINUATION = /^(?:claro,?\s*(?:sigo aqui|posso continuar|vamos lá)|pode continuar)\.?$/i;
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
@@ -58,13 +64,27 @@ async function sendChat(message, sessionContext = {}, messages = [], conversatio
   return { status: 500, reply: "", sessionContext: {} };
 }
 
-function analyzeReply(reply = "") {
+function analyzeReply(reply = "", userMessage = "") {
   const artificial = detectArtificialBecauseFragment(reply);
   const dominantOpening = detectDominantOpeningTemplate(reply);
+  const grammar = detectBrokenSurfaceGrammar(reply);
+  const repetition = computeRepetitionMetrics(reply);
+  const surface = validateComposedSurface(reply);
+  const stubContinuation =
+    /continua|explica melhor|segue/i.test(userMessage) && STUB_CONTINUATION.test(reply.trim());
   return {
     artificialBecause: artificial,
     dominantOpeningTemplate: dominantOpening,
-    pass: !artificial.detected && !dominantOpening.detected,
+    grammar,
+    repetition,
+    surface,
+    stubContinuation,
+    pass:
+      !artificial.detected &&
+      !dominantOpening.detected &&
+      !grammar.detected &&
+      surface.pass &&
+      !stubContinuation,
   };
 }
 
@@ -83,8 +103,9 @@ async function runScenario(id, title, turns) {
     messageHistory.push({ role: "user", content: turn.message });
     const result = await sendChat(turn.message, session, messageHistory, conversationId);
     session = result.sessionContext || session;
-    const analysis = analyzeReply(result.reply);
-    const turnPass = result.status === 200 && analysis.pass && result.reply.length >= 25;
+    const analysis = analyzeReply(result.reply, turn.message);
+    const minLen = /continua|explica melhor|segue/i.test(turn.message) ? 40 : 25;
+    const turnPass = result.status === 200 && analysis.pass && result.reply.length >= minLen;
     if (!turnPass) scenarioPass = false;
     transcript.push({
       turn: transcript.length + 1,
@@ -172,11 +193,26 @@ results.push(
   ])
 );
 
+results.push(
+  await runScenario("c7-continuity-10", "Cenário 7 — continuidade 10 turnos", [
+    { message: "o Galaxy A55 vale a pena?" },
+    { message: "por quê?" },
+    { message: "continua" },
+    { message: "explica melhor" },
+    { message: "e a câmera?" },
+    { message: "e a bateria?" },
+    { message: "mas discordo" },
+    { message: "continua" },
+    { message: "e o lado ruim?" },
+    { message: "conclusão" },
+  ])
+);
+
 const passed = results.filter(Boolean).length;
 const failed = results.length - passed;
 const payload = {
   patch: "4A.6V",
-  phase: "surface_validation",
+  phase: "root_cause_surface_validation",
   status: failed === 0 ? "APROVADA" : "BLOQUEADA",
   mode: MODE,
   base_url: BASE,

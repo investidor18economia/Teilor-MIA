@@ -175,6 +175,7 @@ import {
   styleGovernanceToLlmContract,
   updateRecentVerbalizationPatterns,
 } from "../../lib/miaVerbalizationStyleGovernor.js";
+import { polishReplySurface } from "../../lib/miaVerbalizationCompositionGuard.js";
 import {
   appendUserIntentDiscovery,
   resolveIntentDiscoverySessionClear,
@@ -27703,6 +27704,14 @@ function respondWithContract(
         }),
       },
     };
+  }
+
+  if (body.reply) {
+    const polishedReply = polishReplySurface(String(body.reply));
+    if (polishedReply !== body.reply) {
+      body = { ...body, reply: polishedReply };
+      pipelineTracer.patch({ verbalization_surface_polish: { applied: true } });
+    }
   }
 
   return sendRuntimeResponse(

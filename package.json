@@ -182,6 +182,7 @@
     "test:mia:conv:patch-46:literalness-repetition-audit": "node scripts/test-mia-patch-46-literalness-repetition-audit.js",
     "test:mia:conv:patch-4a6v:local-validation": "node scripts/patch-4a6v-conversation-validation.mjs",
     "test:mia:conv:patch-4a6v:production-validation": "cross-env PATCH4A6V_MODE=production node scripts/patch-4a6v-conversation-validation.mjs",
+    "test:mia:conv:patch-4a6v:composition-guard-audit": "node scripts/test-mia-patch-4a6v-composition-guard-audit.js",
     "test:mia:patch-125:rc-smoke": "node scripts/patch-125-rc-smoke.mjs",
     "test:mia:patch-126:production-validation": "node scripts/test-mia-patch-126-production-validation-runner.mjs",
     "test:mia:patch-126:browser-validation": "node scripts/test-mia-patch-126-browser-validation.mjs",
