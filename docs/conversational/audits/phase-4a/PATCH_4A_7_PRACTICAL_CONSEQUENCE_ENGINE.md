@@ -127,8 +127,8 @@ lastPracticalConsequences (session transport)
 | patch-45:semantic-verbalizer-audit | **26/26** |
 | patch-46:literalness-repetition-audit | **50/50** |
 | patch-4a6v:composition-guard-audit | **28/28** |
-| patch-4a7:local-validation | ver evidência JSON |
-| patch-4a7:production-validation | ver evidência JSON |
+| patch-4a7:local-validation | **3/5** (c3 catálogo + c4 LLM genérico; ver evidência) |
+| patch-4a7:production-validation | **5/5** |
 
 ---
 
