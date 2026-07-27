@@ -24,6 +24,8 @@ import {
   polishReplySurface,
   sanitizeInternalLabelText,
   validateComposedSurface,
+  detectAbsoluteClaimsOnSurface,
+  governAbsoluteClaimsOnSurface,
 } from "../lib/miaVerbalizationCompositionGuard.js";
 import { buildUserConfusionRecoveryReply } from "../lib/miaUserConfusionRecoveryLayer.js";
 import { detectArtificialBecauseFragment } from "../lib/miaVerbalizationStyleGovernor.js";
@@ -44,7 +46,7 @@ function assert(label, condition, detail = "") {
 console.log("\nPATCH 4A.6V.3 — Composition Guard Final Closure Audit\n");
 
 console.log("── Version ──");
-assert("schema version", VERBALIZATION_COMPOSITION_GUARD_VERSION === "4A.6V.3");
+assert("schema version", VERBALIZATION_COMPOSITION_GUARD_VERSION === "4A.7V.0");
 
 console.log("\n── Concession grammar ──");
 const podePhrase = formatConcessionPhrase("Pode parecer menos fluida para quem veio de experiências mais rápidas.");
@@ -68,6 +70,21 @@ const broken = "Mesmo com pode parecer menos fluida, eu manteria o Galaxy A55.";
 assert("detect broken Mesmo com pode", detectInvalidConcessionGrammar(broken).detected);
 const polishedBroken = polishReplySurface(broken);
 assert("polish repairs Mesmo com pode", !detectInvalidConcessionGrammar(polishedBroken).detected);
+
+console.log("\n── Absolute claim governance ──");
+const absoluteReply = "Depende do contexto! É sempre bom avaliar o que é mais relevante.";
+assert("detect absolute claim", detectAbsoluteClaimsOnSurface(absoluteReply).detected);
+const governedAbsolute = governAbsoluteClaimsOnSurface(absoluteReply);
+assert("govern removes sempre", !detectAbsoluteClaimsOnSurface(governedAbsolute).detected);
+assert("govern hedges sempre bom", /costuma ser bom|em geral/i.test(governedAbsolute));
+const polishedAbsolute = polishReplySurface(absoluteReply);
+assert("polish governs absolute claims", !detectAbsoluteClaimsOnSurface(polishedAbsolute).detected);
+const contestationLeak = "É sempre bom encontrar algo que se encaixe no que você busca.";
+assert("detect contestation leak", detectAbsoluteClaimsOnSurface(contestationLeak).detected);
+assert(
+  "polish contestation leak",
+  !detectAbsoluteClaimsOnSurface(polishReplySurface(contestationLeak)).detected
+);
 
 console.log("\n── Internal label leakage ──");
 const labelLeak = "Pode pesar na decisão: pesado";
