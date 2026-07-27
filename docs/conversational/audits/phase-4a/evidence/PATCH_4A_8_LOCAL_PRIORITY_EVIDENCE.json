@@ -1,0 +1,369 @@
+{
+  "patch": "4A.8",
+  "phase": "contextual_priority_validation",
+  "status": "APROVADA",
+  "mode": "local",
+  "base_url": "http://localhost:3008",
+  "commit": "16ca30291dcbfbab8f37e90ad3961dc78cf816ad",
+  "finished_at": "2026-07-27T21:39:22.440Z",
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  },
+  "scenarios": [
+    {
+      "id": "p1-gamer",
+      "title": "Positivo — gamer / desempenho",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular para jogar até 2500, desempenho é o mais importante",
+          "assistant": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "priority": {
+            "dominantCriterion": "processor",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.84,
+            "topCriteria": [
+              {
+                "criterion": "processor",
+                "finalWeight": 0.4916302940188978,
+                "origin": "query_signal",
+                "confidence": "high"
+              },
+              {
+                "criterion": "screen",
+                "finalWeight": 0.21339152956976354,
+                "origin": "query_signal",
+                "confidence": "high"
+              },
+              {
+                "criterion": "battery",
+                "finalWeight": 0.09832605880377956,
+                "origin": "default",
+                "confidence": "insufficient"
+              }
+            ]
+          },
+          "winner": "iPhone 13",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p2-photographer",
+      "title": "Positivo — fotógrafo",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular bom para fotografia até 2500",
+          "assistant": "A escolha mais equilibrada aqui é o iPhone 13: no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Visual mais confortável durante o uso prolongado. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+          "priority": {
+            "dominantCriterion": "camera",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.9199999999999999,
+            "topCriteria": [
+              {
+                "criterion": "camera",
+                "finalWeight": 0.3370264041082042,
+                "origin": "query_signal",
+                "confidence": "high"
+              },
+              {
+                "criterion": "processor",
+                "finalWeight": 0.3255832760503012,
+                "origin": "priority_class",
+                "confidence": "high"
+              },
+              {
+                "criterion": "screen",
+                "finalWeight": 0.17160648578706886,
+                "origin": "query_signal",
+                "confidence": "high"
+              }
+            ]
+          },
+          "winner": "iPhone 13",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p3-student",
+      "title": "Positivo — estudante / custo-benefício",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular para estudar até 2500, gastar pouco é o mais importante",
+          "assistant": "Ficaria com o Samsung Galaxy A35 5G por um motivo claro: Funciona bem para 5g. Quase te recomendaria o Redmi Note 13; no fim, fiquei com o Samsung Galaxy A35 5G — visual mais confortável durante o uso prolongado. No uso real, isso se traduz em mais tranquilidade para manter o equipamento por mais tempo sem sensação de obsolescência imediata — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Funciona bem para 5g. ⚠️ O que você abre mão • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo considerando que o custo tende a pesar mais na comparação com rivais parecidos, eu manteria o Samsung Galaxy A35 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "priority": {
+            "dominantCriterion": "value",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.7999999999999999,
+            "topCriteria": [
+              {
+                "criterion": "value",
+                "finalWeight": 0.5211581291759465,
+                "origin": "query_signal",
+                "confidence": "high"
+              },
+              {
+                "criterion": "battery",
+                "finalWeight": 0.1447661469933185,
+                "origin": "query_signal",
+                "confidence": "medium"
+              },
+              {
+                "criterion": "processor",
+                "finalWeight": 0.111358574610245,
+                "origin": "default",
+                "confidence": "insufficient"
+              }
+            ]
+          },
+          "winner": "Samsung Galaxy A35 5G",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p4-basic-use",
+      "title": "Positivo — uso básico",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena para uso básico no dia a dia?",
+          "assistant": "Neste cenário, o Galaxy A55 5G se destaca — visual mais confortável durante o uso prolongado. Eu iria no Galaxy A55 5G, mas o Samsung Galaxy A35 5G também entrou forte — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Visual mais confortável durante o uso prolongado. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "priority": {
+            "dominantCriterion": "value",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.86,
+            "topCriteria": [
+              {
+                "criterion": "value",
+                "finalWeight": 0.514866979655712,
+                "origin": "profile",
+                "confidence": "high"
+              },
+              {
+                "criterion": "battery",
+                "finalWeight": 0.15258215962441318,
+                "origin": "priority_class",
+                "confidence": "medium"
+              },
+              {
+                "criterion": "processor",
+                "finalWeight": 0.11085028690662495,
+                "origin": "default",
+                "confidence": "insufficient"
+              }
+            ]
+          },
+          "winner": "Galaxy A55 5G",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "p5-priority-shift",
+      "title": "Mudança dinâmica de prioridade",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular até 2500",
+          "assistant": "Ficaria com o iPhone 13 por um motivo claro: mais margem de tranquilidade quando o uso deixa de ser básico. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+          "priority": {
+            "dominantCriterion": "processor",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.8200000000000001,
+            "topCriteria": [
+              {
+                "criterion": "processor",
+                "finalWeight": 0.4666666666666667,
+                "origin": "profile",
+                "confidence": "high"
+              },
+              {
+                "criterion": "screen",
+                "finalWeight": 0.21075268817204307,
+                "origin": "priority_class",
+                "confidence": "high"
+              },
+              {
+                "criterion": "battery",
+                "finalWeight": 0.10752688172043014,
+                "origin": "default",
+                "confidence": "insufficient"
+              }
+            ]
+          },
+          "winner": "iPhone 13",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "bateria é minha prioridade",
+          "assistant": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos",
+          "priority": {
+            "dominantCriterion": "battery",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.74,
+            "topCriteria": [
+              {
+                "criterion": "battery",
+                "finalWeight": 0.5555555555555556,
+                "origin": "query_signal",
+                "confidence": "high"
+              },
+              {
+                "criterion": "processor",
+                "finalWeight": 0.11111111111111113,
+                "origin": "default",
+                "confidence": "insufficient"
+              },
+              {
+                "criterion": "camera",
+                "finalWeight": 0.11111111111111113,
+                "origin": "default",
+                "confidence": "insufficient"
+              }
+            ]
+          },
+          "winner": "iPhone 13",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "na verdade câmera importa mais",
+          "assistant": "iPhone 13 foi a escolha por performance: visual mais confortável durante o uso prolongado. Isso se conecta à sua nova prioridade de câmera, pois o iPhone 13 possui uma câmera excelente, com boas capacidades em baixa luz e recursos avançados de fotografia. Embora a autonomia possa pedir mais atenção em dias mais longos, a qualidade da câmera do iPhone 13 é um dos seus pontos fortes, tornando-o uma escolha sólida para quem valoriza fotos de alta qualidade. Se quiser, posso comparar com outras opções que também têm boas câmeras.",
+          "priority": {
+            "dominantCriterion": "camera",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.74,
+            "topCriteria": [
+              {
+                "criterion": "camera",
+                "finalWeight": 0.51338199513382,
+                "origin": "priority_class",
+                "confidence": "high"
+              },
+              {
+                "criterion": "battery",
+                "finalWeight": 0.12165450121654502,
+                "origin": "default",
+                "confidence": "insufficient"
+              },
+              {
+                "criterion": "processor",
+                "finalWeight": 0.12165450121654502,
+                "origin": "default",
+                "confidence": "insufficient"
+              }
+            ]
+          },
+          "winner": "iPhone 13",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "n1-no-priority",
+      "title": "Negativo — sem prioridade explícita",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "O Galaxy A55 5G faz sentido aqui porque visual mais confortável durante o uso prolongado. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Galaxy A55 5G — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Visual mais confortável durante o uso prolongado. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "priority": {
+            "dominantCriterion": "value",
+            "personalized": false,
+            "conservativeFallback": true,
+            "confidence": 0.7599999999999999,
+            "topCriteria": [
+              {
+                "criterion": "value",
+                "finalWeight": 0.504950495049505,
+                "origin": "profile",
+                "confidence": "high"
+              },
+              {
+                "criterion": "battery",
+                "finalWeight": 0.12376237623762376,
+                "origin": "default",
+                "confidence": "insufficient"
+              },
+              {
+                "criterion": "processor",
+                "finalWeight": 0.12376237623762376,
+                "origin": "default",
+                "confidence": "insufficient"
+              }
+            ]
+          },
+          "winner": "Galaxy A55 5G",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "n2-conflict",
+      "title": "Negativo — prioridades conflitantes",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero o mais barato possível mas também o mais potente com a melhor câmera até 2500",
+          "assistant": "Isso se refere a qual recomendação anterior?",
+          "priority": {
+            "dominantCriterion": "processor",
+            "personalized": true,
+            "conservativeFallback": false,
+            "confidence": 0.96,
+            "topCriteria": [
+              {
+                "criterion": "processor",
+                "finalWeight": 0.38569671010662526,
+                "origin": "priority_class",
+                "confidence": "high"
+              },
+              {
+                "criterion": "value",
+                "finalWeight": 0.13256022357908806,
+                "origin": "priority_class",
+                "confidence": "high"
+              },
+              {
+                "criterion": "screen",
+                "finalWeight": 0.12332543515902668,
+                "origin": "priority_class",
+                "confidence": "medium"
+              }
+            ]
+          },
+          "winner": null,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

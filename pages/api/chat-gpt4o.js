@@ -166,6 +166,7 @@ import {
   buildContextualDecisionSynthesisPayload,
   contextualSynthesisToTrace,
 } from "../../lib/miaContextualDecisionSynthesis.js";
+import { attachContextualPriorityToSession } from "../../lib/miaContextualPriorityEngine.js";
 import {
   narrativePlanToOrderedLegacyStrings,
   narrativePlanToVerbalizationOrder,
@@ -27830,7 +27831,19 @@ function buildContextDecisionSessionContext(
   }
 
   // PATCH 7.1 — enforceWinnerReferenceInvariant applied on output.
-  return enforceWinnerReferenceInvariant(nextSession);
+  const withWinnerInvariant = enforceWinnerReferenceInvariant(nextSession);
+  const priorityChanged =
+    Boolean(activePriority) &&
+    activePriority !== (sessionContext.lastPriority || "");
+  if (priorityChanged || activePriority) {
+    return attachContextualPriorityToSession(withWinnerInvariant, {
+      query: resolvedQuery || query,
+      category: withWinnerInvariant.lastCategory || "",
+      activePriority: activePriority || withWinnerInvariant.lastPriority || "",
+      primaryAxis: activePriority || withWinnerInvariant.lastAxis || "",
+    });
+  }
+  return withWinnerInvariant;
 }
 
 // ======================================================
@@ -30345,6 +30358,9 @@ const activePriority =
   "";
 
 if (activePriority) {
+  if (sessionContext.lastPriority && activePriority !== sessionContext.lastPriority) {
+    sessionContext.lastPreviousPriority = sessionContext.lastPriority;
+  }
   sessionContext.lastPriority = activePriority;
 }
 
@@ -30951,7 +30967,19 @@ if (constraintRefinementReplyEarly?.reply) {
           conversationalToneProfile
         ).response,
         prices: constraintRefinementReplyEarly.prices || [],
-        session_context: sessionContext,
+        session_context: attachContextualPriorityToSession(sessionContext, {
+          query: query || resolvedQuery,
+          category: sessionContext.lastCategory || "",
+          activePriority:
+            sessionContext.lastPriority ||
+            constraintRefinementEarly?.mergedConstraints?.priority ||
+            "",
+          primaryAxis:
+            sessionContext.lastPriority ||
+            sessionContext.lastAxis ||
+            constraintRefinementEarly?.mergedConstraints?.priority ||
+            "",
+        }),
       },
       constraintRefinementReplyEarly.responsePath || "constraint_refinement_early",
       {
@@ -31361,13 +31389,21 @@ if (_decisionContextChangeActive) {
     sessionContext,
     query: resolvedQuery || query,
   });
-  const _changeSessionOut = {
-    ...(_changeResult.sessionOut || sessionContext),
-    lastQuery: resolvedQuery || query,
-    lastIntent: "decision_context_change",
-    lastInteractionType: "explicit_recommendation_change",
-    lastDecisionReason: `prioridade: ${_changeResult.shift?.newLabel || "recalibrada"}`,
-  };
+  const _changeSessionOut = attachContextualPriorityToSession(
+    {
+      ...(_changeResult.sessionOut || sessionContext),
+      lastQuery: resolvedQuery || query,
+      lastIntent: "decision_context_change",
+      lastInteractionType: "explicit_recommendation_change",
+      lastDecisionReason: `prioridade: ${_changeResult.shift?.newLabel || "recalibrada"}`,
+    },
+    {
+      query: resolvedQuery || query,
+      category: sessionContext.lastCategory || "",
+      activePriority: _changeResult.shift?.newCriterion || _changeResult.sessionOut?.lastPriority || "",
+      primaryAxis: _changeResult.shift?.newCriterion || _changeResult.sessionOut?.lastPriority || "",
+    }
+  );
 
   return void respondWithContract(
     res,
@@ -35610,6 +35646,7 @@ if (Array.isArray(products) && products.length > 0) {
   let specialistSensationBridge = null;
   let specialistAuthorityBridge = null;
   let contextualDecisionSynthesis = null;
+  let specialistExplanation = null;
   let commercialEnrichApplied = false;
   const hasCommercialWinner = !!cleanTitle(selectedBestProduct?.product_name || "");
 
@@ -35623,7 +35660,7 @@ if (Array.isArray(products) && products.length > 0) {
       query: resolvedQuery,
     });
 
-    const specialistExplanation = buildSpecialistDecisionExplanation({
+    specialistExplanation = buildSpecialistDecisionExplanation({
       query: resolvedQuery,
       budget: extractBudget(resolvedQuery) ?? extractBudget(query),
       category: detectProductCategory(resolvedQuery) || sessionContext.lastCategory || "",
@@ -35690,6 +35727,9 @@ if (Array.isArray(products) && products.length > 0) {
       hasWinner: true,
       query: resolvedQuery,
       querySignals: earlyQuerySignals,
+      priorityWeightsModel: specialistExplanation?.priorityWeightsModel || null,
+      personalDecisionAdaptationModel:
+        specialistExplanation?.personalDecisionAdaptationModel || null,
       safetyAntiregret: !!searchCognition?.safetyAntiregret,
       specificProductLockActive: !!specificProductLock?.active,
       isFollowUp: !!sessionContext?.lastBestProduct?.product_name && !routingDecision?.allowNewSearch,
@@ -36149,6 +36189,27 @@ if (Array.isArray(products) && products.length > 0) {
       lastVerbalizationStyleGovernance:
         contextualDecisionSynthesis?.verbalizationStyleGovernance || null,
       lastPracticalConsequences: contextualDecisionSynthesis?.practicalConsequences || null,
+      lastContextualPriorityModel:
+        contextualDecisionSynthesis?.contextualPriorityModel ||
+        attachContextualPriorityToSession(
+          {
+            ...sessionContext,
+            lastPriority: activePriority || sessionContext.lastPriority || "",
+            lastPreviousPriority: sessionContext.lastPreviousPriority || "",
+          },
+          {
+            query: resolvedQuery,
+            category: detectProductCategory(resolvedQuery) || sessionContext.lastCategory || "",
+            activePriority: activePriority || sessionContext.lastPriority || "",
+            primaryAxis: searchCognition.primaryAxis || activePriority || currentPriority || "",
+            querySignals: earlyQuerySignals,
+            priorityWeightsModel: specialistExplanation?.priorityWeightsModel || null,
+            personalDecisionAdaptationModel:
+              specialistExplanation?.personalDecisionAdaptationModel || null,
+          }
+        ).lastContextualPriorityModel ||
+        sessionContext.lastContextualPriorityModel ||
+        null,
       lastVerbalizationPatterns: contextualDecisionSynthesis?.verbalizationStyleGovernance
         ?.stylePolicy
         ? updateRecentVerbalizationPatterns(

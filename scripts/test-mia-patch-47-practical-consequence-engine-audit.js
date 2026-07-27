@@ -96,7 +96,7 @@ const SPARSE_PHONE = {
 
 console.log("── Version ──");
 assert("engine version", PRACTICAL_CONSEQUENCE_ENGINE_VERSION === "4A.7.0");
-assert("synthesis version", CONTEXTUAL_DECISION_SYNTHESIS_VERSION === "4A.7.0");
+assert("synthesis version", CONTEXTUAL_DECISION_SYNTHESIS_VERSION === "4A.8.0");
 
 console.log("\n── Structure & governance ──");
 const mid = buildPracticalConsequences({
