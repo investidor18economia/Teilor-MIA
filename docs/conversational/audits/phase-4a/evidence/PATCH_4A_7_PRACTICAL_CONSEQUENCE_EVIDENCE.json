@@ -1,14 +1,14 @@
 {
   "patch": "4A.7",
   "phase": "practical_consequence_validation",
-  "status": "APROVADA",
+  "status": "BLOQUEADA",
   "mode": "local",
   "base_url": "http://localhost:3008",
-  "commit": "11db621dbd24b16055a6ddb01e21b0560d885217",
-  "finished_at": "2026-07-27T19:31:18.702Z",
+  "commit": "d7259ae40f8b788e0dd24d5babfca9f590110cb5",
+  "finished_at": "2026-07-27T20:02:23.614Z",
   "summary": {
-    "passed": 5,
-    "failed": 0,
+    "passed": 3,
+    "failed": 2,
     "total": 5
   },
   "scenarios": [
@@ -28,14 +28,14 @@
             "hasPracticalFraming": true,
             "pass": true
           },
-          "hasPracticalConsequences": false,
+          "hasPracticalConsequences": true,
           "httpStatus": 200,
           "pass": true
         },
         {
           "turn": 2,
           "user": "por quê?",
-          "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem busca um uso mais prolongado sem se preocupar em carregar o celular com frequência. Um ponto a ser considerado é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas o equilíbrio geral que ele oferece compensa essa questão.",
+          "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem busca praticidade. No entanto, é importante notar que ele pode parecer menos fluido para quem veio de experiências mais rápidas. Essa escolha equilibra bem o custo e a qualidade, atendendo bem ao que você precisa.",
           "analysis": {
             "bannedAbsolute": false,
             "inventedChargingMinutes": false,
@@ -78,7 +78,7 @@
             "hasPracticalFraming": true,
             "pass": true
           },
-          "hasPracticalConsequences": false,
+          "hasPracticalConsequences": true,
           "httpStatus": 200,
           "pass": true
         },
@@ -116,7 +116,7 @@
       "id": "c3-comparison-practical",
       "title": "Cenário 3 — comparação prática",
       "environment": "local",
-      "pass": true,
+      "pass": false,
       "transcript": [
         {
           "turn": 1,
@@ -135,16 +135,16 @@
         {
           "turn": 2,
           "user": "e na prática, qual leva vantagem?",
-          "assistant": "Agora ficou mais claro o que você procura.",
+          "assistant": "Depende do contexto! É sempre bom avaliar o que é mais relevante para você naquele momento.",
           "analysis": {
-            "bannedAbsolute": false,
+            "bannedAbsolute": true,
             "inventedChargingMinutes": false,
             "hasPracticalFraming": false,
-            "pass": true
+            "pass": false
           },
           "hasPracticalConsequences": false,
           "httpStatus": 200,
-          "pass": true
+          "pass": false
         }
       ]
     },
@@ -152,7 +152,7 @@
       "id": "c4-contestation",
       "title": "Cenário 4 — contestação sem exagero",
       "environment": "local",
-      "pass": true,
+      "pass": false,
       "transcript": [
         {
           "turn": 1,
@@ -164,23 +164,23 @@
             "hasPracticalFraming": true,
             "pass": true
           },
-          "hasPracticalConsequences": false,
+          "hasPracticalConsequences": true,
           "httpStatus": 200,
           "pass": true
         },
         {
           "turn": 2,
           "user": "mas eu achei o S23 FE melhor",
-          "assistant": "Entendi o que mudou — isso conta.",
+          "assistant": "Entendo o que você quer dizer! O S23 FE tem características bem interessantes e pode atender melhor às suas necessidades. É sempre bom encontrar algo que se encaixe no que você busca.",
           "analysis": {
-            "bannedAbsolute": false,
+            "bannedAbsolute": true,
             "inventedChargingMinutes": false,
-            "hasPracticalFraming": true,
-            "pass": true
+            "hasPracticalFraming": false,
+            "pass": false
           },
-          "hasPracticalConsequences": false,
+          "hasPracticalConsequences": true,
           "httpStatus": 200,
-          "pass": true
+          "pass": false
         }
       ]
     },
@@ -200,7 +200,7 @@
             "hasPracticalFraming": true,
             "pass": true
           },
-          "hasPracticalConsequences": false,
+          "hasPracticalConsequences": true,
           "httpStatus": 200,
           "pass": true
         },

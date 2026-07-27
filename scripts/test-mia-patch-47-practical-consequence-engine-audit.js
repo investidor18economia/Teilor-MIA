@@ -184,6 +184,30 @@ assert("structured facts preserved", payload.structuredDecisionFacts?.semanticUn
 assert("narrative plan valid", validateNarrativePlan(payload.narrativePlan).valid);
 assert("verbalization plan valid", validateVerbalizationPlan(payload.verbalizationPlan).valid);
 
+console.log("\n── Existing structured facts + trustedSpecs (specialist path) ──");
+const prebuiltFacts = buildStructuredDecisionFacts({
+  gainUnits: payload.gainUnits.filter((u) => u.decisionRole !== "tradeoff"),
+  sacrificeUnits: payload.sacrificeUnits,
+  productName: MID_RANGE_PHONE.official_name,
+  category: "mobile",
+  primaryAxis: "battery",
+});
+const specialistPathPayload = buildContextualDecisionSynthesisPayload({
+  structuredDecisionFacts: prebuiltFacts,
+  trustedSpecs: MID_RANGE_PHONE,
+  productName: MID_RANGE_PHONE.official_name,
+  category: "mobile",
+  primaryAxis: "battery",
+});
+assert(
+  "specialist path still emits practical consequences",
+  specialistPathPayload.practicalConsequences.length > 0
+);
+assert(
+  "specialist path persists trace",
+  !!specialistPathPayload.practicalConsequenceTrace?.count
+);
+
 console.log("\n── Data Layer audit ──");
 const coverage = auditDataLayerSpecTranslationCoverage(FLAGSHIP_PHONE);
 assert("coverage report categories", coverage.categories.length === 7);
