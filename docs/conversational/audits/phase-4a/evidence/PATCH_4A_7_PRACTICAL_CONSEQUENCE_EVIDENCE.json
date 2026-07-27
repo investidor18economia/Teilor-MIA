@@ -1,21 +1,21 @@
 {
   "patch": "4A.7",
   "phase": "practical_consequence_validation",
-  "status": "BLOQUEADA",
-  "mode": "local",
-  "base_url": "http://localhost:3008",
-  "commit": "d7259ae40f8b788e0dd24d5babfca9f590110cb5",
-  "finished_at": "2026-07-27T20:02:23.614Z",
+  "status": "APROVADA",
+  "mode": "production",
+  "base_url": "https://economia-ai.vercel.app",
+  "commit": "6ea59309ce24397af332094bbd6829e29ce5e7ab",
+  "finished_at": "2026-07-27T20:08:33.892Z",
   "summary": {
-    "passed": 3,
-    "failed": 2,
+    "passed": 5,
+    "failed": 0,
     "total": 5
   },
   "scenarios": [
     {
       "id": "c1-midrange-spec-why",
       "title": "Cenário 1 — intermediário + por quê + bateria",
-      "environment": "local",
+      "environment": "production",
       "pass": true,
       "transcript": [
         {
@@ -35,7 +35,7 @@
         {
           "turn": 2,
           "user": "por quê?",
-          "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem busca praticidade. No entanto, é importante notar que ele pode parecer menos fluido para quem veio de experiências mais rápidas. Essa escolha equilibra bem o custo e a qualidade, atendendo bem ao que você precisa.",
+          "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem busca praticidade. No entanto, é importante considerar que ele pode parecer menos fluido para quem veio de experiências mais rápidas. Essa escolha traz um bom equilíbrio entre preço e qualidade, ideal para o uso cotidiano.",
           "analysis": {
             "bannedAbsolute": false,
             "inventedChargingMinutes": false,
@@ -65,7 +65,7 @@
     {
       "id": "c2-flagship-explore",
       "title": "Cenário 2 — topo de linha até 2500",
-      "environment": "local",
+      "environment": "production",
       "pass": true,
       "transcript": [
         {
@@ -115,8 +115,8 @@
     {
       "id": "c3-comparison-practical",
       "title": "Cenário 3 — comparação prática",
-      "environment": "local",
-      "pass": false,
+      "environment": "production",
+      "pass": true,
       "transcript": [
         {
           "turn": 1,
@@ -135,24 +135,24 @@
         {
           "turn": 2,
           "user": "e na prática, qual leva vantagem?",
-          "assistant": "Depende do contexto! É sempre bom avaliar o que é mais relevante para você naquele momento.",
+          "assistant": "Agora ficou mais claro o que você procura.",
           "analysis": {
-            "bannedAbsolute": true,
+            "bannedAbsolute": false,
             "inventedChargingMinutes": false,
             "hasPracticalFraming": false,
-            "pass": false
+            "pass": true
           },
           "hasPracticalConsequences": false,
           "httpStatus": 200,
-          "pass": false
+          "pass": true
         }
       ]
     },
     {
       "id": "c4-contestation",
       "title": "Cenário 4 — contestação sem exagero",
-      "environment": "local",
-      "pass": false,
+      "environment": "production",
+      "pass": true,
       "transcript": [
         {
           "turn": 1,
@@ -171,23 +171,23 @@
         {
           "turn": 2,
           "user": "mas eu achei o S23 FE melhor",
-          "assistant": "Entendo o que você quer dizer! O S23 FE tem características bem interessantes e pode atender melhor às suas necessidades. É sempre bom encontrar algo que se encaixe no que você busca.",
+          "assistant": "Entendi o que mudou — isso conta.",
           "analysis": {
-            "bannedAbsolute": true,
+            "bannedAbsolute": false,
             "inventedChargingMinutes": false,
-            "hasPracticalFraming": false,
-            "pass": false
+            "hasPracticalFraming": true,
+            "pass": true
           },
           "hasPracticalConsequences": true,
           "httpStatus": 200,
-          "pass": false
+          "pass": true
         }
       ]
     },
     {
       "id": "c5-followup-spec",
       "title": "Cenário 5 — follow-up técnico",
-      "environment": "local",
+      "environment": "production",
       "pass": true,
       "transcript": [
         {
