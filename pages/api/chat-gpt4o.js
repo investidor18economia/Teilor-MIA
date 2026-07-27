@@ -36148,6 +36148,7 @@ if (Array.isArray(products) && products.length > 0) {
       lastVerbalizationPlan: contextualDecisionSynthesis?.verbalizationPlan || null,
       lastVerbalizationStyleGovernance:
         contextualDecisionSynthesis?.verbalizationStyleGovernance || null,
+      lastPracticalConsequences: contextualDecisionSynthesis?.practicalConsequences || null,
       lastVerbalizationPatterns: contextualDecisionSynthesis?.verbalizationStyleGovernance
         ?.stylePolicy
         ? updateRecentVerbalizationPatterns(

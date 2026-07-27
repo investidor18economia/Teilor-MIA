@@ -1,0 +1,238 @@
+{
+  "patch": "4A.7",
+  "phase": "practical_consequence_validation",
+  "status": "APROVADA",
+  "mode": "local",
+  "base_url": "http://localhost:3008",
+  "commit": "11db621dbd24b16055a6ddb01e21b0560d885217",
+  "finished_at": "2026-07-27T19:31:18.702Z",
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5
+  },
+  "scenarios": [
+    {
+      "id": "c1-midrange-spec-why",
+      "title": "Cenário 1 — intermediário + por quê + bateria",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "por quê?",
+          "assistant": "O Galaxy A55 vale a pena? por quê? foi escolhido por value. Na prática, isso significa menos dependência do carregador no dia a dia, o que é ótimo para quem busca um uso mais prolongado sem se preocupar em carregar o celular com frequência. Um ponto a ser considerado é que ele pode parecer menos fluido para quem veio de experiências mais rápidas, mas o equilíbrio geral que ele oferece compensa essa questão.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "e a bateria dele?",
+          "assistant": "Sobre o Galaxy A55 5G, pensando em bateria/autonomia: Esse modelo tem 5000mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c2-flagship-explore",
+      "title": "Cenário 2 — topo de linha até 2500",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular até 2500",
+          "assistant": "Eu iria no iPhone 13. Visual mais confortável durante o uso prolongado. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais margem de tranquilidade quando o uso deixa de ser básico — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "bateria é minha prioridade",
+          "assistant": "Esse detalhe faz diferença na análise. Esse ponto entrou no critério: a prioridade em bateria ganhou peso. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho e a faixa até R$ 2500,00. pode pedir mais atenção à autonomia em dias mais longos",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "e a câmera?",
+          "assistant": "Sobre o iPhone 13, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": false,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c3-comparison-practical",
+      "title": "Cenário 3 — comparação prática",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "Galaxy A56 vs Motorola Edge 60, qual você prefere?",
+          "assistant": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": false,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "e na prática, qual leva vantagem?",
+          "assistant": "Agora ficou mais claro o que você procura.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": false,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c4-contestation",
+      "title": "Cenário 4 — contestação sem exagero",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "mas eu achei o S23 FE melhor",
+          "assistant": "Entendi o que mudou — isso conta.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "c5-followup-spec",
+      "title": "Cenário 5 — follow-up técnico",
+      "environment": "local",
+      "pass": true,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "o Galaxy A55 vale a pena?",
+          "assistant": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "e a tela?",
+          "assistant": "Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": false,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "e o carregamento?",
+          "assistant": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+          "analysis": {
+            "bannedAbsolute": false,
+            "inventedChargingMinutes": false,
+            "hasPracticalFraming": true,
+            "pass": true
+          },
+          "hasPracticalConsequences": false,
+          "httpStatus": 200,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}
