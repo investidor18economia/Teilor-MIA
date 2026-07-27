@@ -1,0 +1,119 @@
+{
+  "patch": "4A.6",
+  "phase": "literalness_repetition_control_closure",
+  "status": "APROVADA",
+  "governor_version": "4A.6.0",
+  "commit": "de511924a33b",
+  "deploy_build": "de511924a33b",
+  "base_url": "https://economia-ai.vercel.app",
+  "local_url": "http://localhost:3006/app-mia",
+  "finished_at": "2026-07-27T05:05:00.000Z",
+  "audits": {
+    "patch_46_literalness_repetition": { "passed": 43, "failed": 0 },
+    "patch_45_semantic_verbalizer": { "passed": 26, "failed": 0 },
+    "patch_44_narrative_planner": { "passed": 36, "failed": 0 },
+    "patch_43_contextual_synthesis": { "passed": 21, "failed": 0 },
+    "patch_42_structured_decision_facts": { "passed": 30, "failed": 0 },
+    "patch_41a_semantic_contract": { "passed": 30, "failed": 0 },
+    "patch_4a2vf_product_lock": { "passed": 60, "failed": 0 },
+    "patch_35a_decision_facts_narrative": { "passed": 15, "failed": 0 },
+    "patch_34b_constraint_refinement": { "passed": 18, "failed": 0 },
+    "patch_32_continuity": { "passed": 22, "failed": 0 }
+  },
+  "build": "PASS",
+  "local_browser": {
+    "script": "patch-4a2v-browser-validation.mjs",
+    "url": "http://localhost:3006/app-mia",
+    "passed": 12,
+    "failed": 0
+  },
+  "production_validation": {
+    "script": "patch-4a2v-production-validation.mjs",
+    "passed": 12,
+    "failed": 0,
+    "deploy_commit_match": true
+  },
+  "production_browser": {
+    "script": "patch-4a2v-browser-validation.mjs",
+    "url": "https://economia-ai.vercel.app/app-mia",
+    "passed": 12,
+    "failed": 0
+  },
+  "comparative_examples": {
+    "automated": [
+      {
+        "scenario": "porque câmera boa",
+        "before": "porque câmera boa",
+        "after": "um dos pontos fortes é a câmera, com impacto perceptível no uso diário",
+        "facts_preserved": "câmera / qualidade",
+        "improvement": "fragmento nominal reconstruído em frase completa"
+      },
+      {
+        "scenario": "carregamento lento",
+        "before": "carregamento lento",
+        "after": "a principal concessão está no carregamento, o que pode pesar no uso diário",
+        "facts_preserved": "carregamento / concessão",
+        "improvement": "tradeoff curto verbalizado gramaticalmente"
+      },
+      {
+        "scenario": "ponto positivo bateria",
+        "before": "O ponto positivo é bateria boa",
+        "after": "um dos pontos fortes é a bateria, com impacto perceptível no uso diário",
+        "facts_preserved": "bateria / autonomia",
+        "improvement": "label interno removido da superfície"
+      }
+    ],
+    "local_browser": [
+      {
+        "scenario": "s4-product-lock",
+        "query": "o Galaxy A55 vale a pena?",
+        "reply_excerpt": "Entre as opções, eu colocaria o Galaxy A55 5G em primeiro porque menos dependência do carregador no dia a dia.",
+        "literal_violations": [],
+        "improvement": "consequência humana completa, sem fragmento nominal"
+      },
+      {
+        "scenario": "s8-new-options",
+        "query": "mostra opções novas até 3 mil",
+        "reply_excerpt": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE porque menos barreira inicial para fechar a compra sem estourar o orçamento.",
+        "literal_violations": [],
+        "improvement": "recomendação com tradeoff integrado naturalmente"
+      },
+      {
+        "scenario": "s10-other-category",
+        "query": "notebook gamer até 5 mil",
+        "reply_excerpt": "Entre as opções, eu colocaria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD em primeiro porque comb",
+        "literal_violations": [],
+        "improvement": "categoria diferente mantém forma conversacional"
+      }
+    ],
+    "production_browser": [
+      {
+        "scenario": "s4-product-lock",
+        "environment": "production",
+        "reply_excerpt": "Entre as opções, eu colocaria o Galaxy A55 5G em primeiro porque menos dependência do carregador no dia a dia.",
+        "literal_violations": []
+      },
+      {
+        "scenario": "s7-priority-change",
+        "environment": "production",
+        "reply_excerpt": "Esse ajuste muda o recorte da escolha. Esse ponto entrou no critério: a prioridade em câmera ganhou peso.",
+        "literal_violations": []
+      },
+      {
+        "scenario": "multitempo-8-turns",
+        "environment": "production",
+        "reply_excerpt": "Minha escolha: Galaxy A55 5G ... Se eu estivesse comprando hoj",
+        "literal_violations": []
+      }
+    ]
+  },
+  "architecture": {
+    "module": "lib/miaVerbalizationStyleGovernor.js",
+    "flow": "VerbalizationPlan → Style Governance → LLM",
+    "session_fields": [
+      "lastVerbalizationStyleGovernance",
+      "lastVerbalizationPatterns"
+    ]
+  },
+  "readiness_4a7": "PRONTA"
+}

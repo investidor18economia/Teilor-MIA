@@ -51,4 +51,15 @@ PATCH 4A.10 — qualidade narrativa em multivariação ampla
 
 ## 4. Veredito
 
-Ver evidências JSON após deploy.
+**APROVADA** — deploy `de511924a33b`, produção API 12/12, interface local 12/12, interface real 12/12.
+
+## 5. Deploy e validação
+
+| Etapa | Resultado |
+|-------|-----------|
+| Commit | `de51192` |
+| Build Vercel | `de511924a33b` |
+| Produção API | **12/12** |
+| Interface local | **12/12** |
+| Interface real | **12/12** |
+| Evidências | `evidence/PATCH_4A_6_LITERALNESS_REPETITION_EVIDENCE.json` |
