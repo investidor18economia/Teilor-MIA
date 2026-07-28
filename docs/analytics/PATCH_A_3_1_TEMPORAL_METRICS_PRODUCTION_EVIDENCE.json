@@ -1,0 +1,206 @@
+{
+  "patch": "A.3.1",
+  "closes": "A.3",
+  "title": "Temporal Metrics API — Production Closure",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T20:57:24.665Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "208f6910e02e",
+    "api_path": "/api/temporal-metrics",
+    "migration": "20260728160000_mia_temporal_series_api_v1.sql",
+    "migration_applied_via": "supabase db query --linked"
+  },
+  "checks": {
+    "total": 37,
+    "passed": 37,
+    "failed": 0,
+    "items": [
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=208f6910e02e"
+      },
+      {
+        "label": "supabase linked",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "RPC growth exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "RPC platform exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "service_role execute growth",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "service_role execute platform",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth RPC series array",
+        "pass": true,
+        "detail": "points=7"
+      },
+      {
+        "label": "growth RPC grain day",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "platform RPC series array",
+        "pass": true,
+        "detail": "points=28"
+      },
+      {
+        "label": "platform RPC grain day",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth point activity_day",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth point dau_visitors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth point wau_visitors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth point mau_visitors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API default 200",
+        "pass": true,
+        "detail": "status=200"
+      },
+      {
+        "label": "API temporal_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API granularity day",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API growth group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API platform group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API response time",
+        "pass": true,
+        "detail": "1427ms"
+      },
+      {
+        "label": "API privacy scan",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API has performance",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API week granularity 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API week granularity value",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API week projection",
+        "pass": true,
+        "detail": "projected"
+      },
+      {
+        "label": "API month granularity 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API month granularity value",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API offset_days 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API offset_days value",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API multi-series 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API multi-series groups",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API invalid granularity 400",
+        "pass": true,
+        "detail": "invalid_granularity"
+      },
+      {
+        "label": "API invalid series 400",
+        "pass": true,
+        "detail": "invalid_series_groups"
+      },
+      {
+        "label": "API cache miss first",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API cache hit second",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive-metrics regression 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive-metrics version",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
