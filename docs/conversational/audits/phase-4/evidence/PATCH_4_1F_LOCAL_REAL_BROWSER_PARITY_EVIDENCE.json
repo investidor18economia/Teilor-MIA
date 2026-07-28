@@ -1,0 +1,187 @@
+{
+  "patch": "4.1F",
+  "phase": "local_real_browser_parity",
+  "status": "APPROVED",
+  "local_base_url": "http://localhost:3000",
+  "production_base_url": "https://economia-ai.vercel.app",
+  "local_commit": "bc1f4273c9f8f81964a3dc6a37277f01875ba170",
+  "production_deploy_build": "bc1f4273c9f8",
+  "finished_at": "2026-07-28T16:54:09.876Z",
+  "comparisons": [
+    {
+      "id": "commercial-common",
+      "label": "Conversa comercial comum",
+      "local_reply_preview": "A escolha mais equilibrada aqui é o Redmi Note 13: o custo de entrada tende a ser mais acessível, sem estourar o orçamento. Eu escolhi o Redmi Note 13, mas o Samsung Galaxy S23 FE chegou perto. A diferença é que visual mais confortável durante o uso prolongado. A autonomia costuma ser um ponto forte",
+      "production_reply_preview": "A escolha mais equilibrada aqui é o Redmi Note 13: o custo de entrada tende a ser mais acessível, sem estourar o orçamento. Eu escolhi o Redmi Note 13, mas o Samsung Galaxy S23 FE chegou perto. A diferença é que visual mais confortável durante o uso prolongado. A autonomia costuma ser um ponto forte",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "follow-up-context",
+      "label": "Follow-up contextual",
+      "local_reply_preview": "Eu iria no Redmi Note 13. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 5000 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, os dois ficam muito próximos: Redmi Note 13 marca 85 e Samsung Galaxy S23 FE marca 84. - Mesmo assim, ",
+      "production_reply_preview": "Eu iria no Redmi Note 13. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 5000 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, os dois ficam muito próximos: Redmi Note 13 marca 85 e Samsung Galaxy S23 FE marca 84. - Mesmo assim, ",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "priority-change",
+      "label": "Mudança de prioridade",
+      "local_reply_preview": "Redmi Note 13 foi a escolha por value: menos barreira inicial para fechar a compra sem estourar o orçamento. No entanto, se a câmera é sua prioridade, o Samsung Galaxy S23 FE pode ser a melhor opção. Ele tem um desempenho superior em fotografia, com uma câmera de 50 MP que entrega imagens mais nítid",
+      "production_reply_preview": "Redmi Note 13 foi a escolha por value: menos barreira inicial para fechar a compra sem estourar o orçamento. No entanto, quando a câmera é a prioridade, o Samsung Galaxy S23 FE se destaca mais. Ele possui uma câmera principal de 50 MP, que oferece melhores resultados em fotos, especialmente em condi",
+      "localOk": true,
+      "realOk": true,
+      "score": 0.6428571428571429,
+      "equivalent": true,
+      "identical": false
+    },
+    {
+      "id": "informal-language",
+      "label": "Linguagem informal",
+      "local_reply_preview": "Tem alguns celulares que são conhecidos por ter uma boa duração de bateria, como alguns modelos da linha Moto G e da Xiaomi. Eles costumam ter uma bateria que aguenta bem o dia a dia. Se precisar de mais detalhes sobre algum modelo específico, é só falar!",
+      "production_reply_preview": "Com esse contexto, consigo ser mais precisa.",
+      "localOk": true,
+      "realOk": true,
+      "score": 0.047619047619047616,
+      "equivalent": true,
+      "identical": false
+    },
+    {
+      "id": "abbreviations-typos",
+      "label": "Abreviações e erros",
+      "local_reply_preview": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+      "production_reply_preview": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "technical-user",
+      "label": "Usuário técnico",
+      "local_reply_preview": "A escolha mais equilibrada aqui é o Samsung Galaxy A35 5G: Funciona bem para 5g. Quase te recomendaria o Motorola Moto G84; no fim, fiquei com o Samsung Galaxy A35 5G — visual mais confortável durante o uso prolongado. No uso real, isso se traduz em mais tranquilidade para manter o equipamento por m",
+      "production_reply_preview": "A escolha mais equilibrada aqui é o Samsung Galaxy A35 5G: Funciona bem para 5g. Quase te recomendaria o Motorola Moto G84; no fim, fiquei com o Samsung Galaxy A35 5G — visual mais confortável durante o uso prolongado. No uso real, isso se traduz em mais tranquilidade para manter o equipamento por m",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "casual-greeting",
+      "label": "Conversa casual",
+      "local_reply_preview": "Opa!",
+      "production_reply_preview": "Opa!",
+      "localOk": true,
+      "realOk": true,
+      "score": 0,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "about-mia-audit",
+      "label": "Pergunta sobre auditoria da MIA",
+      "local_reply_preview": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+      "production_reply_preview": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "about-mia-limits",
+      "label": "Pergunta sobre limites da MIA",
+      "local_reply_preview": "Me explica um pouco melhor o que você quer analisar ou comparar, que eu te ajudo.",
+      "production_reply_preview": "Me explica um pouco melhor o que você quer analisar ou comparar, que eu te ajudo.",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "about-mia-commission",
+      "label": "Pergunta sobre comissão",
+      "local_reply_preview": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "production_reply_preview": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "humor",
+      "label": "Humor",
+      "local_reply_preview": "Com esse contexto, consigo ser mais precisa. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar ",
+      "production_reply_preview": "Com esse contexto, consigo ser mais precisa. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar ",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "insult-frustration",
+      "label": "Insulto ou frustração",
+      "local_reply_preview": "Com esse contexto, consigo ser mais precisa.",
+      "production_reply_preview": "Com esse contexto, consigo ser mais precisa.",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "praise",
+      "label": "Elogio",
+      "local_reply_preview": "Isso ajuda bastante a direcionar a escolha.",
+      "production_reply_preview": "Isso ajuda bastante a direcionar a escolha.",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "flirt",
+      "label": "Flerte",
+      "local_reply_preview": "Isso ajuda bastante a direcionar a escolha.",
+      "production_reply_preview": "Isso ajuda bastante a direcionar a escolha.",
+      "localOk": true,
+      "realOk": true,
+      "score": 1,
+      "equivalent": true,
+      "identical": true
+    },
+    {
+      "id": "unknown-product",
+      "label": "Produto desconhecido",
+      "local_reply_preview": "Para te ajudar melhor, preciso saber um pouco mais sobre o que você espera do Galaxy Ultra Mega X99. Você está buscando um celular com foco em câmera, desempenho, bateria ou algo mais?",
+      "production_reply_preview": "O Galaxy Ultra Mega X99 parece ser um modelo interessante, mas para te ajudar melhor, preciso saber quais características são mais importantes para você. Está buscando um bom desempenho, uma câmera de qualidade, ou talvez uma bateria duradoura? Isso vai me ajudar a avaliar se ele é a escolha certa!",
+      "localOk": true,
+      "realOk": true,
+      "score": 0.5357142857142857,
+      "equivalent": true,
+      "identical": false
+    }
+  ],
+  "long_conversation": {
+    "local_turns": 10,
+    "production_turns": 10,
+    "equivalent": true
+  },
+  "summary": {
+    "scenarios_total": 15,
+    "scenarios_equivalent": 15,
+    "scenarios_failed": 0
+  }
+}

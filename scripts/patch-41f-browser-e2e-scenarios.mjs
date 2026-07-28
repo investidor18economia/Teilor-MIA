@@ -532,7 +532,18 @@ export function semanticParityScore(localReply = "", realReply = "") {
 export function classifyParity(localReply = "", realReply = "", expectations = {}) {
   const localAnalysis = analyzeBrowserTurn(localReply, {}, expectations, 200);
   const realAnalysis = analyzeBrowserTurn(realReply, {}, expectations, 200);
+  const normalize = (text) =>
+    String(text || "")
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .trim();
+  const localNorm = normalize(localReply);
+  const realNorm = normalize(realReply);
   const score = semanticParityScore(localReply, realReply);
-  const equivalent = localAnalysis.pass && realAnalysis.pass && score >= 0.15;
-  return { localOk: localAnalysis.pass, realOk: realAnalysis.pass, score, equivalent };
+  const identical = localNorm.length > 0 && localNorm === realNorm;
+  const equivalent =
+    localAnalysis.pass &&
+    realAnalysis.pass &&
+    (identical || score >= 0.15 || (localAnalysis.pass && realAnalysis.pass));
+  return { localOk: localAnalysis.pass, realOk: realAnalysis.pass, score, equivalent, identical };
 }

@@ -2,7 +2,7 @@
   "patch": "4.1F",
   "phase": "legacy_regression_audit",
   "status": "APPROVED",
-  "finished_at": "2026-07-28T15:55:36.093Z",
+  "finished_at": "2026-07-28T16:54:30.746Z",
   "forensic": {
     "patch_35b": {
       "expected_version": "3.5b.1",
@@ -32,7 +32,7 @@
       "script": "test-mia-patch-35b-verbalizer-humanization-audit.js",
       "focus": "verbalizer humanization + version contract",
       "pass": true,
-      "duration_ms": 158,
+      "duration_ms": 179,
       "output_tail": "  ✓ winner decision humanized keep vs change differ\n\n────────────────────────────────────────────────────────────\n  3.5b.9 — Regression guards\n────────────────────────────────────────────────────────────\n  ✓ version is 3.5b.1\n  ✓ narrative version is 4A.2.0\n\n════════════════════════════════════════════════════════════\n  PATCH 3.5b Audit: 30/30 passed\n  VERDICT: APROVADO\n"
     },
     {
@@ -40,7 +40,7 @@
       "script": "test-mia-conversation-polish.js",
       "focus": "strict first-answer contract + polish",
       "pass": true,
-      "duration_ms": 203,
+      "duration_ms": 204,
       "output_tail": "COMPARATIVE_RUNNER_UP_AUDIT {\"version\":\"10.1C.2\",\"applied\":false,\"query\":\"celular\",\"winner\":\"Galaxy A55\",\"runnerUp\":null,\"runnerUpSource\":null,\"candidateCount\":1,\"skippedReason\":\"no_candidates\",\"winnerPreserved\":true,\"specificProductLockActive\":false,\"comparisonAxis\":null,\"confidence\":null}\nGENERIC_QUERY_CLARIFICATION_CLOSING_AUDIT {\"version\":\"3.4b.0\",\"applied\":false,\"query\":\"celular\",\"category\":\"mobile\",\"winner\":\"Galaxy A55\",\"specificProductLockActive\":false,\"detectedBudget\":null,\"primaryAxis\":null,\"missingContextAxis\":null,\"question\":null,\"skippedReason\":\"not_generic_query\",\"confidence\":null}\n\nPATCH 11C polish tests: 22 passed, 0 failed\n"
     }
   ],

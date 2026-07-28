@@ -1,0 +1,652 @@
+{
+  "patch": "4.1F",
+  "phase": "production_browser_e2e",
+  "status": "APPROVED",
+  "base_url": "https://economia-ai.vercel.app",
+  "mia_url": "https://economia-ai.vercel.app/app-mia",
+  "commit": "51a02aa88526aa2bfb319c34274f9c8ec5e02731",
+  "deploy_build": "bc1f4273c9f8",
+  "health": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-07-28T16:46:07.076Z",
+    "build": "bc1f4273c9f8"
+  },
+  "finished_at": "2026-07-28T16:53:06.961Z",
+  "isolated_flows": [
+    "long-conversation",
+    "ui-scenarios"
+  ],
+  "cooldown_ms": 60000,
+  "checks": [
+    {
+      "id": "ui-long-conversation-complete",
+      "pass": true,
+      "detail": "Parece que você está pedindo um resumo do que foi decidido. Se você puder me dar mais detalhes sobre o que precisa ser resumido, ficarei feliz em ajudar!"
+    },
+    {
+      "id": "ui-long-conversation-context",
+      "pass": true,
+      "detail": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — mais margem de tranquilidade quando o uso dei"
+    },
+    {
+      "id": "ui-long-conversation-no-duplicates",
+      "pass": true,
+      "detail": "duplicates=0; rateLimited=false"
+    },
+    {
+      "id": "ui-long-conversation-opening-variety",
+      "pass": true,
+      "detail": "unique_openings=5"
+    },
+    {
+      "id": "ui-commercial-common",
+      "pass": true,
+      "detail": "A escolha mais equilibrada aqui é o Redmi Note 13: o custo de entrada tende a ser mais acessível, sem estourar o orçamento. Eu escolhi o Redmi Note 13, mas o Samsung Galaxy S23 FE chegou perto. A dife",
+      "scenario": "Conversa comercial comum",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "Qual celular compensa mais até R$ 2.000?",
+      "analysis": {
+        "pass": true,
+        "minLen": 25,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-follow-up-context",
+      "pass": true,
+      "detail": "Eu iria no Redmi Note 13. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 5000 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, os",
+      "scenario": "Follow-up contextual",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "E qual deles tem a melhor bateria?",
+      "analysis": {
+        "pass": true,
+        "minLen": 20,
+        "clarificationReply": false,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-priority-change",
+      "pass": true,
+      "detail": "Redmi Note 13 foi a escolha por value: menos barreira inicial para fechar a compra sem estourar o orçamento. No entanto, quando a câmera é a prioridade, o Samsung Galaxy S23 FE se destaca mais. Ele po",
+      "scenario": "Mudança de prioridade",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "Pensando melhor, câmera importa mais que bateria.",
+      "analysis": {
+        "pass": true,
+        "minLen": 20,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-informal-language",
+      "pass": true,
+      "detail": "Com esse contexto, consigo ser mais precisa.",
+      "scenario": "Linguagem informal",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "mano qual cell segura a bateria msm ate uns 2500?",
+      "analysis": {
+        "pass": true,
+        "minLen": 15,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": false,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-abbreviations-typos",
+      "pass": true,
+      "detail": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+      "scenario": "Abreviações e erros",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "preciso de um cel q aguente o dia todo ate 2k e tem boa batria",
+      "analysis": {
+        "pass": true,
+        "minLen": 20,
+        "clarificationReply": false,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-technical-user",
+      "pass": true,
+      "detail": "A escolha mais equilibrada aqui é o Samsung Galaxy A35 5G: Funciona bem para 5g. Quase te recomendaria o Motorola Moto G84; no fim, fiquei com o Samsung Galaxy A35 5G — visual mais confortável durante",
+      "scenario": "Usuário técnico",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "Qual celular até R$ 2.500 entrega melhor eficiência energética do SoC sob carga sustentada?",
+      "analysis": {
+        "pass": true,
+        "minLen": 25,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-casual-greeting",
+      "pass": true,
+      "detail": "Opa!",
+      "scenario": "Conversa casual",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "Oi, tudo bem?",
+      "analysis": {
+        "pass": true,
+        "minLen": 4,
+        "clarificationReply": false,
+        "socialOk": true,
+        "metaOk": false,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-about-mia-audit",
+      "pass": true,
+      "detail": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+      "scenario": "Pergunta sobre auditoria da MIA",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "como voce audita?",
+      "analysis": {
+        "pass": true,
+        "minLen": 15,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-about-mia-limits",
+      "pass": true,
+      "detail": "Me explica um pouco melhor o que você quer analisar ou comparar, que eu te ajudo.",
+      "scenario": "Pergunta sobre limites da MIA",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "por que voce nao sabe de tudo?",
+      "analysis": {
+        "pass": true,
+        "minLen": 15,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-about-mia-commission",
+      "pass": true,
+      "detail": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "scenario": "Pergunta sobre comissão",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "voce ganha comissao?",
+      "analysis": {
+        "pass": true,
+        "minLen": 15,
+        "clarificationReply": false,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-humor",
+      "pass": true,
+      "detail": "Com esse contexto, consigo ser mais precisa. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparec",
+      "scenario": "Humor",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "Se esse celular travar eu jogo ele pela janela kkkkk",
+      "analysis": {
+        "pass": true,
+        "minLen": 15,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": false,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-insult-frustration",
+      "pass": true,
+      "detail": "Com esse contexto, consigo ser mais precisa.",
+      "scenario": "Insulto ou frustração",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "pqp você não entendeu nada",
+      "analysis": {
+        "pass": true,
+        "minLen": 10,
+        "clarificationReply": true,
+        "socialOk": true,
+        "metaOk": false,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-praise",
+      "pass": true,
+      "detail": "Isso ajuda bastante a direcionar a escolha.",
+      "scenario": "Elogio",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "Você explica muito bem, gostei de você.",
+      "analysis": {
+        "pass": true,
+        "minLen": 15,
+        "clarificationReply": false,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-flirt",
+      "pass": true,
+      "detail": "Isso ajuda bastante a direcionar a escolha.",
+      "scenario": "Flerte",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "Além de inteligente você é charmosa, hein?",
+      "analysis": {
+        "pass": true,
+        "minLen": 15,
+        "clarificationReply": false,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-unknown-product",
+      "pass": true,
+      "detail": "O Galaxy Ultra Mega X99 parece ser um modelo interessante, mas para te ajudar melhor, preciso saber quais características são mais importantes para você. Está buscando um bom desempenho, uma câmera de",
+      "scenario": "Produto desconhecido",
+      "rateLimited": false,
+      "status": 200,
+      "userBubble": "O Galaxy Ultra Mega X99 é bom?",
+      "analysis": {
+        "pass": true,
+        "minLen": 20,
+        "clarificationReply": false,
+        "socialOk": true,
+        "metaOk": true,
+        "praiseOk": true,
+        "insultSafe": true,
+        "flirtSafe": true,
+        "humorOk": true
+      }
+    },
+    {
+      "id": "ui-input-visible",
+      "pass": true,
+      "detail": "inputVisible=true"
+    },
+    {
+      "id": "ui-send-enabled-with-text",
+      "pass": true,
+      "detail": "sendEnabledWithText=true"
+    },
+    {
+      "id": "ui-assistant-bubbles-rendered",
+      "pass": true,
+      "detail": "assistantBubbles=2"
+    },
+    {
+      "id": "ui-no-empty-assistant-bubbles",
+      "pass": true,
+      "detail": "emptyBubble=false"
+    }
+  ],
+  "flows": [
+    {
+      "label": "long-conversation-10-turns",
+      "started_at": "2026-07-28T16:46:10.133Z",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@dbcee2b87a4e9ee662f201d9d38c8cd3"
+      },
+      "context": {
+        "_type": "BrowserContext",
+        "_guid": "browser-context@adecccf4d1324f8176a80fe8afb94404"
+      },
+      "trace": [
+        {
+          "turn": 1,
+          "tag": "recommendation",
+          "message": "Quero um celular até R$ 2.500 para uso geral.",
+          "reply_preview": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais ",
+          "opening": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria ou durabilidade. Qual pesa mais pra você?",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 2,
+          "tag": "comparison",
+          "message": "Compara com algo um pouco mais barato.",
+          "reply_preview": "Boa — isso muda como eu comparo as opções. Como você pediu algo mais em conta que a opção anterior, reavaliei as opções que já estávamos considerando. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está n",
+          "opening": "Boa — isso muda como eu comparo as opções. Como você pediu algo mais em conta que a opção anterior, reavaliei as opções que já estávamos considerando. Ainda ficaria com o iPhone 11 — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. Fora esse ajuste, o foco em desempenho e a faixa até R$ 2500,00 segue valendo. pode pedir mais atenção à autonomia em dias mais longos",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 3,
+          "tag": "refinement",
+          "message": "Prioriza bateria agora.",
+          "reply_preview": "Sua prioridade mudou. Antes eu estava priorizando desempenho. Agora estou priorizando bateria/autonomia. Mesmo com esse novo critério, iPhone 11 continua sendo a escolha mais coerente — mais margem de tranquilidade quando o uso deixa de ser básico. Com as nova",
+          "opening": "Sua prioridade mudou. Antes eu estava priorizando desempenho. Agora estou priorizando bateria/autonomia. Mesmo com esse novo critério, iPhone 11 continua sendo a escolha mais coerente — mais margem de tranquilidade quando o uso deixa de ser básico. Com as novas prioridades, eu recomendo iPhone 11.",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 4,
+          "tag": "priority_change",
+          "message": "Pensando melhor, câmera importa mais que bateria.",
+          "reply_preview": "iPhone 11 foi a escolha por battery: mais margem de tranquilidade quando o uso deixa de ser básico. Agora, se a câmera é a prioridade, o iPhone 13 se destaca. Ele oferece um sistema de câmeras mais avançado, resultando em fotos de melhor qualidade, especialmen",
+          "opening": "iPhone 11 foi a escolha por battery: mais margem de tranquilidade quando o uso deixa de ser básico. Agora, se a câmera é a prioridade, o iPhone 13 se destaca. Ele oferece um sistema de câmeras mais avançado, resultando em fotos de melhor qualidade, especialmente em condições de pouca luz. Embora o iPhone 11 ainda tenha uma boa câmera, o 13 traz melhorias significativas nesse aspecto. Vale a pena considerar essa diferença, principalmente se você valoriza registrar momentos com qualidade. Se precisar de mais informações ou quiser comparar algo específico, estou aqui!",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 5,
+          "tag": "contestation",
+          "message": "Isso não faz sentido, a bateria era mais importante.",
+          "reply_preview": "Consigo comparar, mas não encontrei \"bateria era mais importante\" com segurança no catálogo da MIA ainda. Me manda o nome um pouco mais completo para eu fechar a comparação.",
+          "opening": "Consigo comparar, mas não encontrei \"bateria era mais importante\" com segurança no catálogo da MIA ainda. Me manda o nome um pouco mais completo para eu fechar a comparação.",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 6,
+          "tag": "summary_request",
+          "message": "Qual ficou sendo a melhor opção?",
+          "reply_preview": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. ",
+          "opening": "Eu iria no iPhone 11. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3110 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 70 do iPhone 11. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o iPhone 11.",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 7,
+          "tag": "casual",
+          "message": "Oi, tudo bem?",
+          "reply_preview": "Opa!",
+          "opening": "Opa!",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 8,
+          "tag": "return_commercial",
+          "message": "Voltando ao celular, tira Xiaomi.",
+          "reply_preview": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — mais margem de tranquilidade quando o uso dei",
+          "opening": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 9,
+          "tag": "runner_up",
+          "message": "E a segunda opção?",
+          "reply_preview": "Sobre o iPhone 13, pensando em bateria/autonomia: Esse modelo tem 3240mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "opening": "Sobre o iPhone 13, pensando em bateria/autonomia: Esse modelo tem 3240mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "rateLimited": false,
+          "status": 200
+        },
+        {
+          "turn": 10,
+          "tag": "final_summary",
+          "message": "Resume o que ficou decidido.",
+          "reply_preview": "Parece que você está pedindo um resumo do que foi decidido. Se você puder me dar mais detalhes sobre o que precisa ser resumido, ficarei feliz em ajudar!",
+          "opening": "Parece que você está pedindo um resumo do que foi decidido. Se você puder me dar mais detalhes sobre o que precisa ser resumido, ficarei feliz em ajudar!",
+          "rateLimited": false,
+          "status": 200
+        }
+      ],
+      "anyRateLimit": false,
+      "duplicateReplies": 0
+    },
+    {
+      "id": "commercial-common",
+      "label": "Conversa comercial comum",
+      "message": "Qual celular compensa mais até R$ 2.000?",
+      "reply_preview": "A escolha mais equilibrada aqui é o Redmi Note 13: o custo de entrada tende a ser mais acessível, sem estourar o orçamento. Eu escolhi o Redmi Note 13, mas o Samsung Galaxy S23 FE chegou perto. A diferença é que visual mais confortável durante o uso prolongado. A autonomia costuma ser um ponto forte",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "follow-up-context",
+      "label": "Follow-up contextual",
+      "message": "E qual deles tem a melhor bateria?",
+      "reply_preview": "Eu iria no Redmi Note 13. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 5000 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, os dois ficam muito próximos: Redmi Note 13 marca 85 e Samsung Galaxy S23 FE marca 84. - Mesmo assim, ",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "priority-change",
+      "label": "Mudança de prioridade",
+      "message": "Pensando melhor, câmera importa mais que bateria.",
+      "reply_preview": "Redmi Note 13 foi a escolha por value: menos barreira inicial para fechar a compra sem estourar o orçamento. No entanto, quando a câmera é a prioridade, o Samsung Galaxy S23 FE se destaca mais. Ele possui uma câmera principal de 50 MP, que oferece melhores resultados em fotos, especialmente em condi",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "informal-language",
+      "label": "Linguagem informal",
+      "message": "mano qual cell segura a bateria msm ate uns 2500?",
+      "reply_preview": "Com esse contexto, consigo ser mais precisa.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "abbreviations-typos",
+      "label": "Abreviações e erros",
+      "message": "preciso de um cel q aguente o dia todo ate 2k e tem boa batria",
+      "reply_preview": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "technical-user",
+      "label": "Usuário técnico",
+      "message": "Qual celular até R$ 2.500 entrega melhor eficiência energética do SoC sob carga sustentada?",
+      "reply_preview": "A escolha mais equilibrada aqui é o Samsung Galaxy A35 5G: Funciona bem para 5g. Quase te recomendaria o Motorola Moto G84; no fim, fiquei com o Samsung Galaxy A35 5G — visual mais confortável durante o uso prolongado. No uso real, isso se traduz em mais tranquilidade para manter o equipamento por m",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "casual-greeting",
+      "label": "Conversa casual",
+      "message": "Oi, tudo bem?",
+      "reply_preview": "Opa!",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "about-mia-audit",
+      "label": "Pergunta sobre auditoria da MIA",
+      "message": "como voce audita?",
+      "reply_preview": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "about-mia-limits",
+      "label": "Pergunta sobre limites da MIA",
+      "message": "por que voce nao sabe de tudo?",
+      "reply_preview": "Me explica um pouco melhor o que você quer analisar ou comparar, que eu te ajudo.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "about-mia-commission",
+      "label": "Pergunta sobre comissão",
+      "message": "voce ganha comissao?",
+      "reply_preview": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "humor",
+      "label": "Humor",
+      "message": "Se esse celular travar eu jogo ele pela janela kkkkk",
+      "reply_preview": "Com esse contexto, consigo ser mais precisa. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar ",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "insult-frustration",
+      "label": "Insulto ou frustração",
+      "message": "pqp você não entendeu nada",
+      "reply_preview": "Com esse contexto, consigo ser mais precisa.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "praise",
+      "label": "Elogio",
+      "message": "Você explica muito bem, gostei de você.",
+      "reply_preview": "Isso ajuda bastante a direcionar a escolha.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "flirt",
+      "label": "Flerte",
+      "message": "Além de inteligente você é charmosa, hein?",
+      "reply_preview": "Isso ajuda bastante a direcionar a escolha.",
+      "pass": true,
+      "rateLimited": false
+    },
+    {
+      "id": "unknown-product",
+      "label": "Produto desconhecido",
+      "message": "O Galaxy Ultra Mega X99 é bom?",
+      "reply_preview": "O Galaxy Ultra Mega X99 parece ser um modelo interessante, mas para te ajudar melhor, preciso saber quais características são mais importantes para você. Está buscando um bom desempenho, uma câmera de qualidade, ou talvez uma bateria duradoura? Isso vai me ajudar a avaliar se ele é a escolha certa!",
+      "pass": true,
+      "rateLimited": false
+    }
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 ()",
+    "Failed to load resource: the server responded with a status of 404 ()"
+  ],
+  "network_errors": [],
+  "screenshots": [
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\long-conversation\\long-conversation-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\long-conversation\\long-conversation-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\long-conversation\\long-conversation-final.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-commercial-common-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-commercial-common-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-commercial-common-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-follow-up-context-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-follow-up-context-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-follow-up-context-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-priority-change-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-priority-change-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-priority-change-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-informal-language-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-informal-language-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-informal-language-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-abbreviations-typos-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-abbreviations-typos-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-abbreviations-typos-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-technical-user-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-technical-user-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-technical-user-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-casual-greeting-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-casual-greeting-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-casual-greeting-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-audit-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-audit-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-audit-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-limits-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-limits-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-limits-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-commission-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-commission-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-about-mia-commission-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-humor-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-humor-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-humor-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-insult-frustration-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-insult-frustration-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-insult-frustration-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-praise-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-praise-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-praise-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-flirt-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-flirt-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-flirt-reply.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-unknown-product-before.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-unknown-product-loading.png",
+    "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\scenario-unknown-product-reply.png"
+  ],
+  "trace": "C:\\(PROJETOS) MIA TEILOR OFICIAL\\Teilor-MIA\\docs\\conversational\\audits\\phase-4\\evidence\\patch-4-1f\\production\\trace",
+  "summary": {
+    "total": 23,
+    "passed": 23,
+    "failed": 0
+  }
+}

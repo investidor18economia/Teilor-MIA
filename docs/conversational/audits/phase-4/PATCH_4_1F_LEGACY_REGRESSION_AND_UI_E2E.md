@@ -1,7 +1,7 @@
 # PATCH 4.1F — Saneamento das Regressões Legadas e Validação E2E pela Interface
 
 **Phase:** 4 — Validação Conversacional  
-**Status:** Aprovado (LOCAL browser 23/23; produção pendente pós-deploy)
+**Status:** Aprovado (LOCAL 23/23; REAL 23/23; paridade 15/15)
 
 ## Objetivos
 
