@@ -2,10 +2,10 @@
   "patch": "4A.10",
   "phase": "multivariate_robustness_audit",
   "status": "APROVADA",
-  "mode": "local",
-  "base_url": "http://localhost:3008",
+  "mode": "production",
+  "base_url": "https://economia-ai.vercel.app",
   "commit": "320e399bab27f749f863d8b9ef65392251d17e94",
-  "finished_at": "2026-07-28T01:32:18.787Z",
+  "finished_at": "2026-07-28T01:22:10.646Z",
   "summary": {
     "passed": 57,
     "failed": 0,
@@ -230,7 +230,7 @@
       "id": "battery-v1",
       "family": "battery",
       "title": "Bateria / autonomia — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "qual celular dura mais ate 2500?",
       "pass": true,
       "architecture": {
@@ -272,7 +272,7 @@
       "id": "battery-v2",
       "family": "battery",
       "title": "Bateria / autonomia — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "qual celular tem a bateria melhor ate 2000?",
       "pass": true,
       "architecture": {
@@ -314,7 +314,7 @@
       "id": "battery-v3",
       "family": "battery",
       "title": "Bateria / autonomia — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "qual aguenta mais tempo longe da tomada ate 2500?",
       "pass": true,
       "architecture": {
@@ -341,7 +341,7 @@
         "surfaceValid": true,
         "surfaceIssues": [],
         "dominantOpeningTemplate": false,
-        "replyLength": 563
+        "replyLength": 559
       },
       "dimensions": {
         "fidelity": true,
@@ -350,13 +350,13 @@
         "personalization": true
       },
       "intentMatch": true,
-      "replyPreview": "Para um notebook que aguenta mais tempo longe da tomada até R$ 2.500, uma boa opção é o Acer Aspire 5. Ele costuma ter uma autonomia de bateria que varia entre 8 a 10 horas, dependendo do uso, o que é bastante razoável para essa faixa de preço. Esse modelo também oferece um bom e"
+      "replyPreview": "Para um notebook que aguenta mais tempo longe da tomada até R$ 2.500, uma boa opção é o Acer Aspire 5. Ele costuma ter uma autonomia de bateria que pode chegar a 8 horas, dependendo do uso. Esse modelo tem um equilíbrio interessante entre desempenho e duração da bateria, o que é "
     },
     {
       "id": "battery-v4",
       "family": "battery",
       "title": "Bateria / autonomia — variação 4",
-      "environment": "local",
+      "environment": "production",
       "message": "quero um celular q nao me deixe na mao ate 1800",
       "pass": true,
       "architecture": {
@@ -398,7 +398,7 @@
       "id": "battery-v5",
       "family": "battery",
       "title": "Bateria / autonomia — variação 5",
-      "environment": "local",
+      "environment": "production",
       "message": "o que segura um dia inteiro ate 2200?",
       "pass": true,
       "architecture": {
@@ -440,7 +440,7 @@
       "id": "battery-v6",
       "family": "battery",
       "title": "Bateria / autonomia — variação 6",
-      "environment": "local",
+      "environment": "production",
       "message": "nao quero carregar toda hora, qual celular ate 2000?",
       "pass": true,
       "architecture": {
@@ -482,7 +482,7 @@
       "id": "camera-v1",
       "family": "camera",
       "title": "Câmera / fotos — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "quero celular com camera boa ate 2500",
       "pass": true,
       "architecture": {
@@ -524,7 +524,7 @@
       "id": "camera-v2",
       "family": "camera",
       "title": "Câmera / fotos — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "quero celular pra foto e video ate 3000, qual vale a pena?",
       "pass": true,
       "architecture": {
@@ -566,7 +566,7 @@
       "id": "camera-v3",
       "family": "camera",
       "title": "Câmera / fotos — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "qual tira foto melhor ate 2000?",
       "pass": true,
       "architecture": {
@@ -608,7 +608,7 @@
       "id": "camera-v4",
       "family": "camera",
       "title": "Câmera / fotos — variação 4",
-      "environment": "local",
+      "environment": "production",
       "message": "to procurando smartphone com boa cam ate 2000",
       "pass": true,
       "architecture": {
@@ -650,7 +650,7 @@
       "id": "camera-v5",
       "family": "camera",
       "title": "Câmera / fotos — variação 5",
-      "environment": "local",
+      "environment": "production",
       "message": "fotografia eh minha prioridade, ate 2500",
       "pass": true,
       "architecture": {
@@ -692,7 +692,7 @@
       "id": "games-v1",
       "family": "games",
       "title": "Jogos / desempenho — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "quero celular pra jogar ate 2500",
       "pass": true,
       "architecture": {
@@ -734,7 +734,7 @@
       "id": "games-v2",
       "family": "games",
       "title": "Jogos / desempenho — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "preciso de desempenho pra games ate 3000",
       "pass": true,
       "architecture": {
@@ -776,7 +776,7 @@
       "id": "games-v3",
       "family": "games",
       "title": "Jogos / desempenho — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "qual roda jogo pesado melhor ate 2500?",
       "pass": true,
       "architecture": {
@@ -803,7 +803,7 @@
         "surfaceValid": true,
         "surfaceIssues": [],
         "dominantOpeningTemplate": false,
-        "replyLength": 472
+        "replyLength": 565
       },
       "dimensions": {
         "fidelity": true,
@@ -812,13 +812,13 @@
         "personalization": true
       },
       "intentMatch": true,
-      "replyPreview": "Para jogos pesados até R$ 2500, uma boa opção é a Roda Gamer HyperX Alloy Elite 2. Ela oferece um desempenho sólido, com switches mecânicos que garantem uma resposta rápida e precisa, ideal para jogos competitivos. Outra alternativa é a Roda Gamer Logitech G Pro X, que também é b"
+      "replyPreview": "Para jogos pesados até R$ 2500, uma boa opção é a roda Logitech G923. Ela oferece um ótimo desempenho, com feedback tátil e um sistema de força que proporciona uma experiência mais realista. Além disso, é compatível com diversos jogos e tem uma construção sólida. Outra alternativ"
     },
     {
       "id": "games-v4",
       "family": "games",
       "title": "Jogos / desempenho — variação 4",
-      "environment": "local",
+      "environment": "production",
       "message": "smartphone gamer barato ate 2000",
       "pass": true,
       "architecture": {
@@ -860,7 +860,7 @@
       "id": "work-v1",
       "family": "work",
       "title": "Trabalho — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "preciso de celular produtivo pro trabalho ate 2500",
       "pass": true,
       "architecture": {
@@ -902,7 +902,7 @@
       "id": "work-v2",
       "family": "work",
       "title": "Trabalho — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "preciso de um aparelho produtivo pro dia a dia profissional ate 3000",
       "pass": true,
       "architecture": {
@@ -944,7 +944,7 @@
       "id": "work-v3",
       "family": "work",
       "title": "Trabalho — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "smartphone pra home office ate 3000, qual recomenda?",
       "pass": true,
       "architecture": {
@@ -986,7 +986,7 @@
       "id": "study-v1",
       "family": "study",
       "title": "Estudo — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "celular bom pra estudar e assistir aula ate 1500, qual vale a pena?",
       "pass": true,
       "architecture": {
@@ -1028,7 +1028,7 @@
       "id": "study-v2",
       "family": "study",
       "title": "Estudo — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "quero um aparelho pra faculdade ate 1800",
       "pass": true,
       "architecture": {
@@ -1070,7 +1070,7 @@
       "id": "study-v3",
       "family": "study",
       "title": "Estudo — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "smartphone pra estudante custo beneficio ate 1500",
       "pass": true,
       "architecture": {
@@ -1112,7 +1112,7 @@
       "id": "value-v1",
       "family": "value",
       "title": "Custo-benefício — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "qual celular tem melhor custo beneficio ate 1500?",
       "pass": true,
       "architecture": {
@@ -1154,7 +1154,7 @@
       "id": "value-v2",
       "family": "value",
       "title": "Custo-benefício — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "quero o melhor bang for buck ate 1500",
       "pass": true,
       "architecture": {
@@ -1196,7 +1196,7 @@
       "id": "value-v3",
       "family": "value",
       "title": "Custo-benefício — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "smartphone barato q preste ate 1200",
       "pass": true,
       "architecture": {
@@ -1238,7 +1238,7 @@
       "id": "value-v4",
       "family": "value",
       "title": "Custo-benefício — variação 4",
-      "environment": "local",
+      "environment": "production",
       "message": "nao quero gastar muito, qual smartphone decente ate 1500?",
       "pass": true,
       "architecture": {
@@ -1280,7 +1280,7 @@
       "id": "value-v5",
       "family": "value",
       "title": "Custo-benefício — variação 5",
-      "environment": "local",
+      "environment": "production",
       "message": "melhor relacao preco qualidade ate 1500",
       "pass": true,
       "architecture": {
@@ -1322,7 +1322,7 @@
       "id": "updates-v1",
       "family": "updates",
       "title": "Atualizações — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "o Galaxy A55 vale a pena considerando as atualizacoes?",
       "pass": true,
       "architecture": {
@@ -1364,7 +1364,7 @@
       "id": "updates-v2",
       "family": "updates",
       "title": "Atualizações — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "qual celular recebe update por mais tempo?",
       "pass": true,
       "architecture": {
@@ -1406,7 +1406,7 @@
       "id": "updates-v3",
       "family": "updates",
       "title": "Atualizações — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "quero android com update longo",
       "pass": true,
       "architecture": {
@@ -1448,7 +1448,7 @@
       "id": "comparison-v1",
       "family": "comparison",
       "title": "Comparação — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "Galaxy S23 FE ou Pixel 8, qual vale mais?",
       "pass": true,
       "architecture": {
@@ -1490,7 +1490,7 @@
       "id": "comparison-v2",
       "family": "comparison",
       "title": "Comparação — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "compara iphone 13 com moto g84",
       "pass": true,
       "architecture": {
@@ -1532,7 +1532,7 @@
       "id": "comparison-v3",
       "family": "comparison",
       "title": "Comparação — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "qual eh melhor redmi note 13 ou galaxy a55?",
       "pass": true,
       "architecture": {
@@ -1574,7 +1574,7 @@
       "id": "comparison-v4",
       "family": "comparison",
       "title": "Comparação — variação 4",
-      "environment": "local",
+      "environment": "production",
       "message": "diferenca entre edge 40 e pixel 8",
       "pass": true,
       "architecture": {
@@ -1616,7 +1616,7 @@
       "id": "contestation-v1",
       "family": "contestation",
       "title": "Contestação — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "nao concordo, acho q a bateria eh fraca",
       "pass": true,
       "architecture": {
@@ -1658,7 +1658,7 @@
       "id": "contestation-v2",
       "family": "contestation",
       "title": "Contestação — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "mas eu ouvi q esquenta muito",
       "pass": true,
       "architecture": {
@@ -1685,7 +1685,7 @@
         "surfaceValid": true,
         "surfaceIssues": [],
         "dominantOpeningTemplate": false,
-        "replyLength": 193
+        "replyLength": 185
       },
       "dimensions": {
         "fidelity": true,
@@ -1694,13 +1694,13 @@
         "personalization": true
       },
       "intentMatch": true,
-      "replyPreview": "É verdade, algumas opções podem esquentar mais do que outras. É costuma ser bom checar as características antes de decidir, assim você encontra algo que se encaixe melhor nas suas necessidades."
+      "replyPreview": "É verdade, algumas coisas podem esquentar bastante, principalmente se forem feitas de materiais mais quentes. É costuma ser bom ficar de olho na ventilação e na temperatura do ambiente."
     },
     {
       "id": "contestation-v3",
       "family": "contestation",
       "title": "Contestação — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "na verdade prefiro samsung",
       "pass": true,
       "architecture": {
@@ -1742,7 +1742,7 @@
       "id": "contestation-v4",
       "family": "contestation",
       "title": "Contestação — variação 4",
-      "environment": "local",
+      "environment": "production",
       "message": "discordo, quero algo mais barato",
       "pass": true,
       "architecture": {
@@ -1784,7 +1784,7 @@
       "id": "unknown_product-v1",
       "family": "unknown_product",
       "title": "Produto desconhecido — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "o ZPhone ZX9000 Ultra vale a pena?",
       "pass": true,
       "architecture": {
@@ -1826,7 +1826,7 @@
       "id": "unknown_product-v2",
       "family": "unknown_product",
       "title": "Produto desconhecido — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "smartphone XPhone Pro Max 2029 eh bom?",
       "pass": true,
       "architecture": {
@@ -1868,7 +1868,7 @@
       "id": "unknown_product-v3",
       "family": "unknown_product",
       "title": "Produto desconhecido — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "vale comprar o FoneTech Ultra Z9?",
       "pass": true,
       "architecture": {
@@ -1910,7 +1910,7 @@
       "id": "unknown_brand-v1",
       "family": "unknown_brand",
       "title": "Marca desconhecida — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "celular da marca Zentron vale a pena?",
       "pass": true,
       "architecture": {
@@ -1952,7 +1952,7 @@
       "id": "unknown_brand-v2",
       "family": "unknown_brand",
       "title": "Marca desconhecida — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "smartphone NoNameTech eh confiavel?",
       "pass": true,
       "architecture": {
@@ -1994,7 +1994,7 @@
       "id": "unknown_category-v1",
       "family": "unknown_category",
       "title": "Categoria desconhecida — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "qual cadeira ergonomica voce recomenda?",
       "pass": true,
       "architecture": {
@@ -2036,7 +2036,7 @@
       "id": "unknown_category-v2",
       "family": "unknown_category",
       "title": "Categoria desconhecida — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "melhor liquidificador industrial ate 500?",
       "pass": true,
       "architecture": {
@@ -2078,7 +2078,7 @@
       "id": "vague_clarification-v1",
       "family": "vague_clarification",
       "title": "Ambiguidade — clarificação honesta (descoberta na auditoria) — variação 1",
-      "environment": "local",
+      "environment": "production",
       "message": "qual tem bateria melhor?",
       "pass": true,
       "architecture": {
@@ -2120,7 +2120,7 @@
       "id": "vague_clarification-v2",
       "family": "vague_clarification",
       "title": "Ambiguidade — clarificação honesta (descoberta na auditoria) — variação 2",
-      "environment": "local",
+      "environment": "production",
       "message": "quero celular com camera boa",
       "pass": true,
       "architecture": {
@@ -2162,7 +2162,7 @@
       "id": "vague_clarification-v3",
       "family": "vague_clarification",
       "title": "Ambiguidade — clarificação honesta (descoberta na auditoria) — variação 3",
-      "environment": "local",
+      "environment": "production",
       "message": "melhor relacao preco qualidade",
       "pass": true,
       "architecture": {
@@ -2189,7 +2189,7 @@
         "surfaceValid": true,
         "surfaceIssues": [],
         "dominantOpeningTemplate": false,
-        "replyLength": 203
+        "replyLength": 218
       },
       "dimensions": {
         "fidelity": true,
@@ -2198,13 +2198,13 @@
         "personalization": true
       },
       "intentMatch": true,
-      "replyPreview": "Entendo que você está buscando algo com uma boa relação entre preço e qualidade. Isso é em geral importante na hora de fazer uma escolha. Se precisar de dicas ou informações mais específicas, é só falar!"
+      "replyPreview": "A busca pela melhor relação preço e qualidade é em geral um desafio, né? Muitas vezes, vale a pena fazer uma pesquisa e ler opiniões de quem já comprou. Assim, fica mais fácil encontrar algo que realmente valha a pena."
     },
     {
       "id": "follow-up",
       "family": "follow_up",
       "title": "Follow-up contextual",
-      "environment": "local",
+      "environment": "production",
       "pass": true,
       "turnCount": 3,
       "transcript": [
@@ -2328,7 +2328,7 @@
       "id": "refinement",
       "family": "refinement",
       "title": "Refinamento de busca",
-      "environment": "local",
+      "environment": "production",
       "pass": true,
       "turnCount": 3,
       "transcript": [
@@ -2452,7 +2452,7 @@
       "id": "priority-shift",
       "family": "priority_change",
       "title": "Mudança de prioridade / contradição",
-      "environment": "local",
+      "environment": "production",
       "pass": true,
       "turnCount": 5,
       "transcript": [
@@ -2535,7 +2535,7 @@
         {
           "turn": 3,
           "user": "na verdade desempenho pesou mais",
-          "assistantPreview": "Samsung Galaxy A15 5G foi a escolha por câmera: ele possui uma boa qualidade de fotos, o que é um ponto positivo. Agora, considerando que você prioriza o desempenho, o A15 ainda é uma boa opção, pois oferece um desempenh",
+          "assistantPreview": "Samsung Galaxy A15 5G foi a escolha por câmera: ele oferece uma boa qualidade de fotos, mas também se destaca em desempenho. Considerando que agora você prioriza desempenho, o A15 5G ainda é uma boa opção, pois possui um",
           "architecture": {
             "intent": "constraint_change",
             "priority": "performance",
@@ -2560,7 +2560,7 @@
             "surfaceValid": true,
             "surfaceIssues": [],
             "dominantOpeningTemplate": false,
-            "replyLength": 499
+            "replyLength": 532
           },
           "dimensions": {
             "fidelity": true,
@@ -2652,7 +2652,7 @@
       "id": "long-conversation",
       "family": "long_conversation",
       "title": "Conversa longa (10+ turnos)",
-      "environment": "local",
+      "environment": "production",
       "pass": true,
       "turnCount": 11,
       "transcript": [
@@ -2887,7 +2887,7 @@
         {
           "turn": 7,
           "user": "ele esquenta muito?",
-          "assistantPreview": "Sim, ele pode esquentar bastante, especialmente se for um modelo com potência alta. É costuma ser bom ficar de olho nas especificações para ter certeza do que esperar.",
+          "assistantPreview": "Sim, geralmente ele esquenta bastante. Se precisar de mais detalhes ou quiser saber sobre como isso pode afetar o uso, é só falar!",
           "architecture": {
             "intent": "social_conversation",
             "priority": "battery",
@@ -2912,7 +2912,7 @@
             "surfaceValid": true,
             "surfaceIssues": [],
             "dominantOpeningTemplate": false,
-            "replyLength": 167
+            "replyLength": 130
           },
           "dimensions": {
             "fidelity": true,
@@ -3080,7 +3080,7 @@
       "id": "stab-battery-run1",
       "family": "stability",
       "title": "Estabilidade — stab-battery run 1",
-      "environment": "local",
+      "environment": "production",
       "message": "qual celular dura mais ate 2500?",
       "pass": true,
       "architecture": {
@@ -3120,7 +3120,7 @@
       "id": "stab-battery-run2",
       "family": "stability",
       "title": "Estabilidade — stab-battery run 2",
-      "environment": "local",
+      "environment": "production",
       "message": "qual celular dura mais ate 2500?",
       "pass": true,
       "architecture": {
@@ -3160,7 +3160,7 @@
       "id": "stab-value-run1",
       "family": "stability",
       "title": "Estabilidade — stab-value run 1",
-      "environment": "local",
+      "environment": "production",
       "message": "melhor custo beneficio ate 1500",
       "pass": true,
       "architecture": {
@@ -3200,7 +3200,7 @@
       "id": "stab-value-run2",
       "family": "stability",
       "title": "Estabilidade — stab-value run 2",
-      "environment": "local",
+      "environment": "production",
       "message": "melhor custo beneficio ate 1500",
       "pass": true,
       "architecture": {
@@ -3240,7 +3240,7 @@
       "id": "stab-galaxy-fe-run1",
       "family": "stability",
       "title": "Estabilidade — stab-galaxy-fe run 1",
-      "environment": "local",
+      "environment": "production",
       "message": "o Galaxy S23 FE vale a pena?",
       "pass": true,
       "architecture": {
@@ -3280,7 +3280,7 @@
       "id": "stab-galaxy-fe-run2",
       "family": "stability",
       "title": "Estabilidade — stab-galaxy-fe run 2",
-      "environment": "local",
+      "environment": "production",
       "message": "o Galaxy S23 FE vale a pena?",
       "pass": true,
       "architecture": {

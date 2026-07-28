@@ -180,7 +180,7 @@ const FAMILY_DEFINITIONS = {
       "qual aguenta mais tempo longe da tomada ate 2500?",
       "quero um celular q nao me deixe na mao ate 1800",
       "o que segura um dia inteiro ate 2200?",
-      "nao quero carregar toda hora, orcamento 2000",
+      "nao quero carregar toda hora, qual celular ate 2000?",
     ],
   },
   camera: {

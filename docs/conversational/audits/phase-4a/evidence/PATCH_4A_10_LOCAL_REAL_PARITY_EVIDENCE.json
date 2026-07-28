@@ -1,0 +1,473 @@
+{
+  "patch": "4A.10",
+  "phase": "local_real_parity",
+  "status": "APROVADA",
+  "finished_at": "2026-07-28T01:22:10.718Z",
+  "summary": {
+    "total": 57,
+    "equivalent": 57,
+    "divergent": 0,
+    "localStatus": "APROVADA",
+    "realStatus": "APROVADA",
+    "localPassed": 57,
+    "realPassed": 57
+  },
+  "comparisons": [
+    {
+      "id": "battery-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "battery-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "battery-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "battery-v4",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "battery-v5",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "battery-v6",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "camera-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "camera",
+      "realDominant": "camera"
+    },
+    {
+      "id": "camera-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "camera",
+      "realDominant": "camera"
+    },
+    {
+      "id": "camera-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "camera",
+      "realDominant": "camera"
+    },
+    {
+      "id": "camera-v4",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "camera",
+      "realDominant": "camera"
+    },
+    {
+      "id": "camera-v5",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "camera",
+      "realDominant": "camera"
+    },
+    {
+      "id": "games-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "games-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "games-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "games-v4",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "work-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "work-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "work-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "study-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "study-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "study-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "value-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "value-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "value-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "value-v4",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "value-v5",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "updates-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "updates-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "updates-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "comparison-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "comparison-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "comparison-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "comparison-v4",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "contestation-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "contestation-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "contestation-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "contestation-v4",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "unknown_product-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "unknown_product-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "unknown_product-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "unknown_brand-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "unknown_brand-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "unknown_category-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "unknown_category-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "vague_clarification-v1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "vague_clarification-v2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "vague_clarification-v3",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "follow-up",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "refinement",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "priority-shift",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null
+    },
+    {
+      "id": "long-conversation",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor"
+    },
+    {
+      "id": "stab-battery-run1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "stab-battery-run2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery"
+    },
+    {
+      "id": "stab-value-run1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "stab-value-run2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "stab-galaxy-fe-run1",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    },
+    {
+      "id": "stab-galaxy-fe-run2",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value"
+    }
+  ]
+}
