@@ -1,0 +1,84 @@
+{
+  "patch": "A.6.1",
+  "title": "PATCH A.6 — Official Closure",
+  "status": "CLOSED",
+  "closed_at": "2026-07-28T22:40:20.657Z",
+  "patch_a6_status": "OFFICIALLY_CLOSED",
+  "git": {
+    "head": "7cf4d90a4ea8ecc755e706b1dd612dba4d218d64",
+    "origin_master": "7cf4d90a4ea8ecc755e706b1dd612dba4d218d64",
+    "synchronized": true,
+    "working_tree_clean": true
+  },
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "7cf4d90a4ea8",
+    "temporal_version": "A.6.0",
+    "migration_applied": true,
+    "rpcs_validated": true,
+    "api_validated": true
+  },
+  "interface_validation": {
+    "browser_evidence": "APPROVED",
+    "section_id": "mod-performance-conversao",
+    "screenshots": {
+      "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-desktop-1785278419547.png",
+      "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-mobile-1785278420475.png"
+    }
+  },
+  "tests": {
+    "steps": [
+      {
+        "label": "git synchronized",
+        "pass": true
+      },
+      {
+        "label": "A.6 unit tests",
+        "pass": true
+      },
+      {
+        "label": "A.5 regression",
+        "pass": true
+      },
+      {
+        "label": "A.4 regression",
+        "pass": true
+      },
+      {
+        "label": "A.3 regression",
+        "pass": true
+      },
+      {
+        "label": "A.2 regression",
+        "pass": true
+      },
+      {
+        "label": "Founder Cockpit regression",
+        "pass": true
+      },
+      {
+        "label": "Production validation",
+        "pass": true
+      },
+      {
+        "label": "Browser UI validation",
+        "pass": true
+      }
+    ],
+    "all_pass": true
+  },
+  "metrics_added": [
+    "eventos_recomendacoes",
+    "eventos_cliques",
+    "eventos_favoritos",
+    "eventos_alertas",
+    "taxa_clique_recomendacao",
+    "taxa_favoritos_recomendacao",
+    "taxa_alertas_recomendacao",
+    "conversao_acumulada_visitante",
+    "funnel_stages (6 etapas)",
+    "bottlenecks (transições + gargalo principal)",
+    "daily CTR evolution"
+  ],
+  "next_patch": "A.7 — Filtros Avançados"
+}

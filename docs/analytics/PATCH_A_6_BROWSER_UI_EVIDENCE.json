@@ -2,13 +2,13 @@
   "patch": "A.6",
   "title": "Founder Performance & Conversion — Browser UI Validation",
   "status": "APPROVED",
-  "validated_at": "2026-07-28T22:37:52.661Z",
+  "validated_at": "2026-07-28T22:40:20.635Z",
   "base_url": "http://localhost:3007",
   "production_api_url": "https://economia-ai.vercel.app/api/temporal-metrics?days=30&series=conversion",
   "environment": "local_production_build_with_production_api_parity",
   "screenshots": {
-    "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-desktop-1785278271442.png",
-    "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-mobile-1785278272487.png"
+    "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-desktop-1785278419547.png",
+    "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-mobile-1785278420475.png"
   },
   "parity": {
     "production_temporal_version": "A.6.0",

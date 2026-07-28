@@ -2,10 +2,10 @@
   "patch": "A.6",
   "title": "Founder Performance & Conversion — Production Validation",
   "status": "APPROVED",
-  "validated_at": "2026-07-28T22:38:08.388Z",
+  "validated_at": "2026-07-28T22:40:10.613Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "bea3153df465",
+    "build": "7cf4d90a4ea8",
     "temporal_api": "/api/temporal-metrics?days=30&series=conversion",
     "section_id": "mod-performance-conversao"
   },
@@ -37,7 +37,7 @@
       {
         "label": "health 200",
         "pass": true,
-        "detail": "build=bea3153df465"
+        "detail": "build=7cf4d90a4ea8"
       },
       {
         "label": "temporal API 200",
