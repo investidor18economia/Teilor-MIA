@@ -2,10 +2,10 @@
   "patch": "A.5",
   "title": "Founder Products & Categories — Production Validation",
   "status": "APPROVED",
-  "validated_at": "2026-07-28T22:15:53.004Z",
+  "validated_at": "2026-07-28T22:17:41.435Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "5a8d222adbac",
+    "build": "f0cb6f39b870",
     "temporal_api": "/api/temporal-metrics?days=30&series=products,categories",
     "section_id": "mod-produtos-categorias"
   },
@@ -32,7 +32,7 @@
       {
         "label": "health 200",
         "pass": true,
-        "detail": "build=5a8d222adbac"
+        "detail": "build=f0cb6f39b870"
       },
       {
         "label": "temporal API 200",

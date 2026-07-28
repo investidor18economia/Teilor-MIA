@@ -28,9 +28,11 @@ function readJson(path) {
   }
 }
 
+const steps = [];
+let gitSync = { pass: false };
+
 console.log("\nPATCH A.5.1 — Official closure\n");
 
-let gitSync = { pass: false, head: null, origin: null };
 try {
   const head = execSync("git rev-parse HEAD", { cwd: ROOT, encoding: "utf8" }).trim();
   const origin = execSync("git rev-parse origin/master", { cwd: ROOT, encoding: "utf8" }).trim();
@@ -54,16 +56,16 @@ try {
   console.log(`Git sync: FAIL (${err.message})`);
 }
 
-const steps = [
-  { label: "git synchronized", pass: gitSync.pass },
+steps.push({ label: "git synchronized", pass: gitSync.pass });
+steps.push(
   run("node scripts/test-mia-analytics-patch-a5-founder-products-categories.js", "A.5 unit tests"),
   run("node scripts/test-mia-analytics-patch-a4-founder-sessions-users.js", "A.4 regression"),
   run("node scripts/test-mia-analytics-patch-a3-temporal-series-api.js", "A.3 regression"),
   run("node scripts/test-mia-analytics-patch-a2-founder-snapshot-complete.js", "A.2 regression"),
   run("node scripts/test-mia-analytics-patch-113-founder-executive-cockpit.js", "Founder Cockpit regression"),
   run("node scripts/patch-a5-founder-products-categories-production-validation.mjs", "Production validation"),
-  run("node --env-file=.env.local scripts/patch-a5-browser-validation.mjs", "Browser UI validation"),
-];
+  run("node --env-file=.env.local scripts/patch-a5-browser-validation.mjs", "Browser UI validation")
+);
 
 const prodEvidence = readJson("docs/analytics/PATCH_A_5_FOUNDER_PRODUCTS_CATEGORIES_EVIDENCE.json");
 const browserEvidence = readJson("docs/analytics/PATCH_A_5_BROWSER_UI_EVIDENCE.json");
@@ -124,8 +126,20 @@ const closure = {
     "docs/analytics/PATCH_A_5_BROWSER_UI_EVIDENCE.json",
     "docs/analytics/PATCH_A_5_1_CLOSURE_EVIDENCE.json",
   ],
-  problems_found: [],
-  corrections_performed: [],
+  problems_found: [
+    {
+      severity: "non_blocker",
+      item: "snapshot_reference_ids_mismatch",
+      description: "Filtro usava IDs incorretos (recommendations_generated vs generated)",
+    },
+  ],
+  corrections_performed: [
+    {
+      item: "snapshot_reference_ids",
+      file: "lib/miaFounderProductsDisplay.js",
+      action: "Corrigidos IDs para generated, runner_up, clicks, favorites",
+    },
+  ],
   pending_items: allPass ? [] : ["See regression_steps for failures"],
 };
 

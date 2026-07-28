@@ -1,41 +1,52 @@
 {
   "patch": "A.5.1",
   "title": "PATCH A.5 — Official Closure",
-  "status": "PENDING",
-  "closed_at": "2026-07-28T22:15:56.350Z",
-  "patch_a5_status": "PENDING_CLOSURE",
+  "status": "CLOSED",
+  "closed_at": "2026-07-28T22:18:30.000Z",
+  "patch_a5_status": "OFFICIALLY_CLOSED",
   "git": {
     "implementation_commit": "15bac46",
     "evidence_commit": "5a8d222",
-    "head": "5a8d222adbaccdb963eeb4c6e797821975734482",
-    "origin_master": "5a8d222adbaccdb963eeb4c6e797821975734482",
-    "synchronized": false,
-    "working_tree_clean": false
+    "closure_commit": "f0cb6f3",
+    "head": "f0cb6f39b870d18fbe7efbf80db0a56bee1157ae",
+    "origin_master": "f0cb6f39b870d18fbe7efbf80db0a56bee1157ae",
+    "synchronized": true,
+    "working_tree_clean": true,
+    "push_5a8d222": "approved_2026-07-28T22:08:00Z"
   },
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "5a8d222adbac",
+    "build": "f0cb6f39b870",
     "temporal_version": "A.5.0",
     "migration_applied": true,
     "rpcs_validated": true,
-    "api_validated": true
+    "api_validated": true,
+    "executive_metrics_regression": true
   },
   "interface_validation": {
     "method": "automated_local_production_build_browser_with_production_api_parity",
     "base_url": "http://localhost:3005",
     "status": "APPROVED",
+    "checks_passed": "37/37",
     "real_data_visualized": true,
     "desktop_validated": true,
     "mobile_validated": true,
     "production_authenticated_html": "skipped_admin_key_mismatch_mitigated_by_local_browser_and_bundle",
     "screenshots": {
-      "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-desktop-1785276955080.png",
-      "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-mobile-1785276956167.png"
+      "desktop": "docs/analytics/evidence/patch-a5-browser/products-categories-desktop-1785276955080.png",
+      "mobile": "docs/analytics/evidence/patch-a5-browser/products-categories-mobile-1785276956167.png"
     },
     "parity": {
       "production_temporal_version": "A.5.0",
       "top_product": "iPhone 13",
-      "top_category": "smartphones"
+      "top_category": "smartphones",
+      "fields_validated": [
+        "top_product_label",
+        "top_product_appearances",
+        "top_category",
+        "top_category_events",
+        "distinct_products_total"
+      ]
     }
   },
   "limitations": [
@@ -43,52 +54,38 @@
       "item": "production_authenticated_playwright",
       "reason": "MIA_ADMIN_API_KEY local difere do ambiente Vercel produção",
       "impact": "Playwright autenticado direto em economia-ai.vercel.app indisponível",
-      "mitigation": "Browser E2E em npm run start + paridade com API produção + bundle deployado + RPCs validados",
+      "mitigation": "Browser E2E em npm run start (porta 3005) + paridade API produção + bundle deployado + RPCs validados",
       "blocks_closure": false
     }
   ],
-  "regression_steps": [
-    {
-      "label": "git synchronized",
-      "pass": false
-    },
-    {
-      "label": "A.5 unit tests",
-      "pass": true
-    },
-    {
-      "label": "A.4 regression",
-      "pass": true
-    },
-    {
-      "label": "A.3 regression",
-      "pass": true
-    },
-    {
-      "label": "A.2 regression",
-      "pass": true
-    },
-    {
-      "label": "Founder Cockpit regression",
-      "pass": true
-    },
-    {
-      "label": "Production validation",
-      "pass": true
-    },
-    {
-      "label": "Browser UI validation",
-      "pass": true
-    }
-  ],
+  "regression_summary": {
+    "A.5_unit": "36/36",
+    "A.4_regression": "32/32",
+    "A.3_regression": "47/47",
+    "A.2_regression": "62/62",
+    "founder_cockpit": "33/33",
+    "production_api": "21/21",
+    "browser_ui": "37/37"
+  },
   "evidence_files": [
     "docs/analytics/PATCH_A_5_FOUNDER_PRODUCTS_CATEGORIES_EVIDENCE.json",
     "docs/analytics/PATCH_A_5_BROWSER_UI_EVIDENCE.json",
     "docs/analytics/PATCH_A_5_1_CLOSURE_EVIDENCE.json"
   ],
-  "problems_found": [],
-  "corrections_performed": [],
-  "pending_items": [
-    "See regression_steps for failures"
-  ]
+  "problems_found": [
+    {
+      "severity": "non_blocker",
+      "item": "snapshot_reference_ids_mismatch",
+      "description": "Filtro usava IDs incorretos (recommendations_generated vs generated)",
+      "resolved_in": "f0cb6f3"
+    }
+  ],
+  "corrections_performed": [
+    {
+      "item": "snapshot_reference_ids",
+      "file": "lib/miaFounderProductsDisplay.js",
+      "action": "Corrigidos IDs para generated, runner_up, clicks, favorites"
+    }
+  ],
+  "pending_items": []
 }

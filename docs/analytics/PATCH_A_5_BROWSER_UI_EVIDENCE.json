@@ -2,13 +2,13 @@
   "patch": "A.5.1",
   "title": "Founder Products & Categories — Browser UI Validation",
   "status": "APPROVED",
-  "validated_at": "2026-07-28T22:15:56.324Z",
+  "validated_at": "2026-07-28T22:17:45.433Z",
   "base_url": "http://localhost:3005",
   "production_api_url": "https://economia-ai.vercel.app/api/temporal-metrics?days=30&series=products,categories",
   "environment": "local_production_build_with_production_api_parity",
   "screenshots": {
-    "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-desktop-1785276955080.png",
-    "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-mobile-1785276956167.png"
+    "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-desktop-1785277064217.png",
+    "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-mobile-1785277065268.png"
   },
   "parity": {
     "production_temporal_version": "A.5.0",
