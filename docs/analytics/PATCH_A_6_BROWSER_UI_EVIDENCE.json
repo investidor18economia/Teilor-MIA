@@ -1,0 +1,172 @@
+{
+  "patch": "A.6",
+  "title": "Founder Performance & Conversion — Browser UI Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T22:37:52.661Z",
+  "base_url": "http://localhost:3007",
+  "production_api_url": "https://economia-ai.vercel.app/api/temporal-metrics?days=30&series=conversion",
+  "environment": "local_production_build_with_production_api_parity",
+  "screenshots": {
+    "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-desktop-1785278271442.png",
+    "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a6-browser\\performance-conversion-mobile-1785278272487.png"
+  },
+  "parity": {
+    "production_temporal_version": "A.6.0",
+    "first_funnel_stage": "Sessões iniciadas",
+    "recommendations": 306
+  },
+  "console_errors_ignored_non_a6": [],
+  "api_responses": [
+    {
+      "url": "http://localhost:3007/api/temporal-metrics?days=30&series=conversion",
+      "status": 200
+    }
+  ],
+  "checks": {
+    "total": 28,
+    "passed": 28,
+    "failed": 0,
+    "items": [
+      {
+        "label": "production API fetched",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "authenticate 200",
+        "pass": true,
+        "detail": "status=200"
+      },
+      {
+        "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "performance section visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "loading finished",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "section title",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "period summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "recommendations label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "clicks label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "ctr label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "favorites rate label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "alerts rate label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "accumulated conversion label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "funnel table header",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "funnel stage column",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bottleneck section",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "daily evolution",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "snapshot reference",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "unavailable metrics doc",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "real numeric data",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity funnel stage",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity recommendations total",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "A.5 section intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "A.4 section intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal conversion API 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.6 console errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.6 network failures",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile section visible",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

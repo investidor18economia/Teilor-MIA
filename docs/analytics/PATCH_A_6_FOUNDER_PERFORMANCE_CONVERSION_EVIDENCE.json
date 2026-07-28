@@ -1,0 +1,119 @@
+{
+  "patch": "A.6",
+  "title": "Founder Performance & Conversion — Production Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T22:38:08.388Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "bea3153df465",
+    "temporal_api": "/api/temporal-metrics?days=30&series=conversion",
+    "section_id": "mod-performance-conversao"
+  },
+  "checks": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "items": [
+      {
+        "label": "migration applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "conversion RPC smoke",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "conversion funnel smoke",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "conversion bottlenecks smoke",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=bea3153df465"
+      },
+      {
+        "label": "temporal API 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal version A.6.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "conversion group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper status valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "summary metrics",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "privacy scan",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "funnel table visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bottlenecks visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive-metrics regression",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "A.5 regression products",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "A.5 regression categories",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit gate 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "deployed cockpit chunk",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes performance section",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes temporal conversion fetch",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
