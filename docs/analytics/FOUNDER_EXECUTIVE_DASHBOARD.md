@@ -37,16 +37,40 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
-3. **Plataforma** — sessões, visitantes, conversas, perguntas  
-4. **Conversação** — perguntas enviadas, recomendações exibidas, conversas com perguntas (PATCH A.2)  
-5. **Recomendações** — geradas, runner-up, sinais, taxas  
-6. **Comercial** — conjuntos de ofertas, ofertas retornadas, provedores, cliques, favoritos  
-7. **Alertas de preço** — criados, ativos, metas atingidas, notificações (PATCH A.2)  
-8. **Price Intelligence** — qualidade média + barras de confiança  
-9. **Economia** — potencial total, média, oportunidades (disclaimer)  
-10. **Anti-Regret** — score médio + distribuição  
-11. **User Value** — score médio, valores verificados + distribuição  
-12. **Sistema** — versão, build, ambiente, latência API, status
+3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
+4. **Plataforma** — sessões, visitantes, conversas, perguntas (snapshot)  
+5. **Conversação** — perguntas enviadas, recomendações exibidas, conversas com perguntas (PATCH A.2)  
+6. **Recomendações** — geradas, runner-up, sinais, taxas  
+7. **Comercial** — conjuntos de ofertas, ofertas retornadas, provedores, cliques, favoritos  
+8. **Alertas de preço** — criados, ativos, metas atingidas, notificações (PATCH A.2)  
+9. **Price Intelligence** — qualidade média + barras de confiança  
+10. **Economia** — potencial total, média, oportunidades (disclaimer)  
+11. **Anti-Regret** — score médio + distribuição  
+12. **User Value** — score médio, valores verificados + distribuição  
+13. **Sistema** — versão, build, ambiente, latência API, status
+
+---
+
+## Sessões e Usuários (PATCH A.4)
+
+**Fonte temporal:** `GET /api/temporal-metrics?days=N&series=growth,platform_activity`  
+**Mapper:** `lib/miaFounderGrowthDisplay.js`  
+**Componente:** `FounderSessionsUsersSection.jsx` (client fetch independente)
+
+| Bloco | Origem | Métricas |
+|-------|--------|----------|
+| Alcance rolling | `growth.series[0]` | DAU/WAU/MAU visitantes e usuários |
+| Composição | `growth.series[0]` | novos, recorrentes, anônimos, autenticados, taxa autenticação |
+| Atividade último dia | `platform_activity.series[0]` | sessões, conversas, perguntas, recomendações exibidas |
+| Tendências | `growth.series[0]` pct fields | crescimento DAU/WAU/MAU (sem gráficos) |
+| Tabela recente | join por `activity_day` | últimos 7 dias — valores da API, sem soma |
+| Referência snapshot | `executive-metrics` | totais do período (complementar) |
+
+**Snapshot vs temporal:** snapshot = janela rolling acumulada; temporal = visão diária e rolling por dia de referência.
+
+**Resiliência:** falha temporal não quebra snapshot SSR. `partial_errors` exibidos quando um grupo falha.
+
+**Reservado:** filtros avançados (A.7), gráficos (A.8).
 
 ---
 
@@ -60,7 +84,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 - SSR por request (dados frescos por período)
 - Cache da API executiva (TTL ~5 min)
-- Sem fetch client-side adicional além de auth/logout
+- Sessões e Usuários: fetch client-side independente à API temporal (PATCH A.4)
 
 ---
 
@@ -86,7 +110,9 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 ```bash
 npm run test:mia:analytics:patch-113:founder-executive-cockpit
 npm run test:mia:analytics:patch-113:prod-smoke
-MIA_ADMIN_API_KEY=... npm run test:mia:analytics:patch-113:prod-smoke
+npm run test:mia:analytics:patch-a4:founder-sessions-users
+npm run test:mia:analytics:patch-a4:prod-validation
+MIA_ADMIN_API_KEY=... npm run test:mia:analytics:patch-a4:prod-validation
 ```
 
 ---
@@ -94,4 +120,5 @@ MIA_ADMIN_API_KEY=... npm run test:mia:analytics:patch-113:prod-smoke
 ## Referências
 
 - [EXECUTIVE_METRICS_API.md](./EXECUTIVE_METRICS_API.md)
+- [TEMPORAL_METRICS_API.md](./TEMPORAL_METRICS_API.md)
 - [PUBLIC_METRICS_PAGE.md](./PUBLIC_METRICS_PAGE.md)

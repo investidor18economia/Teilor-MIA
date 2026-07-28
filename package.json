@@ -130,6 +130,8 @@
     "test:mia:analytics:patch-a2:founder-snapshot-complete": "node scripts/test-mia-analytics-patch-a2-founder-snapshot-complete.js",
     "test:mia:analytics:patch-a3:temporal-series-api": "node scripts/test-mia-analytics-patch-a3-temporal-series-api.js",
     "test:mia:analytics:patch-a31:prod-validation": "node scripts/patch-a31-temporal-metrics-production-validation.mjs",
+    "test:mia:analytics:patch-a4:founder-sessions-users": "node scripts/test-mia-analytics-patch-a4-founder-sessions-users.js",
+    "test:mia:analytics:patch-a4:prod-validation": "node scripts/patch-a4-founder-sessions-users-production-validation.mjs",
     "test:mia:analytics:patch-113:prod-smoke": "node scripts/patch-113-production-smoke.mjs",
     "test:mia:analytics:patch-114:executive-ai-insights": "node scripts/test-mia-analytics-patch-114-executive-ai-insights.js",
     "test:mia:analytics:patch-114:prod-smoke": "node scripts/patch-114-production-smoke.mjs",

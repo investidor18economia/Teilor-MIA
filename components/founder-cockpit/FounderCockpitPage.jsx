@@ -2,6 +2,7 @@ import FounderExecutiveInsights from "./FounderExecutiveInsights.jsx";
 import FounderKpiStrip from "./FounderKpiStrip.jsx";
 import FounderModuleSection from "./FounderModuleSection.jsx";
 import FounderPeriodFilter from "./FounderPeriodFilter.jsx";
+import FounderSessionsUsersSection from "./FounderSessionsUsersSection.jsx";
 import { TEILOR_LOGO_ALT, TEILOR_LOGO_PRIMARY_SRC } from "../../lib/brandAssets";
 
 export default function FounderCockpitPage({ cockpit, subject }) {
@@ -59,6 +60,11 @@ export default function FounderCockpitPage({ cockpit, subject }) {
       <main className="founder-cockpit-main">
         <FounderExecutiveInsights selectedDays={meta.reference_period_days} />
         <FounderKpiStrip overview={overview} />
+        <FounderSessionsUsersSection
+          selectedDays={meta.reference_period_days}
+          snapshotPlatform={modules.platform}
+          snapshotConversation={modules.conversation}
+        />
         {moduleList.map((module) => (
           <FounderModuleSection key={module.id} module={module} />
         ))}
