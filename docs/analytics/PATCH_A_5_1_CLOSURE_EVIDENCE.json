@@ -1,0 +1,94 @@
+{
+  "patch": "A.5.1",
+  "title": "PATCH A.5 — Official Closure",
+  "status": "PENDING",
+  "closed_at": "2026-07-28T22:15:56.350Z",
+  "patch_a5_status": "PENDING_CLOSURE",
+  "git": {
+    "implementation_commit": "15bac46",
+    "evidence_commit": "5a8d222",
+    "head": "5a8d222adbaccdb963eeb4c6e797821975734482",
+    "origin_master": "5a8d222adbaccdb963eeb4c6e797821975734482",
+    "synchronized": false,
+    "working_tree_clean": false
+  },
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "5a8d222adbac",
+    "temporal_version": "A.5.0",
+    "migration_applied": true,
+    "rpcs_validated": true,
+    "api_validated": true
+  },
+  "interface_validation": {
+    "method": "automated_local_production_build_browser_with_production_api_parity",
+    "base_url": "http://localhost:3005",
+    "status": "APPROVED",
+    "real_data_visualized": true,
+    "desktop_validated": true,
+    "mobile_validated": true,
+    "production_authenticated_html": "skipped_admin_key_mismatch_mitigated_by_local_browser_and_bundle",
+    "screenshots": {
+      "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-desktop-1785276955080.png",
+      "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-mobile-1785276956167.png"
+    },
+    "parity": {
+      "production_temporal_version": "A.5.0",
+      "top_product": "iPhone 13",
+      "top_category": "smartphones"
+    }
+  },
+  "limitations": [
+    {
+      "item": "production_authenticated_playwright",
+      "reason": "MIA_ADMIN_API_KEY local difere do ambiente Vercel produção",
+      "impact": "Playwright autenticado direto em economia-ai.vercel.app indisponível",
+      "mitigation": "Browser E2E em npm run start + paridade com API produção + bundle deployado + RPCs validados",
+      "blocks_closure": false
+    }
+  ],
+  "regression_steps": [
+    {
+      "label": "git synchronized",
+      "pass": false
+    },
+    {
+      "label": "A.5 unit tests",
+      "pass": true
+    },
+    {
+      "label": "A.4 regression",
+      "pass": true
+    },
+    {
+      "label": "A.3 regression",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "Founder Cockpit regression",
+      "pass": true
+    },
+    {
+      "label": "Production validation",
+      "pass": true
+    },
+    {
+      "label": "Browser UI validation",
+      "pass": true
+    }
+  ],
+  "evidence_files": [
+    "docs/analytics/PATCH_A_5_FOUNDER_PRODUCTS_CATEGORIES_EVIDENCE.json",
+    "docs/analytics/PATCH_A_5_BROWSER_UI_EVIDENCE.json",
+    "docs/analytics/PATCH_A_5_1_CLOSURE_EVIDENCE.json"
+  ],
+  "problems_found": [],
+  "corrections_performed": [],
+  "pending_items": [
+    "See regression_steps for failures"
+  ]
+}

@@ -75,6 +75,14 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Reservado:** filtros avançados (A.7), gráficos (A.8).
 
+### Encerramento (PATCH A.5.1)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_A_5_FOUNDER_PRODUCTS_CATEGORIES_EVIDENCE.json` | API prod + RPC + bundle |
+| `PATCH_A_5_BROWSER_UI_EVIDENCE.json` | Interface autenticada + paridade API |
+| `PATCH_A_5_1_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
 ---
 
 ## Sessões e Usuários (PATCH A.4)

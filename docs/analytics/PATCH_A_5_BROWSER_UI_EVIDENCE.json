@@ -1,0 +1,217 @@
+{
+  "patch": "A.5.1",
+  "title": "Founder Products & Categories — Browser UI Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T22:15:56.324Z",
+  "base_url": "http://localhost:3005",
+  "production_api_url": "https://economia-ai.vercel.app/api/temporal-metrics?days=30&series=products,categories",
+  "environment": "local_production_build_with_production_api_parity",
+  "screenshots": {
+    "desktop": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-desktop-1785276955080.png",
+    "mobile": "docs/analytics/docs\\analytics\\evidence\\patch-a5-browser\\products-categories-mobile-1785276956167.png"
+  },
+  "parity": {
+    "production_temporal_version": "A.5.0",
+    "top_product": "iPhone 13",
+    "top_category": "smartphones"
+  },
+  "console_errors_ignored_non_a5": [],
+  "api_responses": [
+    {
+      "url": "http://localhost:3005/api/temporal-metrics?days=30&series=products,categories",
+      "status": 200
+    }
+  ],
+  "checks": {
+    "total": 37,
+    "passed": 37,
+    "failed": 0,
+    "items": [
+      {
+        "label": "production API fetched",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "authenticate 200",
+        "pass": true,
+        "detail": "status=200"
+      },
+      {
+        "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "products section visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "loading finished",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "section title",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "products subsection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "distinct products label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "appearances label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "recommendations label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "clicks label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "favorites label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "alerts label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "click rate label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "product ranking header",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "categories subsection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "distinct categories label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "questions label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "category events label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "question to rec rate",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rec to click rate",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "category ranking header",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "distribution title",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "recent activity table",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "snapshot reference",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "unavailable metrics doc",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "real numeric data",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity top product label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity top product appearances",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity top category",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity top category events",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity distinct products total",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "A.4 section intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal products API 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.5 console errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.5 network failures",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile section visible",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
