@@ -288,7 +288,7 @@ test("winner decision humanized keep vs change differ", () => {
 });
 
 section("3.5b.9 — Regression guards");
-test("version is 3.5b.0", () => VERBALIZER_HUMANIZATION_VERSION === "3.5b.0");
+test("version is 3.5b.1", () => VERBALIZER_HUMANIZATION_VERSION === "3.5b.1");
 test("narrative version is 4A.2.0", () => DECISION_FACTS_NARRATIVE_VERSION === "4A.2.0");
 
 console.log(`\n${"═".repeat(60)}`);
