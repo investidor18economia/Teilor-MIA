@@ -1,0 +1,3321 @@
+{
+  "patch": "4A.10",
+  "phase": "multivariate_robustness_audit",
+  "status": "APROVADA",
+  "mode": "local",
+  "base_url": "http://localhost:3008",
+  "commit": "079414eb472b202828faaa912508dbaa7c88adcc",
+  "finished_at": "2026-07-28T00:29:35.302Z",
+  "summary": {
+    "passed": 57,
+    "failed": 0,
+    "total": 57,
+    "scenarioRecords": 57,
+    "turns": 75,
+    "variations": 75
+  },
+  "coverage": {
+    "absolute": {
+      "intentionsTested": [
+        "battery",
+        "search",
+        "clarification",
+        "context_analysis",
+        "mixed_intent",
+        "camera",
+        "processor",
+        "value",
+        "comparison",
+        "soft_disagreement",
+        "constraint_change"
+      ],
+      "variations": 75,
+      "scenarios": 57,
+      "turns": 75,
+      "categories": [
+        "phone",
+        "car_part",
+        "audio",
+        "chair"
+      ],
+      "families": {
+        "battery": {
+          "tested": 6,
+          "passed": 6,
+          "variations": 6
+        },
+        "camera": {
+          "tested": 5,
+          "passed": 5,
+          "variations": 5
+        },
+        "games": {
+          "tested": 4,
+          "passed": 4,
+          "variations": 4
+        },
+        "work": {
+          "tested": 3,
+          "passed": 3,
+          "variations": 3
+        },
+        "study": {
+          "tested": 3,
+          "passed": 3,
+          "variations": 3
+        },
+        "value": {
+          "tested": 5,
+          "passed": 5,
+          "variations": 5
+        },
+        "updates": {
+          "tested": 3,
+          "passed": 3,
+          "variations": 3
+        },
+        "comparison": {
+          "tested": 4,
+          "passed": 4,
+          "variations": 4
+        },
+        "contestation": {
+          "tested": 4,
+          "passed": 4,
+          "variations": 4
+        },
+        "unknown_product": {
+          "tested": 3,
+          "passed": 3,
+          "variations": 3
+        },
+        "unknown_brand": {
+          "tested": 2,
+          "passed": 2,
+          "variations": 2
+        },
+        "unknown_category": {
+          "tested": 2,
+          "passed": 2,
+          "variations": 2
+        },
+        "vague_clarification": {
+          "tested": 3,
+          "passed": 3,
+          "variations": 3
+        },
+        "follow_up": {
+          "tested": 1,
+          "passed": 1,
+          "variations": 3
+        },
+        "refinement": {
+          "tested": 1,
+          "passed": 1,
+          "variations": 3
+        },
+        "priority_change": {
+          "tested": 1,
+          "passed": 1,
+          "variations": 5
+        },
+        "long_conversation": {
+          "tested": 1,
+          "passed": 1,
+          "variations": 11
+        }
+      }
+    },
+    "relative": {
+      "familiesRequired": 18,
+      "familiesExercised": 18,
+      "familiesMissing": [],
+      "coveragePercent": null,
+      "coveragePercentNote": "NULL — denominador de famílias futuras (notebook, TV, etc.) não possui baseline confiável neste PATCH.",
+      "limitations": [
+        "Bateria de variações cobre mobile como categoria principal",
+        "Cenários dependem de catálogo comercial disponível no ambiente",
+        "Estabilidade testada com 2 execuções por cenário crítico",
+        "Variações vagas sem orçamento exercitadas na família vague_clarification (descoberta na auditoria)"
+      ]
+    },
+    "convergence": [
+      {
+        "family": "battery",
+        "samples": 6,
+        "converged": true,
+        "dominantCriteria": [
+          "battery"
+        ]
+      },
+      {
+        "family": "camera",
+        "samples": 5,
+        "converged": true,
+        "dominantCriteria": [
+          "camera"
+        ]
+      },
+      {
+        "family": "games",
+        "samples": 4,
+        "converged": true,
+        "dominantCriteria": [
+          "processor"
+        ]
+      },
+      {
+        "family": "work",
+        "samples": 3,
+        "converged": true,
+        "dominantCriteria": [
+          "processor"
+        ]
+      },
+      {
+        "family": "study",
+        "samples": 3,
+        "converged": true,
+        "dominantCriteria": [
+          "value"
+        ]
+      },
+      {
+        "family": "value",
+        "samples": 5,
+        "converged": true,
+        "dominantCriteria": [
+          "value"
+        ]
+      },
+      {
+        "family": "updates",
+        "samples": 3,
+        "converged": false,
+        "dominantCriteria": [
+          "value",
+          "processor"
+        ]
+      },
+      {
+        "family": "contestation",
+        "samples": 2,
+        "converged": false,
+        "dominantCriteria": [
+          "battery",
+          "value"
+        ]
+      },
+      {
+        "family": "unknown_product",
+        "samples": 2,
+        "converged": false,
+        "dominantCriteria": [
+          "value",
+          "processor"
+        ]
+      },
+      {
+        "family": "unknown_brand",
+        "samples": 2,
+        "converged": false,
+        "dominantCriteria": [
+          "value",
+          "processor"
+        ]
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "battery-v1",
+      "family": "battery",
+      "title": "Bateria / autonomia — variação 1",
+      "environment": "local",
+      "message": "qual celular dura mais ate 2500?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 880
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — i"
+    },
+    {
+      "id": "battery-v2",
+      "family": "battery",
+      "title": "Bateria / autonomia — variação 2",
+      "environment": "local",
+      "message": "qual celular tem a bateria melhor ate 2000?",
+      "pass": true,
+      "architecture": {
+        "intent": "clarification",
+        "priority": "battery",
+        "category": "phone",
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 44
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Isso se refere a qual recomendação anterior?"
+    },
+    {
+      "id": "battery-v3",
+      "family": "battery",
+      "title": "Bateria / autonomia — variação 3",
+      "environment": "local",
+      "message": "qual aguenta mais tempo longe da tomada ate 2500?",
+      "pass": true,
+      "architecture": {
+        "intent": "context_analysis",
+        "priority": "performance",
+        "category": null,
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 480
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Para um notebook que aguente mais tempo longe da tomada até R$ 2.500, uma boa opção é o Acer Aspire 5. Ele costuma ter uma autonomia de bateria que varia de 8 a 10 horas, dependendo do uso. Esse modelo oferece um bom equilíbrio entre desempenho e duração da bateria, sendo ideal p"
+    },
+    {
+      "id": "battery-v4",
+      "family": "battery",
+      "title": "Bateria / autonomia — variação 4",
+      "environment": "local",
+      "message": "quero um celular q nao me deixe na mao ate 1800",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 903
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante "
+    },
+    {
+      "id": "battery-v5",
+      "family": "battery",
+      "title": "Bateria / autonomia — variação 5",
+      "environment": "local",
+      "message": "o que segura um dia inteiro ate 2200?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 772
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu iria no Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G também entrou forte — o custo de entrada tende a ser mais acessí"
+    },
+    {
+      "id": "battery-v6",
+      "family": "battery",
+      "title": "Bateria / autonomia — variação 6",
+      "environment": "local",
+      "message": "nao quero carregar toda hora, orcamento 2000",
+      "pass": true,
+      "architecture": {
+        "intent": "mixed_intent",
+        "priority": "battery",
+        "category": null,
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 61
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Sem essa marca — em qual faixa ou produto você está pensando?"
+    },
+    {
+      "id": "camera-v1",
+      "family": "camera",
+      "title": "Câmera / fotos — variação 1",
+      "environment": "local",
+      "message": "quero celular com camera boa ate 2500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "camera",
+        "category": "phone",
+        "dominantCriterion": "camera",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 753
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Eu iria no iPhone 13. No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Mais marg"
+    },
+    {
+      "id": "camera-v2",
+      "family": "camera",
+      "title": "Câmera / fotos — variação 2",
+      "environment": "local",
+      "message": "quero celular pra foto e video ate 3000, qual vale a pena?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "camera",
+        "category": "phone",
+        "dominantCriterion": "camera",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 83
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro."
+    },
+    {
+      "id": "camera-v3",
+      "family": "camera",
+      "title": "Câmera / fotos — variação 3",
+      "environment": "local",
+      "message": "qual tira foto melhor ate 2000?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "camera",
+        "category": null,
+        "dominantCriterion": "camera",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S22"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 670
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Eu iria no Samsung Galaxy S22. No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúnci"
+    },
+    {
+      "id": "camera-v4",
+      "family": "camera",
+      "title": "Câmera / fotos — variação 4",
+      "environment": "local",
+      "message": "to procurando smartphone com boa cam ate 2000",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "camera",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 912
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. No dia a dia, isso s"
+    },
+    {
+      "id": "camera-v5",
+      "family": "camera",
+      "title": "Câmera / fotos — variação 5",
+      "environment": "local",
+      "message": "fotografia eh minha prioridade, ate 2500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "camera",
+        "category": null,
+        "dominantCriterion": "camera",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S22"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 678
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Neste cenário, o Samsung Galaxy S22 se destaca — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso rea"
+    },
+    {
+      "id": "games-v1",
+      "family": "games",
+      "title": "Jogos / desempenho — variação 1",
+      "environment": "local",
+      "message": "quero celular pra jogar ate 2500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "performance",
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 786
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Ficaria com o iPhone 13 por um motivo claro: mais margem de tranquilidade quando o uso deixa de ser básico. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prol"
+    },
+    {
+      "id": "games-v2",
+      "family": "games",
+      "title": "Jogos / desempenho — variação 2",
+      "environment": "local",
+      "message": "preciso de desempenho pra games ate 3000",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "performance",
+        "category": null,
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S22"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 735
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Eu iria no Samsung Galaxy S22. No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o Samsung Galaxy S22, mas o Samsung Galaxy S23 FE chegou perto. No conjunto, o equilíbrio entre ganhos e concessões ain"
+    },
+    {
+      "id": "games-v3",
+      "family": "games",
+      "title": "Jogos / desempenho — variação 3",
+      "environment": "local",
+      "message": "qual roda jogo pesado melhor ate 2500?",
+      "pass": true,
+      "architecture": {
+        "intent": "context_analysis",
+        "priority": "performance",
+        "category": "car_part",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 607
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Para jogos pesados, uma boa opção de roda até R$ 2500 é a Logitech G923. Ela oferece um ótimo desempenho com feedback tátil e é compatível com diversos jogos de corrida. Além disso, o sistema de força feedback proporciona uma experiência mais realista. Outra alternativa é a Thrus"
+    },
+    {
+      "id": "games-v4",
+      "family": "games",
+      "title": "Jogos / desempenho — variação 4",
+      "environment": "local",
+      "message": "smartphone gamer barato ate 2000",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "performance",
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 747
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE: o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy S22; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estour"
+    },
+    {
+      "id": "work-v1",
+      "family": "work",
+      "title": "Trabalho — variação 1",
+      "environment": "local",
+      "message": "preciso de celular produtivo pro trabalho ate 2500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 752
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a apare"
+    },
+    {
+      "id": "work-v2",
+      "family": "work",
+      "title": "Trabalho — variação 2",
+      "environment": "local",
+      "message": "preciso de um aparelho produtivo pro dia a dia profissional ate 3000",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 2,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Redmi Note 13 Pro 5G"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 696
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Neste cenário, o Redmi Note 13 Pro 5G se destaca — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha"
+    },
+    {
+      "id": "work-v3",
+      "family": "work",
+      "title": "Trabalho — variação 3",
+      "environment": "local",
+      "message": "smartphone pra home office ate 3000, qual recomenda?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 902
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE: o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o custo de entrada tende a ser mais acessível, sem"
+    },
+    {
+      "id": "study-v1",
+      "family": "study",
+      "title": "Estudo — variação 1",
+      "environment": "local",
+      "message": "celular bom pra estudar e assistir aula ate 1500, qual vale a pena?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 83
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro."
+    },
+    {
+      "id": "study-v2",
+      "family": "study",
+      "title": "Estudo — variação 2",
+      "environment": "local",
+      "message": "quero um aparelho pra faculdade ate 1800",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 6,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy A35 5G"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 865
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Neste cenário, o Samsung Galaxy A35 5G se destaca — no uso real, isso se traduz em mais tranquilidade para manter o equipamento por mais tempo sem sensação de obsolescência imediata. Eu escolhi o Samsung Galaxy A35 5G, mas o Redmi Note 13 chegou perto. A diferença é que o Samsung"
+    },
+    {
+      "id": "study-v3",
+      "family": "study",
+      "title": "Estudo — variação 3",
+      "environment": "local",
+      "message": "smartphone pra estudante custo beneficio ate 1500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 3,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Redmi Note 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 985
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Neste cenário, o Redmi Note 13 se destaca — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Redmi Note 13 — visual mais confortável durante o uso prolongado. A autonomia costuma ser um po"
+    },
+    {
+      "id": "value-v1",
+      "family": "value",
+      "title": "Custo-benefício — variação 1",
+      "environment": "local",
+      "message": "qual celular tem melhor custo beneficio ate 1500?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 3,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Redmi Note 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 995
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Neste cenário, o Redmi Note 13 se destaca — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Redmi Note 13 — visual mais confortável durante o uso prolongado. A autonomia costuma ser um po"
+    },
+    {
+      "id": "value-v2",
+      "family": "value",
+      "title": "Custo-benefício — variação 2",
+      "environment": "local",
+      "message": "quero o melhor bang for buck ate 1500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 720
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Eu iria no Samsung Galaxy S23 FE. O conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu iria no Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G também entrou forte — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o"
+    },
+    {
+      "id": "value-v3",
+      "family": "value",
+      "title": "Custo-benefício — variação 3",
+      "environment": "local",
+      "message": "smartphone barato q preste ate 1200",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 3,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Redmi Note 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 1000
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Ficaria com o Redmi Note 13 por um motivo claro: o custo de entrada tende a ser mais acessível, sem estourar o orçamento. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Redmi Note 13 — visual mais confortável durante o uso prolongado. A autonomia costuma ser "
+    },
+    {
+      "id": "value-v4",
+      "family": "value",
+      "title": "Custo-benefício — variação 4",
+      "environment": "local",
+      "message": "nao quero gastar muito, qual smartphone decente ate 1500?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 657
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Agora ficou mais claro o que você procura. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocup"
+    },
+    {
+      "id": "value-v5",
+      "family": "value",
+      "title": "Custo-benefício — variação 5",
+      "environment": "local",
+      "message": "melhor relacao preco qualidade ate 1500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 720
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Ficaria com o Samsung Galaxy S23 FE por um motivo claro: tende a facilitar registros consistentes no dia a dia. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o Samsung Galaxy S23 FE fecha melhor o custo-benefício para o que você p"
+    },
+    {
+      "id": "updates-v1",
+      "family": "updates",
+      "title": "Atualizações — variação 1",
+      "environment": "local",
+      "message": "o Galaxy A55 vale a pena considerando as atualizacoes?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": false,
+        "priorityConservative": true,
+        "domainId": "mobile",
+        "domainItemCount": 6,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Galaxy A55 5G"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 771
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Neste cenário, o Galaxy A55 5G se destaca — visual mais confortável durante o uso prolongado. Eu iria no Galaxy A55 5G, mas o Samsung Galaxy S23 FE também entrou forte — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio e"
+    },
+    {
+      "id": "updates-v2",
+      "family": "updates",
+      "title": "Atualizações — variação 2",
+      "environment": "local",
+      "message": "qual celular recebe update por mais tempo?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 659
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Com esse contexto, consigo ser mais precisa. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preoc"
+    },
+    {
+      "id": "updates-v3",
+      "family": "updates",
+      "title": "Atualizações — variação 3",
+      "environment": "local",
+      "message": "quero android com update longo",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 735
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Eu iria no Samsung Galaxy S23 FE. O conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No con"
+    },
+    {
+      "id": "comparison-v1",
+      "family": "comparison",
+      "title": "Comparação — variação 1",
+      "environment": "local",
+      "message": "Galaxy S23 FE ou Pixel 8, qual vale mais?",
+      "pass": true,
+      "architecture": {
+        "intent": "comparison",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 153
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Consigo comparar, mas não encontrei \"Pixel 8\" com segurança no catálogo da MIA ainda. Me manda o nome um pouco mais completo para eu fechar a comparação."
+    },
+    {
+      "id": "comparison-v2",
+      "family": "comparison",
+      "title": "Comparação — variação 2",
+      "environment": "local",
+      "message": "compara iphone 13 com moto g84",
+      "pass": true,
+      "architecture": {
+        "intent": "comparison",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 6,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 585
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganh"
+    },
+    {
+      "id": "comparison-v3",
+      "family": "comparison",
+      "title": "Comparação — variação 3",
+      "environment": "local",
+      "message": "qual eh melhor redmi note 13 ou galaxy a55?",
+      "pass": true,
+      "architecture": {
+        "intent": "comparison",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": "Redmi Note 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 421
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Câmera Galaxy A55 5G Se eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G. O que você ganha: você leva menos dependência do carregador no dia a dia O que abre"
+    },
+    {
+      "id": "comparison-v4",
+      "family": "comparison",
+      "title": "Comparação — variação 4",
+      "environment": "local",
+      "message": "diferenca entre edge 40 e pixel 8",
+      "pass": true,
+      "architecture": {
+        "intent": "comparison",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 186
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+    },
+    {
+      "id": "contestation-v1",
+      "family": "contestation",
+      "title": "Contestação — variação 1",
+      "environment": "local",
+      "message": "nao concordo, acho q a bateria eh fraca",
+      "pass": true,
+      "architecture": {
+        "intent": null,
+        "priority": null,
+        "category": null,
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 33
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Entendi o que mudou — isso conta."
+    },
+    {
+      "id": "contestation-v2",
+      "family": "contestation",
+      "title": "Contestação — variação 2",
+      "environment": "local",
+      "message": "mas eu ouvi q esquenta muito",
+      "pass": true,
+      "architecture": {
+        "intent": null,
+        "priority": null,
+        "category": null,
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 44
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Com esse contexto, consigo ser mais precisa."
+    },
+    {
+      "id": "contestation-v3",
+      "family": "contestation",
+      "title": "Contestação — variação 3",
+      "environment": "local",
+      "message": "na verdade prefiro samsung",
+      "pass": true,
+      "architecture": {
+        "intent": "soft_disagreement",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "battery",
+        "priorityPersonalized": false,
+        "priorityConservative": true,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 44
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Isso se refere a qual recomendação anterior?"
+    },
+    {
+      "id": "contestation-v4",
+      "family": "contestation",
+      "title": "Contestação — variação 4",
+      "environment": "local",
+      "message": "discordo, quero algo mais barato",
+      "pass": true,
+      "architecture": {
+        "intent": "constraint_change",
+        "priority": "value",
+        "category": null,
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 58
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Mais barato que qual faixa ou produto você tinha em mente?"
+    },
+    {
+      "id": "unknown_product-v1",
+      "family": "unknown_product",
+      "title": "Produto desconhecido — variação 1",
+      "environment": "local",
+      "message": "o ZPhone ZX9000 Ultra vale a pena?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": false,
+        "priorityConservative": true,
+        "domainId": "mobile",
+        "domainItemCount": 2,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Motorola Moto G84"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 1008
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Ficaria com o Motorola Moto G84 por um motivo claro: no dia a dia, isso se traduz em menos aperto para guardar arquivos, apps ou conteúdos acumulados. Eu iria no Motorola Moto G84, mas o Samsung Galaxy S24 Ultra também entrou forte — o custo de entrada tende a ser mais acessível,"
+    },
+    {
+      "id": "unknown_product-v2",
+      "family": "unknown_product",
+      "title": "Produto desconhecido — variação 2",
+      "environment": "local",
+      "message": "smartphone XPhone Pro Max 2029 eh bom?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 857
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orç"
+    },
+    {
+      "id": "unknown_product-v3",
+      "family": "unknown_product",
+      "title": "Produto desconhecido — variação 3",
+      "environment": "local",
+      "message": "vale comprar o FoneTech Ultra Z9?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "audio",
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": "FoneTech Ultra Z9?"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 731
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "A escolha mais equilibrada aqui é o FoneTech Ultra Z9?: atende diretamente o modelo que você citou nesta busca. Como alternativa, eu compararia com o Fone Bluetooth Redmi Buds 6 Play se outro fator pesar mais, mas para a busca direta eu manteria o FoneTech Ultra Z9? como foco. No"
+    },
+    {
+      "id": "unknown_brand-v1",
+      "family": "unknown_brand",
+      "title": "Marca desconhecida — variação 1",
+      "environment": "local",
+      "message": "celular da marca Zentron vale a pena?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 83
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro."
+    },
+    {
+      "id": "unknown_brand-v2",
+      "family": "unknown_brand",
+      "title": "Marca desconhecida — variação 2",
+      "environment": "local",
+      "message": "smartphone NoNameTech eh confiavel?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 784
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o custo de entrada tende a ser"
+    },
+    {
+      "id": "unknown_category-v1",
+      "family": "unknown_category",
+      "title": "Categoria desconhecida — variação 1",
+      "environment": "local",
+      "message": "qual cadeira ergonomica voce recomenda?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "comfort",
+        "category": "chair",
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": "Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 818
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Neste cenário, o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD se destaca — combina com o foco principal desta busca. Eu escolhi o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Monitor Gamer LG UltraGear 27\" Full HD 144Hz chegou perto."
+    },
+    {
+      "id": "unknown_category-v2",
+      "family": "unknown_category",
+      "title": "Categoria desconhecida — variação 2",
+      "environment": "local",
+      "message": "melhor liquidificador industrial ate 500?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": null,
+        "dominantCriterion": "processor",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 748
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "O melhor liquidificador industrial ate 500? faz sentido aqui porque atende diretamente o modelo que você citou nesta busca. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o melhor liquidificador industrial ate 500. No conju"
+    },
+    {
+      "id": "vague_clarification-v1",
+      "family": "vague_clarification",
+      "title": "Ambiguidade — clarificação honesta (descoberta na auditoria) — variação 1",
+      "environment": "local",
+      "message": "qual tem bateria melhor?",
+      "pass": true,
+      "architecture": {
+        "intent": null,
+        "priority": null,
+        "category": null,
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 81
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Me explica um pouco melhor o que você quer analisar ou comparar, que eu te ajudo."
+    },
+    {
+      "id": "vague_clarification-v2",
+      "family": "vague_clarification",
+      "title": "Ambiguidade — clarificação honesta (descoberta na auditoria) — variação 2",
+      "environment": "local",
+      "message": "quero celular com camera boa",
+      "pass": true,
+      "architecture": {
+        "intent": null,
+        "priority": null,
+        "category": null,
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 72
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Entendi o uso. Qual faixa de preço você quer considerar para esse phone?"
+    },
+    {
+      "id": "vague_clarification-v3",
+      "family": "vague_clarification",
+      "title": "Ambiguidade — clarificação honesta (descoberta na auditoria) — variação 3",
+      "environment": "local",
+      "message": "melhor relacao preco qualidade",
+      "pass": true,
+      "architecture": {
+        "intent": null,
+        "priority": null,
+        "category": null,
+        "dominantCriterion": null,
+        "priorityPersonalized": false,
+        "priorityConservative": false,
+        "domainId": null,
+        "domainItemCount": 0,
+        "practicalConsequenceCount": 0,
+        "hasStructuredFacts": false,
+        "hasNarrativePlan": false,
+        "hasVerbalizationPlan": false,
+        "winner": null
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 44
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      },
+      "intentMatch": true,
+      "replyPreview": "Com esse contexto, consigo ser mais precisa."
+    },
+    {
+      "id": "follow-up",
+      "family": "follow_up",
+      "title": "Follow-up contextual",
+      "environment": "local",
+      "pass": true,
+      "turnCount": 3,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero um celular com boa bateria ate 2000",
+          "assistantPreview": "Pelo que mapeei, o Samsung Galaxy A15 5G combina melhor com o que você pediu — combina com o foco principal desta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale ol",
+          "architecture": {
+            "intent": "search",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy A15 5G"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 550
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "e a camera, como eh?",
+          "assistantPreview": "Sobre o Samsung Galaxy A15 5G, pensando em câmera/fotos: A câmera é boa dentro da categoria. Deve atender bem para fotos do dia a dia, família, redes sociais e uso comum. Resumo: eu manteria esse produto como referência,",
+          "architecture": {
+            "intent": "search",
+            "priority": "camera",
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy A15 5G"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 244
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "qual vc recomenda entao?",
+          "assistantPreview": "Eu iria no Samsung Galaxy A15 5G. Pensando em câmera/fotos, ele é a escolha mais coerente aqui. Ele se destaca em câmera com câmera principal de 50MP. Comparando com o Redmi Note 13 Pro 5G: - Em câmera, o Redmi Note 13 P",
+          "architecture": {
+            "intent": "search",
+            "priority": "camera",
+            "category": "phone",
+            "dominantCriterion": "camera",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy A15 5G"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 430
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "refinement",
+      "family": "refinement",
+      "title": "Refinamento de busca",
+      "environment": "local",
+      "pass": true,
+      "turnCount": 3,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero celular samsung ate 2500",
+          "assistantPreview": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o cus",
+          "architecture": {
+            "intent": "search",
+            "priority": null,
+            "category": "phone",
+            "dominantCriterion": "processor",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": "mobile",
+            "domainItemCount": 5,
+            "practicalConsequenceCount": 5,
+            "hasStructuredFacts": true,
+            "hasNarrativePlan": true,
+            "hasVerbalizationPlan": true,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 863
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "prefiro linha A, nao S",
+          "assistantPreview": "Eu iria no Samsung Galaxy S23 FE. O principal motivo é o equilíbrio geral, com destaque em custo-benefício. Ele entrega score de custo-benefício 89, o que pesa a favor. Comparando com o Samsung Galaxy A35 5G: - Em câmera",
+          "architecture": {
+            "intent": "search",
+            "priority": null,
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 352
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "o A55 vale a pena?",
+          "assistantPreview": "Eu iria no Samsung Galaxy S23 FE. O principal motivo é o equilíbrio geral, com destaque em custo-benefício. Ele entrega score de custo-benefício 89, o que pesa a favor. Comparando com o Samsung Galaxy A35 5G: - Em câmera",
+          "architecture": {
+            "intent": "search",
+            "priority": null,
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 352
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "priority-shift",
+      "family": "priority_change",
+      "title": "Mudança de prioridade / contradição",
+      "environment": "local",
+      "pass": true,
+      "turnCount": 5,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "quero celular com bateria boa ate 2500",
+          "assistantPreview": "Neste cenário, o Samsung Galaxy A15 5G se destaca — combina com o foco principal desta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o an",
+          "architecture": {
+            "intent": "search",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy A15 5G"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 523
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "agora camera ficou mais importante",
+          "assistantPreview": "Sua prioridade mudou. Antes eu estava priorizando bateria/autonomia. Agora estou priorizando câmera/fotos. Mesmo com esse novo critério, Samsung Galaxy A15 5G continua sendo a escolha mais coerente — ele continua alinhad",
+          "architecture": {
+            "intent": "decision_context_change",
+            "priority": "camera",
+            "category": "phone",
+            "dominantCriterion": "camera",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy A15 5G"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 301
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "na verdade desempenho pesou mais",
+          "assistantPreview": "Samsung Galaxy A15 5G foi a escolha por camera: ele tem uma boa capacidade de capturar fotos, mas agora que você mencionou que o desempenho é mais importante, é bom considerar como ele se sai nesse aspecto. O Galaxy A15 ",
+          "architecture": {
+            "intent": "constraint_change",
+            "priority": "performance",
+            "category": "phone",
+            "dominantCriterion": "processor",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy A15 5G"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 607
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "esquece, quero melhor custo beneficio",
+          "assistantPreview": "Entendi — vamos começar do zero. Me diz o que você quer procurar agora (produto e, se quiser, até quanto pode gastar).",
+          "architecture": {
+            "intent": "legitimate_search_reset",
+            "priority": null,
+            "category": null,
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": null
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 118
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "user": "o que vc recomenda agora?",
+          "assistantPreview": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE: a capacidade de bateria sugere mais folga para uso fora de casa. Eu iria no Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G também entrou forte — o Samsung Ga",
+          "architecture": {
+            "intent": "search",
+            "priority": "value",
+            "category": null,
+            "dominantCriterion": "value",
+            "priorityPersonalized": false,
+            "priorityConservative": true,
+            "domainId": "mobile",
+            "domainItemCount": 5,
+            "practicalConsequenceCount": 5,
+            "hasStructuredFacts": true,
+            "hasNarrativePlan": true,
+            "hasVerbalizationPlan": true,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 734
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "long-conversation",
+      "family": "long_conversation",
+      "title": "Conversa longa (10+ turnos)",
+      "environment": "local",
+      "pass": true,
+      "turnCount": 11,
+      "transcript": [
+        {
+          "turn": 1,
+          "user": "oi, to procurando celular novo",
+          "assistantPreview": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúnc",
+          "architecture": {
+            "intent": "search",
+            "priority": null,
+            "category": "phone",
+            "dominantCriterion": "processor",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": "mobile",
+            "domainItemCount": 5,
+            "practicalConsequenceCount": 5,
+            "hasStructuredFacts": true,
+            "hasNarrativePlan": true,
+            "hasVerbalizationPlan": true,
+            "winner": "iPhone 13"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 648
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "user": "uso muito instagram e whats",
+          "assistantPreview": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "architecture": {
+            "intent": "comparison",
+            "priority": null,
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "iPhone 13"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 186
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "user": "bateria eh importante pq viajo",
+          "assistantPreview": "Entendi o que mudou — isso conta.",
+          "architecture": {
+            "intent": "social_conversation",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "iPhone 13"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 33
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "user": "orcamento ate 2200",
+          "assistantPreview": "Boa — isso muda como eu comparo as opções. Com o teto passou de R$ 2200,00 para R$ 2200,00, olhei de novo as opções que já tínhamos em contexto. O iPhone 13 segue na frente — Escolhido por performance: Tarefas exigentes ",
+          "architecture": {
+            "intent": "search",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": "battery",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "iPhone 13"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 410
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "user": "prefiro samsung ou motorola",
+          "assistantPreview": "Com essa informação consigo refinar melhor a recomendação. Mantendo o que conversamos, a marca samsung entrou na análise — e isso pede um ajuste fino. Mantenho o Samsung Galaxy S23 FE como melhor opção — Escolhido por pe",
+          "architecture": {
+            "intent": "comparison",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": "battery",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 439
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 6,
+          "user": "galaxy a55 parece interessante",
+          "assistantPreview": "Entendi o que mudou — isso conta.",
+          "architecture": {
+            "intent": "social_conversation",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": "battery",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 33
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 7,
+          "user": "ele esquenta muito?",
+          "assistantPreview": "Sim, ele esquenta bastante. Se precisar de mais informações ou detalhes, é só falar!",
+          "architecture": {
+            "intent": "social_conversation",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": "battery",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 84
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 8,
+          "user": "e as atualizacoes?",
+          "assistantPreview": "Agora ficou mais claro o que você procura.",
+          "architecture": {
+            "intent": "clarification",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": "battery",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 42
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 9,
+          "user": "tem algo melhor pelo mesmo preco?",
+          "assistantPreview": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — combina com o foco principal desta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale ol",
+          "architecture": {
+            "intent": "refinement",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 651
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 10,
+          "user": "ok, qual vc recomenda?",
+          "assistantPreview": "Eu iria no Samsung Galaxy S23 FE. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 4500 mAh. Meu veredito: eu escolheria o Samsung Galaxy S23 FE.",
+          "architecture": {
+            "intent": "search",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": "battery",
+            "priorityPersonalized": true,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 204
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        },
+        {
+          "turn": 11,
+          "user": "pode resumir os prós e contras?",
+          "assistantPreview": "Vamos simplificar. Samsung Galaxy S23 FE é minha recomendação principal. Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais Por isso continuo recomendando o Samsung Galaxy S",
+          "architecture": {
+            "intent": "comprehension_recovery",
+            "priority": "battery",
+            "category": "phone",
+            "dominantCriterion": null,
+            "priorityPersonalized": false,
+            "priorityConservative": false,
+            "domainId": null,
+            "domainItemCount": 0,
+            "practicalConsequenceCount": 0,
+            "hasStructuredFacts": false,
+            "hasNarrativePlan": false,
+            "hasVerbalizationPlan": false,
+            "winner": "Samsung Galaxy S23 FE"
+          },
+          "narrative": {
+            "absoluteClaims": false,
+            "absoluteSamples": [],
+            "brokenGrammar": false,
+            "duplicateSentenceCount": 0,
+            "dominantPhraseRepeats": 0,
+            "surfaceValid": true,
+            "surfaceIssues": [],
+            "dominantOpeningTemplate": false,
+            "replyLength": 226
+          },
+          "dimensions": {
+            "fidelity": true,
+            "naturalness": true,
+            "consistency": true,
+            "personalization": true
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "stab-battery-run1",
+      "family": "stability",
+      "title": "Estabilidade — stab-battery run 1",
+      "environment": "local",
+      "message": "qual celular dura mais ate 2500?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 880
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      }
+    },
+    {
+      "id": "stab-battery-run2",
+      "family": "stability",
+      "title": "Estabilidade — stab-battery run 2",
+      "environment": "local",
+      "message": "qual celular dura mais ate 2500?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "battery",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "iPhone 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 880
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      }
+    },
+    {
+      "id": "stab-value-run1",
+      "family": "stability",
+      "title": "Estabilidade — stab-value run 1",
+      "environment": "local",
+      "message": "melhor custo beneficio ate 1500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": null,
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 3,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Redmi Note 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 812
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      }
+    },
+    {
+      "id": "stab-value-run2",
+      "family": "stability",
+      "title": "Estabilidade — stab-value run 2",
+      "environment": "local",
+      "message": "melhor custo beneficio ate 1500",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": "value",
+        "category": null,
+        "dominantCriterion": "value",
+        "priorityPersonalized": true,
+        "priorityConservative": false,
+        "domainId": "mobile",
+        "domainItemCount": 3,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Redmi Note 13"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 812
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      }
+    },
+    {
+      "id": "stab-galaxy-fe-run1",
+      "family": "stability",
+      "title": "Estabilidade — stab-galaxy-fe run 1",
+      "environment": "local",
+      "message": "o Galaxy S23 FE vale a pena?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": false,
+        "priorityConservative": true,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 717
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      }
+    },
+    {
+      "id": "stab-galaxy-fe-run2",
+      "family": "stability",
+      "title": "Estabilidade — stab-galaxy-fe run 2",
+      "environment": "local",
+      "message": "o Galaxy S23 FE vale a pena?",
+      "pass": true,
+      "architecture": {
+        "intent": "search",
+        "priority": null,
+        "category": "phone",
+        "dominantCriterion": "value",
+        "priorityPersonalized": false,
+        "priorityConservative": true,
+        "domainId": "mobile",
+        "domainItemCount": 5,
+        "practicalConsequenceCount": 5,
+        "hasStructuredFacts": true,
+        "hasNarrativePlan": true,
+        "hasVerbalizationPlan": true,
+        "winner": "Samsung Galaxy S23 FE"
+      },
+      "narrative": {
+        "absoluteClaims": false,
+        "absoluteSamples": [],
+        "brokenGrammar": false,
+        "duplicateSentenceCount": 0,
+        "dominantPhraseRepeats": 0,
+        "surfaceValid": true,
+        "surfaceIssues": [],
+        "dominantOpeningTemplate": false,
+        "replyLength": 717
+      },
+      "dimensions": {
+        "fidelity": true,
+        "naturalness": true,
+        "consistency": true,
+        "personalization": true
+      }
+    }
+  ]
+}

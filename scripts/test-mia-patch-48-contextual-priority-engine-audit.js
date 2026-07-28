@@ -47,7 +47,7 @@ resetSemanticIdCounterForTests();
 console.log("\nPATCH 4A.8 — Contextual Priority Engine Audit\n");
 
 console.log("── Version ──");
-assert("engine version", CONTEXTUAL_PRIORITY_ENGINE_VERSION === "4A.8.0");
+assert("engine version", CONTEXTUAL_PRIORITY_ENGINE_VERSION === "4A.10.0");
 assert("synthesis version", CONTEXTUAL_DECISION_SYNTHESIS_VERSION === "4A.9.0");
 
 console.log("\n── Model structure ──");
@@ -184,7 +184,21 @@ assert(
   SESSION_CONTEXT_TRANSPORT_FIELDS.includes("lastContextualPriorityModel")
 );
 
-console.log("\n── Pipeline wiring ──");
+console.log("\n── PATCH 4A.10 intent lock ──");
+const axisOverrideBatteryModel = buildContextualPriorityModel({
+  query: "qual celular dura mais ate 2500?",
+  category: "phone",
+  primaryAxis: "performance",
+  querySignals: { heavyUse: true },
+  priorityWeightsModel: {
+    priorityWeights: {
+      primaryPriority: "performance_priority",
+      confidence: 0.92,
+      weights: { performance_priority: 0.3, learning_priority: 0.2 },
+    },
+  },
+});
+assert("query battery beats inferred performance axis", axisOverrideBatteryModel.dominantCriterion === "battery");
 const chatSource = readFileSync(join(ROOT, "pages/api/chat-gpt4o.js"), "utf8");
 const synthesisSource = readFileSync(join(ROOT, "lib/miaContextualDecisionSynthesis.js"), "utf8");
 assert("chat persists priority model", /lastContextualPriorityModel/.test(chatSource));

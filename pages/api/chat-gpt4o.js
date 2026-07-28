@@ -35726,6 +35726,7 @@ if (Array.isArray(products) && products.length > 0) {
       responsePath: "return_seguro",
       hasWinner: true,
       query: resolvedQuery,
+      userQuery: query,
       querySignals: earlyQuerySignals,
       priorityWeightsModel: specialistExplanation?.priorityWeightsModel || null,
       personalDecisionAdaptationModel:
