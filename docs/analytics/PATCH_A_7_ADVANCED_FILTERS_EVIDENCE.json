@@ -1,0 +1,77 @@
+{
+  "patch": "A.7",
+  "title": "Founder Advanced Filters — Production Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T23:31:42.882Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "fb007d82e2fb"
+  },
+  "checks": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "items": [
+      {
+        "label": "migration applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "RPC filter params smoke",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=fb007d82e2fb"
+      },
+      {
+        "label": "temporal filtered API 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal version A.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "filters_applied present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive filtered API 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "invalid filter HTTP 400",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit gate 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes filters UI",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes FiltersProvider",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

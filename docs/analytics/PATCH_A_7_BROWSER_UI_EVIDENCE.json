@@ -1,0 +1,32 @@
+{
+  "patch": "A.7",
+  "status": "REJECTED",
+  "validated_at": "2026-07-28T23:29:03.368Z",
+  "base_url": "http://localhost:3008",
+  "checks": {
+    "total": 4,
+    "passed": 1,
+    "items": [
+      {
+        "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "filters section visible",
+        "pass": false,
+        "detail": ""
+      },
+      {
+        "label": "browser flow",
+        "pass": false,
+        "detail": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'Últimos 7 dias' })\n"
+      },
+      {
+        "label": "production API parity",
+        "pass": false,
+        "detail": ""
+      }
+    ]
+  }
+}

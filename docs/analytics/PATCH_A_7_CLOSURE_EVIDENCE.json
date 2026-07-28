@@ -1,0 +1,38 @@
+{
+  "patch": "A.7",
+  "title": "PATCH A.7 — Official Closure",
+  "status": "CLOSED",
+  "closed_at": "2026-07-28T23:35:00.000Z",
+  "patch_a7_status": "OFFICIALLY_CLOSED",
+  "git": {
+    "implementation_commit": "fb007d8",
+    "head": "fb007d8",
+    "origin_master": "fb007d8",
+    "synchronized": true,
+    "working_tree_clean": false
+  },
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "fb007d82e2fb",
+    "temporal_version": "A.7.0",
+    "migration_applied": true,
+    "api_validated": true,
+    "bundle_validated": true
+  },
+  "filters_implemented": ["period_presets", "custom_range", "category", "product_id"],
+  "filters_deferred": ["environment", "channel", "product_label"],
+  "tests": {
+    "a7_unit": "34/34",
+    "a3_regression": "53/53",
+    "a4_regression": "32/32",
+    "a5_regression": "36/36",
+    "a6_regression": "32/32",
+    "production_validation": "12/12"
+  },
+  "interface_validation": {
+    "production_bundle": "APPROVED",
+    "local_browser_e2e": "MITIGATED_BY_PRODUCTION_BUNDLE_AND_API_PARITY",
+    "note": "Production bundle includes founder-cockpit-filters and FiltersProvider; API filter parity validated on production."
+  },
+  "next_patch": "A.8 — Gráficos e Evolução Temporal"
+}
