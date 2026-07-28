@@ -39,16 +39,47 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
 4. **Produtos e Categorias** (PATCH A.5) — ranking, distribuição, inteligência por categoria  
-5. **Plataforma** — sessões, visitantes, conversas, perguntas (snapshot)  
-6. **Conversação** — perguntas enviadas, recomendações exibidas, conversas com perguntas (PATCH A.2)  
-7. **Recomendações** — geradas, runner-up, sinais, taxas  
-8. **Comercial** — conjuntos de ofertas, ofertas retornadas, provedores, cliques, favoritos  
-9. **Alertas de preço** — criados, ativos, metas atingidas, notificações (PATCH A.2)  
-10. **Price Intelligence** — qualidade média + barras de confiança  
-11. **Economia** — potencial total, média, oportunidades (disclaimer)  
-12. **Anti-Regret** — score médio + distribuição  
-13. **User Value** — score médio, valores verificados + distribuição  
-14. **Sistema** — versão, build, ambiente, latência API, status
+5. **Performance e Conversão** (PATCH A.6) — funil, CTR, gargalos, eficiência do período  
+6. **Plataforma** — sessões, visitantes, conversas, perguntas (snapshot)  
+7. **Conversação** — perguntas enviadas, recomendações exibidas, conversas com perguntas (PATCH A.2)  
+8. **Recomendações** — geradas, runner-up, sinais, taxas  
+9. **Comercial** — conjuntos de ofertas, ofertas retornadas, provedores, cliques, favoritos  
+10. **Alertas de preço** — criados, ativos, metas atingidas, notificações (PATCH A.2)  
+11. **Price Intelligence** — qualidade média + barras de confiança  
+12. **Economia** — potencial total, média, oportunidades (disclaimer)  
+13. **Anti-Regret** — score médio + distribuição  
+14. **User Value** — score médio, valores verificados + distribuição  
+15. **Sistema** — versão, build, ambiente, latência API, status
+
+---
+
+## Performance e Conversão (PATCH A.6)
+
+**Fonte temporal:** `GET /api/temporal-metrics?days=N&series=conversion`  
+**Mapper:** `lib/miaFounderPerformanceDisplay.js`  
+**Componente:** `FounderPerformanceConversionSection.jsx` (client fetch independente)  
+**SQL canônico:** PATCH 4.3 `CONVERSION_DASHBOARD.md` + PATCH 5.3 bottleneck
+
+| Bloco | Origem | Métricas |
+|-------|--------|----------|
+| Resumo período | `conversion.summary` | recomendações, cliques, CTR, taxa favoritos, taxa alertas, conversão acumulada |
+| Funil | `conversion.funnel_stages[]` | 6 etapas — eventos, visitantes seq., taxa conv., abandono, acumulada |
+| Gargalo principal | `conversion.bottlenecks[]` | transição com maior abandono (`is_gargalo_principal`) |
+| Transições | `conversion.bottlenecks[]` | abandono e conversão por transição |
+| Evolução diária | `conversion.daily[]` | recomendações, cliques, CTR (7 dias) |
+| Referência snapshot | `executive-metrics` | geradas, runner-up, cliques, favoritos, alertas |
+
+**Métricas indisponíveis (documentadas na UI):** cliques distintos por recomendação, abandono global único, funil por cohort.
+
+**Reservado:** filtros avançados (A.7), gráficos (A.8).
+
+### Encerramento (PATCH A.6.1)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_A_6_FOUNDER_PERFORMANCE_CONVERSION_EVIDENCE.json` | API prod + RPC + bundle |
+| `PATCH_A_6_BROWSER_UI_EVIDENCE.json` | Interface autenticada + paridade API |
+| `PATCH_A_6_1_CLOSURE_EVIDENCE.json` | Encerramento oficial |
 
 ---
 
@@ -130,6 +161,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 - Cache da API executiva (TTL ~5 min)
 - Sessões e Usuários: fetch client-side independente à API temporal (PATCH A.4)
 - Produtos e Categorias: fetch client-side independente à API temporal (PATCH A.5)
+- Performance e Conversão: fetch client-side independente à API temporal (PATCH A.6)
 
 ---
 

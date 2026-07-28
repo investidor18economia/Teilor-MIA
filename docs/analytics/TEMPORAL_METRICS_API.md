@@ -1,4 +1,4 @@
-# Temporal Metrics API — PATCH A.3 / A.5
+# Temporal Metrics API — PATCH A.3 / A.5 / A.6
 
 Reusable temporal series layer for dashboards (Founder, Executive, MIA Analista, Investidores, Teilor em Números).
 
@@ -36,17 +36,18 @@ GET /api/temporal-metrics
 | `platform_activity` | `mia_temporal_series_platform_activity` | `{ series[] }` daily activity |
 | `products` | `mia_temporal_series_products` | `{ summary, ranking[], daily[] }` — PATCH A.5 / 4.4 Q1+Q4 |
 | `categories` | `mia_temporal_series_categories` | `{ summary, ranking[], daily[] }` — PATCH A.5 / 4.4 Q2+Q3 |
+| `conversion` | `mia_temporal_series_conversion` | `{ summary, funnel_stages[], bottlenecks[], daily[] }` — PATCH A.6 / 4.3 + 5.3 |
 
 ## Versioning
 
-- `temporal_version`: `A.5.0`
-- Metric definitions: [EXECUTIVE_METRICS.md](./EXECUTIVE_METRICS.md), [GROWTH_DASHBOARD.md](./GROWTH_DASHBOARD.md), [PRODUCTS_CATEGORIES_DASHBOARD.md](./PRODUCTS_CATEGORIES_DASHBOARD.md)
+- `temporal_version`: `A.6.0`
+- Metric definitions: [EXECUTIVE_METRICS.md](./EXECUTIVE_METRICS.md), [GROWTH_DASHBOARD.md](./GROWTH_DASHBOARD.md), [PRODUCTS_CATEGORIES_DASHBOARD.md](./PRODUCTS_CATEGORIES_DASHBOARD.md), [CONVERSION_DASHBOARD.md](./CONVERSION_DASHBOARD.md)
 
 ## Cache
 
 - **Type:** in-memory TTL (reuses `miaExecutiveMetricsCache.js`, default 300s)
 - **Env:** `MIA_EXECUTIVE_METRICS_CACHE_TTL_MS`
-- **Key prefix:** `temporal-metrics:vA.5.0:...`
+- **Key prefix:** `temporal-metrics:vA.6.0:...`
 
 ## Architecture
 
@@ -68,13 +69,15 @@ Reuses forbidden keys from Executive Metrics API catalog. Products group exposes
 
 - A.3: `supabase/migrations/20260728160000_mia_temporal_series_api_v1.sql`
 - A.5: `supabase/migrations/20260728210000_mia_temporal_series_products_categories_v1.sql`
-- Reference: `docs/analytics/analytics-products-categories-dashboard.sql`
+- A.6: `supabase/migrations/20260728220000_mia_temporal_series_conversion_v1.sql`
+- Reference: `docs/analytics/analytics-products-categories-dashboard.sql`, `docs/analytics/analytics-conversion-dashboard.sql`
 
 ## Tests
 
 ```bash
 npm run test:mia:analytics:patch-a3:temporal-series-api
 npm run test:mia:analytics:patch-a5:founder-products-categories
+npm run test:mia:analytics:patch-a6:founder-performance-conversion
 ```
 
 ## Founder consumption
@@ -83,4 +86,5 @@ npm run test:mia:analytics:patch-a5:founder-products-categories
 |-------|--------------|
 | A.4 Sessões e Usuários | `growth`, `platform_activity` |
 | A.5 Produtos e Categorias | `products`, `categories` |
+| A.6 Performance e Conversão | `conversion` |
 | A.8 Gráficos | mappers consume this API |
