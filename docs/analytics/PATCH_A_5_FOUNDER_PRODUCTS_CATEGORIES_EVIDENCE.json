@@ -1,0 +1,124 @@
+{
+  "patch": "A.5",
+  "title": "Founder Products & Categories — Production Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T21:57:31.372Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "15bac4688858",
+    "temporal_api": "/api/temporal-metrics?days=30&series=products,categories",
+    "section_id": "mod-produtos-categorias"
+  },
+  "checks": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "items": [
+      {
+        "label": "migration applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "products RPC smoke",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "categories RPC smoke",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=15bac4688858"
+      },
+      {
+        "label": "temporal API 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal version A.5.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "products group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "categories group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper status valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "product summary metrics",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "category summary metrics",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "privacy scan",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "top products visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "product label present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "top categories visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "category distribution",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive-metrics regression",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit gate 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "deployed cockpit chunk",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes products section",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes temporal products fetch",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
