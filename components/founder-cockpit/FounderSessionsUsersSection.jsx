@@ -1,5 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import FounderMetricCard from "./FounderMetricCard.jsx";
+import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
+import { getModuleFilterCompatibility } from "../../lib/miaFounderFiltersDisplay.js";
 import {
   mapTemporalMetricsToFounderSessionsUsers,
 } from "../../lib/miaFounderGrowthDisplay.js";
@@ -31,25 +33,25 @@ function MetricGrid({ metrics, className = "founder-module-grid" }) {
 }
 
 export default function FounderSessionsUsersSection({
-  selectedDays = 30,
   snapshotPlatform = null,
   snapshotConversation = null,
 }) {
+  const { appliedFilters, buildTemporalQueryString } = useFounderCockpitFilters();
+  const compatibility = getModuleFilterCompatibility("sessions", appliedFilters);
   const [state, setState] = useState({ status: "loading", view: null, error: null });
+  const requestSeq = useRef(0);
 
   const load = useCallback(async () => {
+    const seq = ++requestSeq.current;
     setState({ status: "loading", view: null, error: null });
     try {
-      const res = await fetch(
-        `/api/temporal-metrics?days=${selectedDays}&series=growth,platform_activity`,
-        { headers: { Accept: "application/json" }, credentials: "same-origin" }
-      );
+      const res = await fetch(`/api/temporal-metrics?${buildTemporalQueryString("growth,platform_activity")}`, {
+        headers: { Accept: "application/json" },
+        credentials: "same-origin",
+      });
+      if (seq !== requestSeq.current) return;
       if (!res.ok) {
-        setState({
-          status: "error",
-          view: null,
-          error: `http_${res.status}`,
-        });
+        setState({ status: "error", view: null, error: `http_${res.status}` });
         return;
       }
       const temporal = await res.json();
@@ -63,15 +65,14 @@ export default function FounderSessionsUsersSection({
         error: null,
       });
     } catch (err) {
+      if (seq !== requestSeq.current) return;
       setState({
         status: "error",
         view: null,
         error: String(err?.message || "fetch_failed"),
       });
     }
-    // snapshot modules are stable for a given SSR page load (period change reloads page)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedDays]);
+  }, [buildTemporalQueryString, snapshotPlatform, snapshotConversation]);
 
   useEffect(() => {
     load();
@@ -115,6 +116,12 @@ export default function FounderSessionsUsersSection({
             <p className="founder-sessions-state founder-sessions-state--partial" role="status">
               Alguns grupos temporais retornaram parcialmente
               {view.meta.partial_errors?.length ? ` (${view.meta.partial_errors.length} avisos)` : ""}.
+            </p>
+          ) : null}
+
+          {!compatibility.compatible ? (
+            <p className="founder-sessions-state founder-sessions-state--partial" role="status">
+              Filtro parcial neste módulo: {compatibility.limitations.join("; ")}.
             </p>
           ) : null}
 

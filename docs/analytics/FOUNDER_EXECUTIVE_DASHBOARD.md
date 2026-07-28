@@ -51,8 +51,6 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 14. **User Value** — score médio, valores verificados + distribuição  
 15. **Sistema** — versão, build, ambiente, latência API, status
 
----
-
 ## Performance e Conversão (PATCH A.6)
 
 **Fonte temporal:** `GET /api/temporal-metrics?days=N&series=conversion`  
@@ -71,7 +69,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Métricas indisponíveis (documentadas na UI):** cliques distintos por recomendação, abandono global único, funil por cohort.
 
-**Reservado:** filtros avançados (A.7), gráficos (A.8).
+**Reservado:** gráficos (A.8).
 
 ### Encerramento (PATCH A.6.1)
 
@@ -104,7 +102,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Privacidade:** API usa `product_label` em vez de `product_name` (chave proibida no catálogo público). Cockpit fundador é privado (`noindex`).
 
-**Reservado:** filtros avançados (A.7), gráficos (A.8).
+**Reservado:** gráficos (A.8).
 
 ### Encerramento (PATCH A.5.1)
 
@@ -135,7 +133,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Resiliência:** falha temporal não quebra snapshot SSR. `partial_errors` exibidos quando um grupo falha.
 
-**Reservado:** filtros avançados (A.7), gráficos (A.8).
+**Reservado:** gráficos (A.8).
 
 ### Encerramento (PATCH A.4.1)
 
@@ -149,9 +147,37 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 ---
 
-## Filtros de período
+## Filtros Avançados (PATCH A.7)
 
-7 · 30 · 90 · 365 dias — alteração via query `?days=` recarrega SSR com nova chamada à API.
+**Catálogo:** `lib/miaFounderFiltersCatalog.js`  
+**Normalização:** `lib/miaAnalyticsFilterParams.js`  
+**UI:** `FounderCockpitFilters.jsx` + `FounderCockpitFiltersContext.jsx`
+
+| Filtro | URL | Backend |
+|--------|-----|---------|
+| Período (hoje, 7d, 30d, 90d, custom) | `range`, `start`, `end` | `mia_analytics_resolve_window()` |
+| Categoria | `category` | `p_category` em RPCs |
+| Produto | `product_id` | `p_product_id` em RPCs |
+
+**Timezone:** UTC · **Custom max:** 365 dias · **Cache:** sufixo por filtro em executive/temporal APIs
+
+**Indisponíveis:** environment, channel, product_label (documentados na UI)
+
+**Compatibilidade parcial:** Sessões (sem product_id) · Insights (sem category/product)
+
+### Encerramento (PATCH A.7)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_A_7_ADVANCED_FILTERS_EVIDENCE.json` | Produção + RPC + bundle |
+| `PATCH_A_7_BROWSER_UI_EVIDENCE.json` | Interface + URL |
+| `PATCH_A_7_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
+## Filtros de período (legado)
+
+Compatibilidade: `?days=30` mapeia para `?range=30d`. Preferir `range` a partir do PATCH A.7.
 
 ---
 
@@ -162,6 +188,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 - Sessões e Usuários: fetch client-side independente à API temporal (PATCH A.4)
 - Produtos e Categorias: fetch client-side independente à API temporal (PATCH A.5)
 - Performance e Conversão: fetch client-side independente à API temporal (PATCH A.6)
+- Filtros avançados: estado centralizado + URL + backend RPC (PATCH A.7)
 
 ---
 

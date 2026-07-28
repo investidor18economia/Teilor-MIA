@@ -4,6 +4,7 @@
  */
 
 import { buildExecutiveMetricsResponse } from "../../lib/miaExecutiveMetricsApi.js";
+import { parseAnalyticsFiltersFromHttpQuery, buildExecutiveMetricsApiParams } from "../../lib/miaAnalyticsFilterParams.js";
 import {
   applyPublicCorsHeaders,
   applyPublicSecurityHeaders,
@@ -47,10 +48,19 @@ export default withMiaObservability(async function executiveMetricsHandler(req, 
   }
 
   try {
-    const windowDays = Number.parseInt(String(req.query?.days ?? req.query?.window_days ?? ""), 10);
+    const parsed = parseAnalyticsFiltersFromHttpQuery(req.query ?? {});
+    if (!parsed.ok) {
+      return res.status(400).json({
+        error: parsed.error,
+        reasonCode: `executive_${parsed.error}`,
+        metrics_version: "11.1.0",
+        filter_errors: parsed.filters.errors,
+      });
+    }
+
     const bypassCache = String(req.query?.fresh ?? "") === "1";
     const payload = await buildExecutiveMetricsResponse({
-      windowDays: Number.isFinite(windowDays) ? windowDays : undefined,
+      ...buildExecutiveMetricsApiParams(parsed.filters),
       bypassCache,
     });
 

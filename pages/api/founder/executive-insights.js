@@ -5,6 +5,10 @@
 import { buildExecutiveInsightsResponse } from "../../../lib/miaExecutiveInsightsApi.js";
 import { requireFounderGate } from "../../../lib/miaFounderAccess.js";
 import { applyPublicSecurityHeaders } from "../../../lib/miaPublicApiHardening.js";
+import {
+  parseAnalyticsFiltersFromHttpQuery,
+  buildExecutiveMetricsApiParams,
+} from "../../../lib/miaAnalyticsFilterParams.js";
 
 const VALID_DAYS = new Set([7, 30, 90, 365]);
 
@@ -32,7 +36,10 @@ export default async function founderExecutiveInsightsHandler(req, res) {
   }
 
   try {
-    const windowDays = parseDays(req.query?.days ?? req.query?.window_days);
+    const parsed = parseAnalyticsFiltersFromHttpQuery(req.query ?? {});
+    const windowDays = parsed.ok
+      ? parsed.filters.window_days
+      : parseDays(req.query?.days ?? req.query?.window_days);
     const bypassCache = String(req.query?.fresh ?? "") === "1";
     const skipLlm = String(req.query?.no_llm ?? "") === "1";
 
@@ -40,6 +47,7 @@ export default async function founderExecutiveInsightsHandler(req, res) {
       windowDays,
       bypassCache,
       skipLlm,
+      filtersApplied: parsed.ok ? buildExecutiveMetricsApiParams(parsed.filters) : null,
     });
 
     return res.status(200).json(payload);

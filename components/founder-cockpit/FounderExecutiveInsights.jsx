@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
+import { getModuleFilterCompatibility } from "../../lib/miaFounderFiltersDisplay.js";
 
 const SEVERITY_CLASS = {
   critical: "founder-insight--critical",
@@ -54,7 +56,9 @@ function InsightCard({ insight }) {
   );
 }
 
-export default function FounderExecutiveInsights({ selectedDays = 30 }) {
+export default function FounderExecutiveInsights() {
+  const { appliedFilters, buildExecutiveQueryString } = useFounderCockpitFilters();
+  const compatibility = getModuleFilterCompatibility("insights", appliedFilters);
   const [state, setState] = useState({ status: "loading", data: null, error: null });
 
   useEffect(() => {
@@ -62,7 +66,7 @@ export default function FounderExecutiveInsights({ selectedDays = 30 }) {
     async function load() {
       setState({ status: "loading", data: null, error: null });
       try {
-        const res = await fetch(`/api/founder/executive-insights?days=${selectedDays}`, {
+        const res = await fetch(`/api/founder/executive-insights?${buildExecutiveQueryString()}`, {
           headers: { Accept: "application/json" },
           credentials: "same-origin",
         });
@@ -97,7 +101,7 @@ export default function FounderExecutiveInsights({ selectedDays = 30 }) {
     return () => {
       cancelled = true;
     };
-  }, [selectedDays]);
+  }, [buildExecutiveQueryString]);
 
   return (
     <section className="founder-insights-section" id="executive-ai-insights" aria-labelledby="founder-insights-heading">
@@ -108,6 +112,11 @@ export default function FounderExecutiveInsights({ selectedDays = 30 }) {
         Os insights são produzidos a partir de métricas agregadas da Teilor. Variações indicam padrões
         observados, não causas comprovadas.
       </p>
+      {!compatibility.compatible ? (
+        <p className="founder-insights-state" role="status">
+          Filtros dimensionais não aplicados aos insights — apenas o período é considerado.
+        </p>
+      ) : null}
 
       {state.status === "loading" ? (
         <p className="founder-insights-state" role="status">

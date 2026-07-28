@@ -5,6 +5,10 @@
 
 import { buildTemporalSeriesResponse } from "../../lib/miaTemporalSeriesApi.js";
 import {
+  parseAnalyticsFiltersFromHttpQuery,
+  buildExecutiveMetricsApiParams,
+} from "../../lib/miaAnalyticsFilterParams.js";
+import {
   applyPublicCorsHeaders,
   applyPublicSecurityHeaders,
   sendPublicApiError,
@@ -48,8 +52,17 @@ export default withMiaObservability(async function temporalMetricsHandler(req, r
   }
 
   try {
-    const windowDays = Number.parseInt(String(req.query?.days ?? req.query?.window_days ?? ""), 10);
-    const offsetDays = Number.parseInt(String(req.query?.offset_days ?? req.query?.offset ?? ""), 10);
+    const parsed = parseAnalyticsFiltersFromHttpQuery(req.query ?? {});
+    if (!parsed.ok) {
+      applyPublicSecurityHeaders(res, { varyOrigin: cors.crossOrigin && cors.originAllowed });
+      return res.status(400).json({
+        error: parsed.error,
+        reasonCode: `temporal_${parsed.error}`,
+        temporal_version: MIA_TEMPORAL_SERIES_VERSION,
+        filter_errors: parsed.filters.errors,
+      });
+    }
+
     const bypassCache = String(req.query?.fresh ?? "") === "1";
     const seriesGroups = parseTemporalSeriesGroups(req.query?.series ?? req.query?.groups);
 
@@ -63,8 +76,7 @@ export default withMiaObservability(async function temporalMetricsHandler(req, r
     }
 
     const result = await buildTemporalSeriesResponse({
-      windowDays: Number.isFinite(windowDays) ? windowDays : undefined,
-      offsetDays: Number.isFinite(offsetDays) ? offsetDays : undefined,
+      ...buildExecutiveMetricsApiParams(parsed.filters),
       granularity: req.query?.granularity,
       seriesGroups,
       bypassCache,

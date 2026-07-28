@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import FounderDistributionBar from "./FounderDistributionBar.jsx";
 import FounderMetricCard from "./FounderMetricCard.jsx";
+import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapTemporalMetricsToFounderProductsCategories } from "../../lib/miaFounderProductsDisplay.js";
 
 function MetricGrid({ metrics, className = "founder-module-grid" }) {
@@ -17,19 +18,22 @@ function MetricGrid({ metrics, className = "founder-module-grid" }) {
 }
 
 export default function FounderProductsCategoriesSection({
-  selectedDays = 30,
   snapshotRecommendation = null,
   snapshotCommerce = null,
 }) {
+  const { buildTemporalQueryString } = useFounderCockpitFilters();
   const [state, setState] = useState({ status: "loading", view: null, error: null });
+  const requestSeq = useRef(0);
 
   const load = useCallback(async () => {
+    const seq = ++requestSeq.current;
     setState({ status: "loading", view: null, error: null });
     try {
-      const res = await fetch(
-        `/api/temporal-metrics?days=${selectedDays}&series=products,categories`,
-        { headers: { Accept: "application/json" }, credentials: "same-origin" }
-      );
+      const res = await fetch(`/api/temporal-metrics?${buildTemporalQueryString("products,categories")}`, {
+        headers: { Accept: "application/json" },
+        credentials: "same-origin",
+      });
+      if (seq !== requestSeq.current) return;
       if (!res.ok) {
         setState({ status: "error", view: null, error: `http_${res.status}` });
         return;
@@ -45,14 +49,14 @@ export default function FounderProductsCategoriesSection({
         error: null,
       });
     } catch (err) {
+      if (seq !== requestSeq.current) return;
       setState({
         status: "error",
         view: null,
         error: String(err?.message || "fetch_failed"),
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedDays]);
+  }, [buildTemporalQueryString, snapshotRecommendation, snapshotCommerce]);
 
   useEffect(() => {
     load();

@@ -14,7 +14,11 @@ GET /api/temporal-metrics
 
 | Param | Description |
 |-------|-------------|
-| `days` / `window_days` | Rolling window (1–365, default 30) |
+| `range` | Preset: `today`, `7d`, `30d`, `90d`, `custom` (default `30d`) |
+| `start` / `end` | Custom range dates (YYYY-MM-DD UTC) when `range=custom` |
+| `category` | Product vertical filter (official enum) |
+| `product_id` | Official product identifier filter |
+| `days` | Legacy alias — maps to preset when possible |
 | `offset_days` / `offset` | Period offset for comparison (0–365, default 0) |
 | `granularity` | `day` (default) · `week` · `month` |
 | `series` / `groups` | Comma-separated groups (default: `growth`, `platform_activity`) |
@@ -40,7 +44,7 @@ GET /api/temporal-metrics
 
 ## Versioning
 
-- `temporal_version`: `A.6.0`
+- `temporal_version`: `A.7.0`
 - Metric definitions: [EXECUTIVE_METRICS.md](./EXECUTIVE_METRICS.md), [GROWTH_DASHBOARD.md](./GROWTH_DASHBOARD.md), [PRODUCTS_CATEGORIES_DASHBOARD.md](./PRODUCTS_CATEGORIES_DASHBOARD.md), [CONVERSION_DASHBOARD.md](./CONVERSION_DASHBOARD.md)
 
 ## Cache
@@ -87,4 +91,5 @@ npm run test:mia:analytics:patch-a6:founder-performance-conversion
 | A.4 Sessões e Usuários | `growth`, `platform_activity` |
 | A.5 Produtos e Categorias | `products`, `categories` |
 | A.6 Performance e Conversão | `conversion` |
+| A.7 Filtros | `range`, `category`, `product_id`, `start`, `end` |
 | A.8 Gráficos | mappers consume this API |

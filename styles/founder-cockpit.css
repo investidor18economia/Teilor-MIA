@@ -828,6 +828,141 @@
   padding-left: 18px;
 }
 
+/* PATCH A.7 — Advanced Filters */
+.founder-cockpit-filters {
+  margin-bottom: 24px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(0, 198, 255, 0.04);
+  border: 1px solid rgba(0, 198, 255, 0.12);
+}
+
+.founder-cockpit-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.founder-cockpit-filters-title {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.founder-cockpit-filters-summary {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #7a9bb8;
+}
+
+.founder-cockpit-filters-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.founder-cockpit-filters-clear {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #b8d9ef;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.founder-cockpit-filters-clear:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.founder-cockpit-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.founder-cockpit-filter-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.founder-cockpit-filter-fieldset legend {
+  font-size: 0.8125rem;
+  color: #7a9bb8;
+  margin-bottom: 8px;
+}
+
+.founder-cockpit-filter-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: #b8d9ef;
+}
+
+.founder-cockpit-filter-input,
+.founder-cockpit-filter-select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: #e8f4fc;
+  font-size: 0.875rem;
+}
+
+.founder-cockpit-filter-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.founder-cockpit-filter-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #7a9bb8;
+  flex-basis: 100%;
+}
+
+.founder-cockpit-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.founder-cockpit-filter-chips li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 198, 255, 0.12);
+  color: #00c6ff;
+  font-size: 0.75rem;
+}
+
+.founder-cockpit-filters-error {
+  margin: 10px 0 0;
+  color: #ffb4b4;
+  font-size: 0.875rem;
+}
+
+.founder-cockpit-filters-unavailable {
+  margin-top: 12px;
+  font-size: 0.8125rem;
+  color: #7a9bb8;
+}
+
+.founder-cockpit-filters-unavailable summary {
+  cursor: pointer;
+  color: #00c6ff;
+}
+
 @media (max-width: 640px) {
   .founder-recent-table {
     font-size: 0.75rem;

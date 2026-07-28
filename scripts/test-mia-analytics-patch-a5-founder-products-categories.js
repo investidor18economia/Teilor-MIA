@@ -126,7 +126,7 @@ console.log("\nArchitecture — no aggregation in display layer");
 ok("display no supabase", !displaySrc.includes("supabase"));
 ok("display no SQL", !/select\s+from/i.test(displaySrc));
 ok("display no rpc", !displaySrc.includes(".rpc("));
-ok("section fetches temporal-metrics products", sectionSrc.includes("series=products,categories"));
+ok("section fetches temporal-metrics via filters", sectionSrc.includes("buildTemporalQueryString") && sectionSrc.includes("temporal-metrics"));
 ok("section no supabase", !sectionSrc.includes("supabase"));
 ok("page includes ProductsCategoriesSection", pageSrc.includes("FounderProductsCategoriesSection"));
 

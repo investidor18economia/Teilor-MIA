@@ -1,13 +1,15 @@
 import FounderExecutiveInsights from "./FounderExecutiveInsights.jsx";
 import FounderKpiStrip from "./FounderKpiStrip.jsx";
 import FounderModuleSection from "./FounderModuleSection.jsx";
-import FounderPeriodFilter from "./FounderPeriodFilter.jsx";
+import FounderCockpitFilters from "./FounderCockpitFilters.jsx";
+import { FounderCockpitFiltersProvider } from "./FounderCockpitFiltersContext.jsx";
 import FounderSessionsUsersSection from "./FounderSessionsUsersSection.jsx";
 import FounderProductsCategoriesSection from "./FounderProductsCategoriesSection.jsx";
 import FounderPerformanceConversionSection from "./FounderPerformanceConversionSection.jsx";
+import { formatPeriodSummary } from "../../lib/miaFounderFiltersDisplay.js";
 import { TEILOR_LOGO_ALT, TEILOR_LOGO_PRIMARY_SRC } from "../../lib/brandAssets";
 
-export default function FounderCockpitPage({ cockpit, subject }) {
+function FounderCockpitPageInner({ cockpit, subject }) {
   const { meta, overview, modules } = cockpit;
   const moduleList = [
     modules.platform,
@@ -39,14 +41,21 @@ export default function FounderCockpitPage({ cockpit, subject }) {
             </p>
           </div>
           <div className="founder-cockpit-header-actions">
-            <FounderPeriodFilter selectedDays={meta.reference_period_days} />
             <button type="button" className="founder-logout-btn" onClick={logout}>
               Sair
             </button>
           </div>
         </div>
         <p className="founder-cockpit-meta">
-          Período: {meta.reference_period_days} dias
+          {meta.filters_applied
+            ? formatPeriodSummary({
+                range: meta.filters_applied.range,
+                period_mode: meta.filters_applied.period_mode,
+                start_date: meta.filters_applied.start_date,
+                end_date: meta.filters_applied.end_date,
+                window_days: meta.reference_period_days,
+              })
+            : `Período: ${meta.reference_period_days} dias`}
           {meta.computed_at
             ? ` · Atualizado ${new Date(meta.computed_at).toLocaleString("pt-BR", { dateStyle: "medium", timeStyle: "short" })}`
             : ""}
@@ -60,20 +69,18 @@ export default function FounderCockpitPage({ cockpit, subject }) {
       </header>
 
       <main className="founder-cockpit-main">
-        <FounderExecutiveInsights selectedDays={meta.reference_period_days} />
+        <FounderCockpitFilters />
+        <FounderExecutiveInsights />
         <FounderKpiStrip overview={overview} />
         <FounderSessionsUsersSection
-          selectedDays={meta.reference_period_days}
           snapshotPlatform={modules.platform}
           snapshotConversation={modules.conversation}
         />
         <FounderProductsCategoriesSection
-          selectedDays={meta.reference_period_days}
           snapshotRecommendation={modules.recommendation}
           snapshotCommerce={modules.commerce}
         />
         <FounderPerformanceConversionSection
-          selectedDays={meta.reference_period_days}
           snapshotRecommendation={modules.recommendation}
           snapshotCommerce={modules.commerce}
           snapshotConversation={modules.conversation}
@@ -91,5 +98,13 @@ export default function FounderCockpitPage({ cockpit, subject }) {
         </p>
       </footer>
     </div>
+  );
+}
+
+export default function FounderCockpitPage({ cockpit, subject, initialFilters }) {
+  return (
+    <FounderCockpitFiltersProvider initialFilters={initialFilters}>
+      <FounderCockpitPageInner cockpit={cockpit} subject={subject} />
+    </FounderCockpitFiltersProvider>
   );
 }
