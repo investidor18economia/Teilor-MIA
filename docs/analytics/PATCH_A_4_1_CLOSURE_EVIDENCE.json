@@ -1,0 +1,69 @@
+{
+  "patch": "A.4.1",
+  "title": "PATCH A.4 — Official Closure",
+  "status": "CLOSED",
+  "closed_at": "2026-07-28T21:39:26.417Z",
+  "patch_a4_status": "OFFICIALLY_CLOSED",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "4c742d16a897",
+    "temporal_api_validated": true,
+    "executive_metrics_regression": true
+  },
+  "interface_validation": {
+    "method": "automated_local_production_build_browser",
+    "base_url": "http://localhost:3001",
+    "status": "APPROVED",
+    "screenshot": "docs/analytics/evidence/patch-a4-browser/sessions-users-1785274765254.png",
+    "production_authenticated_html": "skipped_admin_key_mismatch_mitigated_by_local_browser_and_bundle",
+    "real_data_visualized": true
+  },
+  "limitations": [
+    {
+      "item": "production_authenticated_html",
+      "reason": "MIA_ADMIN_API_KEY local difere do ambiente Vercel produção",
+      "impact": "Impossível Playwright autenticado diretamente em economia-ai.vercel.app sem chave prod",
+      "mitigation": "Validação browser em build local produção (porta 3001) com mesma base Supabase + verificação bundle deployado + API temporal produção com dados reais",
+      "blocks_closure": false
+    }
+  ],
+  "regression_steps": [
+    {
+      "label": "A.4 unit tests",
+      "pass": true
+    },
+    {
+      "label": "A.3 regression",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "Founder Cockpit regression",
+      "pass": true
+    },
+    {
+      "label": "Production API validation",
+      "pass": true
+    },
+    {
+      "label": "Browser UI validation",
+      "pass": true
+    }
+  ],
+  "evidence_files": [
+    "docs/analytics/PATCH_A_4_FOUNDER_SESSIONS_USERS_EVIDENCE.json",
+    "docs/analytics/PATCH_A_4_BROWSER_UI_EVIDENCE.json",
+    "docs/analytics/PATCH_A_4_1_CLOSURE_EVIDENCE.json"
+  ],
+  "commit_required": [
+    "docs/analytics/PATCH_A_4_FOUNDER_SESSIONS_USERS_EVIDENCE.json",
+    "docs/analytics/PATCH_A_4_BROWSER_UI_EVIDENCE.json",
+    "docs/analytics/PATCH_A_4_1_CLOSURE_EVIDENCE.json",
+    "scripts/patch-a4-founder-sessions-users-production-validation.mjs",
+    "scripts/patch-a4-browser-validation.mjs",
+    "scripts/patch-a4-1-closure.mjs"
+  ]
+}

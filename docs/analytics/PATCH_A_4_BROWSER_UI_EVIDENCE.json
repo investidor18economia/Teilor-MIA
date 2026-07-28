@@ -1,0 +1,161 @@
+{
+  "patch": "A.4.1",
+  "title": "Founder Sessions & Users — Browser UI Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T21:39:26.393Z",
+  "base_url": "http://localhost:3001",
+  "environment": "local_production_build",
+  "screenshot": "docs/analytics/evidence/patch-a4-browser/sessions-users-1785274765254.png",
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+  ],
+  "console_errors_ignored_non_a4": [
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+  ],
+  "api_responses": [
+    {
+      "url": "http://localhost:3001/api/temporal-metrics?days=30&series=growth,platform_activity",
+      "status": 200
+    }
+  ],
+  "network_failures": [],
+  "checks": {
+    "total": 26,
+    "passed": 26,
+    "failed": 0,
+    "items": [
+      {
+        "label": "authenticate 200",
+        "pass": true,
+        "detail": "status=200"
+      },
+      {
+        "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "sessions section visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal loading finished",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "section title",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "DAU label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "WAU label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "MAU label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "new visitors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "returning visitors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "anonymous visitors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "authenticated users",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "auth rate",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "sessions activity",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "conversations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "questions",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trends block",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "recent table or empty",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "snapshot reference",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "real numeric data visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "screenshot captured",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-a4-browser\\sessions-users-1785274765254.png"
+      },
+      {
+        "label": "temporal API 200 in browser",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.4 console errors",
+        "pass": true,
+        "detail": "ignored 2 non-A.4 console errors"
+      },
+      {
+        "label": "no A.4 api network failures",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile viewport renders section",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

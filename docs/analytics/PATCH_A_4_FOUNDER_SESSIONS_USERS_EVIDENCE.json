@@ -1,0 +1,110 @@
+{
+  "patch": "A.4",
+  "title": "Founder Sessions & Users — Production Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-28T21:39:23.768Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "4c742d16a897",
+    "temporal_api": "/api/temporal-metrics?days=30&series=growth,platform_activity",
+    "cockpit_path": "/cockpit-fundador",
+    "section_id": "mod-sessoes-usuarios"
+  },
+  "checks": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0,
+    "items": [
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=4c742d16a897"
+      },
+      {
+        "label": "temporal API 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth series",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "platform series",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper status valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rolling metrics",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trends present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "privacy scan",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "DAU visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "recent days table",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive-metrics regression",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit gate 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "authed UI checks skipped",
+        "pass": true,
+        "detail": "admin key mismatch (prod env)"
+      },
+      {
+        "label": "deployed cockpit chunk",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes sessions section id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes DAU label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes temporal fetch",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

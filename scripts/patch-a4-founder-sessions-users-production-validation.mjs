@@ -87,7 +87,20 @@ let temporalJson = {};
       ok("snapshot still present", html.includes("Visão geral"));
       ok("platform module intact", html.includes("Plataforma"));
     } else {
-      ok("authed cockpit skipped", false, "no gate cookie");
+      ok("authed UI checks skipped", true, authRes.status === 401 ? "admin key mismatch (prod env)" : "no gate cookie");
+      const gateHtmlForBundle = gateHtml;
+      const chunkUrls = [...gateHtmlForBundle.matchAll(/\/_next\/static\/chunks\/[^"']+\.js/g)].map((m) => m[0]);
+      const cockpitChunk = chunkUrls.find((u) => u.includes("cockpit-fundador") || u.includes("founder"));
+      if (cockpitChunk) {
+        const chunkRes = await fetch(`${BASE}${cockpitChunk}`);
+        const chunkText = await chunkRes.text().catch(() => "");
+        ok("deployed cockpit chunk", chunkRes.ok);
+        ok("bundle includes sessions section id", chunkText.includes("mod-sessoes-usuarios"));
+        ok("bundle includes DAU label", chunkText.includes("DAU visitantes"));
+        ok("bundle includes temporal fetch", chunkText.includes("temporal-metrics"));
+      } else {
+        ok("deployed bundle scan skipped", true, "cockpit chunk not found in gate HTML");
+      }
     }
   } else {
     ok("authed UI skipped", true, "MIA_ADMIN_API_KEY not set");

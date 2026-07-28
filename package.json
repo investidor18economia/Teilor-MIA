@@ -132,6 +132,8 @@
     "test:mia:analytics:patch-a31:prod-validation": "node scripts/patch-a31-temporal-metrics-production-validation.mjs",
     "test:mia:analytics:patch-a4:founder-sessions-users": "node scripts/test-mia-analytics-patch-a4-founder-sessions-users.js",
     "test:mia:analytics:patch-a4:prod-validation": "node scripts/patch-a4-founder-sessions-users-production-validation.mjs",
+    "test:mia:analytics:patch-a4:browser-validation": "node --env-file=.env.local scripts/patch-a4-browser-validation.mjs",
+    "test:mia:analytics:patch-a41:closure": "node --env-file=.env.local scripts/patch-a4-1-closure.mjs",
     "test:mia:analytics:patch-113:prod-smoke": "node scripts/patch-113-production-smoke.mjs",
     "test:mia:analytics:patch-114:executive-ai-insights": "node scripts/test-mia-analytics-patch-114-executive-ai-insights.js",
     "test:mia:analytics:patch-114:prod-smoke": "node scripts/patch-114-production-smoke.mjs",

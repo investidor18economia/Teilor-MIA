@@ -72,6 +72,16 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Reservado:** filtros avançados (A.7), gráficos (A.8).
 
+### Encerramento (PATCH A.4.1)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_A_4_FOUNDER_SESSIONS_USERS_EVIDENCE.json` | API temporal + mapper + bundle em produção |
+| `PATCH_A_4_BROWSER_UI_EVIDENCE.json` | Interface autenticada (build local produção, dados reais) |
+| `PATCH_A_4_1_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+**Validação de interface:** Playwright autenticado em build local (`npm run start`) com mesma base Supabase. HTML autenticado em Vercel requer `MIA_ADMIN_API_KEY` de produção — mitigado por bundle deployado + browser E2E + API produção.
+
 ---
 
 ## Filtros de período
