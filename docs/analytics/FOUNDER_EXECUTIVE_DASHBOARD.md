@@ -38,16 +38,42 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
-4. **Plataforma** — sessões, visitantes, conversas, perguntas (snapshot)  
-5. **Conversação** — perguntas enviadas, recomendações exibidas, conversas com perguntas (PATCH A.2)  
-6. **Recomendações** — geradas, runner-up, sinais, taxas  
-7. **Comercial** — conjuntos de ofertas, ofertas retornadas, provedores, cliques, favoritos  
-8. **Alertas de preço** — criados, ativos, metas atingidas, notificações (PATCH A.2)  
-9. **Price Intelligence** — qualidade média + barras de confiança  
-10. **Economia** — potencial total, média, oportunidades (disclaimer)  
-11. **Anti-Regret** — score médio + distribuição  
-12. **User Value** — score médio, valores verificados + distribuição  
-13. **Sistema** — versão, build, ambiente, latência API, status
+4. **Produtos e Categorias** (PATCH A.5) — ranking, distribuição, inteligência por categoria  
+5. **Plataforma** — sessões, visitantes, conversas, perguntas (snapshot)  
+6. **Conversação** — perguntas enviadas, recomendações exibidas, conversas com perguntas (PATCH A.2)  
+7. **Recomendações** — geradas, runner-up, sinais, taxas  
+8. **Comercial** — conjuntos de ofertas, ofertas retornadas, provedores, cliques, favoritos  
+9. **Alertas de preço** — criados, ativos, metas atingidas, notificações (PATCH A.2)  
+10. **Price Intelligence** — qualidade média + barras de confiança  
+11. **Economia** — potencial total, média, oportunidades (disclaimer)  
+12. **Anti-Regret** — score médio + distribuição  
+13. **User Value** — score médio, valores verificados + distribuição  
+14. **Sistema** — versão, build, ambiente, latência API, status
+
+---
+
+## Produtos e Categorias (PATCH A.5)
+
+**Fonte temporal:** `GET /api/temporal-metrics?days=N&series=products,categories`  
+**Mapper:** `lib/miaFounderProductsDisplay.js`  
+**Componente:** `FounderProductsCategoriesSection.jsx` (client fetch independente)  
+**SQL canônico:** PATCH 4.4 `PRODUCTS_CATEGORIES_DASHBOARD.md`
+
+| Bloco | Origem | Métricas |
+|-------|--------|----------|
+| Resumo produtos | `products.summary` | distintos, aparições, recomendações, cliques, favoritos, alertas, taxa clique |
+| Ranking produtos | `products.ranking[]` | top 10 por aparições — campo `product_label` (privacidade API) |
+| Resumo categorias | `categories.summary` | distintas, perguntas, recomendações, cliques, eventos, taxas conversão |
+| Distribuição | `categories.ranking[]` + summary total | barras de participação relativa |
+| Ranking categorias | `categories.ranking[]` | top 10 por eventos |
+| Atividade recente | `categories.daily[]` / `products.daily[]` | tabelas compactas |
+| Referência snapshot | `executive-metrics` | recomendações/comercial agregados |
+
+**Métricas indisponíveis (documentadas na UI):** produtos pesquisados por termo, produtos comparados, product_view.
+
+**Privacidade:** API usa `product_label` em vez de `product_name` (chave proibida no catálogo público). Cockpit fundador é privado (`noindex`).
+
+**Reservado:** filtros avançados (A.7), gráficos (A.8).
 
 ---
 
@@ -95,6 +121,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 - SSR por request (dados frescos por período)
 - Cache da API executiva (TTL ~5 min)
 - Sessões e Usuários: fetch client-side independente à API temporal (PATCH A.4)
+- Produtos e Categorias: fetch client-side independente à API temporal (PATCH A.5)
 
 ---
 

@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 import {
   MIA_TEMPORAL_SERIES_VERSION,
   MIA_TEMPORAL_SERIES_GROUPS,
+  MIA_TEMPORAL_SERIES_DEFAULT_GROUPS,
   MIA_TEMPORAL_SERIES_RPC,
   MIA_TEMPORAL_SERIES_GRANULARITIES,
   normalizeTemporalGranularity,
@@ -41,23 +42,25 @@ function ok(label, cond) {
 console.log("\nPATCH A.3 — Temporal Series API audit\n");
 
 console.log("Files");
-ok("migration", existsSync(join(ROOT, "supabase/migrations/20260728160000_mia_temporal_series_api_v1.sql")));
+ok("migration A.3", existsSync(join(ROOT, "supabase/migrations/20260728160000_mia_temporal_series_api_v1.sql")));
+ok("migration A.5 products", existsSync(join(ROOT, "supabase/migrations/20260728210000_mia_temporal_series_products_categories_v1.sql")));
 ok("catalog", existsSync(join(ROOT, "lib/miaTemporalSeriesCatalog.js")));
 ok("api lib", existsSync(join(ROOT, "lib/miaTemporalSeriesApi.js")));
 ok("route", existsSync(join(ROOT, "pages/api/temporal-metrics.js")));
 ok("doc", existsSync(join(ROOT, "docs/analytics/TEMPORAL_METRICS_API.md")));
 
 console.log("\nCatalog");
-ok("temporal_version A.3.0", MIA_TEMPORAL_SERIES_VERSION === "A.3.0");
-ok("2 series groups", MIA_TEMPORAL_SERIES_GROUPS.length === 2);
-ok("2 RPC mappings", Object.keys(MIA_TEMPORAL_SERIES_RPC).length === 2);
+ok("temporal_version A.5.0", MIA_TEMPORAL_SERIES_VERSION === "A.5.0");
+ok("4 series groups", MIA_TEMPORAL_SERIES_GROUPS.length === 4);
+ok("4 RPC mappings", Object.keys(MIA_TEMPORAL_SERIES_RPC).length === 4);
+ok("default groups backward compat", MIA_TEMPORAL_SERIES_DEFAULT_GROUPS.length === 2);
 ok("3 granularities", MIA_TEMPORAL_SERIES_GRANULARITIES.length === 3);
 ok("normalize day", normalizeTemporalGranularity("day") === "day");
 ok("reject invalid granularity", normalizeTemporalGranularity("hour") === null);
 ok("window clamp 365", normalizeTemporalWindowDays(999) === 365);
 ok("offset clamp", normalizeTemporalOffsetDays(-5) === 0);
 ok("parse all groups default", parseTemporalSeriesGroups(null).length === 2);
-ok("parse growth only", parseTemporalSeriesGroups("growth").join(",") === "growth");
+ok("parse products only", parseTemporalSeriesGroups("products").join(",") === "products");
 
 console.log("\nGranularity projection");
 const sampleGrowthPoint = {
@@ -88,26 +91,33 @@ ok("uses executive cache", apiLib.includes("getExecutiveMetricsCache"));
 ok("no SQL in service", !/select\s+from/i.test(apiLib));
 
 console.log("\nMigration RPCs");
-const migration = readFileSync(
+const migrationA3 = readFileSync(
   join(ROOT, "supabase/migrations/20260728160000_mia_temporal_series_api_v1.sql"),
   "utf8"
 );
-for (const rpc of Object.values(MIA_TEMPORAL_SERIES_RPC)) {
-  ok(`rpc ${rpc}`, migration.includes(`function public.${rpc}`));
+const migrationA5 = readFileSync(
+  join(ROOT, "supabase/migrations/20260728210000_mia_temporal_series_products_categories_v1.sql"),
+  "utf8"
+);
+for (const [group, rpc] of Object.entries(MIA_TEMPORAL_SERIES_RPC)) {
+  const src = group === "products" || group === "categories" ? migrationA5 : migrationA3;
+  ok(`rpc ${rpc}`, src.includes(`function public.${rpc}`));
 }
-ok("production scope filter", migration.includes("mia_analytics_production_scope"));
-ok("service_role grant growth", migration.includes("grant execute on function public.mia_temporal_series_growth"));
-ok("dau_visitors field", migration.includes("dau_visitors"));
-ok("total_sessions field", migration.includes("total_sessions"));
+ok("production scope filter", migrationA3.includes("mia_analytics_production_scope"));
+ok("service_role grant growth", migrationA3.includes("grant execute on function public.mia_temporal_series_growth"));
+ok("dau_visitors field", migrationA3.includes("dau_visitors"));
+ok("product_label field", migrationA5.includes("product_label"));
 
 console.log("\nCollector (offline / no supabase)");
 clearExecutiveMetricsCache();
 const offline = await buildTemporalSeriesResponse({ bypassCache: true });
 ok("response ok", offline.ok === true);
-ok("temporal_version", offline.temporal_version === "A.3.0");
+ok("temporal_version", offline.temporal_version === "A.5.0");
 ok("granularity day", offline.granularity === "day");
 ok("growth key present", "growth" in offline);
 ok("platform_activity key present", "platform_activity" in offline);
+ok("products key present", "products" in offline);
+ok("categories key present", "categories" in offline);
 ok("privacy scan clean", scanTemporalSeriesForbiddenKeys(offline).length === 0);
 ok("partial errors array", Array.isArray(offline.partial_errors));
 

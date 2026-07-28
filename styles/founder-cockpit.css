@@ -651,6 +651,88 @@
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 }
 
+/* PATCH A.5 — Products & Categories */
+.founder-products-categories {
+  margin-bottom: 28px;
+}
+
+.founder-products-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.founder-products-subsection {
+  margin-bottom: 22px;
+}
+
+.founder-products-subtitle {
+  margin: 0 0 12px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #e8f4fc;
+}
+
+.founder-products-meta {
+  margin: 0 0 16px;
+  font-size: 0.8125rem;
+  color: #7a9bb8;
+}
+
+.founder-products-state {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(0, 198, 255, 0.06);
+  color: #b8d9ef;
+  font-size: 0.875rem;
+}
+
+.founder-products-state--error {
+  background: rgba(255, 100, 100, 0.1);
+  color: #ffb4b4;
+}
+
+.founder-products-state--partial {
+  background: rgba(255, 224, 138, 0.08);
+  color: #ffe08a;
+}
+
+.founder-products-snapshot-ref {
+  padding-top: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.founder-ranking-table td:first-child,
+.founder-ranking-table th:first-child {
+  width: 36px;
+  text-align: center;
+}
+
+.founder-ranking-meta {
+  color: #7a9bb8;
+  font-size: 0.75rem;
+}
+
+.founder-products-unavailable {
+  margin-top: 12px;
+  font-size: 0.8125rem;
+  color: #7a9bb8;
+}
+
+.founder-products-unavailable summary {
+  cursor: pointer;
+  color: #00c6ff;
+}
+
+.founder-products-unavailable ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
 @media (max-width: 640px) {
   .founder-recent-table {
     font-size: 0.75rem;

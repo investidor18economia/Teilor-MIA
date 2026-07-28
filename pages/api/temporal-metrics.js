@@ -11,7 +11,7 @@ import {
   validatePublicHttpMethod,
 } from "../../lib/miaPublicApiHardening.js";
 import { withMiaObservability } from "../../lib/miaObservability.js";
-import { parseTemporalSeriesGroups } from "../../lib/miaTemporalSeriesCatalog.js";
+import { parseTemporalSeriesGroups, MIA_TEMPORAL_SERIES_VERSION } from "../../lib/miaTemporalSeriesCatalog.js";
 
 export default withMiaObservability(async function temporalMetricsHandler(req, res) {
   applyPublicSecurityHeaders(res);
@@ -58,7 +58,7 @@ export default withMiaObservability(async function temporalMetricsHandler(req, r
       return res.status(400).json({
         error: "invalid_series_groups",
         reasonCode: "temporal_invalid_series_groups",
-        temporal_version: "A.3.0",
+        temporal_version: MIA_TEMPORAL_SERIES_VERSION,
       });
     }
 
@@ -76,7 +76,7 @@ export default withMiaObservability(async function temporalMetricsHandler(req, r
       return res.status(400).json({
         error: result.error,
         reasonCode: `temporal_${result.error}`,
-        temporal_version: "A.3.0",
+        temporal_version: MIA_TEMPORAL_SERIES_VERSION,
       });
     }
 
@@ -87,7 +87,7 @@ export default withMiaObservability(async function temporalMetricsHandler(req, r
     return res.status(500).json({
       error: "temporal_metrics_unavailable",
       reasonCode: "temporal_metrics_internal_error",
-      temporal_version: "A.3.0",
+      temporal_version: MIA_TEMPORAL_SERIES_VERSION,
     });
   }
 }, { endpoint: "/api/temporal-metrics" });

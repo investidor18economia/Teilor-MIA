@@ -34,7 +34,7 @@ let temporalJson = {};
   const res = await fetch(`${BASE}/api/temporal-metrics?days=30&series=growth,platform_activity&fresh=1`);
   temporalJson = await res.json().catch(() => ({}));
   ok("temporal API 200", res.status === 200);
-  ok("temporal version", temporalJson.temporal_version === "A.3.0");
+  ok("temporal version", temporalJson.temporal_version === "A.5.0");
   ok("growth series", Array.isArray(temporalJson.growth?.series));
   ok("platform series", Array.isArray(temporalJson.platform_activity?.series));
 }
