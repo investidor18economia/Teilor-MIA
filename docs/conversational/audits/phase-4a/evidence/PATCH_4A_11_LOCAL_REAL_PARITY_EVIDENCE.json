@@ -1,0 +1,212 @@
+{
+  "patch": "4A.11",
+  "phase": "local_real_parity",
+  "status": "APROVADA",
+  "commit": "1e4ca5f",
+  "finished_at": "2026-07-28T02:36:36.475Z",
+  "summary": {
+    "total": 18,
+    "equivalent": 18,
+    "divergent": 0
+  },
+  "comparisons": [
+    {
+      "id": "battery-v1",
+      "family": "battery",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "battery-v2",
+      "family": "battery",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "battery",
+      "realDominant": "battery",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "camera-v1",
+      "family": "camera",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "camera",
+      "realDominant": "camera",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "camera-v2",
+      "family": "camera",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "camera",
+      "realDominant": "camera",
+      "localClaims": 9,
+      "realClaims": 9
+    },
+    {
+      "id": "games-v1",
+      "family": "games",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "games-v2",
+      "family": "games",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "value-v1",
+      "family": "value",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value",
+      "localClaims": 14,
+      "realClaims": 14
+    },
+    {
+      "id": "value-v2",
+      "family": "value",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "updates-v1",
+      "family": "updates",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "comparison-v1",
+      "family": "comparison",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 7,
+      "realClaims": 7
+    },
+    {
+      "id": "comparison-v2",
+      "family": "comparison",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 10,
+      "realClaims": 10
+    },
+    {
+      "id": "contestation-multi",
+      "family": "contestation",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": null,
+      "realDominant": null,
+      "localClaims": 13,
+      "realClaims": 13
+    },
+    {
+      "id": "tradeoff-v1",
+      "family": "tradeoff",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value",
+      "localClaims": 13,
+      "realClaims": 13
+    },
+    {
+      "id": "insufficient_data-v1",
+      "family": "insufficient_data",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "incomplete_specs-v1",
+      "family": "incomplete_specs",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 12,
+      "realClaims": 12
+    },
+    {
+      "id": "unknown_product-v1",
+      "family": "unknown_product",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "value",
+      "realDominant": "value",
+      "localClaims": 0,
+      "realClaims": 0
+    },
+    {
+      "id": "unknown_category-v1",
+      "family": "unknown_category",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 7,
+      "realClaims": 7
+    },
+    {
+      "id": "missing_knowledge-v1",
+      "family": "missing_knowledge",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true,
+      "localDominant": "processor",
+      "realDominant": "processor",
+      "localClaims": 12,
+      "realClaims": 12
+    }
+  ]
+}
