@@ -1,0 +1,550 @@
+{
+  "patch": "4.1",
+  "phase": "local_real_parity",
+  "status": "APROVADA",
+  "commit": "8447ffc",
+  "finished_at": "2026-07-28T15:05:21.637Z",
+  "summary": {
+    "total": 67,
+    "equivalent": 67,
+    "divergent": 0
+  },
+  "comparisons": [
+    {
+      "id": "comm-battery-01",
+      "family": "commercial",
+      "profile": "battery",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-battery-02",
+      "family": "commercial",
+      "profile": "abbreviations",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-battery-03",
+      "family": "commercial",
+      "profile": "typos",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-battery-04",
+      "family": "commercial",
+      "profile": "very_informal",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-camera-01",
+      "family": "commercial",
+      "profile": "camera",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-camera-02",
+      "family": "commercial",
+      "profile": "formal",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-camera-03",
+      "family": "commercial",
+      "profile": "slang",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-games-01",
+      "family": "commercial",
+      "profile": "performance",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-games-02",
+      "family": "commercial",
+      "profile": "technical",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-games-03",
+      "family": "commercial",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-value-01",
+      "family": "commercial",
+      "profile": "value",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-value-02",
+      "family": "commercial",
+      "profile": "budget",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-compare-01",
+      "family": "commercial",
+      "profile": "layperson",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-compare-02",
+      "family": "commercial",
+      "profile": "impatient",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-refine-01",
+      "family": "commercial",
+      "profile": "indecisive",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-followup-01",
+      "family": "commercial",
+      "profile": "layperson",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-priority-01",
+      "family": "commercial",
+      "profile": "contradictory",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-contest-01",
+      "family": "commercial",
+      "profile": "suspicious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-tradeoff-01",
+      "family": "commercial",
+      "profile": "technical",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-budget-01",
+      "family": "commercial",
+      "profile": "budget",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-unknown-prod",
+      "family": "commercial",
+      "profile": "layperson",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-unknown-brand",
+      "family": "commercial",
+      "profile": "layperson",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-unknown-cat",
+      "family": "commercial",
+      "profile": "impossible",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-incomplete",
+      "family": "commercial",
+      "profile": "layperson",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "comm-long-01",
+      "family": "commercial",
+      "profile": "indecisive",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "casual-greet-01",
+      "family": "casual",
+      "profile": "polite",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "casual-greet-02",
+      "family": "casual",
+      "profile": "very_informal",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "casual-thanks-01",
+      "family": "casual",
+      "profile": "polite",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "casual-bye-01",
+      "family": "casual",
+      "profile": "formal",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "casual-help-01",
+      "family": "casual",
+      "profile": "anxious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "casual-smalltalk-01",
+      "family": "casual",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "meta-created",
+      "family": "casual",
+      "profile": "suspicious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "meta-audit",
+      "family": "casual",
+      "profile": "technical",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "meta-limits",
+      "family": "casual",
+      "profile": "suspicious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "meta-commission",
+      "family": "casual",
+      "profile": "suspicious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "meta-trust",
+      "family": "casual",
+      "profile": "suspicious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "meta-how",
+      "family": "casual",
+      "profile": "layperson",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "humor-joke-01",
+      "family": "humor",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "humor-irony-01",
+      "family": "humor",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "humor-meme-01",
+      "family": "humor",
+      "profile": "slang",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "humor-sarcasm-01",
+      "family": "humor",
+      "profile": "very_informal",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "insult-01",
+      "family": "insults",
+      "profile": "impatient",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "insult-02",
+      "family": "insults",
+      "profile": "impatient",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "insult-03",
+      "family": "insults",
+      "profile": "suspicious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "insult-04",
+      "family": "insults",
+      "profile": "contradictory",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "praise-01",
+      "family": "praise",
+      "profile": "polite",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "praise-02",
+      "family": "praise",
+      "profile": "emotional",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "praise-03",
+      "family": "praise",
+      "profile": "elderly",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "flirt-01",
+      "family": "flirt",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "flirt-02",
+      "family": "flirt",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "flirt-03",
+      "family": "flirt",
+      "profile": "very_informal",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "robust-switch-01",
+      "family": "robustness",
+      "profile": "topic_switcher",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "robust-vague-01",
+      "family": "robustness",
+      "profile": "indecisive",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "robust-multi-01",
+      "family": "robustness",
+      "profile": "mixed_intent",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "robust-context-01",
+      "family": "robustness",
+      "profile": "anxious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "robust-contradict-01",
+      "family": "robustness",
+      "profile": "contradictory",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "lang-no-accent",
+      "family": "linguistic",
+      "profile": "abbreviations",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "lang-uppercase",
+      "family": "linguistic",
+      "profile": "impatient",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "lang-emoji",
+      "family": "linguistic",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "lang-english-mix",
+      "family": "linguistic",
+      "profile": "technical",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "lang-long",
+      "family": "linguistic",
+      "profile": "emotional",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "lang-short",
+      "family": "linguistic",
+      "profile": "impatient",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "lang-regional",
+      "family": "linguistic",
+      "profile": "slang",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "ai-compare-01",
+      "family": "robustness",
+      "profile": "ai_comparer",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "ai-compare-02",
+      "family": "robustness",
+      "profile": "suspicious",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "elderly-01",
+      "family": "commercial",
+      "profile": "elderly",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    },
+    {
+      "id": "young-01",
+      "family": "commercial",
+      "profile": "young",
+      "localPass": true,
+      "realPass": true,
+      "equivalent": true
+    }
+  ]
+}
