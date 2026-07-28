@@ -6,10 +6,11 @@
   "patch_a7_status": "OFFICIALLY_CLOSED",
   "git": {
     "implementation_commit": "fb007d8",
-    "head": "fb007d8",
-    "origin_master": "fb007d8",
+    "evidence_commit": "42e0261",
+    "head": "42e0261",
+    "origin_master": "42e0261",
     "synchronized": true,
-    "working_tree_clean": false
+    "working_tree_clean": true
   },
   "production": {
     "base_url": "https://economia-ai.vercel.app",
