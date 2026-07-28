@@ -8,8 +8,10 @@ export default function FounderCockpitPage({ cockpit, subject }) {
   const { meta, overview, modules } = cockpit;
   const moduleList = [
     modules.platform,
+    modules.conversation,
     modules.recommendation,
     modules.commerce,
+    modules.alerts,
     modules.priceIntelligence,
     modules.savings,
     modules.antiRegret,

@@ -84,8 +84,10 @@ ok("includes 365 days", FOUNDER_COCKPIT_PERIOD_OPTIONS.some((o) => o.days === 36
 console.log("\nMapper");
 const sample = await buildExecutiveMetricsResponse({ bypassCache: true });
 const cockpit = mapExecutiveMetricsToFounderCockpit(sample);
-ok("overview 8 KPIs", cockpit.overview.length === 8);
-ok("8 modules", Object.keys(cockpit.modules).length === 8);
+ok("overview 10 KPIs", cockpit.overview.length === 10);
+ok("10 modules", Object.keys(cockpit.modules).length === 10);
+ok("conversation module", Boolean(cockpit.modules.conversation));
+ok("alerts module", Boolean(cockpit.modules.alerts));
 ok("savings disclaimer", cockpit.modules.savings.disclaimer.includes("Não representa economia"));
 ok("system status", cockpit.modules.system.status === "ok" || cockpit.modules.system.status === "partial");
 ok("distribution bars helper", Array.isArray(mapDistributionToBars({ HIGH: 3, LOW: 1 })));

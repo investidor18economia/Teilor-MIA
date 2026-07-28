@@ -36,15 +36,17 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 ## Módulos
 
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
-2. **Visão geral** — 8 KPIs executivos  
-2. **Plataforma** — sessões, visitantes, conversas, perguntas  
-3. **Recomendações** — geradas, runner-up, taxas  
-4. **Comercial** — ofertas, cliques, favoritos, alertas  
-5. **Price Intelligence** — qualidade média + barras de confiança  
-6. **Economia** — potencial + oportunidades (disclaimer)  
-7. **Anti-Regret** — score médio + distribuição  
-8. **User Value** — score médio + distribuição  
-9. **Sistema** — versão, build, latência API, status
+2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
+3. **Plataforma** — sessões, visitantes, conversas, perguntas  
+4. **Conversação** — perguntas enviadas, recomendações exibidas, conversas com perguntas (PATCH A.2)  
+5. **Recomendações** — geradas, runner-up, sinais, taxas  
+6. **Comercial** — conjuntos de ofertas, ofertas retornadas, provedores, cliques, favoritos  
+7. **Alertas de preço** — criados, ativos, metas atingidas, notificações (PATCH A.2)  
+8. **Price Intelligence** — qualidade média + barras de confiança  
+9. **Economia** — potencial total, média, oportunidades (disclaimer)  
+10. **Anti-Regret** — score médio + distribuição  
+11. **User Value** — score médio, valores verificados + distribuição  
+12. **Sistema** — versão, build, ambiente, latência API, status
 
 ---
 
