@@ -1,0 +1,39 @@
+{
+  "patch": "4.1G",
+  "phase": "repository_organization",
+  "status": "APPROVED",
+  "finished_at": "2026-07-28T17:30:00.000Z",
+  "head_commit": "124df58",
+  "summary": {
+    "modified_restored": 23,
+    "untracked_committed": 21,
+    "untracked_removed": 18,
+    "gitignore_additions": 3
+  },
+  "actions": {
+    "restored_modified": "23 arquivos — re-runs locais de evidência e scripts (não pertencem ao 4.1F)",
+    "committed": [
+      "scripts/patch-122-production-validation.mjs",
+      "scripts/patch-31-browser-validation.mjs",
+      "scripts/patch-4a3v-browser-validation.mjs",
+      "scripts/patch-4a3v-browser-retries.mjs",
+      "docs/conversational/PATCH_3_1_BROWSER_EVIDENCE.json",
+      "docs/conversational/PATCH_3_1_PRODUCTION_EVIDENCE.json",
+      "docs/conversational/PATCH_3_2_BROWSER_EVIDENCE.json",
+      "docs/conversational/PATCH_3_2_PRODUCTION_EVIDENCE.json",
+      "docs/evidence/home-intro/browser/*.png"
+    ],
+    "removed": [
+      "tatus --short",
+      "docs/analytics/9 PATCH_9_5_FINAL_AUDIT_EVIDENCE.json",
+      "docs/analytics/_patch124-cog-failures.txt",
+      "docs/analytics/sql/_test-q1.sql",
+      "docs/analytics/sql/undefined",
+      "scripts/_splice-multi-refinement.mjs",
+      "scripts/patch-103-debug-events.mjs",
+      "scripts/patch-4a0b-diagnostic-trace.mjs",
+      "scripts/patch-83-* (8 debug scripts)",
+      "docs/conversational/audits/phase-4a/evidence/PATCH_4A_7V_CONFIDENCE_PARITY_EVIDENCE.json"
+    ]
+  }
+}

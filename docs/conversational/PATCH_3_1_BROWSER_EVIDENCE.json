@@ -1,0 +1,39 @@
+{
+  "patch": "3.1",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "at": "2026-07-25T03:59:52.319Z",
+  "checks": [
+    {
+      "id": "ui-commercial-direct",
+      "pass": true,
+      "status": 200,
+      "cards": 1,
+      "reply_preview": "Entre as opções, eu colocaria o iPhone 13 em primeiro porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhone 13 leva vantagem em desempenho nesta comparação.\n\nNa prática, tel"
+    },
+    {
+      "id": "ui-social",
+      "pass": true,
+      "status": 200,
+      "cards": 0,
+      "reply_preview": "Opa!"
+    },
+    {
+      "id": "ui-mixed",
+      "pass": true,
+      "status": 200,
+      "cards": 0,
+      "reply_preview": "Entre as opções, eu colocaria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD em primeiro porque combina com o foco principal desta busca.\n\nEu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx "
+    },
+    {
+      "id": "ui-post-purchase",
+      "pass": true,
+      "status": 200,
+      "cards": 0,
+      "reply_preview": "Boa — ficou resolvido então."
+    }
+  ],
+  "console_errors_relevant": [],
+  "passed": 4,
+  "failed": 0,
+  "status": "APPROVED"
+}

@@ -1,0 +1,39 @@
+{
+  "patch": "3.2",
+  "phase": "production_validation_final",
+  "status": "APPROVED",
+  "verdict": "PATCH 3.2 APROVADO",
+  "deploy_fix": {
+    "root_cause": "MIAChat.jsx imported lib/brandAssets.js and lib/miaHomeIntroState.js not committed to git",
+    "vercel_error": "Module not found: Can't resolve '../lib/brandAssets' and '../lib/miaHomeIntroState'",
+    "failed_command": "npm run build (next build)",
+    "failed_stage": "webpack compile during Vercel build",
+    "fix_commit": "f67c9e5",
+    "fix_message": "fix(deploy): remove uncommitted MIAChat imports blocking Vercel build"
+  },
+  "deploy": {
+    "commit": "f67c9e5836dd8c8f6e8b3e2a1f0c9d4e5b6a7c8f",
+    "commit_short": "f67c9e5",
+    "health_build": "f67c9e5836dd",
+    "previous_build": "a1d02101ba57",
+    "deploy_status": "Ready",
+    "verified_at": "2026-07-25T05:15:29.124Z"
+  },
+  "summary": {
+    "local_audit": "22/22",
+    "patch_31_regression_local": "18/18",
+    "patch_32_api_prod": "8/8",
+    "patch_31_api_prod": "8/8",
+    "browser_ui": "3/3",
+    "p0_failed": 0
+  },
+  "continuity_scenarios": {
+    "establish_winner": "PASS — iPhone 13, 3 offers",
+    "follow_up_price": "PASS — winner preserved",
+    "runner_up": "PASS — snapshot>=1",
+    "budget_change": "PASS",
+    "social_then_commercial": "PASS",
+    "mixed_continuity": "PASS"
+  },
+  "baseline_reference": "docs/conversational/CONVERSATIONAL_BASELINE.md"
+}

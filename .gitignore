@@ -17,6 +17,11 @@ audit-matrix-output-after.json
 audit-matrix-output.json
 audit-matrix-stderr.txt
 
+# Scratch / debug artifacts (PATCH 4.1G)
+docs/analytics/_patch*-failures.txt
+docs/analytics/sql/_test-*.sql
+tatus --short
+
 # Supabase local runtime (managed by supabase/.gitignore too)
 supabase/.branches
 supabase/.temp

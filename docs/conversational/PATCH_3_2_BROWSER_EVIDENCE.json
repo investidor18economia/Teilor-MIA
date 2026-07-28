@@ -1,0 +1,27 @@
+{
+  "patch": "3.2",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "at": "2026-07-25T05:16:44.294Z",
+  "checks": [
+    {
+      "id": "ui-establish-search",
+      "pass": true,
+      "cards": 1,
+      "winner": "iPhone 13"
+    },
+    {
+      "id": "ui-follow-up-price",
+      "pass": true,
+      "cards": 1,
+      "winner": "iPhone 11"
+    },
+    {
+      "id": "ui-social",
+      "pass": true,
+      "cards": 0
+    }
+  ],
+  "passed": 3,
+  "failed": 0,
+  "status": "APPROVED"
+}

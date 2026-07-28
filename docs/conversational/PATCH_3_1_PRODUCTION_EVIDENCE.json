@@ -1,0 +1,203 @@
+{
+  "patch": "3.1",
+  "phase": "production_validation",
+  "status": "APPROVED",
+  "started_at": "2026-07-25T05:15:28.950Z",
+  "finished_at": "2026-07-25T05:16:25.492Z",
+  "base_url": "https://economia-ai.vercel.app",
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "p0_failed": 0,
+    "scenarios": 7
+  },
+  "checks": [
+    {
+      "id": "health",
+      "pass": true,
+      "detail": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-07-25T05:15:29.124Z\",\"build\":\"f67c9e5836dd\"}",
+      "severity": "P0",
+      "at": "2026-07-25T05:15:29.220Z"
+    },
+    {
+      "id": "smoke:commercial-direct",
+      "pass": true,
+      "detail": "quero um celular ate 2 mil | offers=3 institutional=false",
+      "severity": "P0",
+      "at": "2026-07-25T05:16:25.492Z"
+    },
+    {
+      "id": "smoke:commercial-specific",
+      "pass": true,
+      "detail": "quanto custa o Galaxy S24? | offers=0 institutional=false",
+      "severity": "P0",
+      "at": "2026-07-25T05:16:25.492Z"
+    },
+    {
+      "id": "smoke:commercial-mixed",
+      "pass": true,
+      "detail": "to nervoso, preciso de um notebook | offers=0 institutional=false",
+      "severity": "P0",
+      "at": "2026-07-25T05:16:25.492Z"
+    },
+    {
+      "id": "smoke:social",
+      "pass": true,
+      "detail": "oi | offers=0 institutional=false",
+      "severity": "P0",
+      "at": "2026-07-25T05:16:25.492Z"
+    },
+    {
+      "id": "smoke:post-purchase",
+      "pass": true,
+      "detail": "comprei o celular, obrigado | offers=0 institutional=false",
+      "severity": "P0",
+      "at": "2026-07-25T05:16:25.492Z"
+    },
+    {
+      "id": "smoke:topic-switch",
+      "pass": true,
+      "detail": "agora quero falar de outra coisa | offers=0 institutional=false",
+      "severity": "P0",
+      "at": "2026-07-25T05:16:25.492Z"
+    },
+    {
+      "id": "smoke:commercial-follow-up",
+      "pass": true,
+      "detail": "e mais barato? | offers=1 institutional=false",
+      "severity": "P0",
+      "at": "2026-07-25T05:16:25.492Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "commercial-direct",
+      "text": "quero um celular ate 2 mil",
+      "status": 200,
+      "elapsed_ms": 7587,
+      "reply_preview": "Entre as opções, eu colocaria o iPhone 13 em primeiro porque tela fluida no cotidiano.\n\nQuase te recomendaria o iPhone 11; só não fiz isso porque o iPhone 13 leva vantagem em desempenho nesta comparação.\n\nNa prática, tela fluida no cotidiano tende a aparecer no uso real — não só ",
+      "reply_len": 621,
+      "offers_count": 3,
+      "response_path": "return_seguro",
+      "institutional_fallback": false,
+      "has_prices": true,
+      "expect": "commercial",
+      "pass": true
+    },
+    {
+      "scenario_id": "commercial-specific",
+      "text": "quanto custa o Galaxy S24?",
+      "status": 200,
+      "elapsed_ms": 1809,
+      "reply_preview": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro.",
+      "reply_len": 83,
+      "offers_count": 0,
+      "response_path": "context_decision_no_search",
+      "institutional_fallback": false,
+      "has_prices": false,
+      "expect": "commercial",
+      "pass": true
+    },
+    {
+      "scenario_id": "commercial-mixed",
+      "text": "to nervoso, preciso de um notebook",
+      "status": 200,
+      "elapsed_ms": 2298,
+      "reply_preview": "Entre as opções, eu colocaria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD em primeiro porque combina com o foco principal desta busca.\n\nEu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Notebook Asus Vivobook 15 Intel Core I",
+      "reply_len": 936,
+      "offers_count": 0,
+      "response_path": "commercial_only_fallback",
+      "institutional_fallback": false,
+      "has_prices": false,
+      "expect": "commercial",
+      "pass": true
+    },
+    {
+      "scenario_id": "social",
+      "text": "oi",
+      "status": 200,
+      "elapsed_ms": 982,
+      "reply_preview": "Opa!",
+      "reply_len": 4,
+      "offers_count": 0,
+      "response_path": "greeting_flow",
+      "institutional_fallback": false,
+      "has_prices": false,
+      "expect": "social",
+      "pass": true
+    },
+    {
+      "scenario_id": "post-purchase",
+      "text": "comprei o celular, obrigado",
+      "status": 200,
+      "elapsed_ms": 1297,
+      "reply_preview": "Boa — ficou resolvido então.",
+      "reply_len": 28,
+      "offers_count": 0,
+      "response_path": "acknowledgement_flow",
+      "institutional_fallback": false,
+      "has_prices": false,
+      "expect": "deny_non_commercial",
+      "pass": true
+    },
+    {
+      "scenario_id": "topic-switch",
+      "text": "agora quero falar de outra coisa",
+      "status": 200,
+      "elapsed_ms": 1302,
+      "reply_preview": "Entendo o contexto.",
+      "reply_len": 19,
+      "offers_count": 0,
+      "response_path": "governed_social_intent_flow",
+      "institutional_fallback": false,
+      "has_prices": false,
+      "expect": "deny_non_commercial",
+      "pass": true
+    },
+    {
+      "scenario_id": "commercial-follow-up",
+      "text": "e mais barato?",
+      "status": 200,
+      "elapsed_ms": 2441,
+      "reply_preview": "Sobre o Galaxy S24 Ultra, pensando em custo-benefício:\n\nPelo conjunto técnico desse modelo, ele continua sendo uma opção coerente dentro do contexto.\n\nResumo: eu manteria esse produto como referência, sem buscar outro agora.",
+      "reply_len": 224,
+      "offers_count": 1,
+      "response_path": "priority_followup_short",
+      "institutional_fallback": false,
+      "has_prices": true,
+      "expect": "commercial",
+      "pass": true
+    }
+  ],
+  "latencies_ms": [
+    {
+      "status": 200,
+      "elapsed_ms": 7587
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1809
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2298
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 982
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1297
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 1302
+    },
+    {
+      "status": 200,
+      "elapsed_ms": 2441
+    }
+  ],
+  "baseline_reference": "docs/conversational/CONVERSATIONAL_BASELINE.md"
+}
