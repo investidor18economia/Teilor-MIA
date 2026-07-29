@@ -2,7 +2,7 @@
   "patch": "B.1",
   "title": "PATCH B.1 — Executive Architecture Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T12:04:50.136Z",
+  "validated_at": "2026-07-29T12:18:51.450Z",
   "scope": "architecture documentation only — no implementation",
   "baseline_a": "FROZEN — OFFICIALLY_COMPLETED",
   "architecture_doc": "docs/analytics/FOUNDER_COCKPIT_PHASE_B_ARCHITECTURE.md",
@@ -76,21 +76,6 @@
         "detail": ""
       },
       {
-        "label": "B.1 did not create miaFounderExecutiveDisplay.js",
-        "pass": true,
-        "detail": ""
-      },
-      {
-        "label": "B.1 did not create miaFounderExecutiveCatalog.js",
-        "pass": true,
-        "detail": ""
-      },
-      {
-        "label": "B.1 did not create FounderExecutiveKpiStrip.jsx",
-        "pass": true,
-        "detail": ""
-      },
-      {
         "label": "B.1 did not create FounderExecutiveGrowthSection.jsx",
         "pass": true,
         "detail": ""
@@ -102,6 +87,21 @@
       },
       {
         "label": "B.1 did not create founder-executive-metrics.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.2 executive file miaFounderExecutiveDisplay.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.2 executive file miaFounderExecutiveCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.2 executive file FounderExecutiveKpisSection.jsx",
         "pass": true,
         "detail": ""
       },

@@ -1,0 +1,47 @@
+{
+  "patch": "B.2",
+  "title": "PATCH B.2 — Official Closure",
+  "phase": "B — Dashboard Executivo",
+  "status": "BLOCKED",
+  "patch_b2_status": "BLOCKED_PENDING_VALIDATION",
+  "closed_at": null,
+  "git": {
+    "pass": false,
+    "head": "495cf032f572b5691b418d58ffd0942476bda1ea",
+    "origin": "495cf032f572b5691b418d58ffd0942476bda1ea",
+    "working_tree_clean": false
+  },
+  "baseline_a_preserved": true,
+  "steps": [
+    {
+      "label": "B.2 KPI audit",
+      "pass": true
+    },
+    {
+      "label": "B.1 architecture regression",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline audit",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "b2_kpis": "APPROVED",
+    "browser": "PENDING_LOCAL",
+    "dashboard_doc": true
+  },
+  "next_patch": "B.3 — Crescimento da Plataforma"
+}
