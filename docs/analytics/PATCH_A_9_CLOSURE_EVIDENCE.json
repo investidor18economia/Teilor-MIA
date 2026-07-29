@@ -6,8 +6,8 @@
   "closed_at": "2026-07-29T01:22:00.000Z",
   "git": {
     "pass": true,
-    "head": "pending_evidence_commit",
-    "origin": "73a0417bafca77f7fc0fa531b3b53e3bed03d454",
+    "head": "2a88da1f54a3dc44e25447db286155854cbe8f17",
+    "origin": "2a88da1f54a3dc44e25447db286155854cbe8f17",
     "working_tree_clean": true
   },
   "ui_improvements": [
