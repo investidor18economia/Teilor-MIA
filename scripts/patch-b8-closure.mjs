@@ -66,7 +66,7 @@ const docExists = existsSync(join(ROOT, "docs/analytics/FOUNDER_EXECUTIVE_DASHBO
 const docHasB8 =
   docExists && readFileSync(join(ROOT, "docs/analytics/FOUNDER_EXECUTIVE_DASHBOARD.md"), "utf8").includes("B.8");
 
-const requiredSteps = steps.filter((s) => !s.label?.includes("Browser") && !s.label?.includes("Production"));
+const requiredSteps = steps.filter((s) => !s.label?.includes("Browser"));
 const allPass =
   requiredSteps.every((s) => s.pass) &&
   b8Evidence.status === "APPROVED" &&
