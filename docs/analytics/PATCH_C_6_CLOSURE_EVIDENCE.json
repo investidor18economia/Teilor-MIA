@@ -10,7 +10,7 @@
     "head": "a8b6806",
     "origin": "a8b6806",
     "feature_commit": "a8b6806",
-    "closure_commit": "pending"
+    "closure_commit": "e5809bd"
   },
   "baseline_c1_c5_preserved": true,
   "regressions": {
