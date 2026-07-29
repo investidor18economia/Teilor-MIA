@@ -192,7 +192,7 @@ C.1 prepara a arquitetura sem alterar 11.4 ou B.7.
 | **C.1** | Arquitetura, contratos, docs ✅ |
 | **C.2** | Resumos Executivos Automáticos ✅ |
 | **C.3** | Insights Inteligentes ✅ |
-| **C.4** | Alerts & recommendations |
+| **C.4** | Tendências Executivas ✅ |
 | **C.5** | Narrative assembly |
 | **C.6** | LLM verbalizer |
 | **C.7** | UI analista no Cockpit |
@@ -444,4 +444,118 @@ npm run test:mia:analytics:patch-c3:closure
 
 ---
 
-*Documento atualizado no PATCH C.3 — Geração de Insights Inteligentes.*
+---
+
+## 18. PATCH C.4 — Executive Trend Generator
+
+**Patch:** C.4 — Tendências Executivas  
+**Versão:** C.4.0  
+**Escopo:** Tendências determinísticas a partir de sinais temporais nas Executive Views.
+
+### 18.1 Princípio
+
+Toda tendência nasce exclusivamente dos dados existentes nas Executive Views (comparativo de período, séries temporais, indicadores). A LLM não classifica direção, magnitude ou tipo — apenas verbalizará (C.6+) tendências pré-computadas.
+
+**Fora de escopo C.4:** alertas, recomendações, UI no Cockpit.
+
+### 18.2 Pipeline de tendências
+
+```text
+Executive Views (Baseline B)
+        ↓
+collectExecutiveTrendInput        — normalização (reutiliza C.2)
+        ↓
+collectTemporalSignals            — extração por signal definition
+        ↓
+validateTemporalSignal            — status + limitações
+        ↓
+evaluateTrendSignals              — classificação direction/type/magnitude
+        ↓
+deduplicateExecutiveTrends        — consolidação por dedup_group + label
+        ↓
+buildExecutiveTrendNarrative      — stage: interpretation
+        ↓
+generateExecutiveAnalysisTrends   — ExecutiveAnalysisOutput (trends only)
+        ↓
+LLM Verbalizer                    — C.6+ (não implementado)
+```
+
+Implementação: `lib/miaExecutiveTrendBuilder.js`  
+Catálogo: `lib/miaExecutiveTrendCatalog.js`  
+Regras: `lib/miaExecutiveTrendRules.js`
+
+### 18.3 Tipos suportados e bloqueados
+
+| Tipo | Status C.4 |
+|------|------------|
+| **growth** | ✅ confirmado |
+| **decline** | ✅ confirmado |
+| **stability** | ✅ confirmado |
+| **acceleration** | ✅ confirmado |
+| **deceleration** | ✅ confirmado |
+| **preliminary_signal** | ✅ sinal preliminar |
+| **reversal** | ⛔ bloqueado (evidência insuficiente) |
+| **persistence** | ⛔ bloqueado (requer 3+ observações) |
+| **volatility** | ⛔ bloqueado (evidência insuficiente) |
+
+### 18.4 Semântica de métricas
+
+| Semântica | Interpretação executiva |
+|-----------|-------------------------|
+| **higher_is_better** | Alta = positiva; queda = atenção |
+| **lower_is_better** | Queda = positiva; alta = atenção |
+| **neutral** | Relevância executiva neutra |
+
+### 18.5 Magnitude, confiança e evidência
+
+Todo trend estruturado inclui:
+
+- `direction`, `trend_type`, `status`, `magnitude`;
+- `confidence` (nível + fatores + limitações);
+- `evidence[]` rastreável a field paths oficiais;
+- `modules_involved`, `period`, `comparison_period`;
+- `limitations`, `interpretation`, `executive_relevance`.
+
+Tendências **não são emitidas** quando: módulo indisponível, comparativo de período ausente, confiança insuficiente, ou tipo bloqueado.
+
+### 18.6 Proibição de causalidade
+
+Textos descrevem variações observadas — nunca `"porque"`, `"causado por"`, `"devido a"` ou `"resultado de"`.
+
+### 18.7 Integração com contratos C.1–C.3
+
+- `generateExecutiveAnalysisTrends()` → `ExecutiveTrend[]`.
+- `generateExecutiveAnalysisWithSummaryInsightsAndTrends()` combina C.2 + C.3 + C.4.
+- `alerts`, `recommendations` permanecem vazios.
+- C.1/C.2/C.3 inalterados — insights-only e summary-only continuam sem trends.
+
+### 18.8 Garantias C.4
+
+| Garantia | Status |
+|----------|--------|
+| Baseline A/B preservadas | ✅ |
+| Contratos C.1.0 preservados | ✅ |
+| Summary Builder C.2 preservado | ✅ |
+| Insight Builder C.3 preservado | ✅ |
+| Tendências determinísticas | ✅ |
+| Deduplicação validada | ✅ |
+| Cockpit UI inalterado | ✅ |
+
+### 18.9 Arquivos C.4
+
+| Arquivo | Responsabilidade |
+|---------|------------------|
+| `lib/miaExecutiveTrendCatalog.js` | Direções, tipos, magnitudes, sinais, thresholds |
+| `lib/miaExecutiveTrendRules.js` | Classificação determinística |
+| `lib/miaExecutiveTrendBuilder.js` | Pipeline collect → evaluate → deduplicate |
+
+### 18.10 Testes oficiais C.4
+
+```bash
+npm run test:mia:analytics:patch-c4:executive-trends
+npm run test:mia:analytics:patch-c4:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.4 — Tendências Executivas.*

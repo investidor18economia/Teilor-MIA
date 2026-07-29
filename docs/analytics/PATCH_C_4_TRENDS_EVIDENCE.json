@@ -1,0 +1,617 @@
+{
+  "patch": "C.4",
+  "title": "PATCH C.4 — Executive Trends Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T19:14:39.481Z",
+  "builder_version": "C.4.0",
+  "catalog_version": "C.4.0",
+  "contracts_version": "C.1.0",
+  "signal_count": 11,
+  "blocked_types": [
+    "reversal",
+    "persistence",
+    "volatility"
+  ],
+  "pipeline": [
+    "collect",
+    "validate",
+    "evaluate",
+    "deduplicate",
+    "narrative"
+  ],
+  "scope": "Deterministic executive trends from Baseline B views only",
+  "excludes": [
+    "alerts",
+    "recommendations",
+    "LLM"
+  ],
+  "baseline_c3_preserved": true,
+  "baseline_c2_preserved": true,
+  "baseline_c1_preserved": true,
+  "checks": {
+    "total": 116,
+    "passed": 116,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rules exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version C.4.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder version C.4.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no OpenAI/LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no OpenAI/LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rules no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rules no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rules no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "rules no OpenAI/LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 contracts version unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 output template still pending",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 summary builder intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 insight builder intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "signal definitions defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "blocked types defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "collect normalizes views",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "collectTemporalSignals produces signals",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "validateTemporalSignal returns status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evaluate produces candidates",
+        "pass": true,
+        "detail": "count=11"
+      },
+      {
+        "label": "dedup reduces or equals candidates",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured trends present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured trend has direction",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured trend has magnitude",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured trend has limitations array",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth trend detected",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "decline or stability trend detected",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "acceleration trend detected",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendDirectionFromDelta up",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendDirectionFromDelta down",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendDirectionFromDelta stable",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendMagnitude moderate pct",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendType growth",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendType decline",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendType stability",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classifyTrendType acceleration",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "higher_is_better signal defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "lower_is_better signal defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "neutral signal defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "describeExecutiveRelevance higher up",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "describeExecutiveRelevance lower down",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "describeExecutiveRelevance neutral",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output status trends_ready or no_trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output has trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output summary null in trends-only",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend has trend_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend has metric_label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend has direction",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend confidence key level",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend confidence key factors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend confidence key limitations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend confidence key modules_available",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend confidence key modules_total",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend evidence key evidence_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend evidence key source",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend evidence key module_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend evidence key field_path",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend evidence key value_snapshot",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend evidence key rule_ref",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confirmed trend has magnitude",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confirmed trend has confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confirmed trend has evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confirmed trend has limitations array",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trends avoid causal language",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "containsCausalLanguage detects porque",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "containsCausalLanguage clean text",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism structured trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism analysis output",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty modules no trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty modules status no_trends or insufficient",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no period compare insufficient",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no period compare limitation",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dedup keeps lower priority number",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined has summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined has insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined has trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined status analysis_ready",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined no alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined no recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 insights still works",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 insights trends empty",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 summary still works",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "decline scenario produces decline trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "stability scenario produces stability or negligible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapped trend has trend_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapped trend has change_pct",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "normalizeViewDirection accelerating",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "normalizeViewDirection decelerating",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "interpretation built",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "interpretation no causality",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence high for confirmed strong",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence insufficient without compare",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.7 mapper unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no trend UI in cockpit",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "doc mentions C.4",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "doc mentions Trend Generator",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
