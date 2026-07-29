@@ -1,0 +1,105 @@
+{
+  "patch": "C.2",
+  "title": "PATCH C.2 — Official Closure",
+  "phase": "C — MIA como Analista da Empresa",
+  "status": "BLOCKED",
+  "patch_c2_status": "BLOCKED_PENDING_VALIDATION",
+  "closed_at": null,
+  "git": {
+    "pass": false,
+    "head": "7877c5b521f3a4a761a77f630e95d809216f14a7",
+    "origin": "7cfffeb076fffa6c18ab7faede7223bb993d3643",
+    "working_tree_clean": false
+  },
+  "baseline_a_preserved": true,
+  "baseline_b_preserved": true,
+  "baseline_c1_preserved": true,
+  "scope": "Deterministic Executive Summary Generator — lib only, no Cockpit UI",
+  "steps": [
+    {
+      "label": "C.2 summary audit",
+      "pass": true
+    },
+    {
+      "label": "C.1 regression",
+      "pass": true
+    },
+    {
+      "label": "Phase B baseline audit",
+      "pass": true
+    },
+    {
+      "label": "B.8 regression",
+      "pass": true
+    },
+    {
+      "label": "B.7 regression",
+      "pass": true
+    },
+    {
+      "label": "B.6 regression",
+      "pass": true
+    },
+    {
+      "label": "B.5 regression",
+      "pass": true
+    },
+    {
+      "label": "B.4 regression",
+      "pass": true
+    },
+    {
+      "label": "B.3 regression",
+      "pass": true
+    },
+    {
+      "label": "B.2 regression",
+      "pass": true
+    },
+    {
+      "label": "B.1 regression",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "C.2 browser regression",
+      "pass": true
+    },
+    {
+      "label": "Production validation",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "summary": "APPROVED",
+    "browser": "APPROVED",
+    "documentation": true
+  },
+  "files_created": [
+    "lib/miaExecutiveSummaryCatalog.js",
+    "lib/miaExecutiveSummaryBuilder.js",
+    "scripts/test-mia-analytics-patch-c2-executive-summary.js",
+    "scripts/patch-c2-browser-validation.mjs",
+    "scripts/patch-c2-closure.mjs"
+  ],
+  "files_modified": [
+    "docs/analytics/MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md",
+    "lib/miaExecutiveAnalysisArchitecture.js"
+  ],
+  "next_patch": "C.3 — Insights & trends (not started)"
+}
