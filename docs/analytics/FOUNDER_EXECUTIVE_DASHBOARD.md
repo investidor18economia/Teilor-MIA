@@ -36,6 +36,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 ## Módulos
 
 0. **KPIs Estratégicos** (PATCH B.2) — visão executiva superior para decisão rápida  
+0.1 **Crescimento da Plataforma** (PATCH B.3) — evolução, velocidade, aceleração e comparativo de período  
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
@@ -67,8 +68,8 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 |-----|-------|---------------|
 | Usuários Ativos | temporal `growth` | `dau_visitors` (fallback: `platform.unique_visitors`) |
 | Crescimento de Usuários | temporal `growth` | `crescimento_dau_visitors_pct` |
-| Crescimento de Sessões | executive snapshot | `platform.total_sessions` (volume período — pct futuro B.3) |
-| Crescimento de Perguntas | executive snapshot | `platform.questions` (volume período — pct futuro B.3) |
+| Crescimento de Sessões | executive snapshot | `platform.total_sessions` (volume período — pct detalhado em B.3) |
+| Crescimento de Perguntas | executive snapshot | `platform.questions` (volume período — pct detalhado em B.3) |
 | Recomendações Emitidas | executive snapshot | `recommendation.recommendations_generated` |
 | CTR | temporal `conversion.summary` | `taxa_clique_recomendacao` |
 | Conversão | temporal `conversion.summary` | `conversao_acumulada_visitante` |
@@ -95,6 +96,56 @@ Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
 - **Interface:** renderizar grupos Plataforma + Comercial, skeleton, retry
 - **Mapper B.2.0:** resolver catálogo, badges, tendências, formatação
 - **Proibido:** agregação, SQL, alteração de contratos Baseline A
+
+---
+
+## Crescimento da Plataforma (PATCH B.3)
+
+**Mapper:** `lib/miaFounderExecutiveGrowthDisplay.js` (B.3.0)  
+**Catálogo:** `lib/miaFounderExecutiveGrowthCatalog.js` (B.3.0)  
+**Componente:** `FounderExecutiveGrowthSection.jsx` (client fetch)  
+**Posição:** abaixo de KPIs Estratégicos (B.2) e acima de Executive Insights
+
+**Fontes (contratos existentes — sem alteração de API/RPC):**
+
+| Indicador | Fonte | Campo oficial |
+|-----------|-------|---------------|
+| Crescimento de usuários | temporal `growth` | `crescimento_dau_visitors_pct` |
+| Crescimento de sessões | executive snapshot + offset | `platform.total_sessions` (período vs anterior) |
+| Crescimento de perguntas | executive snapshot + offset | `platform.questions` |
+| Crescimento de conversas | executive snapshot + offset | `platform.conversations` |
+| Tendência geral | temporal `growth` | síntese DAU + WAU + MAU pct |
+| Velocidade de crescimento | temporal `growth` | magnitud `crescimento_dau_visitors_pct` |
+| Aceleração | temporal `growth.series` | Δ pct DAU último vs penúltimo dia |
+| Engajamento diário | temporal `platform_activity` | sessões/perguntas último vs penúltimo dia |
+
+**Comparativo de período:** `GET /api/executive-metrics?...&offset_days={window_days}` (filtro oficial A.7).
+
+**Narrativa executiva (determinística — sem IA):**
+
+| Regra | Mensagem |
+|-------|----------|
+| DAU ↑ e WAU ↑ | Crescimento consistente nas últimas semanas. |
+| Aceleração positiva | A plataforma acelerou neste período. |
+| Desaceleração | O ritmo caiu em relação ao período anterior. |
+| DAU ↑ + engajamento estável | Usuários continuam aumentando, mas o engajamento estabilizou. |
+| DAU ↓ ou período ↓ | Sinais de desaceleração merecem atenção executiva. |
+
+**Badges:** Crescendo · Estável · Atenção · Acelerando · Desacelerando · Saudável
+
+**Responsabilidades:**
+
+- **Interface:** renderizar narrativa, trends DAU/WAU/MAU, grid de indicadores, skeleton, retry
+- **Mapper B.3.0:** interpretação temporal, comparativo, velocidade, aceleração, badges, narrativa
+- **Proibido:** agregação, SQL, fetch, alteração de contratos Baseline A ou B.2
+
+### Encerramento (PATCH B.3)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_B_3_EXECUTIVE_GROWTH_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
+| `PATCH_B_3_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
+| `PATCH_B_3_CLOSURE_EVIDENCE.json` | Encerramento oficial |
 
 ---
 

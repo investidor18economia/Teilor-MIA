@@ -1494,6 +1494,99 @@
   font-weight: 500;
 }
 
+/* PATCH B.3 — Executive Platform Growth */
+.founder-executive-growth {
+  margin-bottom: var(--fc-space-xl);
+  padding: var(--fc-space-lg) var(--fc-space-md);
+  border-radius: var(--fc-radius-lg);
+  background: var(--fc-bg-panel);
+  border: 1px solid var(--fc-border);
+  box-shadow: var(--fc-shadow-card);
+}
+
+.founder-executive-growth-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.founder-executive-growth-title {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--fc-text-primary);
+  letter-spacing: 0.03em;
+}
+
+.founder-executive-growth-narrative {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: var(--fc-radius-md);
+  background: rgba(0, 198, 255, 0.05);
+  border: 1px solid rgba(0, 198, 255, 0.15);
+}
+
+.founder-executive-growth-headline {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fc-text-primary);
+  line-height: 1.5;
+}
+
+.founder-executive-growth-meta {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  color: var(--fc-text-muted);
+}
+
+.founder-executive-growth-trends {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.founder-executive-growth-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--fc-border);
+  background: var(--fc-bg-elevated);
+}
+
+.founder-executive-growth-trend--up {
+  color: #8ef0a8;
+  border-color: rgba(76, 217, 100, 0.3);
+}
+
+.founder-executive-growth-trend--down {
+  color: #ff9f7a;
+  border-color: rgba(255, 140, 0, 0.3);
+}
+
+.founder-executive-growth-trend--stable {
+  color: #a8c4d8;
+}
+
+.founder-executive-growth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.founder-executive-growth-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .founder-skeleton-line,
   .founder-skeleton-chart-area,
@@ -1543,7 +1636,15 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .founder-executive-growth-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .founder-executive-kpis-header {
+    flex-direction: column;
+  }
+
+  .founder-executive-growth-header {
     flex-direction: column;
   }
 }

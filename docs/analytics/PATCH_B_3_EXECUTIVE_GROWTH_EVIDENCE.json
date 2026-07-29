@@ -1,0 +1,221 @@
+{
+  "patch": "B.3",
+  "title": "PATCH B.3 — Executive Platform Growth Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T13:01:21.136Z",
+  "display_version": "B.3.0",
+  "catalog_version": "B.3.0",
+  "indicators_implemented": [
+    "user_growth",
+    "session_growth",
+    "question_growth",
+    "conversation_growth",
+    "overall_trend",
+    "growth_velocity",
+    "growth_acceleration",
+    "daily_engagement"
+  ],
+  "components": [
+    "FounderExecutiveGrowthSection.jsx"
+  ],
+  "mapper": "lib/miaFounderExecutiveGrowthDisplay.js",
+  "catalog": "lib/miaFounderExecutiveGrowthCatalog.js",
+  "baseline_a_preserved": true,
+  "baseline_b2_preserved": true,
+  "checks": {
+    "total": 38,
+    "passed": 38,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version B.3.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper version B.3.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog defines 8 indicators",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit mounts FounderExecutiveGrowthSection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth section below executive KPIs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth section above insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component uses mapper only",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no computePeriodChangePct",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no classifyTrendDirection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive growth CSS",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit display still A.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive B.2 catalog still B.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive B.2 mapper still B.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal catalog still A.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive API still 11.1.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/executive-metrics.js unchanged by B.3",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/temporal-metrics.js unchanged by B.3",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dashboard doc mentions B.3",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "period change pct",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "period change pct null on zero prev",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "acceleration up",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "acceleration down",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "velocity high",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "velocity moderate",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative consistent growth",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative acceleration",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge accelerating",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge growing",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper returns 8 indicators",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper narrative headline",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper trends dau up",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper period compare available",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "user growth pct formatted",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "session growth period pct",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "acceleration indicator",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

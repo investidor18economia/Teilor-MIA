@@ -1,0 +1,213 @@
+{
+  "patch": "B.3",
+  "title": "PATCH B.3 — Browser Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T13:03:57.857Z",
+  "base_url": "http://localhost:3019",
+  "screenshots_dir": "docs/analytics/evidence/patch-b3-browser",
+  "diagnostics": [
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "growthHeadline": null,
+      "growthItems": 0,
+      "growthBadges": 0,
+      "insights": true,
+      "kpiStrip": true
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "growthHeadline": null,
+      "growthItems": 0,
+      "growthBadges": 0,
+      "insights": true,
+      "kpiStrip": true
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "growthHeadline": null,
+      "growthItems": 0,
+      "growthBadges": 0,
+      "insights": true,
+      "kpiStrip": true
+    }
+  ],
+  "checks": {
+    "total": 31,
+    "passed": 31,
+    "items": [
+      {
+        "label": "auth endpoint",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "desktop: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.3 growth section visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: growth headline rendered",
+        "pass": true,
+        "detail": "O ritmo caiu em relação ao período anterior."
+      },
+      {
+        "label": "desktop: growth indicator items",
+        "pass": true,
+        "detail": "items=8"
+      },
+      {
+        "label": "desktop: growth badges rendered",
+        "pass": true,
+        "detail": "badges=7"
+      },
+      {
+        "label": "desktop: insights below growth",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b3-browser\\executive-growth-desktop.png"
+      },
+      {
+        "label": "tablet: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "tablet: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.3 growth section visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: growth headline rendered",
+        "pass": true,
+        "detail": "O ritmo caiu em relação ao período anterior."
+      },
+      {
+        "label": "tablet: growth indicator items",
+        "pass": true,
+        "detail": "items=8"
+      },
+      {
+        "label": "tablet: growth badges rendered",
+        "pass": true,
+        "detail": "badges=7"
+      },
+      {
+        "label": "tablet: insights below growth",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b3-browser\\executive-growth-tablet.png"
+      },
+      {
+        "label": "mobile: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "mobile: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.3 growth section visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: growth headline rendered",
+        "pass": true,
+        "detail": "O ritmo caiu em relação ao período anterior."
+      },
+      {
+        "label": "mobile: growth indicator items",
+        "pass": true,
+        "detail": "items=8"
+      },
+      {
+        "label": "mobile: growth badges rendered",
+        "pass": true,
+        "detail": "badges=7"
+      },
+      {
+        "label": "mobile: insights below growth",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b3-browser\\executive-growth-mobile.png"
+      }
+    ]
+  }
+}

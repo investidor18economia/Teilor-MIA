@@ -233,16 +233,16 @@ styles/founder-cockpit.css  → tokens --fc-*
 | **Objetivo** | Painel executivo superior com KPIs estratégicos agrupados |
 | **Escopo** | `FounderExecutiveKpiStrip`, `miaFounderExecutiveCatalog.js`, mapper B.2.0 |
 | **Dependências** | Baseline A, B.1 |
-| **Conclusão** | KPIs renderizados de APIs existentes, zero agregação frontend, testes + browser |
+| **Conclusão** | KPIs renderizados de APIs existentes, zero agregação frontend, testes + browser · **OFFICIALLY_CLOSED** |
 
 ### PATCH B.3 — Crescimento da Plataforma
 
 | Campo | Valor |
 |-------|-------|
-| **Objetivo** | Módulo executivo de crescimento (DAU/WAU/MAU, tendências) |
-| **Escopo** | `FounderExecutiveGrowthSection`, mapper, gráficos reutilizados |
-| **Dependências** | B.2, temporal API A.7.0 |
-| **Conclusão** | Séries growth/platform_activity mapeadas, filtros A.7 aplicados |
+| **Objetivo** | Módulo executivo de crescimento (DAU/WAU/MAU, tendências, comparativo de período) |
+| **Escopo** | `FounderExecutiveGrowthSection`, `miaFounderExecutiveGrowthCatalog.js`, `miaFounderExecutiveGrowthDisplay.js` (B.3.0) |
+| **Dependências** | B.2, temporal API A.7.0, executive-metrics offset |
+| **Conclusão** | Séries growth/platform_activity + comparativo offset mapeados, narrativa executiva determinística, filtros A.7 aplicados |
 
 ### PATCH B.4 — Saúde do Produto
 

@@ -36,8 +36,9 @@ ok("Phase A final report exists", existsSync(join(ROOT, "docs/analytics/FOUNDER_
 
 // B.1 must NOT add implementation files (unless B.2+ approved)
 const b2Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveDisplay.js"));
+const b3Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveGrowthDisplay.js"));
 const forbiddenImplB1 = [
-  "components/founder-cockpit/FounderExecutiveGrowthSection.jsx",
+  ...(b3Implemented ? [] : ["components/founder-cockpit/FounderExecutiveGrowthSection.jsx"]),
   "components/founder-cockpit/FounderExecutiveSummarySection.jsx",
   "pages/api/founder-executive-metrics.js",
 ];
@@ -57,6 +58,11 @@ if (b2Implemented) {
   for (const f of b2Expected) {
     ok(`B.1 did not create ${f.split("/").pop()}`, !existsSync(join(ROOT, f)));
   }
+}
+if (b3Implemented) {
+  ok("B.3 growth file miaFounderExecutiveGrowthDisplay.js", existsSync(join(ROOT, "lib/miaFounderExecutiveGrowthDisplay.js")));
+  ok("B.3 growth file miaFounderExecutiveGrowthCatalog.js", existsSync(join(ROOT, "lib/miaFounderExecutiveGrowthCatalog.js")));
+  ok("B.3 growth file FounderExecutiveGrowthSection.jsx", existsSync(join(ROOT, "components/founder-cockpit/FounderExecutiveGrowthSection.jsx")));
 }
 
 // Baseline contracts unchanged — version strings

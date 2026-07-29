@@ -2,7 +2,7 @@
   "patch": "A.10",
   "title": "PATCH A.10 — Final Audit Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T12:53:30.516Z",
+  "validated_at": "2026-07-29T13:01:38.812Z",
   "architecture_layers": [
     "Interface",
     "Mapper",
@@ -12,8 +12,8 @@
     "Analytics"
   ],
   "checks": {
-    "total": 68,
-    "passed": 68,
+    "total": 70,
+    "passed": 70,
     "items": [
       {
         "label": "lib/miaFounderCockpitDisplay.js no supabase",
@@ -112,6 +112,16 @@
       },
       {
         "label": "components/founder-cockpit/FounderDistributionBar.jsx no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "components/founder-cockpit/FounderExecutiveGrowthSection.jsx no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "components/founder-cockpit/FounderExecutiveGrowthSection.jsx no SQL",
         "pass": true,
         "detail": ""
       },
