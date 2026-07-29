@@ -6,31 +6,30 @@
   "blocking_reason": "Production health during initial closure referenced pre-C.6 build; C.6 deploy was asynchronous",
   "status": "CLOSED",
   "patch_c6_status": "OFFICIALLY_CLOSED",
-  "closed_at": "2026-07-29T20:42:21.421Z",
-  "validation_completed_at": "2026-07-29T20:42:21.421Z",
-  "validation_started_at": "2026-07-29T20:41:37.679Z",
+  "closed_at": "2026-07-29T20:45:16.056Z",
+  "validation_completed_at": "2026-07-29T20:45:16.057Z",
   "git": {
     "pass": true,
-    "head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
-    "origin": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "head": "813ee35d9291af880e7e09ec40767b315a39aeb0",
+    "origin": "813ee35d9291af880e7e09ec40767b315a39aeb0",
     "working_tree_clean": true
   },
   "deployment_audit": {
-    "local_head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
-    "remote_head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
-    "production_build_short": "5a4a5ae07e2c",
-    "production_commit": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "local_head": "813ee35d9291af880e7e09ec40767b315a39aeb0",
+    "remote_head": "813ee35d9291af880e7e09ec40767b315a39aeb0",
+    "production_build_short": "813ee35d9291",
+    "production_commit": "813ee35d9291af880e7e09ec40767b315a39aeb0",
     "production_deployment_url": "https://economia-ai.vercel.app",
     "production_alias": "economia-ai.vercel.app",
     "deployment_status": "ready",
     "feature_commit": "a8b6806",
-    "validated_commit": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
-    "commit_relationship": "validated_commit is descendant of feature_commit a8b6806 and equals local/remote HEAD"
+    "validated_commit": "813ee35d9291af880e7e09ec40767b315a39aeb0",
+    "commit_relationship": "validated_commit is descendant of feature_commit a8b6806; includes C.6 feature (5a4a5ae) plus closure evidence commits"
   },
   "production_revalidation": "APPROVED",
   "production_test_results": {
-    "checks_total": 42,
-    "checks_passed": 42,
+    "checks_total": 43,
+    "checks_passed": 43,
     "scenarios": [
       {
         "name": "commercial bottleneck → optimize",
@@ -228,11 +227,11 @@
     "documentation": true
   },
   "production": {
-    "health_build": "5a4a5ae07e2c",
+    "health_build": "813ee35d9291",
     "c6_functional_validation": "PRODUCTION_C6_VALIDATED"
   },
   "transition": "BLOCKED_PENDING_VALIDATION → production confirmed → revalidation approved → OFFICIALLY_CLOSED",
   "final_verdict": "OFFICIALLY_CLOSED",
-  "closure_commit": "pending",
+  "closure_commit": "813ee35d9291af880e7e09ec40767b315a39aeb0",
   "next_patch": "C.7 — Cockpit analyst UI (not started)"
 }
