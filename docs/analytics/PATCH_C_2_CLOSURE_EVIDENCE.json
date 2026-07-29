@@ -2,104 +2,64 @@
   "patch": "C.2",
   "title": "PATCH C.2 — Official Closure",
   "phase": "C — MIA como Analista da Empresa",
-  "status": "BLOCKED",
-  "patch_c2_status": "BLOCKED_PENDING_VALIDATION",
-  "closed_at": null,
+  "status": "CLOSED",
+  "patch_c2_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T18:38:30.000Z",
   "git": {
-    "pass": false,
-    "head": "7877c5b521f3a4a761a77f630e95d809216f14a7",
-    "origin": "7cfffeb076fffa6c18ab7faede7223bb993d3643",
-    "working_tree_clean": false
+    "pass": true,
+    "head": "f8a3a7c08ebde6587610c802f5b64a8619aff212",
+    "origin": "f8a3a7c08ebde6587610c802f5b64a8619aff212",
+    "working_tree_clean": true,
+    "commits": ["7877c5b", "ec640b7", "f8a3a7c"]
   },
   "baseline_a_preserved": true,
   "baseline_b_preserved": true,
   "baseline_c1_preserved": true,
   "scope": "Deterministic Executive Summary Generator — lib only, no Cockpit UI",
+  "architecture": {
+    "contracts": "C.1.0",
+    "summary_builder": "C.2.0",
+    "pipeline": ["collect", "organize", "structure", "narrative"],
+    "sections": ["overview", "highlights", "attention", "commercial", "operational", "conclusion"]
+  },
   "steps": [
-    {
-      "label": "C.2 summary audit",
-      "pass": true
-    },
-    {
-      "label": "C.1 regression",
-      "pass": true
-    },
-    {
-      "label": "Phase B baseline audit",
-      "pass": true
-    },
-    {
-      "label": "B.8 regression",
-      "pass": true
-    },
-    {
-      "label": "B.7 regression",
-      "pass": true
-    },
-    {
-      "label": "B.6 regression",
-      "pass": true
-    },
-    {
-      "label": "B.5 regression",
-      "pass": true
-    },
-    {
-      "label": "B.4 regression",
-      "pass": true
-    },
-    {
-      "label": "B.3 regression",
-      "pass": true
-    },
-    {
-      "label": "B.2 regression",
-      "pass": true
-    },
-    {
-      "label": "B.1 regression",
-      "pass": true
-    },
-    {
-      "label": "Phase A baseline",
-      "pass": true
-    },
-    {
-      "label": "A.2 regression",
-      "pass": true
-    },
-    {
-      "label": "A.9 regression",
-      "pass": true
-    },
-    {
-      "label": "Production build",
-      "pass": true
-    },
-    {
-      "label": "C.2 browser regression",
-      "pass": true
-    },
-    {
-      "label": "Production validation",
-      "pass": true
-    }
+    { "label": "C.2 summary audit", "pass": true },
+    { "label": "C.1 regression", "pass": true },
+    { "label": "Phase B baseline audit", "pass": true },
+    { "label": "B.8 regression", "pass": true },
+    { "label": "B.7 regression", "pass": true },
+    { "label": "B.6 regression", "pass": true },
+    { "label": "B.5 regression", "pass": true },
+    { "label": "B.4 regression", "pass": true },
+    { "label": "B.3 regression", "pass": true },
+    { "label": "B.2 regression", "pass": true },
+    { "label": "B.1 regression", "pass": true },
+    { "label": "Phase A baseline", "pass": true },
+    { "label": "A.2 regression", "pass": true },
+    { "label": "A.9 regression", "pass": true },
+    { "label": "Production build", "pass": true },
+    { "label": "C.2 browser regression", "pass": true },
+    { "label": "Production validation", "pass": true, "note": "18/18 after deploy build f8a3a7c" }
   ],
   "evidence": {
     "summary": "APPROVED",
     "browser": "APPROVED",
-    "documentation": true
+    "documentation": true,
+    "production": "APPROVED"
   },
   "files_created": [
     "lib/miaExecutiveSummaryCatalog.js",
     "lib/miaExecutiveSummaryBuilder.js",
     "scripts/test-mia-analytics-patch-c2-executive-summary.js",
     "scripts/patch-c2-browser-validation.mjs",
-    "scripts/patch-c2-closure.mjs"
+    "scripts/patch-c2-closure.mjs",
+    "docs/analytics/PATCH_C_2_SUMMARY_EVIDENCE.json",
+    "docs/analytics/PATCH_C_2_BROWSER_EVIDENCE.json"
   ],
   "files_modified": [
     "docs/analytics/MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md",
-    "lib/miaExecutiveAnalysisArchitecture.js"
+    "lib/miaExecutiveAnalysisArchitecture.js",
+    "package.json"
   ],
   "next_patch": "C.3 — Insights & trends (not started)"
 }

@@ -2,7 +2,7 @@
   "patch": "A.10",
   "title": "PATCH A.10 — Final Audit Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T18:33:52.914Z",
+  "validated_at": "2026-07-29T18:36:54.508Z",
   "architecture_layers": [
     "Interface",
     "Mapper",

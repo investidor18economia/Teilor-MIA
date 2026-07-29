@@ -2,11 +2,11 @@
   "patch": "B.9",
   "title": "PATCH B.9 — Phase B Production Final Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T18:34:45.843Z",
+  "validated_at": "2026-07-29T18:38:53.308Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "7cfffeb076ff",
-    "git_head_local": "7877c5b521f3"
+    "build": "f8a3a7c08ebd",
+    "git_head_local": "f8a3a7c08ebd"
   },
   "checks": {
     "total": 18,
@@ -15,7 +15,7 @@
       {
         "label": "health 200",
         "pass": true,
-        "detail": "build=7cfffeb076ff"
+        "detail": "build=f8a3a7c08ebd"
       },
       {
         "label": "executive-metrics 200",

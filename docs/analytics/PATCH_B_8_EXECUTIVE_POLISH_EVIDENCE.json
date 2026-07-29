@@ -2,7 +2,7 @@
   "patch": "B.8",
   "title": "PATCH B.8 — Executive UI Polish Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T18:33:51.842Z",
+  "validated_at": "2026-07-29T18:36:53.401Z",
   "catalog_version": "B.8.0",
   "scope": "UX/UI polish only — no metrics, APIs, or mapper changes",
   "modules_polished": [
