@@ -1,4 +1,5 @@
 import FounderEmptyChart from "./FounderEmptyChart.jsx";
+import FounderSkeleton from "../FounderSkeleton.jsx";
 
 /**
  * @param {{
@@ -38,14 +39,10 @@ export default function FounderChartPanel({
         </p>
       ) : null}
 
-      {status === "loading" ? (
-        <p className="founder-chart-panel-state" role="status">
-          Carregando gráfico…
-        </p>
-      ) : null}
+      {status === "loading" ? <FounderSkeleton variant="chart" label="Carregando gráfico…" /> : null}
 
       {status === "error" ? (
-        <p className="founder-chart-panel-state founder-chart-panel-state--error" role="alert">
+        <p className="founder-ui-state founder-ui-state--error" role="alert">
           Gráfico indisponível. As demais métricas permanecem visíveis.
         </p>
       ) : null}

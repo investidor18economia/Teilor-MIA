@@ -6,6 +6,7 @@ import { mapTemporalToPerformanceConversionCharts } from "../../lib/miaFounderCh
 import FounderChartPanel from "./charts/FounderChartPanel.jsx";
 import FounderLineChart from "./charts/FounderLineChart.jsx";
 import FounderBarChart from "./charts/FounderBarChart.jsx";
+import FounderSkeleton from "./FounderSkeleton.jsx";
 
 function MetricGrid({ metrics, className = "founder-module-grid" }) {
   if (!metrics?.length) return null;
@@ -104,9 +105,7 @@ export default function FounderPerformanceConversionSection({
       </div>
 
       {state.status === "loading" ? (
-        <p className="founder-performance-state" role="status">
-          Carregando performance e conversão…
-        </p>
+        <FounderSkeleton variant="grid" count={6} label="Carregando performance e conversão…" />
       ) : null}
 
       {state.status === "error" && !view ? (

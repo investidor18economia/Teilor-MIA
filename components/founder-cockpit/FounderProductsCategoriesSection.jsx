@@ -7,6 +7,7 @@ import { mapTemporalToProductsCategoriesCharts } from "../../lib/miaFounderChart
 import FounderChartPanel from "./charts/FounderChartPanel.jsx";
 import FounderLineChart from "./charts/FounderLineChart.jsx";
 import FounderBarChart from "./charts/FounderBarChart.jsx";
+import FounderSkeleton from "./FounderSkeleton.jsx";
 
 function MetricGrid({ metrics, className = "founder-module-grid" }) {
   if (!metrics?.length) return null;
@@ -97,9 +98,7 @@ export default function FounderProductsCategoriesSection({
       </div>
 
       {state.status === "loading" ? (
-        <p className="founder-products-state" role="status">
-          Carregando inteligência de produtos e categorias…
-        </p>
+        <FounderSkeleton variant="grid" count={6} label="Carregando inteligência de produtos e categorias…" />
       ) : null}
 
       {state.status === "error" && !view ? (

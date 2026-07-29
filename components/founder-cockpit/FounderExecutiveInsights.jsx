@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { getModuleFilterCompatibility } from "../../lib/miaFounderFiltersDisplay.js";
+import FounderSkeleton from "./FounderSkeleton.jsx";
 
 const SEVERITY_CLASS = {
   critical: "founder-insight--critical",
@@ -119,9 +120,7 @@ export default function FounderExecutiveInsights() {
       ) : null}
 
       {state.status === "loading" ? (
-        <p className="founder-insights-state" role="status">
-          Analisando métricas do período…
-        </p>
+        <FounderSkeleton variant="card" count={4} label="Analisando métricas do período…" />
       ) : null}
 
       {state.status === "auth_required" ? (

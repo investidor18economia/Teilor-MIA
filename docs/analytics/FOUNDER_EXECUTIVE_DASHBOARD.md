@@ -208,6 +208,25 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 ---
 
+## Polimento da Interface (PATCH A.9)
+
+**Escopo:** UX/UI exclusivamente — sem alteração de APIs, RPCs, métricas ou filtros.
+
+**Design System:** `docs/analytics/FOUNDER_COCKPIT_DESIGN_SYSTEM.md`  
+**Tokens CSS:** `--fc-*` em `styles/founder-cockpit.css`  
+**Loading:** `FounderSkeleton` (shimmer, reduced-motion safe)  
+**Melhorias:** cards, tabelas (zebra/hover), filtros, focus-visible, module shells, responsividade tablet/mobile
+
+### Encerramento (PATCH A.9)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_A_9_UI_POLISH_EVIDENCE.json` | Auditoria + produção |
+| `PATCH_A_9_BROWSER_UI_EVIDENCE.json` | Desktop/tablet/mobile + paridade |
+| `PATCH_A_9_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
 ## Filtros de período (legado)
 
 Compatibilidade: `?days=30` mapeia para `?range=30d`. Preferir `range` a partir do PATCH A.7.

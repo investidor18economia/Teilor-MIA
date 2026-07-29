@@ -8,6 +8,7 @@ import {
 import { mapTemporalToSessionsUsersCharts } from "../../lib/miaFounderChartsDisplay.js";
 import FounderChartPanel from "./charts/FounderChartPanel.jsx";
 import FounderLineChart from "./charts/FounderLineChart.jsx";
+import FounderSkeleton from "./FounderSkeleton.jsx";
 
 function TrendCard({ trend }) {
   return (
@@ -105,9 +106,7 @@ export default function FounderSessionsUsersSection({
       </div>
 
       {state.status === "loading" ? (
-        <p className="founder-sessions-state" role="status">
-          Carregando métricas temporais…
-        </p>
+        <FounderSkeleton variant="grid" count={6} label="Carregando métricas temporais…" />
       ) : null}
 
       {state.status === "error" && !view ? (

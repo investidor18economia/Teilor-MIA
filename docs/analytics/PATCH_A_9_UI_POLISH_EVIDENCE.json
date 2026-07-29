@@ -1,0 +1,75 @@
+{
+  "patch": "A.9",
+  "title": "PATCH A.9 — UI Polish Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T00:59:41.302Z",
+  "scope": "UX/UI only — no API, RPC, metric, filter or cache changes",
+  "visual_audit": {
+    "inconsistencies_resolved": [
+      "Magic spacing/radius values consolidated into --fc-* tokens",
+      "Inconsistent loading text replaced with FounderSkeleton shimmer",
+      "Table hover/zebra applied only to numeric tables (ranking/funnel excluded)",
+      "Broken @media (max-width: 640px) block at end of founder-cockpit.css fixed",
+      "Module sections wrapped in .founder-module-shell for consistent rhythm"
+    ],
+    "components_audited": [
+      "FounderCockpitPage",
+      "FounderModuleSection",
+      "FounderMetricCard",
+      "FounderKpiStrip",
+      "FounderChartPanel",
+      "FounderCockpitFilters",
+      "FounderSessionsUsersSection",
+      "FounderProductsCategoriesSection",
+      "FounderPerformanceConversionSection",
+      "FounderExecutiveInsights"
+    ]
+  },
+  "improvements": [
+    "Design tokens (--fc-accent, --fc-space-*, --fc-radius-*, --fc-shadow-*)",
+    "FounderSkeleton loading (card, grid, chart, table variants)",
+    "Metric card hover/focus polish",
+    "Table zebra + row hover (numeric columns, excluding ranking/funnel)",
+    "Filter bar chips and focus-visible rings",
+    "Module shells (.founder-module-shell)",
+    "Unified UI states (.founder-ui-state--error|partial|empty)",
+    "Tablet breakpoint (768–1024px)",
+    "Mobile filter/KPI compaction",
+    "prefers-reduced-motion safe shimmer"
+  ],
+  "design_system": "docs/analytics/FOUNDER_COCKPIT_DESIGN_SYSTEM.md",
+  "components_changed": [
+    "styles/founder-cockpit.css",
+    "components/founder-cockpit/FounderSkeleton.jsx",
+    "components/founder-cockpit/FounderModuleSection.jsx",
+    "components/founder-cockpit/FounderExecutiveInsights.jsx",
+    "components/founder-cockpit/FounderSessionsUsersSection.jsx",
+    "components/founder-cockpit/FounderProductsCategoriesSection.jsx",
+    "components/founder-cockpit/FounderPerformanceConversionSection.jsx",
+    "components/founder-cockpit/charts/FounderChartPanel.jsx"
+  ],
+  "constraints_preserved": {
+    "apis_unchanged": true,
+    "rpcs_unchanged": true,
+    "metrics_unchanged": true,
+    "filters_unchanged": true,
+    "cache_unchanged": true,
+    "parity_sample": "eventos_recomendacoes=306 (local browser parity check)"
+  },
+  "tests": {
+    "unit_a9": "16/16 passed",
+    "regressions_a2_a8": "all passed",
+    "build": "passed (next build)",
+    "browser_local": "12/12 passed (localhost:3016 dev)"
+  },
+  "accessibility": [
+    "focus-visible on buttons/inputs/chips",
+    "aria-busy on skeletons",
+    "prefers-reduced-motion disables shimmer",
+    "tabular-nums on metrics/tables"
+  ],
+  "limitations": [
+    "Production bundle validation runs post-deploy",
+    "Local browser validation used dev server (3016) due to stale next start on 3014/3015"
+  ]
+}
