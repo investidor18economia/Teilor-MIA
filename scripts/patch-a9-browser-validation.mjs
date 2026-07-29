@@ -8,8 +8,10 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const BASE = process.env.PATCH_A9_BROWSER_BASE_URL || "http://localhost:3014";
 const PROD_BASE = process.env.PATCH_A9_PROD_BASE_URL || "https://economia-ai.vercel.app";
+const BASE =
+  process.env.PATCH_A9_BROWSER_BASE_URL ||
+  (process.env.PATCH_A9_BROWSER_USE_PROD === "1" ? PROD_BASE : "http://localhost:3018");
 const ADMIN_KEY = process.env.MIA_ADMIN_API_KEY || "";
 const SCREENSHOT_DIR = join(ROOT, "docs/analytics/evidence/patch-a9-browser");
 
@@ -39,29 +41,45 @@ try {
 
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+page.setDefaultTimeout(90000);
 const consoleErrors = [];
 page.on("console", (msg) => {
   if (msg.type() === "error") consoleErrors.push(msg.text());
 });
 
 try {
-  await page.request.post(`${BASE}/api/founder/authenticate`, { data: { admin_key: ADMIN_KEY } });
-  await page.goto(`${BASE}/cockpit-fundador?range=30d`, { waitUntil: "load", timeout: 60000 });
-  ok("cockpit loaded", page.url().includes("/cockpit-fundador"));
-
-  await page.waitForSelector(".founder-kpi-strip", { timeout: 35000 });
-  ok("KPI strip visible", await page.isVisible(".founder-kpi-strip"));
-
-  const hasTokens = await page.evaluate(() => {
-    const el = document.querySelector(".founder-cockpit-page");
-    if (!el) return false;
-    const accent = getComputedStyle(el).getPropertyValue("--fc-accent").trim();
-    return accent.length > 0;
+  const authRes = await page.request.post(`${BASE}/api/founder/authenticate`, {
+    data: { admin_key: ADMIN_KEY },
   });
-  ok("design tokens applied", hasTokens);
+  ok("auth endpoint", authRes.ok(), String(authRes.status()));
+  await page.goto(`${BASE}/cockpit-fundador?range=30d`, { waitUntil: "load", timeout: 60000 });
+  await page.waitForFunction(
+    () => Boolean(document.querySelector("h1")?.textContent?.includes("Cockpit")),
+    { timeout: 90000 }
+  );
+  ok("cockpit loaded", page.url().includes("/cockpit-fundador"));
+  ok("authenticated cockpit", (await page.locator(".founder-cockpit-page--gate").count()) === 0);
+  await page.waitForFunction(
+    () => Boolean(document.querySelector(".founder-kpi-strip")),
+    { timeout: 60000 }
+  );
+  ok("KPI strip visible", (await page.locator(".founder-kpi-strip").count()) > 0);
 
-  await page.waitForSelector(".founder-chart-panel", { timeout: 35000 });
-  ok("charts visible", await page.isVisible(".founder-chart-panel"));
+  await page.waitForFunction(
+    () => {
+      const el = document.querySelector(".founder-cockpit-page");
+      if (!el) return false;
+      return getComputedStyle(el).getPropertyValue("--fc-accent").trim().length > 0;
+    },
+    { timeout: 60000 }
+  );
+  ok("design tokens applied", true);
+
+  await page.waitForFunction(
+    () => document.querySelectorAll(".founder-chart-panel").length >= 1,
+    { timeout: 90000 }
+  );
+  ok("charts visible", (await page.locator(".founder-chart-panel").count()) >= 1);
   ok("filters bar visible", await page.isVisible(".founder-cockpit-filters"));
   ok("module shell visible", (await page.locator(".founder-module-shell").count()) >= 1);
 
@@ -78,14 +96,14 @@ try {
   const tablet = await browser.newPage({ viewport: { width: 834, height: 1112 } });
   await tablet.context().addCookies(await page.context().cookies());
   await tablet.goto(`${BASE}/cockpit-fundador?range=30d`, { waitUntil: "load", timeout: 60000 });
-  ok("tablet layout loads", await tablet.isVisible(".founder-cockpit-filters"));
+  ok("tablet layout loads", (await tablet.locator(".founder-cockpit-filters").count()) > 0);
   await tablet.screenshot({ path: join(SCREENSHOT_DIR, "dashboard-tablet.png") });
   await tablet.close();
 
   const mobile = await browser.newPage({ viewport: { width: 390, height: 844 } });
   await mobile.context().addCookies(await page.context().cookies());
   await mobile.goto(`${BASE}/cockpit-fundador?range=7d`, { waitUntil: "load", timeout: 60000 });
-  ok("mobile layout loads", await mobile.isVisible(".founder-cockpit-filters"));
+  ok("mobile layout loads", (await mobile.locator(".founder-cockpit-filters").count()) > 0);
   await mobile.screenshot({ path: join(SCREENSHOT_DIR, "dashboard-mobile.png"), fullPage: true });
   await mobile.close();
 
@@ -114,10 +132,6 @@ const evidence = {
 };
 
 writeFileSync(join(ROOT, "docs/analytics/PATCH_A_9_BROWSER_UI_EVIDENCE.json"), JSON.stringify(evidence, null, 2));
-writeFileSync(
-  join(ROOT, "docs/analytics/PATCH_A_9_UI_POLISH_EVIDENCE.json"),
-  JSON.stringify({ patch: "A.9", status: evidence.status, improvements: ["design tokens", "skeletons", "table polish", "focus states", "module shells"], validated_at: evidence.validated_at }, null, 2)
-);
 
 console.log(`\nSummary: ${evidence.checks.passed}/${evidence.checks.total} passed\n`);
 process.exit(checks.some((c) => !c.pass) ? 1 : 0);

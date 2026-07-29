@@ -52,14 +52,14 @@ steps.push(run("node scripts/test-mia-analytics-patch-a4-founder-sessions-users.
 steps.push(run("node scripts/test-mia-analytics-patch-a3-temporal-series-api.js", "A.3 regression"));
 steps.push(run("node scripts/test-mia-analytics-patch-a2-founder-snapshot-complete.js", "A.2 regression"));
 steps.push(run("node scripts/test-mia-analytics-patch-113-founder-executive-cockpit.js", "Founder Cockpit regression"));
-steps.push(run("npm run build", "Production build"));
-steps.push(run("node scripts/patch-a9-ui-polish-production-validation.mjs", "Production validation"));
 steps.push(
   run(
     "node --env-file=.env.local scripts/patch-a9-browser-validation.mjs",
     "Browser UI validation"
   )
 );
+steps.push(run("npm run build", "Production build"));
+steps.push(run("node scripts/patch-a9-ui-polish-production-validation.mjs", "Production validation"));
 
 const uiEvidence = readJson("docs/analytics/PATCH_A_9_UI_POLISH_EVIDENCE.json");
 const browserEvidence = readJson("docs/analytics/PATCH_A_9_BROWSER_UI_EVIDENCE.json");

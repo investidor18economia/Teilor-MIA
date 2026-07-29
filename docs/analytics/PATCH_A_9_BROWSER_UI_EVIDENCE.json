@@ -1,16 +1,16 @@
 {
   "patch": "A.9",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T00:59:41.302Z",
-  "base_url": "http://localhost:3016",
+  "validated_at": "2026-07-29T01:20:29.285Z",
+  "base_url": "http://localhost:3018",
   "screenshots": [
     "docs/analytics/evidence/patch-a9-browser/dashboard-desktop.png",
     "docs/analytics/evidence/patch-a9-browser/dashboard-tablet.png",
     "docs/analytics/evidence/patch-a9-browser/dashboard-mobile.png"
   ],
   "checks": {
-    "total": 12,
-    "passed": 12,
+    "total": 14,
+    "passed": 14,
     "items": [
       {
         "label": "API snapshot for parity",
@@ -18,7 +18,17 @@
         "detail": ""
       },
       {
+        "label": "auth endpoint",
+        "pass": true,
+        "detail": "200"
+      },
+      {
         "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "authenticated cockpit",
         "pass": true,
         "detail": ""
       },

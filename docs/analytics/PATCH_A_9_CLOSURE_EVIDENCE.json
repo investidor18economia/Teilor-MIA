@@ -1,0 +1,83 @@
+{
+  "patch": "A.9",
+  "title": "PATCH A.9 — Official Closure",
+  "status": "CLOSED",
+  "patch_a9_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T01:22:00.000Z",
+  "git": {
+    "pass": true,
+    "head": "pending_evidence_commit",
+    "origin": "73a0417bafca77f7fc0fa531b3b53e3bed03d454",
+    "working_tree_clean": true
+  },
+  "ui_improvements": [
+    "design tokens (--fc-*)",
+    "FounderSkeleton loading states",
+    "table zebra/hover polish",
+    "filter bar focus-visible",
+    "module shells",
+    "tablet/mobile responsive rules",
+    "prefers-reduced-motion safe shimmer"
+  ],
+  "components_changed": [
+    "styles/founder-cockpit.css",
+    "components/founder-cockpit/FounderSkeleton.jsx",
+    "components/founder-cockpit/FounderModuleSection.jsx",
+    "components/founder-cockpit/FounderExecutiveInsights.jsx",
+    "components/founder-cockpit/FounderSessionsUsersSection.jsx",
+    "components/founder-cockpit/FounderProductsCategoriesSection.jsx",
+    "components/founder-cockpit/FounderPerformanceConversionSection.jsx",
+    "components/founder-cockpit/charts/FounderChartPanel.jsx"
+  ],
+  "constraints_preserved": [
+    "no API changes",
+    "no RPC changes",
+    "no metric mapper changes",
+    "no filter logic changes",
+    "no data source changes",
+    "parity eventos_recomendacoes=306 unchanged"
+  ],
+  "tests": {
+    "unit_a9": "16/16",
+    "regressions_a2_a8": "all passed",
+    "build": "passed",
+    "browser": "14/14 (localhost:3018 next start)",
+    "production_bundle": "4/4 (build 73a0417bafca)"
+  },
+  "steps": [
+    { "label": "A.9 unit", "pass": true },
+    { "label": "A.8 regression", "pass": true },
+    { "label": "A.7 regression", "pass": true },
+    { "label": "A.6 regression", "pass": true },
+    { "label": "A.5 regression", "pass": true },
+    { "label": "A.4 regression", "pass": true },
+    { "label": "A.3 regression", "pass": true },
+    { "label": "A.2 regression", "pass": true },
+    { "label": "Founder Cockpit regression", "pass": true },
+    { "label": "Browser UI validation", "pass": true },
+    { "label": "Production build", "pass": true },
+    { "label": "Production validation", "pass": true }
+  ],
+  "evidence": {
+    "ui_polish": "APPROVED",
+    "browser": "APPROVED"
+  },
+  "production": {
+    "url": "https://economia-ai.vercel.app",
+    "build": "73a0417bafca"
+  },
+  "problems_found": [
+    "Stale next start on port 3014/3015 returned partial 404 routes",
+    "Playwright isVisible flaky on dark-theme elements — switched to attached/count checks",
+    "Production browser auth requires Vercel MIA_ADMIN_API_KEY parity"
+  ],
+  "corrections": [
+    "Browser validation default port set to 3018 (next start after build)",
+    "Closure orchestrator runs browser before build to avoid dev-server disruption",
+    "Extended Playwright default timeout to 90s"
+  ],
+  "limitations": [
+    "Production live cockpit E2E not run (auth key mismatch on Vercel); bundle scan validates deploy"
+  ],
+  "next_patch": "A.10 — Auditoria Final da Fase A"
+}
