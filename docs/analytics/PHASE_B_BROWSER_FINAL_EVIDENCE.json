@@ -2,7 +2,7 @@
   "patch": "B.9",
   "title": "PATCH B.9 — Phase B Browser Final Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T15:28:31.562Z",
+  "validated_at": "2026-07-29T15:34:41.048Z",
   "base_url": "http://localhost:3024",
   "screenshots_dir": "docs/analytics/evidence/phase-b-final",
   "diagnostics": [

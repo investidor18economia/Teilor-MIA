@@ -2,15 +2,15 @@
   "patch": "B.9",
   "title": "PATCH B.9 — Phase B Closure Report",
   "phase": "B — Dashboard Executivo",
-  "status": "BLOCKED",
-  "phase_b_status": "PHASE_B_BLOCKED",
-  "baseline": null,
-  "closed_at": null,
+  "status": "CLOSED",
+  "phase_b_status": "PHASE_B_OFFICIALLY_CLOSED",
+  "baseline": "FROZEN",
+  "closed_at": "2026-07-29T15:34:53.130Z",
   "git": {
-    "pass": false,
-    "head": "fe6f59bdc8bf3521af1ce26920ed7c00769f6b0d",
-    "origin": "fe6f59bdc8bf3521af1ce26920ed7c00769f6b0d",
-    "working_tree_clean": false
+    "pass": true,
+    "head": "27da450c20e7745669f236a20fdce6732f213431",
+    "origin": "27da450c20e7745669f236a20fdce6732f213431",
+    "working_tree_clean": true
   },
   "executive_summary": {
     "phase": "B — Dashboard Executivo",
@@ -36,7 +36,7 @@
     ],
     "architecture_preserved": true,
     "baseline_a_preserved": true,
-    "new_baseline": null
+    "new_baseline": "Fase B passa a ser a baseline oficial do Founder Cockpit. Evoluções futuras devem preservar arquitetura e garantias da Fase B."
   },
   "final_architecture": {
     "layers": [
@@ -1143,7 +1143,7 @@
         {
           "label": "health 200",
           "pass": true,
-          "detail": "build=fe6f59bdc8bf"
+          "detail": "build=27da450c20e7"
         },
         {
           "label": "executive-metrics 200",
@@ -1241,8 +1241,8 @@
   },
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "fe6f59bdc8bf",
-    "git_head_local": "fe6f59bdc8bf"
+    "build": "27da450c20e7",
+    "git_head_local": "27da450c20e7"
   },
   "prior_patches_closed": true,
   "steps": [
@@ -1312,12 +1312,8 @@
     "browser": "APPROVED",
     "production": "APPROVED"
   },
-  "blockers": [
-    "Git not synchronized"
-  ],
-  "pending_items": [
-    "Git not synchronized"
-  ],
+  "blockers": [],
+  "pending_items": [],
   "remaining_risks": [
     "Volume baixo em produção pode reduzir confiança de indicadores comerciais (documentado em B.5).",
     "SSR local requer PUBLIC_METRICS_API_BASE_URL alinhado à porta do servidor.",
