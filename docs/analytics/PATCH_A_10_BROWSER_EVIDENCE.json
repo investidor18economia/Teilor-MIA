@@ -1,0 +1,122 @@
+{
+  "patch": "A.10",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T01:43:25.505Z",
+  "base_url": "http://localhost:3018",
+  "scenarios": [
+    "snapshot",
+    "sessions",
+    "products",
+    "conversion",
+    "filters",
+    "charts",
+    "ui",
+    "responsive"
+  ],
+  "screenshots": [
+    "docs/analytics/evidence/patch-a10-browser/phase-a-desktop-30d.png",
+    "docs/analytics/evidence/patch-a10-browser/phase-a-tablet-7d.png",
+    "docs/analytics/evidence/patch-a10-browser/phase-a-mobile-7d.png"
+  ],
+  "checks": {
+    "total": 19,
+    "passed": 19,
+    "items": [
+      {
+        "label": "executive API parity",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal API parity",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "auth endpoint",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "authenticated",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "KPI strip",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "filters bar",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "sessions module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "products module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "performance module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "charts panels",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "design tokens",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module shells",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "metric parity",
+        "pass": true,
+        "detail": "306"
+      },
+      {
+        "label": "filters apply 7d",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet layout",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile layout",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no console errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "production health",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

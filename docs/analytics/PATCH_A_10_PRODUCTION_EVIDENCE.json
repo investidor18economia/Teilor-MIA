@@ -1,0 +1,81 @@
+{
+  "patch": "A.10",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T01:33:59.882Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "d809bba4f039",
+    "git_head_local": "d809bba4f039"
+  },
+  "checks": {
+    "total": 13,
+    "passed": 13,
+    "items": [
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=d809bba4f039"
+      },
+      {
+        "label": "executive-metrics 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive platform group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive system group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal-metrics 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal_version A.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "conversion group",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit gate 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "robots noindex",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle charts layer",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle filters layer",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle skeleton UI",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
