@@ -2,59 +2,29 @@
   "patch": "B.4",
   "title": "PATCH B.4 — Official Closure",
   "phase": "B — Dashboard Executivo",
-  "status": "BLOCKED",
-  "patch_b4_status": "BLOCKED_PENDING_VALIDATION",
-  "closed_at": null,
+  "status": "CLOSED",
+  "patch_b4_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T13:30:00.000Z",
   "git": {
-    "pass": false,
-    "head": "ba629ffa4d229ba35eb8cae838021ef1aabfd92a",
-    "origin": "ba629ffa4d229ba35eb8cae838021ef1aabfd92a",
-    "working_tree_clean": false
+    "pass": true,
+    "head": "c26ca2e",
+    "origin": "c26ca2e",
+    "working_tree_clean": true
   },
   "baseline_a_preserved": true,
   "baseline_b2_preserved": true,
   "baseline_b3_preserved": true,
   "steps": [
-    {
-      "label": "B.4 product health audit",
-      "pass": true
-    },
-    {
-      "label": "B.3 regression",
-      "pass": true
-    },
-    {
-      "label": "B.2 regression",
-      "pass": true
-    },
-    {
-      "label": "B.1 architecture regression",
-      "pass": true
-    },
-    {
-      "label": "Phase A baseline audit",
-      "pass": true
-    },
-    {
-      "label": "A.2 regression",
-      "pass": true
-    },
-    {
-      "label": "A.9 regression",
-      "pass": true
-    },
-    {
-      "label": "Production build",
-      "pass": true
-    },
-    {
-      "label": "Browser validation",
-      "pass": true
-    },
-    {
-      "label": "Production validation",
-      "pass": true
-    }
+    { "label": "B.4 product health audit", "pass": true },
+    { "label": "B.3 regression", "pass": true },
+    { "label": "B.2 regression", "pass": true },
+    { "label": "B.1 architecture regression", "pass": true },
+    { "label": "Phase A baseline audit", "pass": true },
+    { "label": "A.2 regression", "pass": true },
+    { "label": "A.9 regression", "pass": true },
+    { "label": "Production build", "pass": true },
+    { "label": "Browser validation", "pass": true },
+    { "label": "Production validation", "pass": true }
   ],
   "evidence": {
     "b4_product_health": "APPROVED",
