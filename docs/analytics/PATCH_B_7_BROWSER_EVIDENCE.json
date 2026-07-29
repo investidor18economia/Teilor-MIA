@@ -2,7 +2,7 @@
   "patch": "B.7",
   "title": "PATCH B.7 — Browser Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T14:41:37.335Z",
+  "validated_at": "2026-07-29T14:44:07.075Z",
   "base_url": "http://localhost:3023",
   "screenshots_dir": "docs/analytics/evidence/patch-b7-browser",
   "diagnostics": [
@@ -22,7 +22,7 @@
       "summaryBody": "A síntese reflete apenas os módulos com dados disponíveis. Conclusões fortes não são geradas sem cobertura completa. Sinais de rejeição merecem atenção executiva.",
       "priorityItems": 3,
       "opportunityItems": 1,
-      "riskItems": 3,
+      "riskItems": 4,
       "summaryBadges": 1,
       "insights": true,
       "kpiStrip": true,
@@ -120,7 +120,7 @@
       "summaryBody": "A síntese reflete apenas os módulos com dados disponíveis. Conclusões fortes não são geradas sem cobertura completa. Sinais de rejeição merecem atenção executiva.",
       "priorityItems": 3,
       "opportunityItems": 1,
-      "riskItems": 3,
+      "riskItems": 4,
       "summaryBadges": 1,
       "insights": true,
       "kpiStrip": true,
@@ -211,7 +211,7 @@
       {
         "label": "desktop: summary body rendered",
         "pass": true,
-        "detail": "A síntese reflete apenas os módulos com dados disponíveis. C"
+        "detail": "Há sinais de atenção em mais de uma dimensão executiva. Revi"
       },
       {
         "label": "desktop: summary blocks rendered",
@@ -371,7 +371,7 @@
       {
         "label": "mobile: summary body rendered",
         "pass": true,
-        "detail": "A síntese reflete apenas os módulos com dados disponíveis. C"
+        "detail": "Há sinais de atenção em mais de uma dimensão executiva. Revi"
       },
       {
         "label": "mobile: summary blocks rendered",
