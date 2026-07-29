@@ -1,9 +1,9 @@
 # FASE C — MIA como Analista da Empresa — Arquitetura Oficial
 
 **Documento:** `MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md`  
-**Patch:** C.1 — Arquitetura da Analista Executiva  
-**Versão:** C.1.0  
-**Status:** Architecture defined · behavior deferred to C.2+  
+**Patch:** C.1 — Arquitetura da Analista Executiva · **C.2** — Resumos Executivos Automáticos  
+**Versão:** C.1.0 (contratos) · C.2.0 (summary builder)  
+**Status:** C.1 architecture defined · **C.2 summary behavior implemented**  
 **Baselines preservadas:** [FOUNDER_COCKPIT_BASELINE_A.md](./FOUNDER_COCKPIT_BASELINE_A.md) · [FOUNDER_COCKPIT_BASELINE_B.md](./FOUNDER_COCKPIT_BASELINE_B.md)
 
 ---
@@ -190,7 +190,7 @@ C.1 prepara a arquitetura sem alterar 11.4 ou B.7.
 | PATCH | Escopo |
 |-------|--------|
 | **C.1** | Arquitetura, contratos, docs ✅ |
-| **C.2** | Foundation do analysis engine |
+| **C.2** | Resumos Executivos Automáticos ✅ |
 | **C.3** | Insights & trends |
 | **C.4** | Alerts & recommendations |
 | **C.5** | Narrative assembly |
@@ -234,4 +234,110 @@ npm run test:mia:analytics:patch-c1:closure
 
 ---
 
-*Documento gerado no PATCH C.1 — Arquitetura da Analista Executiva.*
+## 16. PATCH C.2 — Summary Pipeline
+
+**Patch:** C.2 — Resumos Executivos Automáticos  
+**Versão:** C.2.0  
+**Escopo:** Primeiro comportamento real da Analista Executiva — resumos determinísticos.
+
+### 16.1 Princípio
+
+O resumo **nunca é inventado**. Todo texto nasce exclusivamente dos dados presentes nas Executive Views da Baseline B. A LLM não conclui fatos — apenas verbalizará (C.6+) uma estrutura produzida pelo Analysis Layer.
+
+**Fora de escopo C.2:** insights, tendências, alertas, recomendações.
+
+### 16.2 Pipeline do resumo
+
+```text
+Executive Views (Baseline B)
+        ↓
+collectExecutiveSummaryInput      — normalização das views
+        ↓
+organizeExecutiveSummaryFacts     — sinais e fatos observáveis
+        ↓
+buildExecutiveSummarySections     — estrutura fixa (6 seções)
+        ↓
+buildExecutiveSummaryNarrative    — entrada da Narrative Layer (stage: summary)
+        ↓
+generateExecutiveAnalysisSummary  — ExecutiveAnalysisOutput (summary only)
+        ↓
+LLM Verbalizer                    — C.6+ (não implementado)
+```
+
+Implementação: `lib/miaExecutiveSummaryBuilder.js`  
+Catálogo: `lib/miaExecutiveSummaryCatalog.js`
+
+### 16.3 Estrutura fixa do resumo
+
+| # | Seção | Conteúdo |
+|---|-------|----------|
+| 1 | Visão Geral | Estado geral da plataforma |
+| 2 | Principais Destaques | Até 3 pontos positivos observados |
+| 3 | Pontos de Atenção | Até 3 itens de acompanhamento |
+| 4 | Situação Comercial | Performance comercial (fatos) |
+| 5 | Situação Operacional | Operação (fatos) |
+| 6 | Conclusão Geral | Estado consolidado do período |
+
+Sem interpretações profundas, causas ou ações sugeridas.
+
+### 16.4 Determinismo e confiança
+
+- Mesmo conjunto de views → mesmo resumo estrutural (JSON idêntico).
+- Sem aleatoriedade, criatividade ou temperatura de modelo.
+- Todo resumo inclui internamente: `confidence`, `evidence`, módulos utilizados, período, limitações.
+
+Estados sem dados: mensagem padronizada — *"Dados insuficientes para gerar um resumo confiável deste módulo."*
+
+### 16.5 Responsabilidades
+
+| Etapa | Função | Proibido |
+|-------|--------|----------|
+| **Collect** | Normalizar `ExecutiveAnalysisInput` | fetch, SQL, Supabase |
+| **Organize** | Extrair sinais de views oficiais | Novos fatos, LLM |
+| **Structure** | Montar 6 seções fixas | Tendências, recomendações |
+| **Narrative** | Preparar slots para verbalização | LLM, mistura de camadas |
+
+### 16.6 Integração com contratos C.1
+
+`generateExecutiveAnalysisSummary()` retorna `ExecutiveAnalysisOutput` com:
+
+- `summary` preenchido (mapeado para `ExecutiveSummary`);
+- `insights`, `trends`, `alerts`, `recommendations` vazios;
+- `status`: `summary_ready` ou `insufficient_data`;
+- contratos C.1.0 **inalterados**.
+
+### 16.7 Limitações C.2
+
+- Não acessa banco, SQL, Supabase ou APIs externas.
+- Não substitui o resumo B.7 no Cockpit (`miaFounderExecutiveSummaryDisplay.js`).
+- Não expõe UI analista (reservado a C.7).
+- Não gera insights, tendências, alertas ou recomendações.
+
+### 16.8 Garantias C.2
+
+| Garantia | Status |
+|----------|--------|
+| Baseline A preservada | ✅ |
+| Baseline B preservada | ✅ |
+| Contratos C.1.0 preservados | ✅ |
+| Resumos determinísticos | ✅ |
+| Confidence + evidence obrigatórios | ✅ |
+| Cockpit UI inalterado | ✅ |
+
+### 16.9 Arquivos C.2
+
+| Arquivo | Responsabilidade |
+|---------|------------------|
+| `lib/miaExecutiveSummaryCatalog.js` | Seções, templates, regras highlight/attention |
+| `lib/miaExecutiveSummaryBuilder.js` | Pipeline collect → organize → structure → narrative |
+
+### 16.10 Testes oficiais C.2
+
+```bash
+npm run test:mia:analytics:patch-c2:executive-summary
+npm run test:mia:analytics:patch-c2:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.2 — Resumos Executivos Automáticos.*

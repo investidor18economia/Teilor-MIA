@@ -1,0 +1,414 @@
+{
+  "patch": "C.2",
+  "title": "PATCH C.2 — Executive Summary Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T18:28:18.915Z",
+  "builder_version": "C.2.0",
+  "catalog_version": "C.2.0",
+  "contracts_version": "C.1.0",
+  "section_ids": [
+    "overview",
+    "highlights",
+    "attention",
+    "commercial",
+    "operational",
+    "conclusion"
+  ],
+  "pipeline": [
+    "collect",
+    "organize",
+    "structure",
+    "narrative"
+  ],
+  "scope": "Deterministic executive summaries from Baseline B views only",
+  "excludes": [
+    "insights",
+    "trends",
+    "alerts",
+    "recommendations",
+    "LLM"
+  ],
+  "baseline_b7_preserved": true,
+  "baseline_c1_preserved": true,
+  "checks": {
+    "total": 75,
+    "passed": 75,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version C.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder version C.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no OpenAI/LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no OpenAI/LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 contracts version unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 output template still pending",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "contracts file unchanged version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "6 fixed sections defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "section overview",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "section conclusion last",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty module message matches spec",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "collect normalizes 5 views",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "organize modules available",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "organize confidence high",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structure produces 6 sections",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structure section titles fixed",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative stage is summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative has sections",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "full build summary_id present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "full build evidence present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "full build limitations array",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "overview section content",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "commercial section uses module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "operational section uses module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output status summary_ready",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output has summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence key level",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence key factors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence key limitations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence key modules_available",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence key modules_total",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evidence key evidence_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evidence key source",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evidence key module_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evidence key field_path",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evidence key value_snapshot",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evidence key rule_ref",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapped headline present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapped body present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism identical output",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism analysis output",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty modules insufficient_data",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty confidence insufficient",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty summary still produced",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty overview insufficient",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "partial modules not high confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "partial commercial insufficient message",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "missing commercial standardized message",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.7 mapper unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit still uses B.7 summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no analyst UI in cockpit yet",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "doc mentions C.2",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "doc mentions Summary Pipeline",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
