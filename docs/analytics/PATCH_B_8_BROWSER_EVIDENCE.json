@@ -2,14 +2,14 @@
   "patch": "B.8",
   "title": "PATCH B.8 — Browser Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T15:03:38.813Z",
+  "validated_at": "2026-07-29T15:06:57.390Z",
   "base_url": "http://localhost:3024",
   "screenshots_dir": "docs/analytics/evidence/patch-b8-browser",
   "diagnostics": [
     {
       "attempt": 1,
       "executiveModules": 6,
-      "badges": 29,
+      "badges": 34,
       "headlines": 3,
       "disclaimers": 6,
       "overflow": false,
@@ -52,7 +52,7 @@
     {
       "attempt": 1,
       "executiveModules": 6,
-      "badges": 29,
+      "badges": 34,
       "headlines": 3,
       "disclaimers": 6,
       "overflow": false,
@@ -95,7 +95,7 @@
     {
       "attempt": 1,
       "executiveModules": 6,
-      "badges": 29,
+      "badges": 34,
       "headlines": 3,
       "disclaimers": 6,
       "overflow": false,
@@ -178,12 +178,12 @@
       {
         "label": "desktop: badges rendered",
         "pass": true,
-        "detail": "count=29"
+        "detail": "count=43"
       },
       {
         "label": "desktop: headlines rendered",
         "pass": true,
-        "detail": "count=3"
+        "detail": "count=4"
       },
       {
         "label": "desktop: no horizontal overflow",
@@ -243,12 +243,12 @@
       {
         "label": "tablet: badges rendered",
         "pass": true,
-        "detail": "count=29"
+        "detail": "count=43"
       },
       {
         "label": "tablet: headlines rendered",
         "pass": true,
-        "detail": "count=3"
+        "detail": "count=4"
       },
       {
         "label": "tablet: no horizontal overflow",
@@ -308,12 +308,12 @@
       {
         "label": "mobile: badges rendered",
         "pass": true,
-        "detail": "count=29"
+        "detail": "count=43"
       },
       {
         "label": "mobile: headlines rendered",
         "pass": true,
-        "detail": "count=3"
+        "detail": "count=4"
       },
       {
         "label": "mobile: no horizontal overflow",

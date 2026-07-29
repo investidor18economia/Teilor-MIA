@@ -1,0 +1,80 @@
+{
+  "patch": "B.8",
+  "title": "PATCH B.8 — Official Closure",
+  "phase": "B — Dashboard Executivo",
+  "status": "BLOCKED",
+  "patch_b8_status": "BLOCKED_PENDING_VALIDATION",
+  "closed_at": null,
+  "git": {
+    "pass": false,
+    "head": "610335b26dd5201bb839ea5fec84fe9828bca2b5",
+    "origin": "5eeb332158ed09ec17b967b9c10fd2f1f38a0a54",
+    "working_tree_clean": false
+  },
+  "baseline_a_preserved": true,
+  "phase_b_functional_preserved": true,
+  "steps": [
+    {
+      "label": "B.8 polish audit",
+      "pass": true
+    },
+    {
+      "label": "B.7 regression",
+      "pass": true
+    },
+    {
+      "label": "B.6 regression",
+      "pass": true
+    },
+    {
+      "label": "B.5 regression",
+      "pass": true
+    },
+    {
+      "label": "B.4 regression",
+      "pass": true
+    },
+    {
+      "label": "B.3 regression",
+      "pass": true
+    },
+    {
+      "label": "B.2 regression",
+      "pass": true
+    },
+    {
+      "label": "B.1 regression",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "Browser validation",
+      "pass": true
+    },
+    {
+      "label": "Production validation",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "b8_polish": "APPROVED",
+    "browser": "APPROVED",
+    "dashboard_doc": true
+  },
+  "next_patch": "B.9 — Auditoria Final da Fase B"
+}
