@@ -46,18 +46,20 @@
   },
   "git": {
     "implementation_commit": "fb007d8",
-    "closure_commit": "pending",
-    "synchronized": false,
-    "working_tree_clean": false
+    "closure_commit": "febe3aa",
+    "head": "febe3aa",
+    "origin_master": "febe3aa",
+    "synchronized": true,
+    "working_tree_clean": true
   },
   "production": {
     "base_url": "https://economia-ai.vercel.app",
+    "build": "febe3aae4c6e",
     "temporal_version": "A.7.0",
     "migration_applied": true,
     "api_validated": true,
     "bundle_validated": true,
-    "deploy_pending": true,
-    "note": "selectedDays fix requires deploy after this commit"
+    "deploy_pending": false
   },
   "filters_implemented": ["period_presets", "custom_range", "category", "product_id"],
   "filters_deferred": ["environment", "channel", "product_label"],

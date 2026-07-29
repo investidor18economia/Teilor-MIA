@@ -2,10 +2,10 @@
   "patch": "A.7",
   "title": "Founder Advanced Filters — Production Validation",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T00:20:58.212Z",
+  "validated_at": "2026-07-29T00:24:29.934Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "0b3498a6834c"
+    "build": "febe3aae4c6e"
   },
   "checks": {
     "total": 12,
@@ -25,7 +25,7 @@
       {
         "label": "health 200",
         "pass": true,
-        "detail": "build=0b3498a6834c"
+        "detail": "build=febe3aae4c6e"
       },
       {
         "label": "temporal filtered API 200",
