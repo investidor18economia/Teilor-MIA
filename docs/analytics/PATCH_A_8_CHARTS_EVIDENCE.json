@@ -1,0 +1,61 @@
+{
+  "patch": "A.8",
+  "title": "Founder Charts — Production Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T00:43:42.267Z",
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "4eb6eb9013cd"
+  },
+  "checks": {
+    "total": 9,
+    "passed": 9,
+    "items": [
+      {
+        "label": "health 200",
+        "pass": true,
+        "detail": "build=4eb6eb9013cd"
+      },
+      {
+        "label": "temporal multi-series 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "growth series present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "conversion daily present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "categories daily present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit gate 200",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes FounderLineChart",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes chart panel",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "bundle includes charts mapper",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

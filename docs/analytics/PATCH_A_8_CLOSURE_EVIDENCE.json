@@ -1,0 +1,77 @@
+{
+  "patch": "A.8",
+  "title": "PATCH A.8 — Official Closure",
+  "status": "CLOSED",
+  "patch_a8_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T01:05:00.000Z",
+  "charts_implemented": [
+    "sessions-active-users",
+    "sessions-activity",
+    "categories-questions",
+    "categories-recommendations",
+    "categories-share",
+    "products-appearances",
+    "performance-ctr",
+    "performance-engagement",
+    "performance-funnel"
+  ],
+  "series_used": [
+    "growth.series",
+    "platform_activity.series",
+    "categories.daily",
+    "categories.ranking",
+    "products.daily",
+    "conversion.daily",
+    "conversion.funnel_stages"
+  ],
+  "components": [
+    "FounderLineChart",
+    "FounderBarChart",
+    "FounderLegend",
+    "FounderTooltip",
+    "FounderEmptyChart",
+    "FounderChartPanel"
+  ],
+  "mapper": "lib/miaFounderChartsDisplay.js A.8.0",
+  "tests": {
+    "a8_unit": "26/26",
+    "a7_regression": "34/34",
+    "a6_regression": "32/32",
+    "a5_regression": "36/36",
+    "a4_regression": "32/32",
+    "a3_regression": "53/53",
+    "a2_regression": "62/62",
+    "cockpit_regression": "33/33",
+    "browser_ui": "9/9",
+    "production_validation": "9/9",
+    "build": "PASS"
+  },
+  "interface_validation": {
+    "browser_base_url": "http://localhost:3013",
+    "desktop": "1440x900",
+    "mobile": "390x844",
+    "filters_validated": ["30d", "7d"],
+    "screenshots": "docs/analytics/evidence/patch-a8-browser/"
+  },
+  "limitations": [
+    "Funil sem evolução diária no contrato RPC — barras do período",
+    "products.daily com múltiplos produtos/dia exibe série oficial por linha (sem agregação)",
+    "Gráficos SVG nativos — sem biblioteca externa (projeto não tinha chart lib)"
+  ],
+  "fixes": [
+    "useId import missing in FounderLineChart caused client crash — fixed in 4eb6eb9"
+  ],
+  "git": {
+    "implementation_commit": "4eb6eb9",
+    "head": "4eb6eb9",
+    "origin_master": "4eb6eb9",
+    "synchronized": true,
+    "working_tree_clean": false
+  },
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "4eb6eb9013cd",
+    "deploy_validated": true
+  },
+  "next_patch": "A.9 — Polimento da Interface"
+}
