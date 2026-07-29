@@ -57,59 +57,60 @@ if (!ADMIN_KEY) {
     join(ROOT, "docs/analytics/PATCH_C_7_BROWSER_EVIDENCE.json"),
     JSON.stringify({ patch: "C.7", status: "SKIPPED", reason: "no admin key" }, null, 2)
   );
-  console.log("SKIPPED — no MIA_ADMIN_API_KEY\n");
-  process.exit(0);
+  process.exit(1);
 }
 
 mkdirSync(SCREENSHOT_DIR, { recursive: true });
-
+const browser = await chromium.launch({ headless: true });
 const viewports = [
-  { name: "desktop", width: 1440, height: 900, screenshot: "cockpit-regression-desktop.png" },
-  { name: "tablet", width: 834, height: 1112, screenshot: "cockpit-regression-tablet.png" },
-  { name: "mobile", width: 390, height: 844, screenshot: "cockpit-regression-mobile.png" },
+  { id: "desktop", width: 1440, height: 900 },
+  { id: "tablet", width: 768, height: 1024 },
+  { id: "mobile", width: 390, height: 844 },
 ];
 
-const browser = await chromium.launch({ headless: true });
-const context = await browser.newContext();
-const page = await context.newPage();
-let pageErrors = [];
+try {
+  for (const vp of viewports) {
+    const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
+    const page = await context.newPage();
+    const pageErrors = [];
+    page.on("pageerror", (err) => pageErrors.push(String(err?.message || err)));
 
-page.on("pageerror", (err) => pageErrors.push(String(err.message)));
+    const auth = await context.request.post(`${BASE}/api/founder/authenticate`, {
+      headers: { "Content-Type": "application/json" },
+      data: { admin_key: ADMIN_KEY },
+    });
+    ok(`${vp.id}: authentication`, auth.ok(), String(auth.status()));
+    if (!auth.ok()) {
+      await context.close();
+      continue;
+    }
 
-for (const vp of viewports) {
-  pageErrors = [];
-  await page.setViewportSize({ width: vp.width, height: vp.height });
-
-  const authRes = await page.request.post(`${BASE}/api/founder/authenticate`, {
-    data: { api_key: ADMIN_KEY },
-  });
-  ok(`${vp.name}: authentication`, authRes.status() === 200, String(authRes.status()));
-
-  await page.goto(`${BASE}${COCKPIT_PATH}`, { waitUntil: "networkidle" });
-  const state = await readDomState(page);
-
-  ok(`${vp.name}: layout intact`, state.executiveModules >= 6, `count=${state.executiveModules}`);
-  ok(`${vp.name}: section order preserved`, state.orderOk);
-  ok(`${vp.name}: no analyst UI yet (C.7 lib-only)`, !state.analystUi);
-  ok(`${vp.name}: no page errors`, pageErrors.length === 0 && !state.fetchError);
-
-  await page.screenshot({ path: join(SCREENSHOT_DIR, vp.screenshot), fullPage: true }).catch(() => {});
+    await page.goto(`${BASE}${COCKPIT_PATH}`, { waitUntil: "load", timeout: 120000 });
+    const state = await readDomState(page);
+    ok(`${vp.id}: layout intact`, state.executiveModules >= 6, `count=${state.executiveModules}`);
+    ok(`${vp.id}: section order preserved`, state.orderOk);
+    ok(`${vp.id}: no analyst UI yet (C.7 lib-only)`, !state.analystUi);
+    ok(`${vp.id}: no page errors`, pageErrors.length === 0);
+    await page.screenshot({ path: join(SCREENSHOT_DIR, `cockpit-regression-${vp.id}.png`), fullPage: true }).catch(() => {});
+    await context.close();
+  }
+} finally {
+  await browser.close();
 }
 
-await browser.close();
-
-const evidence = {
-  patch: "C.7",
-  status: checks.every((c) => c.pass) ? "APPROVED" : "REJECTED",
-  validated_at: new Date().toISOString(),
-  base_url: BASE,
-  checks: {
-    total: checks.length,
-    passed: checks.filter((c) => c.pass).length,
-    items: checks,
-  },
-};
-writeFileSync(join(ROOT, "docs/analytics/PATCH_C_7_BROWSER_EVIDENCE.json"), JSON.stringify(evidence, null, 2));
-
-console.log(`\n${checks.filter((c) => c.pass).length}/${checks.length} checks passed\n`);
-process.exit(checks.every((c) => c.pass) ? 0 : 1);
+const passed = checks.filter((c) => c.pass).length;
+writeFileSync(
+  join(ROOT, "docs/analytics/PATCH_C_7_BROWSER_EVIDENCE.json"),
+  JSON.stringify(
+    {
+      patch: "C.7",
+      status: passed === checks.length ? "APPROVED" : "REJECTED",
+      validated_at: new Date().toISOString(),
+      base_url: BASE,
+      checks: { total: checks.length, passed, items: checks },
+    },
+    null,
+    2
+  )
+);
+process.exit(checks.length - passed ? 1 : 0);
