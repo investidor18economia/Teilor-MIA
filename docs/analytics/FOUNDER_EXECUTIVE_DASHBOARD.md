@@ -35,6 +35,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 ## Módulos
 
+0. **KPIs Estratégicos** (PATCH B.2) — visão executiva superior para decisão rápida  
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
@@ -50,6 +51,52 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 13. **Anti-Regret** — score médio + distribuição  
 14. **User Value** — score médio, valores verificados + distribuição  
 15. **Sistema** — versão, build, ambiente, latência API, status
+
+---
+
+## KPIs Estratégicos (PATCH B.2)
+
+**Mapper:** `lib/miaFounderExecutiveDisplay.js` (B.2.0)  
+**Catálogo:** `lib/miaFounderExecutiveCatalog.js` (B.2.0)  
+**Componente:** `FounderExecutiveKpisSection.jsx` (client fetch)  
+**Posição:** acima de Executive Insights e Visão geral A.2
+
+**Fontes (contratos existentes — sem alteração de API/RPC):**
+
+| KPI | Fonte | Campo oficial |
+|-----|-------|---------------|
+| Usuários Ativos | temporal `growth` | `dau_visitors` (fallback: `platform.unique_visitors`) |
+| Crescimento de Usuários | temporal `growth` | `crescimento_dau_visitors_pct` |
+| Crescimento de Sessões | executive snapshot | `platform.total_sessions` (volume período — pct futuro B.3) |
+| Crescimento de Perguntas | executive snapshot | `platform.questions` (volume período — pct futuro B.3) |
+| Recomendações Emitidas | executive snapshot | `recommendation.recommendations_generated` |
+| CTR | temporal `conversion.summary` | `taxa_clique_recomendacao` |
+| Conversão | temporal `conversion.summary` | `conversao_acumulada_visitante` |
+| Produtos Ativos | temporal `products.summary` | `distinct_products` |
+| Categorias Ativas | temporal `categories.summary` | `distinct_categories` |
+| Tendência Geral | temporal `growth` | `crescimento_dau_visitors_pct` |
+
+**Badges (determinísticas — sem IA):**
+
+| Badge | Regra |
+|-------|-------|
+| Excelente | trend pct ≥ 10% **ou** CTR ≥ 5% **ou** conversão ≥ 3% |
+| Crescendo | trend pct > 2% |
+| Em evolução | trend pct > 0% e ≤ 2% |
+| Estável | trend pct entre −2% e +2% **ou** CTR intermediário |
+| Atenção | trend pct < −2% **ou** CTR < 1% **ou** conversão < 0,5% |
+
+Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
+
+**Tendências visuais:** setas ↑ ↓ → + pct formatado — apenas quando campo `crescimento_*_pct` oficial existe.
+
+**Responsabilidades:**
+
+- **Interface:** renderizar grupos Plataforma + Comercial, skeleton, retry
+- **Mapper B.2.0:** resolver catálogo, badges, tendências, formatação
+- **Proibido:** agregação, SQL, alteração de contratos Baseline A
+
+---
 
 ## Performance e Conversão (PATCH A.6)
 

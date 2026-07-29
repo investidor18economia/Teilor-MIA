@@ -1,4 +1,5 @@
 import FounderExecutiveInsights from "./FounderExecutiveInsights.jsx";
+import FounderExecutiveKpisSection from "./FounderExecutiveKpisSection.jsx";
 import FounderKpiStrip from "./FounderKpiStrip.jsx";
 import FounderModuleSection from "./FounderModuleSection.jsx";
 import FounderCockpitFilters from "./FounderCockpitFilters.jsx";
@@ -9,7 +10,7 @@ import FounderPerformanceConversionSection from "./FounderPerformanceConversionS
 import { formatPeriodSummary } from "../../lib/miaFounderFiltersDisplay.js";
 import { TEILOR_LOGO_ALT, TEILOR_LOGO_PRIMARY_SRC } from "../../lib/brandAssets";
 
-function FounderCockpitPageInner({ cockpit, subject }) {
+function FounderCockpitPageInner({ cockpit, subject, executiveMetrics = null }) {
   const { meta, overview, modules } = cockpit;
   const moduleList = [
     modules.platform,
@@ -70,6 +71,7 @@ function FounderCockpitPageInner({ cockpit, subject }) {
 
       <main className="founder-cockpit-main">
         <FounderCockpitFilters />
+        <FounderExecutiveKpisSection executiveMetrics={executiveMetrics} />
         <FounderExecutiveInsights />
         <FounderKpiStrip overview={overview} />
         <FounderSessionsUsersSection
@@ -101,10 +103,10 @@ function FounderCockpitPageInner({ cockpit, subject }) {
   );
 }
 
-export default function FounderCockpitPage({ cockpit, subject, initialFilters }) {
+export default function FounderCockpitPage({ cockpit, subject, initialFilters, executiveMetrics = null }) {
   return (
     <FounderCockpitFiltersProvider initialFilters={initialFilters}>
-      <FounderCockpitPageInner cockpit={cockpit} subject={subject} />
+      <FounderCockpitPageInner cockpit={cockpit} subject={subject} executiveMetrics={executiveMetrics} />
     </FounderCockpitFiltersProvider>
   );
 }

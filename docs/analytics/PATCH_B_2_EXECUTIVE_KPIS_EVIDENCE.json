@@ -1,0 +1,173 @@
+{
+  "patch": "B.2",
+  "title": "PATCH B.2 — Executive Strategic KPIs Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T12:15:18.134Z",
+  "display_version": "B.2.0",
+  "catalog_version": "B.2.0",
+  "kpis_implemented": [
+    "active_users",
+    "user_growth",
+    "session_growth",
+    "question_growth",
+    "recommendations_issued",
+    "ctr",
+    "conversion",
+    "active_products",
+    "active_categories",
+    "overall_trend"
+  ],
+  "components": [
+    "FounderExecutiveKpisSection.jsx",
+    "FounderMetricCard (badge/trend extension)"
+  ],
+  "mapper": "lib/miaFounderExecutiveDisplay.js",
+  "catalog": "lib/miaFounderExecutiveCatalog.js",
+  "baseline_a_preserved": true,
+  "checks": {
+    "total": 28,
+    "passed": 28,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version B.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper version B.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog defines 10 KPIs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit mounts FounderExecutiveKpisSection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive KPIs above insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "SSR passes executiveMetrics raw",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive KPI CSS",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit display still A.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "filters catalog still A.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "charts display still A.8.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal catalog still A.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive API still 11.1.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/executive-metrics.js unchanged by B.2",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/temporal-metrics.js unchanged by B.2",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dashboard doc mentions B.2",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper returns 10 KPIs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper has 2 groups",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "active users from temporal DAU",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "active users badge growing",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "overall trend has direction up",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "CTR from conversion summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "session volume from executive snapshot",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "session growth no frontend trend",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge excellent threshold",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge attention on negative trend",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

@@ -1,9 +1,16 @@
 import { formatFounderMetricValue } from "../../lib/miaFounderCockpitDisplay.js";
 
-export default function FounderMetricCard({ metric }) {
-  const displayValue = formatFounderMetricValue(metric);
+export default function FounderMetricCard({ metric, variant = "default" }) {
+  const displayValue = metric.displayValue ?? formatFounderMetricValue(metric);
+  const className = [
+    "founder-metric-card",
+    variant === "highlight" ? "founder-metric-card--highlight" : "",
+    variant === "executive" ? "founder-metric-card--executive" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   return (
-    <article className="founder-metric-card" aria-labelledby={`founder-metric-${metric.id}`}>
+    <article className={className} aria-labelledby={`founder-metric-${metric.id}`}>
       <p className="founder-metric-card-value" aria-label={`${metric.label}: ${displayValue}`}>
         {displayValue}
       </p>

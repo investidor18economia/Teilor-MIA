@@ -101,7 +101,12 @@ export default function CockpitFundadorPage({ authorized, cockpit, fetchError, s
           </header>
         </div>
       ) : (
-        <FounderCockpitPage cockpit={cockpit} subject={subject} initialFilters={filters} />
+        <FounderCockpitPage
+          cockpit={cockpit}
+          subject={subject}
+          initialFilters={filters}
+          executiveMetrics={metrics}
+        />
       )}
     </>
   );

@@ -34,17 +34,29 @@ ok("doc defines roadmap B.2-B.9", arch.includes("PATCH B.9"));
 ok("Baseline A doc exists", existsSync(join(ROOT, "docs/analytics/FOUNDER_COCKPIT_BASELINE_A.md")));
 ok("Phase A final report exists", existsSync(join(ROOT, "docs/analytics/FOUNDER_COCKPIT_PHASE_A_FINAL_REPORT.md")));
 
-// B.1 must NOT add implementation files
-const forbiddenImpl = [
-  "lib/miaFounderExecutiveDisplay.js",
-  "lib/miaFounderExecutiveCatalog.js",
-  "components/founder-cockpit/FounderExecutiveKpiStrip.jsx",
+// B.1 must NOT add implementation files (unless B.2+ approved)
+const b2Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveDisplay.js"));
+const forbiddenImplB1 = [
   "components/founder-cockpit/FounderExecutiveGrowthSection.jsx",
   "components/founder-cockpit/FounderExecutiveSummarySection.jsx",
   "pages/api/founder-executive-metrics.js",
 ];
-for (const f of forbiddenImpl) {
+const b2Expected = [
+  "lib/miaFounderExecutiveDisplay.js",
+  "lib/miaFounderExecutiveCatalog.js",
+  "components/founder-cockpit/FounderExecutiveKpisSection.jsx",
+];
+for (const f of forbiddenImplB1) {
   ok(`B.1 did not create ${f.split("/").pop()}`, !existsSync(join(ROOT, f)));
+}
+if (b2Implemented) {
+  for (const f of b2Expected) {
+    ok(`B.2 executive file ${f.split("/").pop()}`, existsSync(join(ROOT, f)));
+  }
+} else {
+  for (const f of b2Expected) {
+    ok(`B.1 did not create ${f.split("/").pop()}`, !existsSync(join(ROOT, f)));
+  }
 }
 
 // Baseline contracts unchanged — version strings

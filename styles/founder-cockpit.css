@@ -1369,6 +1369,131 @@
   border: 1px solid var(--fc-border);
 }
 
+/* PATCH B.2 — Executive Strategic KPIs */
+.founder-executive-kpis {
+  margin-bottom: var(--fc-space-xl);
+  padding: var(--fc-space-lg) var(--fc-space-md);
+  border-radius: var(--fc-radius-lg);
+  background: linear-gradient(180deg, rgba(0, 198, 255, 0.06) 0%, var(--fc-bg-panel) 48%);
+  border: 1px solid rgba(0, 198, 255, 0.22);
+  box-shadow: var(--fc-shadow-card);
+}
+
+.founder-executive-kpis-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.founder-executive-kpis-title {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--fc-accent);
+  letter-spacing: 0.04em;
+}
+
+.founder-executive-kpi-group {
+  margin-bottom: 20px;
+}
+
+.founder-executive-kpi-group-title {
+  margin: 0 0 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--fc-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.founder-executive-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.founder-executive-kpi-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.founder-metric-card--executive {
+  min-height: 108px;
+}
+
+.founder-executive-badge {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.founder-executive-badge--excellent {
+  background: rgba(76, 217, 100, 0.15);
+  color: #8ef0a8;
+  border: 1px solid rgba(76, 217, 100, 0.35);
+}
+
+.founder-executive-badge--growing,
+.founder-executive-badge--evolving {
+  background: rgba(0, 198, 255, 0.12);
+  color: #7de4ff;
+  border: 1px solid rgba(0, 198, 255, 0.3);
+}
+
+.founder-executive-badge--stable {
+  background: rgba(255, 255, 255, 0.06);
+  color: #a8c4d8;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.founder-executive-badge--attention {
+  background: rgba(255, 140, 0, 0.12);
+  color: #ffd4a8;
+  border: 1px solid rgba(255, 140, 0, 0.35);
+}
+
+.founder-executive-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.founder-executive-trend-icon {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.founder-executive-trend--up {
+  color: #8ef0a8;
+}
+
+.founder-executive-trend--down {
+  color: #ff9f7a;
+}
+
+.founder-executive-trend--stable {
+  color: #a8c4d8;
+}
+
+.founder-executive-trend--unknown {
+  color: var(--fc-text-muted);
+}
+
+.founder-executive-trend-label {
+  color: var(--fc-text-muted);
+  font-weight: 500;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .founder-skeleton-line,
   .founder-skeleton-chart-area,
@@ -1391,6 +1516,10 @@
   .founder-module-grid {
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   }
+
+  .founder-executive-kpi-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -1408,5 +1537,13 @@
 
   .founder-skeleton-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .founder-executive-kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .founder-executive-kpis-header {
+    flex-direction: column;
   }
 }
