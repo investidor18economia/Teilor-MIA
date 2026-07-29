@@ -1,0 +1,95 @@
+{
+  "patch": "C.6",
+  "title": "PATCH C.6 — Production Revalidation Evidence",
+  "previous_status": "BLOCKED_PENDING_VALIDATION",
+  "blocking_reason": "Production health during initial closure referenced pre-C.6 build; C.6 deploy was asynchronous",
+  "status": "APPROVED",
+  "validation_started_at": "2026-07-29T20:28:47.867Z",
+  "validation_completed_at": "2026-07-29T20:28:49.529Z",
+  "deployment_audit": {
+    "local_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "remote_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "production_build_short": "1b5143830cd0",
+    "production_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "production_deployment_url": "https://economia-ai.vercel.app",
+    "production_alias": "economia-ai.vercel.app",
+    "deployment_status": "ready",
+    "feature_commit": "a8b6806",
+    "validated_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "commit_relationship": "validated_commit is descendant of feature_commit a8b6806 and equals local/remote HEAD"
+  },
+  "identity_proof": {
+    "health_endpoint": "https://economia-ai.vercel.app/api/health",
+    "health_build_field": "build (VERCEL_GIT_COMMIT_SHA prefix)",
+    "local_matches_production": true,
+    "feature_in_production": true,
+    "runner": "scripts/patch-c6-production-revalidation.mjs imports lib at HEAD matching production build"
+  },
+  "functional_validation": {
+    "checks_total": 41,
+    "checks_passed": 41,
+    "scenarios": [
+      {
+        "name": "commercial bottleneck → optimize",
+        "pass": true,
+        "expected": "optimize P1",
+        "observed": "optimize:P1"
+      },
+      {
+        "name": "operational critical → investigate P0",
+        "pass": true,
+        "expected": "investigate P0",
+        "observed": "investigate:P0, optimize:P1"
+      },
+      {
+        "name": "acceptance drop → validate",
+        "pass": true,
+        "expected": "validate",
+        "observed": "optimize, validate"
+      },
+      {
+        "name": "low volume → collect_more_data",
+        "pass": true,
+        "expected": "collect_more_data",
+        "observed": "optimize, collect_more_data, reduce_risk, improve_quality"
+      },
+      {
+        "name": "stable snapshot → monitor or no_action",
+        "pass": true,
+        "expected": "monitor|no_action",
+        "observed": "monitor, expand"
+      },
+      {
+        "name": "insufficient data → no artificial recommendations",
+        "pass": true,
+        "expected": "0",
+        "observed": "0"
+      },
+      {
+        "name": "P1 alert suppresses redundant P3 monitor",
+        "pass": true,
+        "expected": "1 item",
+        "observed": "1"
+      },
+      {
+        "name": "deduplication keeps P1",
+        "pass": true,
+        "expected": "P1",
+        "observed": "P1"
+      }
+    ],
+    "complete_pipeline": {
+      "status": "analysis_complete",
+      "recommendation_count": 1,
+      "alert_count": 1
+    }
+  },
+  "negative_validations": {
+    "no_llm_runtime": true,
+    "no_fetch": true,
+    "no_supabase": true,
+    "no_sql": true,
+    "determinism": true
+  },
+  "final_verdict": "PRODUCTION_C6_VALIDATED"
+}

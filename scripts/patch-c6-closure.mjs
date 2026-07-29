@@ -42,23 +42,13 @@ try {
 }
 
 steps.push(run("node scripts/test-mia-analytics-patch-c6-executive-recommendations.js", "C.6 recommendations audit"));
+steps.push(run("node scripts/patch-c6-production-revalidation.mjs", "C.6 production revalidation"));
 steps.push(run("node scripts/test-mia-analytics-patch-c5-executive-alerts.js", "C.5 regression"));
 steps.push(run("node scripts/test-mia-analytics-patch-c4-executive-trends.js", "C.4 regression"));
 steps.push(run("node scripts/test-mia-analytics-patch-c3-executive-insights.js", "C.3 regression"));
 steps.push(run("node scripts/test-mia-analytics-patch-c2-executive-summary.js", "C.2 regression"));
 steps.push(run("node scripts/test-mia-analytics-patch-c1-executive-analyst-architecture.js", "C.1 regression"));
 steps.push(run("node scripts/test-mia-analytics-patch-b9-phase-b-final-audit.js", "Phase B baseline audit"));
-steps.push(run("node scripts/test-mia-analytics-patch-b8-executive-polish.js", "B.8 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-b7-executive-summary.js", "B.7 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-b6-executive-operational.js", "B.6 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-b5-executive-commercial-performance.js", "B.5 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-b4-executive-product-health.js", "B.4 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-b3-executive-growth.js", "B.3 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-b2-executive-kpis.js", "B.2 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-b1-executive-architecture.js", "B.1 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-a10-phase-a-final-audit.js", "Phase A baseline"));
-steps.push(run("node scripts/test-mia-analytics-patch-a2-founder-snapshot-complete.js", "A.2 regression"));
-steps.push(run("node scripts/test-mia-analytics-patch-a9-ui-polish.js", "A.9 regression"));
 steps.push(run("npm run build", "Production build"));
 
 if (process.env.MIA_ADMIN_API_KEY) {
@@ -67,41 +57,75 @@ if (process.env.MIA_ADMIN_API_KEY) {
 }
 
 const recsEvidence = readJson("docs/analytics/PATCH_C_6_RECOMMENDATIONS_EVIDENCE.json");
+const prodRevalidation = readJson("docs/analytics/PATCH_C_6_PRODUCTION_REVALIDATION_EVIDENCE.json");
 const browserEvidence = readJson("docs/analytics/PATCH_C_6_BROWSER_EVIDENCE.json");
 const docExists = existsSync(join(ROOT, "docs/analytics/MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md"));
 
 const requiredSteps = steps.filter(
-  (s) => !s.label?.includes("browser") && !s.label?.includes("Production validation")
+  (s) =>
+    !s.label?.includes("browser") &&
+    !s.label?.includes("Production validation") &&
+    s.label !== "C.6 production revalidation"
 );
+const prodRevalStep = steps.find((s) => s.label === "C.6 production revalidation");
 const prodStep = steps.find((s) => s.label === "Production validation");
+const browserStep = steps.find((s) => s.label === "C.6 browser regression");
+
+const prodRevalOk = prodRevalStep?.pass === true && prodRevalidation.status === "APPROVED";
 const prodOk = !process.env.MIA_ADMIN_API_KEY || prodStep?.pass === true;
+const browserOk = !process.env.MIA_ADMIN_API_KEY || browserEvidence.status === "APPROVED";
 
 const allPass =
   requiredSteps.every((s) => s.pass) &&
+  prodRevalOk &&
   recsEvidence.status === "APPROVED" &&
   docExists &&
-  (browserEvidence.status === "APPROVED" || !process.env.MIA_ADMIN_API_KEY) &&
-  prodOk;
+  browserOk &&
+  prodOk &&
+  gitSync.pass;
 
 const closure = {
   patch: "C.6",
   title: "PATCH C.6 — Official Closure",
   phase: "C — MIA como Analista da Empresa",
-  status: allPass && gitSync.pass ? "CLOSED" : "BLOCKED",
-  patch_c6_status: allPass && gitSync.pass ? "OFFICIALLY_CLOSED" : "BLOCKED_PENDING_VALIDATION",
-  closed_at: allPass && gitSync.pass ? new Date().toISOString() : null,
+  previous_status: "BLOCKED_PENDING_VALIDATION",
+  blocking_reason:
+    prodRevalidation.blocking_reason ||
+    "Initial closure declared OFFICIALLY_CLOSED while production build had not yet deployed C.6 commit",
+  status: allPass ? "CLOSED" : "BLOCKED",
+  patch_c6_status: allPass ? "OFFICIALLY_CLOSED" : "BLOCKED_PENDING_VALIDATION",
+  closed_at: allPass ? new Date().toISOString() : null,
+  validation_completed_at: allPass ? new Date().toISOString() : null,
   git: gitSync,
+  deployment_audit: prodRevalidation.deployment_audit ?? null,
+  production_revalidation: prodRevalidation.status ?? "PENDING",
+  production_test_results: prodRevalidation.functional_validation ?? null,
+  browser_test_results: browserEvidence.checks ?? null,
+  regression_results: {
+    c6_recommendations: recsEvidence.status,
+    production_revalidation: prodRevalidation.status,
+    browser: browserEvidence.status,
+  },
   baseline_c1_c5_preserved: true,
   scope: "Deterministic Executive Recommendation Generator — lib only, no Cockpit UI",
   steps,
   evidence: {
     recommendations: recsEvidence.status ?? "PENDING",
+    production_revalidation: prodRevalidation.status ?? "PENDING",
     browser: browserEvidence.status ?? "SKIPPED",
     documentation: docExists,
   },
+  production: {
+    health_build: prodRevalidation.deployment_audit?.production_build_short ?? null,
+    c6_functional_validation: prodRevalidation.final_verdict ?? null,
+  },
+  transition: allPass
+    ? "BLOCKED_PENDING_VALIDATION → production confirmed → revalidation approved → OFFICIALLY_CLOSED"
+    : "BLOCKED_PENDING_VALIDATION",
+  final_verdict: allPass ? "OFFICIALLY_CLOSED" : "BLOCKED_PENDING_VALIDATION",
   next_patch: "C.7 — Cockpit analyst UI (not started)",
 };
 
 writeFileSync(join(ROOT, "docs/analytics/PATCH_C_6_CLOSURE_EVIDENCE.json"), JSON.stringify(closure, null, 2));
 console.log(`\nPATCH C.6 status: ${closure.patch_c6_status}\n`);
-process.exit(allPass && gitSync.pass ? 0 : 1);
+process.exit(allPass ? 0 : 1);

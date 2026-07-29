@@ -2,44 +2,63 @@
   "patch": "C.6",
   "title": "PATCH C.6 — Official Closure",
   "phase": "C — MIA como Analista da Empresa",
+  "previous_status": "BLOCKED_PENDING_VALIDATION",
+  "blocking_reason": "Initial closure declared OFFICIALLY_CLOSED while production health showed pre-C.6 build (0e3e47662a45)",
   "status": "CLOSED",
   "patch_c6_status": "OFFICIALLY_CLOSED",
-  "closed_at": "2026-07-29T20:10:00.000Z",
+  "closed_at": "2026-07-29T20:35:00.000Z",
+  "validation_completed_at": "2026-07-29T20:35:00.000Z",
   "git": {
     "pass": true,
-    "head": "a8b6806",
-    "origin": "a8b6806",
-    "feature_commit": "a8b6806",
-    "closure_commit": "e5809bd"
+    "head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "origin": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "feature_commit": "a8b68064ae8301975d059e880e43b8301b583077",
+    "closure_revalidation_commit": "pending"
   },
+  "deployment_audit": {
+    "local_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "remote_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "production_build_short": "1b5143830cd0",
+    "production_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "production_deployment_url": "https://economia-ai.vercel.app",
+    "production_alias": "economia-ai.vercel.app",
+    "deployment_status": "ready",
+    "feature_commit": "a8b68064ae8301975d059e880e43b8301b583077",
+    "validated_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "commit_relationship": "validated_commit descends from feature_commit; docs commits e5809bd and 1b51438 only"
+  },
+  "production_revalidation": "APPROVED",
   "baseline_c1_c5_preserved": true,
   "regressions": {
     "c6_recommendations": "PASS",
-    "c5_alerts": "PASS",
-    "c4_trends": "PASS",
-    "c3_insights": "PASS",
-    "c2_summary": "PASS",
-    "c1_architecture": "PASS",
-    "b9_audit": "PASS",
-    "build": "PASS",
-    "browser": "APPROVED",
-    "production": "APPROVED"
+    "c6_production_revalidation": "PASS",
+    "b9_production": "PASS",
+    "browser": "APPROVED"
   },
   "evidence": {
     "recommendations": "APPROVED",
+    "production_revalidation": "APPROVED",
     "browser": "APPROVED",
     "documentation": true
   },
   "production": {
-    "note": "Production health validated; C.6 build deploys asynchronously on Vercel",
+    "health_build": "1b5143830cd0",
     "health_pass": true,
-    "cockpit_pass": true
+    "executive_metrics_pass": true,
+    "cockpit_ssr_pass": true,
+    "c6_functional_validation": "PRODUCTION_C6_VALIDATED"
   },
+  "browser": {
+    "base_url": "http://localhost:3024",
+    "note": "Authenticated browser on local SSR matching production commit 1b51438; direct prod /api/founder/authenticate returned 401 with local key",
+    "checks_passed": 15
+  },
+  "transition": "BLOCKED_PENDING_VALIDATION → production build confirmed → C.6 revalidated → OFFICIALLY_CLOSED",
   "limitations": [
-    "No automatic action execution",
-    "No Cockpit UI for recommendations in C.6",
-    "LLM verbalizer not integrated",
-    "no_action when no alert-driven recommendations eligible"
+    "C.6 lib-only — no public recommendations HTTP endpoint",
+    "Browser auth validated on localhost SSR with same build as production",
+    "Production /api/founder/authenticate 401 with local admin key — B.9 cockpit SSR still passes on production"
   ],
+  "final_verdict": "OFFICIALLY_CLOSED",
   "next_patch": "C.7 — Cockpit analyst UI (not started)"
 }
