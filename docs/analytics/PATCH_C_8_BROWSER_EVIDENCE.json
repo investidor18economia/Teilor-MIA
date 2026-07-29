@@ -1,0 +1,87 @@
+{
+  "patch": "C.8",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T21:26:50.037Z",
+  "base_url": "http://localhost:3024",
+  "checks": {
+    "total": 15,
+    "passed": 15,
+    "items": [
+      {
+        "label": "desktop: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "desktop: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no analyst UI yet (C.8 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "tablet: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no analyst UI yet (C.8 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "mobile: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no analyst UI yet (C.8 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

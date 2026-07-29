@@ -1,0 +1,20 @@
+{
+  "patch": "C.8",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T21:26:46.170Z",
+  "deployment_audit": {
+    "local_head": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+    "remote_head": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+    "production_build_short": "778d25f129f2",
+    "production_deployment_url": "https://economia-ai.vercel.app",
+    "deployment_status": "ready"
+  },
+  "functional_validation": {
+    "checks_total": 18,
+    "checks_passed": 18,
+    "tone_profile": "warning",
+    "reading_time": 4,
+    "highlight_count": 4
+  },
+  "final_verdict": "PRODUCTION_C8_VALIDATED"
+}

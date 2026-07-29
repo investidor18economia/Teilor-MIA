@@ -1,0 +1,186 @@
+{
+  "patch": "C.8",
+  "title": "PATCH C.8 — Official Closure",
+  "phase": "C — MIA como Analista da Empresa",
+  "status": "CLOSED",
+  "patch_c8_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T21:27:00.718Z",
+  "validation_completed_at": "2026-07-29T21:27:00.719Z",
+  "git": {
+    "pass": true,
+    "head": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+    "origin": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+    "working_tree_clean": true
+  },
+  "deployment_audit": {
+    "local_head": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+    "remote_head": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+    "production_build_short": "778d25f129f2",
+    "production_deployment_url": "https://economia-ai.vercel.app",
+    "deployment_status": "ready"
+  },
+  "production_validation": "APPROVED",
+  "production_test_results": {
+    "checks_total": 18,
+    "checks_passed": 18,
+    "tone_profile": "warning",
+    "reading_time": 4,
+    "highlight_count": 4
+  },
+  "browser_test_results": {
+    "total": 15,
+    "passed": 15,
+    "items": [
+      {
+        "label": "desktop: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "desktop: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no analyst UI yet (C.8 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "tablet: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no analyst UI yet (C.8 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "mobile: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no analyst UI yet (C.8 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  },
+  "regression_results": {
+    "c8_humanization": "APPROVED",
+    "production_validation": "APPROVED",
+    "browser": "APPROVED"
+  },
+  "baseline_c1_c7_preserved": true,
+  "scope": "Deterministic Executive Humanization Engine — lib only, no Cockpit UI",
+  "steps": [
+    {
+      "label": "C.8 humanization audit",
+      "pass": true
+    },
+    {
+      "label": "C.7 regression",
+      "pass": true
+    },
+    {
+      "label": "C.6 regression",
+      "pass": true
+    },
+    {
+      "label": "C.5 regression",
+      "pass": true
+    },
+    {
+      "label": "C.4 regression",
+      "pass": true
+    },
+    {
+      "label": "C.3 regression",
+      "pass": true
+    },
+    {
+      "label": "C.2 regression",
+      "pass": true
+    },
+    {
+      "label": "C.1 regression",
+      "pass": true
+    },
+    {
+      "label": "Phase B baseline audit",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "C.8 production validation",
+      "pass": true
+    },
+    {
+      "label": "C.8 browser regression",
+      "pass": true
+    },
+    {
+      "label": "Production validation B.9",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "humanization": "APPROVED",
+    "production_validation": "APPROVED",
+    "browser": "APPROVED",
+    "documentation": true
+  },
+  "production": {
+    "health_build": "778d25f129f2",
+    "c8_functional_validation": "PRODUCTION_C8_VALIDATED"
+  },
+  "final_verdict": "OFFICIALLY_CLOSED",
+  "closure_commit": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+  "feature_commit": "778d25f129f2f743ea2c735b247f8f83bd373eb7",
+  "next_patch": "C.9 — Audit (not started)"
+}
