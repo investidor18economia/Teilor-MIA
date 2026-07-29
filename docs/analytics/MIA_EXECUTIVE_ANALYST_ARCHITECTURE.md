@@ -196,7 +196,8 @@ C.1 prepara a arquitetura sem alterar 11.4 ou B.7.
 | **C.5** | Narrative assembly |
 | **C.6** | Recomendações acionáveis |
 | **C.7** | Explicabilidade, evidências e confiança |
-| **C.8** | Humanização / polish |
+| **C.8** | Humanização / Narrative Engine |
+| **C.9** | Audit |
 | **C.8** | Polimento |
 | **C.9** | Auditoria final Fase C |
 
@@ -816,4 +817,72 @@ npm run test:mia:analytics:patch-c7:closure
 
 ---
 
-*Documento atualizado no PATCH C.7 — Explicabilidade, Evidências e Confiança.*
+## 22. PATCH C.8 — Humanização da Analista Executiva
+
+**Versão:** C.8.0 · **Status:** implementado (lib-only)
+
+### 22.1 Princípio
+
+A Humanização **nunca altera a inteligência** — apenas reorganiza a comunicação. Fatos, métricas, prioridades, alertas, recomendações, confiança, evidências e limitações permanecem intactos nas camadas C.2–C.7.
+
+### 22.2 Pipeline
+
+```
+Summary → Insights → Trends → Alerts → Recommendations → Explainability
+  → Humanization Engine → ExecutiveNarrative → LLM Verbalizer (futuro)
+```
+
+### 22.3 Executive Humanization Engine
+
+Implementação:
+- `lib/miaExecutiveNarrativeCatalog.js` — seções, highlights, reading time
+- `lib/miaExecutiveToneCatalog.js` — perfis de tom determinísticos
+- `lib/miaExecutiveNarrativeBuilder.js` — builder principal
+
+### 22.4 Contrato ExecutiveNarrative
+
+Campos: `id`, `summary`, `executive_message`, `sections`, `highlights`, `priorities`, `confidence_summary`, `limitation_summary`, `evidence_summary`, `tone_profile`, `reading_time`, `deterministic` (sempre `true`), `meta`.
+
+### 22.5 Perfis de tom
+
+| Tom | Uso determinístico |
+|-----|-------------------|
+| **warning** | Alertas critical/high ou recomendações P0 |
+| **positive** | Sinais positivos sem alertas |
+| **neutral** | Snapshot estável sem alertas/recomendações |
+| **consultative** | Recomendações sem alertas críticos |
+| **informative** | Múltiplos insights |
+| **executive** | Padrão profissional |
+
+### 22.6 Estrutura narrativa
+
+1. Resumo Executivo · 2. O que merece atenção primeiro · 3. Pontos positivos · 4. Pontos de atenção · 5. Recomendações · 6. Confiança · 7. Limitações
+
+Highlights: `primary_risk`, `primary_opportunity`, `primary_change`, `primary_recommendation` — sempre com `source_reference`.
+
+### 22.7 Reading time
+
+Calculado deterministicamente: palavras / 200 wpm + fator de complexidade por seção.
+
+### 22.8 Proibições C.8
+
+- Sem LLM, SQL, Supabase ou fetch.
+- Sem alteração de métricas, prioridades, recomendações, confiança ou evidências.
+- Sem storytelling, opinião ou frases inventadas.
+
+### 22.9 APIs públicas
+
+- `generateExecutiveNarrative(input)` → narrative preenchida.
+- `generateExecutiveAnalysisWithNarrative(input)` → C.2 + C.3 + C.4 + C.5 + C.6 + C.7 + C.8.
+- `generateExecutiveAnalysisWithExplainability(input)` preservado sem slot `narrative`.
+
+### 22.10 Testes oficiais C.8
+
+```bash
+npm run test:mia:analytics:patch-c8:executive-humanization
+npm run test:mia:analytics:patch-c8:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.8 — Humanização da Analista Executiva.*
