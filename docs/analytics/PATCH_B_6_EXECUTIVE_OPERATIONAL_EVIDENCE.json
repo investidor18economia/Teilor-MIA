@@ -2,7 +2,7 @@
   "patch": "B.6",
   "title": "PATCH B.6 — Executive Operational Indicators Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T14:24:19.091Z",
+  "validated_at": "2026-07-29T18:33:52.138Z",
   "display_version": "B.6.0",
   "catalog_version": "B.6.0",
   "indicators_implemented": [
@@ -34,8 +34,8 @@
     "temporal_unavailable": "Camada temporal indisponível."
   },
   "checks": {
-    "total": 59,
-    "passed": 59,
+    "total": 60,
+    "passed": 60,
     "items": [
       {
         "label": "catalog exists",
@@ -78,7 +78,12 @@
         "detail": ""
       },
       {
-        "label": "operational above insights",
+        "label": "operational above summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "summary above insights",
         "pass": true,
         "detail": ""
       },

@@ -2,7 +2,7 @@
   "patch": "B.1",
   "title": "PATCH B.1 — Executive Architecture Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T14:19:18.432Z",
+  "validated_at": "2026-07-29T18:33:52.790Z",
   "scope": "architecture documentation only — no implementation",
   "baseline_a": "FROZEN — OFFICIALLY_COMPLETED",
   "architecture_doc": "docs/analytics/FOUNDER_COCKPIT_PHASE_B_ARCHITECTURE.md",
@@ -32,8 +32,8 @@
     "performance"
   ],
   "checks": {
-    "total": 32,
-    "passed": 32,
+    "total": 34,
+    "passed": 34,
     "items": [
       {
         "label": "Phase B architecture doc exists",
@@ -72,11 +72,6 @@
       },
       {
         "label": "Phase A final report exists",
-        "pass": true,
-        "detail": ""
-      },
-      {
-        "label": "B.1 did not create FounderExecutiveSummarySection.jsx",
         "pass": true,
         "detail": ""
       },
@@ -157,6 +152,21 @@
       },
       {
         "label": "B.6 operational file FounderExecutiveOperationalSection.jsx",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.7 summary file miaFounderExecutiveSummaryDisplay.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.7 summary file miaFounderExecutiveSummaryCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.7 summary file FounderExecutiveSummarySection.jsx",
         "pass": true,
         "detail": ""
       },
