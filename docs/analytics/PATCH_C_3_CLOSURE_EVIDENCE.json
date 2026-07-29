@@ -1,0 +1,68 @@
+{
+  "patch": "C.3",
+  "title": "PATCH C.3 — Official Closure",
+  "phase": "C — MIA como Analista da Empresa",
+  "status": "CLOSED",
+  "patch_c3_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T18:52:00.000Z",
+  "git": {
+    "pass": true,
+    "head": "adb687d6dac0030d07628e0d9129bf4adb998ba2",
+    "origin": "adb687d6dac0030d07628e0d9129bf4adb998ba2",
+    "working_tree_clean": true,
+    "commits": ["adb687d"]
+  },
+  "baseline_a_preserved": true,
+  "baseline_b_preserved": true,
+  "baseline_c1_preserved": true,
+  "baseline_c2_preserved": true,
+  "scope": "Deterministic Executive Insight Generator — lib only, no Cockpit UI",
+  "architecture": {
+    "contracts": "C.1.0",
+    "summary_builder": "C.2.0",
+    "insight_builder": "C.3.0",
+    "pipeline": ["collect", "analyze", "evaluate", "deduplicate", "narrative"],
+    "categories": ["growth", "product", "commercial", "operational", "cross_module", "general"]
+  },
+  "steps": [
+    { "label": "C.3 insights audit", "pass": true },
+    { "label": "C.2 regression", "pass": true },
+    { "label": "C.1 regression", "pass": true },
+    { "label": "Phase B baseline audit", "pass": true },
+    { "label": "B.8 regression", "pass": true },
+    { "label": "B.7 regression", "pass": true },
+    { "label": "B.6 regression", "pass": true },
+    { "label": "B.5 regression", "pass": true },
+    { "label": "B.4 regression", "pass": true },
+    { "label": "B.3 regression", "pass": true },
+    { "label": "B.2 regression", "pass": true },
+    { "label": "B.1 regression", "pass": true },
+    { "label": "Phase A baseline", "pass": true },
+    { "label": "A.2 regression", "pass": true },
+    { "label": "A.9 regression", "pass": true },
+    { "label": "Production build", "pass": true },
+    { "label": "C.3 browser regression", "pass": true },
+    { "label": "Production validation", "pass": true, "note": "18/18 build adb687d" }
+  ],
+  "evidence": {
+    "insights": "APPROVED",
+    "browser": "APPROVED",
+    "documentation": true,
+    "production": "APPROVED"
+  },
+  "files_created": [
+    "lib/miaExecutiveInsightCatalog.js",
+    "lib/miaExecutiveInsightBuilder.js",
+    "scripts/test-mia-analytics-patch-c3-executive-insights.js",
+    "scripts/patch-c3-browser-validation.mjs",
+    "scripts/patch-c3-closure.mjs",
+    "docs/analytics/PATCH_C_3_INSIGHTS_EVIDENCE.json",
+    "docs/analytics/PATCH_C_3_BROWSER_EVIDENCE.json"
+  ],
+  "files_modified": [
+    "docs/analytics/MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md",
+    "lib/miaExecutiveAnalysisArchitecture.js",
+    "package.json"
+  ],
+  "next_patch": "C.4 — Alerts & recommendations (not started)"
+}
