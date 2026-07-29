@@ -1,0 +1,27 @@
+{
+  "patch": "C.5",
+  "status": "APPROVED",
+  "catalog_version": "C.5.0",
+  "builder_version": "C.5.0",
+  "contracts_version": "C.1.0",
+  "rules_count": 8,
+  "supported_alerts": [
+    "operational.critical",
+    "operational.degradation",
+    "commercial.bottleneck",
+    "product.acceptance_drop",
+    "cross_module.deterioration",
+    "growth.decline",
+    "commercial.decline",
+    "commercial.low_volume",
+    "data.modules_missing"
+  ],
+  "unsupported": [
+    "lifecycle resolved",
+    "recommendations",
+    "LLM severity"
+  ],
+  "checks_passed": 98,
+  "checks_total": 98,
+  "validated_at": "2026-07-29T19:40:41.008Z"
+}

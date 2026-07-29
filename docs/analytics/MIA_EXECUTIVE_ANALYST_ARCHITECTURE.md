@@ -558,4 +558,111 @@ npm run test:mia:analytics:patch-c4:closure
 
 ---
 
-*Documento atualizado no PATCH C.4 — Tendências Executivas.*
+## 19. PATCH C.5 — Alertas Estratégicos Priorizados
+
+**Versão:** C.5.0 · **Status:** implementado (lib-only)
+
+### 19.1 Diferença entre insight, tendência e alerta
+
+| Camada | Propósito | Exige threshold? | Exige ação? |
+|--------|-----------|------------------|-------------|
+| **Informação** | Dado bruto nas Executive Views | Não | Não |
+| **Insight (C.3)** | Padrão observável relevante | Regras de insight | Não |
+| **Tendência (C.4)** | Variação temporal classificada | Magnitude + período | Não |
+| **Alerta (C.5)** | Sinal que merece atenção do Founder | Threshold + impacto + confiança | Não (C.6) |
+
+Nem todo insight vira alerta. Nem toda tendência vira alerta. A LLM **nunca** decide severidade, urgência ou prioridade.
+
+### 19.2 Pipeline oficial
+
+```
+Executive Views + Insights (C.3) + Trends (C.4)
+  → Alert Candidate Collection
+  → Evidence & Eligibility Validation
+  → Alert Rule Evaluation
+  → Severity / Urgency / Priority
+  → Noise Suppression → Deduplication → Superior Suppression
+  → ExecutiveAlert[]
+  → Alert Narrative Structure (interpretation stage)
+  → LLM Verbalizer (futuro)
+```
+
+### 19.3 Executive Alert Generator
+
+Implementação: `lib/miaExecutiveAlertBuilder.js`  
+Catálogo: `lib/miaExecutiveAlertCatalog.js`  
+Regras: `lib/miaExecutiveAlertRules.js`
+
+Cada alerta estruturado (`meta.alert_records`) inclui:
+
+- `alert_key`, `title`, `description`, `category`;
+- `severity`, `urgency`, `priority`, `status`;
+- `impact` (tipo + nível);
+- `confidence`, `evidence[]`, `limitations[]`;
+- `source_type`, `source_ids`, `modules_involved`;
+- `triggered_rules`, `dedup_group`, `period`.
+
+Contrato C.1 `ExecutiveAlert` preservado: `alert_id`, `severity`, `message`, `confidence`, `evidence`.
+
+### 19.4 Regras de disparo suportadas (C.5.0)
+
+| alert_key | Fonte | Severidade base |
+|-----------|-------|-----------------|
+| `operational.critical` | métrica operacional | critical |
+| `operational.degradation` | métrica operacional | medium |
+| `commercial.bottleneck` | funil comercial | high |
+| `product.acceptance_drop` | saúde do produto | high |
+| `cross_module.deterioration` | growth + commercial negativos | high |
+| `growth.decline` / `commercial.decline` | tendência C.4 confirmada | medium/high |
+| `commercial.low_volume` | qualidade de dados | low |
+| `data.modules_missing` | módulos indisponíveis | medium |
+
+### 19.5 Severidade, urgência e prioridade
+
+- **Severidade:** critical · high · medium · low · informational
+- **Urgência:** immediate · soon · monitor · none (independente da severidade)
+- **Prioridade:** P0 (crítico + imediato + confiança ≥ moderate) · P1 · P2 · P3
+
+Confidence gates centralizados no catálogo — alertas high/critical com confiança insuficiente são bloqueados ou rebaixados.
+
+### 19.6 Noise suppression e deduplicação
+
+- Suprime magnitude negligible, confiança insuficiente, variações dentro de tolerância.
+- Deduplica por `dedup_group` + período — mantém maior severidade e consolida evidências.
+- Supressão superior: alerta cross-module pode absorver alertas `growth.decline` e `commercial.decline` equivalentes.
+
+### 19.7 Proibições C.5
+
+- **Sem causalidade** — blocklist: porque, devido a, causado por, etc.
+- **Sem recomendações** — ação pertence ao PATCH C.6.
+- **Sem LLM/SQL/Supabase/fetch** neste PATCH.
+
+### 19.8 APIs públicas
+
+- `generateExecutiveAnalysisAlerts(input)` → `ExecutiveAnalysisOutput` com alerts preenchidos.
+- `generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts(input)` → C.2 + C.3 + C.4 + C.5.
+- APIs C.2–C.4 preservadas; `recommendations` permanece vazio.
+
+### 19.9 Garantias C.5
+
+| Garantia | Status |
+|----------|--------|
+| Baseline A/B preservadas | ✅ |
+| Contratos C.1.0 preservados | ✅ |
+| Summary C.2 preservado | ✅ |
+| Insights C.3 preservados | ✅ |
+| Trends C.4 preservados | ✅ |
+| Alertas determinísticos | ✅ |
+| Cockpit UI inalterado | ✅ |
+| Lifecycle resolved | ⛔ não implementado (snapshot-only) |
+
+### 19.10 Testes oficiais C.5
+
+```bash
+npm run test:mia:analytics:patch-c5:executive-alerts
+npm run test:mia:analytics:patch-c5:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.5 — Alertas Estratégicos Priorizados.*
