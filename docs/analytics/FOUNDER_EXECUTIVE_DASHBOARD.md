@@ -69,7 +69,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Métricas indisponíveis (documentadas na UI):** cliques distintos por recomendação, abandono global único, funil por cohort.
 
-**Reservado:** gráficos (A.8).
+**Reservado:** ~~gráficos (A.8)~~ → implementado no PATCH A.8 (`FounderLineChart`, `FounderBarChart`).
 
 ### Encerramento (PATCH A.6.1)
 
@@ -102,7 +102,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Privacidade:** API usa `product_label` em vez de `product_name` (chave proibida no catálogo público). Cockpit fundador é privado (`noindex`).
 
-**Reservado:** gráficos (A.8).
+**Reservado:** ~~gráficos (A.8)~~ → implementado no PATCH A.8 (`FounderLineChart`, `FounderBarChart`).
 
 ### Encerramento (PATCH A.5.1)
 
@@ -133,7 +133,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 **Resiliência:** falha temporal não quebra snapshot SSR. `partial_errors` exibidos quando um grupo falha.
 
-**Reservado:** gráficos (A.8).
+**Reservado:** ~~gráficos (A.8)~~ → implementado no PATCH A.8 (`FounderLineChart`, `FounderBarChart`).
 
 ### Encerramento (PATCH A.4.1)
 
@@ -171,7 +171,40 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 |-----------|-----------|
 | `PATCH_A_7_ADVANCED_FILTERS_EVIDENCE.json` | Produção + RPC + bundle |
 | `PATCH_A_7_BROWSER_UI_EVIDENCE.json` | Interface + URL |
+| `PATCH_A_7_1_REAL_UI_VALIDATION_EVIDENCE.json` | Validação real A.7.1 |
 | `PATCH_A_7_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
+## Gráficos e Evolução Temporal (PATCH A.8)
+
+**Mapper:** `lib/miaFounderChartsDisplay.js` (A.8.0)  
+**Componentes:** `components/founder-cockpit/charts/*` (SVG nativo — sem biblioteca externa)  
+**Fonte:** mesmas APIs temporais dos PATCHes A.4–A.6 · **sem novas métricas**
+
+| Módulo | Gráfico | Série oficial |
+|--------|---------|---------------|
+| Sessões e Usuários | DAU + novos visitantes | `growth.series` |
+| Sessões e Usuários | Sessões + perguntas | `platform_activity.series` |
+| Produtos e Categorias | Perguntas por categoria | `categories.daily` |
+| Produtos e Categorias | Recomendações por categoria | `categories.daily` |
+| Produtos e Categorias | Participação entre categorias | `categories.ranking` (barras) |
+| Produtos e Categorias | Aparições e recomendações | `products.daily` |
+| Performance e Conversão | CTR diária | `conversion.daily` |
+| Performance e Conversão | Recomendações e cliques | `conversion.daily` |
+| Performance e Conversão | Funil do período | `conversion.funnel_stages` (barras) |
+
+**Filtros:** PATCH A.7 aplicado integralmente (período, categoria, produto).  
+**Timezone:** UTC · **Estados:** loading, vazio, erro, partial — por painel (falha isolada).  
+**Limitação:** funil não possui evolução diária no contrato RPC — exibido como snapshot do período.
+
+### Encerramento (PATCH A.8)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_A_8_CHARTS_EVIDENCE.json` | Produção + bundle |
+| `PATCH_A_8_BROWSER_UI_EVIDENCE.json` | Interface + filtros |
+| `PATCH_A_8_CLOSURE_EVIDENCE.json` | Encerramento oficial |
 
 ---
 

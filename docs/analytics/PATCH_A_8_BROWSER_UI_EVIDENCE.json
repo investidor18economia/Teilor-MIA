@@ -1,0 +1,61 @@
+{
+  "patch": "A.8",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T00:40:18.171Z",
+  "base_url": "http://localhost:3013",
+  "screenshots": [
+    "docs/analytics/evidence/patch-a8-browser/charts-desktop-30d.png",
+    "docs/analytics/evidence/patch-a8-browser/charts-mobile-7d.png"
+  ],
+  "checks": {
+    "total": 9,
+    "passed": 9,
+    "items": [
+      {
+        "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "chart panels visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "sessions line chart",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "products charts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "performance charts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "charts update on 7d filter",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile charts visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.8 console errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "production API parity",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

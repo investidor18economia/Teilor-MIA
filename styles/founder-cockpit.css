@@ -963,6 +963,189 @@
   color: #00c6ff;
 }
 
+/* PATCH A.8 — Executive charts */
+.founder-chart-panel {
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(4, 14, 32, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.founder-chart-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.founder-chart-panel-title {
+  margin: 0;
+  font-size: 1rem;
+  color: #e8f4fc;
+}
+
+.founder-chart-panel-question {
+  margin: 4px 0 0;
+  font-size: 0.8125rem;
+  color: #7a9bb8;
+}
+
+.founder-chart-panel-note,
+.founder-chart-panel-state {
+  margin: 0 0 10px;
+  font-size: 0.8125rem;
+  color: #b8d9ef;
+}
+
+.founder-chart-panel-state--error {
+  color: #ffb4b4;
+}
+
+.founder-chart {
+  position: relative;
+  width: 100%;
+}
+
+.founder-chart-caption {
+  margin: 0 0 8px;
+  font-size: 0.875rem;
+  color: #b8d9ef;
+}
+
+.founder-chart-body {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.founder-chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 180px;
+}
+
+.founder-chart-grid-line {
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1;
+}
+
+.founder-chart-axis-label {
+  fill: #7a9bb8;
+  font-size: 10px;
+}
+
+.founder-chart-point {
+  cursor: pointer;
+}
+
+.founder-chart-point:focus {
+  outline: 2px solid #00c6ff;
+  outline-offset: 2px;
+}
+
+.founder-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.75rem;
+  color: #b8d9ef;
+}
+
+.founder-chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.founder-chart-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.founder-chart-tooltip {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -110%);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(8, 24, 48, 0.95);
+  border: 1px solid rgba(0, 198, 255, 0.35);
+  font-size: 0.75rem;
+  color: #e8f4fc;
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: min(90vw, 280px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.founder-chart-tooltip strong {
+  display: block;
+  color: #00c6ff;
+}
+
+.founder-chart--empty,
+.founder-chart-empty-message {
+  margin: 0;
+  padding: 24px 12px;
+  text-align: center;
+  color: #7a9bb8;
+  font-size: 0.875rem;
+}
+
+.founder-bar-chart-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.founder-bar-chart-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 0.8125rem;
+}
+
+.founder-bar-chart-label {
+  color: #e8f4fc;
+}
+
+.founder-bar-chart-value {
+  color: #00c6ff;
+  font-variant-numeric: tabular-nums;
+}
+
+.founder-bar-chart-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.founder-bar-chart-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00c6ff, #4ade80);
+}
+
+.founder-sessions-charts,
+.founder-products-charts,
+.founder-performance-charts {
+  display: grid;
+  gap: 16px;
+}
+
 @media (max-width: 640px) {
   .founder-recent-table {
     font-size: 0.75rem;

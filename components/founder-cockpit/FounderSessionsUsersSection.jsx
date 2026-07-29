@@ -5,6 +5,9 @@ import { getModuleFilterCompatibility } from "../../lib/miaFounderFiltersDisplay
 import {
   mapTemporalMetricsToFounderSessionsUsers,
 } from "../../lib/miaFounderGrowthDisplay.js";
+import { mapTemporalToSessionsUsersCharts } from "../../lib/miaFounderChartsDisplay.js";
+import FounderChartPanel from "./charts/FounderChartPanel.jsx";
+import FounderLineChart from "./charts/FounderLineChart.jsx";
 
 function TrendCard({ trend }) {
   return (
@@ -38,12 +41,12 @@ export default function FounderSessionsUsersSection({
 }) {
   const { appliedFilters, buildTemporalQueryString } = useFounderCockpitFilters();
   const compatibility = getModuleFilterCompatibility("sessions", appliedFilters);
-  const [state, setState] = useState({ status: "loading", view: null, error: null });
+  const [state, setState] = useState({ status: "loading", view: null, charts: null, error: null });
   const requestSeq = useRef(0);
 
   const load = useCallback(async () => {
     const seq = ++requestSeq.current;
-    setState({ status: "loading", view: null, error: null });
+    setState({ status: "loading", view: null, charts: null, error: null });
     try {
       const res = await fetch(`/api/temporal-metrics?${buildTemporalQueryString("growth,platform_activity")}`, {
         headers: { Accept: "application/json" },
@@ -51,7 +54,7 @@ export default function FounderSessionsUsersSection({
       });
       if (seq !== requestSeq.current) return;
       if (!res.ok) {
-        setState({ status: "error", view: null, error: `http_${res.status}` });
+        setState({ status: "error", view: null, charts: null, error: `http_${res.status}` });
         return;
       }
       const temporal = await res.json();
@@ -59,9 +62,11 @@ export default function FounderSessionsUsersSection({
         snapshotPlatform,
         snapshotConversation,
       });
+      const charts = mapTemporalToSessionsUsersCharts(temporal);
       setState({
         status: view.meta.status === "error" ? "error" : view.meta.status,
         view,
+        charts,
         error: null,
       });
     } catch (err) {
@@ -69,6 +74,7 @@ export default function FounderSessionsUsersSection({
       setState({
         status: "error",
         view: null,
+        charts: null,
         error: String(err?.message || "fetch_failed"),
       });
     }
@@ -169,6 +175,54 @@ export default function FounderSessionsUsersSection({
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div className="founder-sessions-subsection founder-sessions-charts">
+                <FounderChartPanel
+                  title={state.charts?.activeUsers?.title ?? "Usuários ativos (DAU)"}
+                  question={state.charts?.activeUsers?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.activeUsers
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                  partialNote={view.meta.status === "partial" ? "Série parcial — grupos temporais incompletos." : undefined}
+                >
+                  {state.charts?.activeUsers ? (
+                    <FounderLineChart
+                      title={state.charts.activeUsers.title}
+                      xLabels={state.charts.activeUsers.xLabels}
+                      series={state.charts.activeUsers.series}
+                    />
+                  ) : null}
+                </FounderChartPanel>
+                <FounderChartPanel
+                  title={state.charts?.sessionsActivity?.title ?? "Sessões e perguntas"}
+                  question={state.charts?.sessionsActivity?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.sessionsActivity
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                >
+                  {state.charts?.sessionsActivity ? (
+                    <FounderLineChart
+                      title={state.charts.sessionsActivity.title}
+                      xLabels={state.charts.sessionsActivity.xLabels}
+                      series={state.charts.sessionsActivity.series}
+                    />
+                  ) : null}
+                </FounderChartPanel>
               </div>
 
               {view.recentDays?.length ? (

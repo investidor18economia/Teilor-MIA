@@ -3,6 +3,10 @@ import FounderDistributionBar from "./FounderDistributionBar.jsx";
 import FounderMetricCard from "./FounderMetricCard.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapTemporalMetricsToFounderProductsCategories } from "../../lib/miaFounderProductsDisplay.js";
+import { mapTemporalToProductsCategoriesCharts } from "../../lib/miaFounderChartsDisplay.js";
+import FounderChartPanel from "./charts/FounderChartPanel.jsx";
+import FounderLineChart from "./charts/FounderLineChart.jsx";
+import FounderBarChart from "./charts/FounderBarChart.jsx";
 
 function MetricGrid({ metrics, className = "founder-module-grid" }) {
   if (!metrics?.length) return null;
@@ -21,13 +25,13 @@ export default function FounderProductsCategoriesSection({
   snapshotRecommendation = null,
   snapshotCommerce = null,
 }) {
-  const { buildTemporalQueryString } = useFounderCockpitFilters();
-  const [state, setState] = useState({ status: "loading", view: null, error: null });
+  const { buildTemporalQueryString, appliedFilters } = useFounderCockpitFilters();
+  const [state, setState] = useState({ status: "loading", view: null, charts: null, error: null });
   const requestSeq = useRef(0);
 
   const load = useCallback(async () => {
     const seq = ++requestSeq.current;
-    setState({ status: "loading", view: null, error: null });
+    setState({ status: "loading", view: null, charts: null, error: null });
     try {
       const res = await fetch(`/api/temporal-metrics?${buildTemporalQueryString("products,categories")}`, {
         headers: { Accept: "application/json" },
@@ -35,7 +39,7 @@ export default function FounderProductsCategoriesSection({
       });
       if (seq !== requestSeq.current) return;
       if (!res.ok) {
-        setState({ status: "error", view: null, error: `http_${res.status}` });
+        setState({ status: "error", view: null, charts: null, error: `http_${res.status}` });
         return;
       }
       const temporal = await res.json();
@@ -43,9 +47,13 @@ export default function FounderProductsCategoriesSection({
         snapshotRecommendation,
         snapshotCommerce,
       });
+      const charts = mapTemporalToProductsCategoriesCharts(temporal, {
+        category: appliedFilters.category,
+      });
       setState({
         status: view.meta.status === "error" ? "error" : view.meta.status,
         view,
+        charts,
         error: null,
       });
     } catch (err) {
@@ -53,10 +61,11 @@ export default function FounderProductsCategoriesSection({
       setState({
         status: "error",
         view: null,
+        charts: null,
         error: String(err?.message || "fetch_failed"),
       });
     }
-  }, [buildTemporalQueryString, snapshotRecommendation, snapshotCommerce]);
+  }, [buildTemporalQueryString, snapshotRecommendation, snapshotCommerce, appliedFilters.category]);
 
   useEffect(() => {
     load();
@@ -185,6 +194,85 @@ export default function FounderProductsCategoriesSection({
                   />
                 </div>
               ) : null}
+
+              <div className="founder-products-subsection founder-products-charts">
+                <FounderChartPanel
+                  title={state.charts?.categoryQuestions?.title ?? "Perguntas por categoria"}
+                  question={state.charts?.categoryQuestions?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.categoryQuestions
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                >
+                  {state.charts?.categoryQuestions ? (
+                    <FounderLineChart
+                      title={state.charts.categoryQuestions.title}
+                      xLabels={state.charts.categoryQuestions.xLabels}
+                      series={state.charts.categoryQuestions.series}
+                    />
+                  ) : null}
+                </FounderChartPanel>
+                <FounderChartPanel
+                  title={state.charts?.categoryRecommendations?.title ?? "Recomendações por categoria"}
+                  question={state.charts?.categoryRecommendations?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.categoryRecommendations
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                >
+                  {state.charts?.categoryRecommendations ? (
+                    <FounderLineChart
+                      title={state.charts.categoryRecommendations.title}
+                      xLabels={state.charts.categoryRecommendations.xLabels}
+                      series={state.charts.categoryRecommendations.series}
+                    />
+                  ) : null}
+                </FounderChartPanel>
+                <FounderChartPanel
+                  title={state.charts?.categoryShare?.title ?? "Participação entre categorias"}
+                  question={state.charts?.categoryShare?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.categoryShare
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                >
+                  {state.charts?.categoryShare ? (
+                    <FounderBarChart title={state.charts.categoryShare.title} items={state.charts.categoryShare.items} />
+                  ) : null}
+                </FounderChartPanel>
+                {state.charts?.productAppearances ? (
+                  <FounderChartPanel
+                    title={state.charts.productAppearances.title}
+                    question={state.charts.productAppearances.question}
+                    status={state.status === "loading" ? "loading" : "ready"}
+                    onRetry={load}
+                  >
+                    <FounderLineChart
+                      title={state.charts.productAppearances.title}
+                      xLabels={state.charts.productAppearances.xLabels}
+                      series={state.charts.productAppearances.series}
+                    />
+                  </FounderChartPanel>
+                ) : null}
+              </div>
 
               {view.topCategories?.length ? (
                 <div className="founder-products-subsection">

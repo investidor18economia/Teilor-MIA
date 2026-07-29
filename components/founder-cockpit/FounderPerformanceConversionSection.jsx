@@ -2,6 +2,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import FounderMetricCard from "./FounderMetricCard.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapTemporalMetricsToFounderPerformanceConversion } from "../../lib/miaFounderPerformanceDisplay.js";
+import { mapTemporalToPerformanceConversionCharts } from "../../lib/miaFounderChartsDisplay.js";
+import FounderChartPanel from "./charts/FounderChartPanel.jsx";
+import FounderLineChart from "./charts/FounderLineChart.jsx";
+import FounderBarChart from "./charts/FounderBarChart.jsx";
 
 function MetricGrid({ metrics, className = "founder-module-grid" }) {
   if (!metrics?.length) return null;
@@ -23,12 +27,12 @@ export default function FounderPerformanceConversionSection({
   snapshotAlerts = null,
 }) {
   const { buildTemporalQueryString } = useFounderCockpitFilters();
-  const [state, setState] = useState({ status: "loading", view: null, error: null });
+  const [state, setState] = useState({ status: "loading", view: null, charts: null, error: null });
   const requestSeq = useRef(0);
 
   const load = useCallback(async () => {
     const seq = ++requestSeq.current;
-    setState({ status: "loading", view: null, error: null });
+    setState({ status: "loading", view: null, charts: null, error: null });
     try {
       const res = await fetch(`/api/temporal-metrics?${buildTemporalQueryString("conversion")}`, {
         headers: { Accept: "application/json" },
@@ -36,7 +40,7 @@ export default function FounderPerformanceConversionSection({
       });
       if (seq !== requestSeq.current) return;
       if (!res.ok) {
-        setState({ status: "error", view: null, error: `http_${res.status}` });
+        setState({ status: "error", view: null, charts: null, error: `http_${res.status}` });
         return;
       }
       const temporal = await res.json();
@@ -46,9 +50,11 @@ export default function FounderPerformanceConversionSection({
         snapshotConversation,
         snapshotAlerts,
       });
+      const charts = mapTemporalToPerformanceConversionCharts(temporal);
       setState({
         status: view.meta.status === "error" ? "error" : view.meta.status,
         view,
+        charts,
         error: null,
       });
     } catch (err) {
@@ -56,6 +62,7 @@ export default function FounderPerformanceConversionSection({
       setState({
         status: "error",
         view: null,
+        charts: null,
         error: String(err?.message || "fetch_failed"),
       });
     }
@@ -141,6 +148,73 @@ export default function FounderPerformanceConversionSection({
               <div className="founder-performance-subsection">
                 <h3 className="founder-performance-subtitle">Resumo do período</h3>
                 <MetricGrid metrics={view.summaryMetrics} />
+              </div>
+
+              <div className="founder-performance-subsection founder-performance-charts">
+                <FounderChartPanel
+                  title={state.charts?.ctrDaily?.title ?? "CTR diária"}
+                  question={state.charts?.ctrDaily?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.ctrDaily
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                  partialNote={view.meta.status === "partial" ? "Série de conversão parcial." : undefined}
+                >
+                  {state.charts?.ctrDaily ? (
+                    <FounderLineChart
+                      title={state.charts.ctrDaily.title}
+                      xLabels={state.charts.ctrDaily.xLabels}
+                      series={state.charts.ctrDaily.series}
+                    />
+                  ) : null}
+                </FounderChartPanel>
+                <FounderChartPanel
+                  title={state.charts?.engagementDaily?.title ?? "Recomendações e cliques"}
+                  question={state.charts?.engagementDaily?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.engagementDaily
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                >
+                  {state.charts?.engagementDaily ? (
+                    <FounderLineChart
+                      title={state.charts.engagementDaily.title}
+                      xLabels={state.charts.engagementDaily.xLabels}
+                      series={state.charts.engagementDaily.series}
+                    />
+                  ) : null}
+                </FounderChartPanel>
+                <FounderChartPanel
+                  title={state.charts?.funnelStages?.title ?? "Funil de conversão (período)"}
+                  question={state.charts?.funnelStages?.question}
+                  status={
+                    state.status === "loading"
+                      ? "loading"
+                      : state.status === "error"
+                        ? "error"
+                        : state.charts?.funnelStages
+                          ? "ready"
+                          : "empty"
+                  }
+                  onRetry={load}
+                  partialNote={state.charts?.meta?.funnel_note}
+                >
+                  {state.charts?.funnelStages ? (
+                    <FounderBarChart title={state.charts.funnelStages.title} items={state.charts.funnelStages.items} />
+                  ) : null}
+                </FounderChartPanel>
               </div>
 
               {view.funnelTable?.length ? (
