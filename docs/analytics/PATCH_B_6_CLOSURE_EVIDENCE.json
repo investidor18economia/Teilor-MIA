@@ -2,14 +2,14 @@
   "patch": "B.6",
   "title": "PATCH B.6 — Official Closure",
   "phase": "B — Dashboard Executivo",
-  "status": "BLOCKED",
-  "patch_b6_status": "BLOCKED_PENDING_VALIDATION",
-  "closed_at": null,
+  "status": "CLOSED",
+  "patch_b6_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T14:25:32.337Z",
   "git": {
-    "pass": false,
-    "head": "125c0c5021cbd9cc004ad7956a477370c1bd7e97",
-    "origin": "125c0c5021cbd9cc004ad7956a477370c1bd7e97",
-    "working_tree_clean": false
+    "pass": true,
+    "head": "6b0d896a597bfd0f0a2fec5aff788163f16a4cd4",
+    "origin": "6b0d896a597bfd0f0a2fec5aff788163f16a4cd4",
+    "working_tree_clean": true
   },
   "baseline_a_preserved": true,
   "baseline_b2_preserved": true,
