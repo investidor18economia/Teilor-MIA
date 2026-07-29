@@ -2,14 +2,14 @@
   "patch": "C.1",
   "title": "PATCH C.1 — Official Closure",
   "phase": "C — MIA como Analista da Empresa",
-  "status": "BLOCKED",
-  "patch_c1_status": "BLOCKED_PENDING_VALIDATION",
-  "closed_at": null,
+  "status": "CLOSED",
+  "patch_c1_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T18:19:45.573Z",
   "git": {
-    "pass": false,
-    "head": "593f0f17b2adf156892aed689e1493244099d8dc",
-    "origin": "593f0f17b2adf156892aed689e1493244099d8dc",
-    "working_tree_clean": false
+    "pass": true,
+    "head": "65571ef4195946ea3eab30bdccd10f2f602dd461",
+    "origin": "65571ef4195946ea3eab30bdccd10f2f602dd461",
+    "working_tree_clean": true
   },
   "baseline_a_preserved": true,
   "baseline_b_preserved": true,
@@ -73,7 +73,7 @@
     },
     {
       "label": "C.1 browser regression",
-      "pass": false
+      "pass": true
     },
     {
       "label": "Production validation",
@@ -82,7 +82,7 @@
   ],
   "evidence": {
     "architecture": "APPROVED",
-    "browser": "REJECTED",
+    "browser": "APPROVED",
     "documentation": true
   },
   "files_created": [

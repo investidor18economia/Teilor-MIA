@@ -2,7 +2,7 @@
   "patch": "C.1",
   "title": "PATCH C.1 — Browser Regression Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T18:15:17.402Z",
+  "validated_at": "2026-07-29T18:19:23.498Z",
   "base_url": "http://localhost:3024",
   "note": "C.1 does not add UI — validates Baseline B cockpit preserved",
   "checks": {
