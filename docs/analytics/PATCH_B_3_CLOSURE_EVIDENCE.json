@@ -1,0 +1,60 @@
+{
+  "patch": "B.3",
+  "title": "PATCH B.3 — Official Closure",
+  "phase": "B — Dashboard Executivo",
+  "status": "CLOSED",
+  "patch_b3_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T13:06:32.901Z",
+  "git": {
+    "pass": true,
+    "head": "f6f358f038f13223598c60bd7b521972126a95e5",
+    "origin": "f6f358f038f13223598c60bd7b521972126a95e5",
+    "working_tree_clean": true
+  },
+  "baseline_a_preserved": true,
+  "baseline_b2_preserved": true,
+  "steps": [
+    {
+      "label": "B.3 growth audit",
+      "pass": true
+    },
+    {
+      "label": "B.2 regression",
+      "pass": true
+    },
+    {
+      "label": "B.1 architecture regression",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline audit",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "Browser validation",
+      "pass": true
+    },
+    {
+      "label": "Production validation",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "b3_growth": "APPROVED",
+    "browser": "APPROVED",
+    "dashboard_doc": true
+  },
+  "next_patch": "B.4 — (próximo módulo executivo)"
+}

@@ -1,11 +1,11 @@
 {
   "patch": "A.10",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T13:04:22.525Z",
+  "validated_at": "2026-07-29T13:06:32.887Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
     "build": "e39bb7ace25b",
-    "git_head_local": "e39bb7ace25b"
+    "git_head_local": "f6f358f038f1"
   },
   "checks": {
     "total": 13,

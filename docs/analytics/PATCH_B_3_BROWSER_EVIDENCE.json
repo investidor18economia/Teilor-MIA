@@ -2,7 +2,7 @@
   "patch": "B.3",
   "title": "PATCH B.3 — Browser Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T13:03:57.857Z",
+  "validated_at": "2026-07-29T13:06:23.182Z",
   "base_url": "http://localhost:3019",
   "screenshots_dir": "docs/analytics/evidence/patch-b3-browser",
   "diagnostics": [
