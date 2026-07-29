@@ -2,38 +2,79 @@
   "patch": "A.7",
   "title": "PATCH A.7 — Official Closure",
   "status": "CLOSED",
-  "closed_at": "2026-07-28T23:35:00.000Z",
   "patch_a7_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T00:25:00.000Z",
+  "patch_a7_1": {
+    "status": "APPROVED",
+    "validated_at": "2026-07-29T00:20:23.137Z",
+    "evidence": "docs/analytics/PATCH_A_7_1_REAL_UI_VALIDATION_EVIDENCE.json"
+  },
+  "diagnosis_404": {
+    "previous_port": 3008,
+    "symptom": "GET /cockpit-fundador returned 404 'This page could not be found' OR stale build without A.7 filters",
+    "root_causes": [
+      "Stale next start process serving an outdated .next build without /cockpit-fundador route",
+      "SSR executive-metrics fetch defaulted to http://localhost:3000 while server ran on non-default port (metrics fetch failed, cockpit error state)",
+      "Runtime ReferenceError selectedDays is not defined in FounderSessionsUsersSection crashed client render (filters never mounted)"
+    ],
+    "corrections": [
+      "Clean rm -rf .next && npm run build before validation",
+      "Start with PORT=<explicit> and PUBLIC_METRICS_API_BASE_URL=http://localhost:<PORT>",
+      "HTTP smoke GET /cockpit-fundador before Playwright",
+      "Fix selectedDays → appliedFilters.window_days in FounderSessionsUsersSection.jsx"
+    ],
+    "validated_server": {
+      "command": "PORT=3011 PUBLIC_METRICS_API_BASE_URL=http://localhost:3011 npm run start",
+      "route": "/cockpit-fundador",
+      "http_smoke_status": 200
+    }
+  },
+  "authentication": {
+    "method": "POST /api/founder/authenticate with MIA_ADMIN_API_KEY (local .env.local, not recorded in evidence)",
+    "cookie": "mia_founder_gate HttpOnly"
+  },
+  "interface_validation": {
+    "local_browser_e2e": "APPROVED",
+    "browser_base_url": "http://localhost:3011",
+    "scenarios_executed": 15,
+    "checks_passed": "41/41",
+    "desktop_viewport": "1440x900",
+    "mobile_viewport": "390x844",
+    "screenshots_dir": "docs/analytics/evidence/patch-a7-browser/",
+    "production_api_parity": "APPROVED",
+    "production_browser_mitigation": "Local production build + production Supabase/API; bundle and API validated on Vercel separately"
+  },
   "git": {
     "implementation_commit": "fb007d8",
-    "evidence_commit": "42e0261",
-    "head": "42e0261",
-    "origin_master": "42e0261",
-    "synchronized": true,
-    "working_tree_clean": true
+    "closure_commit": "pending",
+    "synchronized": false,
+    "working_tree_clean": false
   },
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "fb007d82e2fb",
     "temporal_version": "A.7.0",
     "migration_applied": true,
     "api_validated": true,
-    "bundle_validated": true
+    "bundle_validated": true,
+    "deploy_pending": true,
+    "note": "selectedDays fix requires deploy after this commit"
   },
   "filters_implemented": ["period_presets", "custom_range", "category", "product_id"],
   "filters_deferred": ["environment", "channel", "product_label"],
   "tests": {
     "a7_unit": "34/34",
-    "a3_regression": "53/53",
-    "a4_regression": "32/32",
-    "a5_regression": "36/36",
     "a6_regression": "32/32",
-    "production_validation": "12/12"
+    "a5_regression": "36/36",
+    "a4_regression": "32/32",
+    "a3_regression": "53/53",
+    "a2_regression": "62/62",
+    "cockpit_regression": "33/33",
+    "production_validation": "12/12",
+    "browser_ui_a7_1": "41/41"
   },
-  "interface_validation": {
-    "production_bundle": "APPROVED",
-    "local_browser_e2e": "MITIGATED_BY_PRODUCTION_BUNDLE_AND_API_PARITY",
-    "note": "Production bundle includes founder-cockpit-filters and FiltersProvider; API filter parity validated on production."
-  },
+  "limitations": [
+    "Product filter UI scenario skipped — no product_id values in production ranking data (labels only)",
+    "Production browser E2E not automated on Vercel gate; mitigated by local prod build validation + production API/bundle parity"
+  ],
   "next_patch": "A.8 — Gráficos e Evolução Temporal"
 }

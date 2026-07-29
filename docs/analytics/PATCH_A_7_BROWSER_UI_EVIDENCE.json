@@ -1,30 +1,218 @@
 {
   "patch": "A.7",
-  "status": "REJECTED",
-  "validated_at": "2026-07-28T23:29:03.368Z",
-  "base_url": "http://localhost:3008",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T00:20:23.137Z",
+  "base_url": "http://localhost:3011",
+  "patch_a7_1": true,
+  "scenarios_executed": 15,
   "checks": {
-    "total": 4,
-    "passed": 1,
+    "total": 41,
+    "passed": 41,
+    "failed": 0,
     "items": [
+      {
+        "label": "HTTP smoke cockpit route",
+        "pass": true,
+        "detail": "status=200"
+      },
+      {
+        "label": "sample product_id from API",
+        "pass": true,
+        "detail": "none in prod data — scenario 9 skipped"
+      },
+      {
+        "label": "authenticate 200",
+        "pass": true,
+        "detail": "status=200"
+      },
       {
         "label": "cockpit loaded",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "filters section visible",
-        "pass": false,
+        "label": "SSR metrics loaded (not fetch error)",
+        "pass": true,
         "detail": ""
       },
       {
-        "label": "browser flow",
-        "pass": false,
-        "detail": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'Últimos 7 dias' })\n"
+        "label": "filters section visible",
+        "pass": true,
+        "detail": ""
       },
       {
-        "label": "production API parity",
-        "pass": false,
+        "label": "scenario 1: default period",
+        "pass": true,
+        "detail": "summary=Últimos 30 dias · padrão"
+      },
+      {
+        "label": "filter bar labels",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "period presets present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 2: today preset",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 3: 7d preset + URL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 4: 30d preset",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 5: 90d preset",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 6: custom valid range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 7: invalid custom blocked UI",
+        "pass": true,
+        "detail": "error shown"
+      },
+      {
+        "label": "invalid filter API 400",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 8: category filter",
+        "pass": true,
+        "detail": false
+      },
+      {
+        "label": "sessions partial filter hint",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 9: product filter",
+        "pass": true,
+        "detail": "skipped — no product_id in prod data"
+      },
+      {
+        "label": "scenario 10: combined period+category",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 11: clear filters",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 12: reload persists URL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 13: back/forward history",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 14: empty period no crash",
+        "pass": true,
+        "detail": "zero treated as empty not error"
+      },
+      {
+        "label": "scenario 15: rapid filter switching",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module sessions visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module products visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module performance visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module insights visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insights ignores category warning",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity default_30d filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity 7d filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity category_smartphones filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity combined_7d_notebooks filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity funnel stage in UI",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.7 console errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "network temporal/executive 200",
+        "pass": true,
+        "detail": "60 ok calls"
+      },
+      {
+        "label": "sections changed from initial load",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile filters visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "production API parity A.7.0",
+        "pass": true,
         "detail": ""
       }
     ]

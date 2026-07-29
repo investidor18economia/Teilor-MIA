@@ -145,6 +145,8 @@
     "test:mia:analytics:patch-a7:founder-advanced-filters": "node scripts/test-mia-analytics-patch-a7-founder-advanced-filters.js",
     "test:mia:analytics:patch-a7:prod-validation": "node scripts/patch-a7-founder-filters-production-validation.mjs",
     "test:mia:analytics:patch-a7:browser-validation": "node --env-file=.env.local scripts/patch-a7-browser-validation.mjs",
+    "test:mia:analytics:patch-a7-1:browser-validation": "node --env-file=.env.local scripts/patch-a7-1-browser-validation.mjs",
+    "test:mia:analytics:patch-a7-1:closure": "node --env-file=.env.local scripts/patch-a7-1-closure.mjs",
     "test:mia:analytics:patch-113:prod-smoke": "node scripts/patch-113-production-smoke.mjs",
     "test:mia:analytics:patch-114:executive-ai-insights": "node scripts/test-mia-analytics-patch-114-executive-ai-insights.js",
     "test:mia:analytics:patch-114:prod-smoke": "node scripts/patch-114-production-smoke.mjs",

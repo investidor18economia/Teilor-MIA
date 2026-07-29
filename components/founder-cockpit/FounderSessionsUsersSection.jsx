@@ -209,7 +209,7 @@ export default function FounderSessionsUsersSection({
                 <div className="founder-sessions-subsection founder-sessions-snapshot-ref">
                   <h3 className="founder-sessions-subtitle">Referência snapshot (período completo)</h3>
                   <p className="founder-module-disclaimer" role="note">
-                    Totais acumulados na janela de {selectedDays} dias via API Executiva — complementar à visão
+                    Totais acumulados na janela de {appliedFilters.window_days} dias via API Executiva — complementar à visão
                     diária temporal.
                   </p>
                   <MetricGrid metrics={view.snapshotReference} className="founder-module-grid founder-module-grid--compact" />

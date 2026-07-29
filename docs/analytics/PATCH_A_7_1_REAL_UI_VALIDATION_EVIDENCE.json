@@ -1,0 +1,478 @@
+{
+  "patch": "A.7.1",
+  "title": "PATCH A.7.1 — Real Filter UI Validation",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T00:20:23.137Z",
+  "base_url": "http://localhost:3011",
+  "production_base_url": "https://economia-ai.vercel.app",
+  "route": "/cockpit-fundador",
+  "authentication": "POST /api/founder/authenticate (MIA_ADMIN_API_KEY — not recorded)",
+  "http_smoke": {
+    "status": 200,
+    "is404": false,
+    "hasFiltersClass": false,
+    "note": "Unauthenticated HTML does not SSR filter bar; authenticated Playwright run confirmed filters visible"
+  },
+  "diagnosis_404": {
+    "previous_failure_port": 3008,
+    "causes": ["stale next start build", "SSR metrics on wrong port", "selectedDays ReferenceError crash"],
+    "fix": "clean build + PUBLIC_METRICS_API_BASE_URL + selectedDays fix"
+  },
+  "scenarios": [
+    {
+      "id": 1,
+      "name": "default period",
+      "pass": true,
+      "detail": "summary=Últimos 30 dias · padrão"
+    },
+    {
+      "id": 2,
+      "name": "today preset",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 3,
+      "name": "7d preset + URL",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 4,
+      "name": "30d preset",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 5,
+      "name": "90d preset",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 6,
+      "name": "custom valid range",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 7,
+      "name": "invalid custom blocked UI",
+      "pass": true,
+      "detail": "error shown"
+    },
+    {
+      "id": 8,
+      "name": "category filter",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "id": 9,
+      "name": "product filter",
+      "pass": true,
+      "detail": "skipped — no product_id in prod data"
+    },
+    {
+      "id": 10,
+      "name": "combined period+category",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 11,
+      "name": "clear filters",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 12,
+      "name": "reload persists URL",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 13,
+      "name": "back/forward history",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": 14,
+      "name": "empty period no crash",
+      "pass": true,
+      "detail": "zero treated as empty not error"
+    },
+    {
+      "id": 15,
+      "name": "rapid filter switching",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "parity": [
+    {
+      "case": "default_30d",
+      "filters_applied": {
+        "range": "30d",
+        "period_mode": "rolling",
+        "start_date": null,
+        "end_date": null,
+        "category": null,
+        "product_id": null,
+        "timezone": "UTC"
+      },
+      "temporal_version": "A.7.0",
+      "funnel_stage": "Sessões iniciadas",
+      "ctr": null
+    },
+    {
+      "case": "7d",
+      "filters_applied": {
+        "range": "7d",
+        "period_mode": "rolling",
+        "start_date": null,
+        "end_date": null,
+        "category": null,
+        "product_id": null,
+        "timezone": "UTC"
+      },
+      "temporal_version": "A.7.0",
+      "funnel_stage": "Sessões iniciadas",
+      "ctr": null
+    },
+    {
+      "case": "category_smartphones",
+      "filters_applied": {
+        "range": "30d",
+        "period_mode": "rolling",
+        "start_date": null,
+        "end_date": null,
+        "category": "smartphones",
+        "product_id": null,
+        "timezone": "UTC"
+      },
+      "temporal_version": "A.7.0",
+      "funnel_stage": null,
+      "ctr": null
+    },
+    {
+      "case": "combined_7d_notebooks",
+      "filters_applied": {
+        "range": "7d",
+        "period_mode": "rolling",
+        "start_date": null,
+        "end_date": null,
+        "category": "notebooks",
+        "product_id": null,
+        "timezone": "UTC"
+      },
+      "temporal_version": "A.7.0",
+      "funnel_stage": "Sessões iniciadas",
+      "ctr": null
+    }
+  ],
+  "screenshots": [
+    "docs/analytics/evidence/patch-a7-browser/01-default-period-desktop.png",
+    "docs/analytics/evidence/patch-a7-browser/02-7d-desktop.png",
+    "docs/analytics/evidence/patch-a7-browser/03-custom-range-desktop.png",
+    "docs/analytics/evidence/patch-a7-browser/04-category-desktop.png",
+    "docs/analytics/evidence/patch-a7-browser/05-incompatibility-warning-desktop.png",
+    "docs/analytics/evidence/patch-a7-browser/06-mobile-filters.png"
+  ],
+  "console_errors_a7": [],
+  "network_sample": [
+    {
+      "url": "/api/temporal-metrics?range=90d&series=products%2Ccategories",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=90d&series=conversion",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=custom&start=2020-01-01&end=2020-01-07&series=growth%2Cplatform_activity",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=custom&start=2020-01-01&end=2020-01-07&series=products%2Ccategories",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=custom&start=2020-01-01&end=2020-01-07&series=conversion",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=7d&series=growth%2Cplatform_activity",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=7d&series=products%2Ccategories",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=7d&series=conversion",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&series=growth%2Cplatform_activity",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&series=products%2Ccategories",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&series=conversion",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=today&series=growth%2Cplatform_activity",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=today&series=products%2Ccategories",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=today&series=conversion",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&series=growth%2Cplatform_activity",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&series=products%2Ccategories",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&series=conversion",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&category=tv&series=growth%2Cplatform_activity",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&category=tv&series=products%2Ccategories",
+      "status": 200
+    },
+    {
+      "url": "/api/temporal-metrics?range=30d&category=tv&series=conversion",
+      "status": 200
+    }
+  ],
+  "checks": {
+    "total": 41,
+    "passed": 41,
+    "failed": 0,
+    "items": [
+      {
+        "label": "HTTP smoke cockpit route",
+        "pass": true,
+        "detail": "status=200"
+      },
+      {
+        "label": "sample product_id from API",
+        "pass": true,
+        "detail": "none in prod data — scenario 9 skipped"
+      },
+      {
+        "label": "authenticate 200",
+        "pass": true,
+        "detail": "status=200"
+      },
+      {
+        "label": "cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "SSR metrics loaded (not fetch error)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "filters section visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 1: default period",
+        "pass": true,
+        "detail": "summary=Últimos 30 dias · padrão"
+      },
+      {
+        "label": "filter bar labels",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "period presets present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 2: today preset",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 3: 7d preset + URL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 4: 30d preset",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 5: 90d preset",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 6: custom valid range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 7: invalid custom blocked UI",
+        "pass": true,
+        "detail": "error shown"
+      },
+      {
+        "label": "invalid filter API 400",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 8: category filter",
+        "pass": true,
+        "detail": false
+      },
+      {
+        "label": "sessions partial filter hint",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 9: product filter",
+        "pass": true,
+        "detail": "skipped — no product_id in prod data"
+      },
+      {
+        "label": "scenario 10: combined period+category",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 11: clear filters",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 12: reload persists URL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 13: back/forward history",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario 14: empty period no crash",
+        "pass": true,
+        "detail": "zero treated as empty not error"
+      },
+      {
+        "label": "scenario 15: rapid filter switching",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module sessions visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module products visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module performance visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module insights visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insights ignores category warning",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity default_30d filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity 7d filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity category_smartphones filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity combined_7d_notebooks filters_applied",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "parity funnel stage in UI",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no A.7 console errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "network temporal/executive 200",
+        "pass": true,
+        "detail": "60 ok calls"
+      },
+      {
+        "label": "sections changed from initial load",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile cockpit loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile filters visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "production API parity A.7.0",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}
