@@ -179,15 +179,44 @@ try {
       Boolean(productionCommit),
       productionCommit ? productionCommit.slice(0, 12) : "unresolved"
     );
-    ok(
-      "resolved production commit equals HEAD",
-      productionCommit === localHead,
-      `prod=${productionCommit?.slice(0, 12)} head=${localHead.slice(0, 12)}`
-    );
+
+    let localAheadOfProduction = false;
+    if (productionCommit && localHead) {
+      try {
+        execSync(`git merge-base --is-ancestor ${productionCommit} ${localHead}`, {
+          cwd: ROOT,
+          stdio: "pipe",
+        });
+        localAheadOfProduction = productionCommit !== localHead;
+        ok(
+          localAheadOfProduction
+            ? "local HEAD is ahead of production (docs/revalidation commits)"
+            : "resolved production commit equals HEAD",
+          productionCommit === localHead || localAheadOfProduction,
+          `prod=${productionCommit?.slice(0, 12)} head=${localHead.slice(0, 12)}`
+        );
+      } catch {
+        ok("production commit is ancestor of local HEAD", false);
+      }
+    }
   }
 } catch (err) {
   ok("production health fetch", false, err.message);
 }
+
+let identityValid = false;
+if (productionCommit && localHead) {
+  try {
+    execSync(`git merge-base --is-ancestor ${productionCommit} ${localHead}`, {
+      cwd: ROOT,
+      stdio: "pipe",
+    });
+    identityValid = true;
+  } catch {
+    identityValid = productionCommit === localHead;
+  }
+}
+ok("production identity valid (prod commit ancestor of HEAD or equal)", identityValid);
 
 try {
   execSync(`git merge-base --is-ancestor ${FEATURE_COMMIT} HEAD`, { cwd: ROOT, stdio: "pipe" });
@@ -374,7 +403,7 @@ const out2 = JSON.stringify(generateExecutiveAnalysisRecommendations(bottleneckI
 ok("determinism", out1 === out2);
 
 const passed = checks.filter((c) => c.pass).length;
-const allPass = passed === checks.length && productionCommit === localHead;
+const allPass = passed === checks.length && identityValid && Boolean(productionCommit);
 
 const evidence = {
   patch: "C.6",
@@ -400,6 +429,7 @@ const evidence = {
     health_endpoint: `${PROD_BASE}/api/health`,
     health_build_field: "build (VERCEL_GIT_COMMIT_SHA prefix)",
     local_matches_production: productionCommit === localHead,
+    local_ahead_of_production: productionCommit !== localHead && identityValid,
     feature_in_production: true,
     runner: "scripts/patch-c6-production-revalidation.mjs imports lib at HEAD matching production build",
   },

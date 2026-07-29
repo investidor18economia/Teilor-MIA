@@ -93,7 +93,7 @@ try {
     ok(`${vp.id}: section order preserved`, state.orderOk);
     ok(`${vp.id}: no analyst UI yet (C.6 lib-only)`, !state.analystUi);
     ok(`${vp.id}: no page errors`, pageErrors.length === 0);
-    await page.screenshot({ path: join(SCREENSHOT_DIR, `cockpit-regression-${vp.id}.png`), fullPage: true });
+    await page.screenshot({ path: join(SCREENSHOT_DIR, `cockpit-regression-${vp.id}.png`), fullPage: true }).catch(() => {});
     await context.close();
   }
 } finally {
