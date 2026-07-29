@@ -38,6 +38,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 0. **KPIs Estratégicos** (PATCH B.2) — visão executiva superior para decisão rápida  
 0.1 **Crescimento da Plataforma** (PATCH B.3) — evolução, velocidade, aceleração e comparativo de período  
 0.2 **Saúde do Produto** (PATCH B.4) — qualidade, aceitação, confiança e índice executivo de saúde  
+0.3 **Performance Comercial** (PATCH B.5) — funil comercial, CTR, intenção e índice executivo comercial  
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
@@ -198,6 +199,62 @@ Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
 | `PATCH_B_4_EXECUTIVE_PRODUCT_HEALTH_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
 | `PATCH_B_4_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
 | `PATCH_B_4_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
+## Performance Comercial (PATCH B.5)
+
+**Mapper:** `lib/miaFounderExecutiveCommercialPerformanceDisplay.js` (B.5.0)  
+**Catálogo:** `lib/miaFounderExecutiveCommercialPerformanceCatalog.js` (B.5.0)  
+**Componente:** `FounderExecutiveCommercialPerformanceSection.jsx` (client fetch)  
+**Posição:** abaixo de Saúde do Produto (B.4) e acima de Executive Insights
+
+**Fontes (contratos existentes — sem alteração de API/RPC):**
+
+| Indicador | Fonte | Campo oficial |
+|-----------|-------|---------------|
+| Índice executivo comercial | derivado (mapper) | síntese CTR + avanço + aceitação + intenção |
+| Taxa de avanço para ofertas | executive snapshot | `commerce.offers_returned / recommendation.recommendations_generated` |
+| CTR de ofertas | temporal conversion | `conversion.summary.taxa_clique_recomendacao` |
+| Intenção comercial | executive snapshot | `(favorite_count + alerts_created) / recommendations_generated` |
+| Favoritos gerados | executive snapshot | `commerce.favorite_count` |
+| Alertas criados | executive snapshot | `alerts.alerts_created` |
+| Aceitação de recomendações | executive snapshot | `recommendation.recommendation_acceptance_rate` |
+| Aproveitamento das recomendações | executive snapshot | `conversation.recommendations_shown / recommendation.recommendations_generated` |
+| Profundidade do funil | snapshot + funnel | etapas com eventos comprovados |
+| Tendência comercial | executive offset | `commerce.offer_clicks` vs período anterior |
+
+**Funil comercial (snapshot):** Sessões → Conversas → Perguntas → Recomendações → Ofertas → Cliques → Favoritos → Alertas
+
+**Gargalo principal:** `conversion.bottlenecks[]` (temporal — PATCH 5.3)
+
+**Limitações documentadas:**
+
+- Clique, favorito e alerta **não** representam compra concluída
+- Taxas só calculadas com denominador válido (> 0)
+- Volume insuficiente → status partial, sem percentuais enganosos
+- Período anterior vazio → comparativo indisponível (não classificado como queda)
+
+**Narrativa executiva (determinística — sem IA):**
+
+| Regra | Mensagem |
+|-------|----------|
+| Tendência comercial ↑ | A atividade comercial cresceu neste período. |
+| CTR ok + avanço baixo | As recomendações estão gerando interesse, mas poucos usuários avançam para as ofertas. |
+| CTR saudável | O CTR está saudável e indica intenção comercial consistente. |
+| Favoritos/alertas ↑ | Há crescimento em favoritos e alertas, sinalizando interesse futuro. |
+| Volume insuficiente | Ainda não há volume suficiente para uma conclusão confiável. |
+| Gargalo ofertas→cliques | O principal gargalo está entre ofertas exibidas e cliques. |
+
+**Badges:** Excelente · Saudável · Estável · Atenção · Crescendo · Volume insuficiente
+
+### Encerramento (PATCH B.5)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_B_5_EXECUTIVE_COMMERCIAL_PERFORMANCE_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
+| `PATCH_B_5_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
+| `PATCH_B_5_CLOSURE_EVIDENCE.json` | Encerramento oficial |
 
 ---
 

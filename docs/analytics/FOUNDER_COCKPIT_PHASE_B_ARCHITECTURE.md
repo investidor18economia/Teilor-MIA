@@ -251,16 +251,16 @@ styles/founder-cockpit.css  → tokens --fc-*
 | **Objetivo** | Visão executiva de qualidade, aceitação, confiança e degradação |
 | **Escopo** | `FounderExecutiveProductHealthSection`, `miaFounderExecutiveProductHealthCatalog.js`, `miaFounderExecutiveProductHealthDisplay.js` (B.4.0) |
 | **Dependências** | B.2, B.3, executive-metrics groups (recommendation, conversation, user_value, anti_regret, price_intelligence) |
-| **Conclusão** | 8 indicadores + índice de saúde + narrativa determinística, comparativo offset, zero alteração de API |
+| **Conclusão** | 8 indicadores + índice de saúde + narrativa determinística, comparativo offset, zero alteração de API · **OFFICIALLY_CLOSED** |
 
 ### PATCH B.5 — Performance Comercial
 
 | Campo | Valor |
 |-------|-------|
-| **Objetivo** | Funil comercial executivo e inteligência de produtos |
-| **Escopo** | Seção comercial, reutiliza A.5/A.6 + gráficos A.8 |
-| **Dependências** | B.2, temporal conversion/products/categories |
-| **Conclusão** | Funil, CTR, ranking — paridade com APIs |
+| **Objetivo** | Eficiência comercial executiva — funil, CTR, intenção, gargalos e tendência |
+| **Escopo** | `FounderExecutiveCommercialPerformanceSection`, `miaFounderExecutiveCommercialPerformanceCatalog.js`, `miaFounderExecutiveCommercialPerformanceDisplay.js` (B.5.0) |
+| **Dependências** | B.2–B.4, executive-metrics (recommendation, commerce, alerts, platform, conversation), temporal conversion |
+| **Conclusão** | 10 indicadores + funil snapshot + gargalo temporal + narrativa determinística, offset oficial, zero alteração de API |
 
 ### PATCH B.6 — Indicadores Operacionais
 

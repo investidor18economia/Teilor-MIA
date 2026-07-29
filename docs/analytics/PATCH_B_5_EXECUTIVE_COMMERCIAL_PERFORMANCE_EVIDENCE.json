@@ -1,0 +1,327 @@
+{
+  "patch": "B.5",
+  "title": "PATCH B.5 — Executive Commercial Performance Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T13:58:25.287Z",
+  "display_version": "B.5.0",
+  "catalog_version": "B.5.0",
+  "indicators_implemented": [
+    "executive_commercial_index",
+    "offer_advance_rate",
+    "offer_ctr",
+    "commercial_intent",
+    "favorites_generated",
+    "alerts_created",
+    "recommendation_acceptance",
+    "recommendation_utilization",
+    "funnel_depth",
+    "commercial_trend"
+  ],
+  "components": [
+    "FounderExecutiveCommercialPerformanceSection.jsx"
+  ],
+  "mapper": "lib/miaFounderExecutiveCommercialPerformanceDisplay.js",
+  "catalog": "lib/miaFounderExecutiveCommercialPerformanceCatalog.js",
+  "baseline_a_preserved": true,
+  "baseline_b2_preserved": true,
+  "baseline_b3_preserved": true,
+  "baseline_b4_preserved": true,
+  "empty_states": {
+    "no_data": "Nenhum dado comercial disponível neste período.",
+    "insufficient_volume": "Ainda não há volume comercial suficiente para avaliar esta etapa.",
+    "zero_denominator": "Denominador indisponível — taxa não calculada.",
+    "previous_empty": "Período anterior sem eventos comparáveis.",
+    "metric_unavailable": "Métrica indisponível no contrato atual."
+  },
+  "checks": {
+    "total": 57,
+    "passed": 57,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version B.5.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper version B.5.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog defines 10 indicators",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit mounts FounderExecutiveCommercialPerformanceSection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "commercial below product health",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "commercial above insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component uses mapper only",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no computeCommercialRatio",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no classifyCommercialLevel",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no resolveExecutiveCommercialNarrative",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "display no supabase import",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "display no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "commercial CSS",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit display still A.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.2 catalog still B.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.3 catalog still B.3.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.4 catalog still B.4.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal catalog still A.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive API still 11.1.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/executive-metrics.js unchanged by B.5",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/temporal-metrics.js unchanged by B.5",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dashboard doc mentions B.5",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "indicators sorted by priority",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "ratio valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "ratio zero denominator",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "commercial index",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "volume insufficient",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "volume high",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "CTR level excellent",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend positive",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend negative",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "trend stable",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "headline commercial growth",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "headline attention low advance",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "headline neutral default",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "headline insufficient volume",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge excellent index",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge insufficient volume",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "funnel stages built",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper returns 10 indicators",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper narrative headline",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper commercial index",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper CTR indicator",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper advance rate",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper favorites count",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper alerts count",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper acceptance",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper trend up on clicks",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper main bottleneck",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper disclaimer present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty executive error status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no previous partial",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "low volume partial status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "click not purchase in docs",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

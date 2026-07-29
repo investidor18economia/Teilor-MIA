@@ -1679,6 +1679,122 @@
   font-weight: 500;
 }
 
+/* PATCH B.5 — Executive Commercial Performance */
+.founder-executive-commercial {
+  margin-bottom: var(--fc-space-xl);
+  padding: var(--fc-space-lg) var(--fc-space-md);
+  border-radius: var(--fc-radius-lg);
+  background: var(--fc-bg-panel);
+  border: 1px solid var(--fc-border);
+  box-shadow: var(--fc-shadow-card);
+}
+
+.founder-executive-commercial-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.founder-executive-commercial-title {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--fc-text-primary);
+  letter-spacing: 0.03em;
+}
+
+.founder-executive-commercial-narrative {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: var(--fc-radius-md);
+  background: rgba(255, 180, 0, 0.05);
+  border: 1px solid rgba(255, 180, 0, 0.15);
+}
+
+.founder-executive-commercial-headline {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fc-text-primary);
+  line-height: 1.5;
+}
+
+.founder-executive-commercial-meta {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  color: var(--fc-text-muted);
+}
+
+.founder-executive-commercial-funnel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.founder-executive-commercial-funnel-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--fc-radius-md);
+  background: var(--fc-bg-elevated);
+  border: 1px solid var(--fc-border);
+  font-size: 0.75rem;
+}
+
+.founder-executive-commercial-funnel-stage--empty {
+  opacity: 0.55;
+}
+
+.founder-executive-commercial-funnel-label {
+  font-weight: 600;
+  color: var(--fc-text-muted);
+}
+
+.founder-executive-commercial-funnel-value {
+  font-weight: 700;
+  color: var(--fc-text-primary);
+}
+
+.founder-executive-commercial-funnel-arrow {
+  margin-left: 4px;
+  color: var(--fc-text-muted);
+  font-size: 0.875rem;
+}
+
+.founder-executive-commercial-bottleneck {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: var(--fc-radius-md);
+  background: rgba(255, 140, 0, 0.08);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  font-size: 0.8125rem;
+  color: var(--fc-text-primary);
+}
+
+.founder-executive-commercial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.founder-executive-commercial-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.founder-executive-commercial-detail {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--fc-text-muted);
+  line-height: 1.4;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .founder-skeleton-line,
   .founder-skeleton-chart-area,
@@ -1736,6 +1852,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .founder-executive-commercial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .founder-executive-kpis-header {
     flex-direction: column;
   }
@@ -1745,6 +1865,10 @@
   }
 
   .founder-executive-product-health-header {
+    flex-direction: column;
+  }
+
+  .founder-executive-commercial-header {
     flex-direction: column;
   }
 }

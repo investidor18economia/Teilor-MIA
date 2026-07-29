@@ -38,9 +38,11 @@ ok("Phase A final report exists", existsSync(join(ROOT, "docs/analytics/FOUNDER_
 const b2Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveDisplay.js"));
 const b3Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveGrowthDisplay.js"));
 const b4Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveProductHealthDisplay.js"));
+const b5Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveCommercialPerformanceDisplay.js"));
 const forbiddenImplB1 = [
   ...(b3Implemented ? [] : ["components/founder-cockpit/FounderExecutiveGrowthSection.jsx"]),
   ...(b4Implemented ? [] : ["components/founder-cockpit/FounderExecutiveProductHealthSection.jsx"]),
+  ...(b5Implemented ? [] : ["components/founder-cockpit/FounderExecutiveCommercialPerformanceSection.jsx"]),
   "components/founder-cockpit/FounderExecutiveSummarySection.jsx",
   "pages/api/founder-executive-metrics.js",
 ];
@@ -70,6 +72,11 @@ if (b4Implemented) {
   ok("B.4 health file miaFounderExecutiveProductHealthDisplay.js", existsSync(join(ROOT, "lib/miaFounderExecutiveProductHealthDisplay.js")));
   ok("B.4 health file miaFounderExecutiveProductHealthCatalog.js", existsSync(join(ROOT, "lib/miaFounderExecutiveProductHealthCatalog.js")));
   ok("B.4 health file FounderExecutiveProductHealthSection.jsx", existsSync(join(ROOT, "components/founder-cockpit/FounderExecutiveProductHealthSection.jsx")));
+}
+if (b5Implemented) {
+  ok("B.5 commercial file miaFounderExecutiveCommercialPerformanceDisplay.js", existsSync(join(ROOT, "lib/miaFounderExecutiveCommercialPerformanceDisplay.js")));
+  ok("B.5 commercial file miaFounderExecutiveCommercialPerformanceCatalog.js", existsSync(join(ROOT, "lib/miaFounderExecutiveCommercialPerformanceCatalog.js")));
+  ok("B.5 commercial file FounderExecutiveCommercialPerformanceSection.jsx", existsSync(join(ROOT, "components/founder-cockpit/FounderExecutiveCommercialPerformanceSection.jsx")));
 }
 
 // Baseline contracts unchanged — version strings

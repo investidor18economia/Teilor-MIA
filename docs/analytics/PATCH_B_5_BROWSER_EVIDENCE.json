@@ -1,0 +1,285 @@
+{
+  "patch": "B.5",
+  "title": "PATCH B.5 — Browser Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T13:59:58.170Z",
+  "base_url": "http://localhost:3021",
+  "screenshots_dir": "docs/analytics/evidence/patch-b5-browser",
+  "diagnostics": [
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "commercialHeadline": "Performance comercial dentro do padrão observado no período.",
+      "commercialItems": 10,
+      "commercialBadges": 8,
+      "funnelStages": 1,
+      "insights": true,
+      "kpiStrip": true,
+      "pageErrors": []
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "commercialHeadline": "Performance comercial dentro do padrão observado no período.",
+      "commercialItems": 10,
+      "commercialBadges": 8,
+      "funnelStages": 1,
+      "insights": true,
+      "kpiStrip": true,
+      "pageErrors": []
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "commercialHeadline": "Performance comercial dentro do padrão observado no período.",
+      "commercialItems": 10,
+      "commercialBadges": 8,
+      "funnelStages": 1,
+      "insights": true,
+      "kpiStrip": true,
+      "pageErrors": []
+    }
+  ],
+  "checks": {
+    "total": 43,
+    "passed": 43,
+    "items": [
+      {
+        "label": "auth endpoint",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "desktop: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.5 commercial visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: commercial headline rendered",
+        "pass": true,
+        "detail": "Performance comercial dentro do padrão observado no período."
+      },
+      {
+        "label": "desktop: commercial indicator items",
+        "pass": true,
+        "detail": "items=10"
+      },
+      {
+        "label": "desktop: commercial badges rendered",
+        "pass": true,
+        "detail": "badges=8"
+      },
+      {
+        "label": "desktop: funnel stages rendered",
+        "pass": true,
+        "detail": "stages=1"
+      },
+      {
+        "label": "desktop: insights below commercial",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b5-browser\\executive-commercial-desktop.png"
+      },
+      {
+        "label": "tablet: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "tablet: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.5 commercial visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: commercial headline rendered",
+        "pass": true,
+        "detail": "Performance comercial dentro do padrão observado no período."
+      },
+      {
+        "label": "tablet: commercial indicator items",
+        "pass": true,
+        "detail": "items=10"
+      },
+      {
+        "label": "tablet: commercial badges rendered",
+        "pass": true,
+        "detail": "badges=8"
+      },
+      {
+        "label": "tablet: funnel stages rendered",
+        "pass": true,
+        "detail": "stages=1"
+      },
+      {
+        "label": "tablet: insights below commercial",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b5-browser\\executive-commercial-tablet.png"
+      },
+      {
+        "label": "mobile: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "mobile: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.5 commercial visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: commercial headline rendered",
+        "pass": true,
+        "detail": "Performance comercial dentro do padrão observado no período."
+      },
+      {
+        "label": "mobile: commercial indicator items",
+        "pass": true,
+        "detail": "items=10"
+      },
+      {
+        "label": "mobile: commercial badges rendered",
+        "pass": true,
+        "detail": "badges=8"
+      },
+      {
+        "label": "mobile: funnel stages rendered",
+        "pass": true,
+        "detail": "stages=1"
+      },
+      {
+        "label": "mobile: insights below commercial",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b5-browser\\executive-commercial-mobile.png"
+      }
+    ]
+  }
+}
