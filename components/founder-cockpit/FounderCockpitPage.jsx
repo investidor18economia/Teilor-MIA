@@ -4,6 +4,8 @@ import FounderExecutiveGrowthSection from "./FounderExecutiveGrowthSection.jsx";
 import FounderExecutiveProductHealthSection from "./FounderExecutiveProductHealthSection.jsx";
 import FounderExecutiveCommercialPerformanceSection from "./FounderExecutiveCommercialPerformanceSection.jsx";
 import FounderExecutiveOperationalSection from "./FounderExecutiveOperationalSection.jsx";
+import FounderExecutiveSummarySection from "./FounderExecutiveSummarySection.jsx";
+import { FounderExecutiveModuleViewsProvider } from "./FounderExecutiveModuleViewsContext.jsx";
 import FounderKpiStrip from "./FounderKpiStrip.jsx";
 import FounderModuleSection from "./FounderModuleSection.jsx";
 import FounderCockpitFilters from "./FounderCockpitFilters.jsx";
@@ -75,11 +77,14 @@ function FounderCockpitPageInner({ cockpit, subject, executiveMetrics = null }) 
 
       <main className="founder-cockpit-main">
         <FounderCockpitFilters />
-        <FounderExecutiveKpisSection executiveMetrics={executiveMetrics} />
-        <FounderExecutiveGrowthSection executiveMetrics={executiveMetrics} />
-        <FounderExecutiveProductHealthSection executiveMetrics={executiveMetrics} />
-        <FounderExecutiveCommercialPerformanceSection executiveMetrics={executiveMetrics} />
-        <FounderExecutiveOperationalSection executiveMetrics={executiveMetrics} />
+        <FounderExecutiveModuleViewsProvider>
+          <FounderExecutiveKpisSection executiveMetrics={executiveMetrics} />
+          <FounderExecutiveGrowthSection executiveMetrics={executiveMetrics} />
+          <FounderExecutiveProductHealthSection executiveMetrics={executiveMetrics} />
+          <FounderExecutiveCommercialPerformanceSection executiveMetrics={executiveMetrics} />
+          <FounderExecutiveOperationalSection executiveMetrics={executiveMetrics} />
+          <FounderExecutiveSummarySection />
+        </FounderExecutiveModuleViewsProvider>
         <FounderExecutiveInsights />
         <FounderKpiStrip overview={overview} />
         <FounderSessionsUsersSection

@@ -3,6 +3,7 @@ import FounderMetricCard from "./FounderMetricCard.jsx";
 import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveCommercialPerformanceToFounderDisplay } from "../../lib/miaFounderExecutiveCommercialPerformanceDisplay.js";
+import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
 
 function CommercialIndicatorCard({ indicator }) {
   const displayValue = indicator.valueFormatted ?? "—";
@@ -110,6 +111,7 @@ export default function FounderExecutiveCommercialPerformanceSection({
   }, [executiveMetrics, load]);
 
   const view = state.view ?? (state.status === "loading" ? initialView : null);
+  useRegisterExecutiveModuleView("commercial", view);
 
   return (
     <section

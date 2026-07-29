@@ -3,6 +3,7 @@ import FounderMetricCard from "./FounderMetricCard.jsx";
 import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveProductHealthToFounderDisplay } from "../../lib/miaFounderExecutiveProductHealthDisplay.js";
+import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
 
 function HealthIndicatorCard({ indicator }) {
   const displayValue = indicator.valueFormatted ?? "—";
@@ -86,6 +87,7 @@ export default function FounderExecutiveProductHealthSection({ executiveMetrics 
   }, [executiveMetrics, load]);
 
   const view = state.view ?? (state.status === "loading" ? initialView : null);
+  useRegisterExecutiveModuleView("health", view);
 
   return (
     <section

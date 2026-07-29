@@ -275,10 +275,10 @@ styles/founder-cockpit.css  → tokens --fc-*
 
 | Campo | Valor |
 |-------|-------|
-| **Objetivo** | Síntese executiva consolidada para decisão rápida |
-| **Escopo** | `FounderExecutiveSummarySection`, integração executive-insights |
-| **Dependências** | B.2–B.6, `/api/founder/executive-insights` |
-| **Conclusão** | Resumo determinístico, insights linkados a evidências |
+| **Objetivo** | Síntese executiva consolidada — situação geral, prioridades, oportunidades e riscos |
+| **Escopo** | `FounderExecutiveSummarySection`, `FounderExecutiveModuleViewsContext`, `miaFounderExecutiveSummaryCatalog.js`, `miaFounderExecutiveSummaryDisplay.js` (B.7.0) |
+| **Dependências** | B.2–B.6 (views via context bridge — sem fetch/SQL) |
+| **Conclusão** | Headline + resumo + prioridades + classificação + confiança · zero novas métricas · **OFFICIALLY_CLOSED** |
 
 ### PATCH B.8 — Polimento Executivo
 

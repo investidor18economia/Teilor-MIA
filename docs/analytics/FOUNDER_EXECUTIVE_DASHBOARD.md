@@ -39,7 +39,8 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 0.1 **Crescimento da Plataforma** (PATCH B.3) — evolução, velocidade, aceleração e comparativo de período  
 0.2 **Saúde do Produto** (PATCH B.4) — qualidade, aceitação, confiança e índice executivo de saúde  
 0.3 **Performance Comercial** (PATCH B.5) — funil comercial, CTR, intenção e índice executivo comercial
-0.4 **Indicadores Operacionais** (PATCH B.6) — estabilidade, integridade, latência e índice operacional executivo  
+0.4 **Indicadores Operacionais** (PATCH B.6) — estabilidade, integridade, latência e índice operacional executivo
+0.5 **Resumo Executivo** (PATCH B.7) — síntese determinística dos módulos B.2–B.6 para decisão rápida  
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
@@ -315,6 +316,55 @@ Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
 | `PATCH_B_6_EXECUTIVE_OPERATIONAL_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
 | `PATCH_B_6_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
 | `PATCH_B_6_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
+## Resumo Executivo (PATCH B.7)
+
+**Mapper:** `lib/miaFounderExecutiveSummaryDisplay.js` (B.7.0)  
+**Catálogo:** `lib/miaFounderExecutiveSummaryCatalog.js` (B.7.0)  
+**Componente:** `FounderExecutiveSummarySection.jsx` (render-only · sem fetch)  
+**Bridge:** `FounderExecutiveModuleViewsContext.jsx` — registra views B.2–B.6  
+**Posição:** abaixo de Indicadores Operacionais (B.6) e acima de Executive Insights
+
+**Princípio:** não recalcula métricas · não duplica thresholds · não consulta banco.
+
+**Módulos consumidos (views já produzidos):**
+
+| Módulo | View source | Sinais utilizados |
+|--------|-------------|-------------------|
+| B.2 KPIs | `mapExecutiveMetricsToFounderExecutiveKpis` | badges, tendências, meta.status |
+| B.3 Crescimento | `mapExecutiveGrowthToFounderDisplay` | narrative, trends.dau, period_compare |
+| B.4 Saúde | `mapExecutiveProductHealthToFounderDisplay` | health_index, narrative, acceptance |
+| B.5 Comercial | `mapExecutiveCommercialPerformanceToFounderDisplay` | commercial_index, funnel, volume_confidence |
+| B.6 Operacional | `mapExecutiveOperationalToFounderDisplay` | operational_index, narrative, partial_errors |
+
+**Saídas executivas:**
+
+| Bloco | Descrição |
+|-------|-----------|
+| Headline | Mensagem principal determinística |
+| Resumo | Parágrafo executivo sintetizado |
+| Classificação geral | Excelente → Crítico (média dos scores de módulo) |
+| Confiança | Alta / moderada / baixa (cobertura + volume + comparativo) |
+| Prioridades | Top 3 ações derivadas de riscos detectados |
+| Oportunidades | Sinais positivos consolidados |
+| Riscos | Sinais de atenção consolidados |
+
+**Limitações:**
+
+- Depende do carregamento assíncrono dos módulos B.2–B.6
+- Sem fetch próprio — síntese parcial enquanto módulos carregam
+- Volume insuficiente comercial → confiança reduzida, sem conclusões fortes
+- Comparativo de período ausente → risco documentado, não inferido como queda
+
+### Encerramento (PATCH B.7)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_B_7_EXECUTIVE_SUMMARY_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
+| `PATCH_B_7_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
+| `PATCH_B_7_CLOSURE_EVIDENCE.json` | Encerramento oficial |
 
 ---
 

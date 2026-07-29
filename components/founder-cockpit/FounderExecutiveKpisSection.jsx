@@ -3,6 +3,7 @@ import FounderMetricCard from "./FounderMetricCard.jsx";
 import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveMetricsToFounderExecutiveKpis } from "../../lib/miaFounderExecutiveDisplay.js";
+import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
 
 function ExecutiveKpiCard({ kpi }) {
   return (
@@ -77,6 +78,8 @@ export default function FounderExecutiveKpisSection({ executiveMetrics = null })
   useEffect(() => {
     load();
   }, [load]);
+
+  useRegisterExecutiveModuleView("kpis", state.view);
 
   const { view } = state;
   const kpiById = new Map((view?.kpis ?? []).map((kpi) => [kpi.id, kpi]));

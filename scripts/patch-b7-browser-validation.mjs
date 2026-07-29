@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * PATCH B.6 — Browser validation (desktop / tablet / mobile).
+ * PATCH B.7 — Browser validation (desktop / tablet / mobile).
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -8,12 +8,12 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const PROD_BASE = process.env.PATCH_B6_PROD_BASE_URL || "https://economia-ai.vercel.app";
+const PROD_BASE = process.env.PATCH_B7_PROD_BASE_URL || "https://economia-ai.vercel.app";
 const BASE =
-  process.env.PATCH_B6_BROWSER_BASE_URL ||
-  (process.env.PATCH_B6_BROWSER_USE_PROD === "1" ? PROD_BASE : "http://localhost:3022");
+  process.env.PATCH_B7_BROWSER_BASE_URL ||
+  (process.env.PATCH_B7_BROWSER_USE_PROD === "1" ? PROD_BASE : "http://localhost:3023");
 const ADMIN_KEY = process.env.MIA_ADMIN_API_KEY || loadEnvLocalAdminKey();
-const SCREENSHOT_DIR = join(ROOT, "docs/analytics/evidence/patch-b6-browser");
+const SCREENSHOT_DIR = join(ROOT, "docs/analytics/evidence/patch-b7-browser");
 const COCKPIT_PATH = "/cockpit-fundador?range=30d";
 const MAX_SSR_RETRIES = 3;
 
@@ -43,9 +43,8 @@ function sleep(ms) {
 async function readDomState(page) {
   return page.evaluate(() => {
     const sections = Array.from(document.querySelectorAll("section[id]")).map((el) => el.id);
-    const summaryIdx = sections.indexOf("mod-resumo-executivo");
-    const commercialIdx = sections.indexOf("mod-performance-comercial");
     const operationalIdx = sections.indexOf("mod-indicadores-operacionais");
+    const summaryIdx = sections.indexOf("mod-resumo-executivo");
     const insightsIdx = sections.findIndex((id) => id.includes("insight") || id.includes("executive-insight"));
     return {
       h1: document.querySelector("h1")?.textContent?.trim() ?? null,
@@ -57,12 +56,16 @@ async function readDomState(page) {
       productHealth: Boolean(document.querySelector(".founder-executive-product-health")),
       commercial: Boolean(document.querySelector(".founder-executive-commercial")),
       operational: Boolean(document.querySelector(".founder-executive-operational")),
-      operationalHeadline: document.querySelector(".founder-executive-operational-headline")?.textContent?.trim() ?? null,
-      operationalItems: document.querySelectorAll(".founder-executive-operational-item").length,
-      operationalBadges: document.querySelectorAll(".founder-executive-operational .founder-executive-badge").length,
+      summary: Boolean(document.querySelector(".founder-executive-summary")),
+      summaryHeadline: document.querySelector(".founder-executive-summary-headline")?.textContent?.trim() ?? null,
+      summaryBody: document.querySelector(".founder-executive-summary-body")?.textContent?.trim() ?? null,
+      priorityItems: document.querySelectorAll(".founder-executive-summary-block--priorities .founder-executive-summary-list-item").length,
+      opportunityItems: document.querySelectorAll(".founder-executive-summary-block--opportunities .founder-executive-summary-list-item").length,
+      riskItems: document.querySelectorAll(".founder-executive-summary-block--risks .founder-executive-summary-list-item").length,
+      summaryBadges: document.querySelectorAll(".founder-executive-summary .founder-executive-badge").length,
       insights: Boolean(document.querySelector(".founder-insights-section")),
       kpiStrip: Boolean(document.querySelector(".founder-kpi-strip")),
-      sectionOrder: { commercialIdx, operationalIdx, summaryIdx, insightsIdx, sections },
+      sectionOrder: { operationalIdx, summaryIdx, insightsIdx, sections },
       pageErrors: window.__FOUNDER_PAGE_ERRORS__ ?? [],
     };
   });
@@ -93,7 +96,7 @@ async function loadAuthenticatedCockpit(page) {
     if (lastState.filterError) {
       return { ok: false, reason: "filter_error", state: lastState, attempt };
     }
-    if (lastState.executiveKpis && lastState.operational) {
+    if (lastState.executiveKpis && lastState.summary) {
       return { ok: true, reason: "ready", state: lastState, attempt };
     }
     if (lastState.fetchError && attempt < MAX_SSR_RETRIES) {
@@ -102,7 +105,7 @@ async function loadAuthenticatedCockpit(page) {
     }
     return {
       ok: false,
-      reason: lastState.fetchError ? "ssr_fetch_error" : "operational_section_missing",
+      reason: lastState.fetchError ? "ssr_fetch_error" : "summary_section_missing",
       state: lastState,
       attempt,
     };
@@ -110,13 +113,13 @@ async function loadAuthenticatedCockpit(page) {
   return { ok: false, reason: "ssr_retries_exhausted", state: lastState, attempt: MAX_SSR_RETRIES };
 }
 
-console.log(`\nPATCH B.6 — browser validation (${BASE})\n`);
+console.log(`\nPATCH B.7 — browser validation (${BASE})\n`);
 
 if (!ADMIN_KEY) {
   ok("admin key present", false, "MIA_ADMIN_API_KEY required");
   writeFileSync(
-    join(ROOT, "docs/analytics/PATCH_B_6_BROWSER_EVIDENCE.json"),
-    JSON.stringify({ patch: "B.6", status: "SKIPPED", reason: "no admin key" }, null, 2)
+    join(ROOT, "docs/analytics/PATCH_B_7_BROWSER_EVIDENCE.json"),
+    JSON.stringify({ patch: "B.7", status: "SKIPPED", reason: "no admin key" }, null, 2)
   );
   process.exit(1);
 }
@@ -164,7 +167,7 @@ try {
     }
 
     await page.waitForFunction(
-      () => document.querySelectorAll(".founder-executive-operational-item").length >= 6,
+      () => Boolean(document.querySelector(".founder-executive-summary-headline")?.textContent?.length),
       { timeout: 120000 }
     );
 
@@ -173,14 +176,14 @@ try {
     ok(`${vp.id}: B.3 growth preserved`, state.executiveGrowth);
     ok(`${vp.id}: B.4 product health preserved`, state.productHealth);
     ok(`${vp.id}: B.5 commercial preserved`, state.commercial);
-    ok(`${vp.id}: B.6 operational visible`, state.operational);
-    ok(`${vp.id}: operational headline rendered`, Boolean(state.operationalHeadline), state.operationalHeadline ?? "");
-    ok(`${vp.id}: operational indicator items`, state.operationalItems >= 6, `items=${state.operationalItems}`);
-    ok(`${vp.id}: operational badges rendered`, state.operationalBadges >= 1, `badges=${state.operationalBadges}`);
+    ok(`${vp.id}: B.6 operational preserved`, state.operational);
+    ok(`${vp.id}: B.7 summary visible`, state.summary);
+    ok(`${vp.id}: summary headline rendered`, Boolean(state.summaryHeadline), state.summaryHeadline ?? "");
+    ok(`${vp.id}: summary body rendered`, Boolean(state.summaryBody), state.summaryBody?.slice(0, 60) ?? "");
+    ok(`${vp.id}: summary blocks rendered`, state.summaryBadges >= 1, `badges=${state.summaryBadges}`);
     ok(
-      `${vp.id}: layout order commercial→operational→summary→insights`,
-      state.sectionOrder.commercialIdx >= 0 &&
-        state.sectionOrder.operationalIdx > state.sectionOrder.commercialIdx &&
+      `${vp.id}: layout order operational→summary→insights`,
+      state.sectionOrder.operationalIdx >= 0 &&
         state.sectionOrder.summaryIdx > state.sectionOrder.operationalIdx &&
         (state.sectionOrder.insightsIdx < 0 || state.sectionOrder.insightsIdx > state.sectionOrder.summaryIdx),
       JSON.stringify(state.sectionOrder)
@@ -189,7 +192,7 @@ try {
     ok(`${vp.id}: legacy KPI strip preserved`, state.kpiStrip);
     ok(`${vp.id}: no page errors`, pageErrors.length === 0, pageErrors.slice(0, 2).join("; "));
 
-    const shot = join(SCREENSHOT_DIR, `executive-operational-${vp.id}.png`);
+    const shot = join(SCREENSHOT_DIR, `executive-summary-${vp.id}.png`);
     await page.screenshot({ path: shot, fullPage: false });
     ok(`${vp.id}: screenshot saved`, true, shot.replace(ROOT + "\\", "").replace(ROOT + "/", ""));
 
@@ -201,15 +204,15 @@ try {
 
 const passed = checks.filter((c) => c.pass).length;
 writeFileSync(
-  join(ROOT, "docs/analytics/PATCH_B_6_BROWSER_EVIDENCE.json"),
+  join(ROOT, "docs/analytics/PATCH_B_7_BROWSER_EVIDENCE.json"),
   JSON.stringify(
     {
-      patch: "B.6",
-      title: "PATCH B.6 — Browser Evidence",
+      patch: "B.7",
+      title: "PATCH B.7 — Browser Evidence",
       status: passed === checks.length ? "APPROVED" : "REJECTED",
       validated_at: new Date().toISOString(),
       base_url: BASE,
-      screenshots_dir: "docs/analytics/evidence/patch-b6-browser",
+      screenshots_dir: "docs/analytics/evidence/patch-b7-browser",
       diagnostics,
       checks: { total: checks.length, passed, items: checks },
     },

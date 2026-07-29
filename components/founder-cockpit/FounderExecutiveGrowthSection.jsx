@@ -3,6 +3,7 @@ import FounderMetricCard from "./FounderMetricCard.jsx";
 import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveGrowthToFounderDisplay } from "../../lib/miaFounderExecutiveGrowthDisplay.js";
+import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
 
 function GrowthIndicatorCard({ indicator }) {
   const displayValue =
@@ -107,6 +108,8 @@ export default function FounderExecutiveGrowthSection({ executiveMetrics = null 
   useEffect(() => {
     load();
   }, [load]);
+
+  useRegisterExecutiveModuleView("growth", state.view);
 
   const { view } = state;
 

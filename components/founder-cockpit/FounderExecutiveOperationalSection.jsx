@@ -3,6 +3,7 @@ import FounderMetricCard from "./FounderMetricCard.jsx";
 import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveOperationalToFounderDisplay } from "../../lib/miaFounderExecutiveOperationalDisplay.js";
+import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
 
 function OperationalIndicatorCard({ indicator }) {
   const displayValue = indicator.valueFormatted ?? "—";
@@ -78,6 +79,7 @@ export default function FounderExecutiveOperationalSection({ executiveMetrics = 
   }, [executiveMetrics, load]);
 
   const view = state.view ?? (state.status === "loading" ? initialView : null);
+  useRegisterExecutiveModuleView("operational", view);
 
   return (
     <section

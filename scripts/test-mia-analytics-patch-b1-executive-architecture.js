@@ -40,12 +40,13 @@ const b3Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveGrowthDispla
 const b4Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveProductHealthDisplay.js"));
 const b5Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveCommercialPerformanceDisplay.js"));
 const b6Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveOperationalDisplay.js"));
+const b7Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveSummaryDisplay.js"));
 const forbiddenImplB1 = [
   ...(b3Implemented ? [] : ["components/founder-cockpit/FounderExecutiveGrowthSection.jsx"]),
   ...(b4Implemented ? [] : ["components/founder-cockpit/FounderExecutiveProductHealthSection.jsx"]),
   ...(b5Implemented ? [] : ["components/founder-cockpit/FounderExecutiveCommercialPerformanceSection.jsx"]),
   ...(b6Implemented ? [] : ["components/founder-cockpit/FounderExecutiveOperationalSection.jsx"]),
-  "components/founder-cockpit/FounderExecutiveSummarySection.jsx",
+  ...(b7Implemented ? [] : ["components/founder-cockpit/FounderExecutiveSummarySection.jsx"]),
   "pages/api/founder-executive-metrics.js",
 ];
 const b2Expected = [
@@ -84,6 +85,11 @@ if (b6Implemented) {
   ok("B.6 operational file miaFounderExecutiveOperationalDisplay.js", existsSync(join(ROOT, "lib/miaFounderExecutiveOperationalDisplay.js")));
   ok("B.6 operational file miaFounderExecutiveOperationalCatalog.js", existsSync(join(ROOT, "lib/miaFounderExecutiveOperationalCatalog.js")));
   ok("B.6 operational file FounderExecutiveOperationalSection.jsx", existsSync(join(ROOT, "components/founder-cockpit/FounderExecutiveOperationalSection.jsx")));
+}
+if (b7Implemented) {
+  ok("B.7 summary file miaFounderExecutiveSummaryDisplay.js", existsSync(join(ROOT, "lib/miaFounderExecutiveSummaryDisplay.js")));
+  ok("B.7 summary file miaFounderExecutiveSummaryCatalog.js", existsSync(join(ROOT, "lib/miaFounderExecutiveSummaryCatalog.js")));
+  ok("B.7 summary file FounderExecutiveSummarySection.jsx", existsSync(join(ROOT, "components/founder-cockpit/FounderExecutiveSummarySection.jsx")));
 }
 
 // Baseline contracts unchanged — version strings

@@ -56,8 +56,13 @@ ok(
     pageInner.indexOf("FounderExecutiveOperationalSection")
 );
 ok(
-  "operational above insights",
+  "operational above summary",
   pageInner.indexOf("FounderExecutiveOperationalSection") <
+    pageInner.indexOf("FounderExecutiveSummarySection")
+);
+ok(
+  "summary above insights",
+  pageInner.indexOf("FounderExecutiveSummarySection") <
     pageInner.indexOf("FounderExecutiveInsights")
 );
 

@@ -1,0 +1,280 @@
+{
+  "patch": "B.7",
+  "title": "PATCH B.7 — Executive Summary Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T14:39:43.050Z",
+  "display_version": "B.7.0",
+  "catalog_version": "B.7.0",
+  "modules_consumed": [
+    "kpis",
+    "growth",
+    "health",
+    "commercial",
+    "operational"
+  ],
+  "components": [
+    "FounderExecutiveSummarySection.jsx",
+    "FounderExecutiveModuleViewsContext.jsx"
+  ],
+  "mapper": "lib/miaFounderExecutiveSummaryDisplay.js",
+  "catalog": "lib/miaFounderExecutiveSummaryCatalog.js",
+  "baseline_b2_b6_preserved": true,
+  "empty_states": {
+    "module_unavailable": "Módulo indisponível — síntese parcial.",
+    "no_modules": "Nenhum módulo executivo disponível para síntese.",
+    "low_volume": "Volume insuficiente para conclusões fortes.",
+    "no_period_compare": "Comparativo de período indisponível.",
+    "insufficient_data": "Dados insuficientes para síntese confiável."
+  },
+  "checks": {
+    "total": 49,
+    "passed": 49,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module views context exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version B.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper version B.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog defines 5 module ids",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit mounts FounderExecutiveSummarySection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit uses module views provider",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "summary below operational",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "summary above insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component uses summary mapper only",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no extractSummarySignals",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no classifySummaryOverallLevel",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no computeModuleScores",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no fetch(",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "display no supabase import",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "display no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "display no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "summary CSS",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.6 catalog still B.6.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit display still A.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/executive-metrics.js unchanged by B.7",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/temporal-metrics.js unchanged by B.7",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dashboard doc mentions B.7",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "overall level excellent",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "overall level attention",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "overall level critical",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence high",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence moderate",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence low",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper headline present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper summary body present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper overall level",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper 5 modules consumed",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper modules available",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper average score",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper has opportunities or priorities",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "signals growth up",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "module scores computed",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "headline growth stable ops",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty modules error status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty modules unavailable level",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "partial modules status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "partial confidence not high",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "low volume risk or note",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no previous partial or moderate confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "kpis section registers view",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

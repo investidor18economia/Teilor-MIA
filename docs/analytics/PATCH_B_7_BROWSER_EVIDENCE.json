@@ -1,0 +1,408 @@
+{
+  "patch": "B.7",
+  "title": "PATCH B.7 — Browser Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T14:41:37.335Z",
+  "base_url": "http://localhost:3023",
+  "screenshots_dir": "docs/analytics/evidence/patch-b7-browser",
+  "diagnostics": [
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "operational": true,
+      "summary": true,
+      "summaryHeadline": "Existem sinais críticos que exigem ação imediata do Founder.",
+      "summaryBody": "A síntese reflete apenas os módulos com dados disponíveis. Conclusões fortes não são geradas sem cobertura completa. Sinais de rejeição merecem atenção executiva.",
+      "priorityItems": 3,
+      "opportunityItems": 1,
+      "riskItems": 3,
+      "summaryBadges": 1,
+      "insights": true,
+      "kpiStrip": true,
+      "sectionOrder": {
+        "operationalIdx": 4,
+        "summaryIdx": 5,
+        "insightsIdx": 6,
+        "sections": [
+          "mod-kpis-estrategicos",
+          "mod-crescimento-plataforma",
+          "mod-saude-produto",
+          "mod-performance-comercial",
+          "mod-indicadores-operacionais",
+          "mod-resumo-executivo",
+          "executive-ai-insights",
+          "mod-sessoes-usuarios",
+          "mod-produtos-categorias",
+          "mod-performance-conversao",
+          "mod-plataforma",
+          "mod-conversacao",
+          "mod-recomendacoes",
+          "mod-comercial",
+          "mod-alertas",
+          "mod-price-intelligence",
+          "mod-economia",
+          "mod-anti-regret",
+          "mod-user-value",
+          "mod-sistema"
+        ]
+      },
+      "pageErrors": []
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "operational": true,
+      "summary": true,
+      "summaryHeadline": "Existem sinais críticos que exigem ação imediata do Founder.",
+      "summaryBody": "A síntese reflete apenas os módulos com dados disponíveis. Conclusões fortes não são geradas sem cobertura completa. Sinais de rejeição merecem atenção executiva.",
+      "priorityItems": 3,
+      "opportunityItems": 1,
+      "riskItems": 3,
+      "summaryBadges": 1,
+      "insights": true,
+      "kpiStrip": true,
+      "sectionOrder": {
+        "operationalIdx": 4,
+        "summaryIdx": 5,
+        "insightsIdx": 6,
+        "sections": [
+          "mod-kpis-estrategicos",
+          "mod-crescimento-plataforma",
+          "mod-saude-produto",
+          "mod-performance-comercial",
+          "mod-indicadores-operacionais",
+          "mod-resumo-executivo",
+          "executive-ai-insights",
+          "mod-sessoes-usuarios",
+          "mod-produtos-categorias",
+          "mod-performance-conversao",
+          "mod-plataforma",
+          "mod-conversacao",
+          "mod-recomendacoes",
+          "mod-comercial",
+          "mod-alertas",
+          "mod-price-intelligence",
+          "mod-economia",
+          "mod-anti-regret",
+          "mod-user-value",
+          "mod-sistema"
+        ]
+      },
+      "pageErrors": []
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "operational": true,
+      "summary": true,
+      "summaryHeadline": "Existem sinais críticos que exigem ação imediata do Founder.",
+      "summaryBody": "A síntese reflete apenas os módulos com dados disponíveis. Conclusões fortes não são geradas sem cobertura completa. Sinais de rejeição merecem atenção executiva.",
+      "priorityItems": 3,
+      "opportunityItems": 1,
+      "riskItems": 3,
+      "summaryBadges": 1,
+      "insights": true,
+      "kpiStrip": true,
+      "sectionOrder": {
+        "operationalIdx": 4,
+        "summaryIdx": 5,
+        "insightsIdx": 6,
+        "sections": [
+          "mod-kpis-estrategicos",
+          "mod-crescimento-plataforma",
+          "mod-saude-produto",
+          "mod-performance-comercial",
+          "mod-indicadores-operacionais",
+          "mod-resumo-executivo",
+          "executive-ai-insights",
+          "mod-sessoes-usuarios",
+          "mod-produtos-categorias",
+          "mod-performance-conversao",
+          "mod-plataforma",
+          "mod-conversacao",
+          "mod-recomendacoes",
+          "mod-comercial",
+          "mod-alertas",
+          "mod-price-intelligence",
+          "mod-economia",
+          "mod-anti-regret",
+          "mod-user-value",
+          "mod-sistema"
+        ]
+      },
+      "pageErrors": []
+    }
+  ],
+  "checks": {
+    "total": 49,
+    "passed": 49,
+    "items": [
+      {
+        "label": "auth endpoint",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "desktop: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.5 commercial preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.6 operational preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.7 summary visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: summary headline rendered",
+        "pass": true,
+        "detail": "Existem sinais críticos que exigem ação imediata do Founder."
+      },
+      {
+        "label": "desktop: summary body rendered",
+        "pass": true,
+        "detail": "A síntese reflete apenas os módulos com dados disponíveis. C"
+      },
+      {
+        "label": "desktop: summary blocks rendered",
+        "pass": true,
+        "detail": "badges=1"
+      },
+      {
+        "label": "desktop: layout order operational→summary→insights",
+        "pass": true,
+        "detail": "{\"operationalIdx\":4,\"summaryIdx\":5,\"insightsIdx\":6,\"sections\":[\"mod-kpis-estrategicos\",\"mod-crescimento-plataforma\",\"mod-saude-produto\",\"mod-performance-comercial\",\"mod-indicadores-operacionais\",\"mod-resumo-executivo\",\"executive-ai-insights\",\"mod-sessoes-usuarios\",\"mod-produtos-categorias\",\"mod-performance-conversao\",\"mod-plataforma\",\"mod-conversacao\",\"mod-recomendacoes\",\"mod-comercial\",\"mod-alertas\",\"mod-price-intelligence\",\"mod-economia\",\"mod-anti-regret\",\"mod-user-value\",\"mod-sistema\"]}"
+      },
+      {
+        "label": "desktop: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b7-browser\\executive-summary-desktop.png"
+      },
+      {
+        "label": "tablet: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "tablet: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.5 commercial preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.6 operational preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.7 summary visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: summary headline rendered",
+        "pass": true,
+        "detail": "Existem sinais críticos que exigem ação imediata do Founder."
+      },
+      {
+        "label": "tablet: summary body rendered",
+        "pass": true,
+        "detail": "A síntese reflete apenas os módulos com dados disponíveis. C"
+      },
+      {
+        "label": "tablet: summary blocks rendered",
+        "pass": true,
+        "detail": "badges=1"
+      },
+      {
+        "label": "tablet: layout order operational→summary→insights",
+        "pass": true,
+        "detail": "{\"operationalIdx\":4,\"summaryIdx\":5,\"insightsIdx\":6,\"sections\":[\"mod-kpis-estrategicos\",\"mod-crescimento-plataforma\",\"mod-saude-produto\",\"mod-performance-comercial\",\"mod-indicadores-operacionais\",\"mod-resumo-executivo\",\"executive-ai-insights\",\"mod-sessoes-usuarios\",\"mod-produtos-categorias\",\"mod-performance-conversao\",\"mod-plataforma\",\"mod-conversacao\",\"mod-recomendacoes\",\"mod-comercial\",\"mod-alertas\",\"mod-price-intelligence\",\"mod-economia\",\"mod-anti-regret\",\"mod-user-value\",\"mod-sistema\"]}"
+      },
+      {
+        "label": "tablet: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b7-browser\\executive-summary-tablet.png"
+      },
+      {
+        "label": "mobile: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "mobile: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.5 commercial preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.6 operational preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.7 summary visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: summary headline rendered",
+        "pass": true,
+        "detail": "Existem sinais críticos que exigem ação imediata do Founder."
+      },
+      {
+        "label": "mobile: summary body rendered",
+        "pass": true,
+        "detail": "A síntese reflete apenas os módulos com dados disponíveis. C"
+      },
+      {
+        "label": "mobile: summary blocks rendered",
+        "pass": true,
+        "detail": "badges=1"
+      },
+      {
+        "label": "mobile: layout order operational→summary→insights",
+        "pass": true,
+        "detail": "{\"operationalIdx\":4,\"summaryIdx\":5,\"insightsIdx\":6,\"sections\":[\"mod-kpis-estrategicos\",\"mod-crescimento-plataforma\",\"mod-saude-produto\",\"mod-performance-comercial\",\"mod-indicadores-operacionais\",\"mod-resumo-executivo\",\"executive-ai-insights\",\"mod-sessoes-usuarios\",\"mod-produtos-categorias\",\"mod-performance-conversao\",\"mod-plataforma\",\"mod-conversacao\",\"mod-recomendacoes\",\"mod-comercial\",\"mod-alertas\",\"mod-price-intelligence\",\"mod-economia\",\"mod-anti-regret\",\"mod-user-value\",\"mod-sistema\"]}"
+      },
+      {
+        "label": "mobile: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b7-browser\\executive-summary-mobile.png"
+      }
+    ]
+  }
+}
