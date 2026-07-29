@@ -1,11 +1,11 @@
 {
   "patch": "C.7",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T21:12:57.916Z",
+  "validated_at": "2026-07-29T21:15:58.195Z",
   "deployment_audit": {
-    "local_head": "73cc52cf4eac554a1d6dec025227dc6d19510f6a",
-    "remote_head": "73cc52cf4eac554a1d6dec025227dc6d19510f6a",
-    "production_build_short": "6da44b2125f4",
+    "local_head": "259735fdfeac453fc37c0bcd3e81a9e1ff7c4895",
+    "remote_head": "259735fdfeac453fc37c0bcd3e81a9e1ff7c4895",
+    "production_build_short": "73cc52cf4eac",
     "production_deployment_url": "https://economia-ai.vercel.app",
     "deployment_status": "ready"
   },
