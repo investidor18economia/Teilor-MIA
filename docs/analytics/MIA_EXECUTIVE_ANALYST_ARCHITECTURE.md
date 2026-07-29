@@ -194,8 +194,9 @@ C.1 prepara a arquitetura sem alterar 11.4 ou B.7.
 | **C.3** | Insights Inteligentes ✅ |
 | **C.4** | Tendências Executivas ✅ |
 | **C.5** | Narrative assembly |
-| **C.6** | LLM verbalizer |
-| **C.7** | UI analista no Cockpit |
+| **C.6** | Recomendações acionáveis |
+| **C.7** | Explicabilidade, evidências e confiança |
+| **C.8** | Humanização / polish |
 | **C.8** | Polimento |
 | **C.9** | Auditoria final Fase C |
 
@@ -756,4 +757,63 @@ npm run test:mia:analytics:patch-c6:closure
 
 ---
 
-*Documento atualizado no PATCH C.6 — Recomendações Acionáveis para o Fundador.*
+## 21. PATCH C.7 — Explicabilidade, Evidências e Confiança
+
+**Versão:** C.7.0 · **Status:** implementado (lib-only)
+
+### 21.1 Princípio
+
+Nenhuma conclusão da Analista existe sem ser explicável. A camada C.7 **não gera** insights, tendências, alertas ou recomendações — apenas explica por que cada elemento existe, quais evidências o sustentam, qual regra foi aplicada, quais limitações existem e qual confiança possui.
+
+### 21.2 Pipeline
+
+```
+Views → Summary → Insights → Trends → Alerts → Recommendations
+  → Explainability Builder → Confidence Consolidation → Evidence Consolidation
+  → ExecutiveExplainability[] → Narrative Structure → LLM Verbalizer (futuro)
+```
+
+### 21.3 Executive Explainability Engine
+
+Implementação:
+- `lib/miaExecutiveExplainabilityCatalog.js` — tipos, chaves obrigatórias, pipeline narrativo
+- `lib/miaExecutiveConfidenceBuilder.js` — consolidação determinística de confiança
+- `lib/miaExecutiveExplainabilityBuilder.js` — builder principal
+
+### 21.4 Contrato ExecutiveExplainability
+
+Cada registro contém: `id`, `analysis_type`, `analysis_reference`, `rule_reference`, `evidence`, `confidence`, `limitations`, `supporting_modules`, `supporting_metrics`, `supporting_alerts`, `supporting_trends`, `supporting_insights`, `supporting_recommendations`, `deterministic` (sempre `true`), `generated_at`, `meta`.
+
+Tipos suportados: `summary`, `insight`, `trend`, `alert`, `recommendation`.
+
+### 21.5 Confidence
+
+Confiança derivada apenas de: qualidade das evidências, convergência entre módulos, confiança herdada de C.2–C.6, cobertura disponível e regras determinísticas. Nunca opinião ou heurística de LLM.
+
+### 21.6 Traceability
+
+Recomendações referenciam alertas, insights e tendências de origem via `supporting_*`. Alertas referenciam insights/trends via `source_ids`. Toda explicação aponta `rule_reference` no padrão oficial (ex.: `alert.commercial.bottleneck`, `recommendation.optimize.bottleneck`).
+
+### 21.7 Proibições C.7
+
+- Sem LLM, SQL, Supabase ou fetch.
+- Sem justificativas inventadas ou causalidade inexistente.
+- Sem alteração de outputs C.2–C.6.
+- Narrative structure nunca altera confiança, evidências, limitações ou regras.
+
+### 21.8 APIs públicas
+
+- `generateExecutiveAnalysisExplainability(input)` → explainability preenchida.
+- `generateExecutiveAnalysisWithExplainability(input)` → C.2 + C.3 + C.4 + C.5 + C.6 + C.7.
+- `generateExecutiveAnalysisComplete(input)` preservado sem slot `explainability`.
+
+### 21.9 Testes oficiais C.7
+
+```bash
+npm run test:mia:analytics:patch-c7:executive-explainability
+npm run test:mia:analytics:patch-c7:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.7 — Explicabilidade, Evidências e Confiança.*
