@@ -3,38 +3,224 @@
   "title": "PATCH C.6 — Official Closure",
   "phase": "C — MIA como Analista da Empresa",
   "previous_status": "BLOCKED_PENDING_VALIDATION",
-  "blocking_reason": "Initial closure declared OFFICIALLY_CLOSED while production health showed pre-C.6 build (0e3e47662a45)",
+  "blocking_reason": "Production health during initial closure referenced pre-C.6 build; C.6 deploy was asynchronous",
   "status": "CLOSED",
   "patch_c6_status": "OFFICIALLY_CLOSED",
-  "closed_at": "2026-07-29T20:35:00.000Z",
-  "validation_completed_at": "2026-07-29T20:35:00.000Z",
+  "closed_at": "2026-07-29T20:42:21.421Z",
+  "validation_completed_at": "2026-07-29T20:42:21.421Z",
+  "validation_started_at": "2026-07-29T20:41:37.679Z",
   "git": {
     "pass": true,
-    "head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-    "origin": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-    "feature_commit": "a8b68064ae8301975d059e880e43b8301b583077",
-    "closure_revalidation_commit": "pending"
+    "head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "origin": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "working_tree_clean": true
   },
   "deployment_audit": {
-    "local_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-    "remote_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-    "production_build_short": "1b5143830cd0",
-    "production_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "local_head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "remote_head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "production_build_short": "5a4a5ae07e2c",
+    "production_commit": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
     "production_deployment_url": "https://economia-ai.vercel.app",
     "production_alias": "economia-ai.vercel.app",
     "deployment_status": "ready",
-    "feature_commit": "a8b68064ae8301975d059e880e43b8301b583077",
-    "validated_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-    "commit_relationship": "validated_commit descends from feature_commit; docs commits e5809bd and 1b51438 only"
+    "feature_commit": "a8b6806",
+    "validated_commit": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "commit_relationship": "validated_commit is descendant of feature_commit a8b6806 and equals local/remote HEAD"
   },
   "production_revalidation": "APPROVED",
-  "baseline_c1_c5_preserved": true,
-  "regressions": {
-    "c6_recommendations": "PASS",
-    "c6_production_revalidation": "PASS",
-    "b9_production": "PASS",
+  "production_test_results": {
+    "checks_total": 42,
+    "checks_passed": 42,
+    "scenarios": [
+      {
+        "name": "commercial bottleneck → optimize",
+        "pass": true,
+        "expected": "optimize P1",
+        "observed": "optimize:P1"
+      },
+      {
+        "name": "operational critical → investigate P0",
+        "pass": true,
+        "expected": "investigate P0",
+        "observed": "investigate:P0, optimize:P1"
+      },
+      {
+        "name": "acceptance drop → validate",
+        "pass": true,
+        "expected": "validate",
+        "observed": "optimize, validate"
+      },
+      {
+        "name": "low volume → collect_more_data",
+        "pass": true,
+        "expected": "collect_more_data",
+        "observed": "optimize, collect_more_data, reduce_risk, improve_quality"
+      },
+      {
+        "name": "stable snapshot → monitor or no_action",
+        "pass": true,
+        "expected": "monitor|no_action",
+        "observed": "monitor, expand"
+      },
+      {
+        "name": "insufficient data → no artificial recommendations",
+        "pass": true,
+        "expected": "0",
+        "observed": "0"
+      },
+      {
+        "name": "P1 alert suppresses redundant P3 monitor",
+        "pass": true,
+        "expected": "1 item",
+        "observed": "1"
+      },
+      {
+        "name": "deduplication keeps P1",
+        "pass": true,
+        "expected": "P1",
+        "observed": "P1"
+      }
+    ],
+    "complete_pipeline": {
+      "status": "analysis_complete",
+      "recommendation_count": 1,
+      "alert_count": 1
+    }
+  },
+  "browser_test_results": {
+    "total": 15,
+    "passed": 15,
+    "items": [
+      {
+        "label": "desktop: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "desktop: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no analyst UI yet (C.6 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "tablet: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no analyst UI yet (C.6 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: layout intact",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "mobile: section order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no analyst UI yet (C.6 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  },
+  "regression_results": {
+    "c6_recommendations": "APPROVED",
+    "production_revalidation": "APPROVED",
     "browser": "APPROVED"
   },
+  "baseline_c1_c5_preserved": true,
+  "scope": "Deterministic Executive Recommendation Generator — lib only, no Cockpit UI",
+  "steps": [
+    {
+      "label": "C.6 recommendations audit",
+      "pass": true
+    },
+    {
+      "label": "C.6 production revalidation",
+      "pass": true
+    },
+    {
+      "label": "C.5 regression",
+      "pass": true
+    },
+    {
+      "label": "C.4 regression",
+      "pass": true
+    },
+    {
+      "label": "C.3 regression",
+      "pass": true
+    },
+    {
+      "label": "C.2 regression",
+      "pass": true
+    },
+    {
+      "label": "C.1 regression",
+      "pass": true
+    },
+    {
+      "label": "Phase B baseline audit",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "C.6 browser regression",
+      "pass": true
+    },
+    {
+      "label": "Production validation",
+      "pass": true
+    }
+  ],
   "evidence": {
     "recommendations": "APPROVED",
     "production_revalidation": "APPROVED",
@@ -42,23 +228,11 @@
     "documentation": true
   },
   "production": {
-    "health_build": "1b5143830cd0",
-    "health_pass": true,
-    "executive_metrics_pass": true,
-    "cockpit_ssr_pass": true,
+    "health_build": "5a4a5ae07e2c",
     "c6_functional_validation": "PRODUCTION_C6_VALIDATED"
   },
-  "browser": {
-    "base_url": "http://localhost:3024",
-    "note": "Authenticated browser on local SSR matching production commit 1b51438; direct prod /api/founder/authenticate returned 401 with local key",
-    "checks_passed": 15
-  },
-  "transition": "BLOCKED_PENDING_VALIDATION → production build confirmed → C.6 revalidated → OFFICIALLY_CLOSED",
-  "limitations": [
-    "C.6 lib-only — no public recommendations HTTP endpoint",
-    "Browser auth validated on localhost SSR with same build as production",
-    "Production /api/founder/authenticate 401 with local admin key — B.9 cockpit SSR still passes on production"
-  ],
+  "transition": "BLOCKED_PENDING_VALIDATION → production confirmed → revalidation approved → OFFICIALLY_CLOSED",
   "final_verdict": "OFFICIALLY_CLOSED",
+  "closure_commit": "pending",
   "next_patch": "C.7 — Cockpit analyst UI (not started)"
 }

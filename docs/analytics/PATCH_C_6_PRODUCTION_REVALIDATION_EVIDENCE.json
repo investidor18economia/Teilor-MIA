@@ -4,30 +4,31 @@
   "previous_status": "BLOCKED_PENDING_VALIDATION",
   "blocking_reason": "Production health during initial closure referenced pre-C.6 build; C.6 deploy was asynchronous",
   "status": "APPROVED",
-  "validation_started_at": "2026-07-29T20:28:47.867Z",
-  "validation_completed_at": "2026-07-29T20:28:49.529Z",
+  "validation_started_at": "2026-07-29T20:41:37.679Z",
+  "validation_completed_at": "2026-07-29T20:41:39.337Z",
   "deployment_audit": {
-    "local_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-    "remote_head": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-    "production_build_short": "1b5143830cd0",
-    "production_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "local_head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "remote_head": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
+    "production_build_short": "5a4a5ae07e2c",
+    "production_commit": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
     "production_deployment_url": "https://economia-ai.vercel.app",
     "production_alias": "economia-ai.vercel.app",
     "deployment_status": "ready",
     "feature_commit": "a8b6806",
-    "validated_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
+    "validated_commit": "5a4a5ae07e2c9fd47bf776a1de5d29369f78fa35",
     "commit_relationship": "validated_commit is descendant of feature_commit a8b6806 and equals local/remote HEAD"
   },
   "identity_proof": {
     "health_endpoint": "https://economia-ai.vercel.app/api/health",
     "health_build_field": "build (VERCEL_GIT_COMMIT_SHA prefix)",
     "local_matches_production": true,
+    "local_ahead_of_production": false,
     "feature_in_production": true,
     "runner": "scripts/patch-c6-production-revalidation.mjs imports lib at HEAD matching production build"
   },
   "functional_validation": {
-    "checks_total": 41,
-    "checks_passed": 41,
+    "checks_total": 42,
+    "checks_passed": 42,
     "scenarios": [
       {
         "name": "commercial bottleneck → optimize",

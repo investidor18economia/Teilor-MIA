@@ -17,8 +17,5 @@
   ],
   "checks_passed": 81,
   "checks_total": 81,
-  "production_revalidation": "APPROVED",
-  "production_commit": "1b5143830cd02830c48cc13e77cbe18bceb84c6e",
-  "production_build_short": "1b5143830cd0",
-  "validated_at": "2026-07-29T20:35:00.000Z"
+  "validated_at": "2026-07-29T20:41:37.557Z"
 }

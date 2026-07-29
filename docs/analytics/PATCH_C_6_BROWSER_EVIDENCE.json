@@ -1,10 +1,8 @@
 {
   "patch": "C.6",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T20:37:03.280Z",
+  "validated_at": "2026-07-29T20:42:21.421Z",
   "base_url": "http://localhost:3024",
-  "production_build_validated": "1b5143830cd0",
-  "identity_note": "Local SSR build matches production health.build; authenticated session validated desktop/tablet/mobile",
   "checks": {
     "total": 15,
     "passed": 15,
