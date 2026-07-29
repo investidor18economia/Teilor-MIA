@@ -1,0 +1,149 @@
+{
+  "patch": "C.5",
+  "title": "PATCH C.5 — Browser Regression Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T19:49:42.266Z",
+  "base_url": "http://localhost:3024",
+  "note": "C.5 adds lib-only alert generator — validates Baseline B cockpit preserved",
+  "checks": {
+    "total": 27,
+    "passed": 27,
+    "items": [
+      {
+        "label": "desktop: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: cockpit SSR loaded",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "desktop: layout intact (6 modules)",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "desktop: section order preserved",
+        "pass": true,
+        "detail": "[0,1,2,3,4,5,6]"
+      },
+      {
+        "label": "desktop: B.7 summary present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no analyst UI yet (C.5 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no horizontal overflow",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: cockpit SSR loaded",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "tablet: layout intact (6 modules)",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "tablet: section order preserved",
+        "pass": true,
+        "detail": "[0,1,2,3,4,5,6]"
+      },
+      {
+        "label": "tablet: B.7 summary present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no analyst UI yet (C.5 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no horizontal overflow",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: authentication",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: cockpit SSR loaded",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "mobile: layout intact (6 modules)",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "mobile: section order preserved",
+        "pass": true,
+        "detail": "[0,1,2,3,4,5,6]"
+      },
+      {
+        "label": "mobile: B.7 summary present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no analyst UI yet (C.5 lib-only)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no horizontal overflow",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

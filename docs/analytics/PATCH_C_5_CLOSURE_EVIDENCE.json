@@ -1,0 +1,53 @@
+{
+  "patch": "C.5",
+  "title": "PATCH C.5 — Official Closure",
+  "phase": "C — MIA como Analista da Empresa",
+  "status": "CLOSED",
+  "patch_c5_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T19:45:00.000Z",
+  "git": {
+    "pass": true,
+    "head": "0546b6a7cbcb4ef39814993e6502c933ae390c52",
+    "origin": "0546b6a7cbcb4ef39814993e6502c933ae390c52",
+    "working_tree_clean": true,
+    "feature_commit": "0546b6a",
+    "closure_commit": "pending"
+  },
+  "baseline_a_preserved": true,
+  "baseline_b_preserved": true,
+  "baseline_c1_preserved": true,
+  "baseline_c2_preserved": true,
+  "baseline_c3_preserved": true,
+  "baseline_c4_preserved": true,
+  "scope": "Deterministic Executive Alert Generator — lib only, no Cockpit UI, no recommendations",
+  "regressions": {
+    "c5_alerts": "PASS",
+    "c4_trends": "PASS",
+    "c3_insights": "PASS",
+    "c2_summary": "PASS",
+    "c1_architecture": "PASS",
+    "b9_audit": "PASS",
+    "b8_b1": "PASS",
+    "a10_a2_a9": "PASS",
+    "build": "PASS",
+    "browser": "APPROVED",
+    "production": "APPROVED"
+  },
+  "evidence": {
+    "alerts": "APPROVED",
+    "browser": "APPROVED",
+    "documentation": true
+  },
+  "production": {
+    "build_hash": "0546b6a7cbcb",
+    "health_pass": true,
+    "cockpit_pass": true
+  },
+  "limitations": [
+    "Alert lifecycle resolved/suppressed persistent not implemented — snapshot-only active/monitoring",
+    "No Cockpit UI for alerts in C.5",
+    "Recommendations deferred to C.6",
+    "LLM verbalizer not integrated"
+  ],
+  "next_patch": "C.6 — Recommendations (not started)"
+}
