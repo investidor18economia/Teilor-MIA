@@ -1,0 +1,415 @@
+{
+  "patch": "C.3",
+  "title": "PATCH C.3 — Executive Insights Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T18:44:37.695Z",
+  "builder_version": "C.3.0",
+  "catalog_version": "C.3.0",
+  "contracts_version": "C.1.0",
+  "categories": [
+    "growth",
+    "product",
+    "commercial",
+    "operational",
+    "cross_module",
+    "general"
+  ],
+  "rule_count": 12,
+  "pipeline": [
+    "collect",
+    "analyze",
+    "evaluate",
+    "deduplicate",
+    "narrative"
+  ],
+  "scope": "Deterministic executive insights from Baseline B views only",
+  "excludes": [
+    "trends",
+    "alerts",
+    "recommendations",
+    "LLM"
+  ],
+  "baseline_c2_preserved": true,
+  "baseline_c1_preserved": true,
+  "checks": {
+    "total": 75,
+    "passed": 75,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version C.3.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder version C.3.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "builder no OpenAI/LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog no OpenAI/LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 contracts version unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 output template still pending",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 summary builder intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight rules defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "categories defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "collect normalizes views",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "analyze envelope confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "evaluate produces candidates",
+        "pass": true,
+        "detail": "count=3"
+      },
+      {
+        "label": "dedup reduces or equals candidates",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dedup no duplicate groups",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured insights present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured insight has category",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured insight has priority",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "structured insight has limitations array",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output status insights_ready or analysis",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output has insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output no recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output summary null in insights-only",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "output required key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight has insight_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight has title",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight has body",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight stage interpretation",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight modules_involved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight confidence key level",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight confidence key factors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight confidence key limitations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight confidence key modules_available",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight confidence key modules_total",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight evidence key evidence_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight evidence key source",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight evidence key module_id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight evidence key field_path",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight evidence key value_snapshot",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insight evidence key rule_ref",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "insights avoid causal language",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism structured insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism analysis output",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty modules insufficient",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty insights array",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined has summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined has insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined status analysis_ready",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "combined no trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 summary still works",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 summary insights empty",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dedup keeps high priority",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "classification cross_module or commercial",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.7 mapper unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no analyst UI in cockpit",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "doc mentions C.3",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "doc mentions Insight Generator",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

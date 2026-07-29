@@ -1,9 +1,9 @@
 # FASE C — MIA como Analista da Empresa — Arquitetura Oficial
 
 **Documento:** `MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md`  
-**Patch:** C.1 — Arquitetura da Analista Executiva · **C.2** — Resumos Executivos Automáticos  
-**Versão:** C.1.0 (contratos) · C.2.0 (summary builder)  
-**Status:** C.1 architecture defined · **C.2 summary behavior implemented**  
+**Patch:** C.1 — Arquitetura · **C.2** — Resumos · **C.3** — Insights Inteligentes  
+**Versão:** C.1.0 (contratos) · C.2.0 (summary) · C.3.0 (insights)  
+**Status:** C.1 architecture · C.2 summaries · **C.3 insights implemented**  
 **Baselines preservadas:** [FOUNDER_COCKPIT_BASELINE_A.md](./FOUNDER_COCKPIT_BASELINE_A.md) · [FOUNDER_COCKPIT_BASELINE_B.md](./FOUNDER_COCKPIT_BASELINE_B.md)
 
 ---
@@ -191,7 +191,7 @@ C.1 prepara a arquitetura sem alterar 11.4 ou B.7.
 |-------|--------|
 | **C.1** | Arquitetura, contratos, docs ✅ |
 | **C.2** | Resumos Executivos Automáticos ✅ |
-| **C.3** | Insights & trends |
+| **C.3** | Insights Inteligentes ✅ |
 | **C.4** | Alerts & recommendations |
 | **C.5** | Narrative assembly |
 | **C.6** | LLM verbalizer |
@@ -340,4 +340,108 @@ npm run test:mia:analytics:patch-c2:closure
 
 ---
 
-*Documento atualizado no PATCH C.2 — Resumos Executivos Automáticos.*
+## 17. PATCH C.3 — Executive Insight Generator
+
+**Patch:** C.3 — Geração de Insights Inteligentes  
+**Versão:** C.3.0  
+**Escopo:** Insights determinísticos a partir da combinação de Executive Views.
+
+### 17.1 Princípio
+
+Todo insight nasce exclusivamente dos dados existentes nas Executive Views. A LLM não inventa relações, causalidades ou oportunidades — apenas verbalizará (C.6+) insights pré-computados.
+
+**Fora de escopo C.3:** tendências, alertas, recomendações.
+
+### 17.2 Pipeline de insights
+
+```text
+Executive Views (Baseline B)
+        ↓
+collectExecutiveInsightInput       — normalização (reutiliza C.2)
+        ↓
+analyzeExecutiveInsightSignals   — sinais cross-module
+        ↓
+evaluateExecutiveInsightRules    — regras determinísticas
+        ↓
+deduplicateExecutiveInsights     — consolidação por dedup_group
+        ↓
+buildExecutiveInsightNarrative   — entrada Narrative Layer (stage: interpretation)
+        ↓
+generateExecutiveAnalysisInsights — ExecutiveAnalysisOutput (insights only)
+        ↓
+LLM Verbalizer                   — C.6+ (não implementado)
+```
+
+Implementação: `lib/miaExecutiveInsightBuilder.js`  
+Catálogo/regras: `lib/miaExecutiveInsightCatalog.js`
+
+### 17.3 Classificação e prioridade
+
+| Categoria | Exemplos de observação |
+|-----------|------------------------|
+| **Growth** | Crescimento de audiência registrado |
+| **Product** | Saúde excelente, queda de aceitação |
+| **Commercial** | Tração, gargalo, volume insuficiente |
+| **Operational** | Degradação ou estabilidade operacional |
+| **Cross Module** | Alinhamento ou desacoplamento entre módulos |
+| **General** | Estabilidade ampla, KPIs positivos |
+
+Prioridade objetiva: **High** · **Medium** · **Low** — baseada em regras do catálogo, nunca em LLM.
+
+### 17.4 Deduplicação
+
+- Cada regra possui `dedup_group`.
+- Apenas um insight por grupo — vence maior prioridade, depois menor `rule_priority`.
+- Deduplicação secundária por título normalizado.
+
+### 17.5 Confiança e limitações
+
+Todo insight inclui:
+
+- `confidence` (nível + fatores + limitações);
+- `evidence[]` rastreável a field paths oficiais;
+- `modules_involved`;
+- `period`;
+- `limitations`.
+
+Insights **não são emitidos** quando: módulos ausentes, confiança abaixo do mínimo da regra, ou dados insuficientes.
+
+### 17.6 Proibição de causalidade
+
+Textos descrevem fatos observados — nunca `"porque"`, `"causado por"` ou explicações sem regra objetiva.
+
+### 17.7 Integração com contratos C.1 e C.2
+
+- `generateExecutiveAnalysisInsights()` → `ExecutiveInsight[]` com `stage: "interpretation"`.
+- `generateExecutiveAnalysisWithSummaryAndInsights()` combina C.2 + C.3.
+- Category/priority em `meta.insight_records` (contratos C.1.0 inalterados).
+- `trends`, `alerts`, `recommendations` permanecem vazios.
+
+### 17.8 Garantias C.3
+
+| Garantia | Status |
+|----------|--------|
+| Baseline A/B preservadas | ✅ |
+| Contratos C.1.0 preservados | ✅ |
+| Summary Builder C.2 preservado | ✅ |
+| Insights determinísticos | ✅ |
+| Deduplicação validada | ✅ |
+| Cockpit UI inalterado | ✅ |
+
+### 17.9 Arquivos C.3
+
+| Arquivo | Responsabilidade |
+|---------|------------------|
+| `lib/miaExecutiveInsightCatalog.js` | Categorias, prioridades, regras, dedup |
+| `lib/miaExecutiveInsightBuilder.js` | Pipeline analyze → evaluate → deduplicate |
+
+### 17.10 Testes oficiais C.3
+
+```bash
+npm run test:mia:analytics:patch-c3:executive-insights
+npm run test:mia:analytics:patch-c3:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.3 — Geração de Insights Inteligentes.*
