@@ -296,7 +296,7 @@ styles/founder-cockpit.css  → tokens --fc-*
 | **Objetivo** | Validar, documentar e congelar Fase B |
 | **Escopo** | Regressão B.2–B.8 + Baseline A, master report, evidências |
 | **Dependências** | B.1–B.8 |
-| **Conclusão** | OFFICIALLY_COMPLETED, baseline B frozen |
+| **Conclusão** | OFFICIALLY_COMPLETED · baseline B FROZEN · **PHASE_B_OFFICIALLY_CLOSED** |
 
 ---
 

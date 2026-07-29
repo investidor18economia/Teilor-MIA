@@ -59,6 +59,35 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 ---
 
+## Arquitetura Executiva (PATCH B.1)
+
+**Documento:** `FOUNDER_COCKPIT_PHASE_B_ARCHITECTURE.md`  
+**Escopo:** arquitetura e roadmap da Fase B — sem implementação de métricas  
+**Baseline:** Fase A congelada (A.10 · FROZEN)
+
+**Camadas oficiais:**
+
+```text
+Interface Executiva (React — B.2–B.7)
+        ↓
+Mapper Executivo (lib/miaFounderExecutive*Display.js)
+        ↓
+API (executive-metrics · temporal-metrics · executive-insights)
+        ↓
+Serviço · RPC · Analytics
+```
+
+**Módulos planejados:** B.2 KPIs → B.3 Crescimento → B.4 Saúde → B.5 Comercial → B.6 Operacional → B.7 Resumo → B.8 Polimento → B.9 Auditoria
+
+### Encerramento (PATCH B.1)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_B_1_ARCHITECTURE_EVIDENCE.json` | Arquitetura documentada |
+| `PATCH_B_1_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
 ## KPIs Estratégicos (PATCH B.2)
 
 **Mapper:** `lib/miaFounderExecutiveDisplay.js` (B.2.0)  
@@ -396,6 +425,32 @@ Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
 | `PATCH_B_8_EXECUTIVE_POLISH_EVIDENCE.json` | Consistência visual + regressões |
 | `PATCH_B_8_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile |
 | `PATCH_B_8_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
+## Auditoria Final da Fase B (PATCH B.9)
+
+**Escopo:** auditoria integral B.1–B.8 — arquitetura, regressões, browser, produção, Git, evidências.
+
+**Veredito:** encerramento oficial da Fase B como nova baseline do Founder Cockpit.
+
+**Scripts:**
+
+| Script | Função |
+|--------|--------|
+| `test-mia-analytics-patch-b9-phase-b-final-audit.js` | Integridade arquitetural + inventário |
+| `patch-b9-browser-validation.mjs` | Desktop / tablet / mobile |
+| `patch-b9-production-validation.mjs` | APIs + bundle executivo em produção |
+| `patch-b9-closure.mjs` | Orquestrador de encerramento |
+
+### Encerramento (PATCH B.9)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PHASE_B_FINAL_AUDIT_EVIDENCE.json` | Auditoria arquitetural completa |
+| `PHASE_B_BROWSER_FINAL_EVIDENCE.json` | Validação browser final |
+| `PHASE_B_PRODUCTION_FINAL_EVIDENCE.json` | Validação produção final |
+| `PHASE_B_CLOSURE_REPORT.json` | Relatório executivo de encerramento |
 
 ---
 

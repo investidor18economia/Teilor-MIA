@@ -1,0 +1,1332 @@
+{
+  "patch": "B.9",
+  "title": "PATCH B.9 — Phase B Closure Report",
+  "phase": "B — Dashboard Executivo",
+  "status": "BLOCKED",
+  "phase_b_status": "PHASE_B_BLOCKED",
+  "baseline": null,
+  "closed_at": null,
+  "git": {
+    "pass": false,
+    "head": "fe6f59bdc8bf3521af1ce26920ed7c00769f6b0d",
+    "origin": "fe6f59bdc8bf3521af1ce26920ed7c00769f6b0d",
+    "working_tree_clean": false
+  },
+  "executive_summary": {
+    "phase": "B — Dashboard Executivo",
+    "patches_completed": [
+      "B.1",
+      "B.2",
+      "B.3",
+      "B.4",
+      "B.5",
+      "B.6",
+      "B.7",
+      "B.8",
+      "B.9"
+    ],
+    "modules_delivered": [
+      "KPIs Estratégicos (B.2)",
+      "Crescimento da Plataforma (B.3)",
+      "Saúde do Produto (B.4)",
+      "Performance Comercial (B.5)",
+      "Indicadores Operacionais (B.6)",
+      "Resumo Executivo (B.7)",
+      "Polimento Executivo (B.8)"
+    ],
+    "architecture_preserved": true,
+    "baseline_a_preserved": true,
+    "new_baseline": null
+  },
+  "final_architecture": {
+    "layers": [
+      "Interface Executiva",
+      "Mapper Executivo",
+      "API",
+      "Serviço",
+      "RPC",
+      "Analytics"
+    ],
+    "contracts": {
+      "cockpit_display": "A.2.0",
+      "temporal_catalog": "A.7.0",
+      "filters_catalog": "A.7.0",
+      "charts_display": "A.8.0",
+      "executive_api": "11.1.0",
+      "polish_catalog": "B.8.0"
+    },
+    "layout_order": [
+      "mod-kpis-estrategicos",
+      "mod-crescimento-plataforma",
+      "mod-saude-produto",
+      "mod-performance-comercial",
+      "mod-indicadores-operacionais",
+      "mod-resumo-executivo",
+      "executive-ai-insights"
+    ]
+  },
+  "test_coverage": {
+    "b9_audit": {
+      "total": 148,
+      "passed": 148,
+      "failed": 0,
+      "items": [
+        {
+          "label": "doc FOUNDER_EXECUTIVE_DASHBOARD.md exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "doc FOUNDER_COCKPIT_PHASE_B_ARCHITECTURE.md exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "doc FOUNDER_COCKPIT_BASELINE_A.md exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "doc FOUNDER_COCKPIT_PHASE_A_FINAL_REPORT.md exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.1",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.2",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.3",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.5",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.6",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.7",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.8",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FOUNDER_EXECUTIVE_DASHBOARD mentions B.9",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "Phase B architecture references Baseline A",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "Phase B architecture defines B.9 audit",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout includes FounderExecutiveKpisSection",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout order FounderExecutiveKpisSection",
+          "pass": true,
+          "detail": "idx=3832"
+        },
+        {
+          "label": "layout includes FounderExecutiveGrowthSection",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout order FounderExecutiveGrowthSection",
+          "pass": true,
+          "detail": "idx=3911"
+        },
+        {
+          "label": "layout includes FounderExecutiveProductHealthSection",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout order FounderExecutiveProductHealthSection",
+          "pass": true,
+          "detail": "idx=3992"
+        },
+        {
+          "label": "layout includes FounderExecutiveCommercialPerformanceSection",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout order FounderExecutiveCommercialPerformanceSection",
+          "pass": true,
+          "detail": "idx=4080"
+        },
+        {
+          "label": "layout includes FounderExecutiveOperationalSection",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout order FounderExecutiveOperationalSection",
+          "pass": true,
+          "detail": "idx=4176"
+        },
+        {
+          "label": "layout includes FounderExecutiveSummarySection",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout order FounderExecutiveSummarySection",
+          "pass": true,
+          "detail": "idx=4262"
+        },
+        {
+          "label": "layout includes FounderExecutiveInsights",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "layout order FounderExecutiveInsights",
+          "pass": true,
+          "detail": "idx=4354"
+        },
+        {
+          "label": "module views provider wraps B.2-B.7",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveDisplay.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveDisplay.js no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveDisplay.js no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveDisplay.js no fetch",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveGrowthDisplay.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveGrowthDisplay.js no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveGrowthDisplay.js no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveGrowthDisplay.js no fetch",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveProductHealthDisplay.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveProductHealthDisplay.js no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveProductHealthDisplay.js no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveProductHealthDisplay.js no fetch",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCommercialPerformanceDisplay.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCommercialPerformanceDisplay.js no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCommercialPerformanceDisplay.js no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCommercialPerformanceDisplay.js no fetch",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveOperationalDisplay.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveOperationalDisplay.js no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveOperationalDisplay.js no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveOperationalDisplay.js no fetch",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveSummaryDisplay.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveSummaryDisplay.js no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveSummaryDisplay.js no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveSummaryDisplay.js no fetch",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCatalog.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCatalog.js version B.2.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveGrowthCatalog.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveGrowthCatalog.js version B.3.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveProductHealthCatalog.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveProductHealthCatalog.js version B.4.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCommercialPerformanceCatalog.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveCommercialPerformanceCatalog.js version B.5.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveOperationalCatalog.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveOperationalCatalog.js version B.6.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveSummaryCatalog.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutiveSummaryCatalog.js version B.7.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutivePolishCatalog.js exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "miaFounderExecutivePolishCatalog.js version B.8.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveKpisSection.jsx no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveKpisSection.jsx no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveKpisSection.jsx no classifyExecutive",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveKpisSection.jsx no computeExecutive",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveKpisSection.jsx polish module class",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveGrowthSection.jsx no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveGrowthSection.jsx no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveGrowthSection.jsx no computePeriodChangePct",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveGrowthSection.jsx no classifyTrendDirection",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveGrowthSection.jsx polish module class",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveProductHealthSection.jsx no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveProductHealthSection.jsx no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveProductHealthSection.jsx no classifyProductHealthLevel",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveProductHealthSection.jsx no computeExecutiveHealthIndex",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveProductHealthSection.jsx polish module class",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveCommercialPerformanceSection.jsx no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveCommercialPerformanceSection.jsx no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveCommercialPerformanceSection.jsx no computeCommercialRatio",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveCommercialPerformanceSection.jsx no classifyCommercialLevel",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveCommercialPerformanceSection.jsx polish module class",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveOperationalSection.jsx no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveOperationalSection.jsx no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveOperationalSection.jsx no computeExecutiveOperationalIndex",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveOperationalSection.jsx no classifyOperationalLatency",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveOperationalSection.jsx polish module class",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveSummarySection.jsx no supabase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveSummarySection.jsx no SQL",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveSummarySection.jsx no extractSummarySignals",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveSummarySection.jsx no classifySummaryOverallLevel",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveSummarySection.jsx no computeModuleScores",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveSummarySection.jsx no fetch(",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "FounderExecutiveSummarySection.jsx polish module class",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "cockpit display A.2.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "filters catalog A.7.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "charts display A.8.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "temporal catalog A.7.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "executive API 11.1.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "pages/api/executive-metrics.js no PATCH B.9 marker",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "pages/api/temporal-metrics.js no PATCH B.9 marker",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "section id mod-kpis-estrategicos in codebase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "section id mod-crescimento-plataforma in codebase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "section id mod-saude-produto in codebase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "section id mod-performance-comercial in codebase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "section id mod-indicadores-operacionais in codebase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "section id mod-resumo-executivo in codebase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.1 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.1 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.1 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.1 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.2 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.2 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.2 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.2 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.3 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.3 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.3 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.3 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.4 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.4 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.4 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.4 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.5 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.5 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.5 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.5 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.6 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.6 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.6 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.6 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.7 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.7 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.7 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.7 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.8 evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.8 closure evidence exists",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.8 evidence APPROVED",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "B.8 closure OFFICIALLY_CLOSED",
+          "pass": true,
+          "detail": "OFFICIALLY_CLOSED"
+        },
+        {
+          "label": "B.8 polish CSS block",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "founder-executive-module class in CSS",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "no founder-executive-metrics.js API",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    "regressions": [
+      {
+        "label": "B.8 regression",
+        "pass": true
+      },
+      {
+        "label": "B.7 regression",
+        "pass": true
+      },
+      {
+        "label": "B.6 regression",
+        "pass": true
+      },
+      {
+        "label": "B.5 regression",
+        "pass": true
+      },
+      {
+        "label": "B.4 regression",
+        "pass": true
+      },
+      {
+        "label": "B.3 regression",
+        "pass": true
+      },
+      {
+        "label": "B.2 regression",
+        "pass": true
+      },
+      {
+        "label": "B.1 regression",
+        "pass": true
+      },
+      {
+        "label": "Phase A baseline",
+        "pass": true
+      },
+      {
+        "label": "A.2 regression",
+        "pass": true
+      },
+      {
+        "label": "A.9 regression",
+        "pass": true
+      }
+    ],
+    "build": true,
+    "browser": {
+      "total": 54,
+      "passed": 54,
+      "items": [
+        {
+          "label": "desktop: authentication",
+          "pass": true,
+          "detail": "200"
+        },
+        {
+          "label": "desktop: SSR cockpit loaded",
+          "pass": true,
+          "detail": "attempt=1"
+        },
+        {
+          "label": "desktop: 6 executive modules",
+          "pass": true,
+          "detail": "count=6"
+        },
+        {
+          "label": "desktop: B.2 KPIs",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: B.3 growth",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: B.4 product health",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: B.5 commercial",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: B.6 operational",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: B.7 summary",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: B.7 headline",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: B.7 priorities block",
+          "pass": true,
+          "detail": "items=3"
+        },
+        {
+          "label": "desktop: insights section",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: section order",
+          "pass": true,
+          "detail": "[0,1,2,3,4,5,6]"
+        },
+        {
+          "label": "desktop: B.8 disclaimers",
+          "pass": true,
+          "detail": "count=6"
+        },
+        {
+          "label": "desktop: filters preserved",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: no horizontal overflow",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: no page errors",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "desktop: screenshot saved",
+          "pass": true,
+          "detail": "docs\\analytics\\evidence\\phase-b-final\\phase-b-final-desktop.png"
+        },
+        {
+          "label": "tablet: authentication",
+          "pass": true,
+          "detail": "200"
+        },
+        {
+          "label": "tablet: SSR cockpit loaded",
+          "pass": true,
+          "detail": "attempt=1"
+        },
+        {
+          "label": "tablet: 6 executive modules",
+          "pass": true,
+          "detail": "count=6"
+        },
+        {
+          "label": "tablet: B.2 KPIs",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: B.3 growth",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: B.4 product health",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: B.5 commercial",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: B.6 operational",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: B.7 summary",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: B.7 headline",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: B.7 priorities block",
+          "pass": true,
+          "detail": "items=3"
+        },
+        {
+          "label": "tablet: insights section",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: section order",
+          "pass": true,
+          "detail": "[0,1,2,3,4,5,6]"
+        },
+        {
+          "label": "tablet: B.8 disclaimers",
+          "pass": true,
+          "detail": "count=6"
+        },
+        {
+          "label": "tablet: filters preserved",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: no horizontal overflow",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: no page errors",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "tablet: screenshot saved",
+          "pass": true,
+          "detail": "docs\\analytics\\evidence\\phase-b-final\\phase-b-final-tablet.png"
+        },
+        {
+          "label": "mobile: authentication",
+          "pass": true,
+          "detail": "200"
+        },
+        {
+          "label": "mobile: SSR cockpit loaded",
+          "pass": true,
+          "detail": "attempt=1"
+        },
+        {
+          "label": "mobile: 6 executive modules",
+          "pass": true,
+          "detail": "count=6"
+        },
+        {
+          "label": "mobile: B.2 KPIs",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: B.3 growth",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: B.4 product health",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: B.5 commercial",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: B.6 operational",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: B.7 summary",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: B.7 headline",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: B.7 priorities block",
+          "pass": true,
+          "detail": "items=3"
+        },
+        {
+          "label": "mobile: insights section",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: section order",
+          "pass": true,
+          "detail": "[0,1,2,3,4,5,6]"
+        },
+        {
+          "label": "mobile: B.8 disclaimers",
+          "pass": true,
+          "detail": "count=6"
+        },
+        {
+          "label": "mobile: filters preserved",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: no horizontal overflow",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: no page errors",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "mobile: screenshot saved",
+          "pass": true,
+          "detail": "docs\\analytics\\evidence\\phase-b-final\\phase-b-final-mobile.png"
+        }
+      ]
+    },
+    "production": {
+      "total": 18,
+      "passed": 18,
+      "items": [
+        {
+          "label": "health 200",
+          "pass": true,
+          "detail": "build=fe6f59bdc8bf"
+        },
+        {
+          "label": "executive-metrics 200",
+          "pass": true,
+          "detail": "status=200"
+        },
+        {
+          "label": "executive platform group",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "executive system group",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "executive conversation group",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "executive commerce group",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "temporal-metrics 200",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "temporal_version A.7.0",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "growth group",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "platform_activity group",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "conversion group",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "cockpit SSR 200",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "robots noindex",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "login gate or cockpit shell",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "bundle executive KPIs",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "bundle executive summary",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "bundle polish module class",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "label": "bundle filters layer",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    }
+  },
+  "documentation": {
+    "founder_executive_dashboard": true,
+    "phase_b_architecture": true,
+    "baseline_a": true,
+    "phase_a_report": true
+  },
+  "production": {
+    "base_url": "https://economia-ai.vercel.app",
+    "build": "fe6f59bdc8bf",
+    "git_head_local": "fe6f59bdc8bf"
+  },
+  "prior_patches_closed": true,
+  "steps": [
+    {
+      "label": "B.9 phase audit",
+      "pass": true
+    },
+    {
+      "label": "B.8 regression",
+      "pass": true
+    },
+    {
+      "label": "B.7 regression",
+      "pass": true
+    },
+    {
+      "label": "B.6 regression",
+      "pass": true
+    },
+    {
+      "label": "B.5 regression",
+      "pass": true
+    },
+    {
+      "label": "B.4 regression",
+      "pass": true
+    },
+    {
+      "label": "B.3 regression",
+      "pass": true
+    },
+    {
+      "label": "B.2 regression",
+      "pass": true
+    },
+    {
+      "label": "B.1 regression",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "Phase B browser validation",
+      "pass": true
+    },
+    {
+      "label": "Phase B production validation",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "final_audit": "APPROVED",
+    "browser": "APPROVED",
+    "production": "APPROVED"
+  },
+  "blockers": [
+    "Git not synchronized"
+  ],
+  "pending_items": [
+    "Git not synchronized"
+  ],
+  "remaining_risks": [
+    "Volume baixo em produção pode reduzir confiança de indicadores comerciais (documentado em B.5).",
+    "SSR local requer PUBLIC_METRICS_API_BASE_URL alinhado à porta do servidor.",
+    "Deploy transitório pode falhar validação temporal até propagação completa."
+  ],
+  "recommendations": [
+    "Preservar contratos A.2.0 / A.7.0 / A.8.0 / 11.1.0 como baseline congelada.",
+    "Novas métricas executivas exigem extensão RPC/API versionada — nunca cálculo no frontend.",
+    "Manter scripts patch-b9-* no CI para regressão da Fase B.",
+    "Iniciar Fase C apenas após aprovação explícita do roadmap."
+  ]
+}
