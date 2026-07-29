@@ -266,10 +266,10 @@ styles/founder-cockpit.css  → tokens --fc-*
 
 | Campo | Valor |
 |-------|-------|
-| **Objetivo** | Saúde operacional da plataforma e alertas |
-| **Escopo** | Seção operacional (system, alerts, meta) |
-| **Dependências** | B.2, executive-metrics system/alerts |
-| **Conclusão** | Status sistema visível, sem métricas inventadas |
+| **Objetivo** | Saúde operacional executiva — estabilidade, integridade, latência, freshness e índice operacional |
+| **Escopo** | `FounderExecutiveOperationalSection`, `miaFounderExecutiveOperationalCatalog.js`, `miaFounderExecutiveOperationalDisplay.js` (B.6.0) |
+| **Dependências** | B.2–B.5, executive-metrics (system, performance, partial_errors, grupos), temporal probe (consistência) |
+| **Conclusão** | 9 indicadores + índice operacional + narrativa determinística, zero alteração de API · **OFFICIALLY_CLOSED** |
 
 ### PATCH B.7 — Resumo Executivo
 

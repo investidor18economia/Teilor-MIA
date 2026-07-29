@@ -1795,6 +1795,85 @@
   line-height: 1.4;
 }
 
+/* PATCH B.6 — Executive Operational Indicators */
+.founder-executive-operational {
+  margin-bottom: var(--fc-space-xl);
+  padding: var(--fc-space-lg) var(--fc-space-md);
+  border-radius: var(--fc-radius-lg);
+  background: var(--fc-bg-panel);
+  border: 1px solid var(--fc-border);
+  box-shadow: var(--fc-shadow-card);
+}
+
+.founder-executive-operational-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.founder-executive-operational-title {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--fc-text-primary);
+  letter-spacing: 0.03em;
+}
+
+.founder-executive-operational-narrative {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: var(--fc-radius-md);
+  background: rgba(100, 149, 237, 0.06);
+  border: 1px solid rgba(100, 149, 237, 0.18);
+}
+
+.founder-executive-operational-headline {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fc-text-primary);
+  line-height: 1.5;
+}
+
+.founder-executive-operational-meta {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  color: var(--fc-text-muted);
+}
+
+.founder-executive-operational-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.founder-executive-operational-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.founder-executive-operational-detail {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--fc-text-muted);
+  line-height: 1.4;
+}
+
+.founder-executive-badge--critical {
+  background: rgba(255, 69, 58, 0.14);
+  color: #ffb4ae;
+  border: 1px solid rgba(255, 69, 58, 0.4);
+}
+
+.founder-executive-badge--unavailable {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--fc-text-muted);
+  border: 1px solid var(--fc-border);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .founder-skeleton-line,
   .founder-skeleton-chart-area,
@@ -1856,6 +1935,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .founder-executive-operational-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .founder-executive-kpis-header {
     flex-direction: column;
   }
@@ -1869,6 +1952,10 @@
   }
 
   .founder-executive-commercial-header {
+    flex-direction: column;
+  }
+
+  .founder-executive-operational-header {
     flex-direction: column;
   }
 }

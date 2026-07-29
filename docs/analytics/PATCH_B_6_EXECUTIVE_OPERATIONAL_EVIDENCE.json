@@ -1,0 +1,337 @@
+{
+  "patch": "B.6",
+  "title": "PATCH B.6 — Executive Operational Indicators Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T14:19:17.809Z",
+  "display_version": "B.6.0",
+  "catalog_version": "B.6.0",
+  "indicators_implemented": [
+    "operational_stability",
+    "data_availability",
+    "snapshot_integrity",
+    "update_freshness",
+    "api_response_time",
+    "temporal_layer_consistency",
+    "environment_consistency",
+    "version_integrity",
+    "executive_operational_index"
+  ],
+  "components": [
+    "FounderExecutiveOperationalSection.jsx"
+  ],
+  "mapper": "lib/miaFounderExecutiveOperationalDisplay.js",
+  "catalog": "lib/miaFounderExecutiveOperationalCatalog.js",
+  "baseline_a_preserved": true,
+  "baseline_b2_preserved": true,
+  "baseline_b3_preserved": true,
+  "baseline_b4_preserved": true,
+  "baseline_b5_preserved": true,
+  "empty_states": {
+    "metric_unavailable": "Métrica indisponível no contrato atual.",
+    "environment_missing": "Ambiente não informado pelo snapshot.",
+    "update_missing": "Última atualização indisponível.",
+    "version_missing": "Versão não informada.",
+    "temporal_unavailable": "Camada temporal indisponível."
+  },
+  "checks": {
+    "total": 59,
+    "passed": 59,
+    "items": [
+      {
+        "label": "catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog version B.6.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper version B.6.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "catalog defines 9 indicators",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit mounts FounderExecutiveOperationalSection",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "operational below commercial",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "operational above insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component uses mapper only",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no computeExecutiveOperationalIndex",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no classifyOperationalLatency",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "component has no resolveExecutiveOperationalNarrative",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "display no supabase import",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "display no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "operational CSS",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit display still A.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.2 catalog still B.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.3 catalog still B.3.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.4 catalog still B.4.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.5 catalog still B.5.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "temporal catalog still A.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive API still 11.1.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/executive-metrics.js unchanged by B.6",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/temporal-metrics.js unchanged by B.6",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dashboard doc mentions B.6",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "indicators sorted by priority",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "freshness excellent",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "freshness attention",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "latency excellent",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "latency attention",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "latency unknown",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "operational index",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "operational index empty",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "age ms computed",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "freshness label minutes",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative all stable",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative services normal",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative update attention",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative degradation",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative environment ok",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative default",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge critical",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge unavailable",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge attention",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "badge healthy",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper returns 9 indicators",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper narrative headline",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper operational index",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper api latency",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper snapshot integrity",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper temporal consistency",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper environment",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mapper groups loaded",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "degraded narrative",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "degraded partial status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "empty executive error status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no temporal unavailable label",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "missing environment message",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

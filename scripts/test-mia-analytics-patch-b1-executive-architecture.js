@@ -39,10 +39,12 @@ const b2Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveDisplay.js")
 const b3Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveGrowthDisplay.js"));
 const b4Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveProductHealthDisplay.js"));
 const b5Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveCommercialPerformanceDisplay.js"));
+const b6Implemented = existsSync(join(ROOT, "lib/miaFounderExecutiveOperationalDisplay.js"));
 const forbiddenImplB1 = [
   ...(b3Implemented ? [] : ["components/founder-cockpit/FounderExecutiveGrowthSection.jsx"]),
   ...(b4Implemented ? [] : ["components/founder-cockpit/FounderExecutiveProductHealthSection.jsx"]),
   ...(b5Implemented ? [] : ["components/founder-cockpit/FounderExecutiveCommercialPerformanceSection.jsx"]),
+  ...(b6Implemented ? [] : ["components/founder-cockpit/FounderExecutiveOperationalSection.jsx"]),
   "components/founder-cockpit/FounderExecutiveSummarySection.jsx",
   "pages/api/founder-executive-metrics.js",
 ];
@@ -77,6 +79,11 @@ if (b5Implemented) {
   ok("B.5 commercial file miaFounderExecutiveCommercialPerformanceDisplay.js", existsSync(join(ROOT, "lib/miaFounderExecutiveCommercialPerformanceDisplay.js")));
   ok("B.5 commercial file miaFounderExecutiveCommercialPerformanceCatalog.js", existsSync(join(ROOT, "lib/miaFounderExecutiveCommercialPerformanceCatalog.js")));
   ok("B.5 commercial file FounderExecutiveCommercialPerformanceSection.jsx", existsSync(join(ROOT, "components/founder-cockpit/FounderExecutiveCommercialPerformanceSection.jsx")));
+}
+if (b6Implemented) {
+  ok("B.6 operational file miaFounderExecutiveOperationalDisplay.js", existsSync(join(ROOT, "lib/miaFounderExecutiveOperationalDisplay.js")));
+  ok("B.6 operational file miaFounderExecutiveOperationalCatalog.js", existsSync(join(ROOT, "lib/miaFounderExecutiveOperationalCatalog.js")));
+  ok("B.6 operational file FounderExecutiveOperationalSection.jsx", existsSync(join(ROOT, "components/founder-cockpit/FounderExecutiveOperationalSection.jsx")));
 }
 
 // Baseline contracts unchanged — version strings

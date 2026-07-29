@@ -1,0 +1,378 @@
+{
+  "patch": "B.6",
+  "title": "PATCH B.6 — Browser Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T14:19:57.007Z",
+  "base_url": "http://localhost:3022",
+  "screenshots_dir": "docs/analytics/evidence/patch-b6-browser",
+  "diagnostics": [
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "operational": true,
+      "operationalHeadline": "Existe degradação operacional que merece investigação.",
+      "operationalItems": 9,
+      "operationalBadges": 10,
+      "insights": true,
+      "kpiStrip": true,
+      "sectionOrder": {
+        "commercialIdx": 3,
+        "operationalIdx": 4,
+        "insightsIdx": 5,
+        "sections": [
+          "mod-kpis-estrategicos",
+          "mod-crescimento-plataforma",
+          "mod-saude-produto",
+          "mod-performance-comercial",
+          "mod-indicadores-operacionais",
+          "executive-ai-insights",
+          "mod-sessoes-usuarios",
+          "mod-produtos-categorias",
+          "mod-performance-conversao",
+          "mod-plataforma",
+          "mod-conversacao",
+          "mod-recomendacoes",
+          "mod-comercial",
+          "mod-alertas",
+          "mod-price-intelligence",
+          "mod-economia",
+          "mod-anti-regret",
+          "mod-user-value",
+          "mod-sistema"
+        ]
+      },
+      "pageErrors": []
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "operational": true,
+      "operationalHeadline": "Existe degradação operacional que merece investigação.",
+      "operationalItems": 9,
+      "operationalBadges": 10,
+      "insights": true,
+      "kpiStrip": true,
+      "sectionOrder": {
+        "commercialIdx": 3,
+        "operationalIdx": 4,
+        "insightsIdx": 5,
+        "sections": [
+          "mod-kpis-estrategicos",
+          "mod-crescimento-plataforma",
+          "mod-saude-produto",
+          "mod-performance-comercial",
+          "mod-indicadores-operacionais",
+          "executive-ai-insights",
+          "mod-sessoes-usuarios",
+          "mod-produtos-categorias",
+          "mod-performance-conversao",
+          "mod-plataforma",
+          "mod-conversacao",
+          "mod-recomendacoes",
+          "mod-comercial",
+          "mod-alertas",
+          "mod-price-intelligence",
+          "mod-economia",
+          "mod-anti-regret",
+          "mod-user-value",
+          "mod-sistema"
+        ]
+      },
+      "pageErrors": []
+    },
+    {
+      "attempt": 1,
+      "h1": "Cockpit Executivo",
+      "gate": false,
+      "fetchError": false,
+      "filterError": false,
+      "executiveKpis": true,
+      "executiveGrowth": true,
+      "productHealth": true,
+      "commercial": true,
+      "operational": true,
+      "operationalHeadline": "Existe degradação operacional que merece investigação.",
+      "operationalItems": 9,
+      "operationalBadges": 10,
+      "insights": true,
+      "kpiStrip": true,
+      "sectionOrder": {
+        "commercialIdx": 3,
+        "operationalIdx": 4,
+        "insightsIdx": 5,
+        "sections": [
+          "mod-kpis-estrategicos",
+          "mod-crescimento-plataforma",
+          "mod-saude-produto",
+          "mod-performance-comercial",
+          "mod-indicadores-operacionais",
+          "executive-ai-insights",
+          "mod-sessoes-usuarios",
+          "mod-produtos-categorias",
+          "mod-performance-conversao",
+          "mod-plataforma",
+          "mod-conversacao",
+          "mod-recomendacoes",
+          "mod-comercial",
+          "mod-alertas",
+          "mod-price-intelligence",
+          "mod-economia",
+          "mod-anti-regret",
+          "mod-user-value",
+          "mod-sistema"
+        ]
+      },
+      "pageErrors": []
+    }
+  ],
+  "checks": {
+    "total": 46,
+    "passed": 46,
+    "items": [
+      {
+        "label": "auth endpoint",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "desktop: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.5 commercial preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: B.6 operational visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: operational headline rendered",
+        "pass": true,
+        "detail": "Existe degradação operacional que merece investigação."
+      },
+      {
+        "label": "desktop: operational indicator items",
+        "pass": true,
+        "detail": "items=9"
+      },
+      {
+        "label": "desktop: operational badges rendered",
+        "pass": true,
+        "detail": "badges=10"
+      },
+      {
+        "label": "desktop: layout order commercial→operational→insights",
+        "pass": true,
+        "detail": "{\"commercialIdx\":3,\"operationalIdx\":4,\"insightsIdx\":5,\"sections\":[\"mod-kpis-estrategicos\",\"mod-crescimento-plataforma\",\"mod-saude-produto\",\"mod-performance-comercial\",\"mod-indicadores-operacionais\",\"executive-ai-insights\",\"mod-sessoes-usuarios\",\"mod-produtos-categorias\",\"mod-performance-conversao\",\"mod-plataforma\",\"mod-conversacao\",\"mod-recomendacoes\",\"mod-comercial\",\"mod-alertas\",\"mod-price-intelligence\",\"mod-economia\",\"mod-anti-regret\",\"mod-user-value\",\"mod-sistema\"]}"
+      },
+      {
+        "label": "desktop: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b6-browser\\executive-operational-desktop.png"
+      },
+      {
+        "label": "tablet: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "tablet: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.5 commercial preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: B.6 operational visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: operational headline rendered",
+        "pass": true,
+        "detail": "Existe degradação operacional que merece investigação."
+      },
+      {
+        "label": "tablet: operational indicator items",
+        "pass": true,
+        "detail": "items=9"
+      },
+      {
+        "label": "tablet: operational badges rendered",
+        "pass": true,
+        "detail": "badges=10"
+      },
+      {
+        "label": "tablet: layout order commercial→operational→insights",
+        "pass": true,
+        "detail": "{\"commercialIdx\":3,\"operationalIdx\":4,\"insightsIdx\":5,\"sections\":[\"mod-kpis-estrategicos\",\"mod-crescimento-plataforma\",\"mod-saude-produto\",\"mod-performance-comercial\",\"mod-indicadores-operacionais\",\"executive-ai-insights\",\"mod-sessoes-usuarios\",\"mod-produtos-categorias\",\"mod-performance-conversao\",\"mod-plataforma\",\"mod-conversacao\",\"mod-recomendacoes\",\"mod-comercial\",\"mod-alertas\",\"mod-price-intelligence\",\"mod-economia\",\"mod-anti-regret\",\"mod-user-value\",\"mod-sistema\"]}"
+      },
+      {
+        "label": "tablet: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b6-browser\\executive-operational-tablet.png"
+      },
+      {
+        "label": "mobile: auth in context",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: cockpit SSR ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "mobile: B.2 KPIs preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.3 growth preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.4 product health preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.5 commercial preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: B.6 operational visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: operational headline rendered",
+        "pass": true,
+        "detail": "Existe degradação operacional que merece investigação."
+      },
+      {
+        "label": "mobile: operational indicator items",
+        "pass": true,
+        "detail": "items=9"
+      },
+      {
+        "label": "mobile: operational badges rendered",
+        "pass": true,
+        "detail": "badges=10"
+      },
+      {
+        "label": "mobile: layout order commercial→operational→insights",
+        "pass": true,
+        "detail": "{\"commercialIdx\":3,\"operationalIdx\":4,\"insightsIdx\":5,\"sections\":[\"mod-kpis-estrategicos\",\"mod-crescimento-plataforma\",\"mod-saude-produto\",\"mod-performance-comercial\",\"mod-indicadores-operacionais\",\"executive-ai-insights\",\"mod-sessoes-usuarios\",\"mod-produtos-categorias\",\"mod-performance-conversao\",\"mod-plataforma\",\"mod-conversacao\",\"mod-recomendacoes\",\"mod-comercial\",\"mod-alertas\",\"mod-price-intelligence\",\"mod-economia\",\"mod-anti-regret\",\"mod-user-value\",\"mod-sistema\"]}"
+      },
+      {
+        "label": "mobile: insights section present",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: legacy KPI strip preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b6-browser\\executive-operational-mobile.png"
+      }
+    ]
+  }
+}

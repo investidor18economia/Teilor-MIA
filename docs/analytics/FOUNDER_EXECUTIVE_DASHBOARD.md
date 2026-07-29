@@ -38,7 +38,8 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 0. **KPIs Estratégicos** (PATCH B.2) — visão executiva superior para decisão rápida  
 0.1 **Crescimento da Plataforma** (PATCH B.3) — evolução, velocidade, aceleração e comparativo de período  
 0.2 **Saúde do Produto** (PATCH B.4) — qualidade, aceitação, confiança e índice executivo de saúde  
-0.3 **Performance Comercial** (PATCH B.5) — funil comercial, CTR, intenção e índice executivo comercial  
+0.3 **Performance Comercial** (PATCH B.5) — funil comercial, CTR, intenção e índice executivo comercial
+0.4 **Indicadores Operacionais** (PATCH B.6) — estabilidade, integridade, latência e índice operacional executivo  
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
@@ -255,6 +256,65 @@ Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
 | `PATCH_B_5_EXECUTIVE_COMMERCIAL_PERFORMANCE_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
 | `PATCH_B_5_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
 | `PATCH_B_5_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
+## Indicadores Operacionais (PATCH B.6)
+
+**Mapper:** `lib/miaFounderExecutiveOperationalDisplay.js` (B.6.0)  
+**Catálogo:** `lib/miaFounderExecutiveOperationalCatalog.js` (B.6.0)  
+**Componente:** `FounderExecutiveOperationalSection.jsx` (client fetch temporal probe)  
+**Posição:** abaixo de Performance Comercial (B.5) e acima de Executive Insights
+
+**Fontes (contratos existentes — sem alteração de API/RPC):**
+
+| Indicador | Fonte | Campo oficial |
+|-----------|-------|---------------|
+| Estabilidade operacional | derivado (mapper) | síntese integridade + latência + freshness |
+| Disponibilidade dos dados | executive snapshot | grupos carregados vs `MIA_EXECUTIVE_METRICS_CATEGORIES` (10) |
+| Integridade do snapshot | executive snapshot | `partial_errors[]` |
+| Tempo de atualização | executive snapshot | `system.last_update` ou `computed_at` |
+| Tempo de resposta da API | executive snapshot | `performance.total_duration_ms` |
+| Consistência temporal | temporal probe | `temporal_version` + `partial_errors[]` |
+| Consistência do ambiente | executive snapshot | `system.environment` |
+| Integridade das versões | executive snapshot | `metrics_version`, `analytics_version`, `build_version` |
+| Índice executivo operacional | derivado (mapper) | média ponderada dos sinais disponíveis (0–100) |
+
+**Thresholds (catálogo B.6.0):**
+
+| Sinal | Excelente | Saudável | Atenção |
+|-------|-----------|----------|---------|
+| Latência API | ≤ 500 ms | ≤ 1500 ms | ≥ 3000 ms |
+| Freshness | ≤ 10 min | ≤ 1 h | ≥ 24 h |
+| Índice operacional | ≥ 85 | ≥ 65 | < 45 |
+
+**Limitações documentadas:**
+
+- Métricas indisponíveis exibem estado transparente (sem alerta falso)
+- Probe temporal opcional — consistência temporal pode ficar indisponível sem fetch
+- `partial_errors` não implicam falha total — status partial quando aplicável
+- Ambiente custom não reconhecido → estável (não crítico)
+
+**Narrativa executiva (determinística — sem IA):**
+
+| Regra | Mensagem |
+|-------|----------|
+| Operação estável | A operação permanece estável. |
+| Serviços normais | Todos os serviços monitorados estão respondendo normalmente. |
+| Atualização stale | Há sinais de atenção no tempo de atualização. |
+| Degradação | Existe degradação operacional que merece investigação. |
+| Ambiente ok | O ambiente permanece consistente. |
+| Padrão | Indicadores operacionais dentro do padrão observado. |
+
+**Badges:** Estável · Saudável · Atenção · Crítico · Indisponível
+
+### Encerramento (PATCH B.6)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_B_6_EXECUTIVE_OPERATIONAL_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
+| `PATCH_B_6_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
+| `PATCH_B_6_CLOSURE_EVIDENCE.json` | Encerramento oficial |
 
 ---
 
