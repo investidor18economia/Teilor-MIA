@@ -1,11 +1,11 @@
 {
   "patch": "A.10",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T01:46:09.460Z",
+  "validated_at": "2026-07-29T12:05:24.894Z",
   "production": {
     "base_url": "https://economia-ai.vercel.app",
-    "build": "a17e217726ec",
-    "git_head_local": "a17e217726ec"
+    "build": "6ebf1057f6fa",
+    "git_head_local": "b6a7590f1bc6"
   },
   "checks": {
     "total": 13,
@@ -14,7 +14,7 @@
       {
         "label": "health 200",
         "pass": true,
-        "detail": "build=a17e217726ec"
+        "detail": "build=6ebf1057f6fa"
       },
       {
         "label": "executive-metrics 200",

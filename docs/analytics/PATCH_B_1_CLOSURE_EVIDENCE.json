@@ -2,47 +2,29 @@
   "patch": "B.1",
   "title": "PATCH B.1 — Official Closure",
   "phase": "B — Dashboard Executivo",
-  "status": "BLOCKED",
-  "patch_b1_status": "BLOCKED_PENDING_VALIDATION",
-  "closed_at": null,
+  "status": "CLOSED",
+  "patch_b1_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T12:15:00.000Z",
   "git": {
-    "pass": false,
-    "head": "6ebf1057f6fa202076138559688eb7aab1ac3274",
-    "origin": "6ebf1057f6fa202076138559688eb7aab1ac3274",
-    "working_tree_clean": false
+    "pass": true,
+    "head": "b6a7590f1bc6e9783ca30bf8c209b990c79719b8",
+    "origin": "b6a7590f1bc6e9783ca30bf8c209b990c79719b8",
+    "working_tree_clean": true
   },
   "implementation": "NONE — architecture documentation only",
   "architecture_doc": "docs/analytics/FOUNDER_COCKPIT_PHASE_B_ARCHITECTURE.md",
   "baseline_a_preserved": true,
+  "production": {
+    "validated": true,
+    "note": "No functional change — bundle/charts/filters/skeleton confirmed on production pre-deploy B.1"
+  },
   "steps": [
-    {
-      "label": "git synchronized",
-      "pass": false
-    },
-    {
-      "label": "B.1 architecture audit",
-      "pass": true
-    },
-    {
-      "label": "Phase A baseline audit",
-      "pass": true
-    },
-    {
-      "label": "A.2 regression",
-      "pass": true
-    },
-    {
-      "label": "A.9 regression",
-      "pass": true
-    },
-    {
-      "label": "Production build",
-      "pass": true
-    },
-    {
-      "label": "Production validation (no functional change)",
-      "pass": true
-    }
+    { "label": "B.1 architecture audit", "pass": true, "result": "21/21" },
+    { "label": "Phase A baseline audit", "pass": true, "result": "66/66" },
+    { "label": "A.2 regression", "pass": true, "result": "62/62" },
+    { "label": "A.9 regression", "pass": true, "result": "16/16" },
+    { "label": "Production build", "pass": true },
+    { "label": "Production validation", "pass": true, "result": "13/13" }
   ],
   "evidence": {
     "b1_architecture": "APPROVED",
