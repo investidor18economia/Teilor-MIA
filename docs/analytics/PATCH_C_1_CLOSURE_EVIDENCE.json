@@ -1,0 +1,95 @@
+{
+  "patch": "C.1",
+  "title": "PATCH C.1 — Official Closure",
+  "phase": "C — MIA como Analista da Empresa",
+  "status": "BLOCKED",
+  "patch_c1_status": "BLOCKED_PENDING_VALIDATION",
+  "closed_at": null,
+  "git": {
+    "pass": false,
+    "head": "593f0f17b2adf156892aed689e1493244099d8dc",
+    "origin": "593f0f17b2adf156892aed689e1493244099d8dc",
+    "working_tree_clean": false
+  },
+  "baseline_a_preserved": true,
+  "baseline_b_preserved": true,
+  "scope": "Architecture and contracts only — no analysis behavior, no UI changes",
+  "steps": [
+    {
+      "label": "C.1 architecture audit",
+      "pass": true
+    },
+    {
+      "label": "Phase B baseline audit",
+      "pass": true
+    },
+    {
+      "label": "B.8 regression",
+      "pass": true
+    },
+    {
+      "label": "B.7 regression",
+      "pass": true
+    },
+    {
+      "label": "B.6 regression",
+      "pass": true
+    },
+    {
+      "label": "B.5 regression",
+      "pass": true
+    },
+    {
+      "label": "B.4 regression",
+      "pass": true
+    },
+    {
+      "label": "B.3 regression",
+      "pass": true
+    },
+    {
+      "label": "B.2 regression",
+      "pass": true
+    },
+    {
+      "label": "B.1 regression",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "C.1 browser regression",
+      "pass": false
+    },
+    {
+      "label": "Production validation",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "architecture": "APPROVED",
+    "browser": "REJECTED",
+    "documentation": true
+  },
+  "files_created": [
+    "lib/miaExecutiveAnalysisContracts.js",
+    "lib/miaExecutiveAnalysisArchitecture.js",
+    "lib/miaExecutiveNarrativeArchitecture.js",
+    "docs/analytics/MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md"
+  ],
+  "next_patch": "C.2 — TBD (Analysis engine foundation)"
+}
