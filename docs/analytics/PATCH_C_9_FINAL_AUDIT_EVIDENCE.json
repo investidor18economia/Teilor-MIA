@@ -1,0 +1,2125 @@
+{
+  "patch": "C.9",
+  "title": "PATCH C.9 — Phase C Final Audit Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T21:43:55.841Z",
+  "phase": "C — MIA como Analista da Empresa",
+  "inventory": {
+    "C.1": {
+      "files": [
+        "lib/miaExecutiveAnalysisContracts.js",
+        "lib/miaExecutiveAnalysisArchitecture.js",
+        "lib/miaExecutiveNarrativeArchitecture.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_1_ARCHITECTURE_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_1_CLOSURE_EVIDENCE.json"
+    },
+    "C.2": {
+      "files": [
+        "lib/miaExecutiveSummaryCatalog.js",
+        "lib/miaExecutiveSummaryBuilder.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_2_SUMMARY_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_2_CLOSURE_EVIDENCE.json"
+    },
+    "C.3": {
+      "files": [
+        "lib/miaExecutiveInsightCatalog.js",
+        "lib/miaExecutiveInsightBuilder.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_3_INSIGHTS_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_3_CLOSURE_EVIDENCE.json"
+    },
+    "C.4": {
+      "files": [
+        "lib/miaExecutiveTrendCatalog.js",
+        "lib/miaExecutiveTrendRules.js",
+        "lib/miaExecutiveTrendBuilder.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_4_TRENDS_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_4_CLOSURE_EVIDENCE.json"
+    },
+    "C.5": {
+      "files": [
+        "lib/miaExecutiveAlertCatalog.js",
+        "lib/miaExecutiveAlertRules.js",
+        "lib/miaExecutiveAlertBuilder.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_5_ALERTS_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_5_CLOSURE_EVIDENCE.json"
+    },
+    "C.6": {
+      "files": [
+        "lib/miaExecutiveRecommendationCatalog.js",
+        "lib/miaExecutiveRecommendationRules.js",
+        "lib/miaExecutiveRecommendationBuilder.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_6_RECOMMENDATIONS_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_6_CLOSURE_EVIDENCE.json"
+    },
+    "C.7": {
+      "files": [
+        "lib/miaExecutiveExplainabilityCatalog.js",
+        "lib/miaExecutiveConfidenceBuilder.js",
+        "lib/miaExecutiveExplainabilityBuilder.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_7_EXPLAINABILITY_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_7_CLOSURE_EVIDENCE.json"
+    },
+    "C.8": {
+      "files": [
+        "lib/miaExecutiveNarrativeCatalog.js",
+        "lib/miaExecutiveToneCatalog.js",
+        "lib/miaExecutiveNarrativeBuilder.js"
+      ],
+      "evidence": "docs/analytics/PATCH_C_8_HUMANIZATION_EVIDENCE.json",
+      "closure": "docs/analytics/PATCH_C_8_CLOSURE_EVIDENCE.json"
+    }
+  },
+  "patch_statuses": {
+    "C.1": "OFFICIALLY_CLOSED",
+    "C.2": "OFFICIALLY_CLOSED",
+    "C.3": "OFFICIALLY_CLOSED",
+    "C.4": "OFFICIALLY_CLOSED",
+    "C.5": "OFFICIALLY_CLOSED",
+    "C.6": "OFFICIALLY_CLOSED",
+    "C.7": "OFFICIALLY_CLOSED",
+    "C.8": "OFFICIALLY_CLOSED"
+  },
+  "scenarios": [
+    {
+      "name": "1. snapshot saudável",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "2. snapshot estável",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "3. alerta operacional crítico",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "4. gargalo comercial",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "5. queda de aceitação",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "6. queda de growth",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "7. cross-module deterioration",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "8. baixo volume",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "9. módulos ausentes",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "10. input vazio",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "11. no_action elegível",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "12. múltiplos alertas",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "13. múltiplas recomendações",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "14–16. dedup/suppression/confidence",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "17. trend preliminary",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "18. narrative warning",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "19. narrative consultative",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "20–21. narrative positive/neutral",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "22. explainability completa",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "23. traceability",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "24. determinismo pipeline",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "25. imutabilidade camadas",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "architecture": {
+    "layer_immutability": true,
+    "determinism": true,
+    "prohibitions": true,
+    "lib_only": true
+  },
+  "checks": {
+    "total": 381,
+    "passed": 381,
+    "failed": 0,
+    "items": [
+      {
+        "label": "MIA_EXECUTIVE_ANALYST_ARCHITECTURE.md exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FOUNDER_COCKPIT_BASELINE_B.md exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.1",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.2",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.3",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.4",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.5",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.6",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.7",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "architecture doc mentions C.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 file miaExecutiveAnalysisContracts.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisContracts.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisContracts.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisContracts.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisContracts.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 file miaExecutiveAnalysisArchitecture.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisArchitecture.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisArchitecture.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisArchitecture.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveAnalysisArchitecture.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 file miaExecutiveNarrativeArchitecture.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveNarrativeArchitecture.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveNarrativeArchitecture.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveNarrativeArchitecture.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 miaExecutiveNarrativeArchitecture.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 file miaExecutiveSummaryCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 file miaExecutiveSummaryBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 miaExecutiveSummaryBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 file miaExecutiveInsightCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 file miaExecutiveInsightBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 miaExecutiveInsightBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 file miaExecutiveTrendCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 file miaExecutiveTrendRules.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendRules.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendRules.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendRules.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendRules.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 file miaExecutiveTrendBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 miaExecutiveTrendBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 file miaExecutiveAlertCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 file miaExecutiveAlertRules.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertRules.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertRules.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertRules.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertRules.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 file miaExecutiveAlertBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 miaExecutiveAlertBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 file miaExecutiveRecommendationCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 file miaExecutiveRecommendationRules.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationRules.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationRules.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationRules.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationRules.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 file miaExecutiveRecommendationBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 miaExecutiveRecommendationBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 file miaExecutiveExplainabilityCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 file miaExecutiveConfidenceBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveConfidenceBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveConfidenceBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveConfidenceBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveConfidenceBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 file miaExecutiveExplainabilityBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 miaExecutiveExplainabilityBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 file miaExecutiveNarrativeCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 file miaExecutiveToneCatalog.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveToneCatalog.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveToneCatalog.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveToneCatalog.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveToneCatalog.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 file miaExecutiveNarrativeBuilder.js",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeBuilder.js no supabase",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeBuilder.js no SQL",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeBuilder.js no fetch",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 miaExecutiveNarrativeBuilder.js no LLM",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.1 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "C.2 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.2 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "C.3 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "C.4 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "C.5 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "C.6 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "C.7 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "C.8 evidence exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 closure exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 evidence APPROVED",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 OFFICIALLY_CLOSED",
+        "pass": true,
+        "detail": "OFFICIALLY_CLOSED"
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary (C.2)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisSummary key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights (C.3)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisInsights key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights (C.3)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryAndInsights key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends (C.4)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisTrends key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends (C.4)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsAndTrends key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts (C.5)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisAlerts key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts (C.5)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithSummaryInsightsTrendsAndAlerts key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations (C.6)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisRecommendations key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete (C.6)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisComplete key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability (C.7)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisExplainability key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability (C.7)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithExplainability key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative (C.8)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveNarrative key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative (C.8)",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative returns object",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key analysis_version",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key status",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "API generateExecutiveAnalysisWithNarrative key meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.3 preserves summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.4 preserves summary+insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.5 preserves trends count",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.6 preserves alerts count",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 preserves C.2–C.6 slots",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.7 preserves C.2–C.6 IDs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 preserves C.2–C.7 slots",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 preserves explainability records",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "C.8 preserves C.2–C.6 IDs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism C.6",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism C.7",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "determinism C.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "contracts version C.1.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence level high used or valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence level moderate used or valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence level low used or valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "confidence level insufficient_data used or valid",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field analysis_type",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field analysis_reference",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field rule_reference",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field evidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field confidence",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field limitations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field supporting_modules",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field supporting_metrics",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field supporting_alerts",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field supporting_trends",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field supporting_insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field supporting_recommendations",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field deterministic",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field generated_at",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "explainability field meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field id",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field executive_message",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field sections",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field highlights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field priorities",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field confidence_summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field limitation_summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field evidence_summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field tone_profile",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field reading_time",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field deterministic",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative field meta",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "narrative deterministic",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "scenario: 1. snapshot saudável",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 2. snapshot estável",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 3. alerta operacional crítico",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 4. gargalo comercial",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 5. queda de aceitação",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 6. queda de growth",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 7. cross-module deterioration",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 8. baixo volume",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 9. módulos ausentes",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 10. input vazio",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 11. no_action elegível",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 12. múltiplos alertas",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 13. múltiplas recomendações",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 14–16. dedup/suppression/confidence",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 17. trend preliminary",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 18. narrative warning",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 19. narrative consultative",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 20–21. narrative positive/neutral",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 22. explainability completa",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 23. traceability",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 24. determinismo pipeline",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "scenario: 25. imutabilidade camadas",
+        "pass": true,
+        "detail": "ok"
+      },
+      {
+        "label": "no blocklist phrase in narrative",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no blocklist phrase in narrative",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no blocklist phrase in narrative",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "no FounderExecutiveAnalystSection",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  },
+  "issues": {
+    "P0": [],
+    "P1": [],
+    "P2": [],
+    "P3": []
+  }
+}

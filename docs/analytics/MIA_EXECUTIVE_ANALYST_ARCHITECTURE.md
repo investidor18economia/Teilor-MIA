@@ -885,4 +885,29 @@ npm run test:mia:analytics:patch-c8:closure
 
 ---
 
-*Documento atualizado no PATCH C.8 — Humanização da Analista Executiva.*
+## 23. PATCH C.9 — Auditoria Final da Fase C
+
+**Versão:** C.9.0 · **Status:** implementado
+
+### 23.1 Objetivo
+
+Auditar, validar e congelar C.1–C.8 como Baseline C oficial. Sem novas funcionalidades.
+
+### 23.2 Entregáveis
+
+- `scripts/test-mia-analytics-phase-c-final-audit.js` — auditoria integrada
+- `scripts/patch-c9-closure.mjs` — orchestrator oficial
+- [FOUNDER_COCKPIT_PHASE_C_FINAL_REPORT.md](./FOUNDER_COCKPIT_PHASE_C_FINAL_REPORT.md)
+- [FOUNDER_COCKPIT_BASELINE_C.md](./FOUNDER_COCKPIT_BASELINE_C.md)
+- Evidências `PATCH_C_9_*`
+
+### 23.3 Testes oficiais C.9
+
+```bash
+npm run test:mia:analytics:patch-c9:phase-c-final-audit
+npm run test:mia:analytics:patch-c9:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.9 — Auditoria Final da Fase C.*
