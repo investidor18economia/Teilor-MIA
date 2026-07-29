@@ -1,0 +1,52 @@
+{
+  "patch": "B.1",
+  "title": "PATCH B.1 — Official Closure",
+  "phase": "B — Dashboard Executivo",
+  "status": "BLOCKED",
+  "patch_b1_status": "BLOCKED_PENDING_VALIDATION",
+  "closed_at": null,
+  "git": {
+    "pass": false,
+    "head": "6ebf1057f6fa202076138559688eb7aab1ac3274",
+    "origin": "6ebf1057f6fa202076138559688eb7aab1ac3274",
+    "working_tree_clean": false
+  },
+  "implementation": "NONE — architecture documentation only",
+  "architecture_doc": "docs/analytics/FOUNDER_COCKPIT_PHASE_B_ARCHITECTURE.md",
+  "baseline_a_preserved": true,
+  "steps": [
+    {
+      "label": "git synchronized",
+      "pass": false
+    },
+    {
+      "label": "B.1 architecture audit",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline audit",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "Production validation (no functional change)",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "b1_architecture": "APPROVED",
+    "master_doc": true
+  },
+  "next_patch": "B.2 — KPIs Estratégicos"
+}

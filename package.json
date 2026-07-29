@@ -159,6 +159,8 @@
     "test:mia:analytics:patch-a10:prod-validation": "node scripts/patch-a10-production-validation.mjs",
     "test:mia:analytics:patch-a10:browser-validation": "node --env-file=.env.local scripts/patch-a10-browser-validation.mjs",
     "test:mia:analytics:patch-a10:closure": "node --env-file=.env.local scripts/patch-a10-closure.mjs",
+    "test:mia:analytics:patch-b1:executive-architecture": "node scripts/test-mia-analytics-patch-b1-executive-architecture.js",
+    "test:mia:analytics:patch-b1:closure": "node scripts/patch-b1-closure.mjs",
     "test:mia:analytics:patch-113:prod-smoke": "node scripts/patch-113-production-smoke.mjs",
     "test:mia:analytics:patch-114:executive-ai-insights": "node scripts/test-mia-analytics-patch-114-executive-ai-insights.js",
     "test:mia:analytics:patch-114:prod-smoke": "node scripts/patch-114-production-smoke.mjs",
