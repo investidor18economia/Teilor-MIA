@@ -45,7 +45,8 @@ ok(
 );
 
 const cockpitPage = read("pages/cockpit-fundador.jsx");
-ok("SSR passes executiveMetrics raw", cockpitPage.includes("executiveMetrics={metrics}"));
+ok("SSR passes executiveMetrics raw", cockpitPage.includes("executiveMetrics: metrics"));
+ok("page uses executiveMetrics prop", cockpitPage.includes("executiveMetrics={executiveMetrics}"));
 
 const css = read("styles/founder-cockpit.css");
 ok("executive KPI CSS", css.includes(".founder-executive-kpis"));

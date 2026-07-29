@@ -7,8 +7,8 @@
   "closed_at": null,
   "git": {
     "pass": false,
-    "head": "495cf032f572b5691b418d58ffd0942476bda1ea",
-    "origin": "495cf032f572b5691b418d58ffd0942476bda1ea",
+    "head": "1ea89b77aa06b39b6a12ec09d43d186a939e31fb",
+    "origin": "1ea89b77aa06b39b6a12ec09d43d186a939e31fb",
     "working_tree_clean": false
   },
   "baseline_a_preserved": true,
@@ -36,11 +36,19 @@
     {
       "label": "Production build",
       "pass": true
+    },
+    {
+      "label": "Browser validation",
+      "pass": true
+    },
+    {
+      "label": "Production validation",
+      "pass": true
     }
   ],
   "evidence": {
     "b2_kpis": "APPROVED",
-    "browser": "PENDING_LOCAL",
+    "browser": "APPROVED",
     "dashboard_doc": true
   },
   "next_patch": "B.3 — Crescimento da Plataforma"

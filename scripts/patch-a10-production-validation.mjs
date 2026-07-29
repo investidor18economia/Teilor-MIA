@@ -16,6 +16,16 @@ function ok(label, pass, detail = "") {
   console.log(`${pass ? "PASS" : "FAIL"} — ${label}${detail ? ` (${detail})` : ""}`);
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchExecutiveMetricsFresh() {
+  const res = await fetch(`${BASE}/api/executive-metrics?range=30d&fresh=1`);
+  const json = await res.json().catch(() => ({}));
+  return { res, json };
+}
+
 console.log("\nPATCH A.10 — Phase A production validation\n");
 
 let health = {};
@@ -33,11 +43,28 @@ try {
 }
 
 {
-  const res = await fetch(`${BASE}/api/executive-metrics?range=30d&fresh=1`);
-  const json = await res.json().catch(() => ({}));
-  ok("executive-metrics 200", res.ok);
-  ok("executive platform group", Boolean(json.platform));
-  ok("executive system group", Boolean(json.system));
+  let platformOk = false;
+  let lastJson = {};
+  let lastStatus = 0;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    const { res, json } = await fetchExecutiveMetricsFresh();
+    lastJson = json;
+    lastStatus = res.status;
+    platformOk =
+      res.ok &&
+      json.platform != null &&
+      typeof json.platform === "object" &&
+      Object.keys(json.platform).length > 0;
+    if (platformOk) break;
+    if (attempt < 3) await sleep(2500);
+  }
+  ok("executive-metrics 200", lastStatus === 200, `status=${lastStatus}`);
+  ok(
+    "executive platform group",
+    platformOk,
+    platformOk ? "" : `platform=${lastJson.platform === null ? "null" : typeof lastJson.platform}`
+  );
+  ok("executive system group", Boolean(lastJson.system));
 }
 
 {

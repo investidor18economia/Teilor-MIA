@@ -58,6 +58,7 @@ export async function getServerSideProps(context) {
     props: {
       authorized: true,
       cockpit: mapExecutiveMetricsToFounderCockpit(metrics),
+      executiveMetrics: metrics,
       fetchError,
       subject: gate.subject,
       filters,
@@ -74,9 +75,18 @@ export async function getServerSideProps(context) {
  *   subject: string|null,
  *   filters: object,
  *   filterError: string|null,
+ *   executiveMetrics: object|null,
  * }} props
  */
-export default function CockpitFundadorPage({ authorized, cockpit, fetchError, subject, filters, filterError }) {
+export default function CockpitFundadorPage({
+  authorized,
+  cockpit,
+  fetchError,
+  subject,
+  filters,
+  filterError,
+  executiveMetrics = null,
+}) {
   return (
     <>
       <Head>
@@ -105,7 +115,7 @@ export default function CockpitFundadorPage({ authorized, cockpit, fetchError, s
           cockpit={cockpit}
           subject={subject}
           initialFilters={filters}
-          executiveMetrics={metrics}
+          executiveMetrics={executiveMetrics}
         />
       )}
     </>
