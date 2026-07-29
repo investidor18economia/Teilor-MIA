@@ -665,4 +665,95 @@ npm run test:mia:analytics:patch-c5:closure
 
 ---
 
-*Documento atualizado no PATCH C.5 — Alertas Estratégicos Priorizados.*
+## 20. PATCH C.6 — Recomendações Acionáveis para o Fundador
+
+**Versão:** C.6.0 · **Status:** implementado (lib-only)
+
+### 20.1 Princípio
+
+Recomendações nascem **exclusivamente** de Executive Views + Insights (C.3) + Trends (C.4) + Alerts (C.5). A LLM nunca decide recomendação, prioridade ou confiança.
+
+### 20.2 Pipeline
+
+```
+Views + Insights + Trends + Alerts
+  → Recommendation Candidate Collection
+  → Eligibility Validation
+  → Recommendation Rule Evaluation
+  → Priority → Confidence → Deduplication
+  → ExecutiveRecommendation[]
+  → Narrative Structure (interpretation)
+  → LLM Verbalizer (futuro)
+```
+
+### 20.3 Executive Recommendation Generator
+
+Implementação: `lib/miaExecutiveRecommendationBuilder.js`  
+Catálogo: `lib/miaExecutiveRecommendationCatalog.js`  
+Regras: `lib/miaExecutiveRecommendationRules.js`
+
+Registros estendidos em `meta.recommendation_records` incluem: `recommendation_key`, `recommendation_type`, `category`, `source_alerts`, `source_trends`, `source_insights`, `expected_outcome`, `review_after`, `limitations`.
+
+Contrato C.1 `ExecutiveRecommendation` preservado: `recommendation_id`, `headline`, `rationale`, `confidence`, `evidence`, `priority`.
+
+### 20.4 Tipos suportados
+
+| Tipo | Uso |
+|------|-----|
+| **investigate** | Alertas operacionais críticos ou degradação |
+| **monitor** | Quedas a acompanhar, estabilidade |
+| **validate** | Quedas comerciais ou aceitação a confirmar |
+| **optimize** | Gargalos comerciais |
+| **expand** | Crescimento alinhado positivo |
+| **reduce_risk** | Divergência cross-module |
+| **improve_quality** | Volume comercial insuficiente (insight) |
+| **collect_more_data** | Módulos ausentes ou volume baixo |
+| **no_action** | Nenhum alerta relevante — acompanhamento de rotina |
+
+### 20.5 Regras de recomendação (C.6.0)
+
+| Fonte | Exemplo | Tipo | Prioridade |
+|-------|---------|------|------------|
+| `operational.critical` | alerta | investigate | P0 |
+| `cross_module.deterioration` | alerta | investigate | P1 |
+| `commercial.bottleneck` | alerta | optimize | P1 |
+| `product.acceptance_drop` | alerta | validate | P1 |
+| `commercial.decline` | alerta/tendência | validate | P2 |
+| `growth.decline` | alerta/tendência | monitor | P2 |
+| `commercial.low_volume` | alerta | collect_more_data | P2 |
+| `data.modules_missing` | alerta | collect_more_data | P2 |
+| `cross_module_decoupling` | insight | reduce_risk | P2 |
+| `cross_module_aligned_growth` | insight | expand | P3 |
+| nenhum alerta relevante | snapshot | no_action | P3 |
+
+### 20.6 Prioridade, confiança e deduplicação
+
+- Prioridade herda alerta quando aplicável (P0–P3).
+- Confiança consolidada das fontes (alertas, insights, tendências).
+- Confidence gates por prioridade — P0/P1 exigem ≥ moderate.
+- Deduplicação por `dedup_group` + período.
+- Supressão de recomendações P3 insight-only quando alertas P1+ existem.
+
+### 20.7 Proibições C.6
+
+- Sem execução automática de ações, emails ou tarefas.
+- Sem causalidade sobre métricas de negócio (blocklist em descriptions).
+- Sem linguagem especulativa (acho, talvez, parece).
+- Rationale referencia regras/alertas — não atribui causa de negócio.
+
+### 20.8 APIs públicas
+
+- `generateExecutiveAnalysisRecommendations(input)` → recommendations preenchidas.
+- `generateExecutiveAnalysisComplete(input)` → C.2 + C.3 + C.4 + C.5 + C.6.
+- APIs C.2–C.5 preservadas.
+
+### 20.9 Testes oficiais C.6
+
+```bash
+npm run test:mia:analytics:patch-c6:executive-recommendations
+npm run test:mia:analytics:patch-c6:closure
+```
+
+---
+
+*Documento atualizado no PATCH C.6 — Recomendações Acionáveis para o Fundador.*
