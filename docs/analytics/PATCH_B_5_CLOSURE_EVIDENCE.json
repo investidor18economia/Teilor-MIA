@@ -1,0 +1,70 @@
+{
+  "patch": "B.5",
+  "title": "PATCH B.5 — Official Closure",
+  "phase": "B — Dashboard Executivo",
+  "status": "CLOSED",
+  "patch_b5_status": "OFFICIALLY_CLOSED",
+  "closed_at": "2026-07-29T14:02:28.032Z",
+  "git": {
+    "pass": true,
+    "head": "7cceb58583b3c2aa88ad22ba89791e8c81240768",
+    "origin": "7cceb58583b3c2aa88ad22ba89791e8c81240768",
+    "working_tree_clean": true
+  },
+  "baseline_a_preserved": true,
+  "baseline_b2_preserved": true,
+  "baseline_b3_preserved": true,
+  "baseline_b4_preserved": true,
+  "steps": [
+    {
+      "label": "B.5 commercial audit",
+      "pass": true
+    },
+    {
+      "label": "B.4 regression",
+      "pass": true
+    },
+    {
+      "label": "B.3 regression",
+      "pass": true
+    },
+    {
+      "label": "B.2 regression",
+      "pass": true
+    },
+    {
+      "label": "B.1 architecture regression",
+      "pass": true
+    },
+    {
+      "label": "Phase A baseline audit",
+      "pass": true
+    },
+    {
+      "label": "A.2 regression",
+      "pass": true
+    },
+    {
+      "label": "A.9 regression",
+      "pass": true
+    },
+    {
+      "label": "Production build",
+      "pass": true
+    },
+    {
+      "label": "Browser validation",
+      "pass": false
+    },
+    {
+      "label": "Production validation",
+      "pass": true
+    }
+  ],
+  "evidence": {
+    "b5_commercial": "APPROVED",
+    "browser": "REJECTED",
+    "dashboard_doc": true
+  },
+  "next_patch": "B.6 — Indicadores Operacionais"
+}

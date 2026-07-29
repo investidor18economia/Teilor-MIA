@@ -2,7 +2,7 @@
   "patch": "B.5",
   "title": "PATCH B.5 — Browser Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T13:59:58.170Z",
+  "validated_at": "2026-07-29T14:03:28.209Z",
   "base_url": "http://localhost:3021",
   "screenshots_dir": "docs/analytics/evidence/patch-b5-browser",
   "diagnostics": [
@@ -173,7 +173,7 @@
       {
         "label": "tablet: commercial headline rendered",
         "pass": true,
-        "detail": "Performance comercial dentro do padrão observado no período."
+        "detail": "As recomendações estão gerando interesse, mas poucos usuários avançam para as ofertas."
       },
       {
         "label": "tablet: commercial indicator items",
@@ -183,7 +183,7 @@
       {
         "label": "tablet: commercial badges rendered",
         "pass": true,
-        "detail": "badges=8"
+        "detail": "badges=9"
       },
       {
         "label": "tablet: funnel stages rendered",

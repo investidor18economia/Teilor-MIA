@@ -69,6 +69,7 @@ const requiredSteps = steps.filter((s) => !s.label?.includes("Browser") && !s.la
 const allPass =
   requiredSteps.every((s) => s.pass) &&
   b5Evidence.status === "APPROVED" &&
+  (browserEvidence.status === "APPROVED" || !process.env.MIA_ADMIN_API_KEY) &&
   docExists &&
   docHasB5;
 

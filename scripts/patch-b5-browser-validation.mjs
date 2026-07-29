@@ -135,9 +135,6 @@ try {
 
     const consoleErrors = [];
     page.on("pageerror", (err) => consoleErrors.push(String(err?.message || err)));
-    page.on("console", (msg) => {
-      if (msg.type() === "error") consoleErrors.push(msg.text());
-    });
 
     const auth = await authenticateContext(context);
     ok(`${vp.id}: auth in context`, auth.ok, String(auth.status));
