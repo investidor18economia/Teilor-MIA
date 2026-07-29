@@ -1,0 +1,340 @@
+{
+  "patch": "B.8",
+  "title": "PATCH B.8 — Browser Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T15:03:38.813Z",
+  "base_url": "http://localhost:3024",
+  "screenshots_dir": "docs/analytics/evidence/patch-b8-browser",
+  "diagnostics": [
+    {
+      "attempt": 1,
+      "executiveModules": 6,
+      "badges": 29,
+      "headlines": 3,
+      "disclaimers": 6,
+      "overflow": false,
+      "sections": [
+        "mod-kpis-estrategicos",
+        "mod-crescimento-plataforma",
+        "mod-saude-produto",
+        "mod-performance-comercial",
+        "mod-indicadores-operacionais",
+        "mod-resumo-executivo",
+        "executive-ai-insights",
+        "mod-sessoes-usuarios",
+        "mod-produtos-categorias",
+        "mod-performance-conversao",
+        "mod-plataforma",
+        "mod-conversacao",
+        "mod-recomendacoes",
+        "mod-comercial",
+        "mod-alertas",
+        "mod-price-intelligence",
+        "mod-economia",
+        "mod-anti-regret",
+        "mod-user-value",
+        "mod-sistema"
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "orderOk": true,
+      "kpis": true,
+      "summary": true,
+      "insights": true
+    },
+    {
+      "attempt": 1,
+      "executiveModules": 6,
+      "badges": 29,
+      "headlines": 3,
+      "disclaimers": 6,
+      "overflow": false,
+      "sections": [
+        "mod-kpis-estrategicos",
+        "mod-crescimento-plataforma",
+        "mod-saude-produto",
+        "mod-performance-comercial",
+        "mod-indicadores-operacionais",
+        "mod-resumo-executivo",
+        "executive-ai-insights",
+        "mod-sessoes-usuarios",
+        "mod-produtos-categorias",
+        "mod-performance-conversao",
+        "mod-plataforma",
+        "mod-conversacao",
+        "mod-recomendacoes",
+        "mod-comercial",
+        "mod-alertas",
+        "mod-price-intelligence",
+        "mod-economia",
+        "mod-anti-regret",
+        "mod-user-value",
+        "mod-sistema"
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "orderOk": true,
+      "kpis": true,
+      "summary": true,
+      "insights": true
+    },
+    {
+      "attempt": 1,
+      "executiveModules": 6,
+      "badges": 29,
+      "headlines": 3,
+      "disclaimers": 6,
+      "overflow": false,
+      "sections": [
+        "mod-kpis-estrategicos",
+        "mod-crescimento-plataforma",
+        "mod-saude-produto",
+        "mod-performance-comercial",
+        "mod-indicadores-operacionais",
+        "mod-resumo-executivo",
+        "executive-ai-insights",
+        "mod-sessoes-usuarios",
+        "mod-produtos-categorias",
+        "mod-performance-conversao",
+        "mod-plataforma",
+        "mod-conversacao",
+        "mod-recomendacoes",
+        "mod-comercial",
+        "mod-alertas",
+        "mod-price-intelligence",
+        "mod-economia",
+        "mod-anti-regret",
+        "mod-user-value",
+        "mod-sistema"
+      ],
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "orderOk": true,
+      "kpis": true,
+      "summary": true,
+      "insights": true
+    }
+  ],
+  "checks": {
+    "total": 39,
+    "passed": 39,
+    "items": [
+      {
+        "label": "desktop: auth",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "desktop: cockpit ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "desktop: 6 executive modules",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "desktop: unified module class on KPIs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: unified module class on summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: section order",
+        "pass": true,
+        "detail": "[0,1,2,3,4,5,6]"
+      },
+      {
+        "label": "desktop: disclaimers present",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "desktop: badges rendered",
+        "pass": true,
+        "detail": "count=29"
+      },
+      {
+        "label": "desktop: headlines rendered",
+        "pass": true,
+        "detail": "count=3"
+      },
+      {
+        "label": "desktop: no horizontal overflow",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: insights preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "desktop: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b8-browser\\executive-polish-desktop.png"
+      },
+      {
+        "label": "tablet: auth",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "tablet: cockpit ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "tablet: 6 executive modules",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "tablet: unified module class on KPIs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: unified module class on summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: section order",
+        "pass": true,
+        "detail": "[0,1,2,3,4,5,6]"
+      },
+      {
+        "label": "tablet: disclaimers present",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "tablet: badges rendered",
+        "pass": true,
+        "detail": "count=29"
+      },
+      {
+        "label": "tablet: headlines rendered",
+        "pass": true,
+        "detail": "count=3"
+      },
+      {
+        "label": "tablet: no horizontal overflow",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: insights preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "tablet: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b8-browser\\executive-polish-tablet.png"
+      },
+      {
+        "label": "mobile: auth",
+        "pass": true,
+        "detail": "200"
+      },
+      {
+        "label": "mobile: cockpit ready",
+        "pass": true,
+        "detail": "attempt=1"
+      },
+      {
+        "label": "mobile: 6 executive modules",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "mobile: unified module class on KPIs",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: unified module class on summary",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: section order",
+        "pass": true,
+        "detail": "[0,1,2,3,4,5,6]"
+      },
+      {
+        "label": "mobile: disclaimers present",
+        "pass": true,
+        "detail": "count=6"
+      },
+      {
+        "label": "mobile: badges rendered",
+        "pass": true,
+        "detail": "count=29"
+      },
+      {
+        "label": "mobile: headlines rendered",
+        "pass": true,
+        "detail": "count=3"
+      },
+      {
+        "label": "mobile: no horizontal overflow",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: insights preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: no page errors",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile: screenshot saved",
+        "pass": true,
+        "detail": "docs\\analytics\\evidence\\patch-b8-browser\\executive-polish-mobile.png"
+      }
+    ]
+  }
+}

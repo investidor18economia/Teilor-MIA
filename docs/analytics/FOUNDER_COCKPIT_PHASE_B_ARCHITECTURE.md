@@ -284,10 +284,10 @@ styles/founder-cockpit.css  → tokens --fc-*
 
 | Campo | Valor |
 |-------|-------|
-| **Objetivo** | UX/UI premium dos módulos B — sem alterar dados |
-| **Escopo** | CSS, skeletons, responsividade, a11y |
-| **Dependências** | B.2–B.7, Design System A.9 |
-| **Conclusão** | Desktop/tablet/mobile aprovados, zero regressão numérica |
+| **Objetivo** | Refinar UX/UI dos módulos B.2–B.7 para aparência executiva premium e consistente |
+| **Escopo** | `miaFounderExecutivePolishCatalog.js` (B.8.0), CSS unificado, disclaimers padronizados, a11y/responsividade |
+| **Dependências** | B.2–B.7 concluídos · Design System A.9 |
+| **Conclusão** | Zero alteração funcional · mappers/APIs intactos · **OFFICIALLY_CLOSED** |
 
 ### PATCH B.9 — Auditoria Final da Fase B
 

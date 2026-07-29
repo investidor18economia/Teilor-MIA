@@ -4,6 +4,7 @@ import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveMetricsToFounderExecutiveKpis } from "../../lib/miaFounderExecutiveDisplay.js";
 import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
+import { EXECUTIVE_MODULE_DISCLAIMERS } from "../../lib/miaFounderExecutivePolishCatalog.js";
 
 function ExecutiveKpiCard({ kpi }) {
   return (
@@ -86,7 +87,7 @@ export default function FounderExecutiveKpisSection({ executiveMetrics = null })
 
   return (
     <section
-      className="founder-executive-kpis"
+      className="founder-executive-kpis founder-executive-module"
       id="mod-kpis-estrategicos"
       aria-labelledby="heading-kpis-estrategicos"
     >
@@ -96,7 +97,7 @@ export default function FounderExecutiveKpisSection({ executiveMetrics = null })
             KPIs Estratégicos
           </h2>
           <p className="founder-module-disclaimer" role="note">
-            Visão executiva de decisão rápida · Fontes: API Executiva + API Temporal (contratos A.7.0 / 11.1.0).
+            {EXECUTIVE_MODULE_DISCLAIMERS.kpis}
           </p>
         </div>
         {state.status === "error" || state.status === "partial" ? (

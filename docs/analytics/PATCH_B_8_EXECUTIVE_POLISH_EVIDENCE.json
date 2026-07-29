@@ -1,0 +1,267 @@
+{
+  "patch": "B.8",
+  "title": "PATCH B.8 — Executive UI Polish Evidence",
+  "status": "APPROVED",
+  "validated_at": "2026-07-29T14:55:54.049Z",
+  "catalog_version": "B.8.0",
+  "scope": "UX/UI polish only — no metrics, APIs, or mapper changes",
+  "modules_polished": [
+    "FounderExecutiveKpisSection.jsx",
+    "FounderExecutiveGrowthSection.jsx",
+    "FounderExecutiveProductHealthSection.jsx",
+    "FounderExecutiveCommercialPerformanceSection.jsx",
+    "FounderExecutiveOperationalSection.jsx",
+    "FounderExecutiveSummarySection.jsx"
+  ],
+  "checks": {
+    "total": 49,
+    "passed": 49,
+    "items": [
+      {
+        "label": "polish catalog exists",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "polish catalog version B.8.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "six executive disclaimers",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "section order defined",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.8 polish CSS block",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "unified executive module class",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "text-primary token",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "unified narrative panels",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "unified badge critical",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive focus-visible",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "mobile funnel stack",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveKpisSection.jsx uses founder-executive-module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveKpisSection.jsx uses polish catalog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveKpisSection.jsx render-only guard",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveGrowthSection.jsx uses founder-executive-module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveGrowthSection.jsx uses polish catalog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveGrowthSection.jsx render-only guard",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveProductHealthSection.jsx uses founder-executive-module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveProductHealthSection.jsx uses polish catalog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveProductHealthSection.jsx render-only guard",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveCommercialPerformanceSection.jsx uses founder-executive-module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveCommercialPerformanceSection.jsx uses polish catalog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveCommercialPerformanceSection.jsx render-only guard",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveOperationalSection.jsx uses founder-executive-module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveOperationalSection.jsx uses polish catalog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveOperationalSection.jsx render-only guard",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveSummarySection.jsx uses founder-executive-module",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveSummarySection.jsx uses polish catalog",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "FounderExecutiveSummarySection.jsx render-only guard",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "layout order preserved",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "summary before insights",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveDisplay.js unchanged by B.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveDisplay.js version intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveGrowthDisplay.js unchanged by B.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveGrowthDisplay.js version intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveProductHealthDisplay.js unchanged by B.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveProductHealthDisplay.js version intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveCommercialPerformanceDisplay.js unchanged by B.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveCommercialPerformanceDisplay.js version intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveOperationalDisplay.js unchanged by B.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveOperationalDisplay.js version intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveSummaryDisplay.js unchanged by B.8",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "miaFounderExecutiveSummaryDisplay.js version intact",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/executive-metrics.js unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "pages/api/temporal-metrics.js unchanged",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.2 catalog still B.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "B.7 catalog still B.7.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "cockpit display still A.2.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "dashboard doc mentions B.8",
+        "pass": true,
+        "detail": ""
+      }
+    ]
+  }
+}

@@ -4,6 +4,7 @@ import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveProductHealthToFounderDisplay } from "../../lib/miaFounderExecutiveProductHealthDisplay.js";
 import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
+import { EXECUTIVE_MODULE_DISCLAIMERS } from "../../lib/miaFounderExecutivePolishCatalog.js";
 
 function HealthIndicatorCard({ indicator }) {
   const displayValue = indicator.valueFormatted ?? "—";
@@ -91,7 +92,7 @@ export default function FounderExecutiveProductHealthSection({ executiveMetrics 
 
   return (
     <section
-      className="founder-executive-product-health"
+      className="founder-executive-product-health founder-executive-module"
       id="mod-saude-produto"
       aria-labelledby="heading-saude-produto"
     >
@@ -101,8 +102,7 @@ export default function FounderExecutiveProductHealthSection({ executiveMetrics 
             Saúde do Produto
           </h2>
           <p className="founder-module-disclaimer" role="note">
-            Qualidade e confiança executiva · Fontes: snapshot oficial (recommendation, conversation,
-            user_value, anti_regret, price_intelligence, savings, commerce).
+            {EXECUTIVE_MODULE_DISCLAIMERS.health}
           </p>
         </div>
         {state.status === "error" || state.status === "partial" ? (

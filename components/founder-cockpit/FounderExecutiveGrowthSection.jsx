@@ -4,6 +4,7 @@ import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveGrowthToFounderDisplay } from "../../lib/miaFounderExecutiveGrowthDisplay.js";
 import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
+import { EXECUTIVE_MODULE_DISCLAIMERS } from "../../lib/miaFounderExecutivePolishCatalog.js";
 
 function GrowthIndicatorCard({ indicator }) {
   const displayValue =
@@ -115,7 +116,7 @@ export default function FounderExecutiveGrowthSection({ executiveMetrics = null 
 
   return (
     <section
-      className="founder-executive-growth"
+      className="founder-executive-growth founder-executive-module"
       id="mod-crescimento-plataforma"
       aria-labelledby="heading-crescimento-plataforma"
     >
@@ -125,8 +126,7 @@ export default function FounderExecutiveGrowthSection({ executiveMetrics = null 
             Crescimento da Plataforma
           </h2>
           <p className="founder-module-disclaimer" role="note">
-            Evolução executiva · Fontes: API Temporal (growth + platform_activity) + comparativo
-            executivo (offset oficial).
+            {EXECUTIVE_MODULE_DISCLAIMERS.growth}
           </p>
         </div>
         {state.status === "error" || state.status === "partial" ? (

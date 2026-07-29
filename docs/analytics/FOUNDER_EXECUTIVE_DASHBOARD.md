@@ -368,6 +368,37 @@ Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
 
 ---
 
+## Polimento Executivo (PATCH B.8)
+
+**Escopo:** UX/UI exclusivamente — sem novas métricas, APIs, RPCs ou alteração de mappers B.2–B.7.
+
+**Catálogo de apresentação:** `lib/miaFounderExecutivePolishCatalog.js` (B.8.0) — disclaimers unificados e ordem de seções.
+
+**Refinamentos:**
+
+| Área | Melhoria |
+|------|----------|
+| Shell visual | Classe `.founder-executive-module` em B.2–B.7 |
+| Tipografia | Títulos executivos padronizados (`--fc-gold`, 1.125rem) |
+| Narrativas | Painéis unificados (mesmo fundo/borda) |
+| Badges | Variantes críticas/summary consolidadas |
+| Disclaimers | Linguagem executiva consistente + footer oficial |
+| Acessibilidade | `:focus-visible` em badges e botões de retry |
+| Responsividade | Funil comercial e trends empilhados no mobile |
+| Tokens | `--fc-text-primary` documentado |
+
+**Layout:** ordem B.2 → B.7 → Insights **inalterada**.
+
+### Encerramento (PATCH B.8)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_B_8_EXECUTIVE_POLISH_EVIDENCE.json` | Consistência visual + regressões |
+| `PATCH_B_8_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile |
+| `PATCH_B_8_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
 ## Performance e Conversão (PATCH A.6)
 
 **Fonte temporal:** `GET /api/temporal-metrics?days=N&series=conversion`  

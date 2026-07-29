@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { mapExecutiveSummaryToFounderDisplay } from "../../lib/miaFounderExecutiveSummaryDisplay.js";
 import { useExecutiveModuleViews } from "./FounderExecutiveModuleViewsContext.jsx";
+import { EXECUTIVE_MODULE_DISCLAIMERS } from "../../lib/miaFounderExecutivePolishCatalog.js";
 
 function SummaryList({ title, items, emptyLabel, className }) {
   return (
@@ -33,7 +34,7 @@ export default function FounderExecutiveSummarySection() {
 
   return (
     <section
-      className="founder-executive-summary"
+      className="founder-executive-summary founder-executive-module"
       id="mod-resumo-executivo"
       aria-labelledby="heading-resumo-executivo"
     >
@@ -43,8 +44,7 @@ export default function FounderExecutiveSummarySection() {
             Resumo Executivo
           </h2>
           <p className="founder-module-disclaimer" role="note">
-            Síntese determinística dos módulos B.2–B.6 · Sem novas métricas · Sem recálculo de
-            índices.
+            {EXECUTIVE_MODULE_DISCLAIMERS.summary}
           </p>
         </div>
         <span

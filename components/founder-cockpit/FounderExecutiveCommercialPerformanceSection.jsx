@@ -4,6 +4,7 @@ import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveCommercialPerformanceToFounderDisplay } from "../../lib/miaFounderExecutiveCommercialPerformanceDisplay.js";
 import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
+import { EXECUTIVE_MODULE_DISCLAIMERS } from "../../lib/miaFounderExecutivePolishCatalog.js";
 
 function CommercialIndicatorCard({ indicator }) {
   const displayValue = indicator.valueFormatted ?? "—";
@@ -115,7 +116,7 @@ export default function FounderExecutiveCommercialPerformanceSection({
 
   return (
     <section
-      className="founder-executive-commercial"
+      className="founder-executive-commercial founder-executive-module"
       id="mod-performance-comercial"
       aria-labelledby="heading-performance-comercial"
     >
@@ -125,7 +126,7 @@ export default function FounderExecutiveCommercialPerformanceSection({
             Performance Comercial
           </h2>
           <p className="founder-module-disclaimer" role="note">
-            Eficiência comercial executiva · Fontes: snapshot executivo + temporal conversion.
+            {EXECUTIVE_MODULE_DISCLAIMERS.commercial}
             {view?.meta?.disclaimer ? ` ${view.meta.disclaimer}` : ""}
           </p>
         </div>

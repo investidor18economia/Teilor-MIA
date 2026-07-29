@@ -4,6 +4,7 @@ import FounderSkeleton from "./FounderSkeleton.jsx";
 import { useFounderCockpitFilters } from "./FounderCockpitFiltersContext.jsx";
 import { mapExecutiveOperationalToFounderDisplay } from "../../lib/miaFounderExecutiveOperationalDisplay.js";
 import { useRegisterExecutiveModuleView } from "./FounderExecutiveModuleViewsContext.jsx";
+import { EXECUTIVE_MODULE_DISCLAIMERS } from "../../lib/miaFounderExecutivePolishCatalog.js";
 
 function OperationalIndicatorCard({ indicator }) {
   const displayValue = indicator.valueFormatted ?? "—";
@@ -83,7 +84,7 @@ export default function FounderExecutiveOperationalSection({ executiveMetrics = 
 
   return (
     <section
-      className="founder-executive-operational"
+      className="founder-executive-operational founder-executive-module"
       id="mod-indicadores-operacionais"
       aria-labelledby="heading-indicadores-operacionais"
     >
@@ -93,8 +94,7 @@ export default function FounderExecutiveOperationalSection({ executiveMetrics = 
             Indicadores Operacionais
           </h2>
           <p className="founder-module-disclaimer" role="note">
-            Saúde operacional executiva · Fontes: snapshot system/performance + probe temporal
-            (consistência).
+            {EXECUTIVE_MODULE_DISCLAIMERS.operational}
           </p>
         </div>
         {state.status === "error" || state.status === "partial" ? (

@@ -11,6 +11,7 @@
   --fc-accent-muted: #0088cc;
   --fc-gold: #e8d5a3;
   --fc-text: #e8f4fc;
+  --fc-text-primary: #e8f4fc;
   --fc-text-secondary: #b8d9ef;
   --fc-text-muted: #7a9bb8;
   --fc-text-inverse: #041028;
@@ -1995,6 +1996,148 @@
   border: 1px solid rgba(100, 149, 237, 0.35);
 }
 
+/* PATCH B.8 — Executive polish (unified Phase B shell) */
+.founder-executive-module {
+  scroll-margin-top: 24px;
+}
+
+.founder-executive-module .founder-module-disclaimer {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: var(--fc-radius-sm);
+  border: 1px solid rgba(0, 198, 255, 0.18);
+  background: rgba(0, 198, 255, 0.05);
+  color: var(--fc-text-secondary);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.founder-executive-kpis,
+.founder-executive-growth,
+.founder-executive-product-health,
+.founder-executive-commercial,
+.founder-executive-operational {
+  border: 1px solid var(--fc-border-accent);
+}
+
+.founder-executive-kpis-title,
+.founder-executive-growth-title,
+.founder-executive-product-health-title,
+.founder-executive-commercial-title,
+.founder-executive-operational-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--fc-gold);
+  letter-spacing: 0.04em;
+}
+
+.founder-executive-growth-narrative,
+.founder-executive-product-health-narrative,
+.founder-executive-commercial-narrative,
+.founder-executive-operational-narrative {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: var(--fc-radius-md);
+  background: rgba(0, 198, 255, 0.05);
+  border: 1px solid rgba(0, 198, 255, 0.14);
+}
+
+.founder-executive-growth-headline,
+.founder-executive-product-health-headline,
+.founder-executive-commercial-headline,
+.founder-executive-operational-headline {
+  margin: 8px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fc-text-primary);
+  line-height: 1.5;
+}
+
+.founder-executive-growth-meta,
+.founder-executive-product-health-meta,
+.founder-executive-commercial-meta,
+.founder-executive-operational-meta {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  color: var(--fc-text-muted);
+}
+
+.founder-executive-growth-grid,
+.founder-executive-product-health-grid,
+.founder-executive-commercial-grid,
+.founder-executive-operational-grid,
+.founder-executive-kpi-grid {
+  gap: var(--fc-space-md);
+}
+
+.founder-executive-growth-item,
+.founder-executive-product-health-item,
+.founder-executive-commercial-item,
+.founder-executive-operational-item,
+.founder-executive-kpi-item {
+  gap: var(--fc-space-sm);
+}
+
+.founder-executive-growth-header,
+.founder-executive-product-health-header,
+.founder-executive-commercial-header,
+.founder-executive-operational-header,
+.founder-executive-kpis-header,
+.founder-executive-summary-header {
+  margin-bottom: var(--fc-space-md);
+}
+
+.founder-executive-badge {
+  line-height: 1.2;
+}
+
+.founder-executive-badge--critical,
+.founder-executive-badge--degrading {
+  background: rgba(255, 69, 58, 0.14);
+  color: #ffb4ae;
+  border: 1px solid rgba(255, 69, 58, 0.4);
+}
+
+.founder-executive-badge--unavailable,
+.founder-executive-badge--insufficient {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--fc-text-muted);
+  border: 1px solid var(--fc-border);
+}
+
+.founder-executive-badge--very_healthy {
+  background: rgba(110, 231, 160, 0.16);
+  color: #b8f5d0;
+  border: 1px solid rgba(110, 231, 160, 0.4);
+}
+
+.founder-executive-badge--excellent {
+  background: rgba(0, 198, 255, 0.16);
+  color: #a8ecff;
+  border: 1px solid rgba(0, 198, 255, 0.45);
+}
+
+.founder-executive-summary-title {
+  font-size: 1.125rem;
+  color: var(--fc-gold);
+}
+
+.founder-executive-summary-narrative {
+  background: rgba(0, 198, 255, 0.05);
+  border: 1px solid rgba(0, 198, 255, 0.14);
+}
+
+.founder-retry-btn:focus-visible,
+.founder-executive-badge:focus-visible,
+.founder-logout-btn:focus-visible {
+  outline: 2px solid var(--fc-accent);
+  outline-offset: 2px;
+}
+
+.founder-executive-module + .founder-executive-module {
+  margin-top: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .founder-skeleton-line,
   .founder-skeleton-chart-area,
@@ -2086,5 +2229,15 @@
 
   .founder-executive-summary-header {
     flex-direction: column;
+  }
+
+  .founder-executive-commercial-funnel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .founder-executive-growth-trends {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
