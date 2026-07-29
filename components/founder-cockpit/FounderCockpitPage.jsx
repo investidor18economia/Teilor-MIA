@@ -1,6 +1,7 @@
 import FounderExecutiveInsights from "./FounderExecutiveInsights.jsx";
 import FounderExecutiveKpisSection from "./FounderExecutiveKpisSection.jsx";
 import FounderExecutiveGrowthSection from "./FounderExecutiveGrowthSection.jsx";
+import FounderExecutiveProductHealthSection from "./FounderExecutiveProductHealthSection.jsx";
 import FounderKpiStrip from "./FounderKpiStrip.jsx";
 import FounderModuleSection from "./FounderModuleSection.jsx";
 import FounderCockpitFilters from "./FounderCockpitFilters.jsx";
@@ -74,6 +75,7 @@ function FounderCockpitPageInner({ cockpit, subject, executiveMetrics = null }) 
         <FounderCockpitFilters />
         <FounderExecutiveKpisSection executiveMetrics={executiveMetrics} />
         <FounderExecutiveGrowthSection executiveMetrics={executiveMetrics} />
+        <FounderExecutiveProductHealthSection executiveMetrics={executiveMetrics} />
         <FounderExecutiveInsights />
         <FounderKpiStrip overview={overview} />
         <FounderSessionsUsersSection

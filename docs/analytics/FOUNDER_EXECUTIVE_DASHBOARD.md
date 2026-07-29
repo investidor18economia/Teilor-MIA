@@ -37,6 +37,7 @@ Painel privado autenticado para acompanhamento executivo da plataforma Teilor/MI
 
 0. **KPIs Estratégicos** (PATCH B.2) — visão executiva superior para decisão rápida  
 0.1 **Crescimento da Plataforma** (PATCH B.3) — evolução, velocidade, aceleração e comparativo de período  
+0.2 **Saúde do Produto** (PATCH B.4) — qualidade, aceitação, confiança e índice executivo de saúde  
 1. **Executive AI Insights** (PATCH 11.4) — resumo executivo e insights determinísticos  
 2. **Visão geral** — 10 KPIs executivos (PATCH A.2)  
 3. **Sessões e Usuários** (PATCH A.4) — DAU/WAU/MAU, composição, tendências, atividade diária  
@@ -146,6 +147,57 @@ Threshold de tendência reutiliza `FOUNDER_GROWTH_TREND_THRESHOLD` (A.4) = ±2%.
 | `PATCH_B_3_EXECUTIVE_GROWTH_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
 | `PATCH_B_3_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
 | `PATCH_B_3_CLOSURE_EVIDENCE.json` | Encerramento oficial |
+
+---
+
+## Saúde do Produto (PATCH B.4)
+
+**Mapper:** `lib/miaFounderExecutiveProductHealthDisplay.js` (B.4.0)  
+**Catálogo:** `lib/miaFounderExecutiveProductHealthCatalog.js` (B.4.0)  
+**Componente:** `FounderExecutiveProductHealthSection.jsx` (client fetch offset)  
+**Posição:** abaixo de Crescimento da Plataforma (B.3) e acima de Executive Insights
+
+**Fontes (contratos existentes — sem alteração de API/RPC):**
+
+| Indicador | Fonte | Campo oficial |
+|-----------|-------|---------------|
+| Qualidade das recomendações | executive snapshot | `price_intelligence.average_price_quality_score` |
+| Aceitação das recomendações | executive snapshot | `recommendation.recommendation_acceptance_rate` |
+| Rejeição | executive snapshot | `recommendation.rejection_rate` |
+| Confiança do usuário | executive snapshot | `user_value.average_user_value` + `anti_regret.average_score` |
+| Uso de runner-up | executive snapshot | `recommendation.runner_up_usage` |
+| Saúde das conversas | executive snapshot | `conversation.conversations_with_questions / platform.conversations` |
+| Qualidade geral do produto | derivado (mapper) | média normalizada qualidade + aceitação + confiança |
+| Índice executivo de saúde | derivado (mapper) | índice 0–100 dos sinais oficiais disponíveis |
+
+**Comparativo de período:** `GET /api/executive-metrics?...&offset_days={window_days}` para detectar degradação em aceitação/rejeição.
+
+**Narrativa executiva (determinística — sem IA):**
+
+| Regra | Mensagem |
+|-------|----------|
+| Qualidade excelente + aceitação saudável | O produto mantém excelente qualidade de recomendações. |
+| Queda na aceitação (período) | Há sinais leves de queda na aceitação. |
+| Rejeição elevada | Sinais de rejeição merecem atenção executiva. |
+| Conversas com baixo engajamento | Existe um ponto de atenção nas conversas. |
+| Confiança elevada | A confiança permanece elevada. |
+| Sinais de valor | Usuários continuam encontrando valor. |
+
+**Badges:** Excelente · Saudável · Estável · Atenção · Degradando
+
+**Responsabilidades:**
+
+- **Interface:** renderizar narrativa, índice de saúde, grid de indicadores, skeleton, retry
+- **Mapper B.4.0:** classificação, índices, comparativo, badges, narrativa
+- **Proibido:** agregação SQL, fetch, alteração de contratos Baseline A, B.2 ou B.3
+
+### Encerramento (PATCH B.4)
+
+| Evidência | Descrição |
+|-----------|-----------|
+| `PATCH_B_4_EXECUTIVE_PRODUCT_HEALTH_EVIDENCE.json` | Catálogo + mapper + layout + regressões |
+| `PATCH_B_4_BROWSER_EVIDENCE.json` | Desktop/tablet/mobile autenticado |
+| `PATCH_B_4_CLOSURE_EVIDENCE.json` | Encerramento oficial |
 
 ---
 

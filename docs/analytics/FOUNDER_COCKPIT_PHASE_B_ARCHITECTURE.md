@@ -242,16 +242,16 @@ styles/founder-cockpit.css  → tokens --fc-*
 | **Objetivo** | Módulo executivo de crescimento (DAU/WAU/MAU, tendências, comparativo de período) |
 | **Escopo** | `FounderExecutiveGrowthSection`, `miaFounderExecutiveGrowthCatalog.js`, `miaFounderExecutiveGrowthDisplay.js` (B.3.0) |
 | **Dependências** | B.2, temporal API A.7.0, executive-metrics offset |
-| **Conclusão** | Séries growth/platform_activity + comparativo offset mapeados, narrativa executiva determinística, filtros A.7 aplicados |
+| **Conclusão** | Séries growth/platform_activity + comparativo offset mapeados, narrativa executiva determinística, filtros A.7 aplicados · **OFFICIALLY_CLOSED** |
 
 ### PATCH B.4 — Saúde do Produto
 
 | Campo | Valor |
 |-------|-------|
-| **Objetivo** | Visão executiva de qualidade e valor percebido |
-| **Escopo** | Seção saúde produto, distribuições, mapper B.4.0 |
-| **Dependências** | B.2, executive-metrics groups |
-| **Conclusão** | Métricas conversation/anti_regret/user_value/price_intelligence exibidas |
+| **Objetivo** | Visão executiva de qualidade, aceitação, confiança e degradação |
+| **Escopo** | `FounderExecutiveProductHealthSection`, `miaFounderExecutiveProductHealthCatalog.js`, `miaFounderExecutiveProductHealthDisplay.js` (B.4.0) |
+| **Dependências** | B.2, B.3, executive-metrics groups (recommendation, conversation, user_value, anti_regret, price_intelligence) |
+| **Conclusão** | 8 indicadores + índice de saúde + narrativa determinística, comparativo offset, zero alteração de API |
 
 ### PATCH B.5 — Performance Comercial
 

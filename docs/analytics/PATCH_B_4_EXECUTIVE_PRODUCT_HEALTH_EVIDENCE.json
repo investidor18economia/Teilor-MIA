@@ -1,30 +1,31 @@
 {
-  "patch": "B.3",
-  "title": "PATCH B.3 — Executive Platform Growth Evidence",
+  "patch": "B.4",
+  "title": "PATCH B.4 — Executive Product Health Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T13:24:28.475Z",
-  "display_version": "B.3.0",
-  "catalog_version": "B.3.0",
+  "validated_at": "2026-07-29T13:24:11.567Z",
+  "display_version": "B.4.0",
+  "catalog_version": "B.4.0",
   "indicators_implemented": [
-    "user_growth",
-    "session_growth",
-    "question_growth",
-    "conversation_growth",
-    "overall_trend",
-    "growth_velocity",
-    "growth_acceleration",
-    "daily_engagement"
+    "recommendation_quality",
+    "recommendation_acceptance",
+    "recommendation_rejection",
+    "user_confidence",
+    "runner_up_usage",
+    "conversation_health",
+    "overall_product_quality",
+    "executive_health_index"
   ],
   "components": [
-    "FounderExecutiveGrowthSection.jsx"
+    "FounderExecutiveProductHealthSection.jsx"
   ],
-  "mapper": "lib/miaFounderExecutiveGrowthDisplay.js",
-  "catalog": "lib/miaFounderExecutiveGrowthCatalog.js",
+  "mapper": "lib/miaFounderExecutiveProductHealthDisplay.js",
+  "catalog": "lib/miaFounderExecutiveProductHealthCatalog.js",
   "baseline_a_preserved": true,
   "baseline_b2_preserved": true,
+  "baseline_b3_preserved": true,
   "checks": {
-    "total": 38,
-    "passed": 38,
+    "total": 37,
+    "passed": 37,
     "items": [
       {
         "label": "catalog exists",
@@ -42,12 +43,12 @@
         "detail": ""
       },
       {
-        "label": "catalog version B.3.0",
+        "label": "catalog version B.4.0",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "mapper version B.3.0",
+        "label": "mapper version B.4.0",
         "pass": true,
         "detail": ""
       },
@@ -57,17 +58,17 @@
         "detail": ""
       },
       {
-        "label": "cockpit mounts FounderExecutiveGrowthSection",
+        "label": "cockpit mounts FounderExecutiveProductHealthSection",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "growth section below executive KPIs",
+        "label": "product health below growth",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "growth section above insights",
+        "label": "product health above insights",
         "pass": true,
         "detail": ""
       },
@@ -77,17 +78,17 @@
         "detail": ""
       },
       {
-        "label": "component has no computePeriodChangePct",
+        "label": "component has no classifyProductHealthLevel",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "component has no classifyTrendDirection",
+        "label": "component has no computeExecutiveHealthIndex",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "executive growth CSS",
+        "label": "product health CSS",
         "pass": true,
         "detail": ""
       },
@@ -102,7 +103,12 @@
         "detail": ""
       },
       {
-        "label": "executive B.2 mapper still B.2.0",
+        "label": "executive B.3 catalog still B.3.0",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive B.3 mapper still B.3.0",
         "pass": true,
         "detail": ""
       },
@@ -117,67 +123,52 @@
         "detail": ""
       },
       {
-        "label": "pages/api/executive-metrics.js unchanged by B.3",
+        "label": "pages/api/executive-metrics.js unchanged by B.4",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "pages/api/temporal-metrics.js unchanged by B.3",
+        "label": "pages/api/temporal-metrics.js unchanged by B.4",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "dashboard doc mentions B.3",
+        "label": "dashboard doc mentions B.4",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "period change pct",
+        "label": "normalize rate signal",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "period change pct null on zero prev",
+        "label": "normalize score signal",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "acceleration up",
+        "label": "health index average",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "acceleration down",
+        "label": "narrative excellent quality",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "velocity high",
+        "label": "narrative acceptance drop",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "velocity moderate",
+        "label": "badge excellent index",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "narrative consistent growth",
-        "pass": true,
-        "detail": ""
-      },
-      {
-        "label": "narrative acceleration",
-        "pass": true,
-        "detail": ""
-      },
-      {
-        "label": "badge accelerating",
-        "pass": true,
-        "detail": ""
-      },
-      {
-        "label": "badge growing",
+        "label": "level acceptance excellent",
         "pass": true,
         "detail": ""
       },
@@ -192,7 +183,7 @@
         "detail": ""
       },
       {
-        "label": "mapper trends dau up",
+        "label": "mapper health index",
         "pass": true,
         "detail": ""
       },
@@ -202,17 +193,22 @@
         "detail": ""
       },
       {
-        "label": "user growth pct formatted",
+        "label": "quality score excellent level",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "session growth period pct",
+        "label": "acceptance rate formatted",
         "pass": true,
         "detail": ""
       },
       {
-        "label": "acceleration indicator",
+        "label": "conversation ratio 0.75",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "label": "executive health index indicator",
         "pass": true,
         "detail": ""
       }

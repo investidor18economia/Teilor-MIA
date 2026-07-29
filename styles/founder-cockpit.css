@@ -1460,6 +1460,25 @@
   border: 1px solid rgba(255, 140, 0, 0.35);
 }
 
+.founder-executive-badge--healthy {
+  background: rgba(52, 199, 89, 0.12);
+  color: #9ef0b4;
+  border: 1px solid rgba(52, 199, 89, 0.3);
+}
+
+.founder-executive-badge--degrading {
+  background: rgba(255, 69, 58, 0.12);
+  color: #ffb4ae;
+  border: 1px solid rgba(255, 69, 58, 0.35);
+}
+
+.founder-executive-badge--accelerating,
+.founder-executive-badge--decelerating {
+  background: rgba(0, 198, 255, 0.1);
+  color: #7de4ff;
+  border: 1px solid rgba(0, 198, 255, 0.25);
+}
+
 .founder-executive-trend {
   display: inline-flex;
   align-items: center;
@@ -1587,6 +1606,79 @@
   gap: 8px;
 }
 
+/* PATCH B.4 — Executive Product Health */
+.founder-executive-product-health {
+  margin-bottom: var(--fc-space-xl);
+  padding: var(--fc-space-lg) var(--fc-space-md);
+  border-radius: var(--fc-radius-lg);
+  background: var(--fc-bg-panel);
+  border: 1px solid var(--fc-border);
+  box-shadow: var(--fc-shadow-card);
+}
+
+.founder-executive-product-health-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.founder-executive-product-health-title {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--fc-text-primary);
+  letter-spacing: 0.03em;
+}
+
+.founder-executive-product-health-narrative {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: var(--fc-radius-md);
+  background: rgba(52, 199, 89, 0.05);
+  border: 1px solid rgba(52, 199, 89, 0.15);
+}
+
+.founder-executive-product-health-headline {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fc-text-primary);
+  line-height: 1.5;
+}
+
+.founder-executive-product-health-meta {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  color: var(--fc-text-muted);
+}
+
+.founder-executive-product-health-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.founder-executive-product-health-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.founder-executive-product-health-detail {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--fc-text-muted);
+  line-height: 1.4;
+}
+
+.founder-executive-product-health-delta {
+  font-size: 0.6875rem;
+  color: var(--fc-text-muted);
+  font-weight: 500;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .founder-skeleton-line,
   .founder-skeleton-chart-area,
@@ -1640,11 +1732,19 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .founder-executive-product-health-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .founder-executive-kpis-header {
     flex-direction: column;
   }
 
   .founder-executive-growth-header {
+    flex-direction: column;
+  }
+
+  .founder-executive-product-health-header {
     flex-direction: column;
   }
 }
