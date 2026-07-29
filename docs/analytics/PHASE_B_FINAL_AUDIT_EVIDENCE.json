@@ -2,7 +2,7 @@
   "patch": "B.9",
   "title": "PATCH B.9 — Phase B Final Audit Evidence",
   "status": "APPROVED",
-  "validated_at": "2026-07-29T21:26:19.803Z",
+  "validated_at": "2026-07-29T21:45:52.417Z",
   "phase": "B — Dashboard Executivo",
   "architecture": {
     "display_layer_preserved": true,
