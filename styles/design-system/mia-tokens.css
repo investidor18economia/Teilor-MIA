@@ -1,0 +1,23 @@
+/**
+ * mia-tokens.css — central official token registry (Patch UI 3).
+ *
+ * Source of truth for cross-cutting and runtime layout custom properties.
+ * Hardcoded values in legacy CSS are NOT migrated in this patch.
+ *
+ * Rules:
+ * - Do not invent tokens here without Design System approval.
+ * - Duplicate declarations may exist in legacy files as temporary bridges (same values).
+ * - Future migrations remove legacy duplicates category-by-category.
+ *
+ * @see docs/core/design/MIA_DESIGN_SYSTEM.md
+ */
+
+:root {
+  /**
+   * Runtime Layout Variables
+   * Updated via document.documentElement.style.setProperty in MIAChat.jsx.
+   * Do not rename. Do not change default values without functional validation.
+   */
+  --mia-footer-height: 118px;
+  --mia-keyboard-offset: 0px;
+}

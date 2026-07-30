@@ -1,0 +1,17 @@
+/**
+ * mia-motion.css — MIA motion tokens (Patch UI 3).
+ *
+ * Status: NO official consumer motion tokens exist in :root today.
+ *
+ * Keyframes and transitions remain in legacy CSS:
+ *   - styles/mia-chat.css (@keyframes, transition on components)
+ *   - styles/mia-feed.css
+ *   - styles/founder-cockpit.css (--fc-transition on .founder-cockpit-page only)
+ *
+ * Prohibited in this patch:
+ *   - Moving @keyframes
+ *   - Inventing --mia-transition-* or --mia-duration-* tokens
+ *   - Altering prefers-reduced-motion behavior
+ *
+ * Future patch: motion category migration (after formal token approval).
+ */

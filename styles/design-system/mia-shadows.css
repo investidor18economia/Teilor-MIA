@@ -1,0 +1,15 @@
+/**
+ * mia-shadows.css — official MIA shadow tokens (Patch UI 3).
+ *
+ * Only tokenized shadow values exist today (--mia-toast-shadow).
+ *
+ * Not included:
+ * - Hundreds of component-specific box-shadow declarations in mia-chat.css
+ * - Founder Cockpit --fc-shadow-* (specialized domain)
+ *
+ * Future patch: shadows category migration.
+ */
+
+:root {
+  --mia-toast-shadow: 0 6px 28px rgba(0,0,0,0.5);
+}

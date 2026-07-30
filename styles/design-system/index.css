@@ -1,0 +1,26 @@
+/**
+ * MIA Design System — single public entry point (Patch UI 3).
+ *
+ * Import this file only from pages/_app.js.
+ * Do not import category files individually from application code.
+ *
+ * Load order (dependencies → specifics):
+ *   1. mia-tokens.css    — central registry + runtime layout variables
+ *   2. mia-colors.css    — official color tokens
+ *   3. mia-typography.css — official typography tokens (tokens only)
+ *   4. mia-spacing.css   — official spacing / touch tokens
+ *   5. mia-radius.css    — official radius tokens
+ *   6. mia-shadows.css   — official shadow tokens
+ *   7. mia-motion.css    — placeholder (no consumer motion tokens yet)
+ *
+ * Legacy CSS in styles/*.css remains authoritative until category migration patches.
+ * Duplicate :root declarations are intentional compatibility bridges (identical values).
+ */
+
+@import "./mia-tokens.css";
+@import "./mia-colors.css";
+@import "./mia-typography.css";
+@import "./mia-spacing.css";
+@import "./mia-radius.css";
+@import "./mia-shadows.css";
+@import "./mia-motion.css";

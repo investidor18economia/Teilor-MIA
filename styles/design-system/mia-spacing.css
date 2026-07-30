@@ -1,0 +1,21 @@
+/**
+ * mia-spacing.css — official MIA spacing / layout tokens (Patch UI 3).
+ *
+ * Scope: tokenized spacing values already declared in :root (mia-chat.css).
+ *
+ * Not included:
+ * - Empirical padding/margin patterns from audit (4px, 8px, 12px, etc.)
+ * - Founder Cockpit --fc-space-* (specialized domain)
+ * - A consumer --mia-space-* scale (does not exist yet)
+ *
+ * Future patch: MIA_DESIGN_SYSTEM_MIGRATION_PLAN.md (spacing category).
+ */
+
+:root {
+  --mia-touch-min: 44px;
+
+  /* Estimated savings notice layout (static defaults; not JS-updated) */
+  --mia-estimated-savings-lift: 96px;
+  --mia-estimated-savings-stack-gap: 12px;
+  --mia-estimated-savings-card-estimate: 60px;
+}

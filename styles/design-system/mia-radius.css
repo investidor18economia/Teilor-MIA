@@ -1,0 +1,15 @@
+/**
+ * mia-radius.css — official MIA border-radius tokens (Patch UI 3).
+ *
+ * Only tokenized radius values exist today (--mia-toast-radius).
+ *
+ * Not included:
+ * - Empirical values 8, 10, 11, 12, 14, 16, 18, 20, 999px hardcoded in rules
+ * - Founder Cockpit --fc-radius-* (specialized domain)
+ *
+ * Future patch: radius category migration.
+ */
+
+:root {
+  --mia-toast-radius: 14px;
+}

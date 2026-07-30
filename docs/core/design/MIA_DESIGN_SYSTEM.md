@@ -10,7 +10,7 @@
 |---|---|
 | **Documento** | `MIA_DESIGN_SYSTEM.md` |
 | **Status** | **Oficial** — fonte permanente da camada visual |
-| **Versão** | 1.0.0 (Fundação documental — Patch UI 2) |
+| **Versão** | 1.1.0 (Fundação técnica — Patch UI 3) |
 | **Data** | 2026-07-30 |
 | **Escopo** | Camada de apresentação visual do ecossistema MIA / Teilor |
 | **Objetivo** | Registrar, de forma permanente e auditável, como a interface da MIA está construída hoje e quais regras visuais governam sua evolução futura |
@@ -21,6 +21,7 @@
 
 | Versão | Patch | Descrição |
 |---|---|---|
+| 1.1.0 | UI 3 | Fundação técnica em `styles/design-system/`. Tokens oficiais consolidados; CSS legado preservado; sem migração de hardcodes. |
 | 1.0.0 | UI 2 | Fundação documental oficial. Baseada na Auditoria Fase 1 (investigativa). Nenhuma alteração de CSS, componentes ou tokens. |
 
 ### O que este documento é
@@ -163,7 +164,8 @@ Ecossistema visual Teilor / MIA
 ```txt
 pages/_app.js
     │
-    ├── import global (11 stylesheets — TODAS as rotas)
+    ├── import styles/design-system/index.css (Patch UI 3 — tokens oficiais)
+    ├── import global legacy (11 stylesheets — TODAS as rotas)
     │
     ├── /app-mia ──→ components/ + classes mia-*, teilor-*, app-mia-*
     ├── /cockpit-fundador ──→ founder-cockpit/* + .founder-cockpit-page + --fc-*
@@ -175,19 +177,45 @@ pages/_app.js
 
 Ordem de import (relevante para cascata):
 
-1. `styles/mia-chat.css`
-2. `styles/mia-brand.css`
-3. `styles/mia-avatar.css`
-4. `styles/mia-feed.css`
-5. `styles/mia-landing.css`
-6. `styles/teilor-brand.css`
-7. `styles/mia-typography.css`
-8. `styles/mia-home-polish.css`
-9. `styles/app-mia.css`
-10. `styles/public-metrics.css`
-11. `styles/founder-cockpit.css`
+1. **`styles/design-system/index.css`** — entrada única do Design System (Patch UI 3)
+2. `styles/mia-chat.css`
+3. `styles/mia-brand.css`
+4. `styles/mia-avatar.css`
+5. `styles/mia-feed.css`
+6. `styles/mia-landing.css`
+7. `styles/teilor-brand.css`
+8. `styles/mia-typography.css`
+9. `styles/mia-home-polish.css`
+10. `styles/app-mia.css`
+11. `styles/public-metrics.css`
+12. `styles/founder-cockpit.css`
 
-**Implicação:** rotas que não são consumer carregam ~5.694 linhas de `mia-chat.css` sem isolamento por rota.
+**Estratégia de compatibilidade (UI 3):** o Design System carrega **primeiro**. Declarações `:root` idênticas nos CSS legados permanecem como ponte temporária; valores computados inalterados. Hardcodes em regras de componente **não** foram migrados.
+
+### 4.2.1 Infraestrutura técnica — `styles/design-system/`
+
+| Arquivo | Responsabilidade |
+|---|---|
+| `index.css` | **Entrada pública única** — importa categorias nesta ordem: tokens → colors → typography → spacing → radius → shadows → motion |
+| `mia-tokens.css` | Registro central; **Runtime Layout Variables** (`--mia-footer-height`, `--mia-keyboard-offset`) |
+| `mia-colors.css` | Tokens oficiais de cor (`--mia-surface-*`, `--mia-color-*`, focus rings, `--mia-landing-title-blue`) |
+| `mia-typography.css` | Tokens tipográficos (`--mia-font-sans`, `--mia-type-*`) + override mobile @640px — **sem regras de componente** |
+| `mia-spacing.css` | `--mia-touch-min`, tokens estimated-savings layout |
+| `mia-radius.css` | `--mia-toast-radius` |
+| `mia-shadows.css` | `--mia-toast-shadow` |
+| `mia-motion.css` | Placeholder — sem tokens consumer formais; keyframes permanecem no CSS legado |
+
+**Coexistência legada:**
+
+| Legado | Papel até migração futura |
+|---|---|
+| `styles/mia-typography.css` | Regras de componente + duplicata de tokens |
+| `styles/mia-chat.css` | Regras + duplicata de tokens layout/surface |
+| `styles/teilor-brand.css` | Regras hero + duplicata `--mia-landing-title-blue` |
+
+**Proibido sem patch dedicado:** inventar tokens; remover duplicatas legadas; converter hardcodes para `var()`.
+
+**Import em aplicação:** apenas `import "../styles/design-system/index.css"` em `_app.js` — nunca importar arquivos de categoria individualmente.
 
 ### 4.3 Inventário de arquivos CSS
 

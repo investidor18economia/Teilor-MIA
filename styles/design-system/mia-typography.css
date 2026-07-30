@@ -1,0 +1,54 @@
+/**
+ * mia-typography.css — official MIA typography TOKENS only (Patch UI 3).
+ *
+ * Coexists with legacy styles/mia-typography.css which contains:
+ *   - these same :root token declarations (duplicate bridge)
+ *   - component/selector rules (.mia-input, .send-btn, etc.)
+ *
+ * Do not move selector rules into this file in Patch UI 3.
+ * Do not change scale values. Mobile input remains 16px (anti-zoom iOS).
+ *
+ * Origin: PATCH 3.5 — styles/mia-typography.css
+ */
+
+:root {
+  --mia-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --mia-type-conversation-size: 15px;
+  --mia-type-conversation-lh: 1.56;
+  --mia-type-conversation-weight: 500;
+
+  --mia-type-input-size: 15px;
+  --mia-type-input-lh: 1.48;
+  --mia-type-input-weight: 400;
+
+  --mia-type-action-size: 14px;
+  --mia-type-action-lh: 1.36;
+  --mia-type-action-weight: 600;
+
+  --mia-type-support-size: 13px;
+  --mia-type-support-lh: 1.42;
+  --mia-type-support-weight: 500;
+
+  --mia-type-caption-size: 12px;
+  --mia-type-caption-lh: 1.38;
+  --mia-type-caption-weight: 500;
+
+  --mia-type-meta-size: 11px;
+  --mia-type-meta-lh: 1.34;
+  --mia-type-meta-weight: 500;
+
+  --mia-type-whisper-size: 10px;
+  --mia-type-whisper-lh: 1.32;
+  --mia-type-whisper-weight: 500;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --mia-type-conversation-size: 14.5px;
+    --mia-type-conversation-lh: 1.54;
+    --mia-type-input-size: 16px;
+    --mia-type-support-size: 12px;
+    --mia-type-action-size: 14px;
+  }
+}

@@ -1,0 +1,35 @@
+/**
+ * mia-colors.css — official MIA color tokens (Patch UI 3).
+ *
+ * Values copied exactly from legacy :root declarations.
+ * Legacy files (mia-chat.css, mia-typography.css, teilor-brand.css) retain
+ * duplicate declarations until a future color migration patch.
+ *
+ * Not included: hardcoded hex/rgba in component rules, gold family unification,
+ * Founder Cockpit --fc-* tokens, email inline colors.
+ */
+
+:root {
+  /* Surfaces */
+  --mia-surface-panel: #04132A;
+  --mia-surface-card: linear-gradient(165deg, rgba(11,30,62,0.92) 0%, rgba(6,17,42,0.96) 100%);
+  --mia-border-subtle: rgba(255,255,255,0.08);
+
+  /* Text (tokenized) */
+  --mia-text-muted: #7A9BB8;
+  --mia-text-soft: #9FD8FF;
+
+  /* Typography-linked text colors (declared with type scale in legacy mia-typography.css) */
+  --mia-color-conversation: #f4faff;
+  --mia-color-support: rgba(204, 222, 238, 0.9);
+  --mia-color-meta: rgba(176, 200, 222, 0.82);
+  --mia-color-whisper: rgba(158, 186, 210, 0.72);
+  --mia-color-placeholder: rgba(168, 196, 220, 0.68);
+
+  /* Focus rings */
+  --mia-focus-ring: rgba(0,198,255,0.45);
+  --mia-focus-ring-purple: rgba(123,97,255,0.45);
+
+  /* Brand (teilor-brand.css) */
+  --mia-landing-title-blue: #00C6FF;
+}

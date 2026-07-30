@@ -1,3 +1,4 @@
+import "../styles/design-system/index.css";
 import "../styles/mia-chat.css";
 import "../styles/mia-brand.css";
 import "../styles/mia-avatar.css";
