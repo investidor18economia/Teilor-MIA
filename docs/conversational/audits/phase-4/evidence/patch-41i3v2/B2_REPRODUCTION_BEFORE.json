@@ -1,0 +1,205 @@
+{
+  "build": "0e62ed4dfefa",
+  "runs": [
+    {
+      "id": "B2_BEFORE_r1",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "meta": null
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:44:41.474Z"
+    },
+    {
+      "id": "B2_BEFORE_r2",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir com boas compras!",
+          "meta": null
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir com boas compras!",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:44:51.165Z"
+    },
+    {
+      "id": "B2_BEFORE_r3",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "meta": null
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:45:01.061Z"
+    },
+    {
+      "id": "B2_BEFORE_r4",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "meta": null
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:45:10.047Z"
+    },
+    {
+      "id": "B2_BEFORE_r5",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você pense assim. Vamos seguir com a conversa!",
+          "meta": null
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você pense assim. Vamos seguir com a conversa!",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:45:19.037Z"
+    },
+    {
+      "id": "B2_BEFORE_r6",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+          "meta": null
+        }
+      ],
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "classification": "REPROVADO",
+      "reasons": [
+        "missing_mia_thanks"
+      ],
+      "timestamp": "2026-07-30T23:45:27.221Z"
+    },
+    {
+      "id": "B2_BEFORE_r7",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Me diz rapidinho a que você se refere.",
+          "meta": null
+        }
+      ],
+      "reply": "Me diz rapidinho a que você se refere.",
+      "classification": "REPROVADO",
+      "reasons": [
+        "neutral_clarification",
+        "missing_mia_thanks"
+      ],
+      "timestamp": "2026-07-30T23:45:36.517Z"
+    },
+    {
+      "id": "B2_BEFORE_r8",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar a conversa!",
+          "meta": null
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar a conversa!",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:45:45.651Z"
+    },
+    {
+      "id": "B2_BEFORE_r9",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Me diz rapidinho a que você se refere.",
+          "meta": null
+        }
+      ],
+      "reply": "Me diz rapidinho a que você se refere.",
+      "classification": "REPROVADO",
+      "reasons": [
+        "neutral_clarification",
+        "missing_mia_thanks"
+      ],
+      "timestamp": "2026-07-30T23:45:54.615Z"
+    },
+    {
+      "id": "B2_BEFORE_r10",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "meta": null
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você ache isso.",
+          "meta": null
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você ache isso.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:46:03.783Z"
+    }
+  ],
+  "pass": 7,
+  "total": 10
+}

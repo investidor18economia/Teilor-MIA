@@ -1,0 +1,30 @@
+{
+  "builds": ["f49a4f1982fa", "5ddd0eab0e41", "769fb3afcca8", "a3e7cfa3a981"],
+  "historicalFailures": [
+    {
+      "id": "B2_r1",
+      "build": "f49a4f1982fa",
+      "reply": "O Produto tem um visual bem marcante.",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_compliment",
+      "failureType": "product_entity_on_mia_target",
+      "stage": "post_llm_without_validator"
+    },
+    {
+      "id": "B2_r3",
+      "build": "5ddd0eab0e41",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_compliment",
+      "failureType": "neutral_clarification",
+      "stage": "needs_clarification_early_return"
+    }
+  ],
+  "reproductionBeforeFix": {
+    "build": "0e62ed4dfefa",
+    "b2PassRate": "7/10",
+    "clarificationFailures": 2,
+    "rateLimitFailures": 1,
+    "note": "Two clarification failures confirmed needs_clarification path bypassing finalizeHumanConversationReply"
+  }
+}

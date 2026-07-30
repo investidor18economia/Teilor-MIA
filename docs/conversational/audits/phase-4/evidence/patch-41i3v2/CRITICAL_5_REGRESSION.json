@@ -1,0 +1,94 @@
+{
+  "runs": [
+    {
+      "msg": "Linda",
+      "run": 1,
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Linda",
+      "run": 2,
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Linda",
+      "run": 3,
+      "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir em frente!",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Você é muito inteligente",
+      "run": 1,
+      "reply": "Obrigada!",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Você é muito inteligente",
+      "run": 2,
+      "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Você é muito inteligente",
+      "run": 3,
+      "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Era ironia",
+      "run": 1,
+      "reply": "Beleza, pego a ironia.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Era ironia",
+      "run": 2,
+      "reply": "Beleza, pego a ironia.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Era ironia",
+      "run": 3,
+      "reply": "Beleza, pego a ironia.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Só queria conversar",
+      "run": 1,
+      "reply": "Beleza — pode falar à vontade.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Só queria conversar",
+      "run": 2,
+      "reply": "Sem problema, fico por aqui no papo.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Só queria conversar",
+      "run": 3,
+      "reply": "Sem problema, fico por aqui no papo.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Você me ajudou muito",
+      "run": 1,
+      "reply": "Fico muito feliz em saber que pude ajudar!",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Você me ajudou muito",
+      "run": 2,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "classification": "APROVADO"
+    },
+    {
+      "msg": "Você me ajudou muito",
+      "run": 3,
+      "reply": "Fico muito feliz em saber que pude ajudar você! 😊",
+      "classification": "APROVADO"
+    }
+  ]
+}

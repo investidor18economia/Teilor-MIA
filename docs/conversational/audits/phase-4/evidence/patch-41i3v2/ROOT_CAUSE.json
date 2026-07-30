@@ -1,0 +1,10 @@
+{
+  "rootCause": "Clarification gate and intent authority could fire neutral clarification when requiresClarification remained true after taxonomy overrode mode to social, without consulting the governed social contract (mia_compliment). Post-LLM validators existed but needs_clarification early return bypassed finalizeHumanConversationReply entirely.",
+  "divergenceStage": "applyClarificationGateToContextResolution / applyIntentAuthorityToPipeline",
+  "fix": "Central invariant isGovernedSocialContractBlocksClarification in miaSemanticAuthority.js; wired into clarification gates, intent authority, and post-LLM validator.",
+  "reasonCodes": [
+    "governed_social_contract_blocks_clarification",
+    "clarification_on_governed_social_contract",
+    "clarification_on_mia_compliment"
+  ]
+}

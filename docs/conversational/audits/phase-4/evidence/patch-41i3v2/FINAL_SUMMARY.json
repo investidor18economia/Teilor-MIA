@@ -1,0 +1,7 @@
+{
+  "b2Before": "7/10",
+  "b1": "5/5",
+  "critical": "15/15",
+  "buildBefore": "0e62ed4dfefa",
+  "note": "Post-fix production validation requires deploy of this commit"
+}

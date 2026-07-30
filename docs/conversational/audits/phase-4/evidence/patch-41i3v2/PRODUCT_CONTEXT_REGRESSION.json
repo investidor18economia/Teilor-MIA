@@ -1,0 +1,59 @@
+{
+  "runs": [
+    {
+      "id": "B1_r1",
+      "messages": [
+        "O que você acha do design do Galaxy A55?",
+        "Linda"
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:46:38.403Z"
+    },
+    {
+      "id": "B1_r2",
+      "messages": [
+        "O que você acha do design do Galaxy A55?",
+        "Linda"
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:46:54.407Z"
+    },
+    {
+      "id": "B1_r3",
+      "messages": [
+        "O que você acha do design do Galaxy A55?",
+        "Linda"
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:47:08.496Z"
+    },
+    {
+      "id": "B1_r4",
+      "messages": [
+        "O que você acha do design do Galaxy A55?",
+        "Linda"
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:47:22.980Z"
+    },
+    {
+      "id": "B1_r5",
+      "messages": [
+        "O que você acha do design do Galaxy A55?",
+        "Linda"
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "classification": "APROVADO",
+      "reasons": [],
+      "timestamp": "2026-07-30T23:47:37.250Z"
+    }
+  ]
+}

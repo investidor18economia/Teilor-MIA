@@ -1,0 +1,28 @@
+{
+  "correctExecution": {
+    "target": "mia",
+    "primarySocialIntent": "compliment",
+    "governedSocialRoutingKey": "mia_compliment",
+    "interactionMode": "social",
+    "expectedHumanBehavior": "receive_compliment",
+    "clarificationGate": { "needsClarification": false, "reasonCode": "governed_social_contract_blocks_clarification" },
+    "llmOrFallback": "Que gentil — obrigada.",
+    "validator": "approved",
+    "responsePath": "governed_social_intent_flow"
+  },
+  "incorrectExecution": {
+    "target": "mia",
+    "primarySocialIntent": "compliment",
+    "governedSocialRoutingKey": "mia_compliment",
+    "interactionMode": "social",
+    "requiresClarificationStale": true,
+    "clarificationGate": {
+      "needsClarification": true,
+      "clarificationMessage": "Me diz rapidinho a que você se refere.",
+      "reasonCode": "intent_recognition_requires_clarification"
+    },
+    "responsePath": "needs_clarification",
+    "finalizeHumanConversationReply": "bypassed",
+    "divergencePoint": "applyClarificationGateToContextResolution without socialBehaviorContract"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "passed": true,
+  "output": "ion: Você me ajudou muito\n  ✓ regression: vc é linda\n  ✓ regression: bonita vc hein\n  ✓ regression: tava sendo irônico\n  ✓ regression: eu tava brincando\n  ✓ regression: só vim conversar\n\nNon-commercial subjects\n  ✓ non-commercial: Quero conversar sobre música\n  ✓ non-commercial: Hoje foi um dia cansativo\n  ✓ non-commercial: Não quero comprar nada\n  ✓ non-commercial: Podemos mudar de assunto?\n\n──────────────────────────────────────────────────\nPassed: 40 | Failed: 0\n\n✅ PATCH 4.1I.3 audit passed\n\n"
+}

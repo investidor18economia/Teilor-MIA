@@ -1,0 +1,4 @@
+{
+  "passed": true,
+  "output": " correta não substituída\n  ✓ 14. resposta LLM incompatível substituída\n  ✓ 15. mesmo contrato → mesma família semântica\n  ✓ 16. confidence insuficiente não força elogio MIA\n  ✓ 17. histórico MIA resolve alvo sem hardcode lexical\n  ✓ 18. histórico produto resolve alvo produto\n  ✓ 19. fallback neutro não prevalece sobre contrato específico\n  ✓ 20. reason code emitido no validator\n\n──────────────────────────────────────────────────\nPassed: 20 | Failed: 0\n\n✅ PATCH 4.1I.3.V.2 invariant tests passed\n\n"
+}

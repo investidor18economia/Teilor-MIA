@@ -28609,6 +28609,7 @@ if (lockedComparisonContextFromSession) {
         contextResolution,
         query,
         intentRecognition: intentRecognitionEarly,
+        socialBehaviorContract: socialBehaviorContractEarly,
       });
 
       if (authorityApplied.intent !== intent) {
@@ -30099,6 +30100,7 @@ if (lockedComparisonContextFromSession) {
       sessionContext,
       intentRecognition: intentRecognitionEarly,
       forceComparisonLock: !!contextResolution.lockedComparisonFollowUp,
+      socialBehaviorContract: socialBehaviorContractEarly,
     }
   );
 
