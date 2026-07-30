@@ -1,0 +1,253 @@
+{
+  "patch": "4.1I",
+  "phase": "social_intent_taxonomy_validation",
+  "status": "APROVADA",
+  "mode": "local",
+  "base_url": "http://localhost:3000",
+  "commit": "9a02472",
+  "finished_at": "2026-07-30T18:40:18.900Z",
+  "summary": {
+    "passed": 18,
+    "failed": 0,
+    "total": 18
+  },
+  "scenarios": [
+    {
+      "id": "greet-opa",
+      "msg": "Opa",
+      "expect": "greeting",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "greeting",
+      "interactionMode": "social",
+      "emotionalState": "neutral",
+      "confidence": 0.88
+    },
+    {
+      "id": "greet-oi",
+      "msg": "Oi",
+      "expect": "greeting",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "greeting",
+      "interactionMode": "social",
+      "emotionalState": "neutral",
+      "confidence": 0.88
+    },
+    {
+      "id": "greet-eai",
+      "msg": "E aí",
+      "expect": "greeting",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "greeting",
+      "interactionMode": "social",
+      "emotionalState": "neutral",
+      "confidence": 0.88
+    },
+    {
+      "id": "compliment-linda",
+      "msg": "Linda",
+      "expect": "compliment",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "compliment",
+      "interactionMode": "social",
+      "emotionalState": "neutral",
+      "confidence": 0.83
+    },
+    {
+      "id": "praise-intelligent",
+      "msg": "Você é muito inteligente",
+      "expectAny": [
+        "praise",
+        "compliment"
+      ],
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "compliment",
+      "interactionMode": "social",
+      "emotionalState": "neutral",
+      "confidence": 0.83
+    },
+    {
+      "id": "gratitude-obrigado",
+      "msg": "Obrigado",
+      "expect": "gratitude",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "gratitude",
+      "interactionMode": "social",
+      "emotionalState": "grateful",
+      "confidence": 0.82
+    },
+    {
+      "id": "gratitude-valeu",
+      "msg": "Valeu",
+      "expect": "gratitude",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "gratitude",
+      "interactionMode": "social",
+      "emotionalState": "grateful",
+      "confidence": 0.86
+    },
+    {
+      "id": "correction-nao-entendeu",
+      "msg": "Você não entendeu",
+      "expectAny": [
+        "correction",
+        "context_repair",
+        "frustration"
+      ],
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "correction",
+      "interactionMode": "social",
+      "emotionalState": "neutral",
+      "confidence": 0.87
+    },
+    {
+      "id": "correction-pqp",
+      "msg": "Pqp você não entendeu nada",
+      "expectAny": [
+        "correction",
+        "frustration",
+        "insult",
+        "hard_disagreement"
+      ],
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "hard_disagreement",
+      "interactionMode": "emotional_support",
+      "emotionalState": "frustrated",
+      "confidence": 0.9
+    },
+    {
+      "id": "irony-brincadeira",
+      "msg": "Foi brincadeira kkk",
+      "expect": "irony",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "irony",
+      "interactionMode": "social",
+      "emotionalState": "playful",
+      "confidence": 0.85
+    },
+    {
+      "id": "sarcasm-explode",
+      "msg": "claro que quero um celular q explode na primeira queda ne 😂",
+      "expect": "sarcasm",
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "sarcasm",
+      "interactionMode": "social",
+      "emotionalState": "playful",
+      "confidence": 0.86
+    },
+    {
+      "id": "meta-quem-criou",
+      "msg": "Quem te criou?",
+      "expect": "identity_question",
+      "mode": "identity",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "identity_question",
+      "interactionMode": "identity",
+      "emotionalState": "neutral",
+      "confidence": 0.88
+    },
+    {
+      "id": "meta-como-funciona",
+      "msg": "Como você funciona?",
+      "expect": "capability_question",
+      "mode": "identity",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "capability_question",
+      "interactionMode": "identity",
+      "emotionalState": "neutral",
+      "confidence": 0.94
+    },
+    {
+      "id": "meta-comissao",
+      "msg": "Você ganha comissão?",
+      "expect": "trust_question",
+      "mode": "identity",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "trust_question",
+      "interactionMode": "identity",
+      "emotionalState": "neutral",
+      "confidence": 0.93
+    },
+    {
+      "id": "smalltalk-conversar",
+      "msg": "Só queria conversar",
+      "expectAny": [
+        "conversation_request",
+        "small_talk"
+      ],
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "conversation_request",
+      "interactionMode": "social",
+      "emotionalState": "neutral",
+      "confidence": 0.82
+    },
+    {
+      "id": "frustration-inutil",
+      "msg": "nao ta ajudando NADA, que assistente inutil",
+      "expectAny": [
+        "frustration",
+        "insult"
+      ],
+      "mode": "social",
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": "insult",
+      "interactionMode": "emotional_support",
+      "emotionalState": "frustrated",
+      "confidence": 0.9
+    },
+    {
+      "id": "commercial-regression",
+      "msg": "Qual celular compensa até R$ 2.000?",
+      "expectMode": "commerce",
+      "commercialMin": 0.45,
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": null,
+      "interactionMode": "commerce",
+      "emotionalState": "neutral",
+      "confidence": 0
+    },
+    {
+      "id": "commercial-negative-linda-produto",
+      "msg": "esse celular é lindo, me recomenda?",
+      "expectAnyMode": [
+        "commerce",
+        "mixed"
+      ],
+      "commercialMin": 0.35,
+      "pass": true,
+      "issues": [],
+      "primarySocialIntent": null,
+      "interactionMode": "mixed",
+      "emotionalState": "neutral",
+      "confidence": 0
+    }
+  ]
+}
