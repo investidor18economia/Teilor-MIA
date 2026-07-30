@@ -792,3 +792,33 @@ then the architecture is being violated.
 
 The architecture itself is the product.
 
+---
+
+# PATCH 4.1I.3 — Semantic Authority & Governed Fallbacks
+
+## Precedence (contract over legacy)
+
+When a governed behavior contract is active, legacy heuristics must not override:
+
+1. governed contract (intent, target, mode, expected behavior)
+2. resolved semantic target
+3. social intent taxonomy (`primarySocialIntent`)
+4. commercial intent only when objectively proven
+5. legacy adapters (unidirectional, non-reductive)
+
+## Semantic target resolution
+
+`lib/miaSemanticTargetResolution.js` resolves reference targets: `mia`, `product`, `previous_answer`, `conversation`, `unknown`, etc. Short aesthetic messages (e.g. "Linda") use conversational context — product discussion vs. social greeting — not isolated adjectives.
+
+## Governed fallback policy
+
+`lib/miaGovernedFallbackPolicy.js` selects fallbacks by contract family. Social modes block commercial acks, product invention, and category redirects. Entity opinion fallbacks require product target evidence.
+
+## Post-LLM traceability
+
+`finalizeHumanConversationReply` emits `response_replacement_trace` (debug) with raw LLM text, final text, replacement stage, fallback family, and reason codes.
+
+## Legacy collision note
+
+`social_validation` legacy routing remains for compatibility, but `governedSocialRoutingKey` preserves specificity (`mia_compliment`, `irony_repair`, `conversation_social`, etc.) for verbalization and fallback selection.
+

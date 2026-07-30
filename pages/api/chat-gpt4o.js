@@ -23447,6 +23447,9 @@ async function runGovernedSocialIntentFlow({
         socialBehaviorContract,
         finalized.validation
       ),
+      response_replacement_trace: finalized.replacementTraceDebug || null,
+      semantic_authority: finalized.semanticAuthority || null,
+      governed_fallback: finalized.governedFallback || null,
     });
   }
 
@@ -28574,6 +28577,7 @@ if (lockedComparisonContextFromSession) {
     socialBehaviorContractEarly = buildSocialConversationBehaviorContract(intentRecognitionEarly, {
       message: query,
       conversationMessages,
+      sessionContext: req.body?.session_context || sessionContext || {},
     });
     if (process.env.MIA_DEBUG === "true") {
       pipelineTracer.patch({
