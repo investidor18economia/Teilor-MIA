@@ -1,0 +1,516 @@
+{
+  "generatedAt": "2026-07-30T19:23:17.935Z",
+  "results": [
+    {
+      "message": "Linda",
+      "taxonomy": {
+        "primarySocialIntent": "compliment",
+        "secondarySocialIntent": null,
+        "expectedHumanBehavior": "receive_compliment",
+        "conversationObjective": "create_connection",
+        "conversationDirection": "continue",
+        "emotionalState": "neutral",
+        "socialIntentSignals": [
+          "compliment",
+          "mia_target"
+        ],
+        "socialIntentReasonCodes": [
+          "compliment_to_mia"
+        ],
+        "socialIntentConfidence": 0.83
+      },
+      "bridge": {
+        "version": "4.1I.2",
+        "instructions": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: compliment (elogio à MIA)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: create_connection\n- Direção conversacional: continue\n- Confiança da classificação: 0.83\n- Sinais: compliment, mia_target\n- Códigos de razão: compliment_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba o elogio dirigido à MIA; não desvie para produto ou compra."
+      },
+      "promptBefore": {
+        "hadPrimarySocialIntent": false,
+        "validation": {
+          "valid": false,
+          "missing": [
+            "primarySocialIntent",
+            "expectedHumanBehavior",
+            "conversationDirection",
+            "emotionalState",
+            "socialIntentSignals",
+            "bridgeVersion"
+          ],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "compliment",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "create_connection",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "compliment",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "compliment_to_mia"
+            ],
+            "socialIntentConfidence": 0.83
+          }
+        }
+      },
+      "promptAfter": {
+        "hadPrimarySocialIntent": true,
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "compliment",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "create_connection",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "compliment",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "compliment_to_mia"
+            ],
+            "socialIntentConfidence": 0.83
+          }
+        },
+        "excerpt": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: compliment (elogio à MIA)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: create_connection\n- Direção conversacional: continue\n- Confiança da classificação: 0.83\n- Sinais: compliment, mia_target\n- Códigos de razão: compliment_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba"
+      },
+      "llmUserPrompt": {
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "compliment",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "create_connection",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "compliment",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "compliment_to_mia"
+            ],
+            "socialIntentConfidence": 0.83
+          }
+        },
+        "excerpt": "Mensagem do usuário: \"Linda\"\nInstruções para esta resposta social:\nTaxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: compliment (elogio à MIA)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: create_connection\n- Direção conversacional: continue\n- Confiança da classificação: 0.83\n- Sinais: compliment, mia_target\n- Códigos de razão: compliment_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba o elogio dirigido à MIA; não desvie para produto ou compra.\n\nComportamento governado (obrigatório):\n- Modo de interação: social\n- Ob"
+      },
+      "pass": true
+    },
+    {
+      "message": "Você é muito inteligente",
+      "taxonomy": {
+        "primarySocialIntent": "compliment",
+        "secondarySocialIntent": null,
+        "expectedHumanBehavior": "receive_compliment",
+        "conversationObjective": "create_connection",
+        "conversationDirection": "continue",
+        "emotionalState": "neutral",
+        "socialIntentSignals": [
+          "compliment",
+          "mia_target"
+        ],
+        "socialIntentReasonCodes": [
+          "compliment_to_mia"
+        ],
+        "socialIntentConfidence": 0.83
+      },
+      "bridge": {
+        "version": "4.1I.2",
+        "instructions": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: compliment (elogio à MIA)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: create_connection\n- Direção conversacional: continue\n- Confiança da classificação: 0.83\n- Sinais: compliment, mia_target\n- Códigos de razão: compliment_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba o elogio dirigido à MIA; não desvie para produto ou compra."
+      },
+      "promptBefore": {
+        "hadPrimarySocialIntent": false,
+        "validation": {
+          "valid": false,
+          "missing": [
+            "primarySocialIntent",
+            "expectedHumanBehavior",
+            "conversationDirection",
+            "emotionalState",
+            "socialIntentSignals",
+            "bridgeVersion"
+          ],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "compliment",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "create_connection",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "compliment",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "compliment_to_mia"
+            ],
+            "socialIntentConfidence": 0.83
+          }
+        }
+      },
+      "promptAfter": {
+        "hadPrimarySocialIntent": true,
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "compliment",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "create_connection",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "compliment",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "compliment_to_mia"
+            ],
+            "socialIntentConfidence": 0.83
+          }
+        },
+        "excerpt": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: compliment (elogio à MIA)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: create_connection\n- Direção conversacional: continue\n- Confiança da classificação: 0.83\n- Sinais: compliment, mia_target\n- Códigos de razão: compliment_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba"
+      },
+      "llmUserPrompt": {
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "compliment",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "create_connection",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "compliment",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "compliment_to_mia"
+            ],
+            "socialIntentConfidence": 0.83
+          }
+        },
+        "excerpt": "Mensagem do usuário: \"Você é muito inteligente\"\nInstruções para esta resposta social:\nTaxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: compliment (elogio à MIA)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: create_connection\n- Direção conversacional: continue\n- Confiança da classificação: 0.83\n- Sinais: compliment, mia_target\n- Códigos de razão: compliment_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba o elogio dirigido à MIA; não desvie para produto ou compra.\n\nComportamento governado (obrigatório):\n- Modo de int"
+      },
+      "pass": true
+    },
+    {
+      "message": "Era ironia",
+      "taxonomy": {
+        "primarySocialIntent": "irony",
+        "secondarySocialIntent": null,
+        "expectedHumanBehavior": "play_humor",
+        "conversationObjective": "play_along",
+        "conversationDirection": "continue",
+        "emotionalState": "neutral",
+        "socialIntentSignals": [
+          "irony"
+        ],
+        "socialIntentReasonCodes": [
+          "explicit_irony"
+        ],
+        "socialIntentConfidence": 0.85
+      },
+      "bridge": {
+        "version": "4.1I.2",
+        "instructions": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: irony (ironia)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: play_humor\n- Objetivo conversacional: play_along\n- Direção conversacional: continue\n- Confiança da classificação: 0.85\n- Sinais: irony\n- Códigos de razão: explicit_irony\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Acompanhe ironia ou brincadeira com leveza; reconheça o tom."
+      },
+      "promptBefore": {
+        "hadPrimarySocialIntent": false,
+        "validation": {
+          "valid": false,
+          "missing": [
+            "primarySocialIntent",
+            "expectedHumanBehavior",
+            "conversationObjective",
+            "conversationDirection",
+            "socialIntentSignals",
+            "bridgeVersion"
+          ],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "irony",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "play_humor",
+            "conversationObjective": "play_along",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "irony"
+            ],
+            "socialIntentReasonCodes": [
+              "explicit_irony"
+            ],
+            "socialIntentConfidence": 0.85
+          }
+        }
+      },
+      "promptAfter": {
+        "hadPrimarySocialIntent": true,
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "irony",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "play_humor",
+            "conversationObjective": "play_along",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "irony"
+            ],
+            "socialIntentReasonCodes": [
+              "explicit_irony"
+            ],
+            "socialIntentConfidence": 0.85
+          }
+        },
+        "excerpt": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: irony (ironia)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: play_humor\n- Objetivo conversacional: play_along\n- Direção conversacional: continue\n- Confiança da classificação: 0.85\n- Sinais: irony\n- Códigos de razão: explicit_irony\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Acompanhe ironia ou brincadeira com leveza; reconheç"
+      },
+      "llmUserPrompt": {
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "irony",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "play_humor",
+            "conversationObjective": "play_along",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "irony"
+            ],
+            "socialIntentReasonCodes": [
+              "explicit_irony"
+            ],
+            "socialIntentConfidence": 0.85
+          }
+        },
+        "excerpt": "Mensagem do usuário: \"Era ironia\"\nInstruções para esta resposta social:\nTaxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: irony (ironia)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: play_humor\n- Objetivo conversacional: play_along\n- Direção conversacional: continue\n- Confiança da classificação: 0.85\n- Sinais: irony\n- Códigos de razão: explicit_irony\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Acompanhe ironia ou brincadeira com leveza; reconheça o tom.\n\nComportamento governado (obrigatório):\n- Modo de interação: social\n- Objetivo humano: create_connection\n- Objetivo com"
+      },
+      "pass": true
+    },
+    {
+      "message": "Só queria conversar",
+      "taxonomy": {
+        "primarySocialIntent": "conversation_request",
+        "secondarySocialIntent": null,
+        "expectedHumanBehavior": "stay_social",
+        "conversationObjective": "continue_conversation",
+        "conversationDirection": "continue",
+        "emotionalState": "neutral",
+        "socialIntentSignals": [
+          "conversation_request"
+        ],
+        "socialIntentReasonCodes": [
+          "conversation_request"
+        ],
+        "socialIntentConfidence": 0.82
+      },
+      "bridge": {
+        "version": "4.1I.2",
+        "instructions": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: conversation_request (pedido de conversa)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: stay_social\n- Objetivo conversacional: continue_conversation\n- Direção conversacional: continue\n- Confiança da classificação: 0.82\n- Sinais: conversation_request\n- Códigos de razão: conversation_request\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Mantenha tom social; não force redirecionamento comercial."
+      },
+      "promptBefore": {
+        "hadPrimarySocialIntent": false,
+        "validation": {
+          "valid": false,
+          "missing": [
+            "primarySocialIntent",
+            "expectedHumanBehavior",
+            "socialIntentSignals",
+            "bridgeVersion"
+          ],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "conversation_request",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "stay_social",
+            "conversationObjective": "continue_conversation",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "conversation_request"
+            ],
+            "socialIntentReasonCodes": [
+              "conversation_request"
+            ],
+            "socialIntentConfidence": 0.82
+          }
+        }
+      },
+      "promptAfter": {
+        "hadPrimarySocialIntent": true,
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "conversation_request",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "stay_social",
+            "conversationObjective": "continue_conversation",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "conversation_request"
+            ],
+            "socialIntentReasonCodes": [
+              "conversation_request"
+            ],
+            "socialIntentConfidence": 0.82
+          }
+        },
+        "excerpt": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: conversation_request (pedido de conversa)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: stay_social\n- Objetivo conversacional: continue_conversation\n- Direção conversacional: continue\n- Confiança da classificação: 0.82\n- Sinais: conversation_request\n- Códigos de razão: conversation_request\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbal"
+      },
+      "llmUserPrompt": {
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "conversation_request",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "stay_social",
+            "conversationObjective": "continue_conversation",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "conversation_request"
+            ],
+            "socialIntentReasonCodes": [
+              "conversation_request"
+            ],
+            "socialIntentConfidence": 0.82
+          }
+        },
+        "excerpt": "Mensagem do usuário: \"Só queria conversar\"\nInstruções para esta resposta social:\nTaxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: conversation_request (pedido de conversa)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: stay_social\n- Objetivo conversacional: continue_conversation\n- Direção conversacional: continue\n- Confiança da classificação: 0.82\n- Sinais: conversation_request\n- Códigos de razão: conversation_request\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Mantenha tom social; não force redirecionamento comercial.\n\nComportamento governado (obrigatório):\n- Modo de in"
+      },
+      "pass": true
+    },
+    {
+      "message": "Você me ajudou muito",
+      "taxonomy": {
+        "primarySocialIntent": "praise",
+        "secondarySocialIntent": null,
+        "expectedHumanBehavior": "receive_compliment",
+        "conversationObjective": "receive_acknowledgment",
+        "conversationDirection": "continue",
+        "emotionalState": "neutral",
+        "socialIntentSignals": [
+          "praise",
+          "mia_target"
+        ],
+        "socialIntentReasonCodes": [
+          "praise_to_mia"
+        ],
+        "socialIntentConfidence": 0.88
+      },
+      "bridge": {
+        "version": "4.1I.2",
+        "instructions": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: praise (elogio / reconhecimento)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: receive_acknowledgment\n- Direção conversacional: continue\n- Confiança da classificação: 0.88\n- Sinais: praise, mia_target\n- Códigos de razão: praise_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba o elogio dirigido à MIA; não desvie para produto ou compra."
+      },
+      "promptBefore": {
+        "hadPrimarySocialIntent": false,
+        "validation": {
+          "valid": false,
+          "missing": [
+            "primarySocialIntent",
+            "expectedHumanBehavior",
+            "conversationObjective",
+            "conversationDirection",
+            "emotionalState",
+            "socialIntentSignals",
+            "bridgeVersion"
+          ],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "praise",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "receive_acknowledgment",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "praise",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "praise_to_mia"
+            ],
+            "socialIntentConfidence": 0.88
+          }
+        }
+      },
+      "promptAfter": {
+        "hadPrimarySocialIntent": true,
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "praise",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "receive_acknowledgment",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "praise",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "praise_to_mia"
+            ],
+            "socialIntentConfidence": 0.88
+          }
+        },
+        "excerpt": "Taxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: praise (elogio / reconhecimento)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: receive_acknowledgment\n- Direção conversacional: continue\n- Confiança da classificação: 0.88\n- Sinais: praise, mia_target\n- Códigos de razão: praise_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Re"
+      },
+      "llmUserPrompt": {
+        "validation": {
+          "valid": true,
+          "missing": [],
+          "taxonomy": {
+            "taxonomyVersion": "4.1I",
+            "primarySocialIntent": "praise",
+            "secondarySocialIntent": null,
+            "emotionalState": "neutral",
+            "expectedHumanBehavior": "receive_compliment",
+            "conversationObjective": "receive_acknowledgment",
+            "conversationDirection": "continue",
+            "socialIntentSignals": [
+              "praise",
+              "mia_target"
+            ],
+            "socialIntentReasonCodes": [
+              "praise_to_mia"
+            ],
+            "socialIntentConfidence": 0.88
+          }
+        },
+        "excerpt": "Mensagem do usuário: \"Você me ajudou muito\"\nInstruções para esta resposta social:\nTaxonomia social governada (4.1I.2 — obrigatório, apenas verbalizar):\n- Família social primária: praise (elogio / reconhecimento)\n- Família social secundária: n/a\n- Estado emocional: neutral\n- Comportamento humano esperado: receive_compliment\n- Objetivo conversacional: receive_acknowledgment\n- Direção conversacional: continue\n- Confiança da classificação: 0.88\n- Sinais: praise, mia_target\n- Códigos de razão: praise_to_mia\n- A MIA já decidiu a família social; verbalize conforme esses sinais.\n- Não reclassifique, não invente intenção, não mova decisão para o LLM.\n- Orientação de verbalização: Receba o elogio dirigido à MIA; não desvie para produto ou compra.\n\nComportamento governado (obrigatório):\n- Modo de int"
+      },
+      "pass": true
+    }
+  ]
+}

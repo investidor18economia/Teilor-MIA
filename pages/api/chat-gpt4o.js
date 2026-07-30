@@ -269,6 +269,7 @@ import {
   buildFullHumanConversationInstructions,
   buildSocialConversationBehaviorContract,
   resolveSocialConversationPromptRole,
+  socialVerbalizationBridgeToTrace,
 } from "../../lib/miaSocialConversationBehavior.js";
 import {
   finalizeHumanConversationReply,
@@ -28578,6 +28579,7 @@ if (lockedComparisonContextFromSession) {
       pipelineTracer.patch({
         intent_recognition: intentRecognitionToTrace(intentRecognitionEarly),
         social_behavior_contract: socialBehaviorContractEarly,
+        social_verbalization_bridge: socialVerbalizationBridgeToTrace(socialBehaviorContractEarly),
       });
     }
   } catch (_intentRecognitionErrEarly) {

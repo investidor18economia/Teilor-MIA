@@ -300,6 +300,8 @@
     "test:mia:conv:patch-41i:social-intent-taxonomy-audit": "node scripts/test-mia-patch-41i-social-intent-taxonomy-audit.js",
     "test:mia:conv:patch-41i:local-validation": "node scripts/patch-41i-social-intent-validation.mjs",
     "test:mia:conv:patch-41i:production-validation": "cross-env PATCH41I_MODE=production node scripts/patch-41i-social-intent-validation.mjs",
+    "test:mia:conv:patch-41i2:social-verbalization-bridge-audit": "node scripts/test-mia-patch-41i2-social-verbalization-bridge-audit.js",
+    "test:mia:conv:patch-41i2:bridge-validation": "node scripts/patch-41i2-bridge-validation.mjs",
     "test:mia:conv:patch-41:regression-runner": "node scripts/patch-41-regression-runner.mjs",
     "test:mia:conv:patch-41:local-validation": "node scripts/patch-41-e2e-conversation-battery.mjs",
     "test:mia:conv:patch-41:production-validation": "cross-env PATCH41_MODE=production node scripts/patch-41-e2e-conversation-battery.mjs",
