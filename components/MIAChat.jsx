@@ -3540,13 +3540,13 @@ function detectPriorityFromText(text = "") {
             className="mia-drawer"
             role="dialog"
             aria-modal="true"
-            aria-label="Menu Teilor"
+            aria-label="Menu MIΛ"
           >
             <div className="mia-drawer-header">
-              <h2 className="mia-drawer-brand">Teilor</h2>
-              <p className="mia-drawer-powered">
-                Powered by <MIAWordmark size="xs" className="mia-drawer-powered-wordmark" />
-              </p>
+              <h2 className="mia-drawer-brand">
+                <MIAWordmark size="lg" className="mia-drawer-brand-wordmark" />
+              </h2>
+              <p className="mia-drawer-powered">Powered by Teilor</p>
             </div>
 
             {user && drawerUserName !== "Visitante" && (

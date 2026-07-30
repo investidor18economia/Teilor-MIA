@@ -72,6 +72,10 @@
   gap: 0.36em;
 }
 
+.mia-drawer-brand .mia-wordmark {
+  vertical-align: baseline;
+}
+
 .mia-drawer-powered .mia-wordmark {
   vertical-align: -0.1em;
 }

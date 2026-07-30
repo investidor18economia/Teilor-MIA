@@ -1363,6 +1363,9 @@ body.mia-hub-panel-open {
   cursor: not-allowed;
   box-shadow: none;
 }
+.send-btn:disabled:not(.send-btn--loading) {
+  color: #F4E8D4;
+}
 .suggestion-btn:focus-visible {
   outline: 2px solid var(--mia-focus-ring);
   outline-offset: 2px;
