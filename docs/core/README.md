@@ -12,6 +12,7 @@ Use esta pasta como **fonte de verdade** para decisões estruturais. Documentos 
 |---|---|
 | Arquitetura proprietária | [`architecture/MIA_ARCHITECTURE.md`](architecture/MIA_ARCHITECTURE.md) |
 | Regras permanentes de engenharia | [`rules/MIA_ENGINEERING_RULES.md`](rules/MIA_ENGINEERING_RULES.md) |
+| Design System (camada visual) | [`design/MIA_DESIGN_SYSTEM.md`](design/MIA_DESIGN_SYSTEM.md) |
 | Roadmap oficial de desenvolvimento | [`roadmap/MIA_ROADMAP.md`](roadmap/MIA_ROADMAP.md) |
 | Git, backup e recuperação do projeto | [`operations/PROJECT_RECOVERY.md`](operations/PROJECT_RECOVERY.md) |
 
@@ -22,6 +23,7 @@ Use esta pasta como **fonte de verdade** para decisões estruturais. Documentos 
 | Pasta | Finalidade |
 |---|---|
 | [`architecture/`](architecture/) | Visão arquitetural, princípios cognitivos, camadas e fluxos proprietários |
+| [`design/`](design/) | Design System oficial, tokens existentes, componentes e registro de auditoria visual |
 | [`rules/`](rules/) | Regras obrigatórias, anti-padrões e governança de implementação |
 | [`roadmap/`](roadmap/) | Evolução planejada por fases e patches |
 | [`operations/`](operations/) | Localização oficial, política de Git, backup e procedimentos de recuperação |
