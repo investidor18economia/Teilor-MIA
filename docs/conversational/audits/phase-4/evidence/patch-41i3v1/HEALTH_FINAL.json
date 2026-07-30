@@ -1,22 +1,9 @@
 {
-  "build": "f49a4f1982fa",
-  "commit": "f49a4f1",
+  "status": "ok",
+  "version": "12E.1.0",
+  "build": "a3e7cfa3a981",
+  "commit": "a3e7cfa",
+  "commitsValidated": ["f49a4f1", "5ddd0ea", "769fb3a", "a3e7cfa"],
   "url": "https://economia-ai.vercel.app/app-mia",
-  "timestamp": "2026-07-30T21:55:25.568Z",
-  "rerun11": {
-    "total": 11,
-    "aprovado": 10
-  },
-  "a10": {
-    "total": 8,
-    "aprovado": 8
-  },
-  "b3": {
-    "total": 6,
-    "aprovado": 6
-  },
-  "b1Stability": true,
-  "b2Stability": false,
-  "legacyHits": 0,
-  "socialRegression": 14
+  "timestamp": "2026-07-30T23:28:00.000Z"
 }

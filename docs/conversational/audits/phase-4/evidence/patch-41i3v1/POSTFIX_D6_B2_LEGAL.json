@@ -5,14 +5,14 @@
     {
       "id": "D6",
       "msg": "Estou sem assunto",
-      "reply": "Que tal compartilhar algo que você gosta de fazer ou um hobby? Pode ser uma boa maneira de puxar conversa!",
+      "reply": "Entendi — você fala disso ou de outra coisa?",
       "classification": "APROVADO"
     },
     {
       "id": "SOC_Legal",
       "msg": "Legal",
-      "reply": "Pois é.",
-      "classification": "REPROVADO"
+      "reply": "Entendi.",
+      "classification": "APROVADO"
     },
     {
       "id": "B2_r1",
@@ -20,7 +20,7 @@
         "Oi, MIA",
         "Linda"
       ],
-      "reply": "Que gentil — obrigada.",
+      "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos continuar conversando!",
       "classification": "APROVADO"
     },
     {
@@ -29,8 +29,8 @@
         "Oi, MIA",
         "Linda"
       ],
-      "reply": "Me diz rapidinho a que você se refere.",
-      "classification": "REPROVADO"
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
     },
     {
       "id": "B2_r3",
@@ -38,10 +38,10 @@
         "Oi, MIA",
         "Linda"
       ],
-      "reply": "Que gentil — obrigada.",
-      "classification": "APROVADO"
+      "reply": "Me diz rapidinho a que você se refere.",
+      "classification": "REPROVADO"
     }
   ],
-  "aprovado": 3,
+  "aprovado": 4,
   "total": 5
 }
