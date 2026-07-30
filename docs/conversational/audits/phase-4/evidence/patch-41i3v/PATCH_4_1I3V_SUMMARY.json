@@ -1,0 +1,13 @@
+{
+  "build": "2140d069ab5f",
+  "total": 146,
+  "aprovado": 102,
+  "reprovado": 44,
+  "inconclusivo": 0,
+  "legacyHits": 9,
+  "gates": {
+    "B1": "APROVADO",
+    "B2": "APROVADO",
+    "legacyZeroSocial": 9
+  }
+}

@@ -238,6 +238,78 @@ test("18. contexto ambíguo não inventa produto em elogio MIA", () => {
   expectFalse(anchors.includes("estetica"));
 });
 
+test("19. conversa apreciada não vira produto", () => {
+  const t = resolveSemanticTarget({
+    message: "Gostei dessa conversa",
+    recognition: recognizeMiaIntent({
+      userMessage: "Gostei dessa conversa",
+      resolvedQuery: "Gostei dessa conversa",
+      sessionContext: {},
+    }),
+  });
+  expectEqual(t.target, SEMANTIC_TARGETS.CONVERSATION);
+});
+
+test("20. pronome sem contexto permanece desconhecido", () => {
+  const t = resolveSemanticTarget({
+    message: "Ele é lindo",
+    recognition: recognizeMiaIntent({
+      userMessage: "Ele é lindo",
+      resolvedQuery: "Ele é lindo",
+      sessionContext: {},
+    }),
+  });
+  expectEqual(t.target, SEMANTIC_TARGETS.UNKNOWN);
+});
+
+test("21. Bonito demais com contexto de produto", () => {
+  const msgs = [
+    { role: "user", content: "Estou olhando o iPhone 15 azul" },
+    { role: "assistant", content: "O iPhone 15 tem acabamento premium." },
+  ];
+  const t = resolveSemanticTarget({
+    message: "Bonito demais",
+    recognition: recognizeMiaIntent({
+      userMessage: "Bonito demais",
+      resolvedQuery: "Bonito demais",
+      sessionContext: {},
+      conversationMessages: msgs,
+    }),
+    conversationMessages: msgs,
+  });
+  expectEqual(t.target, SEMANTIC_TARGETS.PRODUCT);
+  const fin = finalizeHumanConversationReply("Obrigada! Fico feliz.", buildContract("Bonito demais", msgs));
+  expectFalse(/\bobrigad/i.test(fin.response));
+});
+
+test("22. aprovação curta com resposta anterior", () => {
+  const msgs = [
+    { role: "user", content: "Me explique a diferença entre OLED e AMOLED" },
+    { role: "assistant", content: "OLED usa pixels autoiluminados; AMOLED é uma variante active-matrix." },
+  ];
+  const t = resolveSemanticTarget({
+    message: "Muito boa",
+    recognition: recognizeMiaIntent({
+      userMessage: "Muito boa",
+      resolvedQuery: "Muito boa",
+      sessionContext: {},
+      conversationMessages: msgs,
+    }),
+    conversationMessages: msgs,
+  });
+  expectEqual(t.target, SEMANTIC_TARGETS.PREVIOUS_ANSWER);
+});
+
+test("23. quero conversar sobre música permanece social", () => {
+  const r = recognizeMiaIntent({
+    userMessage: "Quero conversar sobre música",
+    resolvedQuery: "Quero conversar sobre música",
+    sessionContext: {},
+  });
+  expectEqual(r.interactionMode, MIA_INTERACTION_MODES.SOCIAL);
+  expectFalse(r.commercialIntent);
+});
+
 console.log("\nRegression matrix — critical cases");
 const criticalCases = [
   ["Linda", (r) => !/visual dele/i.test(r)],
