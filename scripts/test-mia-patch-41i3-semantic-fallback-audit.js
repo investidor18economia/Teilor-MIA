@@ -6,6 +6,7 @@
 
 import { recognizeMiaIntent } from "../lib/miaIntentRecognitionLayer.js";
 import { buildClarificationMessage } from "../lib/miaClarificationGates.js";
+import { extractCommercialRefinement } from "../lib/miaCommercialConstraintRefinement.js";
 import { buildIntentAuthorityFromRecognition } from "../lib/miaIntentAuthority.js";
 import { buildSocialConversationBehaviorContract } from "../lib/miaSocialConversationBehavior.js";
 import { finalizeHumanConversationReply } from "../lib/miaHumanConversationExperience.js";
@@ -315,6 +316,11 @@ test("24. clarificação curta não comercial evita redirect legado", () => {
   const msg = buildClarificationMessage(["intent"], { hasCommercialAsk: false });
   expectNotIncludes(msg, "celular, notebook");
   expectNotIncludes(msg, "buscando");
+});
+
+test("25. sem assunto não vira negative brand refinement", () => {
+  const r = extractCommercialRefinement("Estou sem assunto", { sessionContext: {} });
+  expectFalse(r?.detected && r?.refinementType === "negative_brand_refinement");
 });
 
 console.log("\nRegression matrix — critical cases");
