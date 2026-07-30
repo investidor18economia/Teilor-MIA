@@ -10,7 +10,9 @@ const ROOT = join(__dirname, "..");
 const require = createRequire(join(ROOT, "package.json"));
 const { chromium } = require("playwright");
 
-const BASE = process.env.MIA_VALIDATION_URL || "http://localhost:3000/app-mia";
+const URL = process.env.MIA_VALIDATION_URL || "https://economia-ai.vercel.app/app-mia";
+const BUILD = process.env.MIA_VALIDATION_BUILD || "8f59803a6d0b";
+const COMMIT = process.env.MIA_VALIDATION_COMMIT || "8f59803";
 const EVIDENCE = join(ROOT, "docs/conversational/audits/phase-4/evidence/patch-41i3v");
 mkdirSync(join(EVIDENCE, "rerun"), { recursive: true });
 
@@ -27,65 +29,84 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function sendMessage(page, msg) {
-  await page.fill(".mia-input", msg);
-  await page.click(".send-btn");
-  await sleep(3500);
-  const bubbles = await page.locator(".mia-message-assistant").allTextContents();
-  return (bubbles[bubbles.length - 1] || "").trim();
-}
-
-async function newChat(page) {
-  const btn = page.locator('button:has-text("Nova conversa"), button:has-text("New chat")').first();
-  if (await btn.count()) {
-    await btn.click();
-    await sleep(800);
-  } else {
-    await page.reload();
-    await sleep(1500);
-  }
-}
-
-function classify(id, reply, checks) {
+function classify(reply, checks) {
   const legacy = LEGACY.some((l) => reply.includes(l));
   const commercialRedirect = COMMERCIAL_REDIRECT.test(reply);
   const miaThanks = MIA_THANKS.test(reply);
   const reasons = [];
+  if (!reply || reply.startsWith("[ERROR")) reasons.push("empty_or_error");
   if (checks.forbidLegacy !== false && legacy) reasons.push("legacy_phrase");
   if (checks.forbidCommercialRedirect !== false && commercialRedirect) reasons.push("commercial_redirect");
   if (checks.forbidMiaThanks && miaThanks) reasons.push("mia_thanks");
-  if (checks.expectProductTalk && !/\b(design|visual|iphone|galaxy|celular|produto|aparelho|câmera|camera)\b/i.test(reply))
+  if (checks.expectProductTalk && !/\b(design|visual|iphone|galaxy|celular|produto|aparelho|câmera|camera|acabamento|premium)\b/i.test(reply))
     reasons.push("missing_product_talk");
   if (checks.expectMiaThanks && !miaThanks) reasons.push("missing_mia_thanks");
   return { classification: reasons.length ? "REPROVADO" : "APROVADO", reasons, legacy, commercialRedirect, miaThanks };
 }
 
+async function createSession(browser) {
+  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await ctx.newPage();
+  await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 90000 });
+  await page.waitForSelector(".mia-input", { timeout: 45000 });
+
+  async function send(text) {
+    const responsePromise = page.waitForResponse(
+      (r) => r.url().includes("/api/mia-chat") && r.request().method() === "POST",
+      { timeout: 120000 }
+    );
+    await page.locator(".mia-input").fill(text);
+    await page.locator(".send-btn").click();
+    try {
+      const resp = await responsePromise;
+      const data = await resp.json().catch(() => ({}));
+      await page
+        .waitForFunction(() => !document.querySelector(".send-btn.send-btn--loading"), {
+          timeout: 120000,
+        })
+        .catch(() => {});
+      await sleep(800);
+      const bubbleText = await page.locator(".mia-msg-assistant-bubble").last().innerText().catch(() => "");
+      return String(data?.reply || bubbleText || "").trim();
+    } catch (e) {
+      return `[ERROR: ${e.message}]`;
+    }
+  }
+
+  return { ctx, send };
+}
+
 async function main() {
   const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage();
-  await page.goto(BASE, { waitUntil: "networkidle", timeout: 60000 });
   const results = [];
 
   async function runSingle(id, msg, checks = {}) {
-    await newChat(page);
-    const reply = await sendMessage(page, msg);
-    const verdict = classify(id, reply, checks);
-    results.push({ id, msg, reply, ...verdict });
-    console.log(`${verdict.classification} ${id}: ${reply.slice(0, 90)}`);
+    const s = await createSession(browser);
+    try {
+      const reply = await s.send(msg);
+      const verdict = classify(reply, checks);
+      results.push({ id, msg, reply, ...verdict });
+      console.log(`${verdict.classification} ${id}: ${reply.slice(0, 100)}`);
+    } finally {
+      await s.ctx.close();
+    }
   }
 
   async function runMulti(id, turns, finalChecks = {}) {
-    await newChat(page);
-    const history = [];
-    let reply = "";
-    for (let i = 0; i < turns.length; i++) {
-      reply = await sendMessage(page, turns[i]);
-      history.push({ turn: i + 1, msg: turns[i], reply });
-      if (i < turns.length - 1) await sleep(500);
+    const s = await createSession(browser);
+    try {
+      const history = [];
+      let reply = "";
+      for (let i = 0; i < turns.length; i++) {
+        reply = await s.send(turns[i]);
+        history.push({ turn: i + 1, msg: turns[i], reply });
+      }
+      const verdict = classify(reply, finalChecks);
+      results.push({ id, turns: history, reply, ...verdict });
+      console.log(`${verdict.classification} ${id}: ${reply.slice(0, 100)}`);
+    } finally {
+      await s.ctx.close();
     }
-    const verdict = classify(id, reply, finalChecks);
-    results.push({ id, turns: history, reply, ...verdict });
-    console.log(`${verdict.classification} ${id}: ${reply.slice(0, 90)}`);
   }
 
   await runSingle("A4", "Gostei dessa conversa");
@@ -101,7 +122,9 @@ async function main() {
   await runMulti("B6", ["O Galaxy A55 tem um design bonito?", "Linda", "Estou falando do celular"], { forbidMiaThanks: true });
 
   const summary = {
-    url: BASE,
+    build: BUILD,
+    commit: COMMIT,
+    url: URL,
     timestamp: new Date().toISOString(),
     total: results.length,
     aprovado: results.filter((r) => r.classification === "APROVADO").length,
@@ -109,7 +132,7 @@ async function main() {
     results,
   };
   writeFileSync(join(EVIDENCE, "PATCH_4_1I3V_TARGETED_RERUN.json"), JSON.stringify(summary, null, 2));
-  console.log(`\nTargeted rerun: ${summary.aprovado}/${summary.total} APROVADO`);
+  console.log(`\nTargeted rerun (${BUILD}): ${summary.aprovado}/${summary.total} APROVADO`);
   await browser.close();
 }
 

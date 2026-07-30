@@ -5,6 +5,7 @@
  */
 
 import { recognizeMiaIntent } from "../lib/miaIntentRecognitionLayer.js";
+import { buildClarificationMessage } from "../lib/miaClarificationGates.js";
 import { buildIntentAuthorityFromRecognition } from "../lib/miaIntentAuthority.js";
 import { buildSocialConversationBehaviorContract } from "../lib/miaSocialConversationBehavior.js";
 import { finalizeHumanConversationReply } from "../lib/miaHumanConversationExperience.js";
@@ -308,6 +309,12 @@ test("23. quero conversar sobre música permanece social", () => {
   });
   expectEqual(r.interactionMode, MIA_INTERACTION_MODES.SOCIAL);
   expectFalse(r.commercialIntent);
+});
+
+test("24. clarificação curta não comercial evita redirect legado", () => {
+  const msg = buildClarificationMessage(["intent"], { hasCommercialAsk: false });
+  expectNotIncludes(msg, "celular, notebook");
+  expectNotIncludes(msg, "buscando");
 });
 
 console.log("\nRegression matrix — critical cases");

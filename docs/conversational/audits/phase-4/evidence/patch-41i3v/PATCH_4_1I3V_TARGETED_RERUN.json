@@ -1,0 +1,199 @@
+{
+  "build": "8f59803a6d0b",
+  "commit": "8f59803",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "timestamp": "2026-07-30T21:03:01.752Z",
+  "total": 11,
+  "aprovado": 8,
+  "reprovado": 3,
+  "results": [
+    {
+      "id": "A4",
+      "msg": "Gostei dessa conversa",
+      "reply": "Claro — podemos conversar.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": false
+    },
+    {
+      "id": "D1",
+      "msg": "Quero conversar sobre música",
+      "reply": "Claro — podemos conversar.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": false
+    },
+    {
+      "id": "A8",
+      "msg": "Ele é lindo",
+      "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": false
+    },
+    {
+      "id": "A10",
+      "msg": "Isso foi complicado",
+      "reply": "Me conta o que você está buscando — celular, notebook ou outro produto — que eu te ajudo a decidir.",
+      "classification": "REPROVADO",
+      "reasons": [
+        "legacy_phrase",
+        "commercial_redirect"
+      ],
+      "legacy": true,
+      "commercialRedirect": true,
+      "miaThanks": false
+    },
+    {
+      "id": "D6",
+      "msg": "Estou sem assunto",
+      "reply": "Sem essa marca — em qual faixa ou produto você está pensando?",
+      "classification": "REPROVADO",
+      "reasons": [
+        "commercial_redirect"
+      ],
+      "legacy": false,
+      "commercialRedirect": true,
+      "miaThanks": false
+    },
+    {
+      "id": "B1",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "Linda",
+          "reply": "O Galaxy tem um visual bem marcante."
+        }
+      ],
+      "reply": "O Galaxy tem um visual bem marcante.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": false
+    },
+    {
+      "id": "B2",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Oi, MIA",
+          "reply": "Opa!"
+        },
+        {
+          "turn": 2,
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada."
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": true
+    },
+    {
+      "id": "B3",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Estou olhando o iPhone 15 azul",
+          "reply": "Ficaria com o iPhone 15 por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Ainda que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "Bonito demais",
+          "reply": "Que bom que você achou bonito!"
+        }
+      ],
+      "reply": "Que bom que você achou bonito!",
+      "classification": "REPROVADO",
+      "reasons": [
+        "missing_product_talk"
+      ],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": false
+    },
+    {
+      "id": "B4",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Me explique a diferença entre OLED e AMOLED",
+          "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+        },
+        {
+          "turn": 2,
+          "msg": "Muito boa",
+          "reply": "Fico feliz que você tenha achado muito boa!"
+        }
+      ],
+      "reply": "Fico feliz que você tenha achado muito boa!",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": true
+    },
+    {
+      "id": "I1",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Qual a diferença entre LCD e OLED?",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+        },
+        {
+          "turn": 2,
+          "msg": "Essa resposta ficou ótima",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+        }
+      ],
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": false
+    },
+    {
+      "id": "B6",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "O Galaxy A55 tem um design bonito?",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+        },
+        {
+          "turn": 2,
+          "msg": "Linda",
+          "reply": "O Galaxy tem um visual bem marcante."
+        },
+        {
+          "turn": 3,
+          "msg": "Estou falando do celular",
+          "reply": "Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia."
+        }
+      ],
+      "reply": "Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacy": false,
+      "commercialRedirect": false,
+      "miaThanks": false
+    }
+  ]
+}
