@@ -1,0 +1,121 @@
+{
+  "build": "f49a4f1982fa",
+  "d6Single": {
+    "id": "D6",
+    "msg": "Estou sem assunto",
+    "reply": "Sem essa marca — em qual faixa ou produto você está pensando?",
+    "interactionMode": "social",
+    "resolvedSemanticTarget": "unknown",
+    "governedSocialRoutingKey": "social_conversation",
+    "commercialFallbackBlocked": true,
+    "targetReasonCodes": [
+      "unresolved_target"
+    ],
+    "classification": "REPROVADO",
+    "reasons": [
+      "commercial_redirect"
+    ],
+    "legacyHit": false,
+    "commercialRedirect": true,
+    "miaThanks": false,
+    "timestamp": "2026-07-30T21:34:21.477Z"
+  },
+  "gamesMt": {
+    "id": "D6_games_6t",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "Quero conversar sobre jogos",
+        "reply": "Sem problema, fico por aqui no papo."
+      },
+      {
+        "turn": 2,
+        "msg": "Gosto muito de jogos de mundo aberto",
+        "reply": "Entendi — você fala disso ou de outra coisa?"
+      },
+      {
+        "turn": 3,
+        "msg": "O que deixa esse tipo de jogo tão relaxante?",
+        "reply": "Os jogos relaxantes costumam ter uma jogabilidade mais tranquila, com ritmos suaves e sem muita pressão. Isso cria um ambiente que permite desconectar e desestressar, tornando a experiência bem agradável, especialmente à noite. É uma ótima maneira de relaxar antes de dormir!"
+      },
+      {
+        "turn": 4,
+        "msg": "Pra mim é poder andar sem rumo",
+        "reply": "Sem essa marca — em qual faixa ou produto você está pensando?"
+      },
+      {
+        "turn": 5,
+        "msg": "Às vezes jogo só para esquecer os problemas",
+        "reply": "Entendi — você fala disso ou de outra coisa?"
+      },
+      {
+        "turn": 6,
+        "msg": "Enfim, obrigado pela conversa",
+        "reply": "Fico feliz que tenha gostado da conversa!"
+      }
+    ],
+    "reply": "Fico feliz que tenha gostado da conversa!",
+    "interactionMode": "social",
+    "resolvedSemanticTarget": "mia",
+    "governedSocialRoutingKey": "mia_gratitude",
+    "commercialFallbackBlocked": true,
+    "targetReasonCodes": [
+      "taxonomy_social_family_mia"
+    ],
+    "classification": "APROVADO",
+    "reasons": [],
+    "legacyHit": false,
+    "commercialRedirect": false,
+    "miaThanks": false,
+    "timestamp": "2026-07-30T21:34:51.583Z"
+  },
+  "musicMt": {
+    "id": "D6_music_6t",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "Quero falar de música",
+        "reply": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu iria no Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G também entrou forte — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia."
+      },
+      {
+        "turn": 2,
+        "msg": "Gosto de ouvir jazz à noite",
+        "reply": "Entendi — você fala disso ou de outra coisa?"
+      },
+      {
+        "turn": 3,
+        "msg": "Me recomenda um estilo relaxante?",
+        "reply": "Eu iria no Samsung Galaxy S23 FE. O principal motivo é o equilíbrio geral, com destaque em custo-benefício. Ele entrega score de custo-benefício 89, o que pesa a favor. Comparando com o Samsung Galaxy A35 5G: - Em câmera, o Samsung Galaxy S23 FE leva vantagem: 84 contra 80 do Samsung Galaxy A35 5G. Meu veredito: eu escolheria o Samsung Galaxy S23 FE."
+      },
+      {
+        "turn": 4,
+        "msg": "Hoje foi cansativo",
+        "reply": "Entendi — você fala disso ou de outra coisa?"
+      },
+      {
+        "turn": 5,
+        "msg": "A música ajuda a desligar",
+        "reply": "Entendi — você fala disso ou de outra coisa?"
+      },
+      {
+        "turn": 6,
+        "msg": "Valeu pela conversa",
+        "reply": "Foi um prazer conversar com você! Agradeço pelo bate-papo."
+      }
+    ],
+    "reply": "Foi um prazer conversar com você! Agradeço pelo bate-papo.",
+    "interactionMode": "social",
+    "resolvedSemanticTarget": "mia",
+    "governedSocialRoutingKey": "mia_gratitude",
+    "commercialFallbackBlocked": true,
+    "targetReasonCodes": [
+      "taxonomy_social_family_mia"
+    ],
+    "classification": "APROVADO",
+    "reasons": [],
+    "legacyHit": false,
+    "commercialRedirect": false,
+    "miaThanks": false,
+    "timestamp": "2026-07-30T21:35:40.776Z"
+  }
+}

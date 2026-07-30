@@ -1,0 +1,150 @@
+{
+  "build": "f49a4f1982fa",
+  "results": [
+    {
+      "id": "A10_Isso_foi_com",
+      "msg": "Isso foi complicado",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:32:34.106Z"
+    },
+    {
+      "id": "A10_Foi_meio_est",
+      "msg": "Foi meio estranho",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:32:38.412Z"
+    },
+    {
+      "id": "A10_Essa_situa__",
+      "msg": "Essa situação foi chata",
+      "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:32:42.698Z"
+    },
+    {
+      "id": "A10_Isso_n_o_foi",
+      "msg": "Isso não foi legal",
+      "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:32:46.953Z"
+    },
+    {
+      "id": "A10_Foi_confuso",
+      "msg": "Foi confuso",
+      "reply": "Entendo, às vezes as coisas podem ser bem confusas mesmo.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "confusion",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:32:52.076Z"
+    },
+    {
+      "id": "A10_Complicado_i",
+      "msg": "Complicado isso aí",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:32:56.310Z"
+    },
+    {
+      "id": "A10_N_o_gostei_d",
+      "msg": "Não gostei disso",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:33:00.598Z"
+    },
+    {
+      "id": "A10_Que_situa__o",
+      "msg": "Que situação ruim",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:33:04.874Z"
+    }
+  ],
+  "aprovado": 8
+}

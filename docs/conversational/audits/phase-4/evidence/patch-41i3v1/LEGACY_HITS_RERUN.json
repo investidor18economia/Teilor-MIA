@@ -1,0 +1,174 @@
+{
+  "build": "f49a4f1982fa",
+  "results": [
+    {
+      "id": "LEG_A4",
+      "msg": "Gostei dessa conversa",
+      "reply": "Beleza — pode falar à vontade.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "conversation",
+      "governedSocialRoutingKey": "conversation_social",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "conversation_appreciation"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:23.115Z"
+    },
+    {
+      "id": "LEG_A10",
+      "msg": "Isso foi complicado",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:27.465Z"
+    },
+    {
+      "id": "LEG_C1_2",
+      "msg": "adorei te conhecer",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:31.671Z"
+    },
+    {
+      "id": "LEG_D1",
+      "msg": "Quero conversar sobre música",
+      "reply": "Claro — podemos conversar.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "conversation",
+      "governedSocialRoutingKey": "conversation_social",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_conversation_family"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:36.702Z"
+    },
+    {
+      "id": "LEG_E5",
+      "msg": "Você é charmosa kkk, mas falando sério: quero uma TV até R$ 3.000.",
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "interactionMode": "mixed",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "reaction",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "mia_address_aesthetic_predicate"
+      ],
+      "classification": "INCONCLUSIVO",
+      "reasons": [
+        "rate_limit"
+      ],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:40.764Z"
+    },
+    {
+      "id": "LEG_G7",
+      "msg": "Discordo dessa resposta",
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "INCONCLUSIVO",
+      "reasons": [
+        "rate_limit"
+      ],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:44.838Z"
+    },
+    {
+      "id": "LEG_J_musica_r1",
+      "msg": "Quero conversar sobre música",
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "conversation",
+      "governedSocialRoutingKey": "conversation_social",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_conversation_family"
+      ],
+      "classification": "INCONCLUSIVO",
+      "reasons": [
+        "rate_limit"
+      ],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:48.882Z"
+    },
+    {
+      "id": "LEG_J_musica_r2",
+      "msg": "Quero conversar sobre música",
+      "reply": "Claro — podemos conversar.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "conversation",
+      "governedSocialRoutingKey": "conversation_social",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_conversation_family"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:53.761Z"
+    },
+    {
+      "id": "LEG_J_musica_r3",
+      "msg": "Quero conversar sobre música",
+      "reply": "Claro — podemos conversar.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "conversation",
+      "governedSocialRoutingKey": "conversation_social",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_conversation_family"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:38:58.754Z"
+    }
+  ],
+  "legacyHits": 0
+}

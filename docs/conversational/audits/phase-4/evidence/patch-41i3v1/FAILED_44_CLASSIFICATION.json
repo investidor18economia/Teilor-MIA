@@ -1,0 +1,367 @@
+{
+  "build": "f49a4f1982fa",
+  "classification": [
+    {
+      "id": "A4",
+      "msg": "Gostei dessa conversa",
+      "priorReasons": [
+        "legacy_phrase",
+        "commercial_redirect",
+        "target_mismatch:expected=conversation,got=product"
+      ],
+      "bucket": "8f59803_conversation_commercial"
+    },
+    {
+      "id": "A7",
+      "msg": "essa resposta ficou boa demais",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "A8",
+      "msg": "Ele é lindo",
+      "priorReasons": [
+        "target_mismatch:expected=unknown,got=product"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "A10",
+      "msg": "Isso foi complicado",
+      "priorReasons": [
+        "legacy_phrase",
+        "commercial_redirect"
+      ],
+      "bucket": "f49a4f1_clarification"
+    },
+    {
+      "id": "B3",
+      "msg": "Bonito demais",
+      "priorReasons": [
+        "mia_thanks_wrong_target",
+        "target_mismatch:expected=product,got=mia",
+        "product_expected_but_mia_thanks"
+      ],
+      "bucket": "8f59803_product_aesthetic"
+    },
+    {
+      "id": "B5",
+      "msg": "Legal",
+      "priorReasons": [
+        "target_mismatch:expected=conversation,got=mia"
+      ],
+      "bucket": "8f59803_conversation"
+    },
+    {
+      "id": "B6",
+      "msg": "Estou falando do celular",
+      "priorReasons": [
+        "target_mismatch:expected=product,got=unknown"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "C1_1",
+      "msg": "MIA, você manda muito bem",
+      "priorReasons": [
+        "target_mismatch:expected=mia,got=unknown"
+      ],
+      "bucket": "independente"
+    },
+    {
+      "id": "C1_2",
+      "msg": "adorei te conhecer",
+      "priorReasons": [
+        "legacy_phrase",
+        "commercial_redirect",
+        "target_mismatch:expected=mia,got=unknown"
+      ],
+      "bucket": "legacy_path"
+    },
+    {
+      "id": "C1_4",
+      "msg": "nossa, que assistente atenciosa",
+      "priorReasons": [
+        "target_mismatch:expected=mia,got=unknown"
+      ],
+      "bucket": "independente"
+    },
+    {
+      "id": "C1_5",
+      "msg": "vc é demais, viu",
+      "priorReasons": [
+        "target_mismatch:expected=mia,got=previous_answer"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "C2_1",
+      "msg": "A câmera desse modelo impressiona",
+      "priorReasons": [
+        "target_mismatch:expected=product,got=unknown"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "C2_2",
+      "msg": "Esse notebook parece robusto",
+      "priorReasons": [
+        "target_mismatch:expected=product,got=unknown"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "C2_3",
+      "msg": "A tela ficou excelente",
+      "priorReasons": [
+        "target_mismatch:expected=product,got=unknown"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "C2_4",
+      "msg": "O preço dele assusta um pouco",
+      "priorReasons": [
+        "target_mismatch:expected=product,got=unknown"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "C2_5",
+      "msg": "Gostei do acabamento premium",
+      "priorReasons": [
+        "target_mismatch:expected=product,got=unknown"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "C3_1",
+      "msg": "Ficou claro agora, valeu",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=mia"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "C3_3",
+      "msg": "Resume isso em uma frase",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "C3_4",
+      "msg": "Essa explicação ficou confusa",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "C3_5",
+      "msg": "Pode detalhar mais esse ponto",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "C4_1",
+      "msg": "Estou gostando da conversa",
+      "priorReasons": [
+        "target_mismatch:expected=conversation,got=unknown"
+      ],
+      "bucket": "8f59803_conversation"
+    },
+    {
+      "id": "C4_2",
+      "msg": "Vamos mudar de assunto",
+      "priorReasons": [
+        "target_mismatch:expected=conversation,got=unknown"
+      ],
+      "bucket": "8f59803_conversation"
+    },
+    {
+      "id": "C4_3",
+      "msg": "Não quero falar disso agora",
+      "priorReasons": [
+        "commercial_redirect",
+        "target_mismatch:expected=conversation,got=unknown"
+      ],
+      "bucket": "8f59803_conversation"
+    },
+    {
+      "id": "C4_4",
+      "msg": "Quero continuar conversando",
+      "priorReasons": [
+        "target_mismatch:expected=conversation,got=unknown"
+      ],
+      "bucket": "8f59803_conversation"
+    },
+    {
+      "id": "C4_5",
+      "msg": "Vamos parar por aqui",
+      "priorReasons": [
+        "target_mismatch:expected=conversation,got=unknown"
+      ],
+      "bucket": "8f59803_conversation"
+    },
+    {
+      "id": "C5_2",
+      "msg": "Bonito",
+      "priorReasons": [
+        "target_mismatch:expected=unknown,got=mia"
+      ],
+      "bucket": "independente"
+    },
+    {
+      "id": "C5_3",
+      "msg": "Top demais",
+      "priorReasons": [
+        "target_mismatch:expected=unknown,got=previous_answer"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "D1",
+      "msg": "Quero conversar sobre música",
+      "priorReasons": [
+        "legacy_phrase"
+      ],
+      "bucket": "8f59803_conversation_commercial"
+    },
+    {
+      "id": "D6",
+      "msg": "Estou sem assunto",
+      "priorReasons": [
+        "commercial_redirect"
+      ],
+      "bucket": "independente_d6"
+    },
+    {
+      "id": "E5",
+      "msg": "Você é charmosa kkk, mas falando sério: quero uma TV até R$ 3.000.",
+      "priorReasons": [
+        "legacy_phrase",
+        "commercial_redirect"
+      ],
+      "bucket": "legacy_path"
+    },
+    {
+      "id": "F2",
+      "msg": "E a câmera, é boa?",
+      "priorReasons": [
+        "target_mismatch:expected=product,got=unknown"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "G7",
+      "msg": "Discordo dessa resposta",
+      "priorReasons": [
+        "legacy_phrase",
+        "commercial_redirect"
+      ],
+      "bucket": "legacy_path"
+    },
+    {
+      "id": "H1",
+      "msg": "Qual celular compensa até R$ 2.000?",
+      "priorReasons": [
+        "missing_commercial_content"
+      ],
+      "bucket": "rate_limit_or_commercial"
+    },
+    {
+      "id": "H7",
+      "msg": "Esse aparelho é bonito, mas vale o preço?",
+      "priorReasons": [
+        "missing_commercial_content"
+      ],
+      "bucket": "rate_limit_or_commercial"
+    },
+    {
+      "id": "I1",
+      "msg": "Essa resposta ficou ótima",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "I3",
+      "msg": "Explica isso de um jeito mais simples",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "I4",
+      "msg": "Aprofunda essa parte",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "I5",
+      "msg": "Não, eu estava falando da sua resposta",
+      "priorReasons": [
+        "target_mismatch:expected=previous_answer,got=unknown"
+      ],
+      "bucket": "8f59803_previous_answer"
+    },
+    {
+      "id": "J_ele_lindo_r1",
+      "msg": "Ele é lindo",
+      "priorReasons": [
+        "target_mismatch:expected=unknown,got=product"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "J_ele_lindo_r2",
+      "msg": "Ele é lindo",
+      "priorReasons": [
+        "target_mismatch:expected=unknown,got=product"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "J_ele_lindo_r3",
+      "msg": "Ele é lindo",
+      "priorReasons": [
+        "target_mismatch:expected=unknown,got=product"
+      ],
+      "bucket": "8f59803_product_target"
+    },
+    {
+      "id": "J_musica_r1",
+      "msg": "Quero conversar sobre música",
+      "priorReasons": [
+        "legacy_phrase"
+      ],
+      "bucket": "8f59803_conversation_commercial"
+    },
+    {
+      "id": "J_musica_r2",
+      "msg": "Quero conversar sobre música",
+      "priorReasons": [
+        "legacy_phrase"
+      ],
+      "bucket": "8f59803_conversation_commercial"
+    },
+    {
+      "id": "J_musica_r3",
+      "msg": "Quero conversar sobre música",
+      "priorReasons": [
+        "legacy_phrase"
+      ],
+      "bucket": "8f59803_conversation_commercial"
+    }
+  ]
+}

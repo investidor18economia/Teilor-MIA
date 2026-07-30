@@ -1,0 +1,432 @@
+{
+  "build": "f49a4f1982fa",
+  "results": [
+    {
+      "id": "COM_1",
+      "msg": "Quero um celular",
+      "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Se você me passar o orçamento, eu ajusto a recomendação com bem mais precisão.",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:40:25.852Z"
+    },
+    {
+      "id": "COM_2",
+      "msg": "Quero um bom",
+      "reply": "Eu iria no Samsung Galaxy S23 FE. O conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Ainda que possa não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:40:36.843Z"
+    },
+    {
+      "id": "COM_3",
+      "msg": "Até 2 mil",
+      "reply": "O Até 2 mil faz sentido aqui porque atende diretamente o modelo que você citou nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Atende diretamente o modelo que você citou nesta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Até 2 mil — o ganho principal ainda pesa mais do que essa renúncia.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:40:47.168Z"
+    },
+    {
+      "id": "COM_4",
+      "msg": "Para jogos",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:40:51.241Z"
+    },
+    {
+      "id": "COM_5",
+      "msg": "Quero um notebook",
+      "reply": "A escolha mais equilibrada aqui é o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD: combina com o foco principal desta busca. Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD também entrou forte — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:41:00.080Z"
+    },
+    {
+      "id": "COM_6",
+      "msg": "Um barato",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:41:04.936Z"
+    },
+    {
+      "id": "COM_7",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Compare o Galaxy A55 com o Moto G84",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Eu escolhi o Galaxy A55 5G, mas o Samsung Galaxy S23 FE chegou perto. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "Compare os dois",
+          "reply": "Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G."
+        }
+      ],
+      "reply": "Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:41:28.907Z"
+    },
+    {
+      "id": "COM_8",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "O que acha do Galaxy A55?",
+          "reply": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "E a câmera?",
+          "reply": "Sobre o Galaxy A55 5G, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+        }
+      ],
+      "reply": "Sobre o Galaxy A55 5G, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:41:47.630Z"
+    },
+    {
+      "id": "COM_9",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Estou olhando o iPhone 15",
+          "reply": "Ficaria com o iPhone 15 por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Ainda que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "Esse vale a pena?",
+          "reply": "Eu iria no iPhone 15. Pensando em custo-benefício, ele é a escolha mais coerente aqui. Ele se destaca em custo-benefício com score de custo-benefício 76. Comparando com o Samsung Galaxy S23 FE: - Em custo-benefício, o Samsung Galaxy S23 FE leva vantagem: 89 contra 76 do iPhone 15. - Em desempenho, o iPhone 15 leva vantagem: 90 contra 84 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o iPhone 15."
+        }
+      ],
+      "reply": "Eu iria no iPhone 15. Pensando em custo-benefício, ele é a escolha mais coerente aqui. Ele se destaca em custo-benefício com score de custo-benefício 76. Comparando com o Samsung Galaxy S23 FE: - Em custo-benefício, o Samsung Galaxy S23 FE leva vantagem: 89 contra 76 do iPhone 15. - Em desempenho, o iPhone 15 leva vantagem: 90 contra 84 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o iPhone 15.",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "product",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "commerce_mode_demonstrative"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:42:10.251Z"
+    },
+    {
+      "id": "COM_10",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Quero celular até 2000",
+          "reply": "Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+        },
+        {
+          "turn": 2,
+          "msg": "Qual compensa mais?",
+          "reply": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+        }
+      ],
+      "reply": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:42:29.535Z"
+    }
+  ],
+  "stability": [
+    {
+      "id": "COM_H1_r1",
+      "msg": "Qual celular compensa até R$ 2.000?",
+      "reply": "Eu iria no Redmi Note 13. O custo de entrada tende a ser mais acessível, sem estourar o orçamento. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Redmi Note 13 — visual mais confortável durante o uso prolongado. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Menos fricção se você já usa serviços e acessórios compatíveis. ⚠️ O que você abre mão • Pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão. • Pode não acompanhar tarefas mais pesadas com a mesma folga. Mesmo sabendo que pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão, eu manteria o Redmi Note 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria, durabilidade ou desempenho e jogos. Qual pesa mais pra você?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:42:49.306Z"
+    },
+    {
+      "id": "COM_MIX_r1",
+      "msg": "Você é ótima, mas quero um celular",
+      "reply": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+      "interactionMode": "mixed",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_praise",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "mia_address_social_family"
+      ],
+      "classification": "REPROVADO",
+      "reasons": [
+        "legacy_phrase"
+      ],
+      "legacyHit": true,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:43:03.720Z"
+    },
+    {
+      "id": "COM_THX_r1",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Compare Galaxy A55 e Moto G84",
+          "reply": "Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Se eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência"
+        },
+        {
+          "turn": 2,
+          "msg": "Obrigado. Agora compare com o concorrente",
+          "reply": "Por nada! Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Resumindo a decisão entre os dois: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência"
+        }
+      ],
+      "reply": "Por nada! Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Resumindo a decisão entre os dois: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência",
+      "interactionMode": "mixed",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_gratitude",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "taxonomy_social_family_mia"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:43:19.037Z"
+    },
+    {
+      "id": "COM_H1_r2",
+      "msg": "Qual celular compensa até R$ 2.000?",
+      "reply": "Eu iria no Redmi Note 13. O custo de entrada tende a ser mais acessível, sem estourar o orçamento. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Redmi Note 13 — visual mais confortável durante o uso prolongado. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Menos fricção se você já usa serviços e acessórios compatíveis. ⚠️ O que você abre mão • Pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão. • Pode não acompanhar tarefas mais pesadas com a mesma folga. Mesmo sabendo que pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão, eu manteria o Redmi Note 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria, durabilidade ou desempenho e jogos. Qual pesa mais pra você?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:43:27.694Z"
+    },
+    {
+      "id": "COM_MIX_r2",
+      "msg": "Você é ótima, mas quero um celular",
+      "reply": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+      "interactionMode": "mixed",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_praise",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "mia_address_social_family"
+      ],
+      "classification": "REPROVADO",
+      "reasons": [
+        "legacy_phrase"
+      ],
+      "legacyHit": true,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:43:35.615Z"
+    },
+    {
+      "id": "COM_THX_r2",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Compare Galaxy A55 e Moto G84",
+          "reply": "Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Se eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência"
+        },
+        {
+          "turn": 2,
+          "msg": "Obrigado. Agora compare com o concorrente",
+          "reply": "Por nada! Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Resumindo a decisão entre os dois: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência"
+        }
+      ],
+      "reply": "Por nada! Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Resumindo a decisão entre os dois: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência",
+      "interactionMode": "mixed",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_gratitude",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "taxonomy_social_family_mia"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:43:50.811Z"
+    },
+    {
+      "id": "COM_H1_r3",
+      "msg": "Qual celular compensa até R$ 2.000?",
+      "reply": "Eu iria no Redmi Note 13. O custo de entrada tende a ser mais acessível, sem estourar o orçamento. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Redmi Note 13 — visual mais confortável durante o uso prolongado. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Menos fricção se você já usa serviços e acessórios compatíveis. ⚠️ O que você abre mão • Pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão. • Pode não acompanhar tarefas mais pesadas com a mesma folga. Mesmo sabendo que pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão, eu manteria o Redmi Note 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria, durabilidade ou desempenho e jogos. Qual pesa mais pra você?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:43:59.520Z"
+    },
+    {
+      "id": "COM_MIX_r3",
+      "msg": "Você é ótima, mas quero um celular",
+      "reply": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+      "interactionMode": "mixed",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_praise",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "mia_address_social_family"
+      ],
+      "classification": "REPROVADO",
+      "reasons": [
+        "legacy_phrase"
+      ],
+      "legacyHit": true,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:44:08.180Z"
+    },
+    {
+      "id": "COM_THX_r3",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Compare Galaxy A55 e Moto G84",
+          "reply": "Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Se eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência"
+        },
+        {
+          "turn": 2,
+          "msg": "Obrigado. Agora compare com o concorrente",
+          "reply": "Por nada! Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Resumindo a decisão entre os dois: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência"
+        }
+      ],
+      "reply": "Por nada! Minha escolha: Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Câmera Galaxy A55 5G Desempenho Galaxy A55 5G Resumindo a decisão entre os dois: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência",
+      "interactionMode": "mixed",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_gratitude",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "taxonomy_social_family_mia"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:44:23.515Z"
+    }
+  ]
+}

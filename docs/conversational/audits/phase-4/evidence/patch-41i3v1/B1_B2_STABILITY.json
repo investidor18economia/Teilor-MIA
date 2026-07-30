@@ -1,0 +1,195 @@
+{
+  "build": "f49a4f1982fa",
+  "b1": {
+    "id": "B1",
+    "runs": [
+      {
+        "id": "B1_r1",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "O que você acha do design do Galaxy A55?",
+            "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+          }
+        ],
+        "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:36:03.405Z"
+      },
+      {
+        "id": "B1_r2",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "O que você acha do design do Galaxy A55?",
+            "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+          }
+        ],
+        "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:36:17.441Z"
+      },
+      {
+        "id": "B1_r3",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "O que você acha do design do Galaxy A55?",
+            "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+          }
+        ],
+        "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:36:30.972Z"
+      }
+    ],
+    "aprovado": 3,
+    "total": 3,
+    "pass": true
+  },
+  "b2": {
+    "id": "B2",
+    "runs": [
+      {
+        "id": "B2_r1",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Oi, MIA",
+            "reply": "Opa!"
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "O Produto tem um visual bem marcante."
+          }
+        ],
+        "reply": "O Produto tem um visual bem marcante.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "classification": "REPROVADO",
+        "reasons": [
+          "missing_mia_thanks"
+        ],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:36:40.777Z"
+      },
+      {
+        "id": "B2_r2",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Oi, MIA",
+            "reply": "Opa!"
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "Obrigada! Fico feliz que você pense isso. Vamos continuar conversando!"
+          }
+        ],
+        "reply": "Obrigada! Fico feliz que você pense isso. Vamos continuar conversando!",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": true,
+        "timestamp": "2026-07-30T21:36:50.266Z"
+      },
+      {
+        "id": "B2_r3",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Oi, MIA",
+            "reply": "Opa!"
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir em frente!"
+          }
+        ],
+        "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir em frente!",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": true,
+        "timestamp": "2026-07-30T21:37:00.227Z"
+      }
+    ],
+    "aprovado": 2,
+    "total": 3,
+    "pass": false
+  }
+}

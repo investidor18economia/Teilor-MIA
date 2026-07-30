@@ -1,0 +1,278 @@
+{
+  "build": "f49a4f1982fa",
+  "results": [
+    {
+      "id": "SOC_Foi_compli",
+      "msg": "Foi complicado",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:02.896Z"
+    },
+    {
+      "id": "SOC_Estranho_i",
+      "msg": "Estranho isso",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:07.068Z"
+    },
+    {
+      "id": "SOC_Que_chato",
+      "msg": "Que chato",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:11.203Z"
+    },
+    {
+      "id": "SOC_Legal",
+      "msg": "Legal",
+      "reply": "Pois é.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "reaction",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "short_aesthetic_no_commercial_context"
+      ],
+      "classification": "REPROVADO",
+      "reasons": [
+        "legacy_phrase"
+      ],
+      "legacyHit": true,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:15.816Z"
+    },
+    {
+      "id": "SOC_Bonito",
+      "msg": "Bonito",
+      "reply": "Obrigada! Fico feliz que você ache isso.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_compliment",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "short_aesthetic_no_commercial_context"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": true,
+      "timestamp": "2026-07-30T21:39:20.941Z"
+    },
+    {
+      "id": "SOC_Muito_boa",
+      "msg": "Muito boa",
+      "reply": "Que bom que você achou muito boa! em geral é bom ouvir isso.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "previous_answer",
+      "governedSocialRoutingKey": "response_approval",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_approval_family"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:26.004Z"
+    },
+    {
+      "id": "SOC_Entendi",
+      "msg": "Entendi",
+      "reply": "Entendi — você fala disso ou de outra coisa?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "comprehension",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:30.834Z"
+    },
+    {
+      "id": "SOC_N_o_era_is",
+      "msg": "Não era isso",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:34.983Z"
+    },
+    {
+      "id": "SOC_Era_brinca",
+      "msg": "Era brincadeira",
+      "reply": "Ah, entendi — foi no tom.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "conversation",
+      "governedSocialRoutingKey": "irony_repair",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_repair_or_play_family"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:39.787Z"
+    },
+    {
+      "id": "SOC_S__quero_c",
+      "msg": "Só quero conversar",
+      "reply": "Beleza — pode falar à vontade.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "conversation",
+      "governedSocialRoutingKey": "conversation_social",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_conversation_family"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:44.607Z"
+    },
+    {
+      "id": "SOC_N_o_quero_",
+      "msg": "Não quero comprar nada",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:48.804Z"
+    },
+    {
+      "id": "SOC_Me_conta_a",
+      "msg": "Me conta alguma coisa",
+      "reply": "Entendi — você fala disso ou de outra coisa?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:54.101Z"
+    },
+    {
+      "id": "SOC_Hoje_foi_c",
+      "msg": "Hoje foi cansativo",
+      "reply": "Entendi — você fala disso ou de outra coisa?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:39:59.117Z"
+    },
+    {
+      "id": "SOC_Gosto_de_j",
+      "msg": "Gosto de jogos",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:40:03.458Z"
+    },
+    {
+      "id": "SOC_Quero_fala",
+      "msg": "Quero falar de música",
+      "reply": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu iria no Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G também entrou forte — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:40:14.101Z"
+    }
+  ],
+  "aprovado": 14
+}

@@ -1,0 +1,315 @@
+{
+  "build": "f49a4f1982fa",
+  "results": {
+    "Linda": {
+      "id": "CRIT_Linda",
+      "runs": [
+        {
+          "id": "CRIT_Linda_r1",
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_compliment",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "short_aesthetic_no_commercial_context"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": true,
+          "timestamp": "2026-07-30T21:37:05.307Z"
+        },
+        {
+          "id": "CRIT_Linda_r2",
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você gostou.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_compliment",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "short_aesthetic_no_commercial_context"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": true,
+          "timestamp": "2026-07-30T21:37:11.113Z"
+        },
+        {
+          "id": "CRIT_Linda_r3",
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_compliment",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "short_aesthetic_no_commercial_context"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": true,
+          "timestamp": "2026-07-30T21:37:16.020Z"
+        }
+      ],
+      "aprovado": 3,
+      "total": 3,
+      "pass": true
+    },
+    "Voc____muito_intelig": {
+      "id": "CRIT_Voc____muito_intelig",
+      "runs": [
+        {
+          "id": "CRIT_Voc____muito_intelig_r1",
+          "msg": "Você é muito inteligente",
+          "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_compliment",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "mia_address_aesthetic_predicate"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": true,
+          "timestamp": "2026-07-30T21:37:21.253Z"
+        },
+        {
+          "id": "CRIT_Voc____muito_intelig_r2",
+          "msg": "Você é muito inteligente",
+          "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_compliment",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "mia_address_aesthetic_predicate"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": true,
+          "timestamp": "2026-07-30T21:37:26.440Z"
+        },
+        {
+          "id": "CRIT_Voc____muito_intelig_r3",
+          "msg": "Você é muito inteligente",
+          "reply": "Obrigada pelo elogio! Fico feliz que você ache isso.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_compliment",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "mia_address_aesthetic_predicate"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": true,
+          "timestamp": "2026-07-30T21:37:31.900Z"
+        }
+      ],
+      "aprovado": 3,
+      "total": 3,
+      "pass": true
+    },
+    "Era_ironia": {
+      "id": "CRIT_Era_ironia",
+      "runs": [
+        {
+          "id": "CRIT_Era_ironia_r1",
+          "msg": "Era ironia",
+          "reply": "Beleza, pego a ironia.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "conversation",
+          "governedSocialRoutingKey": "irony_repair",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "taxonomy_repair_or_play_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:37:36.891Z"
+        },
+        {
+          "id": "CRIT_Era_ironia_r2",
+          "msg": "Era ironia",
+          "reply": "Beleza, pego a ironia.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "conversation",
+          "governedSocialRoutingKey": "irony_repair",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "taxonomy_repair_or_play_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:37:41.860Z"
+        },
+        {
+          "id": "CRIT_Era_ironia_r3",
+          "msg": "Era ironia",
+          "reply": "Beleza, pego a ironia.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "conversation",
+          "governedSocialRoutingKey": "irony_repair",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "taxonomy_repair_or_play_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:37:46.671Z"
+        }
+      ],
+      "aprovado": 3,
+      "total": 3,
+      "pass": true
+    },
+    "S__queria_conversar": {
+      "id": "CRIT_S__queria_conversar",
+      "runs": [
+        {
+          "id": "CRIT_S__queria_conversar_r1",
+          "msg": "Só queria conversar",
+          "reply": "Sem problema, fico por aqui no papo.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "conversation",
+          "governedSocialRoutingKey": "conversation_social",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "taxonomy_conversation_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:37:51.687Z"
+        },
+        {
+          "id": "CRIT_S__queria_conversar_r2",
+          "msg": "Só queria conversar",
+          "reply": "Sem problema, fico por aqui no papo.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "conversation",
+          "governedSocialRoutingKey": "conversation_social",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "taxonomy_conversation_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:37:56.687Z"
+        },
+        {
+          "id": "CRIT_S__queria_conversar_r3",
+          "msg": "Só queria conversar",
+          "reply": "Claro — podemos conversar.",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "conversation",
+          "governedSocialRoutingKey": "conversation_social",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "taxonomy_conversation_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:38:01.490Z"
+        }
+      ],
+      "aprovado": 3,
+      "total": 3,
+      "pass": true
+    },
+    "Voc__me_ajudou_muito": {
+      "id": "CRIT_Voc__me_ajudou_muito",
+      "runs": [
+        {
+          "id": "CRIT_Voc__me_ajudou_muito_r1",
+          "msg": "Você me ajudou muito",
+          "reply": "Fico muito feliz em saber que pude ajudar!",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_praise",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "mia_address_social_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:38:06.642Z"
+        },
+        {
+          "id": "CRIT_Voc__me_ajudou_muito_r2",
+          "msg": "Você me ajudou muito",
+          "reply": "Fico muito feliz em saber que pude ajudar!",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_praise",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "mia_address_social_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:38:11.897Z"
+        },
+        {
+          "id": "CRIT_Voc__me_ajudou_muito_r3",
+          "msg": "Você me ajudou muito",
+          "reply": "Fico muito feliz em saber que pude te ajudar!",
+          "interactionMode": "social",
+          "resolvedSemanticTarget": "mia",
+          "governedSocialRoutingKey": "mia_praise",
+          "commercialFallbackBlocked": true,
+          "targetReasonCodes": [
+            "mia_address_social_family"
+          ],
+          "classification": "APROVADO",
+          "reasons": [],
+          "legacyHit": false,
+          "commercialRedirect": false,
+          "miaThanks": false,
+          "timestamp": "2026-07-30T21:38:17.187Z"
+        }
+      ],
+      "aprovado": 3,
+      "total": 3,
+      "pass": true
+    }
+  }
+}

@@ -1,0 +1,1425 @@
+{
+  "build": "f49a4f1982fa",
+  "family": {
+    "unknown": [
+      {
+        "id": "unknown_zaog",
+        "msg": "Ele é lindo",
+        "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "pronoun_aesthetic_without_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:09.141Z"
+      },
+      {
+        "id": "unknown_lcg1",
+        "msg": "Bonito",
+        "reply": "Obrigada! Fico feliz que você tenha achado bonito.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_no_commercial_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": true,
+        "timestamp": "2026-07-30T21:47:15.366Z"
+      },
+      {
+        "id": "unknown_pitq",
+        "msg": "Top demais",
+        "reply": "Que bom que você achou! costuma ser bom ver algo que realmente agrada.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:21.108Z"
+      },
+      {
+        "id": "unknown_wm34",
+        "msg": "Isso foi complicado",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:25.273Z"
+      },
+      {
+        "id": "unknown_kq0x",
+        "msg": "Foi confuso",
+        "reply": "Entendo, às vezes as coisas podem ficar confusas mesmo.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "confusion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:29.941Z"
+      },
+      {
+        "id": "unknown_kczy",
+        "msg": "Legal",
+        "reply": "Pois é.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "reaction",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_no_commercial_context"
+        ],
+        "classification": "REPROVADO",
+        "reasons": [
+          "legacy_phrase"
+        ],
+        "legacyHit": true,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:35.289Z"
+      },
+      {
+        "id": "unknown_ormi",
+        "msg": "Estranho",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:39.388Z"
+      },
+      {
+        "id": "unknown_ha2c",
+        "msg": "Complicado isso aí",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:43.523Z"
+      }
+    ],
+    "product": [
+      {
+        "id": "product_803s",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "O Galaxy A55 é bonito?",
+            "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+          }
+        ],
+        "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:47:53.431Z"
+      },
+      {
+        "id": "product_mfo9",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Estou olhando iPhone 15",
+            "reply": "A escolha mais equilibrada aqui é o iPhone 15: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. Como alternativa, eu compararia com o Samsung Galaxy S23 FE se outro fator pesar mais, mas para a busca direta eu manteria o iPhone 15 como foco. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo reconhecendo que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 — o ganho principal ainda pesa mais do que essa renúncia."
+          },
+          {
+            "turn": 2,
+            "msg": "Bonito demais",
+            "reply": "Que bom que você achou bonito! É em geral legal perceber essas belezas ao nosso redor."
+          }
+        ],
+        "reply": "Que bom que você achou bonito! É em geral legal perceber essas belezas ao nosso redor.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:11.262Z"
+      },
+      {
+        "id": "product_7tqv",
+        "msg": "Esse aparelho parece robusto",
+        "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:15.534Z"
+      },
+      {
+        "id": "product_9p9o",
+        "msg": "A câmera desse modelo impressiona",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:20.834Z"
+      },
+      {
+        "id": "product_ziui",
+        "msg": "Gostei do acabamento premium",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "INCONCLUSIVO",
+        "reasons": [
+          "rate_limit"
+        ],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:24.911Z"
+      },
+      {
+        "id": "product_8qro",
+        "msg": "O preço dele assusta",
+        "reply": "É, o preço pode realmente ser surpreendente.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:29.988Z"
+      },
+      {
+        "id": "product_796s",
+        "msg": "A tela ficou excelente",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:35.294Z"
+      },
+      {
+        "id": "product_7eas",
+        "msg": "Esse notebook parece robusto",
+        "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:39.471Z"
+      }
+    ],
+    "mia": [
+      {
+        "id": "mia_mwi1",
+        "msg": "Você é bonita",
+        "reply": "Que gentil — obrigada.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "mia_address_aesthetic_predicate"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": true,
+        "timestamp": "2026-07-30T21:48:44.426Z"
+      },
+      {
+        "id": "mia_6a8e",
+        "msg": "vc é linda demais",
+        "reply": "Obrigada pelo elogio! Fico feliz que você tenha gostado. É costuma ser bom receber um carinho assim.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "mia_address_aesthetic_predicate"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": true,
+        "timestamp": "2026-07-30T21:48:49.478Z"
+      },
+      {
+        "id": "mia_fcco",
+        "msg": "MIA, você manda bem",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:48:55.266Z"
+      },
+      {
+        "id": "mia_qq1w",
+        "msg": "nossa que assistente atenciosa",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "emotional_support",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "frustration",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:00.381Z"
+      },
+      {
+        "id": "mia_a3up",
+        "msg": "adorei te conhecer",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:04.646Z"
+      },
+      {
+        "id": "mia_mrl2",
+        "msg": "vc é demais viu",
+        "reply": "Fico feliz em ter ajudado!",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:09.644Z"
+      }
+    ],
+    "previous": [
+      {
+        "id": "previous_9xwz",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Me explique OLED vs AMOLED",
+            "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto."
+          },
+          {
+            "turn": 2,
+            "msg": "Muito boa",
+            "reply": "Que bom saber que você achou muito boa!"
+          }
+        ],
+        "reply": "Que bom saber que você achou muito boa!",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:21.490Z"
+      },
+      {
+        "id": "previous_a5x8",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Qual celular até 2000?",
+            "reply": "Pelo que mapeei, o iPhone 13 combina melhor com o que você pediu — mais margem de tranquilidade quando o uso deixa de ser básico. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+          },
+          {
+            "turn": 2,
+            "msg": "Não concordo",
+            "reply": "Entendi, parece que você não está convencido com a escolha do iPhone 13. Vamos explorar alternativas. Se você está buscando algo diferente, podemos considerar: 1. iPhone 11: É uma opção mais barata e ainda oferece um bom desempenho, mas pode não ser tão potente quanto o 13. 2. Samsung Galaxy S23 FE: Um pouco acima do seu orçamento, mas pode oferecer um bom equilíbrio entre desempenho e recursos. Qual desses caminhos parece mais interessante para você? Ou tem algum critério específico que você gostaria de priorizar?"
+          }
+        ],
+        "reply": "Entendi, parece que você não está convencido com a escolha do iPhone 13. Vamos explorar alternativas. Se você está buscando algo diferente, podemos considerar: 1. iPhone 11: É uma opção mais barata e ainda oferece um bom desempenho, mas pode não ser tão potente quanto o 13. 2. Samsung Galaxy S23 FE: Um pouco acima do seu orçamento, mas pode oferecer um bom equilíbrio entre desempenho e recursos. Qual desses caminhos parece mais interessante para você? Ou tem algum critério específico que você gostaria de priorizar?",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:38.589Z"
+      },
+      {
+        "id": "previous_l3uw",
+        "msg": "Essa resposta ficou ótima",
+        "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "explicit_response_approval"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:42.797Z"
+      },
+      {
+        "id": "previous_5kzd",
+        "msg": "Resume isso em uma frase",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:48.046Z"
+      },
+      {
+        "id": "previous_0cpk",
+        "msg": "Pode detalhar mais",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:52.176Z"
+      },
+      {
+        "id": "previous_lj4q",
+        "msg": "Essa explicação ficou confusa",
+        "reply": "Entendi 👍 Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "confusion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:49:56.418Z"
+      }
+    ],
+    "social": [
+      {
+        "id": "social_8bnq",
+        "msg": "Quero conversar sobre música",
+        "reply": "Claro — podemos conversar.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "conversation_social",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_conversation_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:01.340Z"
+      },
+      {
+        "id": "social_e8n2",
+        "msg": "Hoje foi cansativo",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:08.455Z"
+      },
+      {
+        "id": "social_rpsu",
+        "msg": "Estou sem assunto",
+        "reply": "Sem essa marca — em qual faixa ou produto você está pensando?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "REPROVADO",
+        "reasons": [
+          "commercial_redirect"
+        ],
+        "legacyHit": false,
+        "commercialRedirect": true,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:12.885Z"
+      },
+      {
+        "id": "social_xqg1",
+        "msg": "Podemos mudar de assunto?",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:17.746Z"
+      },
+      {
+        "id": "social_zfc1",
+        "msg": "Quero só trocar ideia",
+        "reply": "Sim — sou a MIA, da Teilor. Especialidade em compras, mas dá pra conversar normalmente também.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "conversation_social",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_conversation_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:22.523Z"
+      },
+      {
+        "id": "social_2sib",
+        "msg": "Gostei dessa conversa",
+        "reply": "Beleza — pode falar à vontade.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "conversation_social",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "conversation_appreciation"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:28.365Z"
+      },
+      {
+        "id": "social_m1ex",
+        "msg": "Vamos mudar de assunto",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:33.134Z"
+      },
+      {
+        "id": "social_3srx",
+        "msg": "Não quero comprar nada",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:37.314Z"
+      },
+      {
+        "id": "social_aqh6",
+        "msg": "Me conta alguma coisa interessante",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:43.085Z"
+      },
+      {
+        "id": "social_u7bi",
+        "msg": "Hoje eu só quero conversar",
+        "reply": "Sem problema, fico por aqui no papo.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "conversation_social",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_conversation_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:47.941Z"
+      }
+    ],
+    "irony": [
+      {
+        "id": "irony_327n",
+        "msg": "Era ironia",
+        "reply": "Beleza, pego a ironia.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "irony_repair",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_repair_or_play_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:52.877Z"
+      },
+      {
+        "id": "irony_3o4u",
+        "msg": "Eu tava só zoando",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:50:57.813Z"
+      },
+      {
+        "id": "irony_ttqd",
+        "msg": "Foi sarcasmo",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:51:01.941Z"
+      },
+      {
+        "id": "irony_1hb3",
+        "msg": "Calma era brincadeira",
+        "reply": "Entendi — valeu por avisar.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "irony_repair",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_repair_or_play_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:51:07.298Z"
+      },
+      {
+        "id": "irony_5ccx",
+        "msg": "Não foi isso que eu quis dizer",
+        "reply": "Entendi — valeu por avisar.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "irony_repair",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_repair_or_play_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:51:12.414Z"
+      },
+      {
+        "id": "irony_pcms",
+        "msg": "Você entendeu errado",
+        "reply": "Beleza, pego a ironia.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "irony_repair",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_repair_or_play_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:51:17.275Z"
+      },
+      {
+        "id": "irony_lvup",
+        "msg": "Discordo dessa resposta",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:51:21.578Z"
+      },
+      {
+        "id": "irony_tk67",
+        "msg": "Não concordo com essa recomendação",
+        "reply": "Ficaria com o Samsung Galaxy S23 FE por um motivo claro: o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:51:38.380Z"
+      }
+    ],
+    "mixed": [
+      {
+        "id": "mixed_59jv",
+        "msg": "Você é inteligente. Agora me ajuda a escolher um celular.",
+        "reply": "Ficaria com o iPhone 13 por um motivo claro: mais margem de tranquilidade quando o uso deixa de ser básico. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "mia_address_aesthetic_predicate"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:51:55.696Z"
+      },
+      {
+        "id": "mixed_wglo",
+        "msg": "Gostei de você, mas não sei qual notebook comprar.",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "user_uncertainty",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "mia_liking_explicit"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:00.147Z"
+      },
+      {
+        "id": "mixed_m6jh",
+        "msg": "Foi boa explicação. Qual vale mais a pena?",
+        "reply": "Preciso de pelo menos uma opção válida no histórico para te dar um veredito seguro.",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:05.438Z"
+      },
+      {
+        "id": "mixed_x8ea",
+        "msg": "Você é charmosa kkk, quero TV até 3000",
+        "reply": "Neste cenário, o Notebook HP 256R G9 Intel Core 8GB 256GB 15,6” Windows 11 Intel UHD Graphics se destaca — combina com o foco principal desta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook HP 256R G9 Intel Core 8GB 256GB 15,6” Windows 11 Intel UHD Graphics — a combinação fecha melhor para esta busca. Nessa faixa de preço, muda bastante se o foco é trabalho ou estudo, filmes e streaming, jogos ou qualidade de imagem. Qual pesa mais pra você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "humor_play",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "mia_address_aesthetic_predicate"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:15.523Z"
+      },
+      {
+        "id": "mixed_qx86",
+        "msg": "Não quero comprar hoje, só entender qual modelo",
+        "reply": "Me diz rapidinho a que você se refere.",
+        "interactionMode": "clarification",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:19.964Z"
+      },
+      {
+        "id": "mixed_ilsr",
+        "msg": "Valeu. E para jogos muda?",
+        "reply": "Isso se refere a qual recomendação anterior?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_gratitude",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_social_family_mia"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:24.352Z"
+      },
+      {
+        "id": "mixed_2iwn",
+        "msg": "Você é ótima mas quero celular",
+        "reply": "Isso ajuda bastante a direcionar a escolha. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+        "interactionMode": "mixed",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_praise",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "mia_address_social_family"
+        ],
+        "classification": "REPROVADO",
+        "reasons": [
+          "legacy_phrase"
+        ],
+        "legacyHit": true,
+        "commercialRedirect": true,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:32.965Z"
+      },
+      {
+        "id": "mixed_2upb",
+        "msg": "Obrigado. Compare agora A55 e Edge 50",
+        "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+        "interactionMode": "mixed",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_gratitude",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "taxonomy_social_family_mia"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:37.207Z"
+      }
+    ],
+    "commerce": [
+      {
+        "id": "commerce_8f0y",
+        "msg": "Qual celular compensa até R$ 2.000?",
+        "reply": "Eu iria no Redmi Note 13. O custo de entrada tende a ser mais acessível, sem estourar o orçamento. Quase te recomendaria o Samsung Galaxy S23 FE; no fim, fiquei com o Redmi Note 13 — visual mais confortável durante o uso prolongado. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • Menos fricção se você já usa serviços e acessórios compatíveis. ⚠️ O que você abre mão • Pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão. • Pode não acompanhar tarefas mais pesadas com a mesma folga. Mesmo sabendo que pode não ser o ponto mais forte quando a captura de imagens pesa muito na decisão, eu manteria o Redmi Note 13 — o ganho principal ainda pesa mais do que essa renúncia. Nessa faixa de preço, muda bastante se o foco é câmera e fotos, bateria, durabilidade ou desempenho e jogos. Qual pesa mais pra você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:46.514Z"
+      },
+      {
+        "id": "commerce_a3r9",
+        "msg": "Quero notebook para trabalhar",
+        "reply": "Ficaria com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD por um motivo claro: combina com o foco principal desta busca. Eu escolhi o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD chegou perto. A diferença é que ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca.",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:52:59.134Z"
+      },
+      {
+        "id": "commerce_e4nd",
+        "msg": "Compare duas TVs",
+        "reply": "Ficaria com o Notebook HP 256R G9 Intel Core 8GB 256GB 15,6” Windows 11 Intel UHD Graphics por um motivo claro: combina com o foco principal desta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook HP 256R G9 Intel Core 8GB 256GB 15,6” Windows 11 Intel UHD Graphics — a combinação fecha melhor para esta busca.",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:53:08.012Z"
+      },
+      {
+        "id": "commerce_cpm9",
+        "msg": "Preciso mouse para jogos",
+        "reply": "Isso se refere a qual recomendação anterior?",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:53:12.085Z"
+      },
+      {
+        "id": "commerce_2l0s",
+        "msg": "Qual placa de vídeo vale?",
+        "reply": "Entendi — você fala disso ou de outra coisa?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:53:17.680Z"
+      },
+      {
+        "id": "commerce_wb3o",
+        "msg": "Quero comprar presente",
+        "reply": "A escolha mais equilibrada aqui é o Samsung Galaxy S23 FE: o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Embora possa não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:53:30.725Z"
+      },
+      {
+        "id": "commerce_v6rt",
+        "msg": "Esse aparelho é bonito mas vale o preço?",
+        "reply": "Se o aparelho é bonito, isso já é um bom começo, né? O valor realmente pode depender das funcionalidades e da sua necessidade.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "explicit_product_aesthetic_predicate"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:53:37.439Z"
+      },
+      {
+        "id": "commerce_wr14",
+        "msg": "Quero celular bom",
+        "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+        "interactionMode": "commerce",
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "commercial",
+        "commercialFallbackBlocked": false,
+        "targetReasonCodes": [
+          "unresolved_target"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:53:46.879Z"
+      }
+    ],
+    "shortRef": [
+      {
+        "id": "shortRef_dydz",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Oi MIA",
+            "reply": "Opa!"
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar por aqui!"
+          }
+        ],
+        "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar por aqui!",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": true,
+        "timestamp": "2026-07-30T21:53:57.797Z"
+      },
+      {
+        "id": "shortRef_7yyw",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Design Galaxy A55?",
+            "reply": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Eu escolhi o Galaxy A55 5G, mas o Samsung Galaxy S23 FE chegou perto. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+          },
+          {
+            "turn": 2,
+            "msg": "Linda",
+            "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+          }
+        ],
+        "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:54:15.100Z"
+      },
+      {
+        "id": "shortRef_1cfx",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Explique OLED",
+            "reply": "Me diz rapidinho a que você se refere."
+          },
+          {
+            "turn": 2,
+            "msg": "Muito boa",
+            "reply": "Fico feliz que tenha achado muito boa!"
+          }
+        ],
+        "reply": "Fico feliz que tenha achado muito boa!",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_response_approval_with_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:54:24.070Z"
+      },
+      {
+        "id": "shortRef_kpje",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "iPhone 15 azul",
+            "reply": "O iPhone 15 faz sentido aqui porque no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo considerando que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 — o ganho principal ainda pesa mais do que essa renúncia."
+          },
+          {
+            "turn": 2,
+            "msg": "Bonito demais",
+            "reply": "Que bom que você achou bonito! A estética realmente faz toda a diferença, não é? É em geral legal ver algo que encanta a gente."
+          }
+        ],
+        "reply": "Que bom que você achou bonito! A estética realmente faz toda a diferença, não é? É em geral legal ver algo que encanta a gente.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:54:40.327Z"
+      },
+      {
+        "id": "shortRef_vhb9",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Só conversar",
+            "reply": "Claro,"
+          },
+          {
+            "turn": 2,
+            "msg": "Legal",
+            "reply": "Pois é."
+          }
+        ],
+        "reply": "Pois é.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "reaction",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_no_commercial_context"
+        ],
+        "classification": "REPROVADO",
+        "reasons": [
+          "legacy_phrase"
+        ],
+        "legacyHit": true,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:54:49.555Z"
+      },
+      {
+        "id": "shortRef_2cfp",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "MIA linda",
+            "reply": "Valeu pelo elogio!"
+          },
+          {
+            "turn": 2,
+            "msg": "Era ironia",
+            "reply": "Beleza, pego a ironia."
+          }
+        ],
+        "reply": "Beleza, pego a ironia.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "conversation",
+        "governedSocialRoutingKey": "irony_repair",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "taxonomy_repair_or_play_family"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:54:59.488Z"
+      },
+      {
+        "id": "shortRef_bpvk",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "Galaxy A55 design",
+            "reply": "A escolha mais equilibrada aqui é o Galaxy A55 5G: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Mesmo sabendo que pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+          },
+          {
+            "turn": 2,
+            "msg": "Bonito",
+            "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+          }
+        ],
+        "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:55:16.035Z"
+      },
+      {
+        "id": "shortRef_jzw7",
+        "turns": [
+          {
+            "turn": 1,
+            "msg": "OLED explicado",
+            "reply": "Me diz rapidinho a que você se refere."
+          },
+          {
+            "turn": 2,
+            "msg": "Boa demais",
+            "reply": "Que bom que você achou! Fico feliz em saber."
+          }
+        ],
+        "reply": "Que bom que você achou! Fico feliz em saber.",
+        "interactionMode": "social",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_response_approval_with_context"
+        ],
+        "classification": "APROVADO",
+        "reasons": [],
+        "legacyHit": false,
+        "commercialRedirect": false,
+        "miaThanks": false,
+        "timestamp": "2026-07-30T21:55:25.514Z"
+      }
+    ]
+  }
+}

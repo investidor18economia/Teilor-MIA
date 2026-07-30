@@ -1,0 +1,47 @@
+{
+  "build": "5ddd0eab0e41",
+  "commit": "5ddd0ea",
+  "results": [
+    {
+      "id": "D6",
+      "msg": "Estou sem assunto",
+      "reply": "Que tal compartilhar algo que você gosta de fazer ou um hobby? Pode ser uma boa maneira de puxar conversa!",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "SOC_Legal",
+      "msg": "Legal",
+      "reply": "Pois é.",
+      "classification": "REPROVADO"
+    },
+    {
+      "id": "B2_r1",
+      "turns": [
+        "Oi, MIA",
+        "Linda"
+      ],
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r2",
+      "turns": [
+        "Oi, MIA",
+        "Linda"
+      ],
+      "reply": "Me diz rapidinho a que você se refere.",
+      "classification": "REPROVADO"
+    },
+    {
+      "id": "B2_r3",
+      "turns": [
+        "Oi, MIA",
+        "Linda"
+      ],
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
+    }
+  ],
+  "aprovado": 3,
+  "total": 5
+}

@@ -323,6 +323,12 @@ test("25. sem assunto não vira negative brand refinement", () => {
   expectFalse(r?.detected && r?.refinementType === "negative_brand_refinement");
 });
 
+test("26. pois é legado é substituído em social", () => {
+  const c = buildContract("Legal");
+  const fin = finalizeHumanConversationReply("Pois é.", c);
+  expectFalse(/^pois e/i.test(fin.response.trim()));
+});
+
 console.log("\nRegression matrix — critical cases");
 const criticalCases = [
   ["Linda", (r) => !/visual dele/i.test(r)],

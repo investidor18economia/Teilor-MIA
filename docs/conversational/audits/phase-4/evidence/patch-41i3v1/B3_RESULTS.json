@@ -1,0 +1,180 @@
+{
+  "build": "f49a4f1982fa",
+  "results": [
+    {
+      "id": "B3_orig",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Estou olhando o iPhone 15 azul",
+          "reply": "Ficaria com o iPhone 15 por um motivo claro: no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Ainda que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "Bonito demais",
+          "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?"
+        }
+      ],
+      "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "product",
+      "governedSocialRoutingKey": "product_aesthetic_opinion",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "short_aesthetic_with_product_context"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:33:20.453Z"
+    },
+    {
+      "id": "B3_galaxy",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Estou vendo o Galaxy A55 preto",
+          "reply": "Neste cenário, o Galaxy A55 5G se destaca — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Eu escolhi o Galaxy A55 5G, mas o Samsung Galaxy S23 FE chegou perto. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "Lindo",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "product",
+      "governedSocialRoutingKey": "product_aesthetic_opinion",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "short_aesthetic_with_product_context"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:33:36.243Z"
+    },
+    {
+      "id": "B3_notebook",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Esse notebook tem acabamento em alumínio",
+          "reply": "O acabamento em alumínio é uma ótima característica! Ele geralmente traz mais durabilidade e um visual mais sofisticado. Além disso, notebooks com esse tipo de material costumam ser mais leves e resistentes a arranhões. Você está considerando esse notebook por algum motivo específico, como desempenho ou preço?"
+        },
+        {
+          "turn": 2,
+          "msg": "Bonito mesmo",
+          "reply": "O Notebook tem um visual bem marcante."
+        }
+      ],
+      "reply": "O Notebook tem um visual bem marcante.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "product",
+      "governedSocialRoutingKey": "product_aesthetic_opinion",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "short_aesthetic_with_product_context"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:33:46.768Z"
+    },
+    {
+      "id": "B3_vermelho",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Olha esse modelo vermelho",
+          "reply": "Entendi — você fala disso ou de outra coisa?"
+        },
+        {
+          "turn": 2,
+          "msg": "Muito bonito",
+          "reply": "Me diz rapidinho a que você se refere."
+        }
+      ],
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:33:56.504Z"
+    },
+    {
+      "id": "B3_design",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Estou falando do design do aparelho",
+          "reply": "O design do Aparelho realmente chama atenção. Foi o visual que mais pesou para você?"
+        },
+        {
+          "turn": 2,
+          "msg": "Charmoso",
+          "reply": "Me diz rapidinho a que você se refere."
+        }
+      ],
+      "reply": "Me diz rapidinho a que você se refere.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:34:06.412Z"
+    },
+    {
+      "id": "B3_elegante",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "O iPhone 15 azul parece elegante",
+          "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?"
+        },
+        {
+          "turn": 2,
+          "msg": "Demais",
+          "reply": "Entendi! O visual é realmente um ponto forte do iPhone 15 azul. Além da aparência, você também se preocupa com outros aspectos, como desempenho, câmera ou duração da bateria?"
+        }
+      ],
+      "reply": "Entendi! O visual é realmente um ponto forte do iPhone 15 azul. Além da aparência, você também se preocupa com outros aspectos, como desempenho, câmera ou duração da bateria?",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "previous_answer",
+      "governedSocialRoutingKey": "response_approval",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_approval_family"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:34:16.387Z"
+    }
+  ],
+  "aprovado": 6
+}

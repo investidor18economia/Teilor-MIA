@@ -1,0 +1,274 @@
+{
+  "build": "f49a4f1982fa",
+  "results": [
+    {
+      "id": "MT1",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "O que acha do design do Galaxy A55?",
+          "reply": "Eu iria no Galaxy A55 5G. A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 2,
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?"
+        },
+        {
+          "turn": 3,
+          "msg": "Quis dizer a traseira do celular",
+          "reply": "Neste cenário, o iPhone 13 se destaca — mais margem de tranquilidade quando o uso deixa de ser básico. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Ainda que possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 4,
+          "msg": "E a câmera, é boa?",
+          "reply": "Sobre o iPhone 13, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora."
+        }
+      ],
+      "reply": "Sobre o iPhone 13, pensando em câmera/fotos: A câmera é um dos pontos fortes dele. Deve entregar fotos bem consistentes, boa qualidade para redes sociais e uma experiência acima da média. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+      "interactionMode": "clarification",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "social_conversation",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:45:01.228Z"
+    },
+    {
+      "id": "MT2",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Só quero conversar",
+          "reply": "Beleza — pode falar à vontade."
+        },
+        {
+          "turn": 2,
+          "msg": "Hoje foi cansativo",
+          "reply": "Entendi — você fala disso ou de outra coisa?"
+        },
+        {
+          "turn": 3,
+          "msg": "Foi complicado",
+          "reply": "Me diz rapidinho a que você se refere."
+        },
+        {
+          "turn": 4,
+          "msg": "Trabalhei demais",
+          "reply": "Que bom — obrigada pelo reconhecimento."
+        },
+        {
+          "turn": 5,
+          "msg": "Agora quero relaxar",
+          "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia."
+        }
+      ],
+      "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:45:31.182Z"
+    },
+    {
+      "id": "MT3",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Oi MIA",
+          "reply": "Opa!"
+        },
+        {
+          "turn": 2,
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso."
+        },
+        {
+          "turn": 3,
+          "msg": "Era brincadeira",
+          "reply": "Entendi, tudo na brincadeira!"
+        },
+        {
+          "turn": 4,
+          "msg": "Mas você me ajudou",
+          "reply": "Fico feliz em ter ajudado!"
+        },
+        {
+          "turn": 5,
+          "msg": "Valeu",
+          "reply": "De nada!"
+        }
+      ],
+      "reply": "De nada!",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_gratitude",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_social_family_mia"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:45:55.876Z"
+    },
+    {
+      "id": "MT4",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Quero celular até 2000",
+          "reply": "Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+        },
+        {
+          "turn": 2,
+          "msg": "Você explica muito bem",
+          "reply": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+        },
+        {
+          "turn": 3,
+          "msg": "Agora quero só conversar",
+          "reply": "Com esse contexto, consigo ser mais precisa. Eu iria no iPhone 13. O principal motivo é o equilíbrio geral, com destaque em desempenho. Ele entrega chipset Apple A15 Bionic, o que pesa a favor. Comparando com o iPhone 11: - Em tela, o iPhone 13 leva vantagem: 90 contra 75 do iPhone 11. Meu veredito: eu escolheria o iPhone 13."
+        },
+        {
+          "turn": 4,
+          "msg": "Gosto de jogos",
+          "reply": "Que legal que você gosta de jogos! Tem algum tipo específico que você curte mais, como de tabuleiro, videogame ou jogos de cartas?"
+        },
+        {
+          "turn": 5,
+          "msg": "Voltar ao celular: quero boa bateria",
+          "reply": "iPhone 13 foi a escolha por performance: mais margem de tranquilidade quando o uso deixa de ser básico. isso sugere que ele pode lidar bem com jogos e tarefas exigentes. No entanto, quando o foco é a bateria, ele pode pedir mais atenção em dias mais longos. Se a autonomia for a prioridade principal, o iPhone 11 pode ser uma opção a considerar, pois pode oferecer uma duração de bateria mais estável em uso moderado. Mas, em geral, o iPhone 13 ainda é uma escolha sólida por sua performance, que pode fazer a diferença em jogos. Se quiser, posso ajudar a comparar mais detalhes sobre a bateria ou ver outras opções. O que você acha?"
+        }
+      ],
+      "reply": "iPhone 13 foi a escolha por performance: mais margem de tranquilidade quando o uso deixa de ser básico. isso sugere que ele pode lidar bem com jogos e tarefas exigentes. No entanto, quando o foco é a bateria, ele pode pedir mais atenção em dias mais longos. Se a autonomia for a prioridade principal, o iPhone 11 pode ser uma opção a considerar, pois pode oferecer uma duração de bateria mais estável em uso moderado. Mas, em geral, o iPhone 13 ainda é uma escolha sólida por sua performance, que pode fazer a diferença em jogos. Se quiser, posso ajudar a comparar mais detalhes sobre a bateria ou ver outras opções. O que você acha?",
+      "interactionMode": "commerce",
+      "resolvedSemanticTarget": "unknown",
+      "governedSocialRoutingKey": "commercial",
+      "commercialFallbackBlocked": false,
+      "targetReasonCodes": [
+        "unresolved_target"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:46:28.250Z"
+    },
+    {
+      "id": "D6_games_6t",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Quero conversar sobre jogos",
+          "reply": "Sem problema, fico por aqui no papo."
+        },
+        {
+          "turn": 2,
+          "msg": "Gosto muito de jogos de mundo aberto",
+          "reply": "Entendi — você fala disso ou de outra coisa?"
+        },
+        {
+          "turn": 3,
+          "msg": "O que deixa esse tipo de jogo tão relaxante?",
+          "reply": "Os jogos relaxantes costumam ter uma jogabilidade mais tranquila, com ritmos suaves e sem muita pressão. Isso cria um ambiente que permite desconectar e desestressar, tornando a experiência bem agradável, especialmente à noite. É uma ótima maneira de relaxar antes de dormir!"
+        },
+        {
+          "turn": 4,
+          "msg": "Pra mim é poder andar sem rumo",
+          "reply": "Sem essa marca — em qual faixa ou produto você está pensando?"
+        },
+        {
+          "turn": 5,
+          "msg": "Às vezes jogo só para esquecer os problemas",
+          "reply": "Entendi — você fala disso ou de outra coisa?"
+        },
+        {
+          "turn": 6,
+          "msg": "Enfim, obrigado pela conversa",
+          "reply": "Fico feliz que tenha gostado da conversa!"
+        }
+      ],
+      "reply": "Fico feliz que tenha gostado da conversa!",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_gratitude",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_social_family_mia"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:34:51.583Z"
+    },
+    {
+      "id": "MT6",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "Você é muito boa",
+          "reply": "Obrigada! Fico feliz que você esteja gostando."
+        },
+        {
+          "turn": 2,
+          "msg": "Me ajuda a comparar dois celulares",
+          "reply": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O custo de entrada tende a ser mais acessível, sem estourar o orçamento. ⚠️ O que você abre mão • Uma renúncia perceptível que vale pesar antes de fechar a compra. Mesmo considerando que uma renúncia perceptível que vale pesar antes de fechar a compra, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia."
+        },
+        {
+          "turn": 3,
+          "msg": "Não concordo com isso",
+          "reply": "Entendi. Me diz rapidinho de qual produto você está falando, que eu te respondo com segurança."
+        },
+        {
+          "turn": 4,
+          "msg": "Quero um mais barato",
+          "reply": "Isso realmente muda um pouco o cenário. Como você pediu algo mais em conta que a opção anterior, reavaliei as opções que já estávamos considerando. O Samsung Galaxy A35 5G segue na frente — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. Fora esse ajuste, o foco em desempenho segue valendo. uma renúncia perceptível que vale pesar antes de fechar a compra"
+        },
+        {
+          "turn": 5,
+          "msg": "Mas sem perder câmera",
+          "reply": "Com essa informação consigo refinar melhor a recomendação. Como perder saiu da comparação, reavaliei as opções que já estávamos considerando. O Motorola Moto G84 segue na frente — Escolhido por performance: Tarefas exigentes sem sentir que o aparelho está no limite cedo demais. O restante do critério permanece: o foco em desempenho. uma renúncia perceptível que vale pesar antes de fechar a compra"
+        },
+        {
+          "turn": 6,
+          "msg": "Valeu",
+          "reply": "De nada!"
+        }
+      ],
+      "reply": "De nada!",
+      "interactionMode": "social",
+      "resolvedSemanticTarget": "mia",
+      "governedSocialRoutingKey": "mia_gratitude",
+      "commercialFallbackBlocked": true,
+      "targetReasonCodes": [
+        "taxonomy_social_family_mia"
+      ],
+      "classification": "APROVADO",
+      "reasons": [],
+      "legacyHit": false,
+      "commercialRedirect": false,
+      "miaThanks": false,
+      "timestamp": "2026-07-30T21:47:05.015Z"
+    }
+  ]
+}
