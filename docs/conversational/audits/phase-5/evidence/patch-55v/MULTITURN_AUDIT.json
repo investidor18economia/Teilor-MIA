@@ -1,0 +1,2348 @@
+[
+  {
+    "id": "MT_A",
+    "category": "social_to_commercial",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "Oi",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 2897,
+          "reply": "Opa!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Opa!",
+          "display_empty": false,
+          "reply": "Opa!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "opa!",
+          "uiNorm": "opa!",
+          "apiFp": "greeting",
+          "uiFp": "greeting"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "social_to_commercial"
+        }
+      },
+      {
+        "turn": 2,
+        "msg": "Hoje foi corrido",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1370,
+          "reply": "Parece que foi um dia bem agitado!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Parece que seu dia foi bem agitado!",
+          "display_empty": false,
+          "reply": "Parece que seu dia foi bem agitado!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "parece que foi um dia bem agitado!",
+          "uiNorm": "parece que seu dia foi bem agitado!",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "social_to_commercial"
+        }
+      },
+      {
+        "turn": 3,
+        "msg": "Quero um celular até 2000",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 5429,
+          "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+          "display_empty": false,
+          "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "a escolha mais equilibrada aqui é o iphone 13: mais margem de tranquilidade quando o uso deixa de ser básico. eu iria no iphone 13, mas o iphone 11 também entro",
+          "uiNorm": "a escolha mais equilibrada aqui é o iphone 13: mais margem de tranquilidade quando o uso deixa de ser básico. eu iria no iphone 13, mas o iphone 11 também entro",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": true,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": false,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [
+              {
+                "id": "experience_contract_alignment",
+                "violations": [
+                  "disproportionate_length"
+                ],
+                "reasonCodes": [
+                  "experience_contract_violation"
+                ]
+              }
+            ],
+            "reasonCodes": [
+              "experience_contract_violation"
+            ]
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": true,
+          "category": "social_to_commercial"
+        }
+      },
+      {
+        "turn": 4,
+        "msg": "Preciso de boa câmera",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 7594,
+          "reply": "Pelo que mapeei, o Samsung Galaxy S22 combina melhor com o que você pediu — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o Samsung Galaxy S22 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "iPhone 13 foi a escolha por performance: mais margem de tranquilidade quando o uso deixa de ser básico. Isso se conecta diretamente à sua necessidade de uma boa câmera. O iPhone 13 tem um sistema de câmeras avançado, que oferece fotos com excelente qualidade, especialmente em condições de baixa luminosidade. Ele se destaca em capturar detalhes e cores vibrantes, o que é ótimo para quem valoriza a fotografia. A única limitação é que, em dias mais longos, pode exigir mais atenção à autonomia da bateria. Mas, considerando a qualidade das fotos, o iPhone 13 continua sendo uma escolha sólida. Se precisar de mais informações ou quiser comparar com o iPhone 11, é só avisar!",
+          "display_empty": false,
+          "reply": "iPhone 13 foi a escolha por performance: mais margem de tranquilidade quando o uso deixa de ser básico. Isso se conecta diretamente à sua necessidade de uma boa câmera. O iPhone 13 tem um sistema de câmeras avançado, que oferece fotos com excelente qualidade, especialmente em condições de baixa luminosidade. Ele se destaca em capturar detalhes e cores vibrantes, o que é ótimo para quem valoriza a fotografia. A única limitação é que, em dias mais longos, pode exigir mais atenção à autonomia da bateria. Mas, considerando a qualidade das fotos, o iPhone 13 continua sendo uma escolha sólida. Se precisar de mais informações ou quiser comparar com o iPhone 11, é só avisar!",
+          "reply_empty": false,
+          "response_path": "context_decision_no_search",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": false,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "path_divergence",
+          "apiNorm": "pelo que mapeei, o samsung galaxy s22 combina melhor com o que você pediu — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem pre",
+          "uiNorm": "iphone 13 foi a escolha por performance: mais margem de tranquilidade quando o uso deixa de ser básico. isso se conecta diretamente à sua necessidade de uma boa",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": true,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": false,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [
+              {
+                "id": "experience_contract_alignment",
+                "violations": [
+                  "disproportionate_length"
+                ],
+                "reasonCodes": [
+                  "experience_contract_violation"
+                ]
+              }
+            ],
+            "reasonCodes": [
+              "experience_contract_violation"
+            ]
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": true,
+          "category": "social_to_commercial"
+        }
+      },
+      {
+        "turn": 5,
+        "msg": "Valeu",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 947,
+          "reply": "De nada!",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "De nada!",
+          "display_empty": false,
+          "reply": "De nada!",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "de nada!",
+          "uiNorm": "de nada!",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "social_to_commercial"
+        }
+      }
+    ]
+  },
+  {
+    "id": "MT_B",
+    "category": "social_mixed",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "Bom dia",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 810,
+          "reply": "Bom dia!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Bom dia!",
+          "display_empty": false,
+          "reply": "Bom dia!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "bom dia!",
+          "uiNorm": "bom dia!",
+          "apiFp": "greeting",
+          "uiFp": "greeting"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "social_mixed"
+        }
+      },
+      {
+        "turn": 2,
+        "msg": "Como vai?",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 805,
+          "reply": "Oi!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Oi!",
+          "display_empty": false,
+          "reply": "Oi!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "oi!",
+          "uiNorm": "oi!",
+          "apiFp": "greeting",
+          "uiFp": "greeting"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "social_mixed"
+        }
+      },
+      {
+        "turn": 3,
+        "msg": "Me conta uma piada",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1289,
+          "reply": "Hehe!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Hehe!",
+          "display_empty": false,
+          "reply": "Hehe!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "hehe!",
+          "uiNorm": "hehe!",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "social_mixed"
+        }
+      },
+      {
+        "turn": 4,
+        "msg": "kkk",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 2311,
+          "reply": "Hahaha, pegou leve na risada!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Hahaha, bem leve esse humor!",
+          "display_empty": false,
+          "reply": "Hahaha, bem leve esse humor!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "hahaha, pegou leve na risada!",
+          "uiNorm": "hahaha, bem leve esse humor!",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "social_mixed"
+        }
+      },
+      {
+        "turn": 5,
+        "msg": "Agora quero um fone",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 2101,
+          "reply": "Ficaria com o Fone Bluetooth Redmi Buds 6 Play por um motivo claro: combina com o foco principal desta busca. Quase te recomendaria o Fone de Ouvido Headphone P47 Sem Fio Bluetooth Wireless Micro Sd 5.0 Dobrável Com Microfone Regulável Para Corrida Academia Escritório Caminhada Linha; no fim, fiquei com o Fone Bluetooth Redmi Buds 6 Play — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Fone Bluetooth Redmi Buds 6 Play — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+          "reply_empty": false,
+          "response_path": "commercial_only_fallback",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Ficaria com o Fone Bluetooth Redmi Buds 6 Play por um motivo claro: combina com o foco principal desta busca. Quase te recomendaria o Fone de Ouvido Headphone P47 Sem Fio Bluetooth Wireless Micro Sd 5.0 Dobrável Com Microfone Regulável Para Corrida Academia Escritório Caminhada Linha; no fim, fiquei com o Fone Bluetooth Redmi Buds 6 Play — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Fone Bluetooth Redmi Buds 6 Play — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+          "display_empty": false,
+          "reply": "Ficaria com o Fone Bluetooth Redmi Buds 6 Play por um motivo claro: combina com o foco principal desta busca. Quase te recomendaria o Fone de Ouvido Headphone P47 Sem Fio Bluetooth Wireless Micro Sd 5.0 Dobrável Com Microfone Regulável Para Corrida Academia Escritório Caminhada Linha; no fim, fiquei com o Fone Bluetooth Redmi Buds 6 Play — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Fone Bluetooth Redmi Buds 6 Play — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+          "reply_empty": false,
+          "response_path": "commercial_only_fallback",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "ficaria com o fone bluetooth redmi buds 6 play por um motivo claro: combina com o foco principal desta busca. quase te recomendaria o fone de ouvido headphone p",
+          "uiNorm": "ficaria com o fone bluetooth redmi buds 6 play por um motivo claro: combina com o foco principal desta busca. quase te recomendaria o fone de ouvido headphone p",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "commercial",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity"
+            ],
+            "rejected": []
+          },
+          "note": "Commercial recovery is structural-only (PATCH 5.5 bc3290f)",
+          "overRecoveryRisk": false,
+          "underRecovery": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "MT_C",
+    "category": "product_eval",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "O que você acha do Galaxy A55?",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 5804,
+          "reply": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Mesmo sabendo que pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Mesmo sabendo que pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "display_empty": false,
+          "reply": "Ficaria com o Galaxy A55 5G por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Mesmo sabendo que pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "ficaria com o galaxy a55 5g por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. visual mais confortável dura",
+          "uiNorm": "ficaria com o galaxy a55 5g por um motivo claro: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. visual mais confortável dura",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": true,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": false,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [
+              {
+                "id": "experience_contract_alignment",
+                "violations": [
+                  "disproportionate_length"
+                ],
+                "reasonCodes": [
+                  "experience_contract_violation"
+                ]
+              }
+            ],
+            "reasonCodes": [
+              "experience_contract_violation"
+            ]
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": true,
+          "category": "product_eval"
+        }
+      },
+      {
+        "turn": 2,
+        "msg": "Linda",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1275,
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "display_empty": false,
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "o design do galaxy realmente chama atenção. foi o visual que mais pesou para você?",
+          "uiNorm": "o design do galaxy realmente chama atenção. foi o visual que mais pesou para você?",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "product_eval"
+        }
+      },
+      {
+        "turn": 3,
+        "msg": "Quero comparar com iPhone 13",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 279,
+          "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "reply_empty": false,
+          "response_path": "comparison_early_not_found",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Minha escolha: Galaxy A55 5G Menor custo Galaxy A55 5G Bateria Galaxy A55 5G Desempenho iPhone 13 Se eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência",
+          "display_empty": false,
+          "reply": "Minha escolha: Galaxy A55 5G Menor custo Galaxy A55 5G Bateria Galaxy A55 5G Desempenho iPhone 13 Se eu estivesse comprando hoje pensando no conjunto da obra: iria de Galaxy A55 5G. O que você ganha: ganha menos dependência do carregador no dia a dia O que abre mão: ️ abre mão de carregamento_lento;peso_elevado;sem_zoom_optico ️ também pode pesar na decisão se você precisa transportar com frequência",
+          "reply_empty": false,
+          "response_path": "comparison_anchored_establish",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": false,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "path_divergence",
+          "apiNorm": "consigo comparar, mas não encontrei esses modelos com segurança no catálogo da mia ainda. me manda os nomes um pouco mais completos, tipo “galaxy a15 ou moto g8",
+          "uiNorm": "minha escolha: galaxy a55 5g menor custo galaxy a55 5g bateria galaxy a55 5g desempenho iphone 13 se eu estivesse comprando hoje pensando no conjunto da obra: i",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "commercial",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity"
+            ],
+            "rejected": []
+          },
+          "note": "Commercial recovery is structural-only (PATCH 5.5 bc3290f)",
+          "overRecoveryRisk": false,
+          "underRecovery": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "MT_D",
+    "category": "commercial_flow",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "Quero notebook",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1984,
+          "reply": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD também entrou forte — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+          "reply_empty": false,
+          "response_path": "commercial_only_fallback",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD também entrou forte — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+          "display_empty": false,
+          "reply": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD, mas o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD também entrou forte — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+          "reply_empty": false,
+          "response_path": "commercial_only_fallback",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "eu iria no notebook gamer lenovo loq-e intel core i7-12650hx 16gb 512gb ssd. combina com o foco principal desta busca. eu iria no notebook gamer lenovo loq-e in",
+          "uiNorm": "eu iria no notebook gamer lenovo loq-e intel core i7-12650hx 16gb 512gb ssd. combina com o foco principal desta busca. eu iria no notebook gamer lenovo loq-e in",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "commercial",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity"
+            ],
+            "rejected": []
+          },
+          "note": "Commercial recovery is structural-only (PATCH 5.5 bc3290f)",
+          "overRecoveryRisk": false,
+          "underRecovery": false
+        }
+      },
+      {
+        "turn": 2,
+        "msg": "Muito caro",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1378,
+          "reply": "Entendi que você está buscando um notebook, mas está preocupado com os preços. Vamos tentar encontrar uma opção que tenha um bom custo-benefício. Você tem um orçamento específico em mente ou alguma necessidade especial, como uso para trabalho, estudo ou jogos? Isso pode ajudar a filtrar as melhores opções.",
+          "reply_empty": false,
+          "response_path": "context_decision_no_search",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. O principal motivo é o equilíbrio geral, com destaque em câmera. Ele entrega câmera principal de 50MP, o que pesa a favor. Comparando com o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD: - Em custo-benefício, o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD leva vantagem: 84 contra 76 do Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD. - Mesmo assim, o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD ainda pode fazer sentido se você valorizar mais longevidade. Meu veredito: eu escolheria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD.",
+          "display_empty": false,
+          "reply": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. O principal motivo é o equilíbrio geral, com destaque em câmera. Ele entrega câmera principal de 50MP, o que pesa a favor. Comparando com o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD: - Em custo-benefício, o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD leva vantagem: 84 contra 76 do Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD. - Mesmo assim, o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD ainda pode fazer sentido se você valorizar mais longevidade. Meu veredito: eu escolheria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD.",
+          "reply_empty": false,
+          "response_path": "context_decision_no_search",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": false,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "semantic_divergence",
+          "apiNorm": "entendi que você está buscando um notebook, mas está preocupado com os preços. vamos tentar encontrar uma opção que tenha um bom custo-benefício. você tem um or",
+          "uiNorm": "eu iria no notebook gamer lenovo loq-e intel core i7-12650hx 16gb 512gb ssd. o principal motivo é o equilíbrio geral, com destaque em câmera. ele entrega câmera",
+          "apiFp": "approval_ack",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "commercial_flow"
+        }
+      },
+      {
+        "turn": 3,
+        "msg": "Tem mais barato?",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 333,
+          "reply": "Me diz rapidinho a que você se refere.",
+          "reply_empty": false,
+          "response_path": "needs_clarification",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Isso realmente muda um pouco o cenário. Mantendo o que conversamos, você pediu algo mais em conta que a opção anterior — e isso pede um ajuste fino. Mantenho o Notebook Asus Vivobook 15 Intel Core I5 8GB 5… como melhor opção — continua sendo o melhor equilíbrio para custo-benefício. O restante do critério permanece: o foco em custo-benefício.",
+          "display_empty": false,
+          "reply": "Isso realmente muda um pouco o cenário. Mantendo o que conversamos, você pediu algo mais em conta que a opção anterior — e isso pede um ajuste fino. Mantenho o Notebook Asus Vivobook 15 Intel Core I5 8GB 5… como melhor opção — continua sendo o melhor equilíbrio para custo-benefício. O restante do critério permanece: o foco em custo-benefício.",
+          "reply_empty": false,
+          "response_path": "non_commercial_governed_fallback",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": false,
+          "pathOk": false,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "path_divergence",
+          "apiNorm": "me diz rapidinho a que você se refere.",
+          "uiNorm": "isso realmente muda um pouco o cenário. mantendo o que conversamos, você pediu algo mais em conta que a opção anterior — e isso pede um ajuste fino. mantenho o ",
+          "apiFp": "other_social",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "commercial_flow"
+        }
+      },
+      {
+        "turn": 4,
+        "msg": "Show",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1066,
+          "reply": "Show!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Show!",
+          "display_empty": false,
+          "reply": "Show!",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "show!",
+          "uiNorm": "show!",
+          "apiFp": "approval_ack",
+          "uiFp": "approval_ack"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "commercial_flow"
+        }
+      },
+      {
+        "turn": 5,
+        "msg": "Obrigado",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 830,
+          "reply": "De nada! Fico feliz que você tenha se expressado.",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "De nada!",
+          "display_empty": false,
+          "reply": "De nada!",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "de nada! fico feliz que você tenha se expressado.",
+          "uiNorm": "de nada!",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "commercial_flow"
+        }
+      }
+    ]
+  },
+  {
+    "id": "MT_E",
+    "category": "emotion_to_commercial",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "Estou triste",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1401,
+          "reply": "Beleza — pode falar à vontade.",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Sinto muito em saber que você está triste.",
+          "display_empty": false,
+          "reply": "Sinto muito em saber que você está triste.",
+          "reply_empty": false,
+          "response_path": "governed_social_intent_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "beleza — pode falar à vontade.",
+          "uiNorm": "sinto muito em saber que você está triste.",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": true,
+          "overRecoveryRisk": true,
+          "underRecovery": false,
+          "category": "emotion_to_commercial"
+        }
+      },
+      {
+        "turn": 2,
+        "msg": "Obrigado por ouvir",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 945,
+          "reply": "Fico feliz em ouvir isso!",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Fico feliz em ouvir isso!",
+          "display_empty": false,
+          "reply": "Fico feliz em ouvir isso!",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "fico feliz em ouvir isso!",
+          "uiNorm": "fico feliz em ouvir isso!",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "emotion_to_commercial"
+        }
+      },
+      {
+        "turn": 3,
+        "msg": "Preciso de um celular barato",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 264,
+          "reply": "Entendi — você fala disso ou de outra coisa?",
+          "reply_empty": false,
+          "response_path": "needs_clarification",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Entendi — você fala disso ou de outra coisa?",
+          "display_empty": false,
+          "reply": "Entendi — você fala disso ou de outra coisa?",
+          "reply_empty": false,
+          "response_path": "needs_clarification",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "entendi — você fala disso ou de outra coisa?",
+          "uiNorm": "entendi — você fala disso ou de outra coisa?",
+          "apiFp": "approval_ack",
+          "uiFp": "approval_ack"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "emotion_to_commercial"
+        }
+      }
+    ]
+  },
+  {
+    "id": "MT_LONG",
+    "category": "long_conversation",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "Oi",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 835,
+          "reply": "Opa!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Opa!",
+          "display_empty": false,
+          "reply": "Opa!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "opa!",
+          "uiNorm": "opa!",
+          "apiFp": "greeting",
+          "uiFp": "greeting"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 2,
+        "msg": "Tudo bem?",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 780,
+          "reply": "Oi!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Oi!",
+          "display_empty": false,
+          "reply": "Oi!",
+          "reply_empty": false,
+          "response_path": "greeting_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "oi!",
+          "uiNorm": "oi!",
+          "apiFp": "greeting",
+          "uiFp": "greeting"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 3,
+        "msg": "Quero um celular",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 5499,
+          "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Se você me passar o orçamento, eu ajusto a recomendação com bem mais precisão.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Se você me passar o orçamento, eu ajusto a recomendação com bem mais precisão.",
+          "display_empty": false,
+          "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Quase te recomendaria o iPhone 11; no fim, fiquei com o iPhone 13 — mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Se você me passar o orçamento, eu ajusto a recomendação com bem mais precisão.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "o iphone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. quase",
+          "uiNorm": "o iphone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. quase",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": true,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": false,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [
+              {
+                "id": "experience_contract_alignment",
+                "violations": [
+                  "disproportionate_length"
+                ],
+                "reasonCodes": [
+                  "experience_contract_violation"
+                ]
+              }
+            ],
+            "reasonCodes": [
+              "experience_contract_violation"
+            ]
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": true,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 4,
+        "msg": "Até 2500",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 5143,
+          "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Ainda que possa não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Isso realmente muda um pouco o cenário. Esse ponto entrou no critério: o teto passou de R$ 2500,00 para R$ 2500,00. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por value: Paga pelo que vai usar — sem especificação ociosa que cobra diferença sem mudar o dia a dia. O restante do critério permanece: o foco em custo-benefício. pode pedir mais atenção à autonomia em dias mais longos",
+          "display_empty": false,
+          "reply": "Isso realmente muda um pouco o cenário. Esse ponto entrou no critério: o teto passou de R$ 2500,00 para R$ 2500,00. Reavaliei o que já tínhamos mapeado. Continuo indicando o iPhone 13 — Escolhido por value: Paga pelo que vai usar — sem especificação ociosa que cobra diferença sem mudar o dia a dia. O restante do critério permanece: o foco em custo-benefício. pode pedir mais atenção à autonomia em dias mais longos",
+          "reply_empty": false,
+          "response_path": "non_commercial_governed_fallback",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": false,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "path_divergence",
+          "apiNorm": "o samsung galaxy s23 fe faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. eu escolhi o samsung galaxy s23 fe, m",
+          "uiNorm": "isso realmente muda um pouco o cenário. esse ponto entrou no critério: o teto passou de r$ 2500,00 para r$ 2500,00. reavaliei o que já tínhamos mapeado. continu",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": true,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": false,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [
+              {
+                "id": "experience_contract_alignment",
+                "violations": [
+                  "disproportionate_length"
+                ],
+                "reasonCodes": [
+                  "experience_contract_violation"
+                ]
+              }
+            ],
+            "reasonCodes": [
+              "experience_contract_violation"
+            ]
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": true,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 5,
+        "msg": "Boa câmera",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 7510,
+          "reply": "Pelo que mapeei, o Samsung Galaxy S22 combina melhor com o que você pediu — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o Samsung Galaxy S22 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Pelo que mapeei, o Samsung Galaxy S22 combina melhor com o que você pediu — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o Samsung Galaxy S22 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "display_empty": false,
+          "reply": "Pelo que mapeei, o Samsung Galaxy S22 combina melhor com o que você pediu — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o Samsung Galaxy S22 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "reply_empty": false,
+          "response_path": "return_seguro",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "pelo que mapeei, o samsung galaxy s22 combina melhor com o que você pediu — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem pre",
+          "uiNorm": "pelo que mapeei, o samsung galaxy s22 combina melhor com o que você pediu — no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem pre",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": true,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": false,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [
+              {
+                "id": "experience_contract_alignment",
+                "violations": [
+                  "disproportionate_length"
+                ],
+                "reasonCodes": [
+                  "experience_contract_violation"
+                ]
+              }
+            ],
+            "reasonCodes": [
+              "experience_contract_violation"
+            ]
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": true,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 6,
+        "msg": "E bateria?",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 358,
+          "reply": "Me diz rapidinho a que você se refere.",
+          "reply_empty": false,
+          "response_path": "needs_clarification",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Sobre o Samsung Galaxy S22, pensando em bateria/autonomia: Esse modelo tem 3700mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "display_empty": false,
+          "reply": "Sobre o Samsung Galaxy S22, pensando em bateria/autonomia: Esse modelo tem 3700mAh de bateria, então é uma opção bem segura pra autonomia no dia a dia. Resumo: eu manteria esse produto como referência, sem buscar outro agora.",
+          "reply_empty": false,
+          "response_path": "priority_followup_short",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": false,
+          "pathOk": false,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "path_divergence",
+          "apiNorm": "me diz rapidinho a que você se refere.",
+          "uiNorm": "sobre o samsung galaxy s22, pensando em bateria/autonomia: esse modelo tem 3700mah de bateria, então é uma opção bem segura pra autonomia no dia a dia. resumo: ",
+          "apiFp": "other_social",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 7,
+        "msg": "Compare com Samsung",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 337,
+          "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "reply_empty": false,
+          "response_path": "comparison_early_not_found",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Eu iria no Samsung Galaxy S22. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3700 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 74 do Samsung Galaxy S22. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o Samsung Galaxy S22.",
+          "display_empty": false,
+          "reply": "Eu iria no Samsung Galaxy S22. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3700 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 74 do Samsung Galaxy S22. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o Samsung Galaxy S22.",
+          "reply_empty": false,
+          "response_path": "context_decision_no_search",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": true,
+          "pathOk": false,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "path_divergence",
+          "apiNorm": "consigo comparar, mas não encontrei esses modelos com segurança no catálogo da mia ainda. me manda os nomes um pouco mais completos, tipo “galaxy a15 ou moto g8",
+          "uiNorm": "eu iria no samsung galaxy s22. pensando em bateria/autonomia, ele é a escolha mais coerente aqui. ele se destaca em bateria com bateria de 3700 mah. comparando ",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "commercial",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity"
+            ],
+            "rejected": []
+          },
+          "note": "Commercial recovery is structural-only (PATCH 5.5 bc3290f)",
+          "overRecoveryRisk": false,
+          "underRecovery": false
+        }
+      },
+      {
+        "turn": 8,
+        "msg": "Gostei",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 1171,
+          "reply": "Claro — podemos conversar.",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Eu iria no Samsung Galaxy S22. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3700 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 74 do Samsung Galaxy S22. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o Samsung Galaxy S22.",
+          "display_empty": false,
+          "reply": "Eu iria no Samsung Galaxy S22. Pensando em bateria/autonomia, ele é a escolha mais coerente aqui. Ele se destaca em bateria com bateria de 3700 mAh. Comparando com o Samsung Galaxy S23 FE: - Em bateria, o Samsung Galaxy S23 FE leva vantagem: 84 contra 74 do Samsung Galaxy S22. - Mesmo assim, o Samsung Galaxy S23 FE ainda pode fazer sentido se você valorizar mais custo-benefício. Meu veredito: eu escolheria o Samsung Galaxy S22.",
+          "reply_empty": false,
+          "response_path": "context_decision_no_search",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": false,
+          "fpMatch": false,
+          "pathOk": false,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": false,
+          "divergenceClass": "path_divergence",
+          "apiNorm": "claro — podemos conversar.",
+          "uiNorm": "eu iria no samsung galaxy s22. pensando em bateria/autonomia, ele é a escolha mais coerente aqui. ele se destaca em bateria com bateria de 3700 mah. comparando ",
+          "apiFp": "other_social",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 9,
+        "msg": "Valeu",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 819,
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "De nada! Fico feliz que tenha gostado.",
+          "display_empty": false,
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "reply_empty": false,
+          "response_path": "acknowledgement_flow",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "de nada! fico feliz que tenha gostado.",
+          "uiNorm": "de nada! fico feliz que tenha gostado.",
+          "apiFp": "other_social",
+          "uiFp": "other_social"
+        },
+        "recovery": {
+          "deliveryMode": "social",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity",
+            "universal_contract_shape",
+            "experience_contract_alignment",
+            "fallback_policy_compliance",
+            "interaction_mode_alignment"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity",
+              "universal_contract_shape",
+              "experience_contract_alignment",
+              "fallback_policy_compliance",
+              "interaction_mode_alignment"
+            ],
+            "rejected": [],
+            "reasonCodes": []
+          },
+          "looksLikeFallback": false,
+          "overRecoveryRisk": false,
+          "underRecovery": false,
+          "category": "long_conversation"
+        }
+      },
+      {
+        "turn": 10,
+        "msg": "Tchau",
+        "api": {
+          "channel": "api",
+          "status": 200,
+          "latency_ms": 262,
+          "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "reply_empty": false,
+          "response_path": "comparison_early_not_found",
+          "intent": null,
+          "routing": null,
+          "ambiguous": null,
+          "target": null,
+          "precedence": null,
+          "has_debug": false,
+          "recoveryTrace": null
+        },
+        "ui": {
+          "channel": "ui",
+          "status": 200,
+          "displayText": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "display_empty": false,
+          "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+          "reply_empty": false,
+          "response_path": "comparison_early_not_found",
+          "bubble_delta": 1,
+          "duplicate_bubble": false,
+          "has_mia_debug_in_payload": false,
+          "leaks_internal_json": false,
+          "recoveryTrace": null
+        },
+        "parity": {
+          "exactMatch": true,
+          "fpMatch": true,
+          "pathOk": true,
+          "bothNonEmpty": true,
+          "noLeak": true,
+          "approved": true,
+          "divergenceClass": "none",
+          "apiNorm": "consigo comparar, mas não encontrei esses modelos com segurança no catálogo da mia ainda. me manda os nomes um pouco mais completos, tipo “galaxy a15 ou moto g8",
+          "uiNorm": "consigo comparar, mas não encontrei esses modelos com segurança no catálogo da mia ainda. me manda os nomes um pouco mais completos, tipo “galaxy a15 ou moto g8",
+          "apiFp": "commercial",
+          "uiFp": "commercial"
+        },
+        "recovery": {
+          "deliveryMode": "commercial",
+          "recoveryLikelyActed": false,
+          "recoveryShouldAct": false,
+          "validatorsRun": [
+            "structural_integrity"
+          ],
+          "validatorChain": {
+            "valid": true,
+            "approved": [
+              "structural_integrity"
+            ],
+            "rejected": []
+          },
+          "note": "Commercial recovery is structural-only (PATCH 5.5 bc3290f)",
+          "overRecoveryRisk": false,
+          "underRecovery": false
+        }
+      }
+    ]
+  }
+]

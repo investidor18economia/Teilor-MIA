@@ -285,6 +285,8 @@ import {
   wrapSocialFinalizationForEgress,
   unifiedEgressToTrace,
   universalRecoveryToTrace,
+  prepareUniversalRuntimeEgressDelivery,
+  UNIVERSAL_EGRESS_SEAL_KEY,
 } from "../../lib/miaUnifiedConversationalEgress.js";
 import {
   finalizeMixedConversationReply,
@@ -26757,6 +26759,34 @@ async function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, 
     ),
   };
 
+  const _semanticCtxForEgress = semanticGovernanceRef.ctx;
+  const _runtimeEgress = prepareUniversalRuntimeEgressDelivery({
+    body: _responseBody,
+    responsePath,
+    intentRecognition: _semanticCtxForEgress?.intentRecognition || null,
+    intentAuthority: _semanticCtxForEgress?.intentAuthority || null,
+    routingDecision: semanticGovernanceRef.finalRoutingDecision || null,
+    period: getTimePeriod(),
+  });
+  if (_runtimeEgress.body) {
+    _responseBody.reply = _runtimeEgress.body.reply;
+    if (_runtimeEgress.body.session_context) {
+      _responseBody.session_context = _runtimeEgress.body.session_context;
+    }
+  }
+  if (process.env.MIA_DEBUG === "true" && _runtimeEgress.egressPrep) {
+    pipelineTracer.patch({
+      universal_runtime_egress: unifiedEgressToTrace(_runtimeEgress.egressPrep),
+      universal_conversation_recovery: universalRecoveryToTrace(
+        _runtimeEgress.egressPrep.universalRecovery
+      ),
+      universal_runtime_egress_kind: _runtimeEgress.kind || null,
+      universal_runtime_egress_skipped: !!_runtimeEgress.skipped,
+    });
+  }
+  delete _responseBody[UNIVERSAL_EGRESS_SEAL_KEY];
+  delete _responseBody._universalEgressMeta;
+
   if (
     _sharedStateForCommercialSearch?.lastRecommendationDecisionRequestId &&
     _responseBody.session_context &&
@@ -27410,7 +27440,13 @@ function sendUnifiedConversationalEgress(
   return sendRuntimeResponse(
     res,
     pipelineTracer,
-    { reply: egressPrep.reply, prices: [], session_context },
+    {
+      reply: egressPrep.reply,
+      prices: [],
+      session_context,
+      [UNIVERSAL_EGRESS_SEAL_KEY]: true,
+      _universalEgressMeta: egressPrep.finalizationMeta || null,
+    },
     responsePath,
     {
       routingDecision: routingDecision || semanticGovernanceRef.finalRoutingDecision,
@@ -30402,36 +30438,29 @@ if (
       message: resolvedQuery || query,
       conversationMessages,
     });
-  const legacyInstitutionalReply = finalizeHumanConversationReply(
-    "",
-    legacyInstitutionalContract,
-    conversationalToneProfile,
-    { period: getTimePeriod() }
-  ).response;
 
-  return sendRuntimeResponse(
-    res,
-    pipelineTracer,
-    {
-      reply: legacyInstitutionalReply,
-      prices: [],
-      session_context: buildContinuityPreservedSessionContext(
-        req.body?.session_context || sessionContext,
-        {
-          lastProducts: [],
-          lastBestProduct: null,
-          lastCategory: "",
-          lastInteractionType: "general_answer",
-        },
-        { preserveAnchor: false, preserveRanking: false, preserveComparison: false }
-      ),
-    },
-    "general_answer",
-    {
-      routingDecision: semanticGovernanceRef.finalRoutingDecision,
-      finalization: { required: true, applied: true },
-    }
-  );
+  return sendUnifiedConversationalEgress(res, pipelineTracer, {
+    candidateReply: "",
+    socialBehaviorContract: legacyInstitutionalContract,
+    conversationalToneProfile,
+    sessionContext: buildContinuityPreservedSessionContext(
+      req.body?.session_context || sessionContext,
+      {
+        lastProducts: [],
+        lastBestProduct: null,
+        lastCategory: "",
+        lastInteractionType: "general_answer",
+      },
+      { preserveAnchor: false, preserveRanking: false, preserveComparison: false }
+    ),
+    hasAnchorForRouting: false,
+    req,
+    responsePath: "general_answer",
+    routingDecision: semanticGovernanceRef.finalRoutingDecision,
+    period: getTimePeriod(),
+    intentRecognition: intentRecognitionEarly,
+    intentAuthority: semanticGovernanceRef.ctx?.intentAuthority || null,
+  });
 }
   
   const wantsNew = wantsNewProduct(resolvedQuery);

@@ -1,0 +1,9 @@
+{
+  "egressVersion": "5.5.0",
+  "usesUniversalRecovery": true,
+  "usesCommercialRecovery": false,
+  "prepareSocialCallsRecovery": true,
+  "prepareCommercialCallsRecovery": false,
+  "earlyReturnCountInEgress": 10,
+  "note": "Static audit — all delivery paths go through prepare*EgressFinalization in egress module"
+}

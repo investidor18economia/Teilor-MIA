@@ -68,8 +68,8 @@ test("1. recovery version 5.5.0", () => {
   expectEqual(UNIVERSAL_RECOVERY_VERSION, "5.5.0");
 });
 
-test("2. egress version bumped to 5.5.0", () => {
-  expectEqual(UNIFIED_CONVERSATION_EGRESS_VERSION, "5.5.0");
+test("2. egress version bumped to 5.5.1", () => {
+  expectEqual(UNIFIED_CONVERSATION_EGRESS_VERSION, "5.5.1");
 });
 
 test("3. validator chain rejects empty reply", () => {
