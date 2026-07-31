@@ -1,0 +1,28 @@
+{
+  "version": "5.4.0",
+  "allowedWhen": [
+    "evaluative_intent_with_unknown_target",
+    "no_specific_governed_family",
+    "compliment_or_reaction_signals_without_target",
+    "real_ambiguity_relevant_to_response"
+  ],
+  "blockedWhen": [
+    "greeting_recognized",
+    "farewell_recognized",
+    "gratitude_recognized",
+    "acknowledgement_recognized",
+    "family_not_requiring_explicit_target",
+    "approval_without_target",
+    "high_confidence_mia_target",
+    "high_confidence_product_target",
+    "high_confidence_previous_answer_target",
+    "conversation_target",
+    "message_short_alone",
+    "target_unknown_alone"
+  ],
+  "reasonCodes": [
+    "specific_social_family_precedes_ambiguous",
+    "ambiguous_social_allowed_only_without_specific_family",
+    "target_unknown_does_not_invalidate_greeting"
+  ]
+}

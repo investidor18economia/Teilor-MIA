@@ -1,0 +1,30 @@
+{
+  "gitHash": "5f4688b",
+  "results": {
+    "patch54": {
+      "ok": true,
+      "output": "cial false for gratitude\n  ✓ 22. resolveGovernedSocialRoutingKey matches applySemanticPrecedence\n  ✓ 23. Show fallback not empty\n  ✓ 24. ambiguous social preserved for real ambiguity\n  ✓ 25. greeting stability 5/5\n  ✓ 26. opa stability 5/5\n  ✓ 27. eae stability 5/5\n  ✓ 28. boa noite stability 5/5\n  ✓ 29. precedence rank assigned\n  ✓ 30. confidence alone does not invalidate greeting\n\n──────────────────────────────────────────────────\nResultado: 31 passed, 0 failed\nPATCH 5.4 precedence tests: OK\n\n"
+    },
+    "patch52": {
+      "ok": true,
+      "output": "eting envelope carries routing and decision sections\n  ✓ 4. ambiguous_social fallback policy forbids commercial families\n  ✓ 5. finalizeHumanConversationReply attaches universalContract\n  ✓ 6. buildUniversalContractFromHumanFinalization preserves repair trace\n  ✓ 7. commercial delivery envelope does not require behavior contract input\n  ✓ 8. universalConversationResponseContractToTrace is compact\n  ✓ 9. envelope references behavior contract without duplicating full contract\n\n9 passed, 0 failed\n\n"
+    },
+    "patch53": {
+      "ok": true,
+      "output": "onal Egress\n\n  ✓ 1. egress version 5.3.0\n  ✓ 2. isEmptyConversationalReply detects blank and whitespace\n  ✓ 3. prepareSocialEgressFinalization blocks empty reply\n  ✓ 4. honest metadata requires real finalization\n  ✓ 5. validateEgressInvariants rejects empty egress\n  ✓ 6. commercial empty guard replaces blank reply\n  ✓ 7. wrapSocialFinalizationForEgress preserves valid finalize\n  ✓ 8. unifiedEgressToTrace compact\n  ✓ 9. ambiguous social empty candidate gets governed fallback\n\n9 passed, 0 failed\n\n"
+    },
+    "humanExp": {
+      "ok": true,
+      "output": " Anti-consumption\n  ✓ K: blocks shopping therapy phrasing\n\nGrupo L — Anti-overfitting\n  ✓ L: \"blz entao\" → governed contract\n  ✓ L: \"to mo cansado hj\" → governed contract\n  ✓ L: \"que semana hein\" → governed contract\n  ✓ L: \"só passando aqui\" → governed contract\n\nValidator + post-processing\n  ✓ strip unauthorized commercial append\n  ✓ role selection includes farewell when detected\n\n──────────────────────────────────────────────────\nResultado: 40 passed, 0 failed\nPATCH 11A.4 experience tests: OK\n\n"
+    },
+    "ambiguous": {
+      "ok": true,
+      "output": "preserved\n  ✓ 7. B1 product context → product_aesthetic preserved\n  ✓ 8. B2 stale session anchor → still mia_compliment\n  ✓ 9. ambiguous social → clarification gate deferred\n  ✓ 10. response approval with assistant context → not ambiguous\n  ✓ 11. short social without eval intent but unknown → ambiguous\n  ✓ 12. product contract → ambiguous social fallback blocked\n\n──────────────────────────────────────────────────\nPassed: 12 | Failed: 0\n\n✅ PATCH 4.1I.3.V.2.2 ambiguous social policy tests passed\n\n"
+    },
+    "commercial": {
+      "ok": true,
+      "output": "mixed segmentation applies when authority mixed/allow\n\nGrupo 4 — Follow-up continuity\n  ✓ 4.1: price follow-up authorized with anchor\n  ✓ 4.2: topic switch detected\n\nGrupo 5 — Handler wiring\n  ✓ 5.1: chat-gpt4o passes intentRecognition to authority apply\n  ✓ 5.2: reconciliation module exists\n\nGrupo 6 — Non-commercial invariants\n  ✓ 6.1: deny path invariants\n\n============================================================\nResultado PATCH 3.1: 18 passed, 0 failed\nPATCH 3.1 COMMERCIAL ENTRY: APROVADO\n"
+    }
+  },
+  "timestamp": "2026-07-31T16:45:17.109Z"
+}

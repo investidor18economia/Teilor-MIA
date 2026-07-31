@@ -1,0 +1,141 @@
+{
+  "gitHash": "5f4688b",
+  "stability": {
+    "Oi": [
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      }
+    ],
+    "Opa": [
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      }
+    ],
+    "eae": [
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      }
+    ],
+    "Boa noite": [
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      }
+    ],
+    "Bom dia": [
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      },
+      {
+        "routing": "greeting_social",
+        "ambiguous": false,
+        "family": "greeting"
+      }
+    ]
+  },
+  "timestamp": "2026-07-31T16:45:17.105Z"
+}

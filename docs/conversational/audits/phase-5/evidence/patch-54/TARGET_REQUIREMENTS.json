@@ -1,0 +1,43 @@
+{
+  "version": "5.4.0",
+  "notRequired": [
+    "greeting",
+    "farewell",
+    "gratitude",
+    "acknowledgement",
+    "post_purchase_ack",
+    "conversation_request",
+    "small_talk",
+    "irony",
+    "sarcasm",
+    "humor",
+    "joke",
+    "correction",
+    "context_repair",
+    "conversation_recovery",
+    "emotional_support",
+    "identity_question",
+    "capability_question",
+    "trust_question",
+    "meta_question",
+    "soft_disagreement",
+    "hard_disagreement",
+    "comprehension",
+    "comprehension_success",
+    "confusion",
+    "frustration",
+    "curiosity",
+    "passive_browsing"
+  ],
+  "required": [
+    "compliment",
+    "praise",
+    "affection",
+    "approval",
+    "disapproval",
+    "flirt",
+    "reaction",
+    "social_validation"
+  ],
+  "principle": "unknown_target_does_not_invalidate_intents_that_do_not_require_target"
+}
