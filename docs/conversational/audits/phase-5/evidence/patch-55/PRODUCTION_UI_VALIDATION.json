@@ -1,0 +1,99 @@
+{
+  "patch": "5.5",
+  "health": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-07-31T17:35:31.977Z",
+    "build": "9f15d7b36e35"
+  },
+  "results": [
+    {
+      "msg": "Oi",
+      "api": {
+        "status": 200,
+        "reply": "Opa!",
+        "path": "greeting_flow",
+        "empty": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Opa!",
+        "empty": false,
+        "path": "greeting_flow"
+      },
+      "parity": true,
+      "approved": true
+    },
+    {
+      "msg": "Opa",
+      "api": {
+        "status": 200,
+        "reply": "Oi!",
+        "path": "greeting_flow",
+        "empty": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Opa!",
+        "empty": false,
+        "path": "greeting_flow"
+      },
+      "parity": false,
+      "approved": true
+    },
+    {
+      "msg": "Linda",
+      "api": {
+        "status": 200,
+        "reply": "Vou aceitar como elogio gratuito haha 😄",
+        "path": "governed_social_intent_flow",
+        "empty": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Obrigada! Fico feliz que você pense assim. Vamos em frente!",
+        "empty": false,
+        "path": "governed_social_intent_flow"
+      },
+      "parity": false,
+      "approved": true
+    },
+    {
+      "msg": "Show",
+      "api": {
+        "status": 200,
+        "reply": "Show!",
+        "path": "governed_social_intent_flow",
+        "empty": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Show!",
+        "empty": false,
+        "path": "governed_social_intent_flow"
+      },
+      "parity": true,
+      "approved": true
+    },
+    {
+      "msg": "Quero um celular até 2000",
+      "api": {
+        "status": 200,
+        "reply": "Beleza — pode falar à vontade.",
+        "path": "return_seguro",
+        "empty": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Beleza — pode falar à vontade.",
+        "empty": false,
+        "path": "return_seguro"
+      },
+      "parity": true,
+      "approved": true
+    }
+  ],
+  "approved": 5,
+  "total": 5,
+  "timestamp": "2026-07-31T17:36:33.618Z"
+}

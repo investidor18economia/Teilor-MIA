@@ -58,9 +58,9 @@ for (const msg of CASES) {
   results.push({
     msg,
     api: apiR,
-    ui: { status: resp.status, reply: uiReply.slice(0, 120), empty: !uiReply, path: data.latency_analytics?.response_path },
-    parity: apiR.reply === uiReply || (!apiR.empty && !uiReply === false),
-    approved: apiR.status === 200 && resp.status === 200 && !apiR.empty && !!uiReply,
+    ui: { status: resp.status(), reply: uiReply.slice(0, 120), empty: !uiReply, path: data.latency_analytics?.response_path },
+    parity: apiR.reply === uiReply,
+    approved: apiR.status === 200 && resp.status() === 200 && !apiR.empty && !!uiReply,
   });
 }
 

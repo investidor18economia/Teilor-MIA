@@ -9,6 +9,7 @@ import { enrichContractWithSemanticAuthority } from "../lib/miaSemanticAuthority
 import {
   runUniversalValidatorChain,
   applyUniversalConversationRecovery,
+  applyCommercialConversationRecovery,
   RECOVERY_STRATEGIES,
   RECOVERY_REASON_CODES,
   UNIVERSAL_RECOVERY_VERSION,
@@ -174,6 +175,14 @@ test("15. no recovery when already valid", () => {
   });
   expectFalse(recovery.recoveryApplied);
   expectEqual(recovery.strategy, RECOVERY_STRATEGIES.NONE);
+});
+
+test("16. commercial recovery structural only preserves non-empty", () => {
+  const r = applyCommercialConversationRecovery({
+    reply: "A escolha mais equilibrada aqui é o iPhone 13.",
+  });
+  expectFalse(r.recoveryApplied);
+  expectEqual(r.reply, "A escolha mais equilibrada aqui é o iPhone 13.");
 });
 
 console.log("\n──────────────────────────────────────────────────");
