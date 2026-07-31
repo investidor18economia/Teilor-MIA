@@ -1,0 +1,88 @@
+{
+  "patch": "5.2",
+  "timestamp": "2026-07-31T15:36:10.774Z",
+  "local": [
+    {
+      "id": "P52-01",
+      "msg": "Oi",
+      "status": 500,
+      "response_path": null,
+      "reply_preview": "",
+      "reply_empty": true,
+      "universal_contract_trace": null,
+      "base": "localhost"
+    },
+    {
+      "id": "P52-04",
+      "msg": "Linda",
+      "status": 500,
+      "response_path": null,
+      "reply_preview": "",
+      "reply_empty": true,
+      "universal_contract_trace": null,
+      "base": "localhost"
+    },
+    {
+      "id": "P52-07",
+      "msg": "Quero um celular até 2000",
+      "status": 500,
+      "response_path": null,
+      "reply_preview": "",
+      "reply_empty": true,
+      "universal_contract_trace": null,
+      "base": "localhost"
+    },
+    {
+      "id": "P52-10",
+      "msg": "Show",
+      "status": 500,
+      "response_path": null,
+      "reply_preview": "",
+      "reply_empty": true,
+      "universal_contract_trace": null,
+      "base": "localhost"
+    }
+  ],
+  "production": [
+    {
+      "id": "P52-01",
+      "msg": "Oi",
+      "status": 200,
+      "response_path": "greeting_flow",
+      "reply_preview": "Gostei desse elogio 😄",
+      "reply_empty": false,
+      "universal_contract_trace": null,
+      "base": "production"
+    },
+    {
+      "id": "P52-04",
+      "msg": "Linda",
+      "status": 200,
+      "response_path": "governed_social_intent_flow",
+      "reply_preview": "Esse elogio foi pra mim ou pra algum produto? 👀",
+      "reply_empty": false,
+      "universal_contract_trace": null,
+      "base": "production"
+    },
+    {
+      "id": "P52-07",
+      "msg": "Quero um celular até 2000",
+      "status": 200,
+      "response_path": "return_seguro",
+      "reply_preview": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quan",
+      "reply_empty": false,
+      "universal_contract_trace": null,
+      "base": "production"
+    },
+    {
+      "id": "P52-10",
+      "msg": "Show",
+      "status": 200,
+      "response_path": "governed_social_intent_flow",
+      "reply_preview": "Agora fiquei curiosa...",
+      "reply_empty": false,
+      "universal_contract_trace": null,
+      "base": "production"
+    }
+  ]
+}

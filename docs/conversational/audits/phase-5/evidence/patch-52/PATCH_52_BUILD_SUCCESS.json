@@ -1,0 +1,31 @@
+{
+  "patch": "5.2-closure",
+  "timestamp": "2026-07-31T15:52:00.000Z",
+  "command": "npm run build",
+  "environment": {
+    "node": "v22.21.1",
+    "npm": "10.9.4",
+    "next": "14.2.3",
+    "dev_server_stopped": true,
+    "next_folder_cleaned_before_build1": true
+  },
+  "runs": [
+    {
+      "run": 1,
+      "exit_code": 0,
+      "duration_ms_approx": 47679,
+      "teilor_em_numeros": "ISR 300 Seconds",
+      "pages_generated": 5
+    },
+    {
+      "run": 2,
+      "exit_code": 0,
+      "duration_ms_approx": 32126,
+      "teilor_em_numeros": "ISR 300 Seconds",
+      "pages_generated": 5,
+      "repeatability": "confirmed"
+    }
+  ],
+  "warnings": ["Browserslist: caniuse-lite is outdated"],
+  "verdict": "BUILD_GREEN"
+}

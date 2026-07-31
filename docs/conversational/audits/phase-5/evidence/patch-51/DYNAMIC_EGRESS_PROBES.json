@@ -1,0 +1,343 @@
+{
+  "patch": "5.1",
+  "base": "http://localhost:3000",
+  "timestamp": "2026-07-31T15:12:10.575Z",
+  "health": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-07-31T15:12:10.573Z",
+    "build": "local"
+  },
+  "probes": [
+    {
+      "id": "P01",
+      "msg": "Oi",
+      "family": "greeting",
+      "static_contract": {
+        "primaryIntent": "greeting",
+        "interactionMode": "social",
+        "primarySocialIntent": "greeting",
+        "governedSocialRoutingKey": "ambiguous_social",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 200,
+        "reply": "Gostei desse elogio 😄",
+        "reply_empty": false,
+        "request_id": "834df8f5-9d22-46bf-bbdc-20e93a85ef40",
+        "response_path": "greeting_flow",
+        "outcome": "SUCCESS",
+        "validity": "valid"
+      }
+    },
+    {
+      "id": "P02",
+      "msg": "Oi, MIA",
+      "family": "greeting",
+      "static_contract": {
+        "primaryIntent": "greeting",
+        "interactionMode": "social",
+        "primarySocialIntent": "greeting",
+        "governedSocialRoutingKey": "ambiguous_social",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 200,
+        "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+        "reply_empty": false,
+        "request_id": "2581a22d-9abb-4b5b-a738-144aea13610d",
+        "response_path": "greeting_flow",
+        "outcome": "SUCCESS",
+        "validity": "valid"
+      }
+    },
+    {
+      "id": "P03",
+      "msg": "Tchau, valeu",
+      "family": "farewell",
+      "static_contract": {
+        "primaryIntent": "acknowledgement",
+        "interactionMode": "social",
+        "primarySocialIntent": "gratitude",
+        "governedSocialRoutingKey": "mia_gratitude",
+        "resolvedSemanticTarget": "mia",
+        "targetConfidence": 0.85
+      },
+      "http": {
+        "status": 200,
+        "reply": "Até mais!",
+        "reply_empty": false,
+        "request_id": "5b500999-214f-4cf9-984d-27f0eebe2df8",
+        "response_path": "governed_social_intent_flow",
+        "outcome": "SUCCESS",
+        "validity": "valid"
+      }
+    },
+    {
+      "id": "P04",
+      "msg": "Linda",
+      "family": "ambiguous_social",
+      "static_contract": {
+        "primaryIntent": "social_validation",
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "governedSocialRoutingKey": "ambiguous_social",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.38
+      },
+      "http": {
+        "status": 200,
+        "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+        "reply_empty": false,
+        "request_id": "21db5327-ede7-4d19-b823-c00827942e07",
+        "response_path": "governed_social_intent_flow",
+        "outcome": "SUCCESS",
+        "validity": "valid"
+      }
+    },
+    {
+      "id": "P05",
+      "msg": "Você é muito inteligente",
+      "family": "mia_compliment",
+      "static_contract": {
+        "primaryIntent": "social_validation",
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "governedSocialRoutingKey": "mia_compliment",
+        "resolvedSemanticTarget": "mia",
+        "targetConfidence": 0.9
+      },
+      "http": {
+        "status": 200,
+        "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+        "reply_empty": false,
+        "request_id": "2da54ebe-7e68-4d54-a19b-488b275e48f0",
+        "response_path": "governed_social_intent_flow",
+        "outcome": "SUCCESS",
+        "validity": "valid"
+      }
+    },
+    {
+      "id": "P06",
+      "msg": "Quem é você?",
+      "family": "about_mia",
+      "static_contract": {
+        "primaryIntent": "about_mia",
+        "interactionMode": "identity",
+        "primarySocialIntent": "identity_question",
+        "governedSocialRoutingKey": "about_mia",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 200,
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "reply_empty": false,
+        "request_id": "a4041da0-4476-4669-98e4-a00f1c7c5ef7",
+        "response_path": "about_mia_flow",
+        "outcome": "SUCCESS",
+        "validity": "valid"
+      }
+    },
+    {
+      "id": "P07",
+      "msg": "Quero um celular até 2000",
+      "family": "commercial",
+      "static_contract": {
+        "primaryIntent": "commerce",
+        "interactionMode": "commerce",
+        "primarySocialIntent": null,
+        "governedSocialRoutingKey": "commercial",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 200,
+        "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+        "reply_empty": false,
+        "request_id": "8ce92277-03c0-4938-8283-2c921d141fcb",
+        "response_path": "return_seguro",
+        "outcome": "PARTIAL_SUCCESS",
+        "validity": "partial"
+      }
+    },
+    {
+      "id": "P08",
+      "msg": "Compare iPhone 13 com Galaxy A55",
+      "family": "comparison",
+      "static_contract": {
+        "primaryIntent": "commerce",
+        "interactionMode": "commerce",
+        "primarySocialIntent": null,
+        "governedSocialRoutingKey": "commercial",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 200,
+        "reply": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+        "reply_empty": false,
+        "request_id": "d35d91a4-f50b-4f94-9542-7694c58c385b",
+        "response_path": "return_seguro",
+        "outcome": "PARTIAL_SUCCESS",
+        "validity": "partial"
+      }
+    },
+    {
+      "id": "P09",
+      "msg": "Me ajuda",
+      "family": "clarification/vague",
+      "static_contract": {
+        "primaryIntent": "commerce",
+        "interactionMode": "commerce",
+        "primarySocialIntent": null,
+        "governedSocialRoutingKey": "commercial",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 200,
+        "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+        "reply_empty": false,
+        "request_id": "4f00d541-e31b-46ee-8cc9-5a4b41c76a6f",
+        "response_path": "return_seguro",
+        "outcome": "PARTIAL_SUCCESS",
+        "validity": "partial"
+      }
+    },
+    {
+      "id": "P10",
+      "msg": "Show",
+      "family": "short_reaction",
+      "static_contract": {
+        "primaryIntent": "social_validation",
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "governedSocialRoutingKey": "ambiguous_social",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.38
+      },
+      "http": {
+        "status": 200,
+        "reply": "",
+        "reply_empty": true,
+        "request_id": "70a5bf9d-858a-4290-9a24-baae1a385ac3",
+        "response_path": "governed_social_intent_flow",
+        "outcome": "SUCCESS",
+        "validity": "valid"
+      }
+    },
+    {
+      "id": "P11",
+      "msg": "Era ironia",
+      "family": "irony_repair",
+      "static_contract": {
+        "primaryIntent": "irony",
+        "interactionMode": "social",
+        "primarySocialIntent": "irony",
+        "governedSocialRoutingKey": "irony_repair",
+        "resolvedSemanticTarget": "conversation",
+        "targetConfidence": 0.8
+      },
+      "http": {
+        "status": 429,
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "reply_empty": false,
+        "request_id": null,
+        "response_path": null,
+        "outcome": null,
+        "validity": null
+      }
+    },
+    {
+      "id": "P12",
+      "msg": "Quero um",
+      "family": "incomplete_commercial",
+      "static_contract": {
+        "primaryIntent": "commerce",
+        "interactionMode": "commerce",
+        "primarySocialIntent": null,
+        "governedSocialRoutingKey": "commercial",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 429,
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "reply_empty": false,
+        "request_id": null,
+        "response_path": null,
+        "outcome": null,
+        "validity": null
+      }
+    },
+    {
+      "id": "P13",
+      "msg": "O que você acha do Galaxy A55?",
+      "family": "product_opinion",
+      "static_contract": {
+        "primaryIntent": "social_conversation",
+        "interactionMode": "social",
+        "primarySocialIntent": null,
+        "governedSocialRoutingKey": "social_conversation",
+        "resolvedSemanticTarget": "unknown",
+        "targetConfidence": 0.35
+      },
+      "http": {
+        "status": 429,
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "reply_empty": false,
+        "request_id": null,
+        "response_path": null,
+        "outcome": null,
+        "validity": null
+      }
+    },
+    {
+      "id": "P14",
+      "msg": "Linda",
+      "family": "b2_turn2",
+      "static_contract": {
+        "primaryIntent": "social_validation",
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "governedSocialRoutingKey": "mia_compliment",
+        "resolvedSemanticTarget": "mia",
+        "targetConfidence": 0.88
+      },
+      "http": {
+        "status": 429,
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "reply_empty": false,
+        "request_id": null,
+        "response_path": null,
+        "outcome": null,
+        "validity": null
+      }
+    },
+    {
+      "id": "P15",
+      "msg": "Você é ótima, mas quero um celular",
+      "family": "mixed",
+      "static_contract": {
+        "primaryIntent": "mixed_intent",
+        "interactionMode": "mixed",
+        "primarySocialIntent": "praise",
+        "governedSocialRoutingKey": "mia_praise",
+        "resolvedSemanticTarget": "mia",
+        "targetConfidence": 0.87
+      },
+      "http": {
+        "status": 429,
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "reply_empty": false,
+        "request_id": null,
+        "response_path": null,
+        "outcome": null,
+        "validity": null
+      }
+    }
+  ]
+}

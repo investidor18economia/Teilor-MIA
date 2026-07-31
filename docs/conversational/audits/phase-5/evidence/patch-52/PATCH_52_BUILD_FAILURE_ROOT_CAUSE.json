@@ -1,0 +1,21 @@
+{
+  "patch": "5.2-closure",
+  "timestamp": "2026-07-31T15:55:00.000Z",
+  "error_original": "PageNotFoundError: Cannot find module for page: /teilor-em-numeros",
+  "investigation": {
+    "page_exists": true,
+    "page_path": "pages/teilor-em-numeros.jsx",
+    "route_official": true,
+    "app_router_conflict": false,
+    "getStaticProps_present": true
+  },
+  "root_cause": "environmental_corruption",
+  "root_cause_detail": "Concurrent `next dev` holding `.next` while `next build` ran partially, corrupting webpack chunks. PageNotFoundError during moveExportedPage was a symptom of stale/corrupt `.next`, not missing page source.",
+  "reproduction": {
+    "with_dev_server_and_dirty_next": "PageNotFoundError",
+    "after_stop_dev_and_remove_next": "exit 0",
+    "deterministic_after_clean": true
+  },
+  "code_change_required": false,
+  "remediation": "Stop dev server before production build; remove `.next` when chunk errors occur"
+}

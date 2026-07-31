@@ -1,0 +1,26 @@
+{
+  "patch": "5.2-closure",
+  "timestamp": "2026-07-31T15:56:00.000Z",
+  "base": "http://localhost:3000/app-mia",
+  "checks": [
+    {
+      "check": "page_load",
+      "status": 200,
+      "content_length": 13665,
+      "approved": true
+    },
+    {
+      "check": "api_proxy_available",
+      "endpoint": "/api/mia-chat",
+      "approved": true,
+      "note": "10-scenario battery in PATCH_52_LOCAL_API_VALIDATION.json; LC10 retried after rate limit"
+    },
+    {
+      "check": "no_trace_in_public_without_debug",
+      "approved": true,
+      "note": "mia_debug absent when MIA_PUBLIC_DEBUG_ENABLED=false"
+    }
+  ],
+  "verdict": "LOCAL_UI_GATE_PASS",
+  "limitation": "Full Playwright battery deferred to production post-deploy; page shell and API parity confirmed"
+}

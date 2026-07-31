@@ -1,0 +1,456 @@
+{
+  "patch": "5.1",
+  "generated_at": "2026-07-31T15:11:39.298Z",
+  "files": {
+    "chat_gpt4o_lines": 38416,
+    "mia_chat_lines": 118
+  },
+  "http_egress_functions": {
+    "sendHttpRuntimeResponse": {
+      "defined_line": 26724
+    },
+    "sendRuntimeResponse": {
+      "defined_line": 26824,
+      "call_sites": 20,
+      "calls": [
+        {
+          "line": 23502,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 23626,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 23684,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 23742,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 27382,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 27423,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 27755,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28097,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28130,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28162,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28207,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 30150,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 30320,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 30970,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 35387,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 35548,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 36500,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 36546,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 37478,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 37658,
+          "fn": "sendRuntimeResponse"
+        }
+      ]
+    },
+    "sendLegacySocialDirectResponse": {
+      "defined_line": 27366,
+      "call_sites": 12,
+      "calls": [
+        {
+          "line": 33521,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33613,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33670,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33719,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33768,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33817,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33866,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33915,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 33964,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 34013,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 34062,
+          "fn": "sendLegacySocialDirectResponse"
+        },
+        {
+          "line": 34111,
+          "fn": "sendLegacySocialDirectResponse"
+        }
+      ],
+      "note": "LLM + guardMiaReplyForTone only; claims finalization in trace without finalizeHumanConversationReply"
+    },
+    "respondWithContract": {
+      "defined_line": 27395,
+      "call_sites": 26,
+      "calls": [
+        {
+          "line": 23470,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 26498,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 28366,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 29498,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 29564,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 29869,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 30192,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31265,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31352,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31417,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31657,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31834,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 32046,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 32169,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 32276,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 33404,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34233,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34358,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34494,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34541,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34605,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 35099,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 35298,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 36345,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 37161,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 38322,
+          "fn": "respondWithContract"
+        }
+      ],
+      "note": "Commercial/context; tone guard + first answer contract; NOT finalizeHumanConversationReply"
+    },
+    "finalizeHumanConversationReply": {
+      "call_sites_in_chat": 3,
+      "calls": [
+        {
+          "line": 23437,
+          "fn": "finalizeHumanConversationReply"
+        },
+        {
+          "line": 23560,
+          "fn": "finalizeHumanConversationReply"
+        },
+        {
+          "line": 30313,
+          "fn": "finalizeHumanConversationReply"
+        }
+      ],
+      "note": "Only 3 call sites in chat-gpt4o.js"
+    }
+  },
+  "direct_http_in_chat_gpt4o": {
+    "res_status_json": 6,
+    "res_json": 0,
+    "res_send": 0,
+    "res_end": 0
+  },
+  "mia_chat_perimeter": {
+    "upstream": "forwardChatRequestToCore → /api/chat-gpt4o",
+    "egress_points": [
+      "OPTIONS res.status(204).end()",
+      "429 res.status(429).json(rate limit)",
+      "502 res.status(502).json(upstream error)",
+      "res.status(sanitized.status).send(bodyText)",
+      "sendPublicApiError / sendPublicApiOriginRejected"
+    ]
+  },
+  "runtime_dispatch_modes": [
+    "__sendRuntimeTechnicalResponse",
+    "__sendRuntimePreCognitiveFunctionalResponse",
+    "__sendRuntimeCommercialDegradedResponse",
+    "__sendRuntimeGovernedResponse"
+  ],
+  "legacy_intent_blocks": [
+    {
+      "intent": "about_mia",
+      "line": 33481
+    },
+    {
+      "intent": "greeting",
+      "line": 33574
+    },
+    {
+      "intent": "comprehension",
+      "line": 33623
+    },
+    {
+      "intent": "acknowledgement",
+      "line": 33680
+    },
+    {
+      "intent": "soft_disagreement",
+      "line": 33729
+    },
+    {
+      "intent": "decision_confirmation",
+      "line": 33778
+    },
+    {
+      "intent": "anti_regret",
+      "line": 33827
+    },
+    {
+      "intent": "confidence_challenge",
+      "line": 33876
+    },
+    {
+      "intent": "social_validation",
+      "line": 33925
+    },
+    {
+      "intent": "second_best_discovery",
+      "line": 33974
+    },
+    {
+      "intent": "alternative_exploration",
+      "line": 34023
+    },
+    {
+      "intent": "constraint_change",
+      "line": 34072
+    }
+  ],
+  "catalog": {
+    "emitted_functional_paths_count": 66,
+    "emitted_paths": [
+      "about_mia_flow",
+      "acknowledgement_flow",
+      "alternative_exploration_flow",
+      "anchored_reaction_hold",
+      "anti_regret_flow",
+      "clarification_flow",
+      "commercial_continuation",
+      "commercial_new_search_no_result",
+      "commercial_only_fallback",
+      "commercial_provider_unavailable",
+      "commercial_resolution_incomplete",
+      "commercial_success",
+      "commercial_weak_purchase_range",
+      "comparison_anchored_establish",
+      "comparison_anchored_incomplete",
+      "comparison_early_explicit",
+      "comparison_early_not_found",
+      "comparison_flow_crash_guard",
+      "comparison_followup",
+      "comparison_followup_forced",
+      "comparison_followup_locked",
+      "comparison_same_product_clarification",
+      "comparison_success",
+      "comprehension_flow",
+      "confidence_challenge_flow",
+      "constraint_change_flow",
+      "context_decision_no_search",
+      "context_direct_reply_early",
+      "contract_anchored_hold",
+      "contract_violation_governed_fallback",
+      "contradiction_recovery_reorganize",
+      "cso_verbalizer_early",
+      "decision_confirmation_flow",
+      "emotional_support_flow",
+      "explicit_recommendation_change_reply",
+      "farewell_flow",
+      "final_decision_scope_reply",
+      "general_answer",
+      "governed_social_intent_flow",
+      "greeting_flow",
+      "image_identification_failed",
+      "image_search_error",
+      "image_search_no_offers",
+      "image_search_success",
+      "impossible_purchase",
+      "legacy_llm_comparison",
+      "legacy_llm_search",
+      "legacy_social_flow",
+      "legitimate_search_reset_awaiting_query",
+      "needs_clarification",
+      "non_commercial_acknowledgement",
+      "non_commercial_authority_fast_branch",
+      "non_commercial_governed_fallback",
+      "non_commercial_greeting",
+      "non_commercial_identity",
+      "post_change_recovery_reorganize",
+      "priority_followup_short",
+      "return_seguro",
+      "search_guidance",
+      "second_best_discovery_flow",
+      "social_conversation_flow",
+      "social_governed",
+      "social_validation_flow",
+      "soft_disagreement_flow",
+      "specific_product_result",
+      "user_confusion_recovery_simplify"
+    ],
+    "literal_paths_in_handler_count": 23,
+    "literals_not_in_catalog": []
+  },
+  "classification": {
+    "governed_social_with_finalize": [
+      "runGovernedSocialIntentFlow → finalizeHumanConversationReply → sendRuntimeResponse",
+      "runNonCommercialAuthorityFastBranch → finalizeNonCommercialReply → sendRuntimeResponse",
+      "general_answer empty → finalizeHumanConversationReply → sendRuntimeResponse"
+    ],
+    "legacy_social_bypass": [
+      "line 33521",
+      "line 33613",
+      "line 33670",
+      "line 33719",
+      "line 33768",
+      "line 33817",
+      "line 33866",
+      "line 33915",
+      "line 33964",
+      "line 34013",
+      "line 34062",
+      "line 34111"
+    ],
+    "clarification_bypass": [
+      "needs_clarification → sendRuntimeResponse (line ~30150)"
+    ],
+    "direct_reply_bypass": [
+      "contextResolution.directReply → respondWithContract (line ~30192)"
+    ],
+    "commercial_egress": "respondWithContract → sendRuntimeResponse (majority of commercial paths)"
+  }
+}

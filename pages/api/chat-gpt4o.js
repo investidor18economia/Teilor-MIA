@@ -276,6 +276,7 @@ import {
   humanExperienceToTrace,
   buildGovernedSocialFallbackReply,
 } from "../../lib/miaHumanConversationExperience.js";
+import { universalConversationResponseContractToTrace } from "../../lib/miaUniversalConversationResponseContract.js";
 import {
   finalizeMixedConversationReply,
   mixedVerbalizationToTrace,
@@ -23438,7 +23439,14 @@ async function runGovernedSocialIntentFlow({
     replySeed,
     socialBehaviorContract || {},
     conversationalToneProfile,
-    { period }
+    {
+      period,
+      universalContext: {
+        routingDecision,
+        responsePath,
+        sessionContext,
+      },
+    }
   );
 
   if (process.env.MIA_DEBUG === "true" && pipelineTracer) {
@@ -23450,6 +23458,9 @@ async function runGovernedSocialIntentFlow({
       response_replacement_trace: finalized.replacementTraceDebug || null,
       semantic_authority: finalized.semanticAuthority || null,
       governed_fallback: finalized.governedFallback || null,
+      universal_conversation_response_contract: universalConversationResponseContractToTrace(
+        finalized.universalContract
+      ),
     });
   }
 
