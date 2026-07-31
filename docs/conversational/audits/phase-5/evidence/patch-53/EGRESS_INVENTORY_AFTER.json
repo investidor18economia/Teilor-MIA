@@ -1,0 +1,340 @@
+{
+  "patch": "5.1",
+  "generated_at": "2026-07-31T16:17:52.536Z",
+  "files": {
+    "chat_gpt4o_lines": 38554,
+    "mia_chat_lines": 118
+  },
+  "http_egress_functions": {
+    "sendHttpRuntimeResponse": {
+      "defined_line": 26698
+    },
+    "sendRuntimeResponse": {
+      "defined_line": 26824,
+      "call_sites": 16,
+      "calls": [
+        {
+          "line": 26798,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 27408,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 27488,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 27838,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28182,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28215,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28247,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 28292,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 30410,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 31060,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 35525,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 35686,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 36638,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 36684,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 37616,
+          "fn": "sendRuntimeResponse"
+        },
+        {
+          "line": 37796,
+          "fn": "sendRuntimeResponse"
+        }
+      ]
+    },
+    "sendLegacySocialDirectResponse": {
+      "defined_line": 27366,
+      "call_sites": 1,
+      "calls": [
+        {
+          "line": 27430,
+          "fn": "sendLegacySocialDirectResponse"
+        }
+      ],
+      "note": "LLM + guardMiaReplyForTone only; claims finalization in trace without finalizeHumanConversationReply"
+    },
+    "respondWithContract": {
+      "defined_line": 27395,
+      "call_sites": 27,
+      "calls": [
+        {
+          "line": 23489,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 26472,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 27460,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 28451,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 29583,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 29649,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 29954,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 30282,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31355,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31442,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31507,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31747,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 31924,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 32136,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 32259,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 32366,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 33494,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34371,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34496,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34632,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34679,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 34743,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 35237,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 35436,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 36483,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 37299,
+          "fn": "respondWithContract"
+        },
+        {
+          "line": 38460,
+          "fn": "respondWithContract"
+        }
+      ],
+      "note": "Commercial/context; tone guard + first answer contract; NOT finalizeHumanConversationReply"
+    },
+    "finalizeHumanConversationReply": {
+      "call_sites_in_chat": 3,
+      "calls": [
+        {
+          "line": 23446,
+          "fn": "finalizeHumanConversationReply"
+        },
+        {
+          "line": 23568,
+          "fn": "finalizeHumanConversationReply"
+        },
+        {
+          "line": 30403,
+          "fn": "finalizeHumanConversationReply"
+        }
+      ],
+      "note": "Only 3 call sites in chat-gpt4o.js"
+    }
+  },
+  "direct_http_in_chat_gpt4o": {
+    "res_status_json": 6,
+    "res_json": 0,
+    "res_send": 0,
+    "res_end": 0
+  },
+  "mia_chat_perimeter": {
+    "upstream": "forwardChatRequestToCore → /api/chat-gpt4o",
+    "egress_points": [
+      "OPTIONS res.status(204).end()",
+      "429 res.status(429).json(rate limit)",
+      "502 res.status(502).json(upstream error)",
+      "res.status(sanitized.status).send(bodyText)",
+      "sendPublicApiError / sendPublicApiOriginRejected"
+    ]
+  },
+  "runtime_dispatch_modes": [
+    "__sendRuntimeTechnicalResponse",
+    "__sendRuntimePreCognitiveFunctionalResponse",
+    "__sendRuntimeCommercialDegradedResponse",
+    "__sendRuntimeGovernedResponse"
+  ],
+  "legacy_intent_blocks": [],
+  "catalog": {
+    "emitted_functional_paths_count": 66,
+    "emitted_paths": [
+      "about_mia_flow",
+      "acknowledgement_flow",
+      "alternative_exploration_flow",
+      "anchored_reaction_hold",
+      "anti_regret_flow",
+      "clarification_flow",
+      "commercial_continuation",
+      "commercial_new_search_no_result",
+      "commercial_only_fallback",
+      "commercial_provider_unavailable",
+      "commercial_resolution_incomplete",
+      "commercial_success",
+      "commercial_weak_purchase_range",
+      "comparison_anchored_establish",
+      "comparison_anchored_incomplete",
+      "comparison_early_explicit",
+      "comparison_early_not_found",
+      "comparison_flow_crash_guard",
+      "comparison_followup",
+      "comparison_followup_forced",
+      "comparison_followup_locked",
+      "comparison_same_product_clarification",
+      "comparison_success",
+      "comprehension_flow",
+      "confidence_challenge_flow",
+      "constraint_change_flow",
+      "context_decision_no_search",
+      "context_direct_reply_early",
+      "contract_anchored_hold",
+      "contract_violation_governed_fallback",
+      "contradiction_recovery_reorganize",
+      "cso_verbalizer_early",
+      "decision_confirmation_flow",
+      "emotional_support_flow",
+      "explicit_recommendation_change_reply",
+      "farewell_flow",
+      "final_decision_scope_reply",
+      "general_answer",
+      "governed_social_intent_flow",
+      "greeting_flow",
+      "image_identification_failed",
+      "image_search_error",
+      "image_search_no_offers",
+      "image_search_success",
+      "impossible_purchase",
+      "legacy_llm_comparison",
+      "legacy_llm_search",
+      "legacy_social_flow",
+      "legitimate_search_reset_awaiting_query",
+      "needs_clarification",
+      "non_commercial_acknowledgement",
+      "non_commercial_authority_fast_branch",
+      "non_commercial_governed_fallback",
+      "non_commercial_greeting",
+      "non_commercial_identity",
+      "post_change_recovery_reorganize",
+      "priority_followup_short",
+      "return_seguro",
+      "search_guidance",
+      "second_best_discovery_flow",
+      "social_conversation_flow",
+      "social_governed",
+      "social_validation_flow",
+      "soft_disagreement_flow",
+      "specific_product_result",
+      "user_confusion_recovery_simplify"
+    ],
+    "literal_paths_in_handler_count": 23,
+    "literals_not_in_catalog": []
+  },
+  "classification": {
+    "governed_social_with_finalize": [
+      "runGovernedSocialIntentFlow → finalizeHumanConversationReply → sendRuntimeResponse",
+      "runNonCommercialAuthorityFastBranch → finalizeNonCommercialReply → sendRuntimeResponse",
+      "general_answer empty → finalizeHumanConversationReply → sendRuntimeResponse"
+    ],
+    "legacy_social_bypass": [
+      "line 27430"
+    ],
+    "clarification_bypass": [
+      "needs_clarification → sendRuntimeResponse (line ~30150)"
+    ],
+    "direct_reply_bypass": [
+      "contextResolution.directReply → respondWithContract (line ~30192)"
+    ],
+    "commercial_egress": "respondWithContract → sendRuntimeResponse (majority of commercial paths)"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "patch": "5.3",
+  "timestamp": "2026-07-31T16:30:00.000Z",
+  "before": {
+    "sendLegacySocialDirectResponse_call_sites": 12,
+    "fake_finalization": true
+  },
+  "after": {
+    "sendLegacySocialDirectResponse_call_sites": 0,
+    "deprecated_adapter_only": true,
+    "sendUnifiedConversationalEgress": "authoritative_social_egress"
+  },
+  "migrated_intents": [
+    "about_mia",
+    "greeting",
+    "comprehension",
+    "acknowledgement",
+    "soft_disagreement",
+    "decision_confirmation",
+    "anti_regret",
+    "confidence_challenge",
+    "social_validation",
+    "second_best_discovery",
+    "alternative_exploration",
+    "constraint_change"
+  ],
+  "also_migrated": [
+    "runGovernedSocialIntentFlow",
+    "runNonCommercialAuthorityFastBranch",
+    "needs_clarification",
+    "respondWithContract_commercial_envelope"
+  ]
+}

@@ -278,6 +278,14 @@ import {
 } from "../../lib/miaHumanConversationExperience.js";
 import { universalConversationResponseContractToTrace } from "../../lib/miaUniversalConversationResponseContract.js";
 import {
+  UNIFIED_CONVERSATION_EGRESS_VERSION,
+  prepareSocialEgressFinalization,
+  prepareClarificationEgressFinalization,
+  prepareCommercialEgressEnvelope,
+  wrapSocialFinalizationForEgress,
+  unifiedEgressToTrace,
+} from "../../lib/miaUnifiedConversationalEgress.js";
+import {
   finalizeMixedConversationReply,
   mixedVerbalizationToTrace,
   buildMixedResponseContext,
@@ -23510,31 +23518,20 @@ async function runGovernedSocialIntentFlow({
     );
   }
 
-  return sendRuntimeResponse(
-    res,
-    pipelineTracer,
-    {
-      reply: finalized.response,
-      prices: [],
-      session_context: applyGovernedSemanticSessionTransition(
-        hasAnchorForRouting
-          ? (req.body?.session_context || sessionContext)
-          : (req.body?.session_context || {}),
-        { responsePath, pipelineTracer }
-      ),
-    },
+  return sendUnifiedConversationalEgress(res, pipelineTracer, {
+    finalizedWrap: finalized,
+    socialBehaviorContract: socialBehaviorContract || {},
+    conversationalToneProfile,
+    sessionContext: hasAnchorForRouting
+      ? (req.body?.session_context || sessionContext)
+      : (req.body?.session_context || {}),
+    hasAnchorForRouting,
+    req,
     responsePath,
-    {
-      routingDecision,
-      finalization: { required: true, applied: true, validatorApplied: true },
-      contracts: {
-        behaviorPresent: !!socialBehaviorContract,
-        mixedPresent: !!mixedCtx?.contract,
-        mixedContract: !!mixedCtx?.contract,
-      },
-      stateTransitionAlreadyApplied: true,
-    }
-  );
+    routingDecision,
+    period,
+    applySessionTransition: true,
+  });
 }
 
 async function runNonCommercialAuthorityFastBranch({
@@ -23573,7 +23570,25 @@ async function runNonCommercialAuthorityFastBranch({
       contract || {},
       conversationalToneProfile,
       { period }
-    ).response;
+    );
+  const sendFastBranchEgress = (replyOrFinalized, responsePath) => {
+    const finalized =
+      typeof replyOrFinalized === "string"
+        ? finalizeNonCommercialReply(replyOrFinalized)
+        : replyOrFinalized;
+    return sendUnifiedConversationalEgress(res, pipelineTracer, {
+      finalizedWrap: finalized,
+      socialBehaviorContract: socialBehaviorContractEarly,
+      conversationalToneProfile,
+      sessionContext: preservedSession,
+      hasAnchorForRouting,
+      req,
+      responsePath,
+      routingDecision,
+      period,
+      intentRecognition: intentRecognitionEarly,
+    });
+  };
   const preservedSession = buildPreservedNonCommercialSessionContext({
     sessionContext,
     incomingSessionContext: incomingSessionContext || req.body?.session_context || {},
@@ -23631,28 +23646,12 @@ async function runNonCommercialAuthorityFastBranch({
     const reply =
       llmReply && !isGenericInstitutionalFallbackReply(llmReply)
         ? finalizeNonCommercialReply(llmReply)
-        : isBriefIdentity
-          ? buildBriefOfficialIdentityReply(identityQuery)
-          : buildAboutMiaDeterministicFallback(identityQuery);
-    return sendRuntimeResponse(
-      res,
-      pipelineTracer,
-      {
-        reply,
-        prices: [],
-        session_context: applyGovernedSemanticSessionTransition(preservedSession, {
-          responsePath: flow.source || "non_commercial_identity",
-          pipelineTracer,
-        }),
-      },
-      flow.source || "non_commercial_identity",
-      {
-        routingDecision,
-        finalization: { required: true, applied: true, validatorApplied: true },
-        contracts: { behaviorPresent: true },
-        stateTransitionAlreadyApplied: true,
-      }
-    );
+        : finalizeNonCommercialReply(
+            isBriefIdentity
+              ? buildBriefOfficialIdentityReply(identityQuery)
+              : buildAboutMiaDeterministicFallback(identityQuery)
+          );
+    return sendFastBranchEgress(reply, flow.source || "non_commercial_identity");
   }
 
   if (flow.intent === "greeting") {
@@ -23692,25 +23691,7 @@ async function runNonCommercialAuthorityFastBranch({
           ? buildAnchoredGreetingFallback(sessionContext)
           : null)
     );
-    return sendRuntimeResponse(
-      res,
-      pipelineTracer,
-      {
-        reply,
-        prices: [],
-        session_context: applyGovernedSemanticSessionTransition(preservedSession, {
-          responsePath: flow.source || "non_commercial_greeting",
-          pipelineTracer,
-        }),
-      },
-      flow.source || "non_commercial_greeting",
-      {
-        routingDecision,
-        finalization: { required: true, applied: true, validatorApplied: true },
-        contracts: { behaviorPresent: true },
-        stateTransitionAlreadyApplied: true,
-      }
-    );
+    return sendFastBranchEgress(reply, flow.source || "non_commercial_greeting");
   }
 
   if (flow.intent === "acknowledgement") {
@@ -23750,25 +23731,7 @@ async function runNonCommercialAuthorityFastBranch({
           ? buildAnchoredAcknowledgementFallback(sessionContext)
           : null)
     );
-    return sendRuntimeResponse(
-      res,
-      pipelineTracer,
-      {
-        reply,
-        prices: [],
-        session_context: applyGovernedSemanticSessionTransition(preservedSession, {
-          responsePath: flow.source || "non_commercial_acknowledgement",
-          pipelineTracer,
-        }),
-      },
-      flow.source || "non_commercial_acknowledgement",
-      {
-        routingDecision,
-        finalization: { required: true, applied: true, validatorApplied: true },
-        contracts: { behaviorPresent: true },
-        stateTransitionAlreadyApplied: true,
-      }
-    );
+    return sendFastBranchEgress(reply, flow.source || "non_commercial_acknowledgement");
   }
 
   return runGovernedSocialIntentFlow({
@@ -27374,6 +27337,96 @@ function pathMatchesSocialBehaviorPath(responsePath = "") {
   );
 }
 
+function sendUnifiedConversationalEgress(
+  res,
+  pipelineTracer,
+  {
+    candidateReply = "",
+    socialBehaviorContract = null,
+    conversationalToneProfile = null,
+    sessionContext = {},
+    hasAnchorForRouting = false,
+    req = null,
+    responsePath = "governed_social_intent_flow",
+    routingDecision = null,
+    period = "",
+    intentRecognition = null,
+    intentAuthority = null,
+    applySessionTransition = true,
+    finalizedWrap = null,
+  } = {}
+) {
+  const contract =
+    socialBehaviorContract ||
+    (intentRecognition
+      ? buildSocialConversationBehaviorContract(intentRecognition, {
+          message: "",
+          conversationMessages: [],
+          sessionContext,
+        })
+      : {});
+
+  const universalContext = {
+    routingDecision: routingDecision || semanticGovernanceRef.finalRoutingDecision,
+    responsePath,
+    sessionContext,
+    intentRecognition: intentRecognition || semanticGovernanceRef.ctx?.intentRecognition,
+    intentAuthority: intentAuthority || semanticGovernanceRef.ctx?.intentAuthority,
+  };
+
+  const egressPrep = finalizedWrap
+    ? wrapSocialFinalizationForEgress(finalizedWrap, contract, { ...universalContext, period })
+    : prepareSocialEgressFinalization(candidateReply, contract, conversationalToneProfile, {
+        period: period || getTimePeriod(),
+        universalContext,
+      });
+
+  if (process.env.MIA_DEBUG === "true" && pipelineTracer) {
+    pipelineTracer.patch({
+      unified_conversation_egress: unifiedEgressToTrace(egressPrep),
+      universal_conversation_response_contract: universalConversationResponseContractToTrace(
+        egressPrep.universalContract
+      ),
+      human_conversation_experience: humanExperienceToTrace(
+        contract,
+        egressPrep.finalizeResult?.validation
+      ),
+      response_replacement_trace: egressPrep.finalizeResult?.replacementTraceDebug || null,
+      semantic_authority: egressPrep.finalizeResult?.semanticAuthority || null,
+      governed_fallback: egressPrep.finalizeResult?.governedFallback || null,
+    });
+  }
+
+  const sessionBase = hasAnchorForRouting
+    ? (req?.body?.session_context || sessionContext)
+    : (req?.body?.session_context || {});
+
+  const session_context = applySessionTransition
+    ? applyGovernedSemanticSessionTransition(sessionBase, { responsePath, pipelineTracer })
+    : sessionBase;
+
+  return sendRuntimeResponse(
+    res,
+    pipelineTracer,
+    { reply: egressPrep.reply, prices: [], session_context },
+    responsePath,
+    {
+      routingDecision: routingDecision || semanticGovernanceRef.finalRoutingDecision,
+      finalization: egressPrep.finalizationMeta,
+      contracts: {
+        behaviorPresent: !!contract && Object.keys(contract).length > 0,
+        universalContractPresent: !!egressPrep.universalContract,
+        unifiedEgressVersion: UNIFIED_CONVERSATION_EGRESS_VERSION,
+      },
+      stateTransitionAlreadyApplied: applySessionTransition,
+      extraTrace: {
+        unified_conversation_egress: unifiedEgressToTrace(egressPrep),
+      },
+    }
+  );
+}
+
+/** @deprecated PATCH 5.3 — adapter only; delegates to sendUnifiedConversationalEgress */
 function sendLegacySocialDirectResponse(
   res,
   pipelineTracer,
@@ -27384,23 +27437,24 @@ function sendLegacySocialDirectResponse(
     req = null,
     responsePath = "legacy_social_flow",
     routingDecision = null,
+    socialBehaviorContract = null,
+    conversationalToneProfile = null,
+    period = "",
+    intentRecognition = null,
   } = {}
 ) {
-  const session = hasAnchorForRouting
-    ? (req?.body?.session_context || sessionContext)
-    : (req?.body?.session_context || {});
-
-  return sendRuntimeResponse(
-    res,
-    pipelineTracer,
-    { reply, prices: [], session_context: session },
+  return sendUnifiedConversationalEgress(res, pipelineTracer, {
+    candidateReply: reply,
+    socialBehaviorContract,
+    conversationalToneProfile,
+    sessionContext,
+    hasAnchorForRouting,
+    req,
     responsePath,
-    {
-      routingDecision: routingDecision || semanticGovernanceRef.finalRoutingDecision,
-      finalization: { required: true, applied: true, validatorApplied: true },
-      contracts: { behaviorPresent: true },
-    }
-  );
+    routingDecision,
+    period,
+    intentRecognition,
+  });
 }
 
 function respondWithContract(
@@ -27763,6 +27817,24 @@ function respondWithContract(
     }
   }
 
+  const commercialEgress = prepareCommercialEgressEnvelope(body, {
+    intentRecognition: _semanticCtx?.intentRecognition,
+    intentAuthority: _semanticCtx?.intentAuthority,
+    routingDecision: routingDecision || semanticGovernanceRef.finalRoutingDecision,
+    responsePath,
+    sessionContext: body.session_context,
+    replyBeforeTone: replyBeforeTone || body.reply,
+  });
+  body = commercialEgress.body;
+  if (process.env.MIA_DEBUG === "true") {
+    pipelineTracer.patch({
+      unified_conversation_egress: unifiedEgressToTrace(commercialEgress),
+      universal_conversation_response_contract: universalConversationResponseContractToTrace(
+        commercialEgress.universalContract
+      ),
+    });
+  }
+
   return sendRuntimeResponse(
     res,
     pipelineTracer,
@@ -27772,7 +27844,11 @@ function respondWithContract(
       routingDecision: routingDecision || semanticGovernanceRef.finalRoutingDecision,
       semanticGovernance: _semanticCtx,
       extraTrace: attachDecisionConsistencyToTrace(
-        { ...extraTrace, ...contractExtras },
+        {
+          ...extraTrace,
+          ...contractExtras,
+          unified_conversation_egress: unifiedEgressToTrace(commercialEgress),
+        },
         decisionAuditSnapshot
       ),
       contracts: {
@@ -27781,12 +27857,10 @@ function respondWithContract(
         mixedContract: _mixedContractApplied,
         firstAnswerPresent: _firstAnswerApplied,
         comparisonPresent: String(responsePath || "").includes("comparison"),
+        universalContractPresent: !!commercialEgress.universalContract,
+        unifiedEgressVersion: UNIFIED_CONVERSATION_EGRESS_VERSION,
       },
-      finalization: {
-        required: true,
-        applied: true,
-        validatorApplied: true,
-      },
+      finalization: commercialEgress.finalizationMeta,
       stateTransitionAlreadyApplied: true,
       csoAttempt: String(responsePath || "").includes("cso"),
     }
@@ -30158,22 +30232,27 @@ if (lockedComparisonContextFromSession) {
   }
 
   if (contextResolution.needsClarification) {
-    return sendRuntimeResponse(
-      res,
-      pipelineTracer,
-      {
-        reply:
-          contextResolution.clarificationMessage ||
-          "Me conta um pouco mais do que você precisa que eu te ajudo.",
-        prices: [],
-        session_context: req.body?.session_context || sessionContext,
-      },
-      "needs_clarification",
-      {
-        routingDecision: semanticGovernanceRef.finalRoutingDecision,
-        finalization: { required: true, applied: true },
-      }
-    );
+    const clarificationContract =
+      socialBehaviorContractEarly ||
+      buildSocialConversationBehaviorContract(intentRecognitionEarly || {}, {
+        message: resolvedQuery || query,
+        conversationMessages,
+      });
+    return sendUnifiedConversationalEgress(res, pipelineTracer, {
+      candidateReply:
+        contextResolution.clarificationMessage ||
+        "Me conta um pouco mais do que você precisa que eu te ajudo.",
+      socialBehaviorContract: clarificationContract,
+      conversationalToneProfile,
+      sessionContext: req.body?.session_context || sessionContext,
+      hasAnchorForRouting,
+      req,
+      responsePath: "needs_clarification",
+      routingDecision: semanticGovernanceRef.finalRoutingDecision,
+      period: getTimePeriod(),
+      intentRecognition: intentRecognitionEarly,
+      applySessionTransition: false,
+    });
   }
 
   if (
@@ -33529,13 +33608,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? llmReply
           : null) || buildAboutMiaDeterministicFallback(resolvedQuery || query);
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: "about_mia_flow",
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33621,13 +33704,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredGreetingFallback(sessionContext)
           : buildFallbackReply(intent, null, period));
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33678,13 +33765,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
             ? buildOpenComprehensionSuccessFallback()
             : buildOpenComprehensionFallback()));
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33727,13 +33818,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredAcknowledgementFallback(sessionContext)
           : buildOpenAcknowledgementFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33776,13 +33871,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredSoftDisagreementFallback(sessionContext)
           : buildOpenSoftDisagreementFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33825,13 +33924,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredDecisionConfirmationFallback(sessionContext)
           : buildOpenDecisionConfirmationFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33874,13 +33977,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredAntiRegretFallback(sessionContext)
           : buildOpenAntiRegretFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33923,13 +34030,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredConfidenceChallengeFallback(sessionContext)
           : buildOpenConfidenceChallengeFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -33972,13 +34083,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredSocialValidationFallback(sessionContext)
           : buildOpenSocialValidationFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -34021,13 +34136,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredSecondBestDiscoveryFallback(sessionContext)
           : buildOpenSecondBestDiscoveryFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -34070,13 +34189,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredAlternativeExplorationFallback(sessionContext)
           : buildOpenAlternativeExplorationFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
 
@@ -34119,13 +34242,17 @@ if (contextAction === "decision" && !shouldUseRichExplanationPath(routingDecisio
           ? buildAnchoredConstraintChangeFallback(sessionContext)
           : buildOpenConstraintChangeFallback());
 
-      return sendLegacySocialDirectResponse(res, pipelineTracer, {
-        reply: guardMiaReplyForTone(reply, conversationalToneProfile).response,
+      return sendUnifiedConversationalEgress(res, pipelineTracer, {
+        candidateReply: reply,
+        socialBehaviorContract: socialBehaviorContractEarly,
+        conversationalToneProfile,
         sessionContext,
         hasAnchorForRouting,
         req,
         responsePath: `${intent}_flow`,
         routingDecision,
+        period,
+        intentRecognition: intentRecognitionEarly,
       });
     }
     // ======================================================
