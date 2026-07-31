@@ -1,0 +1,143 @@
+{
+  "patch": "5.2-closure-production",
+  "timestamp": "2026-07-31T15:58:40.928Z",
+  "health": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-07-31T15:57:40.948Z",
+    "build": "66973c0a80b3"
+  },
+  "ui": {
+    "url": "https://economia-ai.vercel.app/app-mia",
+    "status": 200,
+    "ok": true
+  },
+  "scenarios": [
+    {
+      "id": "PR01",
+      "family": "greeting",
+      "status": 200,
+      "response_path": "greeting_flow",
+      "reply_preview": "Gostei desse elogio 😄",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR02",
+      "family": "b2",
+      "status": 200,
+      "response_path": "governed_social_intent_flow",
+      "reply_preview": "Obrigada! Fico feliz que você tenha gostado.",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR03",
+      "family": "b1",
+      "status": 200,
+      "response_path": "context_decision_no_search",
+      "reply_preview": "O Galaxy A55 realmente é um celular bonito! Ele tem um design moderno e elegante, além de boas espec",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR04",
+      "family": "ambiguous",
+      "status": 200,
+      "response_path": "governed_social_intent_flow",
+      "reply_preview": "Recebi bem — você fala de mim ou de outra coisa?",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR05",
+      "family": "about_mia",
+      "status": 200,
+      "response_path": "about_mia_flow",
+      "reply_preview": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente ",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR06",
+      "family": "commercial",
+      "status": 200,
+      "response_path": "return_seguro",
+      "reply_preview": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de se",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR07",
+      "family": "comparison",
+      "status": 200,
+      "response_path": "return_seguro",
+      "reply_preview": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao ca",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR08",
+      "family": "mixed",
+      "status": 200,
+      "response_path": "return_seguro",
+      "reply_preview": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso de",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR09",
+      "family": "short",
+      "status": 200,
+      "response_path": "governed_social_intent_flow",
+      "reply_preview": "",
+      "reply_empty": true,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    },
+    {
+      "id": "PR10",
+      "family": "mia_compliment",
+      "status": 200,
+      "response_path": "governed_social_intent_flow",
+      "reply_preview": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+      "reply_empty": false,
+      "has_mia_debug": false,
+      "universal_trace": null,
+      "public_leaks_debug": false,
+      "approved": true
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "http_200": 10,
+    "approved": 10,
+    "no_debug_leak": true
+  }
+}

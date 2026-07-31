@@ -1,0 +1,17 @@
+{
+  "patch": "5.2-closure",
+  "phase": "after_push",
+  "timestamp": "2026-07-31T15:58:00.000Z",
+  "branch": "master",
+  "commit": "66973c0a80b3b541cc1dc998e456f97e123aec87",
+  "head_local": "66973c0a80b3b541cc1dc998e456f97e123aec87",
+  "head_remote": "66973c0a80b3b541cc1dc998e456f97e123aec87",
+  "production_build": "66973c0a80b3",
+  "synced": true,
+  "uncommitted_out_of_scope": [
+    "docs/conversational/audits/phase-4/evidence/PATCH_4_1_LOCAL_E2E_CONVERSATION_EVIDENCE.json",
+    "scripts/patch-41i3v22-postdeploy-validation.mjs",
+    "docs/analytics/FOUNDER_COCKPIT_*",
+    "docs/conversational/audits/phase-4/AUDITORIA_MESTRA_*"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "patch": "5.2-closure",
+  "timestamp": "2026-07-31T16:00:00.000Z",
+  "commit": "66973c0a80b3b541cc1dc998e456f97e123aec87",
+  "production_build": "66973c0a80b3",
+  "gates": {
+    "build_green_x2": true,
+    "contract_tests_9_9": true,
+    "ambiguous_social_12_12": true,
+    "human_experience_37_40_preexisting_3": true,
+    "mixed_intent_15_15": true,
+    "commercial_entry_18_18": true,
+    "local_api_10_10": true,
+    "local_ui_page_200": true,
+    "production_api_10_10": true,
+    "production_ui_playwright_10_10": true,
+    "no_public_debug_leak": true,
+    "git_pushed": true,
+    "deploy_active": true
+  },
+  "artifacts": [
+    "PATCH_52_BUILD_FAILURE_ROOT_CAUSE.json",
+    "PATCH_52_BUILD_SUCCESS.json",
+    "PATCH_52_CONTRACT_TESTS.json",
+    "PATCH_52_LOCAL_API_VALIDATION.json",
+    "PATCH_52_LOCAL_UI_VALIDATION.json",
+    "PATCH_52_PRODUCTION_API_VALIDATION.json",
+    "PATCH_52_PRODUCTION_UI_VALIDATION.json",
+    "PATCH_52_GIT_STATE_BEFORE.json",
+    "PATCH_52_GIT_STATE_AFTER.json"
+  ]
+}

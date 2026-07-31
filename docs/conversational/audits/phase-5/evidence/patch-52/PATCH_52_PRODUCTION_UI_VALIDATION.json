@@ -1,0 +1,134 @@
+{
+  "patch": "5.2-closure-production-ui",
+  "timestamp": "2026-07-31T16:01:20.733Z",
+  "url": "https://economia-ai.vercel.app/app-mia",
+  "build": "66973c0a80b3",
+  "scenarios": [
+    {
+      "id": "UI01",
+      "msg": "Oi",
+      "family": "greeting",
+      "status": 200,
+      "displayText": "Bora aproveitar o embalo da tarde? Qual compra você está tentando decidir?",
+      "display_empty": false,
+      "response_path": "greeting_flow",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI02",
+      "msg": "Oi, MIA",
+      "family": "greeting_then_b2_setup",
+      "status": 200,
+      "displayText": "MIΛ\nRecebi bem — você fala de mim ou de outra coisa?",
+      "display_empty": false,
+      "response_path": "greeting_flow",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI03",
+      "msg": "Linda",
+      "family": "b2_turn2",
+      "status": 200,
+      "displayText": "MIΛ\nObrigada! Fico feliz que você tenha achado isso. Vamos seguir conversando!",
+      "display_empty": false,
+      "response_path": "governed_social_intent_flow",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI04",
+      "msg": "Quero um Galaxy A55",
+      "family": "b1_setup",
+      "status": 200,
+      "displayText": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\nGalaxy A55\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimen",
+      "display_empty": false,
+      "response_path": "return_seguro",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI05",
+      "msg": "Bonito demais",
+      "family": "b1_turn2",
+      "status": 200,
+      "displayText": "MIΛ\nEntendi que você realmente gosta do Galaxy A55! Se precisar de mais informações ou quiser comparar com outra opção, é só avisar.\n\nℹ️\nProduto ainda não passou pela auditoria completa da MIA. Saiba ",
+      "display_empty": false,
+      "response_path": "context_decision_no_search",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI06",
+      "msg": "Quem é você?",
+      "family": "about_mia",
+      "status": 200,
+      "displayText": "MIΛ\nSou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "display_empty": false,
+      "response_path": "about_mia_flow",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI07",
+      "msg": "Quero um celular até 2000",
+      "family": "commercial",
+      "status": 200,
+      "displayText": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConheciment",
+      "display_empty": false,
+      "response_path": "return_seguro",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI08",
+      "msg": "Compare iPhone 13 com Galaxy A55",
+      "family": "comparison",
+      "status": 200,
+      "displayText": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\nGalaxy A55\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimen",
+      "display_empty": false,
+      "response_path": "return_seguro",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI09",
+      "msg": "Você é ótima, mas quero um celular",
+      "family": "mixed",
+      "status": 200,
+      "displayText": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConheciment",
+      "display_empty": false,
+      "response_path": "return_seguro",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    },
+    {
+      "id": "UI10",
+      "msg": "Show",
+      "family": "short",
+      "status": 200,
+      "displayText": "MIΛ\n⚠️ Não consegui responder agora. Tente perguntar de outro jeito.",
+      "display_empty": false,
+      "response_path": "governed_social_intent_flow",
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "approved": true
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "approved": 10,
+    "http_200": 10,
+    "no_debug_leak": true
+  }
+}

@@ -27,7 +27,7 @@ async function probe(base, scenario) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       text: scenario.msg,
-      user_id: "patch-52-probe",
+      user_id: `patch52-${scenario.id}-${Date.now()}`,
       conversation_id: `patch52-${scenario.id}-${Date.now()}`,
       messages,
       session_context: {},
