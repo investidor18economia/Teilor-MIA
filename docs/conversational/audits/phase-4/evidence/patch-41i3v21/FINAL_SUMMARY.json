@@ -1,0 +1,23 @@
+{
+  "verdict": "NAO_APROVADO",
+  "patch41i3Closeable": false,
+  "patch41jStartable": false,
+  "build": "a2f26aebd442",
+  "commit": "a2f26ae",
+  "deployConfirmed": true,
+  "rootCause": "Stale session lastBestProduct promoted to product context in resolveSemanticTarget",
+  "fixStage": "miaSemanticTargetResolution + miaSemanticAuthority + miaGovernedFallbackPolicy",
+  "callSite": "selectGovernedFallback → buildProductAestheticFallback (blocked by mia_compliment contract)",
+  "noTextBasedDefense": true,
+  "gates": {
+    "b2": "10/10",
+    "b1": "10/10",
+    "lindaIsolated": "5/5",
+    "critical": "15/15",
+    "social": "10/10",
+    "commercial": "10/10",
+    "miaComplimentVariants": "11/15",
+    "productComplimentVariants": "10/15"
+  },
+  "timestamp": "2026-07-31T01:04:43.346Z"
+}

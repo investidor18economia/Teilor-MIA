@@ -1,0 +1,100 @@
+{
+  "build": "a2f26aebd442",
+  "runs": [
+    {
+      "id": "LINDA_iso_r1",
+      "msg": "Linda",
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:30.489Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:54:30.490Z"
+    },
+    {
+      "id": "LINDA_iso_r2",
+      "msg": "Linda",
+      "reply": "O Celular tem um visual bem marcante.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "O Celular tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:36.136Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:54:36.136Z"
+    },
+    {
+      "id": "LINDA_iso_r3",
+      "msg": "Linda",
+      "reply": "O Celular tem um visual bem marcante.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "O Celular tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:41.575Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:54:41.576Z"
+    },
+    {
+      "id": "LINDA_iso_r4",
+      "msg": "Linda",
+      "reply": "O Celular tem um visual bem marcante.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "O Celular tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:47.203Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:54:47.203Z"
+    },
+    {
+      "id": "LINDA_iso_r5",
+      "msg": "Linda",
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:52.614Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:54:52.614Z"
+    }
+  ]
+}

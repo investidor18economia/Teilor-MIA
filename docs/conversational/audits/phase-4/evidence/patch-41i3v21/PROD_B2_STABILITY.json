@@ -1,0 +1,335 @@
+{
+  "build": "a2f26aebd442",
+  "runs": [
+    {
+      "id": "B2_r1",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:49:49.762Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Você é muito gentil.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:49:56.128Z"
+        }
+      ],
+      "reply": "Obrigada! Você é muito gentil.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:49:56.681Z"
+    },
+    {
+      "id": "B2_r2",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:02.941Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:08.621Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:50:09.155Z"
+    },
+    {
+      "id": "B2_r3",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:14.677Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:20.021Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:50:20.031Z"
+    },
+    {
+      "id": "B2_r4",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:26.501Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:31.969Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:50:31.979Z"
+    },
+    {
+      "id": "B2_r5",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:38.381Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:45.809Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:50:45.819Z"
+    },
+    {
+      "id": "B2_r6",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:51.564Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:50:56.878Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:50:56.887Z"
+    },
+    {
+      "id": "B2_r7",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:02.817Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:07.965Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:51:07.974Z"
+    },
+    {
+      "id": "B2_r8",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:13.364Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:18.665Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:51:18.674Z"
+    },
+    {
+      "id": "B2_r9",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:24.081Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:29.332Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:51:29.341Z"
+    },
+    {
+      "id": "B2_r10",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:34.795Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:40.094Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:51:40.102Z"
+    }
+  ]
+}

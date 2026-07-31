@@ -1,0 +1,335 @@
+{
+  "build": "a2f26aebd442",
+  "runs": [
+    {
+      "id": "B1_r1",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:51:57.052Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:52:03.189Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:52:03.818Z"
+    },
+    {
+      "id": "B1_r2",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:52:13.823Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:52:19.768Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:52:19.776Z"
+    },
+    {
+      "id": "B1_r3",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:52:29.809Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:52:35.809Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:52:35.818Z"
+    },
+    {
+      "id": "B1_r4",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:52:45.387Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:52:51.533Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:52:51.542Z"
+    },
+    {
+      "id": "B1_r5",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:02.236Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:08.499Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:53:08.507Z"
+    },
+    {
+      "id": "B1_r6",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:17.749Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:23.678Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:53:23.691Z"
+    },
+    {
+      "id": "B1_r7",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:33.301Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:38.950Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:53:38.958Z"
+    },
+    {
+      "id": "B1_r8",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:48.382Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:53:54.101Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:53:54.110Z"
+    },
+    {
+      "id": "B1_r9",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:02.926Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:09.008Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:54:09.019Z"
+    },
+    {
+      "id": "B1_r10",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:17.722Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T00:54:23.812Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:54:23.823Z"
+    }
+  ]
+}

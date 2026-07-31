@@ -1,0 +1,589 @@
+{
+  "build": "a2f26aebd442",
+  "runs": [
+    {
+      "variant": 1,
+      "messages": [
+        "O que você acha do design do Galaxy A55?",
+        "Linda"
+      ],
+      "id": "PROD_VAR_1",
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:01:14.401Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:01:20.423Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:01:20.431Z"
+    },
+    {
+      "variant": 2,
+      "messages": [
+        "Como é o visual do iPhone 15?",
+        "Bonito demais"
+      ],
+      "id": "PROD_VAR_2",
+      "turns": [
+        {
+          "msg": "Como é o visual do iPhone 15?",
+          "reply": "Neste cenário, o iPhone 15 se destaca — no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Ainda que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:01:32.671Z"
+        },
+        {
+          "msg": "Bonito demais",
+          "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:01:38.560Z"
+        }
+      ],
+      "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:01:38.576Z"
+    },
+    {
+      "variant": 3,
+      "messages": [
+        "O Galaxy S24 é elegante?",
+        "Linda"
+      ],
+      "id": "PROD_VAR_3",
+      "turns": [
+        {
+          "msg": "O Galaxy S24 é elegante?",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:01:44.396Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:01:49.773Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:01:49.781Z"
+    },
+    {
+      "variant": 4,
+      "messages": [
+        "Design do Pixel 8",
+        "Maravilhoso"
+      ],
+      "id": "PROD_VAR_4",
+      "turns": [
+        {
+          "msg": "Design do Pixel 8",
+          "reply": "Entendi — você fala disso ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:01:55.516Z"
+        },
+        {
+          "msg": "Maravilhoso",
+          "reply": "Fico feliz que você tenha achado maravilhoso! É costuma ser bom saber que estou ajudando de alguma forma.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:02:00.810Z"
+        }
+      ],
+      "reply": "Fico feliz que você tenha achado maravilhoso! É costuma ser bom saber que estou ajudando de alguma forma.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "taxonomy_mia_target_signal"
+        ]
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "mia_thanks_on_product",
+        "missing_product_opinion"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T01:02:00.818Z"
+    },
+    {
+      "variant": 5,
+      "messages": [
+        "Visual do Galaxy A55",
+        "Perfeito"
+      ],
+      "id": "PROD_VAR_5",
+      "turns": [
+        {
+          "msg": "Visual do Galaxy A55",
+          "reply": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:02:19.397Z"
+        },
+        {
+          "msg": "Perfeito",
+          "reply": "Isso ajuda bastante a direcionar a escolha. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:02:27.850Z"
+        }
+      ],
+      "reply": "Isso ajuda bastante a direcionar a escolha. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:02:27.856Z"
+    },
+    {
+      "variant": 6,
+      "messages": [
+        "O acabamento do iPhone",
+        "Lindo"
+      ],
+      "id": "PROD_VAR_6",
+      "turns": [
+        {
+          "msg": "O acabamento do iPhone",
+          "reply": "Entendi — você fala disso ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:02:33.391Z"
+        },
+        {
+          "msg": "Lindo",
+          "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:02:38.532Z"
+        }
+      ],
+      "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:02:38.543Z"
+    },
+    {
+      "variant": 7,
+      "messages": [
+        "Galaxy A55 design",
+        "Show"
+      ],
+      "id": "PROD_VAR_7",
+      "turns": [
+        {
+          "msg": "Galaxy A55 design",
+          "reply": "A escolha mais equilibrada aqui é o Galaxy A55 5G: a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Mesmo sabendo que pode parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:02:49.813Z"
+        },
+        {
+          "msg": "Show",
+          "reply": "Certo — vamos por aí. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:02:57.584Z"
+        }
+      ],
+      "reply": "Certo — vamos por aí. Eu iria no Galaxy A55 5G. O principal motivo é o equilíbrio geral, com destaque em longevidade. Ele entrega modelo de 2024, o que pesa a favor. Comparando com o Samsung Galaxy S23 FE: - Em longevidade, o Galaxy A55 5G leva vantagem: 92 contra 86 do Samsung Galaxy S23 FE. Meu veredito: eu escolheria o Galaxy A55 5G.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:02:57.592Z"
+    },
+    {
+      "variant": 8,
+      "messages": [
+        "iPhone 15 Pro visual",
+        "Incrível"
+      ],
+      "id": "PROD_VAR_8",
+      "turns": [
+        {
+          "msg": "iPhone 15 Pro visual",
+          "reply": "O iPhone 15 Pro faz sentido aqui porque no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 Pro — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Mesmo considerando que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 Pro — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:08.047Z"
+        },
+        {
+          "msg": "Incrível",
+          "reply": "O iPhone 15 Pro faz sentido aqui porque no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 Pro — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Ainda que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 Pro — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:26.596Z"
+        }
+      ],
+      "reply": "O iPhone 15 Pro faz sentido aqui porque no uso real, isso se traduz em mais folga no uso pesado do dia a dia. O Samsung Galaxy S23 FE também apareceu entre as opções reais; ainda assim, para esta busca eu manteria o iPhone 15 Pro — é exatamente o modelo que você pediu nesta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • No uso real, isso se traduz em mais folga no uso pesado do dia a dia. ⚠️ O que você abre mão • Vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir. Ainda que vale comparar preço, garantia, prazo de entrega, reputação da loja e características confirmadas no anúncio antes de decidir, eu manteria o iPhone 15 Pro — o ganho principal ainda pesa mais do que essa renúncia.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": null,
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "targetReasonCodes": [
+          "unresolved_target"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:03:26.605Z"
+    },
+    {
+      "variant": 9,
+      "messages": [
+        "Como você vê o design dele?",
+        "Linda"
+      ],
+      "id": "PROD_VAR_9",
+      "turns": [
+        {
+          "msg": "Como você vê o design dele?",
+          "reply": "O visual dele realmente chama atenção.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:32.538Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O visual dele realmente chama atenção.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:38.019Z"
+        }
+      ],
+      "reply": "O visual dele realmente chama atenção.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:03:38.026Z"
+    },
+    {
+      "variant": 10,
+      "messages": [
+        "Esse celular é bonito?",
+        "Demais"
+      ],
+      "id": "PROD_VAR_10",
+      "turns": [
+        {
+          "msg": "Esse celular é bonito?",
+          "reply": "O design do Celular realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:43.339Z"
+        },
+        {
+          "msg": "Demais",
+          "reply": "Boa.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:48.709Z"
+        }
+      ],
+      "reply": "Boa.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ]
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "missing_product_opinion"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T01:03:48.716Z"
+    },
+    {
+      "variant": 11,
+      "messages": [
+        "O Galaxy parece premium",
+        "Linda"
+      ],
+      "id": "PROD_VAR_11",
+      "turns": [
+        {
+          "msg": "O Galaxy parece premium",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:54.131Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:03:59.344Z"
+        }
+      ],
+      "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:03:59.369Z"
+    },
+    {
+      "variant": 12,
+      "messages": [
+        "Visual marcante do A55",
+        "Adorei"
+      ],
+      "id": "PROD_VAR_12",
+      "turns": [
+        {
+          "msg": "Visual marcante do A55",
+          "reply": "O visual do A55 realmente chama a atenção, né? Ele tem um design que se destaca e traz uma presença marcante. É em geral interessante ver como essas características estéticas podem impactar a nossa percepção.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:05.121Z"
+        },
+        {
+          "msg": "Adorei",
+          "reply": "Me diz rapidinho a que você se refere.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:09.599Z"
+        }
+      ],
+      "reply": "Me diz rapidinho a que você se refere.",
+      "semantics": {
+        "interactionMode": "clarification",
+        "primarySocialIntent": null,
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "targetReasonCodes": [
+          "unresolved_target"
+        ]
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "unnecessary_clarification",
+        "missing_product_opinion"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T01:04:09.608Z"
+    },
+    {
+      "variant": 13,
+      "messages": [
+        "Design elegante do iPhone",
+        "Perfeito"
+      ],
+      "id": "PROD_VAR_13",
+      "turns": [
+        {
+          "msg": "Design elegante do iPhone",
+          "reply": "O design do Iphone realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:15.401Z"
+        },
+        {
+          "msg": "Perfeito",
+          "reply": "Que bom que você achou perfeito! Fico feliz em saber que a experiência foi positiva.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:20.617Z"
+        }
+      ],
+      "reply": "Que bom que você achou perfeito! Fico feliz em saber que a experiência foi positiva.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ]
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "mia_thanks_on_product",
+        "missing_product_opinion"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T01:04:20.623Z"
+    },
+    {
+      "variant": 14,
+      "messages": [
+        "O aparelho é bonito",
+        "Linda"
+      ],
+      "id": "PROD_VAR_14",
+      "turns": [
+        {
+          "msg": "O aparelho é bonito",
+          "reply": "Concordo, o design realmente é atraente! É costuma ser bom ver um aparelho que combina estilo e funcionalidade.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:26.001Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O Aparelho tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:32.193Z"
+        }
+      ],
+      "reply": "O Aparelho tem um visual bem marcante.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:04:32.200Z"
+    },
+    {
+      "variant": 15,
+      "messages": [
+        "Galaxy A55 é lindo",
+        "Concordo"
+      ],
+      "id": "PROD_VAR_15",
+      "turns": [
+        {
+          "msg": "Galaxy A55 é lindo",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:38.073Z"
+        },
+        {
+          "msg": "Concordo",
+          "reply": "Me diz rapidinho a que você se refere.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:04:43.263Z"
+        }
+      ],
+      "reply": "Me diz rapidinho a que você se refere.",
+      "semantics": {
+        "interactionMode": "clarification",
+        "primarySocialIntent": null,
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "social_conversation",
+        "targetReasonCodes": [
+          "unresolved_target"
+        ]
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "unnecessary_clarification",
+        "missing_product_opinion"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T01:04:43.273Z"
+    }
+  ]
+}
