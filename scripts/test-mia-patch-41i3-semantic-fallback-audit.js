@@ -189,8 +189,14 @@ test("13. resposta inválida comercial em social é substituída", () => {
 });
 
 test("14. adapter legado não reduz intenção específica", () => {
-  const c = buildContract("Linda");
+  const hist = [
+    { role: "user", content: "Oi, MIA" },
+    { role: "assistant", content: "Opa!" },
+  ];
+  const c = buildContract("Linda", hist);
   expectEqual(c.governedSocialRoutingKey, GOVERNED_SOCIAL_ROUTING_KEYS.MIA_COMPLIMENT);
+  const isolated = buildContract("Linda");
+  expectEqual(isolated.governedSocialRoutingKey, GOVERNED_SOCIAL_ROUTING_KEYS.AMBIGUOUS_SOCIAL);
 });
 
 test("15. mesma entrada segue caminho determinístico", () => {

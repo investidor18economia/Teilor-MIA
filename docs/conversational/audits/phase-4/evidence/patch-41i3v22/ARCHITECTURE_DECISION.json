@@ -1,0 +1,18 @@
+{
+  "patch": "4.1I.3.V.2.2",
+  "problem": "Short social messages without conversational context were assigned inferred targets (MIA, product, prior answer) causing incoherent responses",
+  "architecturalDecision": "Governed routing key ambiguous_social + isGovernedAmbiguousSocialContract within existing Semantic Authority / Target Resolution / Fallback Policy pipeline",
+  "decisionCriteria": [
+    "interactionMode social (non-commercial)",
+    "resolvedSemanticTarget unknown OR confidence below MIN_GOVERNED_TARGET_CONFIDENCE",
+    "insufficient conversational context (hasSufficientSocialTargetContext=false)",
+    "social evaluative intent OR short social turn (messageLength <= 4)"
+  ],
+  "invariants": [
+    "ambiguous_social blocks product_aesthetic fallback",
+    "ambiguous_social blocks mia_compliment contract without confirmed target",
+    "ambiguous_social validators block product assumption and unqualified mia thanks",
+    "clarification gate defers to governed ambiguous social policy (no neutral early return)"
+  ],
+  "noHardcode": "No word lists or per-phrase handlers — decisions use contract, target, confidence, context, intent families"
+}
