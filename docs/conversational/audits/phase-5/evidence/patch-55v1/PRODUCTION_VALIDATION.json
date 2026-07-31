@@ -1,0 +1,267 @@
+{
+  "patch": "5.5V.1",
+  "health": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-07-31T22:37:30.239Z",
+    "build": "56ec5f02b2a4"
+  },
+  "summary": {
+    "total": 13,
+    "approved": 13,
+    "misroutesFixed": 4,
+    "misroutesTotal": 4,
+    "parityOk": 12,
+    "debugLeaked": false
+  },
+  "results": [
+    {
+      "id": "MR01",
+      "msg": "Fone de ouvido bom",
+      "api": {
+        "status": 200,
+        "reply": "Eu iria no Fone Bluetooth Redmi Buds 6 Play. Combina com o foco principal desta busca. Quase te recomendaria o Fone de Ouvido Headphone P47 Sem Fio Bluetooth Wireless Micro Sd 5.0 Dobrável Com Microfone Regulável Para Corrida Academia Escritório Caminhada Linha; no fim, fiquei com o Fone Bluetooth Redmi Buds 6 Play — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Fone Bluetooth Redmi Buds 6 Play — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+        "path": "commercial_only_fallback",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Eu iria no Fone Bluetooth Redmi Buds 6 Play. Combina com o foco principal desta busca. Quase te recomendaria o Fone de Ouvido Headphone P47 Sem Fio Bluetooth Wireless Micro Sd 5.0 Dobrável Com Microfone Regulável Para Corrida Academia Escritório Caminhada Linha; no fim, fiquei com o Fone Bluetooth Redmi Buds 6 Play — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Fone Bluetooth Redmi Buds 6 Play — a combinação fecha melhor para esta busca. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+        "path": "commercial_only_fallback",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": true,
+      "approved": true
+    },
+    {
+      "id": "MR02",
+      "msg": "Teclado mecânico",
+      "api": {
+        "status": 200,
+        "reply": "O Samsung Galaxy A15 5G faz sentido aqui porque combina com o foco principal desta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Samsung Galaxy A15 5G — a combinação fecha melhor para esta busca.",
+        "path": "commercial_only_fallback",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "O Samsung Galaxy A15 5G faz sentido aqui porque combina com o foco principal desta busca. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Samsung Galaxy A15 5G — a combinação fecha melhor para esta busca.",
+        "path": "commercial_only_fallback",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": true,
+      "approved": true
+    },
+    {
+      "id": "MR03",
+      "msg": "Orçamento 3000 reais",
+      "api": {
+        "status": 200,
+        "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque a capacidade de bateria sugere mais folga para uso fora de casa. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o Samsung Galaxy S23 FE fecha melhor o custo-benefício para o que você pediu. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A capacidade de bateria sugere mais folga para uso fora de casa. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque a capacidade de bateria sugere mais folga para uso fora de casa. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou perto. A diferença é que o Samsung Galaxy S23 FE fecha melhor o custo-benefício para o que você pediu. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A capacidade de bateria sugere mais folga para uso fora de casa. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": true,
+      "approved": true
+    },
+    {
+      "id": "MR04",
+      "msg": "Produto mais vendido",
+      "api": {
+        "status": 200,
+        "reply": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Embora possa não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Pelo que mapeei, o Samsung Galaxy S23 FE combina melhor com o que você pediu — o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Embora possa não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": true,
+      "approved": true
+    },
+    {
+      "id": "C1",
+      "msg": "Oi",
+      "api": {
+        "status": 200,
+        "reply": "Opa!",
+        "path": "greeting_flow",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Opa!",
+        "path": "greeting_flow",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C2",
+      "msg": "Show",
+      "api": {
+        "status": 200,
+        "reply": "Show!",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Show!",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C3",
+      "msg": "Linda",
+      "api": {
+        "status": 200,
+        "reply": "Vou aceitar como elogio gratuito haha 😄",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Que gentil — obrigada.",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "parity": false,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C4",
+      "msg": "Quero um celular até 2000",
+      "api": {
+        "status": 200,
+        "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C5",
+      "msg": "Compare iPhone 13 com Galaxy A55",
+      "api": {
+        "status": 200,
+        "reply": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C6",
+      "msg": "Valeu",
+      "api": {
+        "status": 200,
+        "reply": "De nada!",
+        "path": "acknowledgement_flow",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "De nada!",
+        "path": "acknowledgement_flow",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C7",
+      "msg": "Tchau",
+      "api": {
+        "status": 200,
+        "reply": "Até mais!",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Até mais!",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C8",
+      "msg": "Estou triste",
+      "api": {
+        "status": 200,
+        "reply": "Sinto muito que você esteja se sentindo assim.",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Sinto muito que você esteja se sentindo assim.",
+        "path": "governed_social_intent_flow",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    },
+    {
+      "id": "C9",
+      "msg": "Oi, quero um celular até 2 mil",
+      "api": {
+        "status": 200,
+        "reply": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "ui": {
+        "status": 200,
+        "reply": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Mesmo sabendo que pode pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia.",
+        "path": "return_seguro",
+        "hasDebug": false
+      },
+      "parity": true,
+      "misrouteFixed": null,
+      "approved": true
+    }
+  ],
+  "timestamp": "2026-07-31T22:41:06.543Z"
+}
