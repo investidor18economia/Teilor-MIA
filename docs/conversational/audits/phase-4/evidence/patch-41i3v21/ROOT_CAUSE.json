@@ -1,0 +1,44 @@
+{
+  "patch": "4.1I.3.V.2.1",
+  "rootCause": "Stale session product anchor (sessionContext.lastBestProduct) was treated as active product discussion in scanConversationForProductContext, causing resolveSemanticTarget to return PRODUCT via short_aesthetic_with_product_context before the MIA greeting path could apply. Taxonomy correctly identified compliment_to_mia (signals: compliment, mia_target) but semantic target resolution ignored it when session carried lastBestProduct.",
+  "divergenceStage": "resolveSemanticTarget → scanConversationForProductContext session anchor promotion",
+  "incorrectExecution": {
+    "message": "Linda",
+    "conversationMessages": [
+      { "role": "user", "content": "Oi, MIA" },
+      { "role": "assistant", "content": "Opa!" }
+    ],
+    "sessionContext": { "lastBestProduct": { "product_name": "Galaxy A55" } },
+    "taxonomy": {
+      "complimentToMia": true,
+      "signals": ["compliment", "mia_target"],
+      "primarySocialIntent": "compliment"
+    },
+    "targetResolution": {
+      "target": "product",
+      "reasonCodes": ["short_aesthetic_with_product_context"],
+      "productReference": "Galaxy A55"
+    },
+    "governedSocialRoutingKey": "product_aesthetic_opinion",
+    "fallbackFunction": "buildProductAestheticFallback",
+    "finalizeHumanConversationReply": "allows product frame because contract.target=product",
+    "earlyReturn": false,
+    "validatorIgnored": false,
+    "validatorBehavior": "correct per degraded contract — product_entity_on_mia_target only fires when target=mia"
+  },
+  "correctExecution": {
+    "sessionContext": {},
+    "targetResolution": {
+      "target": "mia",
+      "reasonCodes": ["short_aesthetic_mia_greeting_context"]
+    },
+    "governedSocialRoutingKey": "mia_compliment",
+    "fallbackFunction": "selectGovernedFallback → COMPLIMENT pool"
+  },
+  "whyIntermittent": "Only occurs when session_context carries stale lastBestProduct from prior commercial turn or polluted anchor; ~20% of B2 runs in production had session anchor present while conversation was purely social MIA greeting.",
+  "buildProductAestheticFallbackCallSites": [
+    "lib/miaGovernedFallbackPolicy.js:selectGovernedFallback → buildProductAestheticFallback (sole production call site)"
+  ],
+  "legacyEntityFrame": "lib/miaSocialResponsePerception.js:buildEntityOpinionFallback (only via buildSpecificGovernedFallback — not used in chat-gpt4o pipeline)",
+  "replacementTraceGap": "No replacement needed — response was semantically valid for the wrongly degraded product contract"
+}

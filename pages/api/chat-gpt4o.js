@@ -28792,6 +28792,7 @@ if (lockedComparisonContextFromSession) {
         authority: intentAuthority,
         message: query,
         conversationMessages,
+        sessionContext: req.body?.session_context || sessionContext || {},
       }
     );
     if (process.env.MIA_DEBUG === "true") {

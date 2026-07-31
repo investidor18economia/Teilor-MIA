@@ -1,0 +1,25 @@
+{
+  "patch": "4.1I.3.V.2.1",
+  "reproducedAt": "2026-07-31T00:00:00.000Z",
+  "scenario": "B2 with stale sessionContext.lastBestProduct",
+  "beforeFix": {
+    "message": "Linda",
+    "conversationMessages": [
+      { "role": "user", "content": "Oi, MIA" },
+      { "role": "assistant", "content": "Opa!" }
+    ],
+    "sessionContext": { "lastBestProduct": { "product_name": "Galaxy A55" } },
+    "resolvedSemanticTarget": "product",
+    "governedSocialRoutingKey": "product_aesthetic_opinion",
+    "fallbackFunction": "buildProductAestheticFallback",
+    "reasonCodes": ["short_aesthetic_with_product_context"]
+  },
+  "afterFix": {
+    "resolvedSemanticTarget": "mia",
+    "governedSocialRoutingKey": "mia_compliment",
+    "fallbackFamily": "compliment",
+    "finalizeReplacesProductFrame": true,
+    "isProductAestheticFallbackPermitted": false
+  },
+  "structuralInvariant": "When governed contract is mia_compliment, product_aesthetic fallback family is structurally blocked via isMiaComplimentGovernedContract / isProductAestheticFallbackPermitted — no response text matching"
+}
