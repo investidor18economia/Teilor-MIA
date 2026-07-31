@@ -1,0 +1,205 @@
+{
+  "build": "f5ad55b91390",
+  "runs": [
+    {
+      "msg": "Quero conversar",
+      "id": "SOC_Quero conv",
+      "reply": "Claro — podemos conversar.",
+      "turns": [
+        {
+          "msg": "Quero conversar",
+          "reply": "Claro — podemos conversar.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:11.414Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:11.414Z"
+    },
+    {
+      "msg": "Hoje foi complicado",
+      "id": "SOC_Hoje foi c",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "turns": [
+        {
+          "msg": "Hoje foi complicado",
+          "reply": "Me diz rapidinho a que você se refere.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:16.184Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:16.184Z"
+    },
+    {
+      "msg": "Não quero comprar nada",
+      "id": "SOC_Não quero ",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "turns": [
+        {
+          "msg": "Não quero comprar nada",
+          "reply": "Me diz rapidinho a que você se refere.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:20.943Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:20.943Z"
+    },
+    {
+      "msg": "Me conta alguma coisa",
+      "id": "SOC_Me conta a",
+      "reply": "Entendi — você fala disso ou de outra coisa?",
+      "turns": [
+        {
+          "msg": "Me conta alguma coisa",
+          "reply": "Entendi — você fala disso ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:26.925Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:26.925Z"
+    },
+    {
+      "msg": "Era brincadeira",
+      "id": "SOC_Era brinca",
+      "reply": "Ah, entendi — foi no tom.",
+      "turns": [
+        {
+          "msg": "Era brincadeira",
+          "reply": "Ah, entendi — foi no tom.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:33.014Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:33.014Z"
+    },
+    {
+      "msg": "Você entendeu errado",
+      "id": "SOC_Você enten",
+      "reply": "Beleza, pego a ironia.",
+      "turns": [
+        {
+          "msg": "Você entendeu errado",
+          "reply": "Beleza, pego a ironia.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:38.514Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:38.514Z"
+    },
+    {
+      "msg": "Gostei da conversa",
+      "id": "SOC_Gostei da ",
+      "reply": "Fico feliz que você tenha gostado! A conversa está fluindo bem.",
+      "turns": [
+        {
+          "msg": "Gostei da conversa",
+          "reply": "Fico feliz que você tenha gostado! A conversa está fluindo bem.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:44.588Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:44.588Z"
+    },
+    {
+      "msg": "Sua resposta ficou boa",
+      "id": "SOC_Sua respos",
+      "reply": "Imagina, fico contente em ajudar.",
+      "turns": [
+        {
+          "msg": "Sua resposta ficou boa",
+          "reply": "Imagina, fico contente em ajudar.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:50.286Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:50.286Z"
+    },
+    {
+      "msg": "Foi estranho",
+      "id": "SOC_Foi estran",
+      "reply": "Me diz rapidinho a que você se refere.",
+      "turns": [
+        {
+          "msg": "Foi estranho",
+          "reply": "Me diz rapidinho a que você se refere.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:54.919Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:54.920Z"
+    },
+    {
+      "msg": "Legal",
+      "id": "SOC_Legal",
+      "reply": "Entendi.",
+      "turns": [
+        {
+          "msg": "Legal",
+          "reply": "Entendi.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:15:00.173Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:15:00.173Z"
+    }
+  ]
+}

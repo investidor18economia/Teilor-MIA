@@ -1,7 +1,69 @@
 {
-  "b2Before": "7/10",
-  "b1": "5/5",
-  "critical": "15/15",
-  "buildBefore": "0e62ed4dfefa",
-  "note": "Post-fix production validation requires deploy of this commit"
+  "verdict": "NAO_APROVADO",
+  "patch41i3Closeable": false,
+  "patch41jStartable": false,
+  "build": "f5ad55b91390",
+  "commit": "f5ad55b",
+  "deployConfirmed": true,
+  "gates": {
+    "b2": "8/10",
+    "b1": "5/5",
+    "critical": "14/15",
+    "social": "10/10",
+    "commercial": "10/10"
+  },
+  "b2ExactReplies": [
+    {
+      "id": "B2_r1",
+      "reply": "O Celular tem um visual bem marcante.",
+      "classification": "REPROVADO"
+    },
+    {
+      "id": "B2_r2",
+      "reply": "Valeu pelo elogio!",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r3",
+      "reply": "Valeu pelo elogio!",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r4",
+      "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos continuar conversando!",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r5",
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r6",
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r7",
+      "reply": "O Celular tem um visual bem marcante.",
+      "classification": "REPROVADO"
+    },
+    {
+      "id": "B2_r8",
+      "reply": "Que gentil — obrigada.",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r9",
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "classification": "APROVADO"
+    },
+    {
+      "id": "B2_r10",
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "classification": "APROVADO"
+    }
+  ],
+  "b2TechnicalFailures": [],
+  "timestamp": "2026-07-31T00:16:41.935Z"
 }

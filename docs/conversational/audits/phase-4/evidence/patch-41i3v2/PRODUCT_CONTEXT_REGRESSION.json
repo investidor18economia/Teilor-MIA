@@ -1,59 +1,190 @@
 {
+  "build": "f5ad55b91390",
   "runs": [
     {
       "id": "B1_r1",
-      "messages": [
-        "O que você acha do design do Galaxy A55?",
-        "Linda"
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:11:26.508Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:11:32.444Z"
+        }
       ],
       "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "targetConfidence": 0.86
+      },
       "classification": "APROVADO",
       "reasons": [],
-      "timestamp": "2026-07-30T23:46:38.403Z"
+      "semantic": true,
+      "timestamp": "2026-07-31T00:11:33.061Z"
     },
     {
       "id": "B1_r2",
-      "messages": [
-        "O que você acha do design do Galaxy A55?",
-        "Linda"
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:11:43.809Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:11:51.179Z"
+        }
       ],
       "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "targetConfidence": 0.86
+      },
       "classification": "APROVADO",
       "reasons": [],
-      "timestamp": "2026-07-30T23:46:54.407Z"
+      "semantic": true,
+      "timestamp": "2026-07-31T00:11:51.189Z"
     },
     {
       "id": "B1_r3",
-      "messages": [
-        "O que você acha do design do Galaxy A55?",
-        "Linda"
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:02.150Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:08.181Z"
+        }
       ],
       "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "targetConfidence": 0.86
+      },
       "classification": "APROVADO",
       "reasons": [],
-      "timestamp": "2026-07-30T23:47:08.496Z"
+      "semantic": true,
+      "timestamp": "2026-07-31T00:12:08.190Z"
     },
     {
       "id": "B1_r4",
-      "messages": [
-        "O que você acha do design do Galaxy A55?",
-        "Linda"
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:20.966Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:26.793Z"
+        }
       ],
       "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "targetConfidence": 0.86
+      },
       "classification": "APROVADO",
       "reasons": [],
-      "timestamp": "2026-07-30T23:47:22.980Z"
+      "semantic": true,
+      "timestamp": "2026-07-31T00:12:26.802Z"
     },
     {
       "id": "B1_r5",
-      "messages": [
-        "O que você acha do design do Galaxy A55?",
-        "Linda"
+      "turns": [
+        {
+          "msg": "O que você acha do design do Galaxy A55?",
+          "reply": "Pelo que mapeei, o Galaxy A55 5G combina melhor com o que você pediu — a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. • O peso pode pesar mais no uso prolongado. Ainda que possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:38.470Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:44.276Z"
+        }
       ],
       "reply": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "product",
+        "governedSocialRoutingKey": "product_aesthetic_opinion",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_with_product_context"
+        ],
+        "targetConfidence": 0.86
+      },
       "classification": "APROVADO",
       "reasons": [],
-      "timestamp": "2026-07-30T23:47:37.250Z"
+      "semantic": true,
+      "timestamp": "2026-07-31T00:12:44.284Z"
     }
   ]
 }

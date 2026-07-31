@@ -1,0 +1,385 @@
+{
+  "build": "f5ad55b91390",
+  "commit": "f5ad55b",
+  "runs": [
+    {
+      "id": "B2_r1",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:09:26.233Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O Celular tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:09:33.323Z"
+        }
+      ],
+      "reply": "O Celular tem um visual bem marcante.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "product_frame",
+        "missing_mia_thanks"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T00:09:33.905Z"
+    },
+    {
+      "id": "B2_r2",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:09:39.795Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Valeu pelo elogio!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:09:46.550Z"
+        }
+      ],
+      "reply": "Valeu pelo elogio!",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:09:47.124Z"
+    },
+    {
+      "id": "B2_r3",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:09:52.591Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Valeu pelo elogio!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:09:58.209Z"
+        }
+      ],
+      "reply": "Valeu pelo elogio!",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:09:58.749Z"
+    },
+    {
+      "id": "B2_r4",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:04.507Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos continuar conversando!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:09.881Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos continuar conversando!",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:10:09.893Z"
+    },
+    {
+      "id": "B2_r5",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:15.373Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:20.957Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:10:20.967Z"
+    },
+    {
+      "id": "B2_r6",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:26.531Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:31.847Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:10:31.856Z"
+    },
+    {
+      "id": "B2_r7",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:37.239Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "O Celular tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:42.457Z"
+        }
+      ],
+      "reply": "O Celular tem um visual bem marcante.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "product_frame",
+        "missing_mia_thanks"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T00:10:42.465Z"
+    },
+    {
+      "id": "B2_r8",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:48.353Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:53.614Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:10:53.622Z"
+    },
+    {
+      "id": "B2_r9",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:10:59.199Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:11:04.461Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:11:04.472Z"
+    },
+    {
+      "id": "B2_r10",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Opa!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:11:09.833Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:11:15.311Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "commercialFallbackBlocked": true,
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ],
+        "targetConfidence": 0.8
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:11:15.320Z"
+    }
+  ],
+  "semanticPass": 8,
+  "technicalFailures": 0,
+  "total": 10
+}

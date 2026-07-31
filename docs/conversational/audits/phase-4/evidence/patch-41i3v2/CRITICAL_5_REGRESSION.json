@@ -1,94 +1,322 @@
 {
+  "build": "f5ad55b91390",
   "runs": [
     {
       "msg": "Linda",
       "run": 1,
+      "id": "CRIT_Linda_r1",
       "reply": "Que gentil — obrigada.",
-      "classification": "APROVADO"
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:49.943Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:12:49.943Z"
     },
     {
       "msg": "Linda",
       "run": 2,
-      "reply": "Que gentil — obrigada.",
-      "classification": "APROVADO"
+      "id": "CRIT_Linda_r2",
+      "reply": "O Celular tem um visual bem marcante.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "O Celular tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:12:55.305Z"
+        }
+      ],
+      "trace": null,
+      "classification": "REPROVADO",
+      "reasons": [
+        "product_frame"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T00:12:55.305Z"
     },
     {
       "msg": "Linda",
       "run": 3,
-      "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir em frente!",
-      "classification": "APROVADO"
+      "id": "CRIT_Linda_r3",
+      "reply": "Que gentil — obrigada.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:00.662Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:00.662Z"
     },
     {
       "msg": "Você é muito inteligente",
       "run": 1,
-      "reply": "Obrigada!",
-      "classification": "APROVADO"
+      "id": "CRIT_Você é muito_r1",
+      "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+      "turns": [
+        {
+          "msg": "Você é muito inteligente",
+          "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:06.103Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:06.103Z"
     },
     {
       "msg": "Você é muito inteligente",
       "run": 2,
+      "id": "CRIT_Você é muito_r2",
       "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
-      "classification": "APROVADO"
+      "turns": [
+        {
+          "msg": "Você é muito inteligente",
+          "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:11.701Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:11.702Z"
     },
     {
       "msg": "Você é muito inteligente",
       "run": 3,
-      "reply": "Obrigada pelo elogio! Fico feliz que você pense assim.",
-      "classification": "APROVADO"
+      "id": "CRIT_Você é muito_r3",
+      "reply": "Obrigada! Fico feliz que você pense assim.",
+      "turns": [
+        {
+          "msg": "Você é muito inteligente",
+          "reply": "Obrigada! Fico feliz que você pense assim.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:17.221Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:17.221Z"
     },
     {
       "msg": "Era ironia",
       "run": 1,
-      "reply": "Beleza, pego a ironia.",
-      "classification": "APROVADO"
+      "id": "CRIT_Era ironia_r1",
+      "reply": "Entendi!",
+      "turns": [
+        {
+          "msg": "Era ironia",
+          "reply": "Entendi!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:22.475Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:22.476Z"
     },
     {
       "msg": "Era ironia",
       "run": 2,
+      "id": "CRIT_Era ironia_r2",
       "reply": "Beleza, pego a ironia.",
-      "classification": "APROVADO"
+      "turns": [
+        {
+          "msg": "Era ironia",
+          "reply": "Beleza, pego a ironia.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:27.852Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:27.853Z"
     },
     {
       "msg": "Era ironia",
       "run": 3,
-      "reply": "Beleza, pego a ironia.",
-      "classification": "APROVADO"
+      "id": "CRIT_Era ironia_r3",
+      "reply": "Entendi! A ironia tem seu charme, né? Às vezes, é a melhor maneira de expressar o que estamos pensando.",
+      "turns": [
+        {
+          "msg": "Era ironia",
+          "reply": "Entendi! A ironia tem seu charme, né? Às vezes, é a melhor maneira de expressar o que estamos pensando.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:33.228Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:33.229Z"
     },
     {
       "msg": "Só queria conversar",
       "run": 1,
+      "id": "CRIT_Só queria co_r1",
+      "reply": "Sem problema, fico por aqui no papo.",
+      "turns": [
+        {
+          "msg": "Só queria conversar",
+          "reply": "Sem problema, fico por aqui no papo.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:38.539Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:38.539Z"
+    },
+    {
+      "msg": "Só queria conversar",
+      "run": 2,
+      "id": "CRIT_Só queria co_r2",
+      "reply": "Sem problema, fico por aqui no papo.",
+      "turns": [
+        {
+          "msg": "Só queria conversar",
+          "reply": "Sem problema, fico por aqui no papo.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:44.240Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:44.240Z"
+    },
+    {
+      "msg": "Só queria conversar",
+      "run": 3,
+      "id": "CRIT_Só queria co_r3",
       "reply": "Beleza — pode falar à vontade.",
-      "classification": "APROVADO"
-    },
-    {
-      "msg": "Só queria conversar",
-      "run": 2,
-      "reply": "Sem problema, fico por aqui no papo.",
-      "classification": "APROVADO"
-    },
-    {
-      "msg": "Só queria conversar",
-      "run": 3,
-      "reply": "Sem problema, fico por aqui no papo.",
-      "classification": "APROVADO"
+      "turns": [
+        {
+          "msg": "Só queria conversar",
+          "reply": "Beleza — pode falar à vontade.",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:49.452Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:49.452Z"
     },
     {
       "msg": "Você me ajudou muito",
       "run": 1,
-      "reply": "Fico muito feliz em saber que pude ajudar!",
-      "classification": "APROVADO"
+      "id": "CRIT_Você me ajud_r1",
+      "reply": "Fico muito feliz em saber que pude te ajudar!",
+      "turns": [
+        {
+          "msg": "Você me ajudou muito",
+          "reply": "Fico muito feliz em saber que pude te ajudar!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:13:55.040Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:13:55.040Z"
     },
     {
       "msg": "Você me ajudou muito",
       "run": 2,
-      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
-      "classification": "APROVADO"
+      "id": "CRIT_Você me ajud_r2",
+      "reply": "Fico muito feliz em saber que pude ajudar!",
+      "turns": [
+        {
+          "msg": "Você me ajudou muito",
+          "reply": "Fico muito feliz em saber que pude ajudar!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:00.743Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:00.743Z"
     },
     {
       "msg": "Você me ajudou muito",
       "run": 3,
-      "reply": "Fico muito feliz em saber que pude ajudar você! 😊",
-      "classification": "APROVADO"
+      "id": "CRIT_Você me ajud_r3",
+      "reply": "Fico muito feliz em saber que pude te ajudar!",
+      "turns": [
+        {
+          "msg": "Você me ajudou muito",
+          "reply": "Fico muito feliz em saber que pude te ajudar!",
+          "status": 200,
+          "trace": null,
+          "responsePath": null,
+          "timestamp": "2026-07-31T00:14:06.241Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T00:14:06.241Z"
     }
   ]
 }
