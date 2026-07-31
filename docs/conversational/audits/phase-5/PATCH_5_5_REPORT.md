@@ -8,13 +8,13 @@
 
 ## 1. Veredito
 
-**APROVADO** (pendente confirmação UI produção pós-deploy deste commit)
+**APROVADO**
 
 ## 2. Declarações
 
 ```text
 PATCH 5.5 encerrável oficialmente:
-SIM (após smoke UI pós-deploy)
+SIM
 
 PATCH 5.6 iniciável:
 SIM (após auditoria oficial)
@@ -77,6 +77,12 @@ Precedência 5.4, contrato 5.2, egress único, Decision Engine, no new LLM, no p
 ## 10. Evidências
 
 `docs/conversational/audits/phase-5/evidence/patch-55/`
+
+**Produção:** build `bc3290f30408` — UI smoke 5/5, commercial restaurado após fix structural-only.
+
+## 11. Correção pós-deploy
+
+Commit `bc3290f`: recovery comercial restrito a empty guard estrutural — evita que validadores sociais substituam resposta comercial válida.
 
 ---
 

@@ -3,8 +3,8 @@
   "health": {
     "status": "ok",
     "version": "12E.1.0",
-    "timestamp": "2026-07-31T17:35:31.977Z",
-    "build": "9f15d7b36e35"
+    "timestamp": "2026-07-31T17:39:40.915Z",
+    "build": "bc3290f30408"
   },
   "results": [
     {
@@ -28,13 +28,13 @@
       "msg": "Opa",
       "api": {
         "status": 200,
-        "reply": "Oi!",
+        "reply": "Opa! Boa tarde!",
         "path": "greeting_flow",
         "empty": false
       },
       "ui": {
         "status": 200,
-        "reply": "Opa!",
+        "reply": "Oi!",
         "empty": false,
         "path": "greeting_flow"
       },
@@ -51,7 +51,7 @@
       },
       "ui": {
         "status": 200,
-        "reply": "Obrigada! Fico feliz que você pense assim. Vamos em frente!",
+        "reply": "Que gentil — obrigada.",
         "empty": false,
         "path": "governed_social_intent_flow"
       },
@@ -79,13 +79,13 @@
       "msg": "Quero um celular até 2000",
       "api": {
         "status": 200,
-        "reply": "Beleza — pode falar à vontade.",
+        "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
         "path": "return_seguro",
         "empty": false
       },
       "ui": {
         "status": 200,
-        "reply": "Beleza — pode falar à vontade.",
+        "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
         "empty": false,
         "path": "return_seguro"
       },
@@ -95,5 +95,5 @@
   ],
   "approved": 5,
   "total": 5,
-  "timestamp": "2026-07-31T17:36:33.618Z"
+  "timestamp": "2026-07-31T17:40:47.821Z"
 }
