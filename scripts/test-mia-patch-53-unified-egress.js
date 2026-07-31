@@ -58,8 +58,8 @@ function buildContract(message) {
 
 console.log("\nPATCH 5.3 — Unified Conversational Egress\n");
 
-test("1. egress version 5.3.0", () => {
-  expectEqual(UNIFIED_CONVERSATION_EGRESS_VERSION, "5.3.0");
+test("1. egress version 5.5.0", () => {
+  expectEqual(UNIFIED_CONVERSATION_EGRESS_VERSION, "5.5.0");
 });
 
 test("2. isEmptyConversationalReply detects blank and whitespace", () => {
@@ -108,7 +108,7 @@ test("8. unifiedEgressToTrace compact", () => {
   const c = buildContract("Oi");
   const prep = prepareSocialEgressFinalization("Oi!", c);
   const trace = unifiedEgressToTrace(prep);
-  expectEqual(trace.version, "5.3.0");
+  expectEqual(trace.version, "5.5.0");
   expectTrue(trace.universalContract);
 });
 

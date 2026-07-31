@@ -284,6 +284,7 @@ import {
   prepareCommercialEgressEnvelope,
   wrapSocialFinalizationForEgress,
   unifiedEgressToTrace,
+  universalRecoveryToTrace,
 } from "../../lib/miaUnifiedConversationalEgress.js";
 import {
   finalizeMixedConversationReply,
@@ -27384,6 +27385,7 @@ function sendUnifiedConversationalEgress(
   if (process.env.MIA_DEBUG === "true" && pipelineTracer) {
     pipelineTracer.patch({
       unified_conversation_egress: unifiedEgressToTrace(egressPrep),
+      universal_conversation_recovery: universalRecoveryToTrace(egressPrep.universalRecovery),
       universal_conversation_response_contract: universalConversationResponseContractToTrace(
         egressPrep.universalContract
       ),

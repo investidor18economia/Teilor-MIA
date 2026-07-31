@@ -1,0 +1,9 @@
+{
+  "patch55": { "ok": true, "score": "15/15" },
+  "patch54": { "ok": true, "score": "31/31" },
+  "patch53": { "ok": true, "score": "9/9" },
+  "patch52": { "ok": true, "score": "9/9" },
+  "humanExp": { "ok": true, "score": "40/40" },
+  "ambiguous": { "ok": true, "score": "12/12" },
+  "build": { "ok": true, "runs": 2 }
+}
