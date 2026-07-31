@@ -1,0 +1,14 @@
+{
+  "patch": "5.4",
+  "timestamp": "2026-07-31T16:47:00.000Z",
+  "baseUrl": "http://localhost:3000",
+  "scenarios": [
+    { "msg": "Oi", "routing": "greeting_social", "ambiguous": false, "path": "greeting_flow", "reply": "Opa!" },
+    { "msg": "Opa", "routing": "greeting_social", "ambiguous": false, "path": "greeting_flow", "reply": "Opa!" },
+    { "msg": "eae", "routing": "greeting_social", "ambiguous": false, "path": "greeting_flow", "reply": "E aí!" },
+    { "msg": "Boa noite", "routing": "greeting_social", "ambiguous": false, "path": "greeting_flow", "reply": "Boa noite!" },
+    { "msg": "Show", "routing": "response_approval", "ambiguous": false, "path": "governed_social_intent_flow", "reply": "Show!" },
+    { "msg": "Linda", "routing": "ambiguous_social", "ambiguous": true, "path": "governed_social_intent_flow" }
+  ],
+  "approved": true
+}

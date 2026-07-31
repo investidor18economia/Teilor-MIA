@@ -1,0 +1,25 @@
+{
+  "patch": "5.4",
+  "timestamp": "2026-07-31T16:49:30.000Z",
+  "health": {
+    "status": "ok",
+    "build": "22f07231dcaa",
+    "commit": "22f0723"
+  },
+  "scenarios": [
+    { "msg": "Oi", "status": 200, "path": "greeting_flow", "reply": "Opa!", "empty": false, "approved": true },
+    { "msg": "Opa", "status": 200, "path": "greeting_flow", "reply": "Oi!", "empty": false, "approved": true },
+    { "msg": "eae", "status": 200, "path": "greeting_flow", "reply": "E aí!", "empty": false, "approved": true },
+    { "msg": "Boa noite", "status": 200, "path": "greeting_flow", "reply": "Boa noite!", "empty": false, "approved": true },
+    { "msg": "Show", "status": 200, "path": "governed_social_intent_flow", "reply": "Show!", "empty": false, "approved": true },
+    { "msg": "Linda", "status": 200, "path": "governed_social_intent_flow", "reply": "Esse elogio foi pra mim ou pra algum produto? 👀", "empty": false, "approved": true }
+  ],
+  "summary": {
+    "total": 6,
+    "http_200": 6,
+    "non_empty": 6,
+    "greeting_fix_confirmed": true,
+    "oi_before_5_4": "Gostei desse elogio (ambiguous fallback on old build)",
+    "oi_after_5_4": "Opa! (greeting_social precedence)"
+  }
+}
