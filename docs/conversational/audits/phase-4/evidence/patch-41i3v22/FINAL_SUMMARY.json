@@ -1,0 +1,23 @@
+{
+  "verdict": "NAO_APROVADO",
+  "patch41i3Closeable": false,
+  "patch41jStartable": false,
+  "build": "01e7f5fedba8",
+  "commit": "01e7f5f",
+  "deployConfirmed": true,
+  "rootCause": "Short social turns without sufficient context inferred wrong target",
+  "fixStage": "miaSemanticAuthority ambiguous_social + miaSemanticTargetResolution context gate",
+  "callSite": "selectGovernedFallback → buildProductAestheticFallback (blocked by mia_compliment contract)",
+  "noTextBasedDefense": true,
+  "gates": {
+    "b2": "10/10",
+    "b1": "10/10",
+    "lindaIsolated": "5/5",
+    "critical": "15/15",
+    "social": "10/10",
+    "commercial": "10/10",
+    "miaComplimentVariants": "13/15",
+    "productComplimentVariants": "9/15"
+  },
+  "timestamp": "2026-07-31T02:08:05.423Z"
+}

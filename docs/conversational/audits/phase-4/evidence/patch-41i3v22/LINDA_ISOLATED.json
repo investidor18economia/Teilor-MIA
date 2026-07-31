@@ -1,0 +1,100 @@
+{
+  "build": "01e7f5fedba8",
+  "runs": [
+    {
+      "id": "LINDA_iso_r1",
+      "msg": "Linda",
+      "reply": "O Produto tem um visual bem marcante.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "O Produto tem um visual bem marcante.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:56:48.562Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:56:48.562Z"
+    },
+    {
+      "id": "LINDA_iso_r2",
+      "msg": "Linda",
+      "reply": "Que gentil — obrigada.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:56:54.002Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:56:54.002Z"
+    },
+    {
+      "id": "LINDA_iso_r3",
+      "msg": "Linda",
+      "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir em frente!",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso. Vamos seguir em frente!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:57:00.102Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:57:00.102Z"
+    },
+    {
+      "id": "LINDA_iso_r4",
+      "msg": "Linda",
+      "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar conversando!",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar conversando!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:57:07.286Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:57:07.286Z"
+    },
+    {
+      "id": "LINDA_iso_r5",
+      "msg": "Linda",
+      "reply": "Que gentil — obrigada.",
+      "turns": [
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T01:57:12.650Z"
+        }
+      ],
+      "trace": null,
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T01:57:12.650Z"
+    }
+  ]
+}

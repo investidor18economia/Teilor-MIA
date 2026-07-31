@@ -1,0 +1,587 @@
+{
+  "build": "01e7f5fedba8",
+  "runs": [
+    {
+      "variant": 1,
+      "messages": [
+        "Oi, MIA",
+        "Linda"
+      ],
+      "id": "MIA_VAR_1",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:01:39.964Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:01:45.176Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:01:45.184Z"
+    },
+    {
+      "variant": 2,
+      "messages": [
+        "Oi MIA",
+        "Que linda você é"
+      ],
+      "id": "MIA_VAR_2",
+      "turns": [
+        {
+          "msg": "Oi MIA",
+          "reply": "Agora fiquei curiosa... estava falando de mim ou de alguma coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:01:50.586Z"
+        },
+        {
+          "msg": "Que linda você é",
+          "reply": "Obrigada pelo elogio! Fico feliz que você pense assim. Vamos seguir conversando!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:01:55.924Z"
+        }
+      ],
+      "reply": "Obrigada pelo elogio! Fico feliz que você pense assim. Vamos seguir conversando!",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "mia_address_aesthetic_predicate"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:01:55.942Z"
+    },
+    {
+      "variant": 3,
+      "messages": [
+        "E aí MIA",
+        "Bonita demais"
+      ],
+      "id": "MIA_VAR_3",
+      "turns": [
+        {
+          "msg": "E aí MIA",
+          "reply": "Vou aceitar como elogio gratuito haha 😄",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:01.852Z"
+        },
+        {
+          "msg": "Bonita demais",
+          "reply": "Fico feliz que você tenha achado bonita!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:07.423Z"
+        }
+      ],
+      "reply": "Fico feliz que você tenha achado bonita!",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:02:07.441Z"
+    },
+    {
+      "variant": 4,
+      "messages": [
+        "Opa MIA",
+        "Maravilhosa"
+      ],
+      "id": "MIA_VAR_4",
+      "turns": [
+        {
+          "msg": "Opa MIA",
+          "reply": "Vou aceitar como elogio gratuito haha 😄",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:12.892Z"
+        },
+        {
+          "msg": "Maravilhosa",
+          "reply": "Obrigada! Fico feliz que você tenha gostado.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:18.259Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha gostado.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "taxonomy_mia_target_signal"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:02:18.267Z"
+    },
+    {
+      "variant": 5,
+      "messages": [
+        "Oi, MIA",
+        "Você é linda"
+      ],
+      "id": "MIA_VAR_5",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:23.802Z"
+        },
+        {
+          "msg": "Você é linda",
+          "reply": "Valeu pelo elogio!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:29.110Z"
+        }
+      ],
+      "reply": "Valeu pelo elogio!",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "mia_address_aesthetic_predicate"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:02:29.125Z"
+    },
+    {
+      "variant": 6,
+      "messages": [
+        "MIA",
+        "Linda"
+      ],
+      "id": "MIA_VAR_6",
+      "turns": [
+        {
+          "msg": "MIA",
+          "reply": "Agora fiquei curiosa... estava falando de mim ou de alguma coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:34.115Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada pelo elogio! Fico feliz que você tenha achado isso.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:39.327Z"
+        }
+      ],
+      "reply": "Obrigada pelo elogio! Fico feliz que você tenha achado isso.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_no_commercial_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:02:39.335Z"
+    },
+    {
+      "variant": 7,
+      "messages": [
+        "Ei MIA",
+        "Incrível"
+      ],
+      "id": "MIA_VAR_7",
+      "turns": [
+        {
+          "msg": "Ei MIA",
+          "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:44.488Z"
+        },
+        {
+          "msg": "Incrível",
+          "reply": "Gostei desse elogio 😄",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:49.659Z"
+        }
+      ],
+      "reply": "Gostei desse elogio 😄",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": null,
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "ambiguous_social",
+        "targetReasonCodes": [
+          "unresolved_target"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:02:49.668Z"
+    },
+    {
+      "variant": 8,
+      "messages": [
+        "Oi assistente",
+        "MIA",
+        "Linda"
+      ],
+      "id": "MIA_VAR_8",
+      "turns": [
+        {
+          "msg": "Oi assistente",
+          "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:02:55.211Z"
+        },
+        {
+          "msg": "MIA",
+          "reply": "Agora fiquei curiosa... estava falando de mim ou de alguma coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:00.120Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Que gentil — obrigada.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:05.062Z"
+        }
+      ],
+      "reply": "Que gentil — obrigada.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:03:05.070Z"
+    },
+    {
+      "variant": 9,
+      "messages": [
+        "Oi, MIA",
+        "Adorei você"
+      ],
+      "id": "MIA_VAR_9",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:10.671Z"
+        },
+        {
+          "msg": "Adorei você",
+          "reply": "Fico muito feliz em saber disso! Agradeço pelo carinho. Vamos continuar por aqui!",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:17.949Z"
+        }
+      ],
+      "reply": "Fico muito feliz em saber disso! Agradeço pelo carinho. Vamos continuar por aqui!",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "praise",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_praise",
+        "targetReasonCodes": [
+          "mia_address_social_family"
+        ]
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "missing_mia_thanks"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T02:03:17.966Z"
+    },
+    {
+      "variant": 10,
+      "messages": [
+        "MIA oi",
+        "Que gentil você"
+      ],
+      "id": "MIA_VAR_10",
+      "turns": [
+        {
+          "msg": "MIA oi",
+          "reply": "Oi! Como você está?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:23.106Z"
+        },
+        {
+          "msg": "Que gentil você",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso. Como posso ajudar você hoje?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:30.111Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso. Como posso ajudar você hoje?",
+      "semantics": {
+        "interactionMode": "clarification",
+        "primarySocialIntent": null,
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "ambiguous_social",
+        "targetReasonCodes": [
+          "unresolved_target"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:03:30.129Z"
+    },
+    {
+      "variant": 11,
+      "messages": [
+        "Oi MIA tudo bem",
+        "Linda"
+      ],
+      "id": "MIA_VAR_11",
+      "turns": [
+        {
+          "msg": "Oi MIA tudo bem",
+          "reply": "Gostei desse elogio 😄",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:35.716Z"
+        },
+        {
+          "msg": "Linda",
+          "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:40.963Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "compliment",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_compliment",
+        "targetReasonCodes": [
+          "short_aesthetic_mia_greeting_context"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:03:40.970Z"
+    },
+    {
+      "variant": 12,
+      "messages": [
+        "E aí MIA",
+        "Perfeita"
+      ],
+      "id": "MIA_VAR_12",
+      "turns": [
+        {
+          "msg": "E aí MIA",
+          "reply": "Vou aceitar como elogio gratuito haha 😄",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:46.992Z"
+        },
+        {
+          "msg": "Perfeita",
+          "reply": "Imagina, fico contente em ajudar.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:52.296Z"
+        }
+      ],
+      "reply": "Imagina, fico contente em ajudar.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "approval",
+        "resolvedSemanticTarget": "previous_answer",
+        "governedSocialRoutingKey": "response_approval",
+        "targetReasonCodes": [
+          "taxonomy_approval_family"
+        ]
+      },
+      "classification": "REPROVADO",
+      "reasons": [
+        "missing_mia_thanks"
+      ],
+      "semantic": false,
+      "timestamp": "2026-07-31T02:03:52.309Z"
+    },
+    {
+      "variant": 13,
+      "messages": [
+        "Opa MIA",
+        "Sensacional"
+      ],
+      "id": "MIA_VAR_13",
+      "turns": [
+        {
+          "msg": "Opa MIA",
+          "reply": "Vou aceitar como elogio gratuito haha 😄",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:03:58.301Z"
+        },
+        {
+          "msg": "Sensacional",
+          "reply": "Fico feliz que você tenha achado sensacional! O que exatamente você está se referindo?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:04:03.557Z"
+        }
+      ],
+      "reply": "Fico feliz que você tenha achado sensacional! O que exatamente você está se referindo?",
+      "semantics": {
+        "interactionMode": "clarification",
+        "primarySocialIntent": null,
+        "resolvedSemanticTarget": "unknown",
+        "governedSocialRoutingKey": "ambiguous_social",
+        "targetReasonCodes": [
+          "unresolved_target"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:04:03.565Z"
+    },
+    {
+      "variant": 14,
+      "messages": [
+        "Oi, MIA",
+        "Você é demais"
+      ],
+      "id": "MIA_VAR_14",
+      "turns": [
+        {
+          "msg": "Oi, MIA",
+          "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:04:08.940Z"
+        },
+        {
+          "msg": "Você é demais",
+          "reply": "Obrigada! Fico feliz que você pense assim.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:04:14.280Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que você pense assim.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "praise",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_praise",
+        "targetReasonCodes": [
+          "mia_address_social_family"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:04:14.296Z"
+    },
+    {
+      "variant": 15,
+      "messages": [
+        "MIA",
+        "Arrasou"
+      ],
+      "id": "MIA_VAR_15",
+      "turns": [
+        {
+          "msg": "MIA",
+          "reply": "Agora fiquei curiosa... estava falando de mim ou de alguma coisa?",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:04:19.447Z"
+        },
+        {
+          "msg": "Arrasou",
+          "reply": "Obrigada! Fico feliz que tenha gostado.",
+          "status": 200,
+          "trace": null,
+          "timestamp": "2026-07-31T02:04:24.681Z"
+        }
+      ],
+      "reply": "Obrigada! Fico feliz que tenha gostado.",
+      "semantics": {
+        "interactionMode": "social",
+        "primarySocialIntent": "praise",
+        "resolvedSemanticTarget": "mia",
+        "governedSocialRoutingKey": "mia_praise",
+        "targetReasonCodes": [
+          "taxonomy_mia_target_signal"
+        ]
+      },
+      "classification": "APROVADO",
+      "reasons": [],
+      "semantic": true,
+      "timestamp": "2026-07-31T02:04:24.689Z"
+    }
+  ]
+}
