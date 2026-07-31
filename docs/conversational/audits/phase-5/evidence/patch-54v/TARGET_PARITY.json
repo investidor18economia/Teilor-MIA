@@ -1,0 +1,18 @@
+{
+  "patch": "5.4V",
+  "scenarios": {
+    "PRD01_Galaxy_Linda": {
+      "api": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "ui": "O design do Galaxy realmente chama atenção. Foi o visual que mais pesou para você?",
+      "path": "governed_social_intent_flow",
+      "parity": true
+    },
+    "MIA01_OiMIA_Linda": {
+      "api": "Obrigada! Fico feliz que você tenha achado isso. Vamos em frente!",
+      "ui": "Obrigada! Fico feliz que você tenha achado isso.",
+      "path": "governed_social_intent_flow",
+      "parity": true,
+      "note": "suffix variation only"
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "Oi": [
+    {
+      "run": 1,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 2,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 3,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 4,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 5,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    }
+  ],
+  "Opa": [
+    {
+      "run": 1,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 2,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 3,
+      "api_path": null,
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "other_social",
+      "api_fp": "other_social",
+      "parity": false,
+      "ui_empty": false
+    },
+    {
+      "run": 4,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "other_social",
+      "api_fp": "greeting",
+      "parity": false,
+      "ui_empty": false
+    },
+    {
+      "run": 5,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "other_social",
+      "api_fp": "greeting",
+      "parity": false,
+      "ui_empty": false
+    }
+  ],
+  "eae": [
+    {
+      "run": 1,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 2,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 3,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 4,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 5,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    }
+  ],
+  "Boa noite": [
+    {
+      "run": 1,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 2,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 3,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 4,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    },
+    {
+      "run": 5,
+      "api_path": "greeting_flow",
+      "api_routing": null,
+      "api_ambiguous": null,
+      "ui_fp": "greeting",
+      "api_fp": "greeting",
+      "parity": true,
+      "ui_empty": false
+    }
+  ]
+}

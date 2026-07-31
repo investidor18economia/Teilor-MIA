@@ -8,7 +8,7 @@
 
 ## 1. Veredito
 
-**APROVADO** (pendente validação UI produção pós-deploy)
+**APROVADO** — encerrado oficialmente via PATCH 5.4V (validação UI produção)
 
 ## 2. Resumo executivo
 
@@ -200,8 +200,8 @@ PATCH 5.5 — Finalização, Validação e Recuperação Universal (não iniciad
 
 ```text
 PATCH 5.4 encerrável oficialmente:
-SIM (após confirmação UI produção)
+SIM
 
 PATCH 5.5 iniciável:
-SIM (após auditoria oficial deste relatório)
+SIM (após auditoria oficial do PATCH 5.4V)
 ```

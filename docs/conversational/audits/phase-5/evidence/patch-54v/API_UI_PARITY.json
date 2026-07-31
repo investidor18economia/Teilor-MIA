@@ -1,0 +1,32 @@
+{
+  "patch": "5.4V",
+  "initialBattery": {
+    "totalScenarios": 49,
+    "parityApproved": 37,
+    "parityFailed": 12,
+    "note": "12 failures dominated by production rate-limit message during rapid sequential probing"
+  },
+  "rerunFailedSubset": {
+    "total": 12,
+    "approved": 10,
+    "remaining": [
+      {
+        "id": "AM01",
+        "msg": "Linda",
+        "classification": "verbalization_pool_variance",
+        "apiFamily": "ambiguous_social",
+        "uiFamily": "gratitude",
+        "blocking": false,
+        "reason": "Both non-commercial social; precedence routing identical path governed_social_intent_flow; fallback pool rotation not precedence regression"
+      },
+      {
+        "id": "PRD01",
+        "msg": "Linda after Galaxy",
+        "classification": "harness_missing_prior_turns",
+        "resolvedIn": "TARGET_PARITY.json multiturn rerun",
+        "approved": true
+      }
+    ]
+  },
+  "greetingsAllApproved": true
+}

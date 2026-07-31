@@ -1,0 +1,92 @@
+[
+  {
+    "id": "COM01",
+    "category": "commercial",
+    "msg": "Quero um celular até 2000",
+    "api": {
+      "channel": "api",
+      "status": 200,
+      "latency_ms": 5675,
+      "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "reply_empty": false,
+      "response_path": "return_seguro",
+      "intent": null,
+      "routing": null,
+      "ambiguous": null,
+      "target": null,
+      "precedence": null,
+      "has_debug": false
+    },
+    "ui": {
+      "channel": "ui",
+      "status": 200,
+      "displayText": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimento validado da MIA\n\nNenhuma oferta atual encontrada\n⭐\nFavoritar\n🔔\nMonitorar\nA escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "display_empty": false,
+      "reply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimento validado da MIA\n\nNenhuma oferta atual encontrada\n⭐\nFavoritar\n🔔\nMonitorar\nA escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "reply_empty": false,
+      "response_path": "return_seguro",
+      "bubble_delta": 1,
+      "duplicate_bubble": false,
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "consoleErrors": []
+    },
+    "parity": {
+      "exactMatch": false,
+      "fpMatch": false,
+      "pathOk": true,
+      "bothNonEmpty": true,
+      "noLeak": true,
+      "approved": false,
+      "apiNorm": "a escolha mais equilibrada aqui é o iphone 13: mais margem de tranquilidade quando o uso deixa de ser básico. eu iria no",
+      "uiNorm": "recomendação miλ oferta selecionada ✓ produto disponível na base da mia 📦 iphone 13 preço temporariamente indisponível ",
+      "apiFp": "commercial",
+      "uiFp": "ambiguous_social"
+    }
+  },
+  {
+    "id": "COM02",
+    "category": "commercial",
+    "msg": "Compare iPhone 13 com Galaxy A55",
+    "api": {
+      "channel": "api",
+      "status": 200,
+      "latency_ms": 5772,
+      "reply": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+      "reply_empty": false,
+      "response_path": "return_seguro",
+      "intent": null,
+      "routing": null,
+      "ambiguous": null,
+      "target": null,
+      "precedence": null,
+      "has_debug": false
+    },
+    "ui": {
+      "channel": "ui",
+      "status": 200,
+      "displayText": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\nGalaxy A55\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimento validado da MIA\n\nNenhuma oferta atual encontrada\n⭐\nFavoritar\n🔔\nMonitorar\nO Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+      "display_empty": false,
+      "reply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\nGalaxy A55\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimento validado da MIA\n\nNenhuma oferta atual encontrada\n⭐\nFavoritar\n🔔\nMonitorar\nO Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • A autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a dia. ⚠️ O que você abre mão • Pode parecer menos fluida para quem veio de experiências mais rápidas. Embora possa parecer menos fluida para quem veio de experiências mais rápidas, eu manteria o Galaxy A55 5G — o ganho principal ainda pesa mais do que essa renúncia.",
+      "reply_empty": false,
+      "response_path": "return_seguro",
+      "bubble_delta": 1,
+      "duplicate_bubble": false,
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "consoleErrors": []
+    },
+    "parity": {
+      "exactMatch": false,
+      "fpMatch": true,
+      "pathOk": true,
+      "bothNonEmpty": true,
+      "noLeak": true,
+      "approved": true,
+      "apiNorm": "o galaxy a55 5g faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "uiNorm": "recomendação miλ oferta selecionada ✓ produto disponível na base da mia 📦 galaxy a55 preço temporariamente indisponível",
+      "apiFp": "commercial",
+      "uiFp": "commercial"
+    }
+  }
+]

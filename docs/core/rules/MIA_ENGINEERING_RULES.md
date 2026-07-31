@@ -58,6 +58,38 @@ then the architecture is being violated.
 
 \---
 
+# PRODUCTION UI VALIDATION GATE (FASE 5+)
+
+```txt
+The visible response at /app-mia is the final quality gate.
+```
+
+From PATCH 5.4V onward, every patch that changes user-perceived conversational behavior MUST include, in the SAME patch:
+
+1. implementation
+2. unit tests
+3. integration tests
+4. regressions
+5. build (×2 when code changes)
+6. local validation
+7. commit
+8. push
+9. deploy
+10. published build confirmation via `/api/health`
+11. production API validation
+12. production UI validation at `https://economia-ai.vercel.app/app-mia`
+13. API × UI parity proof
+14. versioned evidence under `docs/conversational/audits/`
+15. documentation / closure report
+16. Git sync (local == remote, clean working tree)
+
+API probes, internal contracts, and pipeline traces are complementary evidence.
+They do NOT replace real interface validation.
+
+No functional conversational patch may be marked approved while UI validation is deferred to a later prompt.
+
+\---
+
 # ENGINEERING PHILOSOPHY
 
 MIA is being engineered as:

@@ -1,0 +1,10 @@
+{
+  "expectedFunctionalCommit": "22f0723",
+  "expectedEvidenceCommit": "7945ce9",
+  "activeProductionBuild": "7945ce9915f3",
+  "activeBuildIncludesFunctional5_4": true,
+  "note": "7945ce9 is docs-only evidence atop 22f0723 functional commit",
+  "localHead": "7945ce9915f3245d0f587229e9bf5dffa970fb7c",
+  "localShort": "7945ce9",
+  "validatedAt": "2026-07-31T17:00:35.093Z"
+}

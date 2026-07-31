@@ -1,0 +1,137 @@
+[
+  {
+    "id": "COR01",
+    "category": "correction_irony",
+    "msg": "Era ironia",
+    "api": {
+      "channel": "api",
+      "status": 200,
+      "latency_ms": 1097,
+      "reply": "Beleza, pego a ironia.",
+      "reply_empty": false,
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "routing": null,
+      "ambiguous": null,
+      "target": null,
+      "precedence": null,
+      "has_debug": false
+    },
+    "ui": {
+      "channel": "ui",
+      "status": 200,
+      "displayText": "MIΛ\nBeleza, pego a ironia.",
+      "display_empty": false,
+      "reply": "MIΛ\nBeleza, pego a ironia.",
+      "reply_empty": false,
+      "response_path": "governed_social_intent_flow",
+      "bubble_delta": 1,
+      "duplicate_bubble": false,
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "consoleErrors": []
+    },
+    "parity": {
+      "exactMatch": true,
+      "fpMatch": true,
+      "pathOk": true,
+      "bothNonEmpty": true,
+      "noLeak": true,
+      "approved": true,
+      "apiNorm": "beleza, pego a ironia.",
+      "uiNorm": "beleza, pego a ironia.",
+      "apiFp": "other_social",
+      "uiFp": "other_social"
+    }
+  },
+  {
+    "id": "COR02",
+    "category": "correction_irony",
+    "msg": "Discordo",
+    "api": {
+      "channel": "api",
+      "status": 200,
+      "latency_ms": 286,
+      "reply": "Me diz rapidinho a que você se refere.",
+      "reply_empty": false,
+      "response_path": "needs_clarification",
+      "intent": null,
+      "routing": null,
+      "ambiguous": null,
+      "target": null,
+      "precedence": null,
+      "has_debug": false
+    },
+    "ui": {
+      "channel": "ui",
+      "status": 200,
+      "displayText": "MIΛ\nMe diz rapidinho a que você se refere.",
+      "display_empty": false,
+      "reply": "MIΛ\nMe diz rapidinho a que você se refere.",
+      "reply_empty": false,
+      "response_path": "needs_clarification",
+      "bubble_delta": 1,
+      "duplicate_bubble": false,
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "consoleErrors": []
+    },
+    "parity": {
+      "exactMatch": true,
+      "fpMatch": true,
+      "pathOk": true,
+      "bothNonEmpty": true,
+      "noLeak": true,
+      "approved": true,
+      "apiNorm": "me diz rapidinho a que você se refere.",
+      "uiNorm": "me diz rapidinho a que você se refere.",
+      "apiFp": "other_social",
+      "uiFp": "other_social"
+    }
+  },
+  {
+    "id": "REJ01",
+    "category": "rejection",
+    "msg": "Não gostei dessa recomendação",
+    "api": {
+      "channel": "api",
+      "status": 200,
+      "latency_ms": 9126,
+      "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+      "reply_empty": false,
+      "response_path": "return_seguro",
+      "intent": null,
+      "routing": null,
+      "ambiguous": null,
+      "target": null,
+      "precedence": null,
+      "has_debug": false
+    },
+    "ui": {
+      "channel": "ui",
+      "status": 200,
+      "displayText": "MIΛ\nEu iria no iPhone 13. O principal motivo é o equilíbrio geral, com destaque em desempenho. Ele entrega chipset Apple A15 Bionic, o que pesa a favor. Comparando com o iPhone 11: - Em tela, o iPhone 13 leva vantagem: 90 contra 75 do iPhone 11. Meu veredito: eu escolheria o iPhone 13.\n\nℹ️\nProduto ainda não passou pela auditoria completa da MIA. Saiba mais",
+      "display_empty": false,
+      "reply": "MIΛ\nEu iria no iPhone 13. O principal motivo é o equilíbrio geral, com destaque em desempenho. Ele entrega chipset Apple A15 Bionic, o que pesa a favor. Comparando com o iPhone 11: - Em tela, o iPhone 13 leva vantagem: 90 contra 75 do iPhone 11. Meu veredito: eu escolheria o iPhone 13.\n\nℹ️\nProduto ainda não passou pela auditoria completa da MIA. Saiba mais",
+      "reply_empty": false,
+      "response_path": "context_decision_no_search",
+      "bubble_delta": 1,
+      "duplicate_bubble": false,
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "consoleErrors": []
+    },
+    "parity": {
+      "exactMatch": false,
+      "fpMatch": true,
+      "pathOk": false,
+      "bothNonEmpty": true,
+      "noLeak": true,
+      "approved": false,
+      "apiNorm": "o samsung galaxy s23 fe faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "uiNorm": "eu iria no iphone 13. o principal motivo é o equilíbrio geral, com destaque em desempenho. ele entrega chipset apple a15",
+      "apiFp": "commercial",
+      "uiFp": "commercial"
+    }
+  }
+]

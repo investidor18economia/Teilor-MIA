@@ -1,0 +1,16 @@
+{
+  "patch54v": {
+    "patch52": { "ok": true },
+    "patch53": { "ok": true },
+    "patch54": { "ok": true },
+    "humanExp": { "ok": true, "score": "40/40" },
+    "ambiguous": { "ok": true, "score": "12/12" },
+    "commercial": { "ok": true, "score": "18/18" },
+    "mixedIntent": {
+      "ok": true,
+      "score": "37/39",
+      "expectedPreExistingFailures": ["H_monitor", "C2_galaxy"],
+      "introducedBy54": false
+    }
+  }
+}

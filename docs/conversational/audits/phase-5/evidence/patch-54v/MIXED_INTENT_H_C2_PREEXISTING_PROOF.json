@@ -1,0 +1,21 @@
+{
+  "H_monitor": {
+    "input": "Sem paciência hoje, indica um monitor.",
+    "expected": "monitor",
+    "observed": "Sem paciência hoje, indica um monitor.",
+    "suite": "scripts/test-mia-mixed-intent-segmentation.js Grupo H",
+    "introducedBy54": false,
+    "evidence": "git diff 5f4688b..7945ce9 — zero changes in lib/miaMixedIntentSegmentation.js",
+    "destination": "PATCH 5.5+ mixed intent segmentation"
+  },
+  "C2_galaxy": {
+    "input": "gosto desse Galaxy, mas ele é bom mesmo?",
+    "expectedMode": "mixed",
+    "observedMode": "commerce",
+    "suite": "scripts/test-mia-mixed-intent-segmentation.js Grupo C2",
+    "introducedBy54": false,
+    "evidence": "git diff 5f4688b..7945ce9 — zero changes in lib/miaIntentRecognitionLayer.js",
+    "destination": "PATCH 5.5+ mixed intent recognition"
+  },
+  "notWorsenedBy54": true
+}

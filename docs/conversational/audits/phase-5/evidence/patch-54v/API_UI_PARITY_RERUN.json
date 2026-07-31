@@ -1,0 +1,210 @@
+{
+  "reruns": [
+    {
+      "id": "GR10",
+      "msg": "salve",
+      "api": {
+        "reply": "Oi!",
+        "path": "greeting_flow",
+        "fp": "greeting"
+      },
+      "ui": {
+        "reply": "Oi!",
+        "path": "greeting_flow",
+        "fp": "greeting"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "GR11",
+      "msg": "opa mia",
+      "api": {
+        "reply": "Opa!",
+        "path": "greeting_flow",
+        "fp": "greeting"
+      },
+      "ui": {
+        "reply": "Opa!",
+        "path": "greeting_flow",
+        "fp": "greeting"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "AM01",
+      "msg": "Linda",
+      "api": {
+        "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+        "path": "governed_social_intent_flow",
+        "fp": "ambiguous_social"
+      },
+      "ui": {
+        "reply": "Que gentil — obrigada.",
+        "path": "governed_social_intent_flow",
+        "fp": "gratitude"
+      },
+      "exactMatch": false,
+      "fpMatch": false,
+      "approved": false
+    },
+    {
+      "id": "AM02",
+      "msg": "Bonito",
+      "api": {
+        "reply": "Vou aceitar como elogio gratuito haha 😄",
+        "path": "governed_social_intent_flow",
+        "fp": "other_social"
+      },
+      "ui": {
+        "reply": "Obrigada! Fico feliz que você pense assim.",
+        "path": "governed_social_intent_flow",
+        "fp": "gratitude"
+      },
+      "exactMatch": false,
+      "fpMatch": false,
+      "approved": false
+    },
+    {
+      "id": "AM04",
+      "msg": "Sensacional",
+      "api": {
+        "reply": "Me diz rapidinho a que você se refere.",
+        "path": "needs_clarification",
+        "fp": "other_social"
+      },
+      "ui": {
+        "reply": "Me diz rapidinho a que você se refere.",
+        "path": "needs_clarification",
+        "fp": "other_social"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "AM05",
+      "msg": "Muito boa",
+      "api": {
+        "reply": "Fico feliz que você tenha achado muito boa!",
+        "path": "governed_social_intent_flow",
+        "fp": "other_social"
+      },
+      "ui": {
+        "reply": "Fico feliz que você tenha achado muito boa!",
+        "path": "governed_social_intent_flow",
+        "fp": "other_social"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "AM06",
+      "msg": "Legal",
+      "api": {
+        "reply": "Gostei desse elogio 😄",
+        "path": "governed_social_intent_flow",
+        "fp": "other_social"
+      },
+      "ui": {
+        "reply": "Gostei desse elogio 😄",
+        "path": "governed_social_intent_flow",
+        "fp": "other_social"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "AP05",
+      "msg": "Perfeito",
+      "api": {
+        "reply": "Que bom que você achou perfeito! Fico feliz em saber que está satisfeito.",
+        "path": "governed_social_intent_flow",
+        "fp": "other_social"
+      },
+      "ui": {
+        "reply": "Fico feliz que você tenha achado perfeito!",
+        "path": "governed_social_intent_flow",
+        "fp": "other_social"
+      },
+      "exactMatch": false,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "PRD01",
+      "msg": "Linda",
+      "api": {
+        "reply": "Recebi bem — você fala de mim ou de outra coisa?",
+        "path": "governed_social_intent_flow",
+        "fp": "ambiguous_social"
+      },
+      "ui": {
+        "reply": "Obrigada! Fico feliz que você tenha achado isso.",
+        "path": "governed_social_intent_flow",
+        "fp": "gratitude"
+      },
+      "exactMatch": false,
+      "fpMatch": false,
+      "approved": false
+    },
+    {
+      "id": "REJ01",
+      "msg": "Não gostei dessa recomendação",
+      "api": {
+        "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+        "path": "return_seguro",
+        "fp": "commercial"
+      },
+      "ui": {
+        "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+        "path": "return_seguro",
+        "fp": "commercial"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "COM01",
+      "msg": "Quero um celular até 2000",
+      "api": {
+        "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+        "path": "return_seguro",
+        "fp": "commercial"
+      },
+      "ui": {
+        "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+        "path": "return_seguro",
+        "fp": "commercial"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    },
+    {
+      "id": "MIX01",
+      "msg": "Oi, quero um celular até 2 mil",
+      "api": {
+        "reply": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. V",
+        "path": "return_seguro",
+        "fp": "approval_ack"
+      },
+      "ui": {
+        "reply": "Entendi o que mudou — isso conta. Eu iria no iPhone 13. Mais margem de tranquilidade quando o uso deixa de ser básico. V",
+        "path": "return_seguro",
+        "fp": "approval_ack"
+      },
+      "exactMatch": true,
+      "fpMatch": true,
+      "approved": false
+    }
+  ],
+  "approved": 0,
+  "total": 12
+}

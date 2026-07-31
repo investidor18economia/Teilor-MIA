@@ -1,0 +1,92 @@
+[
+  {
+    "id": "VAG01",
+    "category": "vague_request",
+    "msg": "Me ajuda",
+    "api": {
+      "channel": "api",
+      "status": 200,
+      "latency_ms": 8391,
+      "reply": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+      "reply_empty": false,
+      "response_path": "return_seguro",
+      "intent": null,
+      "routing": null,
+      "ambiguous": null,
+      "target": null,
+      "precedence": null,
+      "has_debug": false
+    },
+    "ui": {
+      "channel": "ui",
+      "status": 200,
+      "displayText": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\nGalaxy S23 FE\n\nVALOR ENCONTRADO\n\nR$ 1.799,00\n\nDisponível em Carrefour\n\nVer oferta\n→\n⭐\nFavoritar\n🔔\nMonitorar\nO Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+      "display_empty": false,
+      "reply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\nGalaxy S23 FE\n\nVALOR ENCONTRADO\n\nR$ 1.799,00\n\nDisponível em Carrefour\n\nVer oferta\n→\n⭐\nFavoritar\n🔔\nMonitorar\nO Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidiano. Quase te recomendaria o Samsung Galaxy A35 5G; no fim, fiquei com o Samsung Galaxy S23 FE — o custo de entrada tende a ser mais acessível, sem estourar o orçamento. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • O conjunto de processamento sugere desempenho adequado para uso cotidiano. ⚠️ O que você abre mão • Pode não combinar com o perfil de uso descrito. Mesmo sabendo que pode não combinar com o perfil de uso descrito, eu manteria o Samsung Galaxy S23 FE — o ganho principal ainda pesa mais do que essa renúncia.",
+      "reply_empty": false,
+      "response_path": "return_seguro",
+      "bubble_delta": 1,
+      "duplicate_bubble": false,
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "consoleErrors": []
+    },
+    "parity": {
+      "exactMatch": false,
+      "fpMatch": true,
+      "pathOk": true,
+      "bothNonEmpty": true,
+      "noLeak": true,
+      "approved": true,
+      "apiNorm": "o samsung galaxy s23 fe faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "uiNorm": "recomendação miλ oferta selecionada galaxy s23 fe valor encontrado r$ 1.799,00 disponível em carrefour ver oferta → ⭐ fa",
+      "apiFp": "commercial",
+      "uiFp": "commercial"
+    }
+  },
+  {
+    "id": "VAG02",
+    "category": "vague_request",
+    "msg": "Não sei qual pegar",
+    "api": {
+      "channel": "api",
+      "status": 200,
+      "latency_ms": 814,
+      "reply": "Sem problema, fico por aqui no papo.",
+      "reply_empty": false,
+      "response_path": "needs_clarification",
+      "intent": null,
+      "routing": null,
+      "ambiguous": null,
+      "target": null,
+      "precedence": null,
+      "has_debug": false
+    },
+    "ui": {
+      "channel": "ui",
+      "status": 200,
+      "displayText": "MIΛ\nSem problema, fico por aqui no papo.",
+      "display_empty": false,
+      "reply": "MIΛ\nSem problema, fico por aqui no papo.",
+      "reply_empty": false,
+      "response_path": "needs_clarification",
+      "bubble_delta": 1,
+      "duplicate_bubble": false,
+      "has_mia_debug_in_payload": false,
+      "leaks_internal_json": false,
+      "consoleErrors": []
+    },
+    "parity": {
+      "exactMatch": true,
+      "fpMatch": true,
+      "pathOk": true,
+      "bothNonEmpty": true,
+      "noLeak": true,
+      "approved": true,
+      "apiNorm": "sem problema, fico por aqui no papo.",
+      "uiNorm": "sem problema, fico por aqui no papo.",
+      "apiFp": "other_social",
+      "uiFp": "other_social"
+    }
+  }
+]

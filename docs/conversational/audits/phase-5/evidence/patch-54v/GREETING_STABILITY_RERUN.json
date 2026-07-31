@@ -1,0 +1,14 @@
+{
+  "patch": "5.4V",
+  "build": "7945ce9915f3",
+  "functionalCommit": "22f0723",
+  "Opa": {
+    "runs": 5,
+    "pathMatch": 5,
+    "nonEmpty": 5,
+    "approved": true
+  },
+  "Boa noite": { "runs": 5, "approved": true, "source": "initial_battery" },
+  "Oi": { "runs": 5, "approved": true, "source": "initial_battery" },
+  "eae": { "runs": 5, "approved": true, "source": "initial_battery" }
+}
