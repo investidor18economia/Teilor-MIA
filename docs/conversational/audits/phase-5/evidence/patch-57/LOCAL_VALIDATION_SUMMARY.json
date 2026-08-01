@@ -1,0 +1,17 @@
+{
+  "patch": "5.7",
+  "timestamp": "2026-08-01T04:04:52.588Z",
+  "gitCommit": "fbb97c8723a30a2f0d38719821470497675d7ef2",
+  "fallback": {
+    "total": 131,
+    "valid": 117,
+    "invalid": 14,
+    "contractDriven": 131,
+    "coldClarification": 0,
+    "avgQuality": 0.819190839694655,
+    "lowWarmth": 41,
+    "tooLong": 0,
+    "repetitive": 0
+  },
+  "api": null
+}

@@ -1,0 +1,119 @@
+{
+  "summary": {
+    "total": 11,
+    "coldClarification": 0,
+    "avgQuality": 0.7039999999999998
+  },
+  "results": [
+    {
+      "label": "seca_multiturn",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_oi",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_Opa",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_show",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_não gostei",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_valeu",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_kkk",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_bom dia",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_boa noite",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_eae",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "commercial",
+      "status": 500,
+      "reply": "",
+      "quality": 0.704,
+      "signals": [
+        "too_short"
+      ],
+      "coldClarification": false
+    }
+  ]
+}
