@@ -1,0 +1,615 @@
+{
+  "invalidBefore": [
+    {
+      "message": "gostei",
+      "reply": "Sem problema — fico por aqui no papo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.644,
+      "signals": [
+        "low_warmth"
+      ],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "não gostei",
+      "reply": "Sem problema — fico por aqui no papo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "nossa que legal",
+      "reply": "Claro, pode falar comigo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "reply": "Entendi — me ajuda com um pouco mais de contexto.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmSocialClarificationReply",
+      "family": "ambiguous_reference",
+      "behavior": "stay_social",
+      "routing": "commercial"
+    },
+    {
+      "message": "Melhor smartphone custo benefício",
+      "reply": "Não captei direito — pode explicar.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmSocialClarificationReply",
+      "family": "ambiguous_reference",
+      "behavior": "stay_social",
+      "routing": "commercial"
+    },
+    {
+      "message": "Comparar iPhone e Samsung",
+      "reply": "Acho que perdi o fio — me conta um pouco.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmSocialClarificationReply",
+      "family": "ambiguous_reference",
+      "behavior": "stay_social",
+      "routing": "commercial"
+    },
+    {
+      "message": "Orçamento 1500 reais",
+      "reply": "Claro, pode falar comigo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "Produto mais vendido",
+      "reply": "Claro, pode falar comigo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "não gostei",
+      "reply": "Acho que perdi o fio — me conta um pouco.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmSocialClarificationReply",
+      "family": "ambiguous_social",
+      "behavior": "stay_social",
+      "routing": "ambiguous_social"
+    },
+    {
+      "message": "não gostei",
+      "reply": "Sem problema — fico por aqui no papo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "não gostei mano",
+      "reply": "Claro, pode falar comigo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "não gostei 😊",
+      "reply": "Claro, pode falar comigo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "NÃO GOSTEI",
+      "reply": "Sem problema — fico por aqui no papo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    },
+    {
+      "message": "não gostei",
+      "reply": "Sem problema — fico por aqui no papo.",
+      "valid": false,
+      "violations": [
+        "specificity_violation"
+      ],
+      "quality": 0.704,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmStaySocialReply",
+      "family": "conversation",
+      "behavior": "stay_social",
+      "routing": "conversation_social"
+    }
+  ],
+  "afterRows": [
+    {
+      "id": "E1",
+      "message": "gostei",
+      "before": {
+        "reply": "Sem problema — fico por aqui no papo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "gostei",
+        "primarySocialIntent": "approval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_approval",
+        "target": "previous_answer",
+        "routing": "response_approval",
+        "reply": "Boa — gostei!",
+        "builder": "buildWarmApprovalReply",
+        "family": "praise",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E2",
+      "message": "não gostei",
+      "before": {
+        "reply": "Sem problema — fico por aqui no papo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "não gostei",
+        "primarySocialIntent": "disapproval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "target": "unknown",
+        "routing": "ambiguous_social",
+        "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+        "builder": "buildWarmDisapprovalReply",
+        "family": "disapproval",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E3",
+      "message": "nossa que legal",
+      "before": {
+        "reply": "Claro, pode falar comigo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "nossa que legal",
+        "primarySocialIntent": "approval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_approval",
+        "target": "previous_answer",
+        "routing": "response_approval",
+        "reply": "Show — nossa!",
+        "builder": "buildWarmApprovalReply",
+        "family": "praise",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E4",
+      "message": "Quero um celular até 2000",
+      "before": {
+        "reply": "Entendi — me ajuda com um pouco mais de contexto.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "ambiguous_reference"
+      },
+      "after": {
+        "message": "Quero um celular até 2000",
+        "primarySocialIntent": null,
+        "interactionMode": "commerce",
+        "expectedHumanBehavior": "stay_social",
+        "target": "unknown",
+        "routing": "commercial",
+        "reply": "Entendi — me ajuda com um pouco mais de contexto.",
+        "builder": "buildWarmSocialClarificationReply",
+        "family": "ambiguous_reference",
+        "valid": false,
+        "violations": [
+          "specificity_violation"
+        ]
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo"
+    },
+    {
+      "id": "E5",
+      "message": "Melhor smartphone custo benefício",
+      "before": {
+        "reply": "Não captei direito — pode explicar.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "ambiguous_reference"
+      },
+      "after": {
+        "message": "Melhor smartphone custo benefício",
+        "primarySocialIntent": null,
+        "interactionMode": "commerce",
+        "expectedHumanBehavior": "stay_social",
+        "target": "unknown",
+        "routing": "commercial",
+        "reply": "Não captei direito — pode explicar.",
+        "builder": "buildWarmSocialClarificationReply",
+        "family": "ambiguous_reference",
+        "valid": false,
+        "violations": [
+          "specificity_violation"
+        ]
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo"
+    },
+    {
+      "id": "E6",
+      "message": "Comparar iPhone e Samsung",
+      "before": {
+        "reply": "Acho que perdi o fio — me conta um pouco.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "ambiguous_reference"
+      },
+      "after": {
+        "message": "Comparar iPhone e Samsung",
+        "primarySocialIntent": null,
+        "interactionMode": "commerce",
+        "expectedHumanBehavior": "stay_social",
+        "target": "unknown",
+        "routing": "commercial",
+        "reply": "Acho que perdi o fio — me conta um pouco.",
+        "builder": "buildWarmSocialClarificationReply",
+        "family": "ambiguous_reference",
+        "valid": false,
+        "violations": [
+          "specificity_violation"
+        ]
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo"
+    },
+    {
+      "id": "E7",
+      "message": "Orçamento 1500 reais",
+      "before": {
+        "reply": "Claro, pode falar comigo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "Orçamento 1500 reais",
+        "primarySocialIntent": null,
+        "interactionMode": "commerce",
+        "expectedHumanBehavior": "stay_social",
+        "target": "unknown",
+        "routing": "conversation_social",
+        "reply": "Claro, pode falar comigo.",
+        "builder": "buildWarmStaySocialReply",
+        "family": "conversation",
+        "valid": false,
+        "violations": [
+          "specificity_violation"
+        ]
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo"
+    },
+    {
+      "id": "E8",
+      "message": "Produto mais vendido",
+      "before": {
+        "reply": "Claro, pode falar comigo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "Produto mais vendido",
+        "primarySocialIntent": null,
+        "interactionMode": "commerce",
+        "expectedHumanBehavior": "stay_social",
+        "target": "product",
+        "routing": "product_aesthetic_opinion",
+        "reply": "O visual dele realmente chama atenção.",
+        "builder": "buildProductAestheticFallback",
+        "family": "product_aesthetic",
+        "valid": false,
+        "violations": [
+          "specificity_violation"
+        ]
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo"
+    },
+    {
+      "id": "E9",
+      "message": "não gostei",
+      "before": {
+        "reply": "Acho que perdi o fio — me conta um pouco.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "ambiguous_social"
+      },
+      "after": {
+        "message": "não gostei",
+        "primarySocialIntent": "disapproval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "target": "unknown",
+        "routing": "ambiguous_social",
+        "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+        "builder": "buildWarmDisapprovalReply",
+        "family": "disapproval",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E10",
+      "message": "não gostei",
+      "before": {
+        "reply": "Sem problema — fico por aqui no papo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "não gostei",
+        "primarySocialIntent": "disapproval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "target": "unknown",
+        "routing": "ambiguous_social",
+        "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+        "builder": "buildWarmDisapprovalReply",
+        "family": "disapproval",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E11",
+      "message": "não gostei mano",
+      "before": {
+        "reply": "Claro, pode falar comigo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "não gostei mano",
+        "primarySocialIntent": "disapproval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "target": "unknown",
+        "routing": "ambiguous_social",
+        "reply": "Entendi — pelo gostei, você fala da minha resposta ou da opção?",
+        "builder": "buildWarmDisapprovalReply",
+        "family": "disapproval",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E12",
+      "message": "não gostei 😊",
+      "before": {
+        "reply": "Claro, pode falar comigo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "não gostei 😊",
+        "primarySocialIntent": "disapproval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "target": "unknown",
+        "routing": "ambiguous_social",
+        "reply": "Entendi — pelo gostei, você fala da minha resposta ou da opção?",
+        "builder": "buildWarmDisapprovalReply",
+        "family": "disapproval",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E13",
+      "message": "NÃO GOSTEI",
+      "before": {
+        "reply": "Sem problema — fico por aqui no papo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "NÃO GOSTEI",
+        "primarySocialIntent": "disapproval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "target": "unknown",
+        "routing": "ambiguous_social",
+        "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+        "builder": "buildWarmDisapprovalReply",
+        "family": "disapproval",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    },
+    {
+      "id": "E14",
+      "message": "não gostei",
+      "before": {
+        "reply": "Sem problema — fico por aqui no papo.",
+        "violations": [
+          "specificity_violation"
+        ],
+        "behavior": "stay_social",
+        "family": "conversation"
+      },
+      "after": {
+        "message": "não gostei",
+        "primarySocialIntent": "disapproval",
+        "interactionMode": "social",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "target": "unknown",
+        "routing": "ambiguous_social",
+        "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+        "builder": "buildWarmDisapprovalReply",
+        "family": "disapproval",
+        "valid": true,
+        "violations": []
+      },
+      "rootCause": "disapproval/approval misclassified + stay_social fallback without echo",
+      "fixed": true
+    }
+  ]
+}

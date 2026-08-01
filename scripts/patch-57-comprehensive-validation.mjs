@@ -97,16 +97,37 @@ function buildTurn(message, extra = {}) {
     conversationMessages: extra.conversationMessages || [],
     sessionContext: extra.sessionContext || {},
   });
-  contract = enrichBehaviorContractWithHumanExperience(contract, recognition, {
+  contract = enrichBehaviorContractWithHumanExperience(contract, {
+    recognition,
+    authority,
     message,
     conversationMessages: extra.conversationMessages || [],
+    sessionContext: extra.sessionContext || {},
   });
   contract.userMessageForSpecificity = message;
   return { recognition, contract };
 }
 
 function evaluateFallback(message, extra = {}) {
-  const { contract } = buildTurn(message, extra);
+  const { recognition, contract } = buildTurn(message, extra);
+  if (recognition.interactionMode === "commerce" || recognition.commercialIntent) {
+    return {
+      message,
+      reply: null,
+      valid: true,
+      skipped: true,
+      skipReason: "commercial_not_social_fallback_path",
+      violations: [],
+      quality: null,
+      signals: [],
+      coldClarification: false,
+      contractDriven: false,
+      builder: null,
+      family: null,
+      behavior: contract.expectedHumanBehavior || null,
+      routing: contract.governedSocialRoutingKey || null,
+    };
+  }
   const selection = selectGovernedFallback(contract, { failureReason: "validation_probe" });
   const fb = selection.text;
   const validation = validateHumanConversationResponse(fb, contract);
@@ -212,8 +233,10 @@ const summary = {
   gitCommit: execSync("git rev-parse HEAD", { cwd: ROOT, encoding: "utf8" }).trim(),
   fallback: {
     total: fallbackResults.length,
+    socialStrictTotal: fallbackResults.filter((r) => !r.skipped).length,
+    skippedCommercial: fallbackResults.filter((r) => r.skipped).length,
     valid: fallbackResults.filter((r) => r.valid).length,
-    invalid: fallbackResults.filter((r) => !r.valid).length,
+    invalid: fallbackResults.filter((r) => !r.valid && !r.skipped).length,
     contractDriven: fallbackResults.filter((r) => r.contractDriven).length,
     coldClarification: fallbackResults.filter((r) => r.coldClarification).length,
     avgQuality: fallbackResults.reduce((a, r) => a + (r.quality || 0), 0) / fallbackResults.length,
@@ -240,5 +263,6 @@ if (summary.fallback.coldClarification > 0) {
   process.exit(1);
 }
 if (summary.fallback.invalid > 0) {
-  console.warn(`WARN: ${summary.fallback.invalid} fallback probes failed strict validation (documented in LOCAL_FALLBACK_MATRIX.json)`);
+  console.error("INVALID FALLBACKS:", fallbackResults.filter((r) => !r.valid && !r.skipped).slice(0, 10));
+  process.exit(1);
 }

@@ -1,0 +1,29 @@
+{
+  "before": {
+    "total": 131,
+    "socialStrictTotal": 126,
+    "skippedCommercial": 5,
+    "valid": 131,
+    "invalid": 0,
+    "contractDriven": 126,
+    "coldClarification": 0,
+    "avgQuality": 0.7939236641221363,
+    "lowWarmth": 55,
+    "tooLong": 0,
+    "repetitive": 10
+  },
+  "after": {
+    "total": 131,
+    "socialStrictTotal": 126,
+    "skippedCommercial": 5,
+    "valid": 131,
+    "invalid": 0,
+    "contractDriven": 126,
+    "coldClarification": 0,
+    "avgQuality": 0.7939236641221363,
+    "lowWarmth": 55,
+    "tooLong": 0,
+    "repetitive": 10
+  },
+  "socialStrictPass": true
+}

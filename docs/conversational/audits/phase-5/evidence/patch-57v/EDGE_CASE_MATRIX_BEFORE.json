@@ -1,0 +1,228 @@
+[
+  {
+    "message": "gostei",
+    "reply": "Sem problema — fico por aqui no papo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.644,
+    "signals": [
+      "low_warmth"
+    ],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "não gostei",
+    "reply": "Sem problema — fico por aqui no papo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "nossa que legal",
+    "reply": "Claro, pode falar comigo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "Quero um celular até 2000",
+    "reply": "Entendi — me ajuda com um pouco mais de contexto.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmSocialClarificationReply",
+    "family": "ambiguous_reference",
+    "behavior": "stay_social",
+    "routing": "commercial"
+  },
+  {
+    "message": "Melhor smartphone custo benefício",
+    "reply": "Não captei direito — pode explicar.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmSocialClarificationReply",
+    "family": "ambiguous_reference",
+    "behavior": "stay_social",
+    "routing": "commercial"
+  },
+  {
+    "message": "Comparar iPhone e Samsung",
+    "reply": "Acho que perdi o fio — me conta um pouco.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmSocialClarificationReply",
+    "family": "ambiguous_reference",
+    "behavior": "stay_social",
+    "routing": "commercial"
+  },
+  {
+    "message": "Orçamento 1500 reais",
+    "reply": "Claro, pode falar comigo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "Produto mais vendido",
+    "reply": "Claro, pode falar comigo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "não gostei",
+    "reply": "Acho que perdi o fio — me conta um pouco.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmSocialClarificationReply",
+    "family": "ambiguous_social",
+    "behavior": "stay_social",
+    "routing": "ambiguous_social"
+  },
+  {
+    "message": "não gostei",
+    "reply": "Sem problema — fico por aqui no papo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "não gostei mano",
+    "reply": "Claro, pode falar comigo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "não gostei 😊",
+    "reply": "Claro, pode falar comigo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "NÃO GOSTEI",
+    "reply": "Sem problema — fico por aqui no papo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  },
+  {
+    "message": "não gostei",
+    "reply": "Sem problema — fico por aqui no papo.",
+    "valid": false,
+    "violations": [
+      "specificity_violation"
+    ],
+    "quality": 0.704,
+    "signals": [],
+    "coldClarification": false,
+    "contractDriven": true,
+    "builder": "buildWarmStaySocialReply",
+    "family": "conversation",
+    "behavior": "stay_social",
+    "routing": "conversation_social"
+  }
+]
