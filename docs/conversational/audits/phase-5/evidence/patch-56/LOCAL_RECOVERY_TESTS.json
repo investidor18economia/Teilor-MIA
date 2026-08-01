@@ -1,0 +1,5 @@
+{
+  "stdout": "lidateEgressInvariants passes after recovery\n  ✓ 10. reuse prior valid when current invalid\n  ✓ 11. deterministic validator chain\n  ✓ 12. recovery reason codes present when applied\n  ✓ 13. Show never empty through egress pipeline\n  ✓ 14. ambiguous Linda recovered non-empty\n  ✓ 15. no recovery when already valid\n  ✓ 16. commercial recovery structural only preserves non-empty\n\n──────────────────────────────────────────────────\nResultado: 16 passed, 0 failed\nPATCH 5.5 universal recovery tests: OK\n\n",
+  "pass": "unknown",
+  "ok": false
+}

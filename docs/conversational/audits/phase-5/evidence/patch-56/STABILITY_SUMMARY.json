@@ -1,0 +1,10 @@
+{
+  "scenarios": 12,
+  "acceptableScenarios": 11,
+  "totalRegressions": 0,
+  "lindaVariability": 0.05,
+  "lindaUniqueFingerprints": [
+    "other_social"
+  ],
+  "lindaAcceptable": true
+}

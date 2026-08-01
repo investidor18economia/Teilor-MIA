@@ -1,0 +1,40 @@
+{
+  "version": "5.6.0",
+  "scenario": {
+    "turn1_user": "oi",
+    "turn1_mia": "Opa!",
+    "turn2_user": "seca",
+    "turn2_mia": "Me diz rapidinho a que você se refere."
+  },
+  "productionProbe": {
+    "status": 200,
+    "reply": "Me diz rapidinho a que você se refere.",
+    "response_path": "needs_clarification",
+    "capturedAt": "2026-08-01T03:11:11.474Z",
+    "priorTurns": [
+      {
+        "role": "user",
+        "content": "oi"
+      },
+      {
+        "role": "assistant",
+        "content": "Opa!"
+      }
+    ],
+    "userMessage": "seca"
+  },
+  "classification": {
+    "architecture": "valid — governed_social_intent_flow / ambiguous social clarification",
+    "intent": "ambiguous_social_followup",
+    "target": "unknown_or_unresolved_reference",
+    "clarification": "applied — pede desambiguação de referência",
+    "recovery": "not_required — resposta não vazia, validators estruturais OK",
+    "verbalization": "clarification template — funcional porém fria",
+    "perceivedQuality": "low_warmth + low_continuity — qualidade conversacional, não falha de pipeline"
+  },
+  "technicalValidity": "Resposta correta arquiteturalmente: mensagem ambígua após cumprimento exige clarificação sem inventar target.",
+  "conversationalWeakness": "Tom institucional/clarification seco; pouco calor humano e continuidade com 'Opa!' anterior.",
+  "futureImprovementComponent": "Human Conversation Experience + Social Verbalization Bridge (PATCH futuro pós-5.7) — não Decision Engine, não Recovery, não Egress.",
+  "patch56Action": "observed_only — nenhuma correção implementada",
+  "historicalParity": "Resposta alinhada a pool documentado em PATCH 5.4V: 'Me diz rapidinho a que você se refere.'"
+}

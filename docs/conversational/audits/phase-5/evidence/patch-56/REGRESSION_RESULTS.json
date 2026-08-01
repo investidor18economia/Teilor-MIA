@@ -1,0 +1,27 @@
+{
+  "5.6 observability": {
+    "pass": true,
+    "stdout": "ne\n  ✓ measurePersonalityConsistency\n  ✓ classify exact match as style_only\n  ✓ classify same family as semantically_equivalent\n  ✓ classify commercial shift as regression\n  ✓ evaluateSemanticStability acceptable pool\n  ✓ buildConversationalObservabilityReport shape\n  ✓ conversationalObservabilityToTrace compact\n  ✓ isConversationalObservabilityEnabled respects env\n\nResultado: 14 passed, 0 failed\n"
+  },
+  "5.5 recovery": {
+    "pass": true,
+    "stdout": "deterministic validator chain\n  ✓ 12. recovery reason codes present when applied\n  ✓ 13. Show never empty through egress pipeline\n  ✓ 14. ambiguous Linda recovered non-empty\n  ✓ 15. no recovery when already valid\n  ✓ 16. commercial recovery structural only preserves non-empty\n\n──────────────────────────────────────────────────\nResultado: 16 passed, 0 failed\nPATCH 5.5 universal recovery tests: OK\n\n"
+  },
+  "5.5V.1 egress": {
+    "pass": true,
+    "stdout": "  ✓ prepareUniversalRuntimeEgressDelivery skips double seal\n  ✓ commercial structural recovery preserves non-empty commercial reply\n  ✓ misroute fix: \"Fone de ouvido bom\" → commerce\n  ✓ misroute fix: \"Teclado mecânico\" → commerce\n  ✓ misroute fix: \"Orçamento 3000 reais\" → commerce\n  ✓ misroute fix: \"Produto mais vendido\" → commerce\n  ✓ Linda isolated remains social\n\nResultado: 12 passed, 0 failed\n"
+  },
+  "5.4 precedence": {
+    "pass": true,
+    "stdout": " 23. Show fallback not empty\n  ✓ 24. ambiguous social preserved for real ambiguity\n  ✓ 25. greeting stability 5/5\n  ✓ 26. opa stability 5/5\n  ✓ 27. eae stability 5/5\n  ✓ 28. boa noite stability 5/5\n  ✓ 29. precedence rank assigned\n  ✓ 30. confidence alone does not invalidate greeting\n\n──────────────────────────────────────────────────\nResultado: 31 passed, 0 failed\nPATCH 5.4 precedence tests: OK\n\n"
+  },
+  "5.3 egress": {
+    "pass": false,
+    "error": "Command failed: node scripts/test-mia-patch-53-unified-egress.js\n  ✗ 1. egress version 5.5.0\n    →  expected \"5.5.0\" got \"5.5.1\"\n  ✗ 8. unifiedEgressToTrace compact\n    →  expected \"5.5.0\" got \"5.5.1\"\n  - 1. egress version 5.5.0:  expected \"5.5.0\" got \"5.5.1\"\n  - 8. unifiedEgressToTrace compact:  ex",
+    "stdout": "ionalReply detects blank and whitespace\n  ✓ 3. prepareSocialEgressFinalization blocks empty reply\n  ✓ 4. honest metadata requires real finalization\n  ✓ 5. validateEgressInvariants rejects empty egress\n  ✓ 6. commercial empty guard replaces blank reply\n  ✓ 7. wrapSocialFinalizationForEgress preserves valid finalize\n  ✓ 9. ambiguous social empty candidate gets governed fallback\n\n7 passed, 2 failed\n\n"
+  },
+  "5.2 contract": {
+    "pass": true,
+    "stdout": " commercial families\n  ✓ 5. finalizeHumanConversationReply attaches universalContract\n  ✓ 6. buildUniversalContractFromHumanFinalization preserves repair trace\n  ✓ 7. commercial delivery envelope does not require behavior contract input\n  ✓ 8. universalConversationResponseContractToTrace is compact\n  ✓ 9. envelope references behavior contract without duplicating full contract\n\n9 passed, 0 failed\n\n"
+  }
+}

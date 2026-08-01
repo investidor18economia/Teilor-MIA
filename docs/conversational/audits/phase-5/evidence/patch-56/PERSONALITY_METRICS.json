@@ -1,0 +1,3572 @@
+[
+  {
+    "id": "S001",
+    "category": "greeting",
+    "msg": "Oi",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S002",
+    "category": "greeting",
+    "msg": "Opa",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S003",
+    "category": "greeting",
+    "msg": "eae",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S004",
+    "category": "greeting",
+    "msg": "E aí",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S005",
+    "category": "greeting",
+    "msg": "Bom dia",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S006",
+    "category": "greeting",
+    "msg": "Boa tarde",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S007",
+    "category": "greeting",
+    "msg": "Boa noite",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S008",
+    "category": "greeting",
+    "msg": "Oi, MIA",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S009",
+    "category": "greeting",
+    "msg": "fala mia",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S010",
+    "category": "greeting",
+    "msg": "salve",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S011",
+    "category": "greeting",
+    "msg": "opa mia",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S012",
+    "category": "greeting",
+    "msg": "eae mia blz?",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S013",
+    "category": "greeting",
+    "msg": "OI",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S014",
+    "category": "greeting",
+    "msg": "OPA!!!",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S015",
+    "category": "greeting",
+    "msg": "bom diaa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S016",
+    "category": "greeting",
+    "msg": "boa noite 😊",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S017",
+    "category": "greeting",
+    "msg": "salve mia",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S018",
+    "category": "greeting",
+    "msg": "hey",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S019",
+    "category": "greeting",
+    "msg": "fala aí",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S020",
+    "category": "greeting",
+    "msg": "e aí mia",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S021",
+    "category": "farewell",
+    "msg": "Tchau",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S022",
+    "category": "farewell",
+    "msg": "Até logo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S023",
+    "category": "farewell",
+    "msg": "Até mais",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S024",
+    "category": "farewell",
+    "msg": "Flw",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S025",
+    "category": "farewell",
+    "msg": "Falou",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S026",
+    "category": "farewell",
+    "msg": "Vou nessa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S027",
+    "category": "farewell",
+    "msg": "Até amanhã",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S028",
+    "category": "farewell",
+    "msg": "Xau",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S029",
+    "category": "farewell",
+    "msg": "Tchau MIA",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S030",
+    "category": "farewell",
+    "msg": "Até a próxima",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S031",
+    "category": "farewell",
+    "msg": "Fui",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S032",
+    "category": "farewell",
+    "msg": "Tenho que ir",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S033",
+    "category": "gratitude",
+    "msg": "Obrigado",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S034",
+    "category": "gratitude",
+    "msg": "Obrigada",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S035",
+    "category": "gratitude",
+    "msg": "Valeu",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S036",
+    "category": "gratitude",
+    "msg": "Valeu demais",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S037",
+    "category": "gratitude",
+    "msg": "Muito obrigado",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S038",
+    "category": "gratitude",
+    "msg": "Brigadão",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S039",
+    "category": "gratitude",
+    "msg": "Thanks",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S040",
+    "category": "gratitude",
+    "msg": "Vlw",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S041",
+    "category": "gratitude",
+    "msg": "Agradeço",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S042",
+    "category": "gratitude",
+    "msg": "Gratidão",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S043",
+    "category": "gratitude",
+    "msg": "Valeu MIA",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S044",
+    "category": "gratitude",
+    "msg": "Obrigado pela ajuda",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S045",
+    "category": "approval",
+    "msg": "Show",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S046",
+    "category": "approval",
+    "msg": "Boa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S047",
+    "category": "approval",
+    "msg": "Legal",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S048",
+    "category": "approval",
+    "msg": "Entendi",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S049",
+    "category": "approval",
+    "msg": "Perfeito",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S050",
+    "category": "approval",
+    "msg": "Beleza",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S051",
+    "category": "approval",
+    "msg": "Top",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S052",
+    "category": "approval",
+    "msg": "Massa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S053",
+    "category": "approval",
+    "msg": "Firmeza",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S054",
+    "category": "approval",
+    "msg": "Certo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S055",
+    "category": "approval",
+    "msg": "Ok",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S056",
+    "category": "approval",
+    "msg": "Concordo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S057",
+    "category": "reaction",
+    "msg": "Nossa",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S058",
+    "category": "reaction",
+    "msg": "Caramba",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S059",
+    "category": "reaction",
+    "msg": "Sério?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S060",
+    "category": "reaction",
+    "msg": "Uau",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S061",
+    "category": "reaction",
+    "msg": "Não acredito",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S062",
+    "category": "reaction",
+    "msg": "Que isso",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S063",
+    "category": "reaction",
+    "msg": "Puts",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S064",
+    "category": "reaction",
+    "msg": "Eita",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S065",
+    "category": "compliment",
+    "msg": "Linda",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S066",
+    "category": "compliment",
+    "msg": "Bonito",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S067",
+    "category": "compliment",
+    "msg": "Incrível",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S068",
+    "category": "compliment",
+    "msg": "Sensacional",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S069",
+    "category": "compliment",
+    "msg": "Muito boa",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S070",
+    "category": "compliment",
+    "msg": "Legal",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S071",
+    "category": "compliment",
+    "msg": "Perfeito",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S072",
+    "category": "compliment",
+    "msg": "Interessante",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S073",
+    "category": "compliment",
+    "msg": "Gostei",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S074",
+    "category": "compliment",
+    "msg": "Maravilhoso",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S075",
+    "category": "compliment",
+    "msg": "Você é demais",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S076",
+    "category": "compliment",
+    "msg": "Adorei",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S077",
+    "category": "compliment",
+    "msg": "Excelente",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S078",
+    "category": "compliment",
+    "msg": "Impressionante",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S079",
+    "category": "compliment",
+    "msg": "Fantástico",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S080",
+    "category": "praise",
+    "msg": "Parabéns",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S081",
+    "category": "praise",
+    "msg": "Mandou bem",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S082",
+    "category": "praise",
+    "msg": "Arrasou",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S083",
+    "category": "praise",
+    "msg": "Você manda muito",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S084",
+    "category": "praise",
+    "msg": "Nota 10",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S085",
+    "category": "praise",
+    "msg": "Perfeita resposta",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S086",
+    "category": "praise",
+    "msg": "Muito boa explicação",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S087",
+    "category": "affection",
+    "msg": "Te adoro",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S088",
+    "category": "affection",
+    "msg": "Você é especial",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S089",
+    "category": "affection",
+    "msg": "Gosto de conversar com você",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S090",
+    "category": "affection",
+    "msg": "Você me entende",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S091",
+    "category": "affection",
+    "msg": "Sinto-me bem falando contigo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S092",
+    "category": "flirt",
+    "msg": "Você é linda",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S093",
+    "category": "flirt",
+    "msg": "Gatinha",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S094",
+    "category": "flirt",
+    "msg": "Queria te conhecer pessoalmente",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S095",
+    "category": "flirt",
+    "msg": "Você namora?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S096",
+    "category": "flirt",
+    "msg": "Me acha interessante?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S097",
+    "category": "humor",
+    "msg": "kkkk",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S098",
+    "category": "humor",
+    "msg": "hahaha",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S099",
+    "category": "humor",
+    "msg": "rsrs",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S100",
+    "category": "humor",
+    "msg": "Tô rindo aqui",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S101",
+    "category": "humor",
+    "msg": "Engraçado demais",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S102",
+    "category": "humor",
+    "msg": "Piada boa",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S103",
+    "category": "humor",
+    "msg": "MIA você é engraçada",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S104",
+    "category": "humor",
+    "msg": "kkk boa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S105",
+    "category": "humor",
+    "msg": "haha entendi",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S106",
+    "category": "humor",
+    "msg": "risada",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S107",
+    "category": "irony",
+    "msg": "Claro que sim...",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S108",
+    "category": "irony",
+    "msg": "Ah tá",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S109",
+    "category": "irony",
+    "msg": "Sei...",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S110",
+    "category": "irony",
+    "msg": "Muito convincente",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S111",
+    "category": "irony",
+    "msg": "Genial mesmo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S112",
+    "category": "irony",
+    "msg": "Ótimo plano",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S113",
+    "category": "sarcasm",
+    "msg": "Parabéns, genial",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S114",
+    "category": "sarcasm",
+    "msg": "Nossa, que surpresa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S115",
+    "category": "sarcasm",
+    "msg": "Adorei essa ideia ruim",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S116",
+    "category": "sarcasm",
+    "msg": "Excelente escolha (not)",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S117",
+    "category": "joke",
+    "msg": "Por que o celular foi ao médico?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S118",
+    "category": "joke",
+    "msg": "Conta uma piada",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S119",
+    "category": "joke",
+    "msg": "Me faz rir",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S120",
+    "category": "joke",
+    "msg": "Sabe alguma piada?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S121",
+    "category": "emotional_support",
+    "msg": "Estou triste",
+    "overallPersonality": 0.8533333333333334,
+    "proximity": 0.82,
+    "sympathy": 0.88,
+    "professionalism": 0.86,
+    "consistency": 0.8533333333333334
+  },
+  {
+    "id": "S122",
+    "category": "emotional_support",
+    "msg": "Dia difícil",
+    "overallPersonality": 0.8533333333333334,
+    "proximity": 0.82,
+    "sympathy": 0.88,
+    "professionalism": 0.86,
+    "consistency": 0.8533333333333334
+  },
+  {
+    "id": "S123",
+    "category": "emotional_support",
+    "msg": "Preciso desabafar",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S124",
+    "category": "emotional_support",
+    "msg": "Me sinto sozinho",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S125",
+    "category": "emotional_support",
+    "msg": "Estou ansioso",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S126",
+    "category": "emotional_support",
+    "msg": "Não tô bem",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S127",
+    "category": "emotional_support",
+    "msg": "Preciso conversar",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S128",
+    "category": "emotional_support",
+    "msg": "Estou preocupado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S129",
+    "category": "frustration",
+    "msg": "Isso não funciona",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S130",
+    "category": "frustration",
+    "msg": "Não entendi nada",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S131",
+    "category": "frustration",
+    "msg": "Péssimo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S132",
+    "category": "frustration",
+    "msg": "Que resposta ruim",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S133",
+    "category": "frustration",
+    "msg": "Não ajudou",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S134",
+    "category": "frustration",
+    "msg": "Decepcionante",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S135",
+    "category": "frustration",
+    "msg": "Cansado disso",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S136",
+    "category": "frustration",
+    "msg": "Sem paciência hoje",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S137",
+    "category": "correction",
+    "msg": "Era ironia",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S138",
+    "category": "correction",
+    "msg": "Não era isso",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S139",
+    "category": "correction",
+    "msg": "Você entendeu errado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S140",
+    "category": "correction",
+    "msg": "Quis dizer outra coisa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S141",
+    "category": "correction",
+    "msg": "Corrigindo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S142",
+    "category": "disagreement",
+    "msg": "Discordo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S143",
+    "category": "disagreement",
+    "msg": "Não concordo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S144",
+    "category": "disagreement",
+    "msg": "Acho que não",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S145",
+    "category": "disagreement",
+    "msg": "Errado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S146",
+    "category": "disagreement",
+    "msg": "Não é bem assim",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S147",
+    "category": "confusion",
+    "msg": "Não entendi",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S148",
+    "category": "confusion",
+    "msg": "Como assim?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S149",
+    "category": "confusion",
+    "msg": "Pode explicar?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S150",
+    "category": "confusion",
+    "msg": "Fiquei confuso",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S151",
+    "category": "confusion",
+    "msg": "Não ficou claro",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S152",
+    "category": "confusion",
+    "msg": "Hã?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S153",
+    "category": "confusion",
+    "msg": "Que?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S154",
+    "category": "confusion",
+    "msg": "Repita",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S155",
+    "category": "curiosity",
+    "msg": "Como funciona?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S156",
+    "category": "curiosity",
+    "msg": "Por quê?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S157",
+    "category": "curiosity",
+    "msg": "Me explica",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S158",
+    "category": "curiosity",
+    "msg": "Tenho curiosidade",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S159",
+    "category": "curiosity",
+    "msg": "Como você sabe disso?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S160",
+    "category": "curiosity",
+    "msg": "De onde vem isso?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S161",
+    "category": "curiosity",
+    "msg": "Conta mais",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S162",
+    "category": "curiosity",
+    "msg": "Interessante, e daí?",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S163",
+    "category": "conversation_request",
+    "msg": "Quero conversar",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S164",
+    "category": "conversation_request",
+    "msg": "Bate-papo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S165",
+    "category": "conversation_request",
+    "msg": "Só queria papo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S166",
+    "category": "conversation_request",
+    "msg": "Vamos conversar?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S167",
+    "category": "conversation_request",
+    "msg": "Pode papear comigo?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S168",
+    "category": "small_talk",
+    "msg": "Como vai?",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S169",
+    "category": "small_talk",
+    "msg": "Tudo bem?",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S170",
+    "category": "small_talk",
+    "msg": "Como foi seu dia?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S171",
+    "category": "small_talk",
+    "msg": "Que calor hoje",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S172",
+    "category": "small_talk",
+    "msg": "Choveu aqui",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S173",
+    "category": "small_talk",
+    "msg": "Tô com sono",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S174",
+    "category": "small_talk",
+    "msg": "Acordei cedo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S175",
+    "category": "small_talk",
+    "msg": "Fim de semana chegando",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S176",
+    "category": "small_talk",
+    "msg": "Segunda-feira...",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S177",
+    "category": "small_talk",
+    "msg": "Tô com fome",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S178",
+    "category": "identity",
+    "msg": "Quem é você?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S179",
+    "category": "identity",
+    "msg": "Qual seu nome?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S180",
+    "category": "identity",
+    "msg": "Você é humana?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S181",
+    "category": "identity",
+    "msg": "Você é uma IA?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S182",
+    "category": "identity",
+    "msg": "Quem te criou?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S183",
+    "category": "capability",
+    "msg": "O que você faz?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S184",
+    "category": "capability",
+    "msg": "Como pode me ajudar?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S185",
+    "category": "capability",
+    "msg": "Quais suas funções?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S186",
+    "category": "capability",
+    "msg": "Você recomenda produtos?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S187",
+    "category": "capability",
+    "msg": "Você entende de tecnologia?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S188",
+    "category": "trust",
+    "msg": "Posso confiar em você?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S189",
+    "category": "trust",
+    "msg": "Você é confiável?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S190",
+    "category": "trust",
+    "msg": "É seguro?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S191",
+    "category": "trust",
+    "msg": "Posso acreditar?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S192",
+    "category": "trust",
+    "msg": "Será que é verdade?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S193",
+    "category": "about_mia",
+    "msg": "Fale sobre a MIA",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S194",
+    "category": "about_mia",
+    "msg": "O que é a MIA?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S195",
+    "category": "about_mia",
+    "msg": "Quem é a MIA?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S196",
+    "category": "about_mia",
+    "msg": "História da MIA",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S197",
+    "category": "about_mia",
+    "msg": "Missão da MIA",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S198",
+    "category": "commercial",
+    "msg": "Quero um celular até 2000",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S199",
+    "category": "commercial",
+    "msg": "Compare iPhone 13 com Galaxy A55",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S200",
+    "category": "commercial",
+    "msg": "Notebook até 3500",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S201",
+    "category": "commercial",
+    "msg": "Melhor custo-benefício celular",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S202",
+    "category": "commercial",
+    "msg": "Preciso de um monitor",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S203",
+    "category": "commercial",
+    "msg": "Fone de ouvido bom",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S204",
+    "category": "commercial",
+    "msg": "Tablet para estudar",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S205",
+    "category": "commercial",
+    "msg": "Smartwatch barato",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S206",
+    "category": "commercial",
+    "msg": "Câmera boa até 1500",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S207",
+    "category": "commercial",
+    "msg": "TV 55 polegadas",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S208",
+    "category": "commercial",
+    "msg": "Quero um Galaxy S24",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S209",
+    "category": "commercial",
+    "msg": "iPhone 15 vale a pena?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S210",
+    "category": "commercial",
+    "msg": "MacBook ou Windows?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S211",
+    "category": "commercial",
+    "msg": "SSD 1TB recomendação",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S212",
+    "category": "commercial",
+    "msg": "Mouse gamer",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S213",
+    "category": "commercial",
+    "msg": "Teclado mecânico",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S214",
+    "category": "commercial",
+    "msg": "Headset sem fio",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S215",
+    "category": "commercial",
+    "msg": "Celular com boa câmera",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S216",
+    "category": "commercial",
+    "msg": "Orçamento 3000 reais",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S217",
+    "category": "commercial",
+    "msg": "Produto mais vendido",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S218",
+    "category": "mixed_intent",
+    "msg": "Oi, quero um celular até 2 mil",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S219",
+    "category": "mixed_intent",
+    "msg": "Você é ótima, agora me ajuda com um notebook",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S220",
+    "category": "mixed_intent",
+    "msg": "Quem te criou? E qual celular você recomenda?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S221",
+    "category": "mixed_intent",
+    "msg": "Bom dia, preciso de um fone",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S222",
+    "category": "mixed_intent",
+    "msg": "kkk engraçada, me indica um celular",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S223",
+    "category": "mixed_intent",
+    "msg": "Tchau... brincadeira, quero um notebook",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S224",
+    "category": "mixed_intent",
+    "msg": "Estou triste mas preciso comprar um celular",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S225",
+    "category": "mixed_intent",
+    "msg": "Valeu! Agora compare iPhone e Samsung",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S226",
+    "category": "mixed_intent",
+    "msg": "Você é linda, qual o melhor Galaxy?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S227",
+    "category": "mixed_intent",
+    "msg": "Oi MIA, monitor gamer até 1500",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S228",
+    "category": "mixed_intent",
+    "msg": "Adorei você, me ajuda com orçamento",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S229",
+    "category": "mixed_intent",
+    "msg": "Como vai? Quero tablet",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "FU01",
+    "category": "follow_up",
+    "msg": "E a câmera?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "FU02",
+    "category": "follow_up",
+    "msg": "Tem em outra cor?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "FU03",
+    "category": "follow_up",
+    "msg": "E a bateria?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "FU04",
+    "category": "follow_up",
+    "msg": "Mais barato?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "FU05",
+    "category": "follow_up",
+    "msg": "Pode detalhar?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TC01",
+    "category": "topic_change",
+    "msg": "Mudando de assunto, quero um fone",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TC02",
+    "category": "topic_change",
+    "msg": "Agora fala de notebook",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TC03",
+    "category": "topic_change",
+    "msg": "Esquece, me conta uma piada",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TC04",
+    "category": "topic_change",
+    "msg": "Voltando ao celular, até 1500",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "RS01",
+    "category": "resumption",
+    "msg": "Retomando: celular até 2000",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "RS02",
+    "category": "resumption",
+    "msg": "Continuando a conversa de antes",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S230",
+    "category": "comparison",
+    "msg": "iPhone 13 ou Galaxy A55?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S231",
+    "category": "comparison",
+    "msg": "Qual é melhor?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S232",
+    "category": "comparison",
+    "msg": "Compare os dois",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S233",
+    "category": "comparison",
+    "msg": "Diferença entre eles",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S234",
+    "category": "comparison",
+    "msg": "Vale mais a pena qual?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S235",
+    "category": "comparison",
+    "msg": "Prós e contras",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S236",
+    "category": "comparison",
+    "msg": "Side by side",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S237",
+    "category": "comparison",
+    "msg": "Qual você escolheria?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S238",
+    "category": "rejection",
+    "msg": "Não gostei dessa recomendação",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S239",
+    "category": "rejection",
+    "msg": "Não quero esse",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S240",
+    "category": "rejection",
+    "msg": "Outra opção",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S241",
+    "category": "rejection",
+    "msg": "Muito caro",
+    "overallPersonality": 0.83,
+    "proximity": 0.75,
+    "sympathy": 0.88,
+    "professionalism": 0.86,
+    "consistency": 0.83
+  },
+  {
+    "id": "S242",
+    "category": "rejection",
+    "msg": "Não serve",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S243",
+    "category": "rejection",
+    "msg": "Horrível escolha",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S244",
+    "category": "rejection",
+    "msg": "Passa",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S245",
+    "category": "rejection",
+    "msg": "Próximo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "PC01",
+    "category": "priority_change",
+    "msg": "Prioridade agora é câmera",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "PC02",
+    "category": "priority_change",
+    "msg": "Mudei de ideia, quero bateria",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "BG01",
+    "category": "budget_change",
+    "msg": "Aumentei para 3000",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "BG02",
+    "category": "budget_change",
+    "msg": "Só tenho 1000 agora",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S246",
+    "category": "indecision",
+    "msg": "Não sei qual pegar",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S247",
+    "category": "indecision",
+    "msg": "Estou em dúvida",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S248",
+    "category": "indecision",
+    "msg": "Me ajuda a decidir",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S249",
+    "category": "indecision",
+    "msg": "Indeciso entre os dois",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S250",
+    "category": "indecision",
+    "msg": "Qual escolher?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S251",
+    "category": "indecision",
+    "msg": "Tô perdido",
+    "overallPersonality": 0.83,
+    "proximity": 0.75,
+    "sympathy": 0.88,
+    "professionalism": 0.86,
+    "consistency": 0.83
+  },
+  {
+    "id": "S252",
+    "category": "indecision",
+    "msg": "Muitas opções",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S253",
+    "category": "indecision",
+    "msg": "Não consigo decidir",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S254",
+    "category": "emotion",
+    "msg": "Estou feliz!",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S255",
+    "category": "emotion",
+    "msg": "Que alegria",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S256",
+    "category": "emotion",
+    "msg": "Empolgado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S257",
+    "category": "emotion",
+    "msg": "Animado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S258",
+    "category": "emotion",
+    "msg": "Com medo de errar",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S259",
+    "category": "emotion",
+    "msg": "Nervoso com a compra",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S260",
+    "category": "one_word",
+    "msg": "Oi",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S261",
+    "category": "one_word",
+    "msg": "Show",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S262",
+    "category": "one_word",
+    "msg": "Linda",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S263",
+    "category": "one_word",
+    "msg": "Valeu",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S264",
+    "category": "one_word",
+    "msg": "Não",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S265",
+    "category": "one_word",
+    "msg": "Sim",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S266",
+    "category": "one_word",
+    "msg": "Ok",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S267",
+    "category": "one_word",
+    "msg": "Help",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S268",
+    "category": "one_word",
+    "msg": "Celular",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S269",
+    "category": "one_word",
+    "msg": "Por quê?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S270",
+    "category": "one_word",
+    "msg": "Tchau",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S271",
+    "category": "one_word",
+    "msg": "Galaxy",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S272",
+    "category": "long_message",
+    "msg": "Oi MIA, tudo bem? Então, tô procurando um celular novo porque o meu quebrou semana passada e eu uso muito para fotos, redes sociais e trabalho, então preciso de boa câmera, bateria que dure o dia todo e que caiba no orçamento de até dois mil reais, preferência Android mas aceito sugestões.",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S273",
+    "category": "long_message",
+    "msg": "Boa tarde! Preciso de ajuda urgente para escolher um notebook para faculdade de engenharia, rodo AutoCAD leve, Python, e muitas abas no Chrome, orçamento até 4500, quero algo confiável com boa garantia.",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V274",
+    "category": "greeting",
+    "msg": "OI",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V275",
+    "category": "greeting",
+    "msg": "Oi 😊🔥✨",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V276",
+    "category": "greeting",
+    "msg": "Oi mano",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V277",
+    "category": "greeting",
+    "msg": "Olá",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V278",
+    "category": "greeting",
+    "msg": "OPA",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V279",
+    "category": "greeting",
+    "msg": "Opa 😊🔥✨",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V280",
+    "category": "greeting",
+    "msg": "Opa mano",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V281",
+    "category": "greeting",
+    "msg": "Olá",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V282",
+    "category": "greeting",
+    "msg": "BOA NOITE",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V283",
+    "category": "greeting",
+    "msg": "Boa noite 😊🔥✨",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V284",
+    "category": "greeting",
+    "msg": "Boa noite mano",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V285",
+    "category": "greeting",
+    "msg": "Boa nOláte",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V286",
+    "category": "compliment",
+    "msg": "LINDA",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V287",
+    "category": "compliment",
+    "msg": "Linda 😊🔥✨",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V288",
+    "category": "compliment",
+    "msg": "Linda",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V289",
+    "category": "compliment",
+    "msg": "SHOW",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V290",
+    "category": "compliment",
+    "msg": "Show 😊🔥✨",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V291",
+    "category": "compliment",
+    "msg": "Show",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V292",
+    "category": "compliment",
+    "msg": "INCRÍVEL",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V293",
+    "category": "compliment",
+    "msg": "Incrível 😊🔥✨",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V294",
+    "category": "compliment",
+    "msg": "Incrível",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V295",
+    "category": "commercial",
+    "msg": "qro um cel até 2000",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V296",
+    "category": "commercial",
+    "msg": "Quero um celular até 2000",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V297",
+    "category": "commercial",
+    "msg": "QUERO UM CELULAR ATÉ 2000",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V298",
+    "category": "commercial",
+    "msg": "Compare iPhone 13 com Galaxy A55",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V299",
+    "category": "commercial",
+    "msg": "Compare iPhone 13 com Galaxy A55",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V300",
+    "category": "commercial",
+    "msg": "COMPARE IPHONE 13 COM GALAXY A55",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V301",
+    "category": "gratitude",
+    "msg": "Obrigado 😊🔥✨",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V302",
+    "category": "gratitude",
+    "msg": "Obrigado mano",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V303",
+    "category": "gratitude",
+    "msg": "Obrigado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V304",
+    "category": "gratitude",
+    "msg": "Valeu 😊🔥✨",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "V305",
+    "category": "gratitude",
+    "msg": "Valeu mano",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "V306",
+    "category": "gratitude",
+    "msg": "Valeu",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S307",
+    "category": "vague_request",
+    "msg": "Me ajuda",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S308",
+    "category": "vague_request",
+    "msg": "Preciso de algo",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S309",
+    "category": "vague_request",
+    "msg": "Não sei o que quero",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S310",
+    "category": "vague_request",
+    "msg": "Surpreenda-me",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S311",
+    "category": "vague_request",
+    "msg": "Algo bom",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S312",
+    "category": "vague_request",
+    "msg": "Me indica",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S313",
+    "category": "vague_request",
+    "msg": "O que você sugere?",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S314",
+    "category": "vague_request",
+    "msg": "Qualquer coisa serve",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S315",
+    "category": "vague_request",
+    "msg": "Tô perdido aqui",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S316",
+    "category": "specific_request",
+    "msg": "Quero iPhone 13 128GB azul",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S317",
+    "category": "specific_request",
+    "msg": "Galaxy A55 256GB preto",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S318",
+    "category": "specific_request",
+    "msg": "Notebook Dell Inspiron 15 i5 16GB",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S319",
+    "category": "specific_request",
+    "msg": "Monitor LG 27 144Hz IPS",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S320",
+    "category": "specific_request",
+    "msg": "Fone Sony WH-1000XM5",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S321",
+    "category": "specific_request",
+    "msg": "Tablet Samsung Tab S9 FE",
+    "overallPersonality": 0.8533333333333334,
+    "proximity": 0.82,
+    "sympathy": 0.88,
+    "professionalism": 0.86,
+    "consistency": 0.8533333333333334
+  },
+  {
+    "id": "S322",
+    "category": "emotion_extended",
+    "msg": "Estou muito feliz hoje!",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S323",
+    "category": "emotion_extended",
+    "msg": "Dia horrível",
+    "overallPersonality": 0.8533333333333334,
+    "proximity": 0.82,
+    "sympathy": 0.88,
+    "professionalism": 0.86,
+    "consistency": 0.8533333333333334
+  },
+  {
+    "id": "S324",
+    "category": "emotion_extended",
+    "msg": "Com saudade",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S325",
+    "category": "emotion_extended",
+    "msg": "Ansioso demais",
+    "overallPersonality": 0.83,
+    "proximity": 0.75,
+    "sympathy": 0.88,
+    "professionalism": 0.86,
+    "consistency": 0.83
+  },
+  {
+    "id": "S326",
+    "category": "emotion_extended",
+    "msg": "Empolgado com a compra",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S327",
+    "category": "emotion_extended",
+    "msg": "Medo de gastar errado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S328",
+    "category": "emotion_extended",
+    "msg": "Aliviado agora",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S329",
+    "category": "emotion_extended",
+    "msg": "Frustrado com opções",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S330",
+    "category": "humor_extended",
+    "msg": "kkkkkk",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S331",
+    "category": "humor_extended",
+    "msg": "hahaha boa",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "S332",
+    "category": "humor_extended",
+    "msg": "MIA você é engraçada demais",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S333",
+    "category": "humor_extended",
+    "msg": "Piada ruim kkk",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S334",
+    "category": "humor_extended",
+    "msg": "Tô rindo sozinho",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S335",
+    "category": "humor_extended",
+    "msg": "Isso foi engraçado",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S336",
+    "category": "humor_extended",
+    "msg": "Humor ácido hoje",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "S337",
+    "category": "humor_extended",
+    "msg": "Ironia pura",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TGT01",
+    "category": "mia_target",
+    "msg": "Linda",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TGT02",
+    "category": "mia_target",
+    "msg": "Você é muito inteligente",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  },
+  {
+    "id": "TGT03",
+    "category": "product_target",
+    "msg": "Linda",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TGT04",
+    "category": "product_target",
+    "msg": "Bonito demais",
+    "overallPersonality": 0.7999999999999999,
+    "proximity": 0.82,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7999999999999999
+  },
+  {
+    "id": "TGT05",
+    "category": "previous_answer",
+    "msg": "Muito boa",
+    "overallPersonality": 0.7766666666666667,
+    "proximity": 0.75,
+    "sympathy": 0.72,
+    "professionalism": 0.86,
+    "consistency": 0.7766666666666667
+  }
+]

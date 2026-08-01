@@ -1,0 +1,54 @@
+{
+  "patch": "5.6",
+  "verdict": "APROVADO",
+  "matrix": {
+    "total": 357,
+    "parityApproved": 335
+  },
+  "stability": {
+    "scenarios": 12,
+    "acceptableScenarios": 11,
+    "totalRegressions": 0,
+    "lindaVariability": 0.05,
+    "lindaUniqueFingerprints": [
+      "other_social"
+    ],
+    "lindaAcceptable": true
+  },
+  "quality": {
+    "samples": 357,
+    "avgOverallQuality": 0.7717478991596662,
+    "avgOverallPersonality": 0.7967320261437957,
+    "metrics": {
+      "naturalness": 0.8037815126050404,
+      "humanWarmth": 0.5789915966386564,
+      "clarity": 0.7751820728291285,
+      "coherence": 0.8300840336134444,
+      "contractAdherence": 0.8707002801120438,
+      "targetAdherence": 0.75,
+      "interactionModeAdherence": 0.8999999999999986
+    },
+    "signalCounts": {
+      "low_warmth": 263,
+      "repetitive": 74,
+      "too_long": 54
+    },
+    "lowQualityCount": 54
+  },
+  "regressions": {
+    "5.6 observability": true,
+    "5.5 recovery": true,
+    "5.5V.1 egress": true,
+    "5.4 precedence": true,
+    "5.3 egress": false,
+    "5.2 contract": true
+  },
+    "buildOk": true,
+  "productionBuild": "e02fd7e5467d",
+  "gitCommit": "e02fd7e5467d36d5e7dc4d373482be71e536ee2b",
+  "caseSeca": {
+    "reply": "Me diz rapidinho a que você se refere.",
+    "path": "needs_clarification"
+  },
+  "generatedAt": "2026-08-01T03:12:01.555Z"
+}

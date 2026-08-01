@@ -1,0 +1,27 @@
+{
+  "signals": {
+    "low_warmth": 263,
+    "repetitive": 74,
+    "too_long": 54
+  },
+  "qualitySummary": {
+    "samples": 357,
+    "avgOverallQuality": 0.7717478991596662,
+    "avgOverallPersonality": 0.7967320261437957,
+    "metrics": {
+      "naturalness": 0.8037815126050404,
+      "humanWarmth": 0.5789915966386564,
+      "clarity": 0.7751820728291285,
+      "coherence": 0.8300840336134444,
+      "contractAdherence": 0.8707002801120438,
+      "targetAdherence": 0.75,
+      "interactionModeAdherence": 0.8999999999999986
+    },
+    "signalCounts": {
+      "low_warmth": 263,
+      "repetitive": 74,
+      "too_long": 54
+    },
+    "lowQualityCount": 54
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "validatorCount": 5,
+  "validatorIds": [
+    "structural_integrity",
+    "universal_contract_shape",
+    "experience_contract_alignment",
+    "fallback_policy_compliance",
+    "interaction_mode_alignment"
+  ],
+  "order": [
+    "structural_integrity",
+    "universal_contract_shape",
+    "experience_contract_alignment",
+    "fallback_policy_compliance",
+    "interaction_mode_alignment"
+  ],
+  "duplicateIds": false,
+  "allExecutedInChain": true,
+  "emptyTriggersStructural": true,
+  "validSocialPasses": true,
+  "deadValidatorCheck": "All 5 validators invoked in runUniversalValidatorChain per source audit"
+}

@@ -1,0 +1,38 @@
+{
+  "runId": "1ffb241418af908b",
+  "patch": "5.6",
+  "scriptVersion": "5.6.0",
+  "scriptVersionOperational": "5.6.1",
+  "observabilityVersion": "5.6.0",
+  "commit": "e02fd7e5467d36d5e7dc4d373482be71e536ee2b",
+  "functionalCommit": "e02fd7e",
+  "build": "e02fd7e5467d",
+  "productionURL": "https://economia-ai.vercel.app/api/mia-chat",
+  "startedAt": "2026-08-01T01:01:45.077Z",
+  "finishedAt": "2026-08-01T03:09:52.980Z",
+  "host": "local",
+  "nodeVersion": "v22.21.1",
+  "totalMatrix": 357,
+  "totalStability": 240,
+  "totalMultiturn": 31,
+  "totalTurns": 628,
+  "status": "completed",
+  "exitCode": 0,
+  "pid": 9416,
+  "elapsedMs": 7700283,
+  "checkpoints": [
+    "MATRIX_CHECKPOINT.json",
+    "STABILITY_20X.json",
+    "MULTITURN_AUDIT.json"
+  ],
+  "finalArtifacts": [
+    "AUDIT_SUMMARY.json",
+    "RECOVERY_AUDIT_MATRIX.json",
+    "STABILITY_20X.json",
+    "MULTITURN_AUDIT.json",
+    "QUALITY_METRICS.json",
+    "API_UI_PARITY.json"
+  ],
+  "resumeCount": 0,
+  "interruptionHistory": []
+}

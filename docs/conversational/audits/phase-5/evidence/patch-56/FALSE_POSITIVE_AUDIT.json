@@ -1,0 +1,46 @@
+{
+  "version": "5.6.0",
+  "auditedAt": "2026-08-01T03:11:11.478Z",
+  "findings": [
+    {
+      "signal": "low_warmth",
+      "count": 263,
+      "likelyFalsePositive": true,
+      "reason": "Detector exige marcadores explícitos de calor; respostas breves válidas ('Opa!', 'Show', clarifications) são penalizadas sem violar contrato.",
+      "affectedFamilies": [
+        "greeting",
+        "approval",
+        "compliment",
+        "one_word",
+        "vague_request"
+      ],
+      "recommendation": "Calibrar threshold por responseDepth e interactionMode no PATCH 5.7 — não alterar pipeline."
+    },
+    {
+      "signal": "too_long",
+      "count": 54,
+      "likelyFalsePositive": false,
+      "reason": "Respostas comerciais estruturadas excedem limites BRIEF — sinal válido para verbosidade comercial.",
+      "affectedFamilies": [
+        "commercial",
+        "mixed_intent",
+        "specific_request"
+      ],
+      "recommendation": "Usar depth COMMERCIAL_MIXED para limites comerciais na observabilidade."
+    },
+    {
+      "signal": "repetitive",
+      "count": 74,
+      "likelyFalsePositive": "partial",
+      "reason": "Regex de chunk repetido pode capturar bigramas comuns em português.",
+      "recommendation": "Refinar detector de repetição com janela mínima maior."
+    },
+    {
+      "stabilityScenario": "Estou triste",
+      "classification": "relevant_degradation",
+      "likelyFalsePositive": true,
+      "reason": "Classifier de fingerprint alterna emotional_support/other_social em respostas empáticas diferentes — variabilidade estilística, não regressão semântica.",
+      "regressionCount": 0
+    }
+  ]
+}

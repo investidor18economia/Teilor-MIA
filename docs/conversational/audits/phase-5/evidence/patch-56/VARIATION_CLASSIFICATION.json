@@ -1,0 +1,1838 @@
+{
+  "rows": [
+    {
+      "message": "Oi",
+      "run": 2,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 3,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 4,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 5,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 6,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 7,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 8,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 9,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 10,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 11,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 12,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 13,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 14,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 15,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 16,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 17,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 18,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 19,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Oi",
+      "run": 20,
+      "baseline": "Opa!",
+      "candidate": "Opa!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 2,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 3,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "E aí! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 4,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 5,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 6,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 7,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi!",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Opa",
+      "run": 8,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi!",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Opa",
+      "run": 9,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 10,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 11,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 12,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 13,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 14,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 15,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 16,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 17,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 18,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Opa",
+      "run": 19,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Opa! Boa noite!",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Opa",
+      "run": 20,
+      "baseline": "Oi! Boa noite!",
+      "candidate": "Oi! Boa noite!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 2,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 3,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 4,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 5,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 6,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 7,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 8,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 9,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 10,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 11,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 12,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 13,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 14,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 15,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 16,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 17,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 18,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 19,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Linda",
+      "run": 20,
+      "baseline": "Vou aceitar como elogio gratuito haha 😄",
+      "candidate": "Vou aceitar como elogio gratuito haha 😄",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 2,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 3,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 4,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 5,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 6,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 7,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 8,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 9,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 10,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 11,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 12,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 13,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 14,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 15,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 16,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 17,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 18,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 19,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Show",
+      "run": 20,
+      "baseline": "Show!",
+      "candidate": "Show!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 2,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 3,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 4,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 5,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 6,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 7,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 8,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 9,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 10,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 11,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 12,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 13,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 14,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 15,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 16,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 17,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 18,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 19,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Quero um celular até 2000",
+      "run": 20,
+      "baseline": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "candidate": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 2,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 3,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 4,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 5,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 6,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 7,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 8,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 9,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 10,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 11,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 12,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 13,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 14,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 15,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 16,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 17,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 18,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 19,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Compare iPhone 13 com Galaxy A55",
+      "run": 20,
+      "baseline": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "candidate": "O Galaxy A55 5G faz sentido aqui porque a autonomia costuma ser um ponto forte, com menos idas ao carregador no dia a di",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 2,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 3,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 4,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 5,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 6,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 7,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 8,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Valeu",
+      "run": 9,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Valeu",
+      "run": 10,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Valeu",
+      "run": 11,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Valeu",
+      "run": 12,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 13,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Valeu",
+      "run": 14,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Valeu",
+      "run": 15,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 16,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Valeu",
+      "run": 17,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 18,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 19,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Valeu",
+      "run": 20,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 2,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 3,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 4,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 5,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 6,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Parece que algo não ficou claro. Você poderia me dizer o que exatamente não entendeu? Assim, posso tentar explicar melho",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Não entendi",
+      "run": 7,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 8,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 9,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 10,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 11,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 12,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Desculpe se algo não ficou claro. Pode me dizer o que você não entendeu? Assim, posso ajudar melhor.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Não entendi",
+      "run": 13,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 14,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 15,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 16,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Não entendi",
+      "run": 17,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Parece que algo não ficou claro. Você poderia me dizer qual parte você não entendeu? Assim, posso ajudar a esclarecer!",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Não entendi",
+      "run": 18,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Parece que algo não ficou claro. Você poderia me dizer o que exatamente você não entendeu? Assim, posso ajudar melhor.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Não entendi",
+      "run": 19,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Parece que algo não ficou claro. Você pode me dizer o que exatamente você não entendeu? Assim, posso tentar explicar mel",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Não entendi",
+      "run": 20,
+      "baseline": "Beleza, pego a ironia.",
+      "candidate": "Beleza, pego a ironia.",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 2,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 3,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 4,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 5,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 6,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 7,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 8,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 9,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 10,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 11,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 12,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 13,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 14,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 15,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 16,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 17,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 18,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 19,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Bom dia",
+      "run": 20,
+      "baseline": "Bom dia!",
+      "candidate": "Bom dia!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 2,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 3,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz em poder ajudar.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Obrigado",
+      "run": 4,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 5,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 6,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 7,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 8,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 9,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 10,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz em ouvir isso.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Obrigado",
+      "run": 11,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 12,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 13,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 14,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz em poder ajudar.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Obrigado",
+      "run": 15,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz que tenha gostado.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Obrigado",
+      "run": 16,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz em saber que você está satisfeito.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Obrigado",
+      "run": 17,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 18,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz em poder ajudar.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Obrigado",
+      "run": 19,
+      "baseline": "De nada!",
+      "candidate": "De nada!",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Obrigado",
+      "run": 20,
+      "baseline": "De nada!",
+      "candidate": "De nada! Fico feliz em poder ajudar.",
+      "classification": "style_only",
+      "reason": "same_family_different_wording"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 2,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 3,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 4,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 5,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 6,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 7,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 8,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 9,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 10,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 11,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 12,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 13,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 14,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 15,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 16,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 17,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 18,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 19,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Me ajuda",
+      "run": 20,
+      "baseline": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "candidate": "O Samsung Galaxy S23 FE faz sentido aqui porque o conjunto de processamento sugere desempenho adequado para uso cotidian",
+      "classification": "style_only",
+      "reason": "exact_match"
+    },
+    {
+      "message": "Estou triste",
+      "run": 2,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 3,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim. É normal passar por momentos difíceis.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 4,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 5,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 6,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom poder expressar isso.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 7,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim. É normal passar por momentos difíceis.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 8,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 9,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 10,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 11,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 12,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 13,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 14,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é importante reconhecer isso.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 15,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 16,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim. É normal passar por momentos difíceis.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 17,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 18,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Sinto muito que você esteja se sentindo assim.",
+      "classification": "semantically_equivalent",
+      "reason": "same_semantic_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 19,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    },
+    {
+      "message": "Estou triste",
+      "run": 20,
+      "baseline": "Sinto muito que você esteja se sentindo assim. É normal ter dias difíceis, e é bom reconhecer isso.",
+      "candidate": "Beleza — pode falar à vontade.",
+      "classification": "relevant_degradation",
+      "reason": "low_lexical_overlap_different_family"
+    }
+  ],
+  "summary": {
+    "scenarios": 12,
+    "acceptableScenarios": 11,
+    "totalRegressions": 0,
+    "lindaVariability": 0.05,
+    "lindaUniqueFingerprints": [
+      "other_social"
+    ],
+    "lindaAcceptable": true
+  }
+}

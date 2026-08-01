@@ -5,7 +5,7 @@
  * Run: node scripts/patch-56-production-quality-audit.mjs
  */
 import { createRequire } from "node:module";
-import { writeFileSync, mkdirSync, appendFileSync, readFileSync, existsSync } from "node:fs";
+import { writeFileSync, mkdirSync, appendFileSync, readFileSync, existsSync, renameSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { execSync } from "node:child_process";
@@ -23,6 +23,62 @@ const PROD_UI = "https://economia-ai.vercel.app/app-mia";
 const HEALTH = "https://economia-ai.vercel.app/api/health";
 const SPACING_MS = 4500;
 const LOG = join(OUT, "run.log");
+const SCRIPT_VERSION = "5.6.1";
+const HEARTBEAT_MS = 45000;
+const STABILITY_CHECKPOINT_EVERY = 5;
+
+const RESUME = process.argv.includes("--resume");
+const RUN_ID = `patch56-${Date.now().toString(36)}`;
+
+function atomicWriteJson(path, data) {
+  const tmp = `${path}.tmp`;
+  const json = JSON.stringify(data, null, 2);
+  writeFileSync(tmp, json, "utf8");
+  JSON.parse(readFileSync(tmp, "utf8"));
+  renameSync(tmp, path);
+}
+
+function writeManifest(patch = {}) {
+  atomicWriteJson(join(OUT, "AUDIT_RUN_MANIFEST.json"), {
+    runId: RUN_ID,
+    patch: "5.6",
+    scriptVersion: SCRIPT_VERSION,
+    observabilityVersion: CONVERSATIONAL_OBSERVABILITY_VERSION,
+    resume: RESUME,
+    updatedAt: new Date().toISOString(),
+    ...patch,
+  });
+}
+
+let heartbeatTimer = null;
+let heartbeatState = { phase: "init", progress: null, lastOperation: null, nextOperation: null };
+
+function startHeartbeat() {
+  if (heartbeatTimer) return;
+  heartbeatTimer = setInterval(() => {
+    atomicWriteJson(join(OUT, "AUDIT_HEARTBEAT.json"), {
+      timestamp: new Date().toISOString(),
+      pid: process.pid,
+      runId: RUN_ID,
+      scriptVersion: SCRIPT_VERSION,
+      ...heartbeatState,
+      status: "running",
+    });
+  }, HEARTBEAT_MS);
+}
+
+function stopHeartbeat(finalStatus = "completed") {
+  if (heartbeatTimer) clearInterval(heartbeatTimer);
+  heartbeatTimer = null;
+  atomicWriteJson(join(OUT, "AUDIT_HEARTBEAT.json"), {
+    timestamp: new Date().toISOString(),
+    pid: process.pid,
+    runId: RUN_ID,
+    scriptVersion: SCRIPT_VERSION,
+    ...heartbeatState,
+    status: finalStatus,
+  });
+}
 
 const { runUniversalValidatorChain, RECOVERY_STRATEGIES } = await import(
   pathToFileURL(join(ROOT, "lib/miaUniversalConversationRecovery.js")).href
@@ -569,14 +625,31 @@ function buildScenarioMatrix() {
   return list;
 }
 
-async function runStability(page, msg, times = 20, id = "STAB") {
+async function runStability(page, msg, times = 20, id = "STAB", globalCtx = {}) {
   const runs = [];
+  const msgIndex = globalCtx.msgIndex ?? 0;
+  const totalGlobal = globalCtx.totalRuns ?? times;
+  let globalRun = globalCtx.completedRuns ?? 0;
+
   for (let i = 0; i < times; i++) {
+    globalRun += 1;
+    const t0 = Date.now();
+    log(`[STABILITY ${String(globalRun).padStart(3, "0")}/${totalGlobal}] ${msg} — run ${i + 1}/${times}`);
+    heartbeatState = {
+      phase: "stability",
+      progress: `${globalRun}/${totalGlobal}`,
+      scenario: msg,
+      run: i + 1,
+      lastOperation: `stability ${msg} run ${i + 1}`,
+      nextOperation: i + 1 < times ? `stability ${msg} run ${i + 2}` : "next stability message",
+    };
+
     await openFreshSession(page);
     const api = await probeApi({ msg });
     const ui = await sendUiTurn(page, msg);
     const recovery = analyzeRecovery(api, api.reply, "stability");
     const quality = analyzeQuality(api.reply, api);
+    const parity = evaluateParity(api, ui);
     runs.push({
       run: i + 1,
       api_path: api.response_path,
@@ -585,16 +658,45 @@ async function runStability(page, msg, times = 20, id = "STAB") {
       api_reply_len: api.reply.length,
       ui_fp: semanticFingerprint(ui.displayText),
       api_fp: semanticFingerprint(api.reply),
-      parity: evaluateParity(api, ui).approved,
+      parity: parity.approved,
       ui_empty: ui.display_empty,
       recoveryValid: recovery.validatorChain?.valid,
       underRecovery: recovery.underRecovery,
       overRecovery: recovery.overRecoveryRisk,
       overallQuality: quality.overallQuality,
       qualitySignals: quality.signals,
+      duration_ms: Date.now() - t0,
     });
+
+    if (globalCtx.stabilityStore) {
+      globalCtx.stabilityStore[msg] = {
+        id,
+        msg,
+        times,
+        runs: [...runs],
+        status: i + 1 < times ? "running" : "completed",
+      };
+    }
+
+    if ((i + 1) % STABILITY_CHECKPOINT_EVERY === 0 || i + 1 === times) {
+      atomicWriteJson(join(OUT, "STABILITY_CHECKPOINT.json"), {
+        version: SCRIPT_VERSION,
+        runId: RUN_ID,
+        updatedAt: new Date().toISOString(),
+        message: msg,
+        messageIndex: msgIndex,
+        repetition: i + 1,
+        totalPerMessage: times,
+        globalCompleted: globalRun,
+        globalTotal: totalGlobal,
+        stability: globalCtx.stabilityStore || {},
+        status: "running",
+      });
+    }
+
     await sleep(SPACING_MS);
   }
+
   const stabilityEval = evaluateSemanticStability(
     runs.map((r) => ({ reply: r.api_reply_full || r.api_reply })),
     { interactionMode: MIA_INTERACTION_MODES.SOCIAL }
@@ -607,10 +709,30 @@ async function runMultiturn(page, id, turns, category) {
   const results = [];
   for (let i = 0; i < turns.length; i++) {
     const msg = turns[i];
+    log(`[MULTITURN ${id}] turn ${i + 1}/${turns.length}: ${msg.slice(0, 50)}`);
+    heartbeatState = {
+      phase: "multiturn",
+      progress: `${id} turn ${i + 1}/${turns.length}`,
+      scenario: id,
+      run: i + 1,
+      lastOperation: `multiturn ${id} turn ${i + 1}`,
+      nextOperation: i + 1 < turns.length ? `multiturn ${id} turn ${i + 2}` : "finalize audit",
+    };
     const api = await probeApi({ msg }, turns.slice(0, i).map((c) => ({ role: "user", content: c })));
     const ui = await sendUiTurn(page, msg, { captureShot: i === turns.length - 1, shotId: `${id}_t${i + 1}` });
     const recovery = analyzeRecovery(api, api.reply, category);
     results.push({ turn: i + 1, msg, api, ui, parity: evaluateParity(api, ui), recovery });
+    atomicWriteJson(join(OUT, "MULTITURN_CHECKPOINT.json"), {
+      version: SCRIPT_VERSION,
+      runId: RUN_ID,
+      updatedAt: new Date().toISOString(),
+      session: id,
+      category,
+      completedTurns: i + 1,
+      totalTurns: turns.length,
+      results,
+      status: i + 1 < turns.length ? "running" : "completed",
+    });
     await sleep(1200);
   }
   return { id, category, turns: results };
@@ -753,7 +875,9 @@ function runLocalRecoveryTests() {
 }
 
 // ─── Main ───
-log("PATCH 5.6 production quality & stability audit starting");
+log(`PATCH 5.6 production quality & stability audit starting (script ${SCRIPT_VERSION}, resume=${RESUME})`);
+startHeartbeat();
+writeManifest({ status: "running", startedAt: new Date().toISOString() });
 
 const healthInitial = await (await fetch(HEALTH)).json();
 writeFileSync(
@@ -797,8 +921,31 @@ page.on("console", (msg) => {
 
 const matrix = [];
 const checkpointEvery = 25;
-for (let i = 0; i < SCENARIOS.length; i++) {
+const matrixCheckpointPath = join(OUT, "MATRIX_CHECKPOINT.json");
+let matrixStartIndex = 0;
+
+if (RESUME && existsSync(matrixCheckpointPath)) {
+  try {
+    const cp = JSON.parse(readFileSync(matrixCheckpointPath, "utf8"));
+    if (Array.isArray(cp.matrix) && cp.matrix.length && cp.progress >= cp.matrix.length) {
+      matrix.push(...cp.matrix);
+      matrixStartIndex = cp.matrix.length;
+      log(`Resume: loaded ${matrix.length} matrix results from checkpoint`);
+    }
+  } catch (err) {
+    log(`Resume matrix load failed: ${err.message}`);
+  }
+}
+
+for (let i = matrixStartIndex; i < SCENARIOS.length; i++) {
   const scenarioDef = SCENARIOS[i];
+  heartbeatState = {
+    phase: "matrix",
+    progress: `${i + 1}/${SCENARIOS.length}`,
+    scenario: scenarioDef.id,
+    lastOperation: scenarioDef.id,
+    nextOperation: i + 1 < SCENARIOS.length ? SCENARIOS[i + 1].id : "stability",
+  };
   log(`[${i + 1}/${SCENARIOS.length}] ${scenarioDef.id} ${scenarioDef.category}: ${scenarioDef.msg.slice(0, 50)}`);
   try {
     matrix.push(await runScenario(page, scenarioDef));
@@ -816,6 +963,16 @@ for (let i = 0; i < SCENARIOS.length; i++) {
   await sleep(SPACING_MS);
 }
 
+  if ((i + 1) % checkpointEvery === 0) {
+    atomicWriteJson(matrixCheckpointPath, { progress: i + 1, total: SCENARIOS.length, matrix });
+  }
+  await sleep(SPACING_MS);
+}
+
+if (matrix.length === SCENARIOS.length) {
+  atomicWriteJson(matrixCheckpointPath, { progress: SCENARIOS.length, total: SCENARIOS.length, matrix, status: "completed" });
+}
+
 log("Running stability battery (20x each)...");
 const stabilityTargets = [
   "Oi", "Opa", "Linda", "Show", "Quero um celular até 2000",
@@ -823,8 +980,48 @@ const stabilityTargets = [
   "Bom dia", "Obrigado", "Me ajuda", "Estou triste",
 ];
 const stability = {};
-for (const msg of stabilityTargets) {
-  stability[msg] = await runStability(page, msg, 20, `STAB_${msg.slice(0, 12).replace(/\W/g, "_")}`);
+const stabilityCheckpointPath = join(OUT, "STABILITY_CHECKPOINT.json");
+let stabilityStartMsgIndex = 0;
+let stabilityCompletedRuns = 0;
+
+if (RESUME && existsSync(stabilityCheckpointPath)) {
+  try {
+    const sc = JSON.parse(readFileSync(stabilityCheckpointPath, "utf8"));
+    if (sc.stability && typeof sc.stability === "object") {
+      Object.assign(stability, sc.stability);
+      stabilityStartMsgIndex = (sc.messageIndex ?? 0) + (sc.status === "completed" ? 1 : 0);
+      stabilityCompletedRuns = sc.globalCompleted ?? 0;
+      log(`Resume: stability checkpoint msgIndex=${stabilityStartMsgIndex} completedRuns=${stabilityCompletedRuns}`);
+    }
+  } catch (err) {
+    log(`Resume stability load failed: ${err.message}`);
+  }
+}
+
+const totalStabilityRuns = stabilityTargets.length * 20;
+const stabilityStore = stability;
+
+for (let mi = stabilityStartMsgIndex; mi < stabilityTargets.length; mi++) {
+  const msg = stabilityTargets[mi];
+  if (stability[msg]?.status === "completed" && stability[msg]?.runs?.length === 20) {
+    stabilityCompletedRuns = Math.max(stabilityCompletedRuns, mi * 20 + 20);
+    continue;
+  }
+  const priorRuns = stability[msg]?.runs?.length || 0;
+  const remaining = 20 - priorRuns;
+  if (remaining <= 0) continue;
+
+  const partial = await runStability(page, msg, remaining, `STAB_${msg.slice(0, 12).replace(/\W/g, "_")}`, {
+    msgIndex: mi,
+    totalRuns: totalStabilityRuns,
+    completedRuns: stabilityCompletedRuns,
+    stabilityStore,
+  });
+  stability[msg] = {
+    ...partial,
+    runs: [...(stability[msg]?.runs || []), ...partial.runs.map((r, idx) => ({ ...r, run: priorRuns + idx + 1 }))],
+  };
+  stabilityCompletedRuns += remaining;
 }
 
 log("Running multiturn sessions...");
@@ -889,4 +1086,22 @@ writeFileSync(join(OUT, "MULTITURN_AUDIT.json"), JSON.stringify(multiturn, null,
 writeFileSync(join(OUT, "AUDIT_SUMMARY.json"), JSON.stringify(payload, null, 2));
 
 log(`DONE totalTurns=${totalTurns} parity=${summary.parityApproved}/${summary.totalScenarios} avgQuality=${qualitySummary.avgOverallQuality?.toFixed(3)} lindaStable=${stabilitySummary.lindaAcceptable}`);
+
+writeManifest({
+  status: "completed",
+  finishedAt: new Date().toISOString(),
+  exitCode: 0,
+  totalTurns,
+  gitCommit,
+  build: healthInitial.build,
+  checkpoints: ["MATRIX_CHECKPOINT.json", "STABILITY_CHECKPOINT.json", "MULTITURN_CHECKPOINT.json"],
+  finalArtifacts: [
+    "AUDIT_SUMMARY.json",
+    "RECOVERY_AUDIT_MATRIX.json",
+    "STABILITY_20X.json",
+    "MULTITURN_AUDIT.json",
+    "QUALITY_METRICS.json",
+  ],
+});
+stopHeartbeat("completed");
 console.log(JSON.stringify({ totalTurns, summary, qualitySummary, stabilitySummary, localTests: localTests.pass }, null, 2));
