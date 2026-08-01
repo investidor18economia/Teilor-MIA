@@ -1,0 +1,30 @@
+{
+  "patch": "5.7V",
+  "timestamp": "2026-08-01T13:36:00.000Z",
+  "regressions": {
+    "patch_57_social_verbalization": "6/6",
+    "patch_57v_rejection": "4/4",
+    "patch_54_precedence": "31/31",
+    "patch_56_observability": "14/14",
+    "patch_55_recovery": "16/16",
+    "patch_55v1_egress": "12/12",
+    "patch_52_contract": "9/9"
+  },
+  "fallbackStrict": {
+    "beforeInvalid": 14,
+    "afterInvalid": 0,
+    "socialStrictTotal": 126,
+    "skippedCommercial": 5
+  },
+  "production": {
+    "build": "66b4aa6582d3",
+    "rejectionUnderstood": "3/3",
+    "staySocialOnRejection": 0,
+    "coldClarification": 0,
+    "uiParity": "6/6"
+  },
+  "verdict": {
+    "patch57Closable": true,
+    "patch58Startable": true
+  }
+}

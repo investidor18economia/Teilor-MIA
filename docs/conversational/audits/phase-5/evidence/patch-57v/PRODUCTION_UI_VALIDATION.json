@@ -1,0 +1,82 @@
+{
+  "patch": "5.7V",
+  "timestamp": "2026-08-01T13:36:33.870Z",
+  "scenarios": [
+    {
+      "id": "ui_oi",
+      "status": 200,
+      "reply": "Oi! Tudo bem.",
+      "response_path": "greeting_flow",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": true,
+      "quality": 0.8539999999999999,
+      "understandsRejection": false,
+      "cold": false
+    },
+    {
+      "id": "ui_rejection",
+      "status": 200,
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "response_path": "governed_social_intent_flow",
+      "apiReply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "uiReply": "MIΛ\nCompreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "parity": true,
+      "quality": 0.8240000000000001,
+      "understandsRejection": true,
+      "cold": false
+    },
+    {
+      "id": "ui_rejection_product",
+      "status": 200,
+      "reply": "Entendi — pelo gostei, o que mais te incomodou nele?",
+      "response_path": "governed_social_intent_flow",
+      "apiReply": "Entendi — pelo gostei, o que mais te incomodou nele?",
+      "uiReply": "MIΛ\nEntendi — pelo gostei, o que mais te incomodou nele?",
+      "parity": true,
+      "quality": 0.8539999999999999,
+      "understandsRejection": true,
+      "cold": false
+    },
+    {
+      "id": "ui_show",
+      "status": 200,
+      "reply": "Boa!",
+      "response_path": "governed_social_intent_flow",
+      "apiReply": "Boa!",
+      "uiReply": "MIΛ\nBoa!",
+      "parity": true,
+      "quality": 0.8539999999999999,
+      "understandsRejection": false,
+      "cold": false
+    },
+    {
+      "id": "ui_commercial",
+      "status": 200,
+      "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "response_path": "return_seguro",
+      "apiReply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "uiReply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimento validado da MIA\n\nNenhuma oferta atual encontrada\n⭐\nFavoritar\n🔔\nMonitorar\nA escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "parity": true,
+      "quality": 0.614,
+      "understandsRejection": false,
+      "cold": false
+    },
+    {
+      "id": "ui_seca_mt",
+      "status": 200,
+      "reply": "A palavra \"seca\" pode se referir a várias coisas. Você poderia esclarecer um pouco mais sobre o que está se referindo?",
+      "response_path": "governed_social_intent_flow",
+      "apiReply": "A palavra \"seca\" pode se referir a várias coisas. Você poderia esclarecer um pouco mais sobre o que está se referindo?",
+      "uiReply": "MIΛ\nA palavra \"seca\" pode se referir a várias coisas. Você poderia esclarecer um pouco mais sobre o que está se referindo?",
+      "parity": true,
+      "quality": 0.8539999999999999,
+      "cold": false
+    }
+  ],
+  "metrics": {
+    "parityOk": 6,
+    "cold": 0,
+    "avgQuality": 0.809
+  }
+}

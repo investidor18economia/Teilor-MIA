@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ui_oi",
+    "parity": true,
+    "apiReply": "Oi! Tudo bem.",
+    "uiReply": "MIΛ\nOi! Tudo bem.",
+    "reply": "Oi! Tudo bem."
+  },
+  {
+    "id": "ui_rejection",
+    "parity": true,
+    "apiReply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+    "uiReply": "MIΛ\nCompreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+    "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?"
+  },
+  {
+    "id": "ui_rejection_product",
+    "parity": true,
+    "apiReply": "Entendi — pelo gostei, o que mais te incomodou nele?",
+    "uiReply": "MIΛ\nEntendi — pelo gostei, o que mais te incomodou nele?",
+    "reply": "Entendi — pelo gostei, o que mais te incomodou nele?"
+  },
+  {
+    "id": "ui_show",
+    "parity": true,
+    "apiReply": "Boa!",
+    "uiReply": "MIΛ\nBoa!",
+    "reply": "Boa!"
+  },
+  {
+    "id": "ui_commercial",
+    "parity": true,
+    "apiReply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+    "uiReply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimento validado da MIA\n\nNenhuma oferta atual encontrada\n⭐\nFavoritar\n🔔\nMonitorar\nA escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+    "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?"
+  },
+  {
+    "id": "ui_seca_mt",
+    "parity": true,
+    "apiReply": "A palavra \"seca\" pode se referir a várias coisas. Você poderia esclarecer um pouco mais sobre o que está se referindo?",
+    "uiReply": "MIΛ\nA palavra \"seca\" pode se referir a várias coisas. Você poderia esclarecer um pouco mais sobre o que está se referindo?",
+    "reply": "A palavra \"seca\" pode se referir a várias coisas. Você poderia esclarecer um pouco mais sobre o que está se referindo?"
+  }
+]

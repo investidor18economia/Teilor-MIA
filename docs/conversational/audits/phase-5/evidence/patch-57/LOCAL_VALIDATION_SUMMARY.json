@@ -1,17 +1,19 @@
 {
   "patch": "5.7",
-  "timestamp": "2026-08-01T04:04:52.588Z",
-  "gitCommit": "fbb97c8723a30a2f0d38719821470497675d7ef2",
+  "timestamp": "2026-08-01T13:28:32.163Z",
+  "gitCommit": "a17db42a0545559e7184851e0b2fe9dfaf8da9f5",
   "fallback": {
     "total": 131,
-    "valid": 117,
-    "invalid": 14,
-    "contractDriven": 131,
+    "socialStrictTotal": 126,
+    "skippedCommercial": 5,
+    "valid": 131,
+    "invalid": 0,
+    "contractDriven": 126,
     "coldClarification": 0,
-    "avgQuality": 0.819190839694655,
-    "lowWarmth": 41,
+    "avgQuality": 0.7939236641221363,
+    "lowWarmth": 55,
     "tooLong": 0,
-    "repetitive": 0
+    "repetitive": 10
   },
   "api": null
 }

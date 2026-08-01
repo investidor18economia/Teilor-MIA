@@ -1,14 +1,16 @@
 {
   "summary": {
     "total": 131,
-    "valid": 117,
-    "invalid": 14,
-    "contractDriven": 131,
+    "socialStrictTotal": 126,
+    "skippedCommercial": 5,
+    "valid": 131,
+    "invalid": 0,
+    "contractDriven": 126,
     "coldClarification": 0,
-    "avgQuality": 0.819190839694655,
-    "lowWarmth": 41,
+    "avgQuality": 0.7939236641221363,
+    "lowWarmth": 55,
     "tooLong": 0,
-    "repetitive": 0
+    "repetitive": 10
   },
   "results": [
     {
@@ -157,17 +159,19 @@
     },
     {
       "message": "legal",
-      "reply": "Show!",
+      "reply": "Boa!",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
       "family": "humor",
-      "behavior": "receive_reaction",
-      "routing": "ambiguous_social"
+      "behavior": "acknowledge_approval",
+      "routing": "response_approval"
     },
     {
       "message": "massa",
@@ -217,7 +221,7 @@
     },
     {
       "message": "tá",
-      "reply": "Aí sim.",
+      "reply": "Boa!",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -233,7 +237,7 @@
     },
     {
       "message": "ok",
-      "reply": "Claro, pode falar comigo.",
+      "reply": "Sem problema — fico por aqui no papo.",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -249,7 +253,7 @@
     },
     {
       "message": "certo",
-      "reply": "Sem problema — fico por aqui no papo.",
+      "reply": "Claro, pode falar comigo.",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -339,37 +343,36 @@
     },
     {
       "message": "gostei",
-      "reply": "Sem problema — fico por aqui no papo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
-      ],
-      "quality": 0.644,
+      "reply": "Boa — gostei!",
+      "valid": true,
+      "violations": [],
+      "quality": 0.7939999999999999,
       "signals": [
         "low_warmth"
       ],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmApprovalReply",
+      "family": "praise",
+      "behavior": "acknowledge_approval",
+      "routing": "response_approval"
     },
     {
       "message": "não gostei",
-      "reply": "Sem problema — fico por aqui no papo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "valid": true,
+      "violations": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
       ],
-      "quality": 0.704,
-      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
+      "routing": "ambiguous_social"
     },
     {
       "message": "viajou",
@@ -403,11 +406,13 @@
     },
     {
       "message": "ué",
-      "reply": "Show!",
+      "reply": "Hehe!",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
@@ -489,11 +494,13 @@
     },
     {
       "message": "rs",
-      "reply": "Show!",
+      "reply": "Aí sim.",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
@@ -519,20 +526,6 @@
     },
     {
       "message": "obrigado",
-      "reply": "Imagina.",
-      "valid": true,
-      "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
-      "coldClarification": false,
-      "contractDriven": true,
-      "builder": "buildWarmGratitudeReply",
-      "family": "gratitude",
-      "behavior": "acknowledge_gratitude",
-      "routing": "mia_gratitude"
-    },
-    {
-      "message": "obrigada",
       "reply": "Disponha.",
       "valid": true,
       "violations": [],
@@ -548,8 +541,22 @@
       "routing": "mia_gratitude"
     },
     {
+      "message": "obrigada",
+      "reply": "Imagina.",
+      "valid": true,
+      "violations": [],
+      "quality": 0.8539999999999999,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmGratitudeReply",
+      "family": "gratitude",
+      "behavior": "acknowledge_gratitude",
+      "routing": "mia_gratitude"
+    },
+    {
       "message": "brigado",
-      "reply": "Por nada.",
+      "reply": "Disponha.",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -581,11 +588,13 @@
     },
     {
       "message": "vlw",
-      "reply": "Imagina.",
+      "reply": "Por nada.",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmGratitudeReply",
@@ -764,8 +773,8 @@
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
       "family": "humor",
-      "behavior": "receive_reaction",
-      "routing": "ambiguous_social"
+      "behavior": "acknowledge_approval",
+      "routing": "response_approval"
     },
     {
       "message": "dahora",
@@ -825,19 +834,17 @@
     },
     {
       "message": "nossa que legal",
-      "reply": "Claro, pode falar comigo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
-      ],
-      "quality": 0.704,
+      "reply": "Show — nossa!",
+      "valid": true,
+      "violations": [],
+      "quality": 0.8539999999999999,
       "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmApprovalReply",
+      "family": "praise",
+      "behavior": "acknowledge_approval",
+      "routing": "response_approval"
     },
     {
       "message": "que isso",
@@ -915,7 +922,7 @@
     },
     {
       "message": "ah",
-      "reply": "Boa — peguei.",
+      "reply": "Boa!",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -931,13 +938,11 @@
     },
     {
       "message": "oh",
-      "reply": "Aí sim.",
+      "reply": "Show!",
       "valid": true,
       "violations": [],
-      "quality": 0.7939999999999999,
-      "signals": [
-        "low_warmth"
-      ],
+      "quality": 0.8539999999999999,
+      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
@@ -1087,30 +1092,36 @@
     },
     {
       "message": "sei la",
-      "reply": "Sem problema — fico por aqui no papo.",
+      "reply": "Compreendo — pelo feedback, o incômodo foi na resposta ou na sugestão?",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
+      ],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
       "routing": "conversation_social"
     },
     {
       "message": "sei lá",
-      "reply": "Sem problema — fico por aqui no papo.",
+      "reply": "Compreendo — pelo feedback, o incômodo foi na resposta ou na sugestão?",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
+      ],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
       "routing": "conversation_social"
     },
     {
@@ -1131,13 +1142,11 @@
     },
     {
       "message": "justo",
-      "reply": "Aí sim.",
+      "reply": "Show!",
       "valid": true,
       "violations": [],
-      "quality": 0.7939999999999999,
-      "signals": [
-        "low_warmth"
-      ],
+      "quality": 0.8539999999999999,
+      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
@@ -1147,7 +1156,7 @@
     },
     {
       "message": "verdade",
-      "reply": "Aí sim.",
+      "reply": "Boa!",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -1163,21 +1172,7 @@
     },
     {
       "message": "real",
-      "reply": "Show!",
-      "valid": true,
-      "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
-      "coldClarification": false,
-      "contractDriven": true,
-      "builder": "buildWarmReactionReply",
-      "family": "humor",
-      "behavior": "receive_reaction",
-      "routing": "ambiguous_social"
-    },
-    {
-      "message": "exato",
-      "reply": "Boa — peguei.",
+      "reply": "Aí sim.",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -1192,8 +1187,22 @@
       "routing": "ambiguous_social"
     },
     {
+      "message": "exato",
+      "reply": "Show!",
+      "valid": true,
+      "violations": [],
+      "quality": 0.8539999999999999,
+      "signals": [],
+      "coldClarification": false,
+      "contractDriven": true,
+      "builder": "buildWarmReactionReply",
+      "family": "humor",
+      "behavior": "receive_reaction",
+      "routing": "ambiguous_social"
+    },
+    {
       "message": "continua",
-      "reply": "Sem problema — fico por aqui no papo.",
+      "reply": "Claro, pode falar comigo.",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -1279,87 +1288,87 @@
     },
     {
       "message": "Quero um celular até 2000",
-      "reply": "Entendi — me ajuda com um pouco mais de contexto.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
-      ],
-      "quality": 0.704,
+      "reply": null,
+      "valid": true,
+      "skipped": true,
+      "skipReason": "commercial_not_social_fallback_path",
+      "violations": [],
+      "quality": null,
       "signals": [],
       "coldClarification": false,
-      "contractDriven": true,
-      "builder": "buildWarmSocialClarificationReply",
-      "family": "ambiguous_reference",
+      "contractDriven": false,
+      "builder": null,
+      "family": null,
       "behavior": "stay_social",
       "routing": "commercial"
     },
     {
       "message": "Melhor smartphone custo benefício",
-      "reply": "Não captei direito — pode explicar.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
-      ],
-      "quality": 0.704,
+      "reply": null,
+      "valid": true,
+      "skipped": true,
+      "skipReason": "commercial_not_social_fallback_path",
+      "violations": [],
+      "quality": null,
       "signals": [],
       "coldClarification": false,
-      "contractDriven": true,
-      "builder": "buildWarmSocialClarificationReply",
-      "family": "ambiguous_reference",
+      "contractDriven": false,
+      "builder": null,
+      "family": null,
       "behavior": "stay_social",
       "routing": "commercial"
     },
     {
       "message": "Comparar iPhone e Samsung",
-      "reply": "Acho que perdi o fio — me conta um pouco.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
-      ],
-      "quality": 0.704,
+      "reply": null,
+      "valid": true,
+      "skipped": true,
+      "skipReason": "commercial_not_social_fallback_path",
+      "violations": [],
+      "quality": null,
       "signals": [],
       "coldClarification": false,
-      "contractDriven": true,
-      "builder": "buildWarmSocialClarificationReply",
-      "family": "ambiguous_reference",
+      "contractDriven": false,
+      "builder": null,
+      "family": null,
       "behavior": "stay_social",
       "routing": "commercial"
     },
     {
       "message": "Orçamento 1500 reais",
-      "reply": "Claro, pode falar comigo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
-      ],
-      "quality": 0.704,
+      "reply": null,
+      "valid": true,
+      "skipped": true,
+      "skipReason": "commercial_not_social_fallback_path",
+      "violations": [],
+      "quality": null,
       "signals": [],
       "coldClarification": false,
-      "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
+      "contractDriven": false,
+      "builder": null,
+      "family": null,
       "behavior": "stay_social",
       "routing": "conversation_social"
     },
     {
       "message": "Produto mais vendido",
-      "reply": "Claro, pode falar comigo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
-      ],
-      "quality": 0.704,
+      "reply": null,
+      "valid": true,
+      "skipped": true,
+      "skipReason": "commercial_not_social_fallback_path",
+      "violations": [],
+      "quality": null,
       "signals": [],
       "coldClarification": false,
-      "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
+      "contractDriven": false,
+      "builder": null,
+      "family": null,
       "behavior": "stay_social",
-      "routing": "conversation_social"
+      "routing": "product_aesthetic_opinion"
     },
     {
       "message": "seca",
-      "reply": "Não captei direito — pode explicar.",
+      "reply": "Acho que perdi o fio — é sobre o quê?",
       "valid": true,
       "violations": [],
       "quality": 0.8539999999999999,
@@ -1419,18 +1428,19 @@
     },
     {
       "message": "não gostei",
-      "reply": "Acho que perdi o fio — me conta um pouco.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "valid": true,
+      "violations": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
       ],
-      "quality": 0.704,
-      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmSocialClarificationReply",
-      "family": "ambiguous_social",
-      "behavior": "stay_social",
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
       "routing": "ambiguous_social"
     },
     {
@@ -1451,7 +1461,7 @@
     },
     {
       "message": "puxado mesmo",
-      "reply": "Me ajuda a entender o contexto.",
+      "reply": "Me ajuda a entender — você fala de quê?",
       "valid": true,
       "violations": [],
       "quality": 0.8539999999999999,
@@ -1465,11 +1475,13 @@
     },
     {
       "message": "obrigado",
-      "reply": "Imagina.",
+      "reply": "Disponha.",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmGratitudeReply",
@@ -1493,11 +1505,13 @@
     },
     {
       "message": "rs",
-      "reply": "Show!",
+      "reply": "Aí sim.",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
@@ -1567,19 +1581,20 @@
     },
     {
       "message": "não gostei",
-      "reply": "Sem problema — fico por aqui no papo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "valid": true,
+      "violations": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
       ],
-      "quality": 0.704,
-      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
+      "routing": "ambiguous_social"
     },
     {
       "message": "oi kkk",
@@ -1597,11 +1612,13 @@
     },
     {
       "message": "show kkk",
-      "reply": "Show!",
+      "reply": "Aí sim.",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmReactionReply",
@@ -1611,7 +1628,7 @@
     },
     {
       "message": "valeu kkk",
-      "reply": "Boa — peguei.",
+      "reply": "Aí sim.",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -1627,7 +1644,7 @@
     },
     {
       "message": "seca kkk",
-      "reply": "Aí sim.",
+      "reply": "Hehe!",
       "valid": true,
       "violations": [],
       "quality": 0.7939999999999999,
@@ -1671,12 +1688,12 @@
     },
     {
       "message": "show mano",
-      "reply": "Certo.",
+      "reply": "Show — show!",
       "valid": true,
       "violations": [],
-      "quality": 0.7939999999999999,
+      "quality": 0.8240000000000001,
       "signals": [
-        "low_warmth"
+        "repetitive"
       ],
       "coldClarification": false,
       "contractDriven": true,
@@ -1687,13 +1704,11 @@
     },
     {
       "message": "valeu mano",
-      "reply": "Por nada.",
+      "reply": "Imagina.",
       "valid": true,
       "violations": [],
-      "quality": 0.7939999999999999,
-      "signals": [
-        "low_warmth"
-      ],
+      "quality": 0.8539999999999999,
+      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmGratitudeReply",
@@ -1717,19 +1732,20 @@
     },
     {
       "message": "não gostei mano",
-      "reply": "Claro, pode falar comigo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
+      "reply": "Entendi — pelo gostei, você fala da minha resposta ou da opção?",
+      "valid": true,
+      "violations": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
       ],
-      "quality": 0.704,
-      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
+      "routing": "ambiguous_social"
     },
     {
       "message": "oi 😊",
@@ -1763,11 +1779,13 @@
     },
     {
       "message": "valeu 😊",
-      "reply": "Imagina.",
+      "reply": "Disponha.",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmGratitudeReply",
@@ -1791,19 +1809,20 @@
     },
     {
       "message": "não gostei 😊",
-      "reply": "Claro, pode falar comigo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
+      "reply": "Entendi — pelo gostei, você fala da minha resposta ou da opção?",
+      "valid": true,
+      "violations": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
       ],
-      "quality": 0.704,
-      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
+      "routing": "ambiguous_social"
     },
     {
       "message": "OI",
@@ -1837,11 +1856,13 @@
     },
     {
       "message": "VALEU",
-      "reply": "Imagina.",
+      "reply": "Por nada.",
       "valid": true,
       "violations": [],
-      "quality": 0.8539999999999999,
-      "signals": [],
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
       "coldClarification": false,
       "contractDriven": true,
       "builder": "buildWarmGratitudeReply",
@@ -1865,19 +1886,20 @@
     },
     {
       "message": "NÃO GOSTEI",
-      "reply": "Sem problema — fico por aqui no papo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "valid": true,
+      "violations": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
       ],
-      "quality": 0.704,
-      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
+      "routing": "ambiguous_social"
     },
     {
       "message": "oi",
@@ -1941,19 +1963,20 @@
     },
     {
       "message": "não gostei",
-      "reply": "Sem problema — fico por aqui no papo.",
-      "valid": false,
-      "violations": [
-        "specificity_violation"
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "valid": true,
+      "violations": [],
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
       ],
-      "quality": 0.704,
-      "signals": [],
       "coldClarification": false,
       "contractDriven": true,
-      "builder": "buildWarmStaySocialReply",
-      "family": "conversation",
-      "behavior": "stay_social",
-      "routing": "conversation_social"
+      "builder": "buildWarmDisapprovalReply",
+      "family": "disapproval",
+      "behavior": "acknowledge_disapproval",
+      "routing": "ambiguous_social"
     }
   ]
 }
