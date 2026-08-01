@@ -1,0 +1,10 @@
+{
+  "patch": "5.7V.1",
+  "regressions": {
+    "test_mia_patch_57_social_contract": "6/6 PASS",
+    "test_mia_patch_57v_rejection": "4/4 PASS",
+    "test_mia_patch_57v1_negative_feedback": "13/13 PASS",
+    "patch_57v1_comprehensive": "137/137 isolated, 100/100 stability local"
+  },
+  "no_regressions_detected": true
+}

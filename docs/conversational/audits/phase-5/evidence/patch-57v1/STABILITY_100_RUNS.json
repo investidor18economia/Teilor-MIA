@@ -1,0 +1,706 @@
+{
+  "total": 100,
+  "pass": 100,
+  "results": [
+    {
+      "run": 1,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "você errou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "não gostei dessa recomendação",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "esse produto é ruim",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "ficou muito seco",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "discordo",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "isso não faz sentido",
+      "expectedFamily": "soft_disagreement",
+      "actualFamily": "soft_disagreement",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "viajou",
+      "expectedFamily": "correction",
+      "actualFamily": "correction",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "ficou péssimo",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "message": "não gostei",
+      "expectedFamily": "disapproval",
+      "actualFamily": "disapproval",
+      "pass": true
+    }
+  ]
+}

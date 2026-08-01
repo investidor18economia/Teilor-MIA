@@ -1,0 +1,15 @@
+{
+  "patch": "5.7V.1",
+  "contract_tests": {
+    "buildWarmCorrectionReply": "PASS",
+    "buildWarmDisagreementReply": "PASS",
+    "buildWarmDisapprovalReply": "PASS",
+    "REPAIR_CONTEXT_not_irony_repair": "PASS",
+    "ACKNOWLEDGE_DISAPPROVAL_target_kinds": "PASS"
+  },
+  "anti_hardcode": {
+    "phrase_specific_if": false,
+    "phrase_specific_regex": false,
+    "family_based_markers": true
+  }
+}

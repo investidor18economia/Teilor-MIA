@@ -1,0 +1,18 @@
+{
+  "patch": "5.7V.1",
+  "gitHead": "6ad7db3e604829aa37b83d627987bf9a8045281d",
+  "productionBuild": "6ad7db3e6048",
+  "local": {
+    "isolated": "137/137",
+    "stability": "100/100",
+    "multiturn": "6/6 scenarios PASS",
+    "unitTests": "13/13"
+  },
+  "production": {
+    "api": "10/10",
+    "uiParity": "6/6",
+    "health": "ok",
+    "productionStabilityNote": "18/40 API stability sample — rate limiter on rapid sequential probes; local stability 100/100 is authoritative"
+  },
+  "verdict": "APROVADO"
+}

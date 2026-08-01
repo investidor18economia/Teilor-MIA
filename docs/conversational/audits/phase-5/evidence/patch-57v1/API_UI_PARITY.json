@@ -1,0 +1,40 @@
+{
+  "scenarios": [
+    {
+      "id": "ui_voce_errou",
+      "parity": true,
+      "apiReply": "Parece que houve um mal-entendido. Pode me explicar um pouco mais sobre o que vo",
+      "uiReply": "MIΛ\nParece que houve um mal-entendido. Pode me explicar um pouco mais sobre o qu"
+    },
+    {
+      "id": "ui_ficou_pessimo",
+      "parity": true,
+      "apiReply": "Parece que algo não saiu como você esperava. Quer compartilhar o que aconteceu?",
+      "uiReply": "MIΛ\nParece que algo não saiu como você esperava. Quer compartilhar o que acontec"
+    },
+    {
+      "id": "ui_discordo",
+      "parity": true,
+      "apiReply": "Entendo seu ponto de vista. O que te faz discordar?",
+      "uiReply": "MIΛ\nEntendo seu ponto de vista. O que te faz discordar?"
+    },
+    {
+      "id": "ui_nao_gostei",
+      "parity": true,
+      "apiReply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "uiReply": "MIΛ\nCompreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?"
+    },
+    {
+      "id": "ui_rejection_product",
+      "parity": true,
+      "apiReply": "Entendo, às vezes um celular não atende às expectativas. O que exatamente não te",
+      "uiReply": "MIΛ\nEntendo, às vezes um celular não atende às expectativas. O que exatamente nã"
+    },
+    {
+      "id": "ui_commercial",
+      "parity": true,
+      "apiReply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quan",
+      "uiReply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niP"
+    }
+  ]
+}

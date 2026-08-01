@@ -1,0 +1,16 @@
+{
+  "families": [
+    "correction",
+    "disapproval",
+    "soft_disagreement",
+    "frustration"
+  ],
+  "markers": [
+    "CORRECTION_MARKERS",
+    "RESPONSE_CRITICISM_MARKERS",
+    "DISAGREEMENT_MARKERS",
+    "RECOMMENDATION_REJECTION_MARKERS",
+    "PRODUCT_REJECTION_MARKERS"
+  ],
+  "version": "4.1I.5.7V1"
+}

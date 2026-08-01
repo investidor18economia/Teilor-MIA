@@ -1,0 +1,126 @@
+{
+  "scenarios": [
+    {
+      "label": "correction_voce_errou",
+      "status": 200,
+      "reply": "Parece que algo não ficou claro, né? Se puder me explicar melhor o que você achou que eu errei, vou tentar corrigir.",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8240000000000001,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "criticism_ficou_pessimo",
+      "status": 200,
+      "reply": "Parece que algo não saiu como você esperava. Quer compartilhar mais sobre o que aconteceu?",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8240000000000001,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "disagreement_discordo",
+      "status": 200,
+      "reply": "Entendo seu ponto de vista. O que te levou a discordar?",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8539999999999999,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "rejection_recomendacao",
+      "status": 200,
+      "reply": "Compreendo — pelo gostei, prefere outro perfil ou outra faixa?",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8539999999999999,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "rejection_product",
+      "status": 200,
+      "reply": "Entendi — pelo produto, o que mais te incomodou nele?",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8539999999999999,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "correction_resposta_errada",
+      "status": 200,
+      "reply": "Compreendo — me aponta o ponto exato que não bateu.",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8539999999999999,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "disagreement_nao_faz_sentido",
+      "status": 200,
+      "reply": "Entendo, pode ser confuso mesmo. O que exatamente não está fazendo sentido para você? Vamos ver se conseguimos esclarecer isso juntos.",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8539999999999999,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "rejection_nao_gostei",
+      "status": 200,
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "response_path": "governed_social_intent_flow",
+      "intent": null,
+      "quality": 0.8240000000000001,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    },
+    {
+      "label": "greeting_oi",
+      "status": 200,
+      "reply": "Oi! Tudo bem.",
+      "response_path": "greeting_flow",
+      "intent": null,
+      "quality": 0.8539999999999999,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": false,
+      "emotionalOnly": false
+    },
+    {
+      "label": "commercial",
+      "status": 200,
+      "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "response_path": "return_seguro",
+      "intent": null,
+      "quality": 0.614,
+      "coldClarification": false,
+      "ironyRepair": false,
+      "understandsNegative": true,
+      "emotionalOnly": false
+    }
+  ],
+  "pass": "10/10",
+  "gitHead": "6ad7db3e604829aa37b83d627987bf9a8045281d"
+}

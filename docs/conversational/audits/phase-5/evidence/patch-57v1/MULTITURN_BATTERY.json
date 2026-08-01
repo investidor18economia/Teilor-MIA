@@ -1,0 +1,140 @@
+[
+  {
+    "id": "MT-A-correction",
+    "turns": [
+      {
+        "user": "Quanto custa o Galaxy A55?",
+        "expectedFamily": null,
+        "actualFamily": null,
+        "mode": "commerce",
+        "builder": "buildWarmSocialClarificationReply",
+        "reply": "Não captei direito — pode explicar.",
+        "pass": true
+      },
+      {
+        "user": "A bateria que você citou está errada",
+        "expectedFamily": "correction",
+        "actualFamily": "correction",
+        "mode": "social",
+        "builder": "buildWarmCorrectionReply",
+        "reply": "Entendi — qual parte ficou errada para eu revisar direito?",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "MT-B-criticism",
+    "turns": [
+      {
+        "user": "oi",
+        "expectedFamily": "greeting",
+        "actualFamily": "greeting",
+        "mode": "social",
+        "builder": "buildMirrorGreetingReply",
+        "reply": "Oi! Tudo bem.",
+        "pass": true
+      },
+      {
+        "user": "ficou muito seco",
+        "expectedFamily": "disapproval",
+        "actualFamily": "disapproval",
+        "mode": "social",
+        "builder": "buildWarmDisapprovalReply",
+        "reply": "Entendi — pelo ficou, ficou fria, longa ou pouco direta?",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "MT-C-rejection-rec",
+    "turns": [
+      {
+        "user": "me recomenda um celular",
+        "expectedFamily": null,
+        "actualFamily": null,
+        "mode": "commerce",
+        "builder": "buildWarmSocialClarificationReply",
+        "reply": "Acho que perdi o fio — me conta um pouco.",
+        "pass": true
+      },
+      {
+        "user": "não gostei dessa recomendação",
+        "expectedFamily": "disapproval",
+        "actualFamily": "disapproval",
+        "mode": "social",
+        "builder": "buildWarmDisapprovalReply",
+        "reply": "Compreendo — pelo gostei, prefere outro perfil ou outra faixa?",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "MT-D-rejection-product",
+    "turns": [
+      {
+        "user": "o Galaxy A55 é bom?",
+        "expectedFamily": null,
+        "actualFamily": null,
+        "mode": "commerce",
+        "builder": "buildWarmSocialClarificationReply",
+        "reply": "Acho que perdi o fio — me conta um pouco.",
+        "pass": true
+      },
+      {
+        "user": "esse celular é ruim",
+        "expectedFamily": "disapproval",
+        "actualFamily": "disapproval",
+        "mode": "social",
+        "builder": "buildWarmDisapprovalReply",
+        "reply": "Compreendo — pelo celular, foi preço, câmera, bateria ou outra coisa?",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "MT-E-disagreement",
+    "turns": [
+      {
+        "user": "qual é melhor A55 ou M34?",
+        "expectedFamily": null,
+        "actualFamily": null,
+        "mode": "commerce",
+        "builder": "buildWarmSocialClarificationReply",
+        "reply": "Acho que perdi o fio — me conta um pouco.",
+        "pass": true
+      },
+      {
+        "user": "discordo",
+        "expectedFamily": "soft_disagreement",
+        "actualFamily": "soft_disagreement",
+        "mode": "social",
+        "builder": "buildWarmDisagreementReply",
+        "reply": "Entendi — qual parte do raciocínio não te convenceu?",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "id": "MT-H-target-ambiguity",
+    "turns": [
+      {
+        "user": "oi",
+        "expectedFamily": "greeting",
+        "actualFamily": "greeting",
+        "mode": "social",
+        "builder": "buildMirrorGreetingReply",
+        "reply": "Oi! Tudo bem.",
+        "pass": true
+      },
+      {
+        "user": "ficou péssimo",
+        "expectedFamily": "disapproval",
+        "actualFamily": "disapproval",
+        "mode": "social",
+        "builder": "buildWarmDisapprovalReply",
+        "reply": "Entendi — pelo ficou, ficou fria, longa ou pouco direta?",
+        "pass": true
+      }
+    ]
+  }
+]

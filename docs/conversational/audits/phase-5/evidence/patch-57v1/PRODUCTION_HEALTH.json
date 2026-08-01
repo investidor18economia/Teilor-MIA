@@ -1,0 +1,10 @@
+{
+  "health": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-08-01T14:02:54.310Z",
+    "build": "6ad7db3e6048"
+  },
+  "gitHead": "6ad7db3e604829aa37b83d627987bf9a8045281d",
+  "timestamp": "2026-08-01T14:02:54.770Z"
+}

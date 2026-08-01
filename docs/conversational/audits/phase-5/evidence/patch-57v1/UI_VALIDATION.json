@@ -1,0 +1,82 @@
+{
+  "scenarios": [
+    {
+      "id": "ui_voce_errou",
+      "status": 200,
+      "reply": "Parece que houve um mal-entendido. Pode me explicar um pouco mais sobre o que você percebeu como erro? Assim, consigo entender melhor.",
+      "apiReply": "Parece que houve um mal-entendido. Pode me explicar um pouco mais sobre o que você percebeu como erro? Assim, consigo entender melhor.",
+      "uiReply": "MIΛ\nParece que houve um mal-entendido. Pode me explicar um pouco mais sobre o que você percebeu como erro? Assim, consigo entender melhor.",
+      "response_path": "governed_social_intent_flow",
+      "parity": true,
+      "quality": 0.8240000000000001,
+      "cold": false,
+      "irony": false
+    },
+    {
+      "id": "ui_ficou_pessimo",
+      "status": 200,
+      "reply": "Parece que algo não saiu como você esperava. Quer compartilhar o que aconteceu?",
+      "apiReply": "Parece que algo não saiu como você esperava. Quer compartilhar o que aconteceu?",
+      "uiReply": "MIΛ\nParece que algo não saiu como você esperava. Quer compartilhar o que aconteceu?",
+      "response_path": "governed_social_intent_flow",
+      "parity": true,
+      "quality": 0.8240000000000001,
+      "cold": false,
+      "irony": false
+    },
+    {
+      "id": "ui_discordo",
+      "status": 200,
+      "reply": "Entendo seu ponto de vista. O que te faz discordar?",
+      "apiReply": "Entendo seu ponto de vista. O que te faz discordar?",
+      "uiReply": "MIΛ\nEntendo seu ponto de vista. O que te faz discordar?",
+      "response_path": "governed_social_intent_flow",
+      "parity": true,
+      "quality": 0.8539999999999999,
+      "cold": false,
+      "irony": false
+    },
+    {
+      "id": "ui_nao_gostei",
+      "status": 200,
+      "reply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "apiReply": "Compreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "uiReply": "MIΛ\nCompreendo — pelo gostei, o incômodo foi na resposta ou na sugestão?",
+      "response_path": "governed_social_intent_flow",
+      "parity": true,
+      "quality": 0.8240000000000001,
+      "cold": false,
+      "irony": false
+    },
+    {
+      "id": "ui_rejection_product",
+      "status": 200,
+      "reply": "Entendo, às vezes um celular não atende às expectativas. O que exatamente não te agradou nele?",
+      "apiReply": "Entendo, às vezes um celular não atende às expectativas. O que exatamente não te agradou nele?",
+      "uiReply": "MIΛ\nEntendo, às vezes um celular não atende às expectativas. O que exatamente não te agradou nele?",
+      "response_path": "governed_social_intent_flow",
+      "parity": true,
+      "quality": 0.8240000000000001,
+      "cold": false,
+      "irony": false
+    },
+    {
+      "id": "ui_commercial",
+      "status": 200,
+      "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "apiReply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "uiReply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConhecimento validado da MIA\n\nNenhuma oferta atual encontrada\n⭐\nFavoritar\n🔔\nMonitorar\nA escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "response_path": "return_seguro",
+      "parity": true,
+      "quality": 0.614,
+      "cold": false,
+      "irony": false
+    }
+  ],
+  "metrics": {
+    "parityOk": 6,
+    "total": 6,
+    "cold": 0,
+    "irony": 0
+  }
+}

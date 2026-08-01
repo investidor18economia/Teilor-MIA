@@ -1,0 +1,12 @@
+{
+  "version": "5.7V.1",
+  "targets": {
+    "correction_with_assistant_reply": "previous_answer",
+    "correction_voce_errou_no_context": "mia",
+    "response_criticism": "previous_answer",
+    "recommendation_rejection": "previous_answer",
+    "product_rejection": "product",
+    "soft_disagreement_with_context": "previous_answer",
+    "disapproval_unknown": "unknown_with_target_aware_clarification"
+  }
+}

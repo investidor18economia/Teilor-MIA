@@ -1,0 +1,670 @@
+{
+  "voce_errou": {
+    "problem": "Missing factual error markers; short_incomplete clarification override",
+    "fix": "Extended CORRECTION_MARKERS + negative feedback intent override in intent layer",
+    "after": {
+      "recognition": {
+        "primaryIntent": "correction",
+        "primarySocialIntent": "correction",
+        "secondaryIntent": "context_repair",
+        "secondarySocialIntent": "context_repair",
+        "interactionMode": "social",
+        "humanObjective": "create_connection",
+        "conversationObjective": "repair_understanding",
+        "conversationDirection": "repair",
+        "expectedHumanBehavior": "repair_context",
+        "emotionalState": "neutral",
+        "commercialRelevance": 0,
+        "socialRelevance": 1,
+        "emotionalRelevance": 0,
+        "continuityRelevance": 0.65,
+        "ambiguity": 0.28,
+        "confidence": 0.91,
+        "socialIntentConfidence": 0.91,
+        "requiresClarification": false,
+        "commercialIntent": false,
+        "preserveCommerceContext": true,
+        "domainReentry": "preserve_when_user_returns",
+        "legacyIntentOverride": "correction",
+        "socialFamilies": {
+          "greeting": false,
+          "acknowledgement": false,
+          "socialValidation": false,
+          "aboutMia": false,
+          "comprehension": false,
+          "comprehensionSuccess": false,
+          "softDisagreement": false,
+          "compliment": false,
+          "farewell": false,
+          "reaction": false,
+          "passiveBrowsing": false,
+          "desireToChat": false,
+          "postPurchaseAck": false,
+          "socialIntentPrimary": "correction",
+          "socialIntentSecondary": "context_repair"
+        },
+        "socialClassification": {
+          "taxonomyVersion": "4.1I.5.7V1",
+          "primarySocialIntent": "correction",
+          "secondarySocialIntent": "context_repair",
+          "emotionalState": "neutral",
+          "conversationObjective": "repair_understanding",
+          "conversationDirection": "repair",
+          "expectedHumanBehavior": "repair_context",
+          "confidence": 0.91,
+          "reasonCodes": [
+            "correction_signal",
+            "factual_error",
+            "context_repair_from_correction"
+          ],
+          "signals": [
+            "correction",
+            "repair"
+          ],
+          "legacyPrimaryIntent": "correction",
+          "matches": [
+            {
+              "family": "correction",
+              "confidence": 0.91,
+              "score": 0.7826,
+              "reasonCodes": [
+                "correction_signal",
+                "factual_error"
+              ],
+              "signals": [
+                "correction"
+              ]
+            },
+            {
+              "family": "context_repair",
+              "confidence": 0.88,
+              "score": 0.7744,
+              "reasonCodes": [
+                "context_repair_from_correction"
+              ],
+              "signals": [
+                "repair"
+              ]
+            },
+            {
+              "family": "conversation_recovery",
+              "confidence": 0.86,
+              "score": 0.7482,
+              "reasonCodes": [
+                "conversation_recovery"
+              ],
+              "signals": [
+                "recovery"
+              ]
+            }
+          ],
+          "complimentToMia": false,
+          "suppressProductAestheticFrame": false,
+          "isSocialDominant": true,
+          "isRepairIntent": true,
+          "isMetaIntent": false,
+          "isPlayfulIntent": false,
+          "isHostileIntent": false,
+          "isDisapprovalIntent": false,
+          "isCorrectionIntent": true,
+          "isCriticismIntent": false,
+          "isDisagreementIntent": false,
+          "isNegativeFeedbackIntent": true
+        },
+        "socialIntentSignals": [
+          "correction",
+          "repair"
+        ],
+        "socialIntentReasonCodes": [
+          "correction_signal",
+          "factual_error",
+          "context_repair_from_correction"
+        ],
+        "reasons": [
+          "negative_feedback_preserves_social_mode",
+          "correction_signal",
+          "factual_error",
+          "context_repair_from_correction"
+        ],
+        "resolvedQuery": "você errou",
+        "rawMessage": "você errou",
+        "contextualFollowUp": {
+          "version": "11C",
+          "detected": false,
+          "followUpType": "none",
+          "contextualCommercialAuthorized": false,
+          "requiresClarification": false,
+          "reasonCode": "no_follow_up_signal"
+        },
+        "mixedIntentComposition": {
+          "socialPresent": false,
+          "commercialPresent": false,
+          "opinionPresent": false,
+          "evaluationPresent": false,
+          "historicalPresent": false,
+          "personalUsePresent": false,
+          "explicitDenial": false,
+          "isMixed": false,
+          "isOpinionEvaluationMixed": false,
+          "isAnxietyCommercialMixed": false,
+          "isRelatoCommercialMixed": false
+        }
+      },
+      "contract": {
+        "interactionMode": "social",
+        "humanObjective": "create_connection",
+        "commercialObjective": null,
+        "commercialSearchQuery": null,
+        "conversationObjective": "repair_understanding",
+        "conversationDirection": "repair",
+        "expectedHumanBehavior": "repair_context",
+        "emotionalState": "neutral",
+        "primaryIntent": "correction",
+        "primarySocialIntent": "correction",
+        "secondarySocialIntent": "context_repair",
+        "socialIntentConfidence": 0.91,
+        "socialIntentSignals": [
+          "correction",
+          "repair"
+        ],
+        "socialIntentReasonCodes": [
+          "correction_signal",
+          "factual_error",
+          "context_repair_from_correction"
+        ],
+        "commercialIntent": false,
+        "preserveCommerceContext": true,
+        "domainReentry": "preserve_when_user_returns",
+        "requiresClarification": false,
+        "socialFamilies": {
+          "greeting": false,
+          "acknowledgement": false,
+          "socialValidation": false,
+          "aboutMia": false,
+          "comprehension": false,
+          "comprehensionSuccess": false,
+          "softDisagreement": false,
+          "compliment": false,
+          "farewell": false,
+          "reaction": false,
+          "passiveBrowsing": false,
+          "desireToChat": false,
+          "postPurchaseAck": false,
+          "socialIntentPrimary": "correction",
+          "socialIntentSecondary": "context_repair"
+        },
+        "emotionalRelevance": 0,
+        "responseBehavior": {
+          "acknowledge": true,
+          "answerDirectly": true,
+          "askFollowUp": false,
+          "redirectToCommerce": false,
+          "preservePersonality": true,
+          "proportionalLength": true,
+          "tone": "warm_concise",
+          "forbidden": [
+            "force_product_recommendation",
+            "list_platform_capabilities",
+            "institutional_pitch",
+            "claim_human_experiences",
+            "forced_commerce_redirect",
+            "artificial_engagement_question",
+            "end_with_shopping_offer",
+            "emotional_consumption_suggestion",
+            "shopping_therapy",
+            "explicit_identity_recitation"
+          ],
+          "humanFirst": false
+        },
+        "experienceVersion": "5.7.0",
+        "resolvedQuery": "você errou",
+        "responseDepth": "brief",
+        "followUpPolicy": "natural",
+        "commerceReentryPolicy": "contextual_only",
+        "antiConsumption": true,
+        "identityVisibility": "implicit",
+        "emotionalIntensity": "none",
+        "messageLength": 2,
+        "proportionalityProfile": "natural_proportional",
+        "conversationContinuation": "open_if_natural",
+        "semanticAuthorityVersion": "5.4.0",
+        "semanticPrecedenceVersion": "5.4.0",
+        "semanticPrecedence": {
+          "version": "5.4.0",
+          "winningFamily": "correction",
+          "winningTarget": "previous_answer",
+          "winningRoutingKey": "conversation_social",
+          "secondaryIntent": null,
+          "mixedIntent": false,
+          "precedenceRank": 3,
+          "confidence": 0.9,
+          "evidenceUsed": [
+            "primary_social_intent",
+            "target_not_required_family"
+          ],
+          "blockedCandidates": [
+            {
+              "candidate": "ambiguous_social",
+              "reason": "specific_social_family_precedes_ambiguous"
+            }
+          ],
+          "reasonCodes": [
+            "specific_social_family_precedes_ambiguous"
+          ],
+          "clarificationRequired": false,
+          "ambiguousAllowed": false,
+          "commercialPermission": null
+        },
+        "resolvedSemanticTarget": "previous_answer",
+        "semanticTargetConfidence": 0.9,
+        "semanticTargetReasonCodes": [
+          "negative_feedback_correction_previous_answer"
+        ],
+        "productReference": null,
+        "governedSocialRoutingKey": "conversation_social",
+        "legacyPrimaryIntentAdapter": "social_conversation",
+        "commercialFallbackBlocked": true,
+        "entityOpinionFallbackAllowed": false,
+        "ambiguousSocialContract": false,
+        "skipMustReferenceUserContent": false,
+        "semanticTargetResolution": {
+          "target": "previous_answer",
+          "confidence": 0.9,
+          "reasonCodes": [
+            "negative_feedback_correction_previous_answer"
+          ],
+          "productContext": {
+            "hasConversationProductDiscussion": true,
+            "hasSessionProductAnchor": false,
+            "hasRecentProductDiscussion": true,
+            "hasCommercialContext": true,
+            "lastProductMention": "galaxy",
+            "hasRecentMiaGreeting": false,
+            "hasRecentAssistantReply": true,
+            "hasProduct": true
+          }
+        },
+        "conversationMessagesForTarget": [
+          {
+            "role": "assistant",
+            "content": "Recomendo o Galaxy A55 pela bateria."
+          }
+        ],
+        "sessionContextForTarget": {},
+        "perceptionVersion": "11C",
+        "contentAnchors": [
+          "voce",
+          "errou"
+        ],
+        "mustReferenceUserContent": false,
+        "closureStyle": "soft_closed",
+        "responseOpening": "contextual_observation",
+        "personalityPolicy": {
+          "warmth": "warm_balanced",
+          "directness": "clear_natural",
+          "formality": "informal_light",
+          "socialDistance": "neutral_warm",
+          "humorAllowance": "none",
+          "emojiAllowance": "none",
+          "emotionalIntensity": "none",
+          "identityVisibility": "implicit",
+          "verbosity": "brief",
+          "mirrorInformality": false
+        },
+        "emotionalPerceptionMode": null,
+        "repetitionSignals": {
+          "recentResponseOpeners": [],
+          "recentResponseClosings": [],
+          "repetitionRisk": "low"
+        },
+        "userMessageForSpecificity": "você errou",
+        "shortReactionMode": false,
+        "identityMode": false,
+        "farewellMode": false,
+        "semanticCompleteness": true,
+        "semanticTargetTrace": {
+          "version": "4.1I.3.V.2.3",
+          "target": "previous_answer",
+          "confidence": 0.9,
+          "reasonCodes": [
+            "negative_feedback_correction_previous_answer"
+          ],
+          "productReference": null
+        },
+        "socialVerbalizationBridgeVersion": "4.1I.2",
+        "socialTaxonomyVersion": "4.1I.5.7V1"
+      },
+      "fallback": {
+        "text": "Compreendo — me aponta o ponto exato que não bateu.",
+        "family": "conversation",
+        "functionName": "buildWarmCorrectionReply",
+        "reasonCodes": [
+          "contract_driven",
+          "warm_correction",
+          "repair_context",
+          "conversation",
+          "battery"
+        ],
+        "contractDriven": true
+      }
+    }
+  },
+  "ficou_pessimo": {
+    "problem": "péssimo in FRUSTRATION_MARKERS stole from response criticism",
+    "fix": "RESPONSE_CRITICISM_MARKERS + detection before frustration; raised DISAPPROVAL priority",
+    "after": {
+      "recognition": {
+        "primaryIntent": "disapproval",
+        "primarySocialIntent": "disapproval",
+        "secondaryIntent": null,
+        "secondarySocialIntent": null,
+        "interactionMode": "social",
+        "humanObjective": "create_connection",
+        "conversationObjective": "repair_understanding",
+        "conversationDirection": "continue",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "emotionalState": "neutral",
+        "commercialRelevance": 0,
+        "socialRelevance": 1,
+        "emotionalRelevance": 0,
+        "continuityRelevance": 0.65,
+        "ambiguity": 0.32,
+        "confidence": 0.92,
+        "socialIntentConfidence": 0.92,
+        "requiresClarification": false,
+        "commercialIntent": false,
+        "preserveCommerceContext": true,
+        "domainReentry": "preserve_when_user_returns",
+        "legacyIntentOverride": "disapproval",
+        "socialFamilies": {
+          "greeting": false,
+          "acknowledgement": false,
+          "socialValidation": false,
+          "aboutMia": false,
+          "comprehension": false,
+          "comprehensionSuccess": false,
+          "softDisagreement": true,
+          "compliment": false,
+          "farewell": false,
+          "reaction": false,
+          "passiveBrowsing": false,
+          "desireToChat": false,
+          "postPurchaseAck": false,
+          "socialIntentPrimary": "disapproval",
+          "socialIntentSecondary": null
+        },
+        "socialClassification": {
+          "taxonomyVersion": "4.1I.5.7V1",
+          "primarySocialIntent": "disapproval",
+          "secondarySocialIntent": null,
+          "emotionalState": "neutral",
+          "conversationObjective": "repair_understanding",
+          "conversationDirection": "continue",
+          "expectedHumanBehavior": "acknowledge_disapproval",
+          "confidence": 0.92,
+          "reasonCodes": [
+            "response_criticism"
+          ],
+          "signals": [
+            "disapproval",
+            "response_target",
+            "response_criticism"
+          ],
+          "legacyPrimaryIntent": "disapproval",
+          "matches": [
+            {
+              "family": "disapproval",
+              "confidence": 0.92,
+              "score": 0.7728,
+              "reasonCodes": [
+                "response_criticism"
+              ],
+              "signals": [
+                "disapproval",
+                "response_target",
+                "response_criticism"
+              ]
+            }
+          ],
+          "complimentToMia": false,
+          "suppressProductAestheticFrame": false,
+          "isSocialDominant": true,
+          "isRepairIntent": false,
+          "isMetaIntent": false,
+          "isPlayfulIntent": false,
+          "isHostileIntent": false,
+          "isDisapprovalIntent": true,
+          "isCorrectionIntent": false,
+          "isCriticismIntent": true,
+          "isDisagreementIntent": false,
+          "isNegativeFeedbackIntent": true
+        },
+        "socialIntentSignals": [
+          "disapproval",
+          "response_target",
+          "response_criticism"
+        ],
+        "socialIntentReasonCodes": [
+          "response_criticism"
+        ],
+        "reasons": [
+          "disapproval_signal_preserves_social_mode",
+          "response_criticism"
+        ],
+        "resolvedQuery": "ficou péssimo",
+        "rawMessage": "ficou péssimo",
+        "contextualFollowUp": {
+          "version": "11C",
+          "detected": false,
+          "followUpType": "none",
+          "contextualCommercialAuthorized": false,
+          "requiresClarification": false,
+          "reasonCode": "no_follow_up_signal"
+        },
+        "mixedIntentComposition": {
+          "socialPresent": false,
+          "commercialPresent": false,
+          "opinionPresent": false,
+          "evaluationPresent": false,
+          "historicalPresent": false,
+          "personalUsePresent": false,
+          "explicitDenial": false,
+          "isMixed": false,
+          "isOpinionEvaluationMixed": false,
+          "isAnxietyCommercialMixed": false,
+          "isRelatoCommercialMixed": false
+        }
+      },
+      "contract": {
+        "interactionMode": "social",
+        "humanObjective": "create_connection",
+        "commercialObjective": null,
+        "commercialSearchQuery": null,
+        "conversationObjective": "repair_understanding",
+        "conversationDirection": "continue",
+        "expectedHumanBehavior": "acknowledge_disapproval",
+        "emotionalState": "neutral",
+        "primaryIntent": "disapproval",
+        "primarySocialIntent": "disapproval",
+        "secondarySocialIntent": null,
+        "socialIntentConfidence": 0.92,
+        "socialIntentSignals": [
+          "disapproval",
+          "response_target",
+          "response_criticism"
+        ],
+        "socialIntentReasonCodes": [
+          "response_criticism"
+        ],
+        "commercialIntent": false,
+        "preserveCommerceContext": true,
+        "domainReentry": "preserve_when_user_returns",
+        "requiresClarification": false,
+        "socialFamilies": {
+          "greeting": false,
+          "acknowledgement": false,
+          "socialValidation": false,
+          "aboutMia": false,
+          "comprehension": false,
+          "comprehensionSuccess": false,
+          "softDisagreement": true,
+          "compliment": false,
+          "farewell": false,
+          "reaction": false,
+          "passiveBrowsing": false,
+          "desireToChat": false,
+          "postPurchaseAck": false,
+          "socialIntentPrimary": "disapproval",
+          "socialIntentSecondary": null
+        },
+        "emotionalRelevance": 0,
+        "responseBehavior": {
+          "acknowledge": true,
+          "answerDirectly": true,
+          "askFollowUp": true,
+          "redirectToCommerce": false,
+          "preservePersonality": true,
+          "proportionalLength": true,
+          "tone": "warm_concise",
+          "forbidden": [
+            "force_product_recommendation",
+            "list_platform_capabilities",
+            "institutional_pitch",
+            "claim_human_experiences",
+            "forced_commerce_redirect",
+            "artificial_engagement_question",
+            "end_with_shopping_offer",
+            "emotional_consumption_suggestion",
+            "shopping_therapy",
+            "explicit_identity_recitation"
+          ],
+          "humanFirst": false
+        },
+        "experienceVersion": "5.7.0",
+        "resolvedQuery": "ficou péssimo",
+        "responseDepth": "brief",
+        "followUpPolicy": "clarifying_required",
+        "commerceReentryPolicy": "contextual_only",
+        "antiConsumption": true,
+        "identityVisibility": "implicit",
+        "emotionalIntensity": "none",
+        "messageLength": 2,
+        "proportionalityProfile": "natural_proportional",
+        "conversationContinuation": "open_if_natural",
+        "semanticAuthorityVersion": "5.4.0",
+        "semanticPrecedenceVersion": "5.4.0",
+        "semanticPrecedence": {
+          "version": "5.4.0",
+          "winningFamily": "disapproval",
+          "winningTarget": "previous_answer",
+          "winningRoutingKey": "response_approval",
+          "secondaryIntent": null,
+          "mixedIntent": false,
+          "precedenceRank": 5,
+          "confidence": 0.92,
+          "evidenceUsed": [
+            "previous_answer_target"
+          ],
+          "blockedCandidates": [],
+          "reasonCodes": [
+            "resolved_target_precedes_unknown_target"
+          ],
+          "clarificationRequired": false,
+          "ambiguousAllowed": false,
+          "commercialPermission": null
+        },
+        "resolvedSemanticTarget": "previous_answer",
+        "semanticTargetConfidence": 0.92,
+        "semanticTargetReasonCodes": [
+          "negative_feedback_response_criticism"
+        ],
+        "productReference": null,
+        "governedSocialRoutingKey": "response_approval",
+        "legacyPrimaryIntentAdapter": "social_validation",
+        "commercialFallbackBlocked": true,
+        "entityOpinionFallbackAllowed": false,
+        "ambiguousSocialContract": false,
+        "skipMustReferenceUserContent": false,
+        "semanticTargetResolution": {
+          "target": "previous_answer",
+          "confidence": 0.92,
+          "reasonCodes": [
+            "negative_feedback_response_criticism"
+          ],
+          "productContext": {
+            "hasConversationProductDiscussion": true,
+            "hasSessionProductAnchor": false,
+            "hasRecentProductDiscussion": true,
+            "hasCommercialContext": true,
+            "lastProductMention": "galaxy",
+            "hasRecentMiaGreeting": false,
+            "hasRecentAssistantReply": true,
+            "hasProduct": true
+          }
+        },
+        "conversationMessagesForTarget": [
+          {
+            "role": "assistant",
+            "content": "Recomendo o Galaxy A55 pela bateria."
+          }
+        ],
+        "sessionContextForTarget": {},
+        "perceptionVersion": "11C",
+        "contentAnchors": [
+          "ficou",
+          "pessimo"
+        ],
+        "mustReferenceUserContent": false,
+        "closureStyle": "question_required",
+        "responseOpening": "contextual_observation",
+        "personalityPolicy": {
+          "warmth": "warm_balanced",
+          "directness": "clear_natural",
+          "formality": "informal_light",
+          "socialDistance": "neutral_warm",
+          "humorAllowance": "none",
+          "emojiAllowance": "none",
+          "emotionalIntensity": "none",
+          "identityVisibility": "implicit",
+          "verbosity": "brief",
+          "mirrorInformality": false
+        },
+        "emotionalPerceptionMode": null,
+        "repetitionSignals": {
+          "recentResponseOpeners": [],
+          "recentResponseClosings": [],
+          "repetitionRisk": "low"
+        },
+        "userMessageForSpecificity": "ficou péssimo",
+        "shortReactionMode": false,
+        "identityMode": false,
+        "farewellMode": false,
+        "semanticCompleteness": true,
+        "semanticTargetTrace": {
+          "version": "4.1I.3.V.2.3",
+          "target": "previous_answer",
+          "confidence": 0.92,
+          "reasonCodes": [
+            "negative_feedback_response_criticism"
+          ],
+          "productReference": null
+        },
+        "socialVerbalizationBridgeVersion": "4.1I.2",
+        "socialTaxonomyVersion": "4.1I.5.7V1"
+      },
+      "fallback": {
+        "text": "Entendi — pelo ficou, ficou fria, longa ou pouco direta?",
+        "family": "disapproval",
+        "functionName": "buildWarmDisapprovalReply",
+        "reasonCodes": [
+          "contract_driven",
+          "warm_disapproval",
+          "acknowledge_disapproval",
+          "disapproval",
+          "battery"
+        ],
+        "contractDriven": true
+      }
+    }
+  }
+}

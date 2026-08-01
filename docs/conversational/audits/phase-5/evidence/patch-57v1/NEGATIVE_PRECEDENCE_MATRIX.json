@@ -1,0 +1,21 @@
+{
+  "version": "5.7V.1",
+  "order": [
+    "correction",
+    "recommendation_rejection",
+    "product_rejection",
+    "response_criticism",
+    "soft_disagreement",
+    "disapproval_generic",
+    "insult",
+    "frustration_emotional",
+    "negative_clarification_unknown_target"
+  ],
+  "rules": {
+    "correction_beats_clarification": true,
+    "criticism_beats_frustration": true,
+    "rejection_beats_product_aesthetic": true,
+    "disagreement_beats_stay_social": true,
+    "irony_repair_excludes_correction": true
+  }
+}

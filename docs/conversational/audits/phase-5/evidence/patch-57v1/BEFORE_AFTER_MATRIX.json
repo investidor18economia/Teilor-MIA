@@ -1,0 +1,10 @@
+{
+  "voce_errou": {
+    "before": "clarification/stay_social",
+    "after": "correction"
+  },
+  "ficou_pessimo": {
+    "before": "frustration/emotional_support",
+    "after": "disapproval"
+  }
+}

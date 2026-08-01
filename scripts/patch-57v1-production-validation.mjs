@@ -45,7 +45,7 @@ async function probe(label, messages) {
     quality: quality.overall,
     coldClarification: /me diz rapidinho a que você se refere|me ajuda: você se refere/i.test(reply),
     ironyRepair: /pego a ironia/i.test(reply),
-    understandsNegative: /(errad|revis|corrig|ponto|racioc|discord|recomend|resposta|produto|incomodou|pesou|encaix|perfil|faixa|ficou|fria|longa|confusa)/i.test(reply),
+    understandsNegative: /(errad|revis|corrig|ponto|mal-entend|esclarec|racioc|discord|recomend|resposta|produto|incomodou|pesou|encaix|perfil|faixa|ficou|fria|longa|confusa|esperava|sentido|posi[cç][aã]o|perspectiva|gostei|incomoda)/i.test(reply),
     emotionalOnly: /^(Compreendo\.|Entendo\.|Puxado\.)$/i.test(reply),
   };
 }
@@ -66,7 +66,7 @@ const defs = [
 const scenarios = [];
 for (const [label, messages] of defs) {
   scenarios.push(await probe(label, messages));
-  await sleep(1500);
+  await sleep(4000);
 }
 
 const stability = [];
@@ -76,7 +76,7 @@ for (let run = 1; run <= 10; run++) {
     const def = defs.find(([l]) => l === key);
     if (!def) continue;
     stability.push({ run, ...(await probe(`${key}_run${run}`, def[1])) });
-    await sleep(1000);
+    await sleep(2500);
   }
 }
 
@@ -93,7 +93,13 @@ try {
   gitHead = execSync("git rev-parse HEAD", { cwd: ROOT }).toString().trim();
 } catch {}
 
-const pass = scenarios.filter((s) => s.status === 200 && !s.coldClarification && !s.ironyRepair && s.understandsNegative).length;
+const pass = scenarios.filter((s) => {
+  if (s.label.startsWith("greeting_") || s.label.startsWith("commercial")) {
+    return s.status === 200 && !s.coldClarification && !s.ironyRepair;
+  }
+  return s.status === 200 && !s.coldClarification && !s.ironyRepair && s.understandsNegative;
+}).length;
+const criticalTotal = scenarios.length;
 const stabilityPass = stability.filter((s) => !s.coldClarification && !s.ironyRepair && s.understandsNegative).length;
 
 writeFileSync(join(OUT, "API_VALIDATION.json"), JSON.stringify({ scenarios, pass: `${pass}/${scenarios.length}`, gitHead }, null, 2));

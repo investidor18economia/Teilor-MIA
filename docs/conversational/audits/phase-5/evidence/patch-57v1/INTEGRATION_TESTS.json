@@ -1,0 +1,10 @@
+{
+  "patch": "5.7V.1",
+  "integration": {
+    "recognizeMiaIntent_pipeline": "PASS",
+    "semantic_target_resolution": "PASS",
+    "semantic_precedence": "PASS",
+    "governed_fallback": "PASS",
+    "human_conversation_experience_validator": "PASS"
+  }
+}
