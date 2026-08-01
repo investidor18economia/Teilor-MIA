@@ -289,6 +289,11 @@ import {
   UNIVERSAL_EGRESS_SEAL_KEY,
 } from "../../lib/miaUnifiedConversationalEgress.js";
 import {
+  buildConversationalObservabilityReport,
+  conversationalObservabilityToTrace,
+  isConversationalObservabilityEnabled,
+} from "../../lib/miaConversationalObservability.js";
+import {
   finalizeMixedConversationReply,
   mixedVerbalizationToTrace,
   buildMixedResponseContext,
@@ -26814,6 +26819,35 @@ async function sendHttpRuntimeResponse(res, pipelineTracer, body, responsePath, 
     if (_finalPolishedReply !== _responseBody.reply) {
       _responseBody.reply = _finalPolishedReply;
     }
+  }
+
+  if (isMiaChatPipelineDebugEnabled() || isConversationalObservabilityEnabled()) {
+    const _tracerSnap = pipelineTracer.patch({});
+    const _intentRecObs = _semanticCtxForEgress?.intentRecognition || null;
+    const _behaviorContractObs = _intentRecObs
+      ? buildSocialConversationBehaviorContract(_intentRecObs, {
+          message: _tracerSnap.user_message || "",
+          conversationMessages: [],
+          sessionContext: _responseBody.session_context || {},
+        })
+      : {};
+    const _obsReport = buildConversationalObservabilityReport({
+      userMessage: _tracerSnap.user_message || "",
+      reply: _responseBody.reply || "",
+      responsePath,
+      intentRecognition: _intentRecObs,
+      intentAuthority: _semanticCtxForEgress?.intentAuthority || null,
+      routingDecision: semanticGovernanceRef.finalRoutingDecision || null,
+      universalContract: _runtimeEgress.egressPrep?.universalContract || null,
+      universalRecovery: _runtimeEgress.egressPrep?.universalRecovery || null,
+      egressPrep: _runtimeEgress.egressPrep || null,
+      behaviorContract: _behaviorContractObs,
+      pipelineTrace: _tracerSnap,
+    });
+    pipelineTracer.patch({
+      conversational_observability: conversationalObservabilityToTrace(_obsReport),
+      conversational_observability_report: _obsReport,
+    });
   }
 
   res.status(200).json(
