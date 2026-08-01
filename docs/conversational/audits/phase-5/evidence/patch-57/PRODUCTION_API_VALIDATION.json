@@ -1,0 +1,116 @@
+{
+  "patch": "5.7",
+  "timestamp": "2026-08-01T04:09:37.531Z",
+  "gitCommit": "8c596bdfa693259c40ca4b0a90cc7ffa53dc2406",
+  "health": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-08-01T04:09:37.376Z",
+    "build": "8c596bdfa693"
+  },
+  "scenarios": [
+    {
+      "label": "seca_multiturn",
+      "status": 200,
+      "reply": "Parece que você mencionou \"seca\". Poderia me dar mais detalhes sobre o que você está se referindo? Assim, posso ajudar melhor.",
+      "response_path": "governed_social_intent_flow",
+      "quality": 0.764,
+      "signals": [
+        "low_warmth",
+        "repetitive"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_oi",
+      "status": 200,
+      "reply": "Oi! Tudo bem.",
+      "response_path": "greeting_flow",
+      "quality": 0.8539999999999999,
+      "signals": [],
+      "coldClarification": false
+    },
+    {
+      "label": "single_Opa",
+      "status": 200,
+      "reply": "Oi!",
+      "response_path": "greeting_flow",
+      "quality": 0.8539999999999999,
+      "signals": [],
+      "coldClarification": false
+    },
+    {
+      "label": "single_show",
+      "status": 200,
+      "reply": "Boa!",
+      "response_path": "governed_social_intent_flow",
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_não gostei",
+      "status": 200,
+      "reply": "Sem problema — fico por aqui no papo.",
+      "response_path": "needs_clarification",
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_valeu",
+      "status": 200,
+      "reply": "De nada!",
+      "response_path": "acknowledgement_flow",
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_kkk",
+      "status": 200,
+      "reply": "Hehe!",
+      "response_path": "governed_social_intent_flow",
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "single_bom dia",
+      "status": 200,
+      "reply": "Bom dia! Prazer em falar.",
+      "response_path": "greeting_flow",
+      "quality": 0.7939999999999999,
+      "signals": [
+        "low_warmth"
+      ],
+      "coldClarification": false
+    },
+    {
+      "label": "commercial_control",
+      "status": 200,
+      "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "response_path": "return_seguro",
+      "quality": 0.554,
+      "signals": [
+        "too_long",
+        "low_warmth",
+        "repetitive"
+      ],
+      "coldClarification": false
+    }
+  ],
+  "metrics": {
+    "avgQuality": 0.7773333333333332,
+    "coldClarificationCount": 0,
+    "lowWarmthCount": 7
+  }
+}

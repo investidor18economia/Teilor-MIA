@@ -1,0 +1,42 @@
+{
+  "patch": "5.7",
+  "timestamp": "2026-08-01T04:10:21.245Z",
+  "scenarios": [
+    {
+      "id": "ui_oi",
+      "status": 200,
+      "reply": "Oi! Tudo bem.",
+      "response_path": "greeting_flow",
+      "quality": 0.8539999999999999,
+      "cold": false
+    },
+    {
+      "id": "ui_show",
+      "status": 200,
+      "reply": "Boa!",
+      "response_path": "governed_social_intent_flow",
+      "quality": 0.8539999999999999,
+      "cold": false
+    },
+    {
+      "id": "ui_seca_multiturn",
+      "status": 200,
+      "reply": "Parece que você mencionou \"seca\". Poderia me dar mais detalhes sobre o que você está se referindo? Assim, posso ajudar melhor!",
+      "response_path": "governed_social_intent_flow",
+      "quality": 0.8240000000000001,
+      "cold": false
+    },
+    {
+      "id": "ui_commercial",
+      "status": 200,
+      "reply": "A escolha mais equilibrada aqui é o iPhone 13: mais margem de tranquilidade quando o uso deixa de ser básico. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — o iPhone 13 leva vantagem em desempenho nesta comparação. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Com esse orçamento, a escolha muda bastante dependendo se você prioriza câmera e fotos, bateria ou durabilidade. Qual desses pesa mais pra você?",
+      "response_path": "return_seguro",
+      "commercialOk": true
+    }
+  ],
+  "metrics": {
+    "coldClarification": 0,
+    "avgQuality": 0.844,
+    "commercialOk": true
+  }
+}
