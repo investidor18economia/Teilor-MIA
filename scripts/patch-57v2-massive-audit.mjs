@@ -19,7 +19,9 @@ import { execSync, spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const OUT = join(ROOT, "docs/conversational/audits/phase-5/evidence/patch-57v2");
+const OUT = process.env.MIA_AUDIT_OUT
+  ? join(ROOT, process.env.MIA_AUDIT_OUT)
+  : join(ROOT, "docs/conversational/audits/phase-5/evidence/patch-57v2");
 mkdirSync(OUT, { recursive: true });
 
 const PROD_API = process.env.MIA_PROD_API || "https://economia-ai.vercel.app/api/mia-chat";

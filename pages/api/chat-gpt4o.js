@@ -220,6 +220,7 @@ import {
 } from "../../lib/miaProductionFallbackGate";
 import {
   buildCommercialFollowUpDeterministicReply,
+  enrichCommercialSessionContext,
 } from "../../lib/miaCommercialFollowUpContinuity.js";
 import {
   applyMergedConstraintsToSessionContext,
@@ -28468,9 +28469,9 @@ if (lockedComparisonContextFromSession) {
   const explicitProductOnlyQueryEarly = isSpecificProductOnlyQuery(resolvedQuery);
   const currentPriorityEarly =
     detectUserPriority(query) || detectUserPriority(resolvedQuery) || "";
-  const hasAnchorForRouting = !!(
-    sessionContext?.lastBestProduct?.product_name ||
-    incomingSessionContext?.lastBestProduct?.product_name
+  const hasAnchorForRouting = hasActiveCommercialThreadForReset(
+    sessionContext,
+    incomingSessionContext
   );
 
   // PATCH 8.5B — Legitimate Search Reset (pre-routing — before commercial search signals)
@@ -28704,6 +28705,9 @@ if (lockedComparisonContextFromSession) {
     // Router em shadow mode — falhas são silenciosas e não afetam o fluxo
   }
 
+  // PATCH 5.7V.3 — enrich commercial anchors from conversation when session transport is incomplete
+  sessionContext = enrichCommercialSessionContext(sessionContext, conversationMessages);
+
   // ─────────────────────────────────────────────────────────────
   // PATCH 11A — Intent Recognition Layer (authoritative, pre-routing)
   // ─────────────────────────────────────────────────────────────
@@ -28714,6 +28718,7 @@ if (lockedComparisonContextFromSession) {
       userMessage: query,
       resolvedQuery,
       sessionContext,
+      conversationMessages,
       signals: {
         hasClearNewCommercialSearch: hasExplicitNewSearchSignalEarly,
         isExplicitComparison:
@@ -28756,6 +28761,7 @@ if (lockedComparisonContextFromSession) {
     intentAuthority = buildIntentAuthorityFromRecognition(intentRecognitionEarly, {
       hasActiveAnchor: hasAnchorForRouting,
       sessionContext,
+      conversationMessages,
     });
 
     if (intentAuthority?.authoritative) {
