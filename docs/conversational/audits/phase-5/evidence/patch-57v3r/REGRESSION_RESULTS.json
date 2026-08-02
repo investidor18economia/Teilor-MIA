@@ -1,0 +1,13 @@
+{
+  "patch": "5.7V.3R",
+  "timestamp": "2026-08-02T16:00:00Z",
+  "build": "8cbc9819cc5f",
+  "results": [
+    { "script": "scripts/test-mia-commercial-follow-up-continuity.js", "pass": true, "exitCode": 0 },
+    { "script": "scripts/test-mia-patch-57v3-indirect-reference.js", "pass": true, "exitCode": 0 },
+    { "script": "scripts/test-mia-patch-57-social-contract-verbalization.js", "pass": true, "exitCode": 0 },
+    { "script": "scripts/test-mia-patch-57v-rejection-verbalization.js", "pass": true, "exitCode": 0 },
+    { "script": "scripts/test-mia-patch-57v1-negative-feedback.js", "pass": true, "exitCode": 0 }
+  ],
+  "allGreen": true
+}

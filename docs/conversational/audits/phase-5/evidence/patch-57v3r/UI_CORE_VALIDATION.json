@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "id": "UI-CORE-01",
+      "lastTurn": "e o outro?",
+      "pass": true,
+      "coldClarification": false,
+      "note": "Commercial continuity on real UI — runner-up/comparison response"
+    },
+    {
+      "id": "UI-CORE-02",
+      "lastTurn": "e a câmera?",
+      "pass": true,
+      "coldClarification": false,
+      "note": "Commercial card response on UI with 8s turn spacing (rate-limiter safe)"
+    }
+  ],
+  "passed": 2,
+  "uiUrl": "https://economia-ai.vercel.app/app-mia"
+}

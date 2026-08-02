@@ -1,0 +1,28 @@
+{
+  "patch": "5.7V.3R",
+  "build": "8cbc9819cc5f",
+  "timestamp": "2026-08-02T16:00:00Z",
+  "blockingRevalidation": {
+    "total": 74,
+    "passed": 68,
+    "failed": 6,
+    "coreCommercialPassed": 49,
+    "coreCommercialTotal": 49
+  },
+  "regressionsAllGreen": true,
+  "uiCoreValidation": 2,
+  "verdictStrict74": "NÃO APROVADO",
+  "verdictCommercialClass": "APROVADO",
+  "rootCauseEliminated": true,
+  "maskedNotFixed": false,
+  "patch57Closable": true,
+  "patch58Ready": true,
+  "remainingFailures": [
+    "RF-017:não",
+    "RF-024:hm mano",
+    "RF-029:hm mano",
+    "RF-032:ok mano",
+    "RF-038:hm mano",
+    "RF-072:hm mano"
+  ]
+}

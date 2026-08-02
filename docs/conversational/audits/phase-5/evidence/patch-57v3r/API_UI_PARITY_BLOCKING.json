@@ -1,0 +1,94 @@
+{
+  "total": 8,
+  "passed": 4,
+  "pairs": [
+    {
+      "id": "RF-001",
+      "theme": "long_references",
+      "message": "e o outro?!!!",
+      "parity": "divergent",
+      "coldClarification": false,
+      "apiReply": "Minha escolha: iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 ⏳ pode durar mais anos? iPhone 13 Se eu estivesse comprando hoje pensando no conjunto da obra: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "api_path": "comparison_followup_forced",
+      "pass": false
+    },
+    {
+      "id": "RF-002",
+      "theme": "commercial_reject_alt",
+      "message": "e a câmera? mano",
+      "parity": "divergent",
+      "coldClarification": false,
+      "apiReply": "Minha escolha: Samsung Galaxy A15 5G Câmera Samsung Galaxy A15 5G Bateria Samsung Galaxy A15 5G Menor custo Samsung Galaxy A15 5G Fechando a comparação pensando no uso real: iria de Samsung Galaxy A15 5G. O que você ganha: você leva menos dependência do carregador no dia a dia O que abre mão: ️ abre",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "api_path": "comparison_followup_forced",
+      "pass": false
+    },
+    {
+      "id": "RF-006",
+      "theme": "disagreement_deep",
+      "message": "não",
+      "parity": "semantic",
+      "coldClarification": false,
+      "apiReply": "Parece que você não está interessado em algo.",
+      "uiReply": "MIΛ\nParece que você não está interessado em algo específico. Tem alguma outra coisa em mente que gostaria de discutir ou perguntar?",
+      "api_path": "governed_social_intent_flow",
+      "pass": true
+    },
+    {
+      "id": "RF-020",
+      "theme": "commercial_reject_alt",
+      "message": "hm mano",
+      "parity": "divergent",
+      "coldClarification": true,
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nEntendi — me ajuda: você se refere a quê?",
+      "api_path": null,
+      "pass": false
+    },
+    {
+      "id": "RF-022",
+      "theme": "disagreement_deep",
+      "message": "aceito",
+      "parity": "exact",
+      "coldClarification": false,
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "api_path": null,
+      "pass": true
+    },
+    {
+      "id": "RF-032",
+      "theme": "commercial_reject_alt",
+      "message": "ok mano",
+      "parity": "divergent",
+      "coldClarification": true,
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nEntendi — me ajuda: você se refere a quê?",
+      "api_path": null,
+      "pass": false
+    },
+    {
+      "id": "RF-047",
+      "theme": "commercial_reject_alt",
+      "message": "certo mano",
+      "parity": "exact",
+      "coldClarification": false,
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "api_path": null,
+      "pass": true
+    },
+    {
+      "id": "RF-067",
+      "theme": "correction_flow",
+      "message": "topzera",
+      "parity": "semantic",
+      "coldClarification": false,
+      "apiReply": "\"Topzera\" é uma expressão bem legal! O que te trouxe aqui hoje?",
+      "uiReply": "MIΛ\n\"Topzera\" é uma expressão bem legal! O que você gostaria de conversar sobre?",
+      "api_path": "governed_social_intent_flow",
+      "pass": true
+    }
+  ]
+}
