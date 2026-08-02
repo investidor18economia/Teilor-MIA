@@ -1,0 +1,1167 @@
+{
+  "total": 145,
+  "passed": 144,
+  "failed": 1,
+  "results": [
+    {
+      "id": "MV-1",
+      "context": 0,
+      "phrase": "e o outro?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Resumin"
+    },
+    {
+      "id": "MV-2",
+      "context": 0,
+      "phrase": "e a câmera?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Câmera iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Resumindo a decisão entre os dois: iria de "
+    },
+    {
+      "id": "MV-3",
+      "context": 0,
+      "phrase": "e esse?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Se eu estivesse comprando "
+    },
+    {
+      "id": "MV-4",
+      "context": 0,
+      "phrase": "e ele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-5",
+      "context": 0,
+      "phrase": "e aquele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Motorola Moto G84 Desempenho Motorola Moto G84 Câmera Motorola Moto G84 ⏳ pode durar mais anos? Motorola "
+    },
+    {
+      "id": "MV-6",
+      "context": 0,
+      "phrase": "qual deles?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Fechando a comparação pens"
+    },
+    {
+      "id": "MV-7",
+      "context": 0,
+      "phrase": "o segundo",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-8",
+      "context": 0,
+      "phrase": "o primeiro",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Se eu e"
+    },
+    {
+      "id": "MV-9",
+      "context": 0,
+      "phrase": "esse vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Se eu estivesse comprando hoje pensand"
+    },
+    {
+      "id": "MV-10",
+      "context": 0,
+      "phrase": "o outro compensa?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Fechando a comparação pensando no uso "
+    },
+    {
+      "id": "MV-11",
+      "context": 0,
+      "phrase": "esse é melhor?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-12",
+      "context": 0,
+      "phrase": "qual você escolheria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Se eu e"
+    },
+    {
+      "id": "MV-13",
+      "context": 0,
+      "phrase": "qual vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Fechando a comparação pensando no uso "
+    },
+    {
+      "id": "MV-14",
+      "context": 0,
+      "phrase": "qual dura mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-15",
+      "context": 0,
+      "phrase": "e a bateria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Bateria Samsung Galaxy M34 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Se"
+    },
+    {
+      "id": "MV-16",
+      "context": 0,
+      "phrase": "e desempenho?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Desempenho iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Resumindo a decisão entre os dois: iria"
+    },
+    {
+      "id": "MV-17",
+      "context": 0,
+      "phrase": "e fotos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você está perguntando sobre fotos, mas não ficou claro o que exatamente você gostaria de saber. Poderia dar mais detalhe"
+    },
+    {
+      "id": "MV-18",
+      "context": 0,
+      "phrase": "e tela?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-19",
+      "context": 0,
+      "phrase": "e construção?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-20",
+      "context": 0,
+      "phrase": "e carregamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Claro, pode falar comigo."
+    },
+    {
+      "id": "MV-21",
+      "context": 0,
+      "phrase": "e jogos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Não captei direito — pode explicar um pouco?"
+    },
+    {
+      "id": "MV-22",
+      "context": 0,
+      "phrase": "e vídeos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia esclarecer um pouco mais sobre o que você quer saber em relação a vídeos? Está procurando por dicas, conteú"
+    },
+    {
+      "id": "MV-23",
+      "context": 0,
+      "phrase": "e autonomia?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-24",
+      "context": 0,
+      "phrase": "e resistência?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-25",
+      "context": 0,
+      "phrase": "e acabamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Acho que perdi o fio — é sobre o quê?"
+    },
+    {
+      "id": "MV-26",
+      "context": 0,
+      "phrase": "e o processador?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia esclarecer um pouco mais sobre o que você quer saber sobre o processador? Está se referindo a um dispositiv"
+    },
+    {
+      "id": "MV-27",
+      "context": 0,
+      "phrase": "e memória?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia esclarecer um pouco mais sobre o que você quer saber sobre memória? Está se referindo a algum tipo específi"
+    },
+    {
+      "id": "MV-28",
+      "context": 0,
+      "phrase": "e armazenamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você pode me dar um pouco mais de contexto sobre o que você está perguntando em relação ao armazenamento? Está se referi"
+    },
+    {
+      "id": "MV-29",
+      "context": 0,
+      "phrase": "e preço?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Fechand"
+    },
+    {
+      "id": "MV-30",
+      "context": 1,
+      "phrase": "e o outro?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 ⏳ pode durar mais anos? iPhone 13 Se eu est"
+    },
+    {
+      "id": "MV-31",
+      "context": 1,
+      "phrase": "e a câmera?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-32",
+      "context": 1,
+      "phrase": "e esse?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo"
+    },
+    {
+      "id": "MV-33",
+      "context": 1,
+      "phrase": "e ele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 ⏳ pode durar mais anos? iPhone 13 Se eu est"
+    },
+    {
+      "id": "MV-34",
+      "context": 1,
+      "phrase": "e aquele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-35",
+      "context": 1,
+      "phrase": "qual deles?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-36",
+      "context": 1,
+      "phrase": "o segundo",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Samsung Galaxy S23 Menor custo Samsung Galaxy S23 Câmera Samsung Galaxy S23 ⏳ pode durar mais anos? Samsu"
+    },
+    {
+      "id": "MV-37",
+      "context": 1,
+      "phrase": "o primeiro",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-38",
+      "context": 1,
+      "phrase": "esse vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Parece que você está se referindo a um celular que mencionou anteriormente. Para te ajudar melhor, você poderia me lembr"
+    },
+    {
+      "id": "MV-39",
+      "context": 1,
+      "phrase": "o outro compensa?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 Se eu estivesse compr"
+    },
+    {
+      "id": "MV-40",
+      "context": 1,
+      "phrase": "esse é melhor?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-41",
+      "context": 1,
+      "phrase": "qual você escolheria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-42",
+      "context": 1,
+      "phrase": "qual vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Samsung Galaxy S23 Menor custo Samsung Galaxy S23 Câmera Samsung Galaxy S23 ⏳ pode durar mais anos? Samsu"
+    },
+    {
+      "id": "MV-43",
+      "context": 1,
+      "phrase": "qual dura mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: ASUS ROG Phone 6D Ultimate Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 ⏳ pode durar mais anos? iP"
+    },
+    {
+      "id": "MV-44",
+      "context": 1,
+      "phrase": "e a bateria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-45",
+      "context": 1,
+      "phrase": "e desempenho?",
+      "pass": true,
+      "cold": false,
+      "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mai"
+    },
+    {
+      "id": "MV-46",
+      "context": 1,
+      "phrase": "e fotos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Câmera iPhone 13 Bateria ASUS ROG Phone 6D Ultimate ⏳ pode durar mais anos? iPhone 13 Resumindo"
+    },
+    {
+      "id": "MV-47",
+      "context": 1,
+      "phrase": "e tela?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-48",
+      "context": 1,
+      "phrase": "e construção?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-49",
+      "context": 1,
+      "phrase": "e carregamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Isso ajuda bastante a direcionar a escolha. Minha escolha: iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13"
+    },
+    {
+      "id": "MV-50",
+      "context": 1,
+      "phrase": "e jogos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-51",
+      "context": 1,
+      "phrase": "e vídeos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mai"
+    },
+    {
+      "id": "MV-52",
+      "context": 1,
+      "phrase": "e autonomia?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: ASUS ROG Phone 6D Ultimate Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 ⏳ pode durar mais anos? iP"
+    },
+    {
+      "id": "MV-53",
+      "context": 1,
+      "phrase": "e resistência?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo"
+    },
+    {
+      "id": "MV-54",
+      "context": 1,
+      "phrase": "e acabamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-55",
+      "context": 1,
+      "phrase": "e o processador?",
+      "pass": true,
+      "cold": false,
+      "reply": "Não captei direito — pode explicar um pouco?"
+    },
+    {
+      "id": "MV-56",
+      "context": 1,
+      "phrase": "e memória?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-57",
+      "context": 1,
+      "phrase": "e armazenamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-58",
+      "context": 1,
+      "phrase": "e preço?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 Bateria ASUS ROG Phone 6D Ultimate Câmera iPhone 13 Resumindo a decisão e"
+    },
+    {
+      "id": "MV-59",
+      "context": 2,
+      "phrase": "e o outro?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Resumin"
+    },
+    {
+      "id": "MV-60",
+      "context": 2,
+      "phrase": "e a câmera?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Se eu e"
+    },
+    {
+      "id": "MV-61",
+      "context": 2,
+      "phrase": "e esse?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Fechand"
+    },
+    {
+      "id": "MV-62",
+      "context": 2,
+      "phrase": "e ele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Resumin"
+    },
+    {
+      "id": "MV-63",
+      "context": 2,
+      "phrase": "e aquele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Resumin"
+    },
+    {
+      "id": "MV-64",
+      "context": 2,
+      "phrase": "qual deles?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-65",
+      "context": 2,
+      "phrase": "o segundo",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Se eu e"
+    },
+    {
+      "id": "MV-66",
+      "context": 2,
+      "phrase": "o primeiro",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-67",
+      "context": 2,
+      "phrase": "esse vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-68",
+      "context": 2,
+      "phrase": "o outro compensa?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-69",
+      "context": 2,
+      "phrase": "esse é melhor?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Resumin"
+    },
+    {
+      "id": "MV-70",
+      "context": 2,
+      "phrase": "qual você escolheria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Fechand"
+    },
+    {
+      "id": "MV-71",
+      "context": 2,
+      "phrase": "qual vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Desempenho Galaxy A55 5G Resumin"
+    },
+    {
+      "id": "MV-72",
+      "context": 2,
+      "phrase": "qual dura mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-73",
+      "context": 2,
+      "phrase": "e a bateria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Bateria Samsung Galaxy M34 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Se"
+    },
+    {
+      "id": "MV-74",
+      "context": 2,
+      "phrase": "e desempenho?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-75",
+      "context": 2,
+      "phrase": "e fotos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-76",
+      "context": 2,
+      "phrase": "e tela?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-77",
+      "context": 2,
+      "phrase": "e construção?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia esclarecer um pouco mais sobre o que você quer saber sobre construção?"
+    },
+    {
+      "id": "MV-78",
+      "context": 2,
+      "phrase": "e carregamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Claro, pode falar comigo."
+    },
+    {
+      "id": "MV-79",
+      "context": 2,
+      "phrase": "e jogos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-80",
+      "context": 2,
+      "phrase": "e vídeos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-81",
+      "context": 2,
+      "phrase": "e autonomia?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: Galaxy A55 5G Bateria Samsung Galaxy M34 5G Câmera Galaxy A55 5G ⏳ pode durar mais anos? Galaxy A55 5G Re"
+    },
+    {
+      "id": "MV-82",
+      "context": 2,
+      "phrase": "e resistência?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-83",
+      "context": 2,
+      "phrase": "e acabamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-84",
+      "context": 2,
+      "phrase": "e o processador?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-85",
+      "context": 2,
+      "phrase": "e memória?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-86",
+      "context": 2,
+      "phrase": "e armazenamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-87",
+      "context": 2,
+      "phrase": "e preço?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-88",
+      "context": 3,
+      "phrase": "e o outro?",
+      "pass": true,
+      "cold": false,
+      "reply": "Acho que perdi o fio — é sobre o quê?"
+    },
+    {
+      "id": "MV-89",
+      "context": 3,
+      "phrase": "e a câmera?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Câmera iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Resumindo a decisão entre os dois: iria de "
+    },
+    {
+      "id": "MV-90",
+      "context": 3,
+      "phrase": "e esse?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Se eu estivesse comprando "
+    },
+    {
+      "id": "MV-91",
+      "context": 3,
+      "phrase": "e ele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Fechando a comparação pens"
+    },
+    {
+      "id": "MV-92",
+      "context": 3,
+      "phrase": "e aquele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-93",
+      "context": 3,
+      "phrase": "qual deles?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Fechando a comparação pens"
+    },
+    {
+      "id": "MV-94",
+      "context": 3,
+      "phrase": "o segundo",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo a decisão entre "
+    },
+    {
+      "id": "MV-95",
+      "context": 3,
+      "phrase": "o primeiro",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-96",
+      "context": 3,
+      "phrase": "esse vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-97",
+      "context": 3,
+      "phrase": "o outro compensa?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Fechando a comparação pensando no uso "
+    },
+    {
+      "id": "MV-98",
+      "context": 3,
+      "phrase": "esse é melhor?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-99",
+      "context": 3,
+      "phrase": "qual você escolheria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-100",
+      "context": 3,
+      "phrase": "qual vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Fechando a comparação pensando no uso "
+    },
+    {
+      "id": "MV-101",
+      "context": 3,
+      "phrase": "qual dura mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-102",
+      "context": 3,
+      "phrase": "e a bateria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-103",
+      "context": 3,
+      "phrase": "e desempenho?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Desempenho iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Resumindo a decisão entre os dois: iria"
+    },
+    {
+      "id": "MV-104",
+      "context": 3,
+      "phrase": "e fotos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-105",
+      "context": 3,
+      "phrase": "e tela?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia esclarecer um pouco mais sobre o que você quer saber sobre a tela? Está se referindo a algum dispositivo es"
+    },
+    {
+      "id": "MV-106",
+      "context": 3,
+      "phrase": "e construção?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia esclarecer um pouco mais sobre o que você quer saber em relação à construção? Está falando sobre um projeto"
+    },
+    {
+      "id": "MV-107",
+      "context": 3,
+      "phrase": "e carregamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-108",
+      "context": 3,
+      "phrase": "e jogos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia me dar um pouco mais de contexto sobre o que você gostaria de saber sobre jogos? Está se referindo a algum "
+    },
+    {
+      "id": "MV-109",
+      "context": 3,
+      "phrase": "e vídeos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Acho que perdi o fio — é sobre o quê?"
+    },
+    {
+      "id": "MV-110",
+      "context": 3,
+      "phrase": "e autonomia?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-111",
+      "context": 3,
+      "phrase": "e resistência?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você pode me dar um pouco mais de contexto sobre o que você quer saber sobre resistência? Está se referindo a um materia"
+    },
+    {
+      "id": "MV-112",
+      "context": 3,
+      "phrase": "e acabamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Acho que perdi o fio — é sobre o quê?"
+    },
+    {
+      "id": "MV-113",
+      "context": 3,
+      "phrase": "e o processador?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-114",
+      "context": 3,
+      "phrase": "e memória?",
+      "pass": false,
+      "cold": true,
+      "reply": "Entendi — me ajuda: você se refere a quê?"
+    },
+    {
+      "id": "MV-115",
+      "context": 3,
+      "phrase": "e armazenamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Parece que você está se referindo a armazenamento, mas poderia esclarecer um pouco mais? Está falando sobre armazenament"
+    },
+    {
+      "id": "MV-116",
+      "context": 3,
+      "phrase": "e preço?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Se eu estivesse comprando hoje pensand"
+    },
+    {
+      "id": "MV-117",
+      "context": 4,
+      "phrase": "e o outro?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-118",
+      "context": 4,
+      "phrase": "e a câmera?",
+      "pass": true,
+      "cold": false,
+      "reply": "Para um celular confiável, a câmera é um ponto importante. Se a sua prioridade é a qualidade das fotos, é fundamental es"
+    },
+    {
+      "id": "MV-119",
+      "context": 4,
+      "phrase": "e esse?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Se eu estivesse comprando "
+    },
+    {
+      "id": "MV-120",
+      "context": 4,
+      "phrase": "e ele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-121",
+      "context": 4,
+      "phrase": "e aquele?",
+      "pass": true,
+      "cold": false,
+      "reply": "Parece que você está se referindo a uma comparação com outro celular, mas não ficou claro qual. Se você puder me dizer q"
+    },
+    {
+      "id": "MV-122",
+      "context": 4,
+      "phrase": "qual deles?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Fechando a comparação pens"
+    },
+    {
+      "id": "MV-123",
+      "context": 4,
+      "phrase": "o segundo",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo a decisão entre "
+    },
+    {
+      "id": "MV-124",
+      "context": 4,
+      "phrase": "o primeiro",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo a decisão entre "
+    },
+    {
+      "id": "MV-125",
+      "context": 4,
+      "phrase": "esse vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Se eu estivesse comprando hoje pensand"
+    },
+    {
+      "id": "MV-126",
+      "context": 4,
+      "phrase": "o outro compensa?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Fechando a comparação pensando no uso "
+    },
+    {
+      "id": "MV-127",
+      "context": 4,
+      "phrase": "esse é melhor?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Se eu estivesse comprando "
+    },
+    {
+      "id": "MV-128",
+      "context": 4,
+      "phrase": "qual você escolheria?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo a decisão entre "
+    },
+    {
+      "id": "MV-129",
+      "context": 4,
+      "phrase": "qual vale mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-130",
+      "context": 4,
+      "phrase": "qual dura mais?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-131",
+      "context": 4,
+      "phrase": "e a bateria?",
+      "pass": true,
+      "cold": false,
+      "reply": "A prioridade é a bateria, certo? O \"celular confiável\" é uma boa escolha nesse aspecto, pois geralmente oferece uma auto"
+    },
+    {
+      "id": "MV-132",
+      "context": 4,
+      "phrase": "e desempenho?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Desempenho iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Resumindo a decisão entre os dois: iria"
+    },
+    {
+      "id": "MV-133",
+      "context": 4,
+      "phrase": "e fotos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-134",
+      "context": 4,
+      "phrase": "e tela?",
+      "pass": true,
+      "cold": false,
+      "reply": "Não captei direito — pode explicar um pouco?"
+    },
+    {
+      "id": "MV-135",
+      "context": 4,
+      "phrase": "e construção?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você poderia esclarecer um pouco mais sobre o que você quer saber sobre construção? Está se referindo a algum projeto es"
+    },
+    {
+      "id": "MV-136",
+      "context": 4,
+      "phrase": "e carregamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-137",
+      "context": 4,
+      "phrase": "e jogos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você pode me dar um pouco mais de contexto sobre o que você quer saber sobre jogos? Está se referindo a videogames, jogo"
+    },
+    {
+      "id": "MV-138",
+      "context": 4,
+      "phrase": "e vídeos?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você pode me dar um pouco mais de contexto sobre o que está buscando em relação a vídeos?"
+    },
+    {
+      "id": "MV-139",
+      "context": 4,
+      "phrase": "e autonomia?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-140",
+      "context": 4,
+      "phrase": "e resistência?",
+      "pass": true,
+      "cold": false,
+      "reply": "Acho que perdi o fio — é sobre o quê?"
+    },
+    {
+      "id": "MV-141",
+      "context": 4,
+      "phrase": "e acabamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Acho que perdi o fio — é sobre o quê?"
+    },
+    {
+      "id": "MV-142",
+      "context": 4,
+      "phrase": "e o processador?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-143",
+      "context": 4,
+      "phrase": "e memória?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente."
+    },
+    {
+      "id": "MV-144",
+      "context": 4,
+      "phrase": "e armazenamento?",
+      "pass": true,
+      "cold": false,
+      "reply": "Você pode me dar mais detalhes sobre o que você quer saber sobre armazenamento? Está se referindo a algo específico, com"
+    },
+    {
+      "id": "MV-145",
+      "context": 4,
+      "phrase": "e preço?",
+      "pass": true,
+      "cold": false,
+      "reply": "Minha escolha: iPhone 13 Menor custo iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 Se eu estivesse comprando hoje pensand"
+    }
+  ]
+}
