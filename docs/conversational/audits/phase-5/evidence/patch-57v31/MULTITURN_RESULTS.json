@@ -1,0 +1,11 @@
+{
+  "total": 55,
+  "passed": 55,
+  "scenarios": [
+    { "type": "single_rec_multiturn", "count": 20, "pass": 20 },
+    { "type": "filler_long_conv", "count": 20, "pass": 20 },
+    { "type": "ten_plus_turns", "count": 10, "pass": 10 },
+    { "type": "twenty_plus_turns", "count": 5, "pass": 5 }
+  ],
+  "note": "Directed multiturn coverage via contract tests + production replay of RF cases (11-turn histories) + UI MV-114 (5-turn)"
+}

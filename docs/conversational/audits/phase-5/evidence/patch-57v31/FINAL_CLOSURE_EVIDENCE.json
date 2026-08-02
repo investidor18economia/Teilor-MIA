@@ -1,0 +1,27 @@
+{
+  "patch": "5.7V.3.1",
+  "timestamp": "2026-08-02T16:44:39.230Z",
+  "build": "18c3659d835d",
+  "singleRec": {
+    "total": 80,
+    "passed": 80
+  },
+  "fillers": {
+    "total": 80,
+    "passed": 80
+  },
+  "stability": {
+    "total": 100,
+    "passed": 100
+  },
+  "production": {
+    "total": 7,
+    "passed": 7
+  },
+  "regressions": {
+    "allGreen": true
+  },
+  "verdict": "APROVADO",
+  "patch57Closable": true,
+  "patch58Ready": true
+}

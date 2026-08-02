@@ -1,0 +1,8 @@
+{
+  "id": "MV-114",
+  "message": "e memória?",
+  "pass": true,
+  "cold": false,
+  "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+  "response_path": ""
+}

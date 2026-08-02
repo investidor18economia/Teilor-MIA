@@ -1,0 +1,12 @@
+{
+  "cause": "Neutral/negative fillers (hm mano, ok mano, não) in active commercial thread routed to CLARIFICATION via shortAmbiguous path without filler classification.",
+  "fix": "miaConversationalFillerGovernance.js wired into intent recognition, clarification gates, semantic state governance",
+  "cases": [
+    "RF-017",
+    "RF-024",
+    "RF-029",
+    "RF-032",
+    "RF-038",
+    "RF-072"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "fields": [
+    "lastBestProduct",
+    "lastRankingSnapshot",
+    "lastComparisonProducts",
+    "lastProducts"
+  ],
+  "activeRecommendedEntity": "getActiveRecommendedEntity() — unified single-rec anchor",
+  "singleRecommendationValid": true,
+  "comparisonSetValid": true
+}

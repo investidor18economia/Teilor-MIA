@@ -1,0 +1,52 @@
+{
+  "results": [
+    {
+      "id": "RF-017",
+      "message": "não",
+      "pass": true,
+      "cold": false,
+      "reply": "Claro, pode falar comigo.",
+      "response_path": ""
+    },
+    {
+      "id": "RF-024",
+      "message": "hm mano",
+      "pass": true,
+      "cold": false,
+      "reply": "Claro, pode falar comigo.",
+      "response_path": ""
+    },
+    {
+      "id": "RF-029",
+      "message": "hm mano",
+      "pass": true,
+      "cold": false,
+      "reply": "Claro, pode falar comigo.",
+      "response_path": ""
+    },
+    {
+      "id": "RF-032",
+      "message": "ok mano",
+      "pass": true,
+      "cold": false,
+      "reply": "Sem problema — fico por aqui no papo.",
+      "response_path": ""
+    },
+    {
+      "id": "RF-038",
+      "message": "hm mano",
+      "pass": true,
+      "cold": false,
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "response_path": ""
+    },
+    {
+      "id": "RF-072",
+      "message": "hm mano",
+      "pass": true,
+      "cold": false,
+      "reply": "Claro, pode falar comigo.",
+      "response_path": ""
+    }
+  ]
+}

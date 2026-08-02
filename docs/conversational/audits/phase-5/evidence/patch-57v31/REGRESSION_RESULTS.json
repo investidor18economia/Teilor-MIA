@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "script": "scripts/test-mia-patch-57v31-single-rec-filler.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57v3-indirect-reference.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57-social-contract-verbalization.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57v-rejection-verbalization.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57v1-negative-feedback.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-commercial-follow-up-continuity.js",
+      "exitCode": 0,
+      "pass": true
+    }
+  ],
+  "allGreen": true
+}

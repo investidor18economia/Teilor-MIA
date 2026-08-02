@@ -1,0 +1,606 @@
+{
+  "total": 100,
+  "passed": 100,
+  "runs": [
+    {
+      "template": "single_rec_dimension",
+      "run": 1,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 2,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 3,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 4,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 5,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 6,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 7,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 8,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 9,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_dimension",
+      "run": 10,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 1,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 2,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 3,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 4,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 5,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 6,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 7,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 8,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 9,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "single_rec_filler_dimension",
+      "run": 10,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 1,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 2,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 3,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 4,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 5,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 6,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 7,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 8,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 9,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "comparison_filler_other",
+      "run": 10,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 1,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 2,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 3,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 4,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 5,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 6,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 7,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 8,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 9,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "recommendation_nao",
+      "run": 10,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 1,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 2,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 3,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 4,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 5,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 6,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 7,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 8,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 9,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "pending_question_nao",
+      "run": 10,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 1,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 2,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 3,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 4,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 5,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 6,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 7,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 8,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 9,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_neutral_filler",
+      "run": 10,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 1,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 2,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 3,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 4,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 5,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 6,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 7,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 8,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 9,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "commercial_exit_filler",
+      "run": 10,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 1,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 2,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 3,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 4,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 5,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 6,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 7,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 8,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 9,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "social_neutral_filler",
+      "run": 10,
+      "pass": true,
+      "mode": "social"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 1,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 2,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 3,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 4,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 5,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 6,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 7,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 8,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 9,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "unknown_category_dimension",
+      "run": 10,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 1,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 2,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 3,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 4,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 5,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 6,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 7,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 8,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 9,
+      "pass": true,
+      "mode": "commerce"
+    },
+    {
+      "template": "missing_knowledge_limitation",
+      "run": 10,
+      "pass": true,
+      "mode": "commerce"
+    }
+  ]
+}

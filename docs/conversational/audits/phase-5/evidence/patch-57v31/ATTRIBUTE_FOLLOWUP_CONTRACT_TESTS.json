@@ -1,0 +1,726 @@
+{
+  "total": 80,
+  "passed": 80,
+  "results": [
+    {
+      "id": "SR-001",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-002",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-003",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-004",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-005",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-006",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-007",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-008",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-009",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-010",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "price_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "contextual_commercial_follow_up"
+    },
+    {
+      "id": "SR-011",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "price_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "contextual_commercial_follow_up"
+    },
+    {
+      "id": "SR-012",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-013",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-014",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-015",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-016",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-017",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-018",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-019",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-020",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-021",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-022",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-023",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-024",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-025",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-026",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-027",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-028",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-029",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-030",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-031",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-032",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-033",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-034",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-035",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-036",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-037",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-038",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-039",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-040",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-041",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-042",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-043",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-044",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-045",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-046",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-047",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-048",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-049",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-050",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-051",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-052",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-053",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-054",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-055",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-056",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-057",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-058",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-059",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-060",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-061",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-062",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-063",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-064",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-065",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-066",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-067",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-068",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-069",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-070",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-071",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-072",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-073",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-074",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-075",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-076",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-077",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-078",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-079",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    },
+    {
+      "id": "SR-080",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "attribute_follow_up",
+      "fillerType": "none",
+      "target": "product",
+      "reasonCode": "single_recommendation_anchor_restored"
+    }
+  ]
+}

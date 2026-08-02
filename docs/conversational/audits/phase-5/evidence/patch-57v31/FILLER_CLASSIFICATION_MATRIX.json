@@ -1,0 +1,726 @@
+{
+  "total": 80,
+  "passed": 80,
+  "results": [
+    {
+      "id": "FL-001",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-002",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-003",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-004",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-005",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-006",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-007",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-008",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-009",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-010",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-011",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "product",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-012",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "product",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-013",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "product",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-014",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-015",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-016",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-017",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-018",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-019",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-020",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-021",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-022",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-023",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-024",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-025",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-026",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-027",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-028",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-029",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-030",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "negative",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-031",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "negative",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-032",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "negative",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-033",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "negative",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-034",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "negative",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-035",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "exit",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-036",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "topic_switch",
+      "fillerType": "exit",
+      "target": "unknown",
+      "reasonCode": "topic_switch"
+    },
+    {
+      "id": "FL-037",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "exit",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-038",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "exit",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-039",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "constraint_refinement",
+      "fillerType": "exit",
+      "target": "product",
+      "reasonCode": "no_refinement_signal"
+    },
+    {
+      "id": "FL-040",
+      "pass": true,
+      "mode": "commerce",
+      "followUpType": "constraint_refinement",
+      "fillerType": "exit",
+      "target": "product",
+      "reasonCode": "no_refinement_signal"
+    },
+    {
+      "id": "FL-041",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-042",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-043",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-044",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-045",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-046",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-047",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-048",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-049",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-050",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-051",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-052",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-053",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-054",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-055",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-056",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-057",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-058",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-059",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-060",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-061",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-062",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-063",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-064",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-065",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-066",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-067",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-068",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-069",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-070",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-071",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "previous_answer",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-072",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-073",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-074",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-075",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-076",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-077",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-078",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-079",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "unknown",
+      "reasonCode": "no_follow_up_signal"
+    },
+    {
+      "id": "FL-080",
+      "pass": true,
+      "mode": "social",
+      "followUpType": "none",
+      "fillerType": "neutral",
+      "target": "conversation",
+      "reasonCode": "no_follow_up_signal"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "category": "notebook",
+      "message": "e tela?",
+      "pass": true,
+      "target": "product"
+    },
+    {
+      "category": "tv",
+      "message": "e sistema?",
+      "pass": true,
+      "target": "product"
+    },
+    {
+      "category": "monitor",
+      "message": "e taxa?",
+      "pass": true,
+      "target": "product"
+    },
+    {
+      "category": "console",
+      "message": "e armazenamento?",
+      "pass": true,
+      "target": "product"
+    },
+    {
+      "category": "gpu",
+      "message": "e consumo?",
+      "pass": true,
+      "target": "product"
+    },
+    {
+      "category": "fridge",
+      "message": "e compatibilidade?",
+      "pass": true,
+      "target": "product"
+    },
+    {
+      "category": "phone",
+      "message": "e desempenho?",
+      "pass": true,
+      "target": "product"
+    }
+  ],
+  "allPass": true
+}

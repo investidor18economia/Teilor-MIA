@@ -1,0 +1,6 @@
+{
+  "note": "Critical cases validated on API (7/7 pass) and UI (4/4 pass). Semantic parity: zero cold clarification on either path.",
+  "apiPassed": 7,
+  "uiPassed": 4,
+  "parity": "compatible"
+}

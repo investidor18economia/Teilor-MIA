@@ -1,0 +1,9 @@
+{
+  "patch": "5.7V.3.1",
+  "timestamp": "2026-08-02T16:35:00.000Z",
+  "builds": [
+    { "attempt": 1, "exitCode": 0, "note": "after .next clean" },
+    { "attempt": 2, "exitCode": 0, "note": "consecutive build" }
+  ],
+  "allGreen": true
+}

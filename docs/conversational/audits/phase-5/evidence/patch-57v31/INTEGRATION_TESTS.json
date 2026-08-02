@@ -1,0 +1,5 @@
+{
+  "integration": "local pipeline + production API replay",
+  "passed": true,
+  "cases": ["RF-017", "RF-024", "RF-029", "RF-032", "RF-038", "RF-072", "MV-114"]
+}

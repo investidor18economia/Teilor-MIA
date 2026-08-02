@@ -1,0 +1,15 @@
+{
+  "cause": "Generic dimension follow-up (e memória?) not detected — ATTRIBUTE_FOLLOW_UP_PATTERN required article (e a memória). Single recommendation lacked authorizedByComparisonContext (required comparisonSet >= 2).",
+  "fix": "detectGenericDimensionFollowUpQuery + authorizedByActiveCommercialEntity + getActiveRecommendedEntity",
+  "mv114": {
+    "context": [
+      "oi",
+      "to precisando de um celular",
+      "até 2000",
+      "me recomenda"
+    ],
+    "message": "e memória?",
+    "observed": "cold clarification",
+    "expected": "commercial attribute follow-up on lastBestProduct"
+  }
+}

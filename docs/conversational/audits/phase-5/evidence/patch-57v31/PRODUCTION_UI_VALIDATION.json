@@ -1,0 +1,11 @@
+{
+  "ui": "https://economia-ai.vercel.app/app-mia",
+  "total": 4,
+  "passed": 4,
+  "results": [
+    { "id": "UI-MV114", "lastTurn": "e memória?", "pass": true, "coldClarification": false, "note": "Commercial recommendation path — no cold clarification" },
+    { "id": "UI-RF017", "lastTurn": "não", "pass": true, "coldClarification": false, "reply": "Claro, pode falar comigo." },
+    { "id": "UI-FILLER", "lastTurn": "hm mano", "pass": true, "coldClarification": false },
+    { "id": "UI-SR01", "lastTurn": "e tela?", "pass": true, "coldClarification": false, "note": "Single recommendation + dimension follow-up on notebook" }
+  ]
+}
