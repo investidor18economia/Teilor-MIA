@@ -1,0 +1,33 @@
+{
+  "patch": "5.8",
+  "gitHead": "edc0efb7dd4ddd3810abf2cd9c2d8d7b61ab3f96",
+  "buildInitial": "edc0efb7dd4d",
+  "buildFinal": "edc0efb7dd4d",
+  "functionalBuild": "18c3659",
+  "totalTurns": 1950,
+  "matrix": 500,
+  "multiturn": 100,
+  "stability": 200,
+  "parity": 150,
+  "parityPassed": 150,
+  "failures": 13,
+  "blockingFailures": 13,
+  "gates": {
+    "scenarios500": true,
+    "turns1500": true,
+    "multiturn100": true,
+    "long10plus": true,
+    "long20plus": true,
+    "stability200": true,
+    "parity150": true,
+    "paritySemantic": true,
+    "zeroBlocking": false,
+    "autoRegGreen": false,
+    "buildVerified": true
+  },
+  "allGates": false,
+  "verdict": "NÃO APROVADO",
+  "patch58Closable": false,
+  "patch59Ready": false,
+  "timestamp": "2026-08-02T22:55:08.847Z"
+}

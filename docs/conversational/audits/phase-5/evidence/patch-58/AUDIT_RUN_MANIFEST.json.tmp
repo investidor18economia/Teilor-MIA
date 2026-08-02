@@ -1,0 +1,19 @@
+{
+  "patch": "5.8",
+  "gitHead": "edc0efb7dd4ddd3810abf2cd9c2d8d7b61ab3f96",
+  "gitStatus": "M docs/conversational/audits/phase-4/evidence/PATCH_4_1_LOCAL_E2E_CONVERSATION_EVIDENCE.json\n M docs/conversational/audits/phase-5/evidence/patch-51/STATIC_EGRESS_INVENTORY.json\n M docs/conversational/audits/phase-5/evidence/patch-55/HEALTH_PRODUCTION.json\n M docs/conversational/audits/phase-5/evidence/patch-57v3r/ATTRIBUTE_REFERENCE_VARIATIONS.json\n M docs/conversational/audits/phase-5/evidence/patch-57v3r/ATTRIBUTE_REFERENCE_VARIATIONS.json.tmp\n M docs/conversational/audits/phase-5/evidence/patch-57v3r/REVALIDATION_CHECKPOINT.json\n M docs/conversational/audits/phase-5/evidence/patch-57v3r/REVALIDATION_CHECKPOINT.json.tmp\n M scripts/patch-41i3v22-postdeploy-validation.mjs\n?? docs/analytics/FOUNDER_COCKPIT_COMPONENT_MAP.md\n?? docs/analytics/FOUNDER_COCKPIT_PHASE_D_ARCHITECTURE.md\n?? docs/analytics/FOUNDER_COCKPIT_UI_GUIDELINES.md\n?? docs/conversational/audits/phase-4/AUDITORIA_MESTRA_CONVERSACIONAL.md\n?? docs/conversational/audits/phase-4/evidence/AUDITORIA_MESTRA_PRODUCTION_UI_BATTERY.json\n?? docs/conversational/audits/phase-4/evidence/PATCH_4_1I_PRODUCTION_SOCIAL_INTENT_EVIDENCE.json\n?? docs/conversational/audits/phase-5/evidence/patch-53/PRODUCTION_API_VALIDATION.json\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/API_UI_PARITY_300.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/AUDIT_HEARTBEAT.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/AUDIT_RUN_MANIFEST.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/FAILURE_CATALOG.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/FINAL_CLOSURE_EVIDENCE.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/INTENT_FAMILY_COVERAGE.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/LANGUAGE_VARIATION_COVERAGE.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/LONG_CONVERSATIONS.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/MASSIVE_MATRIX_CHECKPOINT.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/MASSIVE_MATRIX_RESULTS.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/MULTITURN_CHECKPOINT.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/MULTITURN_RESULTS.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/PERSONALITY_METRICS.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/PROFILE_COVERAGE.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/QUALITY_METRICS.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/REGRESSION_RESULTS.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/ROOT_CAUSE_CLASSIFICATION.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/STABILITY_500_RUNS.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/STABILITY_CHECKPOINT.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v2/TARGET_COVERAGE.json.tmp\n?? docs/conversational/audits/phase-5/evidence/patch-57v3/\n?? docs/conversational/audits/phase-5/evidence/patch-58/\n?? scripts/patch-41i3-prod-ui-validation.mjs\n?? scripts/patch-58-regression-audit.mjs\n?? scripts/patch-58/",
+  "build": "edc0efb7dd4d",
+  "functionalCommit": "18c3659",
+  "startedAt": "2026-08-02T22:55:08.594Z",
+  "counts": {
+    "matrix": 500,
+    "multiturn": 100,
+    "stability": 200,
+    "parity": 150,
+    "critical": 10,
+    "estimatedTurns": 1950,
+    "profiles": 24,
+    "families": 55
+  },
+  "resume": true
+}

@@ -1,0 +1,10 @@
+{
+  "critical": 10,
+  "leigo": 62,
+  "tecnico": 72,
+  "formal": 72,
+  "informal": 72,
+  "adolescente": 72,
+  "idoso": 72,
+  "impaciente": 68
+}

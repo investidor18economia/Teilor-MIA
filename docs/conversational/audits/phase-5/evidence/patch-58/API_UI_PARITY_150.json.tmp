@@ -1,0 +1,1506 @@
+{
+  "total": 150,
+  "completed": 150,
+  "pairs": [
+    {
+      "id": "PR-0001",
+      "message": "seca",
+      "family": "ambiguous_social",
+      "apiReply": "Parece que você está se referindo a algo que está seco. Poderia me dar mais detalhes sobre o que exatamente você quer dizer?",
+      "uiReply": "MIΛ\nParece que você está se referindo a algo que está seco. Poderia me dar mais detalhes sobre o que exatamente você quer dizer?",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:55:46.612Z"
+    },
+    {
+      "id": "PR-0002",
+      "message": "não quero esse",
+      "family": "rejection_recommendation",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:56:03.157Z"
+    },
+    {
+      "id": "PR-0003",
+      "message": "você errou",
+      "family": "correction",
+      "apiReply": "Compreendo — me aponta o ponto exato que não bateu.",
+      "uiReply": "MIΛ\nCompreendo — me aponta o ponto exato que não bateu.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:56:21.141Z"
+    },
+    {
+      "id": "PR-0004",
+      "message": "oi, quero celular até 2k",
+      "family": "mixed_greeting_commerce",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:56:44.233Z"
+    },
+    {
+      "id": "PR-0005",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:57:27.454Z"
+    },
+    {
+      "id": "PR-0006",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:57:47.255Z"
+    },
+    {
+      "id": "PR-0007",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:58:04.297Z"
+    },
+    {
+      "id": "PR-0008",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:58:46.504Z"
+    },
+    {
+      "id": "PR-0009",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:59:05.745Z"
+    },
+    {
+      "id": "PR-0010",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T21:59:47.756Z"
+    },
+    {
+      "id": "PR-0011",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:00:05.452Z"
+    },
+    {
+      "id": "PR-0012",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:00:23.465Z"
+    },
+    {
+      "id": "PR-0013",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:00:41.101Z"
+    },
+    {
+      "id": "PR-0014",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:00:59.149Z"
+    },
+    {
+      "id": "PR-0015",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:01:19.449Z"
+    },
+    {
+      "id": "PR-0016",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:02:33.524Z"
+    },
+    {
+      "id": "PR-0017",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:02:51.149Z"
+    },
+    {
+      "id": "PR-0018",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:03:09.279Z"
+    },
+    {
+      "id": "PR-0019",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:03:26.276Z"
+    },
+    {
+      "id": "PR-0020",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:03:44.240Z"
+    },
+    {
+      "id": "PR-0021",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:04:04.255Z"
+    },
+    {
+      "id": "PR-0022",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:04:21.716Z"
+    },
+    {
+      "id": "PR-0023",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:04:39.428Z"
+    },
+    {
+      "id": "PR-0024",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:04:57.817Z"
+    },
+    {
+      "id": "PR-0025",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:05:15.379Z"
+    },
+    {
+      "id": "PR-0026",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:05:32.885Z"
+    },
+    {
+      "id": "PR-0027",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:06:17.916Z"
+    },
+    {
+      "id": "PR-0028",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:06:35.401Z"
+    },
+    {
+      "id": "PR-0029",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:06:53.269Z"
+    },
+    {
+      "id": "PR-0030",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:07:11.116Z"
+    },
+    {
+      "id": "PR-0031",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:07:28.656Z"
+    },
+    {
+      "id": "PR-0032",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:07:46.197Z"
+    },
+    {
+      "id": "PR-0033",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:08:06.215Z"
+    },
+    {
+      "id": "PR-0034",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:08:23.152Z"
+    },
+    {
+      "id": "PR-0035",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:08:40.989Z"
+    },
+    {
+      "id": "PR-0036",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:08:59.092Z"
+    },
+    {
+      "id": "PR-0037",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:09:17.609Z"
+    },
+    {
+      "id": "PR-0038",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:09:35.250Z"
+    },
+    {
+      "id": "PR-0039",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:09:55.237Z"
+    },
+    {
+      "id": "PR-0040",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:10:13.382Z"
+    },
+    {
+      "id": "PR-0041",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:10:31.925Z"
+    },
+    {
+      "id": "PR-0042",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:10:49.813Z"
+    },
+    {
+      "id": "PR-0043",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:11:07.429Z"
+    },
+    {
+      "id": "PR-0044",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:11:24.313Z"
+    },
+    {
+      "id": "PR-0045",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:12:10.282Z"
+    },
+    {
+      "id": "PR-0046",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:12:28.171Z"
+    },
+    {
+      "id": "PR-0047",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:12:45.582Z"
+    },
+    {
+      "id": "PR-0048",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:13:04.753Z"
+    },
+    {
+      "id": "PR-0049",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:13:22.297Z"
+    },
+    {
+      "id": "PR-0050",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:13:40.083Z"
+    },
+    {
+      "id": "PR-0051",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:14:00.012Z"
+    },
+    {
+      "id": "PR-0052",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:14:17.618Z"
+    },
+    {
+      "id": "PR-0053",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:14:36.065Z"
+    },
+    {
+      "id": "PR-0054",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:14:54.226Z"
+    },
+    {
+      "id": "PR-0055",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:15:11.803Z"
+    },
+    {
+      "id": "PR-0056",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:15:29.343Z"
+    },
+    {
+      "id": "PR-0057",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:16:14.074Z"
+    },
+    {
+      "id": "PR-0058",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:16:31.716Z"
+    },
+    {
+      "id": "PR-0059",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:16:49.373Z"
+    },
+    {
+      "id": "PR-0060",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:17:06.539Z"
+    },
+    {
+      "id": "PR-0061",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:17:48.716Z"
+    },
+    {
+      "id": "PR-0062",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:18:06.557Z"
+    },
+    {
+      "id": "PR-0063",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:18:25.925Z"
+    },
+    {
+      "id": "PR-0064",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:18:43.537Z"
+    },
+    {
+      "id": "PR-0065",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:19:01.004Z"
+    },
+    {
+      "id": "PR-0066",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:19:18.195Z"
+    },
+    {
+      "id": "PR-0067",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:19:35.804Z"
+    },
+    {
+      "id": "PR-0068",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:19:53.314Z"
+    },
+    {
+      "id": "PR-0069",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:20:13.394Z"
+    },
+    {
+      "id": "PR-0070",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:20:30.927Z"
+    },
+    {
+      "id": "PR-0071",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:20:56.714Z"
+    },
+    {
+      "id": "PR-0072",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:21:14.496Z"
+    },
+    {
+      "id": "PR-0073",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:21:33.256Z"
+    },
+    {
+      "id": "PR-0074",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:21:51.754Z"
+    },
+    {
+      "id": "PR-0075",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:22:12.677Z"
+    },
+    {
+      "id": "PR-0076",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:22:31.359Z"
+    },
+    {
+      "id": "PR-0077",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:22:49.902Z"
+    },
+    {
+      "id": "PR-0078",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:23:08.557Z"
+    },
+    {
+      "id": "PR-0079",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:23:25.475Z"
+    },
+    {
+      "id": "PR-0080",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:23:43.301Z"
+    },
+    {
+      "id": "PR-0081",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:24:03.453Z"
+    },
+    {
+      "id": "PR-0082",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:24:45.462Z"
+    },
+    {
+      "id": "PR-0083",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:25:03.084Z"
+    },
+    {
+      "id": "PR-0084",
+      "message": "Olá",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:26:17.789Z"
+    },
+    {
+      "id": "PR-0085",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:27:32.150Z"
+    },
+    {
+      "id": "PR-0086",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:27:50.169Z"
+    },
+    {
+      "id": "PR-0087",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:28:10.130Z"
+    },
+    {
+      "id": "PR-0088",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:28:35.957Z"
+    },
+    {
+      "id": "PR-0089",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:28:53.535Z"
+    },
+    {
+      "id": "PR-0090",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:29:11.388Z"
+    },
+    {
+      "id": "PR-0091",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:29:37.211Z"
+    },
+    {
+      "id": "PR-0092",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:29:54.751Z"
+    },
+    {
+      "id": "PR-0093",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:31:11.307Z"
+    },
+    {
+      "id": "PR-0094",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:31:29.013Z"
+    },
+    {
+      "id": "PR-0095",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:32:10.933Z"
+    },
+    {
+      "id": "PR-0096",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:32:28.811Z"
+    },
+    {
+      "id": "PR-0097",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:32:46.055Z"
+    },
+    {
+      "id": "PR-0098",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:33:03.574Z"
+    },
+    {
+      "id": "PR-0099",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:33:48.047Z"
+    },
+    {
+      "id": "PR-0100",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:34:05.534Z"
+    },
+    {
+      "id": "PR-0101",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:35:19.862Z"
+    },
+    {
+      "id": "PR-0102",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:35:37.901Z"
+    },
+    {
+      "id": "PR-0103",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:35:55.562Z"
+    },
+    {
+      "id": "PR-0104",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:36:37.597Z"
+    },
+    {
+      "id": "PR-0105",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:36:57.739Z"
+    },
+    {
+      "id": "PR-0106",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:37:15.285Z"
+    },
+    {
+      "id": "PR-0107",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:37:32.245Z"
+    },
+    {
+      "id": "PR-0108",
+      "message": "OI",
+      "family": "greeting",
+      "apiReply": "Oi! Como vai.",
+      "uiReply": "MIΛ\nOi! Como vai.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:37:50.064Z"
+    },
+    {
+      "id": "PR-0109",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:38:32.125Z"
+    },
+    {
+      "id": "PR-0110",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:38:49.844Z"
+    },
+    {
+      "id": "PR-0111",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:39:34.614Z"
+    },
+    {
+      "id": "PR-0112",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:39:52.192Z"
+    },
+    {
+      "id": "PR-0113",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:40:09.734Z"
+    },
+    {
+      "id": "PR-0114",
+      "message": "oi 😊",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:40:35.756Z"
+    },
+    {
+      "id": "PR-0115",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:40:53.609Z"
+    },
+    {
+      "id": "PR-0116",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:41:11.148Z"
+    },
+    {
+      "id": "PR-0117",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:41:31.551Z"
+    },
+    {
+      "id": "PR-0118",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:41:50.022Z"
+    },
+    {
+      "id": "PR-0119",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:42:07.579Z"
+    },
+    {
+      "id": "PR-0120",
+      "message": "oi!!!",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:43:22.033Z"
+    },
+    {
+      "id": "PR-0121",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:43:39.688Z"
+    },
+    {
+      "id": "PR-0122",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:43:57.370Z"
+    },
+    {
+      "id": "PR-0123",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:44:42.602Z"
+    },
+    {
+      "id": "PR-0124",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:45:00.169Z"
+    },
+    {
+      "id": "PR-0125",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:45:18.655Z"
+    },
+    {
+      "id": "PR-0126",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:45:44.646Z"
+    },
+    {
+      "id": "PR-0127",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:46:02.330Z"
+    },
+    {
+      "id": "PR-0128",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:46:19.808Z"
+    },
+    {
+      "id": "PR-0129",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:46:40.015Z"
+    },
+    {
+      "id": "PR-0130",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:46:57.644Z"
+    },
+    {
+      "id": "PR-0131",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:47:15.940Z"
+    },
+    {
+      "id": "PR-0132",
+      "message": "hi oi",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:47:33.822Z"
+    },
+    {
+      "id": "PR-0133",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:47:51.489Z"
+    },
+    {
+      "id": "PR-0134",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "uiReply": "MIΛ\nVocê enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:48:08.425Z"
+    },
+    {
+      "id": "PR-0135",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:48:28.513Z"
+    },
+    {
+      "id": "PR-0136",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:48:46.245Z"
+    },
+    {
+      "id": "PR-0137",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:49:28.164Z"
+    },
+    {
+      "id": "PR-0138",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:49:45.976Z"
+    },
+    {
+      "id": "PR-0139",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:50:03.554Z"
+    },
+    {
+      "id": "PR-0140",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:50:21.156Z"
+    },
+    {
+      "id": "PR-0141",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:50:44.541Z"
+    },
+    {
+      "id": "PR-0142",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:51:02.195Z"
+    },
+    {
+      "id": "PR-0143",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:51:20.160Z"
+    },
+    {
+      "id": "PR-0144",
+      "message": "oi",
+      "family": "greeting",
+      "apiReply": "Oi! Tudo bem.",
+      "uiReply": "MIΛ\nOi! Tudo bem.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:52:34.693Z"
+    },
+    {
+      "id": "PR-0145",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:52:53.392Z"
+    },
+    {
+      "id": "PR-0146",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:53:36.368Z"
+    },
+    {
+      "id": "PR-0147",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:53:57.351Z"
+    },
+    {
+      "id": "PR-0148",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:54:15.833Z"
+    },
+    {
+      "id": "PR-0149",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:54:34.173Z"
+    },
+    {
+      "id": "PR-0150",
+      "message": "oi mano",
+      "family": "greeting",
+      "apiReply": "Oi! Prazer em falar.",
+      "uiReply": "MIΛ\nOi! Prazer em falar.",
+      "parity": "exact",
+      "pass": true,
+      "ts": "2026-08-02T22:54:52.929Z"
+    }
+  ]
+}

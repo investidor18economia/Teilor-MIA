@@ -1,0 +1,65 @@
+{
+  "results": [
+    {
+      "script": "scripts/test-mia-patch-52-universal-response-contract.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-53-unified-egress.js",
+      "exitCode": 1,
+      "pass": false
+    },
+    {
+      "script": "scripts/test-mia-patch-54-semantic-precedence.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-55-universal-recovery.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-55v1-universal-egress.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-56-conversational-observability.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57-social-contract-verbalization.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57v-rejection-verbalization.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57v1-negative-feedback.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57v3-indirect-reference.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-patch-57v31-single-rec-filler.js",
+      "exitCode": 0,
+      "pass": true
+    },
+    {
+      "script": "scripts/test-mia-commercial-follow-up-continuity.js",
+      "exitCode": 0,
+      "pass": true
+    }
+  ],
+  "allPass": false
+}
