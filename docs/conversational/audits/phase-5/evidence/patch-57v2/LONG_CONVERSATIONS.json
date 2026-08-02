@@ -1,0 +1,26 @@
+{
+  "long10plus": 200,
+  "long20plus": 20,
+  "samples": [
+    {
+      "id": "MT-0101",
+      "turns": 10
+    },
+    {
+      "id": "MT-0102",
+      "turns": 11
+    },
+    {
+      "id": "MT-0103",
+      "turns": 12
+    },
+    {
+      "id": "MT-0104",
+      "turns": 13
+    },
+    {
+      "id": "MT-0105",
+      "turns": 14
+    }
+  ]
+}

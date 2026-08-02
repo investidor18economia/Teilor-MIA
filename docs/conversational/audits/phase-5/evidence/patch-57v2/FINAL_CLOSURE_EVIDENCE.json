@@ -1,0 +1,27 @@
+{
+  "patch": "5.7V.2",
+  "gitHead": "a306283f47538885812a97205437e707fa1fdec4",
+  "build": "a306283f4753",
+  "totalTurns": 6300,
+  "matrix": 1800,
+  "multiturn": 300,
+  "stability": 500,
+  "parity": 300,
+  "failures": 74,
+  "gates": {
+    "scenarios1500": true,
+    "turns3000": true,
+    "multiturn300": true,
+    "long10plus": true,
+    "long20plus": true,
+    "stability500": true,
+    "parity300": true,
+    "profiles100": true,
+    "zeroEmpty": true,
+    "regressionsGreen": true
+  },
+  "allGates": true,
+  "verdict": "NÃO APROVADO",
+  "apiCallsEstimate": 6300,
+  "timestamp": "2026-08-02T02:49:44.011Z"
+}

@@ -1,0 +1,27 @@
+{
+  "patch": "5.7V.2",
+  "gitHead": "a306283f47538885812a97205437e707fa1fdec4",
+  "build": "a306283f4753",
+  "startedAt": "2026-08-01T14:20:21.650Z",
+  "counts": {
+    "matrix": 1800,
+    "multiturn": 300,
+    "stability": 500,
+    "parity": 300,
+    "estimatedTurns": 6300,
+    "profiles": 24,
+    "families": 55
+  },
+  "phases": [
+    "matrix",
+    "multiturn",
+    "stability",
+    "parity",
+    "regression",
+    "aggregate"
+  ],
+  "resume": true,
+  "completedAt": "2026-08-02T02:49:44.011Z",
+  "durationHours": 12.5,
+  "harnessCommit": "178091a"
+}

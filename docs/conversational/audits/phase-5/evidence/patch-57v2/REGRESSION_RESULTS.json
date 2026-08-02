@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "script": "scripts/test-mia-patch-57-social-contract-verbalization.js",
+      "exitCode": 0,
+      "pass": true,
+      "stdout": "PATCH 5.7 social contract verbalization tests\n\n  ✓ versions bumped\n  ✓ greeting mirror includes continuity\n  ✓ warm clarification not cold template\n  ✓ selectGovernedFallback uses contract-driven ambiguous\n  ✓ shouldUseWarmImplicitSocialReference multiturn\n  ✓ buildContractDrivenSocialFallback reaction\n\nResultado: 6 passed, 0 failed\n",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/test-mia-patch-57v-rejection-verbalization.js",
+      "exitCode": 0,
+      "pass": true,
+      "stdout": "  ✓ não gostei classified as disapproval not clarification\n  ✓ não gostei fallback validates with specificity\n  ✓ não gostei desse celular targets product disapproval\n  ✓ gostei classified as approval\n\nResultado: 4 passed, 0 failed\n",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/test-mia-patch-57v1-negative-feedback.js",
+      "exitCode": 0,
+      "pass": true,
+      "stdout": " frustration\n  ✓ discordo → soft_disagreement\n  ✓ correction uses warm correction builder not irony\n  ✓ correction target previous_answer with context\n  ✓ recommendation rejection not product aesthetic\n  ✓ product rejection targets product\n  ✓ isso não faz sentido → disagreement\n  ✓ variation você está errada → correction family\n  ✓ variation ficou ruim → disapproval not frustration\n  ✓ variation não concordo → soft_disagreement\n  ✓ disapproval fallback validates\n\nResultado: 13 passed, 0 failed\n",
+      "stderr": ""
+    }
+  ],
+  "allPass": true
+}
