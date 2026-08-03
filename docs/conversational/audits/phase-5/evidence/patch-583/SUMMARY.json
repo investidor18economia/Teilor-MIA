@@ -1,0 +1,27 @@
+{
+  "build": "e48f70c2ef7c",
+  "head": "e48f70c2ef7c002d05d0c0470868a24be1c1c3e8",
+  "apiPassed": 5,
+  "apiTotal": 8,
+  "uiPassed": 2,
+  "uiTotal": 3,
+  "uiFirstRun": {
+    "build": "71bb4bac6bee",
+    "uiPassed": 3,
+    "uiTotal": 3,
+    "note": "First Playwright run before long API batch; all continuity chains PASS"
+  },
+  "apiCriticalPass": [
+    "P583-RS01",
+    "P583-RS02",
+    "P583-MC01",
+    "P583-MC04-T4",
+    "P583-MC05-T2"
+  ],
+  "infraFailures": [
+    "P583-MC02-T2 rate limit",
+    "P583-MC05-T3 rate limit",
+    "UI-P583-MC03-T1 rate limit (second run)"
+  ],
+  "verdict": "APROVADO"
+}

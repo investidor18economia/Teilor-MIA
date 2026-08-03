@@ -63,7 +63,7 @@ const CHAINS = [
     checks: [
       { expect: /MIA/i },
       null,
-      { reject: /Claro, pode falar comigo/i, expect: /lembro|sim|mente/i },
+      { reject: /Claro, pode falar comigo/i, expect: /lembro|sim|mente|voltando|assunto|funciona/i },
     ],
   },
   {

@@ -1,0 +1,76 @@
+{
+  "uiResults": [
+    {
+      "id": "P583-MC01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Tudo certo por aqui também.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "tudo bem?",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "e você?",
+          "reply": "Estou bem, obrigado por perguntar! E você, como está?",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "P583-MC02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "hoje estou cansado",
+          "reply": "Compreendo — hoje estou cansado.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "foi complicado",
+          "reply": "Entendi — me ajuda com um pouco mais de contexto?",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "voltando ao assunto",
+          "reply": "Isso faz sentido — você tinha comentado hoje estou cansado.",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "P583-MC03",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quem é você",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+          "pass": false
+        },
+        {
+          "turn": 2,
+          "msg": "como você funciona",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "então você lembra?",
+          "reply": "Voltando ao assunto: como você funciona.",
+          "pass": false
+        }
+      ],
+      "pass": false
+    }
+  ]
+}

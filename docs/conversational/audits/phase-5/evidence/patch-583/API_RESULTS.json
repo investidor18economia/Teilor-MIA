@@ -1,0 +1,195 @@
+{
+  "apiResults": [
+    {
+      "id": "P583-GR01",
+      "msg": "oi",
+      "expect": {},
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P583-RS01",
+      "msg": "lembra do assunto?",
+      "reject": {},
+      "history": [
+        {
+          "role": "user",
+          "content": "hoje estou cansado"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendo."
+        }
+      ],
+      "reply": "Lembro sim — você estava falando sobre hoje estou cansado.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P583-RS02",
+      "msg": "como eu estava dizendo",
+      "reject": {},
+      "history": [
+        {
+          "role": "user",
+          "content": "hoje estou cansado"
+        },
+        {
+          "role": "assistant",
+          "content": "Entendo."
+        },
+        {
+          "role": "user",
+          "content": "foi complicado"
+        },
+        {
+          "role": "assistant",
+          "content": "Compreendo."
+        }
+      ],
+      "reply": "Voltando ao assunto: hoje estou cansado.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P583-MC01",
+      "type": "chain",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "tudo bem?",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "e você?",
+          "reply": "Estou bem, obrigada! E você, como está?",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "P583-MC02",
+      "type": "chain",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "hoje estou cansado",
+          "reply": "Entendo, cansaço é bem comum, especialmente no final do dia.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "foi complicado",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+          "pass": false
+        },
+        {
+          "turn": 3,
+          "msg": "voltando ao assunto",
+          "reply": "Isso faz sentido — você tinha comentado hoje estou cansado.",
+          "pass": true
+        }
+      ],
+      "pass": false
+    },
+    {
+      "id": "P583-MC03",
+      "type": "chain",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quem é você",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "como você funciona",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "então você lembra?",
+          "reply": "Voltando ao assunto: como você funciona.",
+          "pass": false
+        }
+      ],
+      "pass": false
+    },
+    {
+      "id": "P583-MC04",
+      "type": "chain",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "preciso de celular",
+          "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu iria no iPhone 13, mas o iPhone 11 também entrou forte — mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganh",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "deixa o produto",
+          "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateri",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "como você tá?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "P583-MC05",
+      "type": "chain",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "bom dia",
+          "reply": "Bom dia! Prazer em falar. Que bom te ver por aqui.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "tudo certo?",
+          "reply": "Tudo certo por aqui também.",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "como foi seu dia?",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+          "pass": false
+        }
+      ],
+      "pass": false
+    }
+  ],
+  "summary": {
+    "build": "e48f70c2ef7c",
+    "head": "e48f70c2ef7c002d05d0c0470868a24be1c1c3e8",
+    "apiPassed": 5,
+    "apiTotal": 8,
+    "uiPassed": 2,
+    "uiTotal": 3
+  }
+}
