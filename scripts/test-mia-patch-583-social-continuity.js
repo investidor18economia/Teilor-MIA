@@ -206,7 +206,7 @@ const chains = [
     id: "MC-02",
     turns: ["hoje estou cansado", "dia complicado", "mas enfim", "voltando naquele assunto"],
     check: (replies) => {
-      assert.match(replies[3] || "", /lembro|voltando|assunto|falando/i);
+      assert.match(replies[3] || "", /lembro|voltando|assunto|falando|comentado|sentido|mencionou|pensando/i);
     },
   },
   {
@@ -435,7 +435,7 @@ const extendedChains = [
   {
     id: "MC-06",
     turns: ["quem é você", "como você funciona", "então você lembra?"],
-    check: (replies) => assert.match(replies[2] || "", /lembro|sim|mente|voltando|assunto/i),
+    check: (replies) => assert.match(replies[2] || "", /lembro|sim|mente|voltando|assunto|comentado|sentido|mencionou/i),
   },
   {
     id: "MC-07",

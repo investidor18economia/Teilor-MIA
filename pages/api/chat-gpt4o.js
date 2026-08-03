@@ -23450,6 +23450,11 @@ async function runGovernedSocialIntentFlow({
       period,
       failureReason: "social_continuity_governed_verbalization",
     });
+  } else if (socialBehaviorContract?.socialHumanizationBypass) {
+    rawReply = buildGovernedSocialFallbackReply(socialBehaviorContract || {}, {
+      period,
+      failureReason: "social_humanization_governed_verbalization",
+    });
   } else if (socialBehaviorContract?.personalityGovernanceBypass) {
     rawReply = buildGovernedSocialFallbackReply(socialBehaviorContract || {}, {
       period,

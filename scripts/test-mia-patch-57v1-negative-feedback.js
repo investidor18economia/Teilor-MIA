@@ -67,8 +67,8 @@ const assistantHistory = [
   { role: "assistant", content: "Recomendo o Galaxy A55 pela bateria de 5000mAh." },
 ];
 
-test("verbalization version 5.8.4", () => {
-  assert.equal(SOCIAL_CONTRACT_VERBALIZATION_VERSION, "5.8.4");
+test("verbalization version 5.8.5", () => {
+  assert.equal(SOCIAL_CONTRACT_VERBALIZATION_VERSION, "5.8.5");
 });
 
 test("você errou → correction not clarification", () => {
