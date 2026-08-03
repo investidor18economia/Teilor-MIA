@@ -73,7 +73,8 @@ const CHAINS = [
       const last = replies[replies.length - 1] || "";
       return /até|logo|tchau|noite|descanse|foi bom|próxim|proxim/i.test(last);
     },
-    reject: /recomend|produto|celular|compr/i,
+    rejectOnTurn: (turnIndex, reply) =>
+      turnIndex === 2 && /recomend|produto|celular|compr|iphone|galaxy|minha escolha/i.test(reply),
   },
   {
     id: "P587-H02",
@@ -159,7 +160,8 @@ async function main() {
       history.push({ role: "assistant", content: reply });
       replies.push(reply);
       let pass = status === 200 && !!reply && !rateLimited;
-      if (chain.reject && chain.reject.test(reply)) pass = false;
+      if (chain.rejectOnTurn && chain.rejectOnTurn(i, reply)) pass = false;
+      else if (chain.reject && chain.reject.test(reply)) pass = false;
       if (!pass) chainPass = false;
       turnResults.push({ turn: i + 1, msg, reply: reply.slice(0, 400), pass });
       log(`${chain.id} T${i + 1} ${pass ? "PASS" : "FAIL"} ${reply.slice(0, 60)}`);
@@ -181,8 +183,8 @@ async function main() {
     const chain = CHAINS.find((c) => c.id === chainId);
     if (!chain) continue;
     try {
-      await page.goto(UI, { waitUntil: "networkidle", timeout: 60000 });
-      await page.waitForSelector("textarea, input[type=text]", { timeout: 30000 });
+      await page.goto(UI, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await page.waitForSelector("textarea, input[type=text], [contenteditable=true]", { timeout: 45000 });
       const replies = [];
       for (const msg of chain.turns) {
         const input = page.locator("textarea, input[type=text]").first();

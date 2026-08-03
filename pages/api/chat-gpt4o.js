@@ -276,6 +276,7 @@ import {
   finalizeHumanConversationReply,
   humanExperienceToTrace,
   buildGovernedSocialFallbackReply,
+  shouldForceSocialExperienceEgress,
 } from "../../lib/miaHumanConversationExperience.js";
 import { universalConversationResponseContractToTrace } from "../../lib/miaUniversalConversationResponseContract.js";
 import {
@@ -31184,6 +31185,31 @@ if (constraintRefinementReplyEarly?.reply) {
   }
 }
 // ─────────────────────────────────────────────────────────────
+
+if (shouldForceSocialExperienceEgress(socialBehaviorContractEarly)) {
+  return runGovernedSocialIntentFlow({
+    res,
+    intent: "social_conversation",
+    role: "social_conversation_reply",
+    source: "social_departure_experience_gate",
+    query,
+    resolvedQuery: query,
+    budget,
+    wantsNew,
+    period,
+    userStyle,
+    sessionContext,
+    hasAnchorForRouting: false,
+    req,
+    conversationalToneProfile,
+    socialBehaviorContract: socialBehaviorContractEarly,
+    products: [],
+    productLimit: 0,
+    pipelineTracer,
+    routingDecision,
+    responsePath: "social_departure_experience_gate",
+  });
+}
 
 if (commercialEntryGateResult?.commercialEntryAllowed === false && !commercialContinuationRequiredEarly) {
   return runNonCommercialAuthorityFastBranch({

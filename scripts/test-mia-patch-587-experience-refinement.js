@@ -24,7 +24,10 @@ import {
   scanRecentExpressionHistory,
   scoreVariantForRhythm,
 } from "../lib/miaConversationalRhythmGovernance.js";
-import { HUMAN_EXPERIENCE_VERSION } from "../lib/miaHumanConversationExperience.js";
+import {
+  HUMAN_EXPERIENCE_VERSION,
+  shouldForceSocialExperienceEgress,
+} from "../lib/miaHumanConversationExperience.js";
 import { recognizeMiaIntent } from "../lib/miaIntentRecognitionLayer.js";
 import { buildSocialConversationBehaviorContract } from "../lib/miaSocialConversationBehavior.js";
 import {
@@ -283,7 +286,10 @@ for (const msg of metaNotGeneric) {
   });
 }
 
-// Class H — social departure / no commercial bleed
+test("H experience egress gate", () => {
+  const c = buildContract("preciso ir", hist(["user", "quero celular"], ["assistant", "Ok"]));
+  assert.ok(shouldForceSocialExperienceEgress(c));
+});
 const departures = [
   "preciso ir",
   "vou indo",
