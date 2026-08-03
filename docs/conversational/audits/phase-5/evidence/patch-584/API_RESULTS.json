@@ -1,0 +1,170 @@
+{
+  "apiResults": [
+    {
+      "id": "P584-RC01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "tudo bem?",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "ok",
+          "reply": "Beleza!",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "certo",
+          "reply": "Legal!",
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "msg": "beleza",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 6,
+          "msg": "show",
+          "reply": "Show!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Oi! Tudo bem. Que bom te ver por aqui.",
+        "Tudo tranquilo por aqui!",
+        "Beleza!",
+        "Legal!",
+        "Tudo tranquilo por aqui!",
+        "Show!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P584-RC02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "obrigado",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "tmj",
+          "reply": "Valeu! Tamo junto!",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "show",
+          "reply": "Show!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "De nada!",
+        "De nada!",
+        "Valeu! Tamo junto!",
+        "Show!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P584-RC03",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "hoje estou cansado",
+          "reply": "Compreendo.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "foi complicado",
+          "reply": "Parece que você teve uma noite difícil. O que aconteceu?",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "mas enfim",
+          "reply": "Parece que algo está te incomodando. Quer compartilhar o que está pensando?",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "ok",
+          "reply": "Entendi!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Compreendo.",
+        "Parece que você teve uma noite difícil. O que aconteceu?",
+        "Parece que algo está te incomodando. Quer compartilhar o que está pensando?",
+        "Entendi!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P584-RC04",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "só queria conversar",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "entendi",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "ok",
+          "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+          "pass": false
+        },
+        {
+          "turn": 4,
+          "msg": "certo",
+          "reply": "Legal!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Fico por aqui — o que você quer conversar?",
+        "Fico por aqui — o que você quer conversar?",
+        "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "Legal!"
+      ],
+      "pass": false
+    }
+  ],
+  "summary": {
+    "build": "82b1a23d3200",
+    "head": "82b1a23d320012d0b2f1e130f2bb64d1b2a46fe7",
+    "apiPassed": 3,
+    "apiTotal": 4,
+    "uiPassed": 2,
+    "uiTotal": 2
+  }
+}

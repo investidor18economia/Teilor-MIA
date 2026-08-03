@@ -1,0 +1,90 @@
+{
+  "uiResults": [
+    {
+      "id": "P584-RC01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "tudo bem?",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "ok",
+          "reply": "Beleza!",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "certo",
+          "reply": "Combinado.",
+          "pass": true
+        },
+        {
+          "turn": 5,
+          "msg": "beleza",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 6,
+          "msg": "show",
+          "reply": "Show!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Tudo tranquilo por aqui!",
+        "Tudo tranquilo por aqui!",
+        "Beleza!",
+        "Combinado.",
+        "Tudo tranquilo por aqui!",
+        "Show!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P584-RC02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "obrigado",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "tmj",
+          "reply": "Valeu! Tamo junto!",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "show",
+          "reply": "Show!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "De nada!",
+        "De nada!",
+        "Valeu! Tamo junto!",
+        "Show!"
+      ],
+      "pass": true
+    }
+  ]
+}

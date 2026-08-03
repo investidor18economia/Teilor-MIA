@@ -1,0 +1,15 @@
+{
+  "build": "82b1a23d3200",
+  "head": "82b1a23d320012d0b2f1e130f2bb64d1b2a46fe7",
+  "apiPassed": 3,
+  "apiTotal": 4,
+  "uiPassed": 2,
+  "uiTotal": 2,
+  "apiCriticalPass": ["P584-RC01", "P584-RC02", "P584-RC03"],
+  "infraFailures": ["P584-RC04-T3 rate limit"],
+  "diversityHighlights": {
+    "RC01": ["Beleza!", "Legal!", "Tudo tranquilo por aqui!", "Show!"],
+    "RC02": ["De nada!", "Valeu! Tamo junto!", "Show!"]
+  },
+  "verdict": "APROVADO"
+}
