@@ -1,0 +1,39 @@
+{
+  "uiResults": [
+    {
+      "id": "P582-GR01",
+      "msg": "oi",
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "apiReply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "pass": true
+    },
+    {
+      "id": "P582-ID01",
+      "msg": "qual seu nome?",
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": false
+    },
+    {
+      "id": "P582-EM01",
+      "msg": "não tô legal",
+      "reply": "Puxado — entendo.",
+      "apiReply": "Puxado — entendo.",
+      "pass": true
+    },
+    {
+      "id": "P582-RC01",
+      "msg": "e você?",
+      "reply": "Tudo tranquilo por aqui! E contigo, como vai?",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "pass": true
+    },
+    {
+      "id": "P582-CL01",
+      "msg": "péssimo",
+      "reply": "Sinto muito em saber que você teve uma experiência ruim. O que aconteceu?",
+      "apiReply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "pass": true
+    }
+  ]
+}

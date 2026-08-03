@@ -1,0 +1,135 @@
+{
+  "apiResults": [
+    {
+      "id": "P582-GR01",
+      "msg": "oi",
+      "reject": {},
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-GR02",
+      "msg": "bom dia",
+      "reject": {},
+      "reply": "Bom dia! Prazer em falar. Que bom te ver por aqui.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-ID01",
+      "msg": "qual seu nome?",
+      "expect": {},
+      "reject": {},
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-ID02",
+      "msg": "quem é você?",
+      "expect": {},
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-ID03",
+      "msg": "como você funciona?",
+      "expect": {},
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-EM01",
+      "msg": "não tô legal",
+      "reject": {},
+      "expect": {},
+      "reply": "Puxado — entendo.",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-EM02",
+      "msg": "to meio down",
+      "reject": {},
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "status": 429,
+      "pass": false
+    },
+    {
+      "id": "P582-RC01",
+      "msg": "e você?",
+      "expect": {},
+      "reject": {},
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "status": 429,
+      "pass": false
+    },
+    {
+      "id": "P582-RC02",
+      "msg": "como você tá?",
+      "expect": {},
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "status": 429,
+      "pass": false
+    },
+    {
+      "id": "P582-CL01",
+      "msg": "péssimo",
+      "reject": {},
+      "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+      "status": 429,
+      "pass": false
+    },
+    {
+      "id": "P582-CL02",
+      "msg": "horrível",
+      "reject": {},
+      "reply": "Não captei direito — é sobre o quê, exatamente?",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-CO01",
+      "msg": "você é legal",
+      "expect": {},
+      "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar nessa boa vibe!",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-HU01",
+      "msg": "kkk",
+      "expect": {},
+      "reply": "Hehe!",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-CA01",
+      "msg": "tudo bem?",
+      "expect": {},
+      "reply": "Oi! Tudo bem. Como posso te ajudar hoje?",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "id": "P582-ST01",
+      "msg": "só queria conversar",
+      "reject": {},
+      "reply": "Claro — me conta o que você quer explorar.",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "build": "50df991e66b0",
+    "head": "50df991e66b05ea3c8024a1c072a72f971b86623",
+    "apiPassed": 11,
+    "apiTotal": 15,
+    "uiPassed": 4,
+    "uiTotal": 5
+  }
+}
