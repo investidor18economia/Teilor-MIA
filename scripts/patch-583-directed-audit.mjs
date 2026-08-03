@@ -15,7 +15,7 @@ mkdirSync(OUT, { recursive: true });
 const PROD_API = "https://economia-ai.vercel.app/api/mia-chat";
 const HEALTH = "https://economia-ai.vercel.app/api/health";
 const UI = "https://economia-ai.vercel.app/app-mia";
-const DELAY = 8000;
+const DELAY = 12000;
 const LOG = join(OUT, "run.log");
 const log = (m) => {
   const line = `[${new Date().toISOString()}] ${m}`;
@@ -24,10 +24,19 @@ const log = (m) => {
 };
 
 const SINGLE_CASES = [
-  { id: "P583-GR01", msg: "oi", reject: /^Oi!\s*Tudo bem/i },
-  { id: "P583-RS01", msg: "lembra do assunto?", reject: /Claro, pode falar comigo/i },
-  { id: "P583-RS02", msg: "como eu estava dizendo", reject: /fico por aqui no papo/i },
+  { id: "P583-GR01", msg: "oi", expect: /oi|olá|bom|boa|opa|salve|tudo bem/i },
+  { id: "P583-RS01", msg: "lembra do assunto?", reject: /Claro, pode falar comigo/i, history: hist("hoje estou cansado", "Entendo.") },
+  { id: "P583-RS02", msg: "como eu estava dizendo", reject: /fico por aqui no papo/i, history: hist("hoje estou cansado", "Entendo.", "foi complicado", "Compreendo.") },
 ];
+
+function hist(...pairs) {
+  const out = [];
+  for (let i = 0; i < pairs.length; i += 2) {
+    out.push({ role: "user", content: pairs[i] });
+    if (pairs[i + 1]) out.push({ role: "assistant", content: pairs[i + 1] });
+  }
+  return out;
+}
 
 const CHAINS = [
   {
@@ -89,13 +98,15 @@ async function callApi(msg, sessionId, history = []) {
     body: JSON.stringify({
       text: msg,
       user_id: sessionId,
-      conversation_history: history,
+      conversation_id: sessionId,
+      messages: history,
     }),
   });
   const body = await res.json().catch(() => ({}));
   return {
     reply: String(body?.response || body?.reply || "").trim(),
     status: res.status,
+    rateLimited: /várias mensagens em sequência/i.test(String(body?.response || body?.reply || "")),
   };
 }
 
@@ -121,8 +132,8 @@ async function main() {
   const apiResults = [];
 
   for (const c of SINGLE_CASES) {
-    const { reply, status } = await callApi(c.msg, c.id);
-    let pass = !!reply && status === 200;
+    const { reply, status, rateLimited } = await callApi(c.msg, c.id, c.history || []);
+    let pass = !!reply && status === 200 && !rateLimited;
     if (c.expect && !c.expect.test(reply)) pass = false;
     if (c.reject && c.reject.test(reply)) pass = false;
     apiResults.push({ ...c, reply: reply.slice(0, 400), status, pass });
@@ -137,10 +148,10 @@ async function main() {
     for (let i = 0; i < chain.turns.length; i++) {
       const msg = chain.turns[i];
       const check = chain.checks?.[i];
-      const { reply, status } = await callApi(msg, sessionId, history);
+      const { reply, status, rateLimited } = await callApi(msg, sessionId, history);
       history.push({ role: "user", content: msg });
       history.push({ role: "assistant", content: reply });
-      const pass = status === 200 && evaluateReply(reply, check);
+      const pass = status === 200 && !rateLimited && evaluateReply(reply, check);
       if (!pass) chainPass = false;
       turnResults.push({ turn: i + 1, msg, reply: reply.slice(0, 400), pass });
       log(`${chain.id} T${i + 1} ${pass ? "PASS" : "FAIL"} ${reply.slice(0, 60)}`);

@@ -524,6 +524,21 @@ test("continuity strength moderate on resume", () => {
   const history = hist(["user", "hoje estou cansado"], ["assistant", "Entendo."]);
   const c = buildContract("voltando ao assunto", history);
   assert.ok(c.socialConversationContinuity?.continuityStrength);
+  const reply = buildResumeSocialDiscourseReply(c);
+  assert.match(reply, /hoje estou cansado|cansado/i);
+});
+
+test("resumption phrase not stored as topic", () => {
+  const scan = resolveSocialConversationContinuity({
+    message: "voltando ao assunto",
+    conversationMessages: hist(
+      ["user", "hoje estou cansado"],
+      ["assistant", "Entendo."],
+      ["user", "foi complicado"],
+      ["assistant", "Compreendo."]
+    ),
+  });
+  assert.equal(scan.activeSocialTopic, "hoje estou cansado");
 });
 
 // Large multiturn parametrized batch (target 120+ total)
