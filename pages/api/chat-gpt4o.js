@@ -23439,16 +23439,24 @@ async function runGovernedSocialIntentFlow({
     },
   ];
 
-  const aiResponse = await runMiaBrainTask({
-    role,
-    intent,
-    messages,
-    temperature: 0.55,
-    max_tokens: 190,
-    metadata: { source },
-  });
+  let rawReply = "";
+  if (socialBehaviorContract?.factValidation?.bypassLlmVerbalization) {
+    rawReply = buildGovernedSocialFallbackReply(socialBehaviorContract || {}, {
+      period,
+      failureReason: "fact_validation_governed_verbalization",
+    });
+  } else {
+    const aiResponse = await runMiaBrainTask({
+      role,
+      intent,
+      messages,
+      temperature: 0.55,
+      max_tokens: 190,
+      metadata: { source },
+    });
+    rawReply = getMiaLLMText(aiResponse);
+  }
 
-  const rawReply = getMiaLLMText(aiResponse);
   const replySeed =
     rawReply ||
     buildGovernedSocialFallbackReply(socialBehaviorContract || {}, { period });
