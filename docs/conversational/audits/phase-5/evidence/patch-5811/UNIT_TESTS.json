@@ -1,0 +1,5 @@
+{
+  "script": "test-mia-patch-5811-fact-validation.js",
+  "passed": 88,
+  "failed": 0
+}

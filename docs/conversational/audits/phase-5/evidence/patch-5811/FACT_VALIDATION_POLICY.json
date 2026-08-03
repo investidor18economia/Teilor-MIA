@@ -1,0 +1,17 @@
+{
+  "version": "5.8.1.1",
+  "states": {
+    "pending_validation": "user_claim detected; blocks auto-confirmation",
+    "confirmed_claim": "authoritative source supports user claim",
+    "not_verifiable": "admits limitation",
+    "none": "outside factual contrast scope"
+  },
+  "reasonCodes": [
+    "user_claim_requires_validation",
+    "claim_validation_pending",
+    "claim_confirmed_by_authoritative_source",
+    "claim_not_verifiable",
+    "unvalidated_user_claim_confirmation"
+  ],
+  "principle": "user_asserted != mia_validated"
+}

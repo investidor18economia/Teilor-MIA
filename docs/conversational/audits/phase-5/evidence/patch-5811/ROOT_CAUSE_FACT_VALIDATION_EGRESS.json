@@ -1,0 +1,13 @@
+{
+  "rootCause": "requiresFactValidation set in miaCorrectionContinuityGovernance but not propagated to behavior contract; runGovernedSocialIntentFlow allowed LLM to confirm user claim in finalizeHumanConversationReply without gate",
+  "fix": "miaFactValidationGovernance + enrichContractWithFactValidation + applyFactValidationGovernance in finalizeHumanConversationReply + LLM bypass in runGovernedSocialIntentFlow",
+  "callStack": [
+    "recognizeMiaIntent",
+    "buildSocialConversationBehaviorContract",
+    "enrichBehaviorContractWithHumanExperience",
+    "enrichContractWithFactValidation",
+    "runGovernedSocialIntentFlow",
+    "finalizeHumanConversationReply",
+    "applyFactValidationGovernance"
+  ]
+}
