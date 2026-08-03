@@ -23445,6 +23445,11 @@ async function runGovernedSocialIntentFlow({
       period,
       failureReason: "fact_validation_governed_verbalization",
     });
+  } else if (socialBehaviorContract?.personalityGovernanceBypass) {
+    rawReply = buildGovernedSocialFallbackReply(socialBehaviorContract || {}, {
+      period,
+      failureReason: "personality_governed_verbalization",
+    });
   } else {
     const aiResponse = await runMiaBrainTask({
       role,
