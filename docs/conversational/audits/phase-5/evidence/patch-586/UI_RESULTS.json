@@ -1,0 +1,1378 @@
+{
+  "ui": "https://economia-ai.vercel.app/app-mia",
+  "uiResults": [
+    {
+      "id": "UI-GR-01",
+      "category": "greeting",
+      "reply": "Tudo tranquilo por aqui!",
+      "apiReply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 4,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-GR-05",
+      "category": "greeting",
+      "reply": "Tudo tranquilo por aqui!",
+      "apiReply": "Boa noite! Como vai. Que bom te ver por aqui.",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 4,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-FW-01",
+      "category": "farewell",
+      "reply": "Até mais!",
+      "apiReply": "Até mais!",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 2,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-CA-01",
+      "category": "casual",
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "apiReply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 9,
+          "signals": [],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.8,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.8539999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.75,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7766666666666667,
+          "overall": 0.7766666666666667
+        },
+        "issues": []
+      }
+    },
+    {
+      "id": "UI-CA-04",
+      "category": "casual",
+      "reply": "Disponha — tamo junto.",
+      "apiReply": "Imagina — fico feliz em ter ajudado.",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 4,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "missing_warmth_expected",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization",
+            "microPatch": "5.8.5v empathy level"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-PE-01",
+      "category": "personal",
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 17,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-HU-01",
+      "category": "humor",
+      "reply": "Hehe!",
+      "apiReply": "Aí sim.",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 1,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-CO-01",
+      "category": "compliment",
+      "reply": "Obrigada! Fico feliz que você pense assim. Vamos seguir com a conversa!",
+      "apiReply": "Obrigada! Fico feliz que você ache isso.",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 12,
+          "signals": [],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.8,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.8539999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.75,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7766666666666667,
+          "overall": 0.7766666666666667
+        },
+        "issues": []
+      }
+    },
+    {
+      "id": "UI-CR-03",
+      "category": "criticism",
+      "reply": "Parece que você teve uma experiência ruim. O que aconteceu?",
+      "apiReply": "Entendi — me ajuda com um pouco mais de contexto?",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 10,
+          "signals": [
+            "low_warmth",
+            "repetitive"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.7,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.45,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.764
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          },
+          {
+            "code": "repetitive",
+            "severity": "MÉDIO",
+            "class": "D",
+            "layer": "rhythm",
+            "microPatch": "5.8.4v variation pressure"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-SH-01",
+      "category": "short",
+      "reply": "Beleza!",
+      "apiReply": "Beleza!",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 1,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "flat_ack",
+            "severity": "BAIXO",
+            "class": "D",
+            "layer": "rhythm",
+            "microPatch": "5.8.4v ack rotation"
+          },
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-LG-01",
+      "category": "long",
+      "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+      "apiReply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo direto.",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 32,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-FO-01",
+      "category": "formal",
+      "reply": "Boa — prezado(a),!",
+      "apiReply": "Boa — prezado(a),!",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 3,
+          "signals": [
+            "low_warmth",
+            "excess_formal"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.68,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-IN-01",
+      "category": "informal",
+      "reply": "Fico por aqui — o que você quer conversar?",
+      "apiReply": "Fico por aqui — o que você quer conversar?",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 9,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-EM-01",
+      "category": "emotional",
+      "reply": "Compreendo — hoje foi um dia difícil.",
+      "apiReply": "Compreendo — não é simples.",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 7,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.88,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.8533333333333334,
+          "overall": 0.8533333333333334
+        },
+        "issues": [
+          {
+            "code": "missing_warmth_expected",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization",
+            "microPatch": "5.8.5v empathy level"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-EM-19",
+      "category": "emotional",
+      "reply": "Imagina! Fico feliz que tenha gostado.",
+      "apiReply": "Imagina,",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 6,
+          "signals": [],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.8,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.8539999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.75,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7766666666666667,
+          "overall": 0.7766666666666667
+        },
+        "issues": []
+      }
+    },
+    {
+      "id": "UI-ID-01",
+      "category": "meta_identity",
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 17,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-ID-12",
+      "category": "meta_identity",
+      "reply": "Fico por aqui — o que você quer conversar?",
+      "apiReply": "Fico por aqui — o que você quer conversar?",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 9,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "missing_identity",
+            "severity": "MÉDIO",
+            "class": "F",
+            "layer": "personality",
+            "microPatch": "5.8.2v identity reply"
+          },
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-MC-01",
+      "category": "continuity_greeting",
+      "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+      "apiReply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 12,
+          "signals": [
+            "low_warmth",
+            "repetitive"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.7,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.45,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.764
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          },
+          {
+            "code": "repetitive",
+            "severity": "MÉDIO",
+            "class": "D",
+            "layer": "rhythm",
+            "microPatch": "5.8.4v variation pressure"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-MC-06",
+      "category": "commercial_to_social",
+      "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+      "apiReply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 12,
+          "signals": [
+            "low_warmth",
+            "repetitive"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.7,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.45,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.764
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          },
+          {
+            "code": "repetitive",
+            "severity": "MÉDIO",
+            "class": "D",
+            "layer": "rhythm",
+            "microPatch": "5.8.4v variation pressure"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-MC-08",
+      "category": "topic_resume",
+      "reply": "Isso faz sentido — você tinha comentado hoje estou cansado.",
+      "apiReply": "Isso faz sentido — você tinha comentado hoje estou cansado.",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 10,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-MC-10",
+      "category": "closure",
+      "reply": "Até mais!",
+      "apiReply": "Até mais!",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 2,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-MC-13",
+      "category": "gratitude_reciprocity",
+      "reply": "Beleza.",
+      "apiReply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+      "parity": "divergent",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 1,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.68,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "flat_ack",
+            "severity": "BAIXO",
+            "class": "D",
+            "layer": "rhythm",
+            "microPatch": "5.8.4v ack rotation"
+          },
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UI-MC-18",
+      "category": "long_10",
+      "reply": "De nada!",
+      "apiReply": "De nada!",
+      "parity": "exact_prefix",
+      "analysis": {
+        "quality": {
+          "version": "5.6.0",
+          "tokenCount": 2,
+          "signals": [
+            "low_warmth"
+          ],
+          "experienceValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "perceptionValidation": {
+            "valid": true,
+            "violations": []
+          },
+          "metrics": {
+            "naturalness": 0.85,
+            "humanWarmth": 0.5,
+            "clarity": 0.82,
+            "objectivity": 0.78,
+            "continuity": 0.8,
+            "coherence": 0.88,
+            "repetition": 0.9,
+            "verbosity": 0.88,
+            "contractAdherence": 0.92,
+            "targetAdherence": 0.75,
+            "interactionModeAdherence": 0.65,
+            "stability": null
+          },
+          "overall": 0.7939999999999999
+        },
+        "personality": {
+          "version": "5.6.0",
+          "configuredSocialDistance": "neutral_warm",
+          "proximity": 0.82,
+          "sympathy": 0.72,
+          "professionalism": 0.86,
+          "neutrality": 0.75,
+          "enthusiasmWhenAppropriate": 0.82,
+          "consistency": 0.7999999999999999,
+          "overall": 0.7999999999999999
+        },
+        "issues": [
+          {
+            "code": "low_warmth",
+            "severity": "MÉDIO",
+            "class": "B",
+            "layer": "humanization/personality",
+            "microPatch": "5.8.5v warmth gate expansion"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "patch": "5.8.6",
+  "timestamp": "2026-08-03T13:30:00.000Z",
+  "head": "3f40d1c7d5fe92f507c41527ac159f728470ccb3",
+  "results": [
+    { "suite": "5.8.5", "script": "test-mia-patch-585-social-humanization.js", "passed": 162, "failed": 0 },
+    { "suite": "5.8.4", "script": "test-mia-patch-584-conversational-rhythm.js", "passed": 126, "failed": 0 },
+    { "suite": "5.8.3", "script": "test-mia-patch-583-social-continuity.js", "passed": 124, "failed": 0 },
+    { "suite": "5.8.2", "script": "test-mia-patch-582-personality-governance.js", "passed": 82, "failed": 0 },
+    { "suite": "5.8.1.1", "script": "test-mia-patch-5811-fact-validation.js", "passed": 88, "failed": 0 },
+    { "suite": "5.8.1", "script": "test-mia-patch-581-correction-fillers.js", "passed": 124, "failed": 0 },
+    { "suite": "5.7V.3.1", "script": "test-mia-patch-57v31-single-rec-filler.js", "passed": 13, "failed": 0 },
+    { "suite": "5.7V.1", "script": "test-mia-patch-57v1-negative-feedback.js", "passed": 13, "failed": 0 },
+    { "suite": "5.3", "script": "test-mia-patch-53-unified-egress.js", "passed": 9, "failed": 0 }
+  ],
+  "totalPassed": 741,
+  "totalFailed": 0,
+  "allGreen": true
+}

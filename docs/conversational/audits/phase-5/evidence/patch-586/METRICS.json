@@ -1,0 +1,34 @@
+{
+  "metrics": {
+    "personality_score": 8,
+    "warmth_score": 5.7,
+    "continuity_score": 8,
+    "rhythm_score": 8.6,
+    "variation_score": -3.4,
+    "repetition_score": 8.6,
+    "expressiveness_score": 7.4,
+    "reciprocity_score": 7.1,
+    "presence_score": 6.6,
+    "naturalness_score": 8.3,
+    "identity_consistency": 8.1,
+    "human_feeling_score": 7.1,
+    "conversation_quality": 7.7
+  },
+  "delta": {
+    "warmth": 0.2,
+    "expressiveness": 1.9,
+    "variation": -7.9,
+    "rhythm": 2.6
+  },
+  "averages": {
+    "warmth": 0.5702479338842982,
+    "naturalness": 0.8344352617079887,
+    "personality": 0.7969513314967902,
+    "repetition": 0.8566115702479326,
+    "expressiveness": 0.7397796143250697,
+    "clarity": 0.8169696969696918,
+    "coherence": 0.8763636363636331,
+    "continuity": 0.8000000000000054,
+    "variation": -0.3429752066115703
+  }
+}

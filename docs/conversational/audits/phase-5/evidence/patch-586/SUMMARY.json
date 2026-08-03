@@ -1,0 +1,248 @@
+{
+  "build": "3f40d1c7d5fe",
+  "head": "3f40d1c7d5fe92f507c41527ac159f728470ccb3",
+  "auditType": "comprehensive_experience_validation",
+  "timestamp": "2026-08-03T15:04:30.667Z",
+  "singleCount": 236,
+  "multiChainCount": 22,
+  "multiTurnCount": 127,
+  "totalScenarios": 258,
+  "totalTurnExecutions": 363,
+  "turnCount": 363,
+  "cleanTurnCount": 363,
+  "rateLimitCount": 0,
+  "rateLimitPct": 0,
+  "metrics": {
+    "personality_score": 8,
+    "warmth_score": 5.7,
+    "continuity_score": 8,
+    "rhythm_score": 8.6,
+    "variation_score": -3.4,
+    "repetition_score": 8.6,
+    "expressiveness_score": 7.4,
+    "reciprocity_score": 7.1,
+    "presence_score": 6.6,
+    "naturalness_score": 8.3,
+    "identity_consistency": 8.1,
+    "human_feeling_score": 7.1,
+    "conversation_quality": 7.7
+  },
+  "deltaVsPre582": {
+    "warmth": 0.2,
+    "expressiveness": 1.9,
+    "variation": -7.9,
+    "rhythm": 2.6
+  },
+  "averages": {
+    "warmth": 0.5702479338842982,
+    "naturalness": 0.8344352617079887,
+    "personality": 0.7969513314967902,
+    "repetition": 0.8566115702479326,
+    "expressiveness": 0.7397796143250697,
+    "clarity": 0.8169696969696918,
+    "coherence": 0.8763636363636331,
+    "continuity": 0.8000000000000054,
+    "variation": -0.3429752066115703
+  },
+  "issueBuckets": {
+    "repetitive": {
+      "count": 35,
+      "severity": "MÉDIO",
+      "class": "D",
+      "layer": "rhythm",
+      "microPatch": "5.8.4v variation pressure",
+      "examples": [
+        {
+          "id": "GR-03",
+          "message": "Bom dia",
+          "reply": "Bom dia! Como vai. Que bom te ver por aqui."
+        },
+        {
+          "id": "GR-13",
+          "message": "Bom dia! Como vai?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?"
+        },
+        {
+          "id": "FW-11",
+          "message": "preciso ir",
+          "reply": "Eu iria no Samsung Galaxy S23 FE. O conjunto de processamento sugere desempenho adequado para uso cotidiano. Eu escolhi o Samsung Galaxy S23 FE, mas o Samsung Galaxy A35 5G chegou "
+        },
+        {
+          "id": "CA-03",
+          "message": "como vai?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?"
+        }
+      ]
+    },
+    "missing_warmth_expected": {
+      "count": 26,
+      "severity": "MÉDIO",
+      "class": "B",
+      "layer": "humanization",
+      "microPatch": "5.8.5v empathy level",
+      "examples": [
+        {
+          "id": "GR-06",
+          "message": "E aí",
+          "reply": "E aí!"
+        },
+        {
+          "id": "GR-19",
+          "message": "Opa, e aí?",
+          "reply": "Consigo comparar, mas não encontrei esses modelos com segurança no catálogo da MIA ainda. Me manda os nomes um pouco mais completos, tipo “Galaxy A15 ou Moto G84”, que eu comparo d"
+        },
+        {
+          "id": "CA-02",
+          "message": "e você?",
+          "reply": "Entendi — me ajuda com um pouco mais de contexto?"
+        },
+        {
+          "id": "CA-10",
+          "message": "tá bem?",
+          "reply": "Entendi — me ajuda com um pouco mais de contexto?"
+        }
+      ]
+    },
+    "low_warmth": {
+      "count": 252,
+      "severity": "MÉDIO",
+      "class": "B",
+      "layer": "humanization/personality",
+      "microPatch": "5.8.5v warmth gate expansion",
+      "examples": [
+        {
+          "id": "GR-13",
+          "message": "Bom dia! Como vai?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?"
+        },
+        {
+          "id": "FW-01",
+          "message": "tchau",
+          "reply": "Até mais!"
+        },
+        {
+          "id": "FW-02",
+          "message": "até logo",
+          "reply": "Até logo!"
+        },
+        {
+          "id": "FW-03",
+          "message": "até mais",
+          "reply": "Até mais!"
+        }
+      ]
+    },
+    "flat_ack": {
+      "count": 19,
+      "severity": "BAIXO",
+      "class": "D",
+      "layer": "rhythm",
+      "microPatch": "5.8.4v ack rotation",
+      "examples": [
+        {
+          "id": "SH-01",
+          "message": "ok",
+          "reply": "Beleza!"
+        },
+        {
+          "id": "SH-02",
+          "message": "sim",
+          "reply": "Entendi!"
+        },
+        {
+          "id": "SH-11",
+          "message": "certo",
+          "reply": "Certo!"
+        },
+        {
+          "id": "SH-12",
+          "message": "beleza",
+          "reply": "Beleza!"
+        }
+      ]
+    },
+    "weak_reciprocity": {
+      "count": 1,
+      "severity": "MÉDIO",
+      "class": "B",
+      "layer": "humanization/reciprocal",
+      "microPatch": "5.8.5v reciprocal engagement",
+      "examples": [
+        {
+          "id": "EM-21",
+          "message": "e você?",
+          "reply": "Entendi — me ajuda com um pouco mais de contexto?"
+        }
+      ]
+    },
+    "missing_identity": {
+      "count": 5,
+      "severity": "MÉDIO",
+      "class": "F",
+      "layer": "personality",
+      "microPatch": "5.8.2v identity reply",
+      "examples": [
+        {
+          "id": "ID-07",
+          "message": "você tem memória?",
+          "reply": "Fico por aqui — o que você quer conversar?"
+        },
+        {
+          "id": "ID-08",
+          "message": "você lembra de mim?",
+          "reply": "Fico por aqui — o que você quer conversar?"
+        },
+        {
+          "id": "ID-10",
+          "message": "você usa ChatGPT?",
+          "reply": "Fico por aqui — o que você quer conversar?"
+        },
+        {
+          "id": "ID-11",
+          "message": "qual modelo você usa?",
+          "reply": "Não uso um modelo específico, mas"
+        }
+      ]
+    },
+    "no_human_memory": {
+      "count": 4,
+      "severity": "MÉDIO",
+      "class": "A",
+      "layer": "continuity",
+      "microPatch": "5.8.3v resume markers",
+      "examples": [
+        {
+          "id": "TS-06",
+          "message": "volta pro papo de antes",
+          "reply": "Fico por aqui — o que você quer conversar?"
+        },
+        {
+          "id": "MC-08",
+          "message": "hoje estou cansado",
+          "reply": "Imagino que tenha sido difícil."
+        },
+        {
+          "id": "MC-08",
+          "message": "foi complicado",
+          "reply": "Entendo. Às vezes realmente existem dias assim."
+        },
+        {
+          "id": "MC-08",
+          "message": "mas enfim",
+          "reply": "Parece que você está refletindo sobre algo. O que você gostaria de compartilhar ou discutir?"
+        }
+      ]
+    }
+  },
+  "classBuckets": {
+    "D": 54,
+    "B": 279,
+    "F": 5,
+    "A": 4
+  },
+  "duplicatePatternCount": 39,
+  "uiSampleCount": 23,
+  "uiParity": "14/23",
+  "criticalIssueCount": 0,
+  "experienceApproved": false
+}

@@ -1,0 +1,102 @@
+{
+  "head": "3f40d1c7d5fe92f507c41527ac159f728470ccb3",
+  "auditType": "llm_agnostic_architectural",
+  "timestamp": "2026-08-03T13:27:15.366Z",
+  "passed": 13,
+  "total": 13,
+  "allPass": true,
+  "verdict": "Architecture remains LLM-agnostic: decisions in contract/governance; LLM is verbalization + post-gates.",
+  "checks": [
+    {
+      "id": "LLM-01",
+      "layer": "intent_recognition",
+      "claim": "Intent recognition builds behavior contract before verbalization",
+      "evidence": "buildSocialConversationBehaviorContract in miaSocialConversationBehavior.js",
+      "pass": true
+    },
+    {
+      "id": "LLM-02",
+      "layer": "governance_enrichment",
+      "claim": "Personality, continuity, rhythm, humanization enrich contract pre-LLM",
+      "evidence": "enrichBehaviorContractWithHumanExperience chain",
+      "pass": true
+    },
+    {
+      "id": "LLM-03",
+      "layer": "template_bypass",
+      "claim": "Fact validation bypass uses governed template, not LLM",
+      "evidence": "factValidation.bypassLlmVerbalization → buildGovernedSocialFallbackReply",
+      "pass": true
+    },
+    {
+      "id": "LLM-04",
+      "layer": "template_bypass",
+      "claim": "Continuity bypass uses governed template",
+      "evidence": "socialContinuityBypass",
+      "pass": true
+    },
+    {
+      "id": "LLM-05",
+      "layer": "template_bypass",
+      "claim": "Humanization bypass uses governed template",
+      "evidence": "socialHumanizationBypass",
+      "pass": true
+    },
+    {
+      "id": "LLM-06",
+      "layer": "template_bypass",
+      "claim": "Personality identity bypass uses governed template",
+      "evidence": "personalityGovernanceBypass",
+      "pass": true
+    },
+    {
+      "id": "LLM-07",
+      "layer": "post_llm_gates",
+      "claim": "Finalize applies governance gates after LLM response",
+      "evidence": "applyFactValidationGovernance → applyPersonalityGovernance → rhythm → humanization",
+      "pass": true
+    },
+    {
+      "id": "LLM-08",
+      "layer": "post_llm_gates",
+      "claim": "Validation failure triggers governed fallback, not raw LLM retry",
+      "evidence": "selectGovernedFallback on validation failure",
+      "pass": true
+    },
+    {
+      "id": "LLM-09-miaPersonalityGovernance",
+      "layer": "governance_scope",
+      "claim": "lib/miaPersonalityGovernance.js documents scope separation from intent/decision",
+      "evidence": "lib/miaPersonalityGovernance.js",
+      "pass": true
+    },
+    {
+      "id": "LLM-09-miaSocialConversationContinuity",
+      "layer": "governance_scope",
+      "claim": "lib/miaSocialConversationContinuity.js documents scope separation from intent/decision",
+      "evidence": "lib/miaSocialConversationContinuity.js",
+      "pass": true
+    },
+    {
+      "id": "LLM-09-miaConversationalRhythmGovernance",
+      "layer": "governance_scope",
+      "claim": "lib/miaConversationalRhythmGovernance.js documents scope separation from intent/decision",
+      "evidence": "lib/miaConversationalRhythmGovernance.js",
+      "pass": true
+    },
+    {
+      "id": "LLM-09-miaSocialHumanizationGovernance",
+      "layer": "governance_scope",
+      "claim": "lib/miaSocialHumanizationGovernance.js documents scope separation from intent/decision",
+      "evidence": "lib/miaSocialHumanizationGovernance.js",
+      "pass": true
+    },
+    {
+      "id": "LLM-10",
+      "layer": "observability",
+      "claim": "Observability layer does not alter routing",
+      "evidence": "miaConversationalObservability.js measurement-only",
+      "pass": true
+    }
+  ]
+}
