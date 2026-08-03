@@ -1,0 +1,379 @@
+{
+  "apiResults": [
+    {
+      "id": "P585-EM01",
+      "category": "desabafo",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "hoje foi um dia difícil",
+          "reply": "Compreendo — não é simples.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "foi complicado mesmo",
+          "reply": "Imagino que tenha sido um dia pesado.",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "mas enfim",
+          "reply": "Parece que você está refletindo sobre algo. O que você gostaria de compartilhar?",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Compreendo — não é simples.",
+        "Imagino que tenha sido um dia pesado.",
+        "Parece que você está refletindo sobre algo. O que você gostaria de compartilhar?"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-EM02",
+      "category": "desabafo",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "não tô legal",
+          "reply": "Imagino que tenha sido pesado.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "semana pesada",
+          "reply": "Compreendo — não tô legal.",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "to mal",
+          "reply": "Entendo — ainda pensando nisso: não tô legal.",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Imagino que tenha sido pesado.",
+        "Compreendo — não tô legal.",
+        "Entendo — ainda pensando nisso: não tô legal."
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-GR01",
+      "category": "agradecimento",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "obrigado",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "valeu mesmo",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "tmj",
+          "reply": "Valeu! Tamo junto!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "De nada!",
+        "De nada!",
+        "Valeu! Tamo junto!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-RC01",
+      "category": "reciprocidade",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "tudo bem?",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "e você?",
+          "reply": "Estou bem, obrigada! E você, como está?",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "como foi seu dia?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Oi! Tudo bem. Que bom te ver por aqui.",
+        "Tudo tranquilo por aqui!",
+        "Estou bem, obrigada! E você, como está?",
+        "Por aqui, tudo certo — obrigada por perguntar. E você, como está?"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-HU01",
+      "category": "humor",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "kkk",
+          "reply": "Aí sim.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "haha",
+          "reply": "Haha, gostei do espírito!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "engraçado",
+          "reply": "Engraçado, né? O que te fez achar isso?",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Aí sim.",
+        "Haha, gostei do espírito!",
+        "Engraçado, né? O que te fez achar isso?"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-JY01",
+      "category": "alegria",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "consegui passar no teste!",
+          "reply": "Legal demais — que conquista!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "to feliz",
+          "reply": "Que bom — isso merece comemorar!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "finalmente deu certo",
+          "reply": "Boa — fico feliz por você!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Legal demais — que conquista!",
+        "Que bom — isso merece comemorar!",
+        "Boa — fico feliz por você!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-FR01",
+      "category": "frustração",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "to frustrado",
+          "reply": "Entendo — situação chata mesmo.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "situação chata",
+          "reply": "Parece que você está passando por uma situação complicada. Quer compartilhar um pouco mais sobre o que está acontecendo?",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "que irritante",
+          "reply": "Entendi — me ajuda com um pouco mais de contexto?",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Entendo — situação chata mesmo.",
+        "Parece que você está passando por uma situação complicada. Quer compartilhar um pouco mais sobre o que está acontecendo?",
+        "Entendi — me ajuda com um pouco mais de contexto?"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-AX01",
+      "category": "ansiedade",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "to ansioso",
+          "reply": "Sei que incerteza pesa — entendo.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "com medo",
+          "reply": "Compreendo — ansiedade cansa.",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "preocupado com isso",
+          "reply": "Faz sentido se sentir assim.",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Sei que incerteza pesa — entendo.",
+        "Compreendo — ansiedade cansa.",
+        "Faz sentido se sentir assim."
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-CM01",
+      "category": "transição comercial→emocional",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quero celular",
+          "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O q",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "deixa o produto",
+          "reply": "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateri",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "hoje foi difícil",
+          "reply": "Imagino que tenha sido difícil.",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+        "Minha escolha: iPhone 13 ️ Tela iPhone 13 Bateria iPhone 13 ⏳ pode durar mais anos? iPhone 13 Resumindo a decisão entre os dois: iria de iPhone 13. O que você ganha: ganha menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes O que abre mão: ️ abre mão de preco_elevado;tela_60hz;carregamento_lento ️ também não terá iPhone 11 ainda leva vantagem onde tela_60hz;bateria_envelhecida;sem_usb_c",
+        "Imagino que tenha sido difícil."
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-CM02",
+      "category": "transição emocional→comercial",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "dia difícil",
+          "reply": "Compreendo — não é simples.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "obrigado",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "preciso notebook",
+          "reply": "Neste cenário, o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD se destaca — combina com o foco principal desta busca. Quase te recomendaria o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD; no fim, fiquei com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessõ",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Compreendo — não é simples.",
+        "De nada!",
+        "Neste cenário, o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD se destaca — combina com o foco principal desta busca. Quase te recomendaria o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD; no fim, fiquei com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca."
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-CP01",
+      "category": "elogio",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você é legal",
+          "reply": "Valeu pelo carinho!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "gostei de você",
+          "reply": "Fico feliz que você tenha gostado de mim! 😊",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "mandou bem",
+          "reply": "Obrigada! Fico feliz que você tenha gostado. Vamos seguir com o que precisar!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Valeu pelo carinho!",
+        "Fico feliz que você tenha gostado de mim! 😊",
+        "Obrigada! Fico feliz que você tenha gostado. Vamos seguir com o que precisar!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-FW01",
+      "category": "despedida",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "tchau",
+          "reply": "Até mais!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "até mais",
+          "reply": "Até mais!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "flw",
+          "reply": "Até mais!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Até mais!",
+        "Até mais!",
+        "Até mais!"
+      ],
+      "pass": true
+    }
+  ],
+  "summary": {
+    "build": "8f14495b472d",
+    "head": "8f14495b472de4053e185ed6c523950920daa0a6",
+    "apiPassed": 12,
+    "apiTotal": 12,
+    "uiPassed": 4,
+    "uiTotal": 4
+  }
+}

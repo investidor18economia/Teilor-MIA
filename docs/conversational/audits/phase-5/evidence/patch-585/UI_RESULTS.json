@@ -1,0 +1,127 @@
+{
+  "uiResults": [
+    {
+      "id": "P585-EM01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "hoje foi um dia difícil",
+          "reply": "Compreendo — hoje foi um dia difícil.",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "foi complicado mesmo",
+          "reply": "Poxa...",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "mas enfim",
+          "reply": "Parece que você está refletindo sobre algo. O que está passando pela sua cabeça?",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Compreendo — hoje foi um dia difícil.",
+        "Poxa...",
+        "Parece que você está refletindo sobre algo. O que está passando pela sua cabeça?"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-GR01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "obrigado",
+          "reply": "De nada!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "valeu mesmo",
+          "reply": "Imagina! Fico feliz que tenha gostado.",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "tmj",
+          "reply": "Valeu! Agradeço pela parceria!",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "De nada!",
+        "Imagina! Fico feliz que tenha gostado.",
+        "Valeu! Agradeço pela parceria!"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-RC01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "tudo bem?",
+          "reply": "Tudo tranquilo por aqui!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "e você?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+          "pass": true
+        },
+        {
+          "turn": 4,
+          "msg": "como foi seu dia?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Tudo tranquilo por aqui!",
+        "Tudo tranquilo por aqui!",
+        "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+        "Por aqui, tudo certo — obrigada por perguntar. E você, como está?"
+      ],
+      "pass": true
+    },
+    {
+      "id": "P585-HU01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "kkk",
+          "reply": "Hehe!",
+          "pass": true
+        },
+        {
+          "turn": 2,
+          "msg": "haha",
+          "reply": "Boa!",
+          "pass": true
+        },
+        {
+          "turn": 3,
+          "msg": "engraçado",
+          "reply": "Engraçado? O que você achou engraçado?",
+          "pass": true
+        }
+      ],
+      "replies": [
+        "Hehe!",
+        "Boa!",
+        "Engraçado? O que você achou engraçado?"
+      ],
+      "pass": true
+    }
+  ]
+}
