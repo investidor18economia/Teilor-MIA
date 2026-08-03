@@ -183,25 +183,34 @@ async function main() {
     const chain = CHAINS.find((c) => c.id === chainId);
     if (!chain) continue;
     try {
-      await page.goto(UI, { waitUntil: "domcontentloaded", timeout: 90000 });
-      await page.waitForSelector("textarea, input[type=text], [contenteditable=true]", { timeout: 45000 });
+      await page.goto(`${UI}?v=${Date.now()}-${chainId}`, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await page.waitForSelector(".mia-input", { timeout: 45000 });
+      await sleep(3000);
       const replies = [];
-      for (const msg of chain.turns) {
-        const input = page.locator("textarea, input[type=text]").first();
-        await input.fill(msg);
-        await page.keyboard.press("Enter");
+      let chainPass = true;
+      for (let i = 0; i < chain.turns.length; i++) {
+        const msg = chain.turns[i];
         await sleep(DELAY);
-        const bubbles = page.locator('[class*="assistant"], [data-role="assistant"], .mia-message');
-        const count = await bubbles.count();
-        const text =
-          count > 0
-            ? await bubbles.nth(count - 1).innerText().catch(() => "")
-            : await page.locator("body").innerText().catch(() => "");
-        replies.push(String(text || "").trim());
+        const responseWait = page.waitForResponse(
+          (r) => r.url().includes("/api/mia-chat") && r.request().method() === "POST",
+          { timeout: 120000 }
+        );
+        await page.locator(".mia-input").fill(msg);
+        await page.locator(".send-btn").click();
+        await responseWait;
+        await sleep(6000);
+        const raw = await page.locator(".mia-msg-assistant-bubble").last().innerText().catch(() => "");
+        const reply = String(raw).replace(/^MIΛ\s*/i, "").trim();
+        replies.push(reply);
+        let pass = !!reply;
+        if (chain.rejectOnTurn && chain.rejectOnTurn(i, reply)) pass = false;
+        else if (chain.reject && chain.reject.test(reply)) pass = false;
+        if (!pass) chainPass = false;
+        log(`UI-${chainId} T${i + 1} ${pass ? "PASS" : "FAIL"} ${reply.slice(0, 60)}`);
       }
-      const pass = chain.check ? chain.check(replies) : replies.every(Boolean);
-      uiResults.push({ id: chainId, pass, replies: replies.map((r) => r.slice(0, 200)) });
-      log(`UI ${chainId} ${pass ? "PASS" : "FAIL"}`);
+      if (chain.check && chainPass) chainPass = chain.check(replies);
+      uiResults.push({ id: chainId, pass: chainPass, replies: replies.map((r) => r.slice(0, 200)) });
+      log(`UI ${chainId} ${chainPass ? "PASS" : "FAIL"}`);
     } catch (err) {
       uiResults.push({ id: chainId, pass: false, error: String(err.message) });
       log(`UI ${chainId} ERROR ${err.message}`);

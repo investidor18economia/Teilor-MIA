@@ -1,0 +1,39 @@
+[
+  {
+    "id": "P587-B01",
+    "pass": true,
+    "replies": [
+      "Tudo tranquilo por aqui!",
+      "Tudo tranquilo por aqui!",
+      "Aqui está tudo bem — e com você, como foi o dia?",
+      "Tranquilo por aqui! Me conta — como você está?"
+    ]
+  },
+  {
+    "id": "P587-F01",
+    "pass": true,
+    "replies": [
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também."
+    ]
+  },
+  {
+    "id": "P587-H01",
+    "pass": true,
+    "replies": [
+      "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponível\n\nA MIA continua analisando este produto com base no Data Layer.\n\nConheciment",
+      "De nada!",
+      "Até mais — foi bom conversar!"
+    ]
+  },
+  {
+    "id": "P587-A01",
+    "pass": true,
+    "replies": [
+      "Pode continuar — estou ouvindo.",
+      "Entendi!",
+      "Isso faz sentido — você tinha comentado hoje foi pesado."
+    ]
+  }
+]

@@ -1,0 +1,339 @@
+[
+  {
+    "id": "P587-A01",
+    "category": "continuidade-retomada",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "hoje foi pesado",
+        "reply": "Pode continuar — estou ouvindo.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "ok",
+        "reply": "Entendi!",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "como eu estava dizendo",
+        "reply": "Isso faz sentido — você tinha comentado hoje foi pesado.",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Pode continuar — estou ouvindo.",
+      "Entendi!",
+      "Isso faz sentido — você tinha comentado hoje foi pesado."
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-A02",
+    "category": "continuidade-sem-ancora",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "oi",
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "beleza",
+        "reply": "Tudo tranquilo por aqui!",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "volta pro papo de antes",
+        "reply": "Sim — podemos retomar. Me lembra rapidinho o assunto?",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Oi! Tudo bem. Que bom te ver por aqui.",
+      "Tudo tranquilo por aqui!",
+      "Sim — podemos retomar. Me lembra rapidinho o assunto?"
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-B01",
+    "category": "reciprocidade",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "oi",
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "tudo bem?",
+        "reply": "Tudo tranquilo por aqui!",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "e você?",
+        "reply": "Aqui está tudo bem — e com você, como foi o dia?",
+        "pass": true
+      },
+      {
+        "turn": 4,
+        "msg": "como foi seu dia?",
+        "reply": "Indo bem, obrigada! E você, tudo certo?",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Oi! Tudo bem. Que bom te ver por aqui.",
+      "Tudo tranquilo por aqui!",
+      "Aqui está tudo bem — e com você, como foi o dia?",
+      "Indo bem, obrigada! E você, tudo certo?"
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-B02",
+    "category": "reciprocidade",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "bom dia",
+        "reply": "Bom dia! Prazer em falar. Que bom te ver por aqui.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "como você está?",
+        "reply": "Tranquilo por aqui! Me conta — como você está?",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "está tudo bem?",
+        "reply": "Tudo tranquilo por aqui!",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Bom dia! Prazer em falar. Que bom te ver por aqui.",
+      "Tranquilo por aqui! Me conta — como você está?",
+      "Tudo tranquilo por aqui!"
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-F01",
+    "category": "identidade-meta",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "você é ChatGPT?",
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "qual modelo você usa?",
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "você lembra das coisas?",
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também."
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-F02",
+    "category": "identidade-meta",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "qual seu nome?",
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "você é a MIA?",
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "como você funciona?",
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também."
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-H01",
+    "category": "despedida-sem-comercial",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "quero celular",
+        "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O q",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "obrigado",
+        "reply": "De nada!",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "preciso ir",
+        "reply": "Até mais — foi bom conversar!",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+      "De nada!",
+      "Até mais — foi bom conversar!"
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-H02",
+    "category": "despedida-sem-comercial",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "falamos depois",
+        "reply": "Até mais — foi bom conversar!",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "até amanhã",
+        "reply": "Até mais — foi bom conversar!",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Até mais — foi bom conversar!",
+      "Até mais — foi bom conversar!"
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-D01",
+    "category": "variacao-reciprocidade",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "tudo bem?",
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "e você?",
+        "reply": "Indo bem, obrigada! E você, tudo certo?",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "e contigo?",
+        "reply": "Aqui está tudo bem — e com você, como foi o dia?",
+        "pass": true
+      },
+      {
+        "turn": 4,
+        "msg": "como vai?",
+        "reply": "Tudo tranquilo por aqui! E contigo, como vai?",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Oi! Tudo bem. Que bom te ver por aqui.",
+      "Indo bem, obrigada! E você, tudo certo?",
+      "Aqui está tudo bem — e com você, como foi o dia?",
+      "Tudo tranquilo por aqui! E contigo, como vai?"
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-M01",
+    "category": "transicao-emocional",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "dia difícil",
+        "reply": "Compreendo — não é simples.",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "obrigado",
+        "reply": "De nada!",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "preciso ir",
+        "reply": "Até mais — foi bom conversar!",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Compreendo — não é simples.",
+      "De nada!",
+      "Até mais — foi bom conversar!"
+    ],
+    "pass": true
+  },
+  {
+    "id": "P587-M02",
+    "category": "transicao-comercial-social",
+    "turns": [
+      {
+        "turn": 1,
+        "msg": "quero notebook",
+        "reply": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Quase te recomendaria o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD; no fim, fiquei com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem",
+        "pass": true
+      },
+      {
+        "turn": 2,
+        "msg": "deixa o produto",
+        "reply": "Eu iria no notebook asus. No conjunto geral, ele parece a escolha mais segura e equilibrada. Os dois são bem próximos, então o desempate foi pelo equilíbrio geral. O notebook gamer ainda pode fazer sentido se a sua prioridade específica for diferente. Meu veredito: vai no notebook asus.",
+        "pass": true
+      },
+      {
+        "turn": 3,
+        "msg": "como você tá?",
+        "reply": "Tudo tranquilo por aqui! E contigo, como vai?",
+        "pass": true
+      }
+    ],
+    "replies": [
+      "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Quase te recomendaria o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD; no fim, fiquei com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem para o que você pediu — vale olhar o uso real, não só o anúncio. ✅ O que você ganha • Combina com o foco principal desta busca. ⚠️ O que você abre mão • O ponto de atenção é confirmar preço, garantia e condição da oferta antes de decidir. Mesmo considerando esse ponto de atenção, eu manteria o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — a combinação fecha melhor para esta busca. Consigo recomendar algumas opções, mas se você me disser seu orçamento consigo ser bem mais precisa.",
+      "Eu iria no notebook asus. No conjunto geral, ele parece a escolha mais segura e equilibrada. Os dois são bem próximos, então o desempate foi pelo equilíbrio geral. O notebook gamer ainda pode fazer sentido se a sua prioridade específica for diferente. Meu veredito: vai no notebook asus.",
+      "Tudo tranquilo por aqui! E contigo, como vai?"
+    ],
+    "pass": true
+  }
+]
