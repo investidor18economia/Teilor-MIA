@@ -1,0 +1,13 @@
+{
+  "patch": "5.8.1",
+  "head": "43d8787473db",
+  "original13Semantic": 13,
+  "original13ProductionApi": 13,
+  "productionUi": 3,
+  "stability100": 100,
+  "unitTests": 124,
+  "regressionsGreen": true,
+  "buildGreenTwice": true,
+  "gitSynced": true,
+  "timestamp": "2026-08-02T23:59:00Z"
+}

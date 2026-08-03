@@ -1,0 +1,12 @@
+{
+  "version": "5.8.1",
+  "fields": [
+    "priorChallenge",
+    "correctionRequest",
+    "factualContrast",
+    "assertedSegment",
+    "contrastedSegment"
+  ],
+  "persistence": "inferred from conversationMessages at recognition time; no new session DB fields",
+  "expiry": "correction state scoped to recent turns; resolved after warm correction reply"
+}

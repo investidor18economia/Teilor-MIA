@@ -1,0 +1,8 @@
+{
+  "version": "5.8.1",
+  "policy": "enrichCommercialSessionContext + hasRunningCommercialDiscourse(minMessages=8) preserves filler anchor without TTL bump",
+  "reasonCodes": [
+    "long_conversation_anchor_restored",
+    "neutral_filler_preserves_active_commercial_thread"
+  ]
+}

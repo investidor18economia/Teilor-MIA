@@ -1,0 +1,207 @@
+{
+  "results": [
+    {
+      "convId": "MT-0014",
+      "turn": 2,
+      "message": "corrige então mano",
+      "grupo": "A",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "negative_feedback_preserves_social_mode",
+        "correction_request",
+        "correction_signal",
+        "context_repair_from_correction_request"
+      ],
+      "fillerReason": "not_classified_filler",
+      "correctionKind": "correction_continuation"
+    },
+    {
+      "convId": "MT-0029",
+      "turn": 2,
+      "message": "corrige então mano",
+      "grupo": "A",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "negative_feedback_preserves_social_mode",
+        "correction_request",
+        "correction_signal",
+        "context_repair_from_correction_request"
+      ],
+      "fillerReason": "not_classified_filler",
+      "correctionKind": "correction_continuation"
+    },
+    {
+      "convId": "MT-0036",
+      "turn": 3,
+      "message": "são 5000mAh não 4000",
+      "grupo": "B",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "negative_feedback_preserves_social_mode",
+        "factual_contrast",
+        "correction_signal",
+        "factual_contrast_detected_from_previous_answer",
+        "context_repair_from_factual_contrast"
+      ],
+      "fillerReason": "not_classified_filler",
+      "correctionKind": "factual_contrast"
+    },
+    {
+      "convId": "MT-0044",
+      "turn": 2,
+      "message": "corrige então mano",
+      "grupo": "A",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "negative_feedback_preserves_social_mode",
+        "correction_request",
+        "correction_signal",
+        "context_repair_from_correction_request"
+      ],
+      "fillerReason": "not_classified_filler",
+      "correctionKind": "correction_continuation"
+    },
+    {
+      "convId": "MT-0058",
+      "turn": 12,
+      "message": "ok mano",
+      "grupo": "C",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "long_conversation_anchor_restored"
+      ],
+      "fillerReason": "long_conversation_anchor_restored",
+      "correctionKind": null
+    },
+    {
+      "convId": "MT-0064",
+      "turn": 2,
+      "message": "corrige então mano",
+      "grupo": "A",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "negative_feedback_preserves_social_mode",
+        "correction_request",
+        "correction_signal",
+        "context_repair_from_correction_request"
+      ],
+      "fillerReason": "not_classified_filler",
+      "correctionKind": "correction_continuation"
+    },
+    {
+      "convId": "MT-0079",
+      "turn": 2,
+      "message": "corrige então mano",
+      "grupo": "A",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "negative_feedback_preserves_social_mode",
+        "correction_request",
+        "correction_signal",
+        "context_repair_from_correction_request"
+      ],
+      "fillerReason": "not_classified_filler",
+      "correctionKind": "correction_continuation"
+    },
+    {
+      "convId": "MT-0082",
+      "turn": 15,
+      "message": "certo mano",
+      "grupo": "C",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "long_conversation_anchor_restored"
+      ],
+      "fillerReason": "long_conversation_anchor_restored",
+      "correctionKind": null
+    },
+    {
+      "convId": "MT-0088",
+      "turn": 15,
+      "message": "certo mano",
+      "grupo": "C",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "long_conversation_anchor_restored"
+      ],
+      "fillerReason": "long_conversation_anchor_restored",
+      "correctionKind": null
+    },
+    {
+      "convId": "MT-0092",
+      "turn": 15,
+      "message": "certo mano",
+      "grupo": "C",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "long_conversation_anchor_restored"
+      ],
+      "fillerReason": "long_conversation_anchor_restored",
+      "correctionKind": null
+    },
+    {
+      "convId": "MT-0092",
+      "turn": 21,
+      "message": "hm mano",
+      "grupo": "C",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "long_conversation_anchor_restored"
+      ],
+      "fillerReason": "long_conversation_anchor_restored",
+      "correctionKind": null
+    },
+    {
+      "convId": "MT-0098",
+      "turn": 15,
+      "message": "certo mano",
+      "grupo": "C",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "long_conversation_anchor_restored"
+      ],
+      "fillerReason": "long_conversation_anchor_restored",
+      "correctionKind": null
+    },
+    {
+      "convId": "MT-0098",
+      "turn": 22,
+      "message": "ok mano",
+      "grupo": "C",
+      "semanticPass": true,
+      "interactionMode": "social",
+      "requiresClarification": false,
+      "reasons": [
+        "long_conversation_anchor_restored"
+      ],
+      "fillerReason": "long_conversation_anchor_restored",
+      "correctionKind": null
+    }
+  ],
+  "passed": 13,
+  "total": 13
+}

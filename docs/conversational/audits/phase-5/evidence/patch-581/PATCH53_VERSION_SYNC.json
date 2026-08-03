@@ -1,0 +1,6 @@
+{
+  "expected": "5.5.1",
+  "actual": "5.5.1",
+  "tests": "9/9",
+  "note": "stale 5.5.0 expectation updated only"
+}

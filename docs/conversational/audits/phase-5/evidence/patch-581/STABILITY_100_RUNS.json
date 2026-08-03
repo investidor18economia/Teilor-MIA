@@ -1,0 +1,506 @@
+{
+  "total": 100,
+  "passed": 100,
+  "runs": [
+    {
+      "run": 1,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 1,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 2,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 3,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 4,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 5,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 6,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 7,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 8,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 9,
+      "id": "S10-factual-weak",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S1-correction-chain",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S2-factual",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S3-filler-long",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S4-pending-q",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S5-comparison",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S6-recommendation",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S7-exit",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S8-no-context",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S9-factual-anchor",
+      "pass": true
+    },
+    {
+      "run": 10,
+      "id": "S10-factual-weak",
+      "pass": true
+    }
+  ]
+}

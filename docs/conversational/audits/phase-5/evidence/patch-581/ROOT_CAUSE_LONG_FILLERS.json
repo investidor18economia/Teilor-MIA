@@ -1,0 +1,10 @@
+{
+  "grupo": "C",
+  "count": 6,
+  "rootCause": "filler governance só olhava sessionContext vazio em API multiturn; certo ausente; thread comercial não inferida do histórico 15+ turnos",
+  "fix": "enrichCommercialSessionContext + hasRunningCommercialDiscourse + certo em interjection morphology",
+  "reasonCodes": [
+    "neutral_filler_preserves_long_running_thread",
+    "long_conversation_anchor_restored"
+  ]
+}

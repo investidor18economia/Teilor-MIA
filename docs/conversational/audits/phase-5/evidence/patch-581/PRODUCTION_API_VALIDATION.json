@@ -1,0 +1,14 @@
+{
+  "api": "https://economia-ai.vercel.app/api/mia-chat",
+  "build": "43d8787473db",
+  "passed": 13,
+  "total": 13,
+  "note": "12/13 on initial full replay (ba20135); MT-0098 t22 retested PASS on 43d8787 after full-history commercial discourse fix",
+  "retest": {
+    "convId": "MT-0098",
+    "turn": 22,
+    "message": "ok mano",
+    "pass": true,
+    "reply": "Sem problema — fico por aqui no papo."
+  }
+}

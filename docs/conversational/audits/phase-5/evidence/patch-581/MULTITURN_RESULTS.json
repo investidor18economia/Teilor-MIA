@@ -1,0 +1,8 @@
+{
+  "patch": "5.8.1",
+  "original13Semantic": "13/13",
+  "productionApiInitial": "12/13",
+  "productionApiNote": "MT-0098 t22 failed on ba20135; retest scheduled on 43d8787",
+  "productionUi": "3/3",
+  "stability100": "100/100"
+}

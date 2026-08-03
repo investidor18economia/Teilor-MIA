@@ -1,0 +1,10 @@
+{
+  "grupo": "B",
+  "count": 1,
+  "rootCause": "fragmento são X não Y sem family correction; tratado como mensagem ambígua curta",
+  "fix": "detectFactualContrastFragment estrutural + family CORRECTION + requiresFactValidation",
+  "reasonCodes": [
+    "factual_contrast_detected_from_previous_answer",
+    "user_correction_requires_fact_validation"
+  ]
+}

@@ -1,0 +1,27 @@
+[2026-08-02T23:34:58.034Z] PATCH 5.8.1 audit start HEAD=c82e86fa2422eb656e1a80a3df0355d19db772c9
+[2026-08-02T23:34:58.774Z] Original 13 semantic: 13/13
+[2026-08-02T23:35:01.498Z] Stability: 80/100
+[2026-08-02T23:35:01.950Z] PATCH 5.8.1 directed audit complete
+[2026-08-02T23:35:26.226Z] PATCH 5.8.1 audit start HEAD=c82e86fa2422eb656e1a80a3df0355d19db772c9
+[2026-08-02T23:35:27.022Z] Original 13 semantic: 13/13
+[2026-08-02T23:35:29.645Z] Stability: 100/100
+[2026-08-02T23:35:29.989Z] PATCH 5.8.1 directed audit complete
+[2026-08-02T23:40:42.238Z] PATCH 5.8.1 audit start HEAD=ba20135a58308d12930a3f8bbb2112ff576aad36
+[2026-08-02T23:40:43.003Z] Original 13 semantic: 13/13
+[2026-08-02T23:40:45.889Z] Stability: 100/100
+[2026-08-02T23:40:45.893Z] Running production API validation for 13 originals...
+[2026-08-02T23:40:57.510Z] MT-0014 t2: PASS Certo — qual dado ou trecho precisa de correção?
+[2026-08-02T23:41:06.910Z] MT-0029 t2: PASS Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novam
+[2026-08-02T23:41:25.327Z] MT-0036 t3: PASS Você está certo! A capacidade é de 5000mAh. Obrigada pela correção! Se precisar 
+[2026-08-02T23:41:36.567Z] MT-0044 t2: PASS Certo — qual dado ou trecho precisa de correção?
+[2026-08-02T23:42:39.203Z] MT-0058 t12: PASS Sem problema — fico por aqui no papo.
+[2026-08-02T23:42:51.703Z] MT-0064 t2: PASS Certo — qual dado ou trecho precisa de correção?
+[2026-08-02T23:43:03.252Z] MT-0079 t2: PASS Certo — qual dado ou trecho precisa de correção?
+[2026-08-02T23:44:35.980Z] MT-0082 t15: PASS Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novam
+[2026-08-02T23:46:01.357Z] MT-0088 t15: PASS O que você gostaria de discutir ou esclarecer?
+[2026-08-02T23:47:18.846Z] MT-0092 t15: PASS Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novam
+[2026-08-02T23:49:12.489Z] MT-0092 t21: PASS Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novam
+[2026-08-02T23:50:45.530Z] MT-0098 t15: PASS Certo, mano! Como posso ajudar você hoje?
+[2026-08-02T23:52:56.952Z] MT-0098 t22: FAIL Entendi — me ajuda: você se refere a quê?
+[2026-08-02T23:52:56.954Z] UI validation via Playwright...
+[2026-08-02T23:55:27.652Z] PATCH 5.8.1 directed audit complete

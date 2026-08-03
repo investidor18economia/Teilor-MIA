@@ -1,0 +1,10 @@
+{
+  "patch": "5.8.1",
+  "suites": {
+    "test-mia-patch-581-correction-fillers.js": { "passed": 124, "failed": 0 },
+    "test-mia-patch-53-unified-egress.js": { "passed": 9, "failed": 0, "version": "5.5.1" },
+    "test-mia-patch-57v1-negative-feedback.js": { "passed": 13, "failed": 0 },
+    "test-mia-patch-57v31-single-rec-filler.js": { "passed": 13, "failed": 0 }
+  },
+  "build": { "exitCode": 0, "runs": 2 }
+}

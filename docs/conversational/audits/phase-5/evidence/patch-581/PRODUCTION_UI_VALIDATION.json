@@ -1,0 +1,28 @@
+{
+  "ui": "https://economia-ai.vercel.app/app-mia",
+  "results": [
+    {
+      "id": "UI-A1",
+      "lastTurn": "corrige então mano",
+      "reply": "Certo — qual dado ou trecho precisa de correção?",
+      "pass": true,
+      "coldClarification": false
+    },
+    {
+      "id": "UI-B1",
+      "lastTurn": "são 5000mAh não 4000",
+      "reply": "Você está certo, 5000mAh faz toda a diferença! É importante ter essa informação correta. Se precisar de mais alguma coisa, é só falar!",
+      "pass": true,
+      "coldClarification": false
+    },
+    {
+      "id": "UI-C1",
+      "lastTurn": "ok mano",
+      "reply": "Sem problema — fico por aqui no papo.",
+      "pass": true,
+      "coldClarification": false
+    }
+  ],
+  "passed": 3,
+  "total": 3
+}

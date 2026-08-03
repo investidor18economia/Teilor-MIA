@@ -1,0 +1,5 @@
+{
+  "version": "5.8.1",
+  "policy": "user factual contrast detected → CORRECTION family → requiresFactValidation=true → never auto-adopt user value",
+  "reasonCode": "user_correction_requires_fact_validation"
+}

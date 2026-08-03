@@ -1,0 +1,5 @@
+{
+  "patch": "5.8.1",
+  "build1": { "exitCode": 0, "timestamp": "2026-08-02T23:36:00Z" },
+  "build2": { "exitCode": 0, "note": "second consecutive build" }
+}

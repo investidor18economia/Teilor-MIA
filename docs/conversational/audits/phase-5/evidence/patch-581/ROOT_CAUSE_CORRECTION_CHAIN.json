@@ -1,0 +1,10 @@
+{
+  "grupo": "A",
+  "count": 6,
+  "rootCause": "corrige então não casava CORRECTION_MARKERS; mensagem curta caía em ambiguous_message_with_available_context → clarification fria",
+  "fix": "miaCorrectionContinuityGovernance + taxonomy correction_request + gate em resolveInteractionMode",
+  "reasonCodes": [
+    "correction_chain_preserves_previous_target",
+    "correction_request_resolves_active_claim"
+  ]
+}
