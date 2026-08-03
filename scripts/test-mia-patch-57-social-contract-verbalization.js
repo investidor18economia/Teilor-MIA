@@ -31,7 +31,7 @@ function test(name, fn) {
 console.log("PATCH 5.7 social contract verbalization tests\n");
 
 test("versions bumped", () => {
-  assert.equal(SOCIAL_CONTRACT_VERBALIZATION_VERSION, "5.8.2");
+  assert.equal(SOCIAL_CONTRACT_VERBALIZATION_VERSION, "5.8.3");
   assert.equal(GOVERNED_FALLBACK_POLICY_VERSION, "5.7.1");
 });
 
