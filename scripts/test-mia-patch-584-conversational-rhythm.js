@@ -76,12 +76,12 @@ function rhythmContract(message, history = []) {
 console.log("\nPATCH 5.8.4 — Conversational Rhythm Governance\n");
 
 test("version", () => {
-  assert.equal(CONVERSATIONAL_RHYTHM_VERSION, "5.8.4");
+  assert.equal(CONVERSATIONAL_RHYTHM_VERSION, "5.8.7");
 });
 
 test("contract enriched", () => {
   const c = rhythmContract("oi");
-  assert.equal(c.conversationalRhythmVersion, "5.8.4");
+  assert.equal(c.conversationalRhythmVersion, "5.8.7");
   assert.ok(c.conversationalRhythm);
   assert.ok(c.rhythmMetrics);
 });
@@ -164,7 +164,7 @@ test("opening rhythm on first greeting", () => {
 test("picker avoids exact repeat", () => {
   const variants = ["Entendi.", "Perfeito.", "Faz sentido.", "Certo.", "Beleza."];
   const contract = {
-    conversationalRhythmVersion: "5.8.4",
+    conversationalRhythmVersion: "5.8.7",
     conversationalRhythm: {
       recentExpressionHistory: [fingerprintExpression("Entendi.")],
       expressionCooldowns: { entendi: 2, "norm:entendi": 1 },
@@ -193,7 +193,7 @@ test("picker rotates across turns", () => {
   let history = [];
   for (let i = 0; i < 6; i += 1) {
     const contract = enrichContractWithConversationalRhythm(
-      { conversationalRhythmVersion: "5.8.4", userMessageForSpecificity: `msg-${i}` },
+      { conversationalRhythmVersion: "5.8.7", userMessageForSpecificity: `msg-${i}` },
       { message: `msg-${i}`, conversationMessages: history }
     );
     const pick = pickRhythmGovernedVariant(variants, contract, `turn-${i}`);
@@ -328,7 +328,7 @@ const metaMsgs = ["qual seu nome?", "quem é você?", "como você funciona?"];
 for (const msg of metaMsgs) {
   test(`meta rhythm: ${msg}`, () => {
     const c = rhythmContract(msg);
-    assert.equal(c.conversationalRhythmVersion, "5.8.4");
+    assert.equal(c.conversationalRhythmVersion, "5.8.7");
   });
 }
 
@@ -337,12 +337,12 @@ test("continuity preserved with rhythm", () => {
   const history = hist(["user", "oi"], ["assistant", "Oi! Tudo bem."]);
   const c = rhythmContract("tudo bem?", history);
   assert.equal(c.suppressMirrorGreeting, true);
-  assert.equal(c.conversationalRhythmVersion, "5.8.4");
+  assert.equal(c.conversationalRhythmVersion, "5.8.7");
 });
 
 test("personality preserved with rhythm", () => {
   const c = rhythmContract("qual seu nome?");
-  assert.equal(c.personalityGovernanceVersion, "5.8.2");
+  assert.equal(c.personalityGovernanceVersion, "5.8.7");
 });
 
 // Multiturn chains (~12)
@@ -467,7 +467,7 @@ for (let i = 0; i < pickerStress.length; i += 1) {
       history.push({ role: "assistant", content: pickerStress[j] });
     }
     const c = enrichContractWithConversationalRhythm(
-      { conversationalRhythmVersion: "5.8.4", userMessageForSpecificity: `turn-${i}` },
+      { conversationalRhythmVersion: "5.8.7", userMessageForSpecificity: `turn-${i}` },
       { message: `turn-${i}`, conversationMessages: history }
     );
     const pick = pickRhythmGovernedVariant(pickerStress, c, `stress-${i}`);

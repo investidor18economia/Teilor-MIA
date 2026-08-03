@@ -69,7 +69,7 @@ function buildContract(message, history = [], ctx = {}) {
 console.log("\nPATCH 5.8.2 — Personality Governance\n");
 
 test("version", () => {
-  assert.equal(PERSONALITY_GOVERNANCE_VERSION, "5.8.2");
+  assert.equal(PERSONALITY_GOVERNANCE_VERSION, "5.8.7");
 });
 
 test("MIA identity constants", () => {
@@ -124,7 +124,7 @@ test("identity real", () => {
 // Contract enrichment (~20)
 test("contract has personality governance", () => {
   const c = buildContract("oi");
-  assert.equal(c.personalityGovernanceVersion, "5.8.2");
+  assert.equal(c.personalityGovernanceVersion, "5.8.7");
   assert.ok(c.centralPersonalityPolicy);
   assert.ok(c.personalityPolicy?.centralGovernance);
 });
@@ -150,7 +150,7 @@ test("reciprocal sets RECIPROCATE_WARMTH", () => {
 test("session warmth persists", () => {
   const ctx = {
     miaPersonalityState: {
-      version: "5.8.2",
+      version: "5.8.7",
       warmth: "warm_light",
       socialDistance: "light_playful",
     },

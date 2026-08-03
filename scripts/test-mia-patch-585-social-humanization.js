@@ -202,8 +202,8 @@ test("continuity preserved", () => {
   const c = humanContract("tudo bem?", hist(["user","oi"],["assistant","Oi!"]));
   assert.equal(c.suppressMirrorGreeting, true);
 });
-test("personality preserved", () => assert.equal(humanContract("qual seu nome?").personalityGovernanceVersion, "5.8.2"));
-test("rhythm preserved", () => assert.equal(humanContract("ok").conversationalRhythmVersion, "5.8.4"));
+test("personality preserved", () => assert.equal(humanContract("qual seu nome?").personalityGovernanceVersion, "5.8.7"));
+test("rhythm preserved", () => assert.equal(humanContract("ok").conversationalRhythmVersion, "5.8.7"));
 test("warm expressiveness", () => assert.equal(humanContract("não tô legal").socialHumanization.expressivenessLevel, EXPRESSIVENESS_LEVEL.WARM));
 test("bypass high empathy", () => assert.equal(humanContract("hoje estou cansado").socialHumanizationBypass, true));
 test("metrics empathy", () => assert.ok(computeHumanizationMetrics(resolveSocialHumanization({ message: "não tô legal", recognition: {}, contract: {} })).empathyScore >= 0.85));

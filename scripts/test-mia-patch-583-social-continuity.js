@@ -62,12 +62,12 @@ function hist(...pairs) {
 console.log("\nPATCH 5.8.3 — Social Conversation Continuity\n");
 
 test("version", () => {
-  assert.equal(SOCIAL_CONVERSATION_CONTINUITY_VERSION, "5.8.3");
+  assert.equal(SOCIAL_CONVERSATION_CONTINUITY_VERSION, "5.8.7");
 });
 
 test("contract enriched", () => {
   const c = buildContract("oi");
-  assert.equal(c.socialConversationContinuityVersion, "5.8.3");
+  assert.equal(c.socialConversationContinuityVersion, "5.8.7");
   assert.ok(c.socialConversationContinuity);
 });
 
