@@ -1,0 +1,48 @@
+[
+  {
+    "id": "health",
+    "status": 200,
+    "ms": 842,
+    "body": "{\"status\":\"ok\",\"version\":\"12E.1.0\",\"timestamp\":\"2026-08-04T20:04:54.825Z\",\"build\":\"d1c222eaefbf\"}"
+  },
+  {
+    "msg": "oi",
+    "status": 200,
+    "ms": 1267,
+    "requestId": "d42ab45d-ceb8-4248-a2e8-500f8fc33bdf",
+    "error": null,
+    "reasonCode": null,
+    "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+    "rateLimited": false
+  },
+  {
+    "msg": "ok",
+    "status": 200,
+    "ms": 399,
+    "requestId": "cf08a653-5f37-405e-895a-aac8c07c6140",
+    "error": null,
+    "reasonCode": null,
+    "reply": "Imagina — fico feliz em ter ajudado.",
+    "rateLimited": false
+  },
+  {
+    "msg": "quem é você?",
+    "status": 200,
+    "ms": 484,
+    "requestId": "3f18a968-37d0-4b12-9726-422d0aad6962",
+    "error": null,
+    "reasonCode": null,
+    "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+    "rateLimited": false
+  },
+  {
+    "msg": "quero notebook",
+    "status": 200,
+    "ms": 6117,
+    "requestId": "46059df5-8516-4941-b23e-c6c2106ec0c7",
+    "error": null,
+    "reasonCode": null,
+    "reply": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Quase te recomendaria o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD; no fim, fiquei com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — ele encaixa me",
+    "rateLimited": false
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "before": {
+    "social500Rate": 1.0,
+    "internalErrorRate": 1.0,
+    "sample": "588V probes Aug 4 — oi/ok/meta 500 internal_error"
+  },
+  "after": {
+    "social500Rate": 0,
+    "internalErrorRate": 0,
+    "sample100": { "200": 26, "429": 74, "500": 0, "internal_error": 0 },
+    "gentle30": { "200": 24, "429": 6, "500": 0, "internal_error": 0 },
+    "reproductionPostDeploy": { "oi": 200, "ok": 200, "meta": 200, "commercial": 200 }
+  },
+  "build": "d1c222eaefbf"
+}

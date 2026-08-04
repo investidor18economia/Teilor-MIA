@@ -1,0 +1,13 @@
+{
+  "localLogEvidence": {
+    "event": "unexpected_error",
+    "message": "OpenAI error 429 credit_balance_exhausted",
+    "endpoint": "/api/chat-gpt4o",
+    "reasonCodeBeforeFix": "internal_error",
+    "durationMs": "250-480"
+  },
+  "postFixLocal": {
+    "social": "HTTP 200 governed fallback",
+    "commercial": "HTTP 200"
+  }
+}

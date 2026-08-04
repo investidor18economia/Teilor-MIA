@@ -1,0 +1,6 @@
+{
+  "commit": "d1c222e",
+  "message": "fix(mia): PATCH 5.8.8.1 graceful degradation on LLM provider failures",
+  "deployBuild": "d1c222eaefbf",
+  "pushedAt": "2026-08-04T20:04:00.000Z"
+}

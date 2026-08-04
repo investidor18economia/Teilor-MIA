@@ -1,0 +1,198 @@
+{
+  "scenarios": [
+    {
+      "id": "UI-1",
+      "msg": "oi",
+      "httpStatus": 200,
+      "reply": "Tudo tranquilo por aqui!",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-2",
+      "msg": "ok",
+      "httpStatus": 200,
+      "reply": "Disponha — tamo junto.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-3",
+      "msg": "certo",
+      "httpStatus": 200,
+      "reply": "Imagina — fico feliz em ter ajudado.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-4",
+      "msg": "obrigado",
+      "httpStatus": 200,
+      "reply": "Disponha — tamo junto.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-5",
+      "msg": "tudo bem?",
+      "httpStatus": 200,
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-6",
+      "msg": "quem é você?",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-7",
+      "msg": "quero celular",
+      "httpStatus": 200,
+      "reply": "RECOMENDAÇÃO\nMIΛ\nOFERTA SELECIONADA\n\n✓ Produto disponível na base da MIA\n\n📦\n\niPhone 13\n\nPreço temporariamente indisponí",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-8",
+      "msg": "hm",
+      "httpStatus": 200,
+      "reply": "Pode falar — tô acompanhando.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-9",
+      "msg": "beleza",
+      "httpStatus": 200,
+      "reply": "Fico por aqui — o que você quer conversar?",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-10",
+      "msg": "valeu",
+      "httpStatus": 200,
+      "reply": "Por nada — qualquer coisa.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-11",
+      "msg": "bom dia",
+      "httpStatus": 200,
+      "reply": "Tudo tranquilo por aqui!",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-12",
+      "msg": "boa noite",
+      "httpStatus": 200,
+      "reply": "Tudo tranquilo por aqui!",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-13",
+      "msg": "e você?",
+      "httpStatus": 200,
+      "reply": "Tudo tranquilo por aqui! E contigo, como vai?",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-14",
+      "msg": "como vai?",
+      "httpStatus": 200,
+      "reply": "Tranquilo por aqui! Me conta — como você está?",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-15",
+      "msg": "legal",
+      "httpStatus": 200,
+      "reply": "Aí sim.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-16",
+      "msg": "show",
+      "httpStatus": 200,
+      "reply": "Que bom!",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-17",
+      "msg": "sim",
+      "httpStatus": 200,
+      "reply": "Boa!",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-18",
+      "msg": "nao to legal",
+      "httpStatus": 200,
+      "reply": "Compreendo — dia difícil mesmo.",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-19",
+      "msg": "preciso ir",
+      "httpStatus": 200,
+      "reply": "Até mais — foi bom conversar!",
+      "internal_error": false,
+      "empty": false
+    },
+    {
+      "id": "UI-20",
+      "msg": "até logo",
+      "httpStatus": 200,
+      "reply": "Até mais — foi bom conversar!",
+      "internal_error": false,
+      "empty": false
+    }
+  ],
+  "multiturn5": [
+    {
+      "msg": "oi",
+      "httpStatus": 200,
+      "reply": "Tudo tranquilo por aqui!",
+      "internal_error": false
+    },
+    {
+      "msg": "tudo bem?",
+      "httpStatus": 200,
+      "reply": "Beleza.",
+      "internal_error": false
+    },
+    {
+      "msg": "ok",
+      "httpStatus": 200,
+      "reply": "Imagina — fico feliz em ter ajudado.",
+      "internal_error": false
+    },
+    {
+      "msg": "obrigado",
+      "httpStatus": 200,
+      "reply": "Disponha — tamo junto.",
+      "internal_error": false
+    },
+    {
+      "msg": "tchau",
+      "httpStatus": 200,
+      "reply": "Até mais — foi bom conversar!",
+      "internal_error": false
+    }
+  ],
+  "consoleErrors": [],
+  "pass": true
+}

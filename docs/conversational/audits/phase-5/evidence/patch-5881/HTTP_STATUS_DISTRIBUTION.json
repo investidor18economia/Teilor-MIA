@@ -1,0 +1,10 @@
+{
+  "total": 100,
+  "byStatus": {
+    "200": 26,
+    "429": 74
+  },
+  "internal_error": 0,
+  "rateLimited": 74,
+  "empty": 0
+}

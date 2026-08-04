@@ -1,0 +1,2122 @@
+[
+  {
+    "id": "MT-1",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 180,
+        "requestId": "f36120ac-0b65-4f0e-9b1f-67e4bb006030",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 200,
+        "ms": 515,
+        "requestId": "5a9263d4-c380-4414-8ab6-c77c39c412e8",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "ok",
+        "status": 200,
+        "ms": 283,
+        "requestId": "bd9288e5-005e-412c-a0b8-c254e034c825",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "certo",
+        "status": 200,
+        "ms": 262,
+        "requestId": "2a835b31-b0a5-4b7c-89b3-1661f5e0c0e1",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Disponha — tamo junto.",
+        "rateLimited": false
+      },
+      {
+        "msg": "obrigado",
+        "status": 200,
+        "ms": 330,
+        "requestId": "a91eb998-6e1b-442f-b9d9-9620241dbf47",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Por nada — qualquer coisa.",
+        "rateLimited": false
+      },
+      {
+        "msg": "quem é você?",
+        "status": 200,
+        "ms": 313,
+        "requestId": "cdf769dc-83a5-4150-94a8-d6d17e283828",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "rateLimited": false
+      },
+      {
+        "msg": "hm",
+        "status": 200,
+        "ms": 266,
+        "requestId": "49f3bcf8-9dcb-4ee8-b67b-0dddf30113e2",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Manda ver — estou ouvindo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "beleza",
+        "status": 200,
+        "ms": 223,
+        "requestId": "e8f590ad-de9d-434b-98a1-f03276ae7f7f",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Beleza — seguimos.",
+        "rateLimited": false
+      },
+      {
+        "msg": "valeu",
+        "status": 200,
+        "ms": 262,
+        "requestId": "ad57e437-ebd8-4862-8c4a-7bf6adc20bc3",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Show — entendi o ponto.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tchau",
+        "status": 200,
+        "ms": 312,
+        "requestId": "d741b0cd-723a-434b-b912-81378a744787",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Até mais — foi bom conversar!",
+        "rateLimited": false
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-2",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 200,
+        "ms": 276,
+        "requestId": "e0ba2674-e6f0-4fa5-8baa-7687d04a329a",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 151,
+        "requestId": "28966170-65d4-41d8-ae0d-645bd52f358e",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 152,
+        "requestId": "0e1488e2-f485-4d35-a65f-d330384883e7",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 155,
+        "requestId": "f53bb868-7694-46d3-97c0-5bb266073e88",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 159,
+        "requestId": "8cfb51af-7505-4aa1-a4b8-d9852c2f52d7",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 158,
+        "requestId": "f0f13cfa-c4b6-43e5-abce-6e04df8ae41e",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 162,
+        "requestId": "f630dc1e-12a0-468b-a6de-a67511dcee8c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 160,
+        "requestId": "a0e3b9b5-654c-4091-b72c-f07cac539ef4",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 163,
+        "requestId": "d8836705-7583-4da6-805a-97ee95a69eca",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 165,
+        "requestId": "43a2049f-2df1-4c62-ae95-a070e3f2cb3b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-3",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 153,
+        "requestId": "23c95f57-1b65-4ec2-a4a3-f7d4dc561d1b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 151,
+        "requestId": "97a96887-63ee-43c0-beea-ef730911fa74",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 168,
+        "requestId": "8ecaec0b-5392-46e0-bb0d-09133be7df1b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 169,
+        "requestId": "983f4ee8-34c1-4df0-9d78-0ed1d4da0fab",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 153,
+        "requestId": "276f72b7-dbff-4c70-864a-faae389faf47",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 157,
+        "requestId": "c245220c-2860-4da7-85d7-ffd2fcec8b7b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 156,
+        "requestId": "d70de7eb-f428-4328-91bf-31f8fbf43b09",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 153,
+        "requestId": "9202c636-3b90-4913-9c02-adfdd6e20283",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 155,
+        "requestId": "275a1e25-4dcb-4ecb-8438-bad0e759422e",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 153,
+        "requestId": "3f94c5f7-b0c7-4a04-b7b4-9547c0ff1841",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-4",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 173,
+        "requestId": "a86eae35-e6cf-4b32-b8ce-65310b7d71bd",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 180,
+        "requestId": "0f28b71b-e710-4e82-a231-e2587bc820a6",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 152,
+        "requestId": "5fa63477-47c8-4b5c-9092-e53f4a29465c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 183,
+        "requestId": "0f04240b-8c38-4035-bb51-dc9afca85655",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 157,
+        "requestId": "5f9ad4f7-6978-4a2d-a7f5-b18193d70c75",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 164,
+        "requestId": "959218a5-3307-4612-aebf-2b653347f7bc",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 167,
+        "requestId": "34ea7e84-5ab6-4d8c-8443-5039a919c4a5",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 152,
+        "requestId": "98d64263-6cc5-493f-b8a5-577bf0f2c8b5",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 158,
+        "requestId": "d116b688-2028-4bcd-8434-586387001cc3",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 159,
+        "requestId": "21485d6e-7686-4167-bc6f-ed293a63c38d",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-5",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 161,
+        "requestId": "ef4028c4-179a-47d8-a4ba-1a2ca3e6334b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 160,
+        "requestId": "4f9a32a6-9510-4f00-82ba-c9c956c5480f",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 177,
+        "requestId": "81094d3b-b1ef-498d-8ae8-e71239a7fd50",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 153,
+        "requestId": "7c2fab2b-80bb-4470-9bbf-b340def63191",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 200,
+        "ms": 452,
+        "requestId": "dcf52153-86a2-4fe5-b52d-895fb64af898",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Disponha — tamo junto.",
+        "rateLimited": false
+      },
+      {
+        "msg": "quem é você?",
+        "status": 200,
+        "ms": 359,
+        "requestId": "d2e48720-1e1c-40a4-83f2-a60d8f127833",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "rateLimited": false
+      },
+      {
+        "msg": "hm",
+        "status": 200,
+        "ms": 287,
+        "requestId": "8ffade4d-a505-4f6a-b819-6429cad32155",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Manda ver — estou ouvindo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "beleza",
+        "status": 200,
+        "ms": 213,
+        "requestId": "876183f6-0e43-4171-b653-95aad3f71a08",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "valeu",
+        "status": 200,
+        "ms": 251,
+        "requestId": "92bc6920-0b6c-4c15-8dd1-2d8c35be9aba",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tchau",
+        "status": 200,
+        "ms": 256,
+        "requestId": "63dd88d4-d120-4829-b325-83b951ae4502",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Até mais — foi bom conversar!",
+        "rateLimited": false
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-6",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 200,
+        "ms": 284,
+        "requestId": "e6c1a20a-85f0-445f-a5df-079a2ca06172",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 200,
+        "ms": 291,
+        "requestId": "1f70d26a-597e-4d84-9915-68b5cb22717f",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "ok",
+        "status": 200,
+        "ms": 399,
+        "requestId": "ce4dee95-0134-4416-bb1a-902d96be1c2a",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "certo",
+        "status": 200,
+        "ms": 361,
+        "requestId": "1cd9d372-9a3e-416f-8f58-214fd7eeeb76",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Disponha — tamo junto.",
+        "rateLimited": false
+      },
+      {
+        "msg": "obrigado",
+        "status": 200,
+        "ms": 348,
+        "requestId": "d9d92d62-52b7-4df9-8302-d7874536f8d8",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Beleza — seguimos.",
+        "rateLimited": false
+      },
+      {
+        "msg": "quem é você?",
+        "status": 200,
+        "ms": 415,
+        "requestId": "2d309f93-00b2-4c77-88ac-c39f371399f5",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "rateLimited": false
+      },
+      {
+        "msg": "hm",
+        "status": 200,
+        "ms": 297,
+        "requestId": "a5a52675-99a7-40f4-8034-a5c461ff705b",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Manda ver — estou ouvindo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "beleza",
+        "status": 200,
+        "ms": 271,
+        "requestId": "2382c1cc-f338-4af2-9603-60a974159172",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Certo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "valeu",
+        "status": 200,
+        "ms": 404,
+        "requestId": "b6a1960c-efe1-4ba1-9fec-e40fa5fca385",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Por nada — qualquer coisa.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tchau",
+        "status": 200,
+        "ms": 347,
+        "requestId": "ced7b052-6292-4d27-8566-47679d0eb14a",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Até mais — foi bom conversar!",
+        "rateLimited": false
+      }
+    ],
+    "pass": true
+  },
+  {
+    "id": "MT-7",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 200,
+        "ms": 331,
+        "requestId": "15ee91f4-6aca-4963-98ea-25b9efda000f",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 200,
+        "ms": 315,
+        "requestId": "b4328c0e-2635-4d5a-8590-1464f67e48a4",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "ok",
+        "status": 200,
+        "ms": 321,
+        "requestId": "7196487e-43d8-4ff9-b860-829380419395",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 154,
+        "requestId": "6dd805e3-f4e4-4a55-a466-6ffa65fe0bee",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 171,
+        "requestId": "70fbc4e6-f589-4a25-bee4-b8c37e0fcaca",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 162,
+        "requestId": "886eb03c-3474-48aa-9908-c266495c2892",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 158,
+        "requestId": "dab3b7ef-04c0-4069-b302-4494668792ec",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 155,
+        "requestId": "732da64e-aac8-4578-8358-b57068bf5e03",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 192,
+        "requestId": "dc802fa3-8316-4c63-b6ac-d520085bc6db",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 153,
+        "requestId": "5d9679ff-d5de-435f-bfb1-a12d95385d4c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-8",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 161,
+        "requestId": "dd6d476f-b407-40a6-97c5-e7c2e76ee11f",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 163,
+        "requestId": "bc7898ba-ec79-47f2-aaea-422bd95fc6aa",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 151,
+        "requestId": "c26e2cab-bee8-4032-a137-6062deb043af",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 165,
+        "requestId": "66b1294b-a7e2-4b50-a45f-15a9a777f612",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 160,
+        "requestId": "f9169c3f-809b-4f39-9893-8be7dd9b5177",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 155,
+        "requestId": "48550298-0209-4127-9466-4c4d93c7e71b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 156,
+        "requestId": "97d3c204-f5d2-4292-a100-f87f94c638a5",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 160,
+        "requestId": "e38e3737-55de-4e80-be67-eb4b5a26123f",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 156,
+        "requestId": "4178d9dd-43f0-44c1-b9e8-9db4a9870596",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 167,
+        "requestId": "02d1fddd-7a1b-4a1e-b798-2eedb0f90cbd",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-9",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 160,
+        "requestId": "61a76099-ad93-41b1-8860-3fd659d05240",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 158,
+        "requestId": "f3a81bb5-bf1e-4e65-9908-dce9eaa0fe7d",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 160,
+        "requestId": "01611bb3-8e05-4602-862d-7f15027ad23c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 154,
+        "requestId": "1869571d-a43c-4131-90b3-bdff8003fd4a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 161,
+        "requestId": "93323fc6-a964-483f-a581-8c46db782a10",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 168,
+        "requestId": "13c2df43-7c06-4f6e-817d-d7d6b41cec85",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 157,
+        "requestId": "c7d20704-53a2-4550-9563-b3bf3f477c1e",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 156,
+        "requestId": "32755da6-3910-45f1-a0f7-66d10daa64db",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 160,
+        "requestId": "11bf07b9-3e1d-4e40-a0cb-9a9d95790f2f",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 164,
+        "requestId": "c41fda66-e556-44fd-bd74-4588ab26939f",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-10",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 157,
+        "requestId": "1f9365d1-09b5-413a-bdb9-2052c946e675",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 159,
+        "requestId": "fe916ffa-215b-4bf9-b069-ecca24f233bc",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 159,
+        "requestId": "e88ec7fe-bbcd-4fb0-a88c-a8b0a8f11e88",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 152,
+        "requestId": "e70df488-8e57-4395-b31a-b3aae6d2ef16",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 183,
+        "requestId": "9b6cb630-6dbb-4a9d-9696-fe18a939e7d3",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 159,
+        "requestId": "94e0dbac-2ccf-4c5f-8a0c-e97c87d57ffd",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 200,
+        "ms": 412,
+        "requestId": "2bcd0c84-a5e0-46bb-8f95-0595e6fa92bc",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Manda ver — estou ouvindo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "beleza",
+        "status": 200,
+        "ms": 276,
+        "requestId": "ccf26310-46e5-44bb-ac3c-5d9901b3101b",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "valeu",
+        "status": 200,
+        "ms": 305,
+        "requestId": "f5920804-a41f-4ff1-9568-1de212b800a4",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tchau",
+        "status": 200,
+        "ms": 362,
+        "requestId": "9b3b9370-44f7-4de5-abdb-da9e85a86d3d",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Até mais — foi bom conversar!",
+        "rateLimited": false
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-11",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 200,
+        "ms": 298,
+        "requestId": "30b30a2f-04f1-43b0-9904-8c50c5a7167e",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 200,
+        "ms": 361,
+        "requestId": "c5d5e7a3-de54-4e91-ab90-83e0b9f7d083",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "ok",
+        "status": 200,
+        "ms": 283,
+        "requestId": "ae434d65-80b8-43d0-83d4-03447a094633",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "certo",
+        "status": 200,
+        "ms": 277,
+        "requestId": "18c211ee-cc93-4f92-9758-983e1d0f439e",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Disponha — tamo junto.",
+        "rateLimited": false
+      },
+      {
+        "msg": "obrigado",
+        "status": 200,
+        "ms": 312,
+        "requestId": "455a1ed6-8d58-4d64-be4c-0c9521e42a0b",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Beleza — seguimos.",
+        "rateLimited": false
+      },
+      {
+        "msg": "quem é você?",
+        "status": 200,
+        "ms": 308,
+        "requestId": "a103d6dd-60a3-4345-ba3e-4a85d69e8a3f",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "rateLimited": false
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 155,
+        "requestId": "0d36ce90-4a1e-41e7-b5cd-36bc0c273529",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 155,
+        "requestId": "6f818177-9b11-4dd8-9f1e-7944a4f2702f",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 158,
+        "requestId": "26d13b17-3130-49ca-8a8e-50ce3eaa8340",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 156,
+        "requestId": "4294a862-5496-44b8-b7a0-17951d79d60c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-12",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 150,
+        "requestId": "e6ed3d37-d194-4239-a3d3-17d4126fe94e",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 160,
+        "requestId": "3d10ab47-cedd-4fc8-b977-d096b84a4b60",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 171,
+        "requestId": "aa200e44-3859-40ee-b6a1-a0daf2b4aa6a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 157,
+        "requestId": "aa0024b2-5c6c-4aaf-b0d9-8362a90c597c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 158,
+        "requestId": "772a71b3-2c1a-4083-9029-393a565707ed",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 163,
+        "requestId": "4c144b29-99cd-4da9-ad79-5144d0def74f",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 155,
+        "requestId": "5635c68e-fa5c-49c4-aa9a-757195c3e613",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 170,
+        "requestId": "590235b2-f056-4ef9-8abf-e4d47d13b870",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 269,
+        "requestId": "582a1270-0903-4fb4-9959-28388d7a3a7a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 157,
+        "requestId": "56766974-9f41-46d9-84bd-4894caffa98a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-13",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 152,
+        "requestId": "384c8108-283c-4b14-a1ec-13589fc34365",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 153,
+        "requestId": "79f1572a-9b39-46de-8998-456e0fc658c3",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 159,
+        "requestId": "3bfe09c6-16e9-498d-b20f-2532bac4d1f5",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 156,
+        "requestId": "35fa5c6c-ff06-4fdd-8cfd-b73c1c7a86e2",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 159,
+        "requestId": "fe4c9ac6-b223-4f40-b22e-4b10394e9537",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 179,
+        "requestId": "56dc5631-240e-4691-95bd-d1a3e8f9ad3e",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 153,
+        "requestId": "774f275a-3f17-4ee8-a8e7-33b0e9324fad",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 166,
+        "requestId": "9401d284-a4a0-425b-bc12-2f273973e844",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 157,
+        "requestId": "82323beb-d807-4f7e-b5d9-ca8b7fa802af",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 157,
+        "requestId": "22629d38-eb02-4a1b-87be-61ae206ad02b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-14",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 153,
+        "requestId": "f6233359-41e1-424c-8b50-9f977c5fb878",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 154,
+        "requestId": "37228c6f-75ac-426f-ae18-d1475b802846",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 157,
+        "requestId": "a3a7a3ed-1a69-447a-8b8e-f0a99ac98198",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 163,
+        "requestId": "57714733-5701-4356-88c2-917db5d1a0c1",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 164,
+        "requestId": "0aeba82f-3a27-4926-ba98-9724175dce69",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 153,
+        "requestId": "fe8bcae1-982d-404b-a964-a6f3c7e77f38",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 150,
+        "requestId": "d5eb1d0a-3396-435f-a7fc-7f73ed57a4a2",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 154,
+        "requestId": "86fb0d64-fdd1-4a1c-b6b3-c38554941552",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 154,
+        "requestId": "5d8aefa3-45d6-4c98-9a77-fa4749b30544",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 200,
+        "ms": 292,
+        "requestId": "fdc81364-48cd-40fa-a9ff-a36d326d6903",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Até mais — foi bom conversar!",
+        "rateLimited": false
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-15",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 200,
+        "ms": 405,
+        "requestId": "2ad1d22d-ec2b-46c6-b9c0-c8760813c53c",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 200,
+        "ms": 495,
+        "requestId": "942e8e92-dbd4-452c-9ac5-f15877b57e92",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "ok",
+        "status": 200,
+        "ms": 273,
+        "requestId": "cbdf104c-ce7a-417b-8d41-d2898f6873f5",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "certo",
+        "status": 200,
+        "ms": 304,
+        "requestId": "99c8ec25-a731-45d3-bf0e-7b617ce2a742",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Disponha — tamo junto.",
+        "rateLimited": false
+      },
+      {
+        "msg": "obrigado",
+        "status": 200,
+        "ms": 315,
+        "requestId": "d0b927e4-ae6c-4645-a6f7-cd1c5cfb0681",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Beleza — seguimos.",
+        "rateLimited": false
+      },
+      {
+        "msg": "quem é você?",
+        "status": 200,
+        "ms": 336,
+        "requestId": "4c77d875-77bf-45f4-88fb-e804a2333035",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "rateLimited": false
+      },
+      {
+        "msg": "hm",
+        "status": 200,
+        "ms": 290,
+        "requestId": "9fce56a8-d821-4129-a678-567feacf9e8c",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Manda ver — estou ouvindo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "beleza",
+        "status": 200,
+        "ms": 249,
+        "requestId": "e013732e-eda6-4844-bc35-f52493d68f6f",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Certo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "valeu",
+        "status": 200,
+        "ms": 280,
+        "requestId": "0fe68ed2-9ff4-48a1-8dcf-483a063449d3",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Por nada — qualquer coisa.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 158,
+        "requestId": "62d57e30-b461-4440-9035-f900144187f6",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-16",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 156,
+        "requestId": "db3b94cc-3144-41f2-bd63-1d502edda979",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 154,
+        "requestId": "f46adde5-13b7-4a6d-bec1-8084692cf972",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 161,
+        "requestId": "bf96e00f-36f0-4edb-acca-ca26e9f80439",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 165,
+        "requestId": "30072f2f-d1d0-49d0-884c-8ca7317df4f5",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 175,
+        "requestId": "ad79e991-9599-4366-bc72-256560bfb756",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 154,
+        "requestId": "c97318a7-4ca4-4477-b0f8-b042fa16c215",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 155,
+        "requestId": "ac37d0d7-8ce5-49fe-a05b-873082c5dedd",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 165,
+        "requestId": "5c713f69-fd62-4ef8-87e2-061b268e4018",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 154,
+        "requestId": "ba556200-35d0-4973-bfd2-746765440e9c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 170,
+        "requestId": "2a7b7db8-73d1-4a6f-8842-b9b60f14a24a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-17",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 162,
+        "requestId": "0b0d9b84-8ff8-4f5f-bf40-ebfa3afc6ff5",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 165,
+        "requestId": "f57bae50-0a81-4e07-9718-e0563c536c50",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 200,
+        "requestId": "b13a25b1-1c96-49f8-9d2d-b27bafb0f24e",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 184,
+        "requestId": "53a1d8a5-a26f-4e92-9854-cb5cb56b1b7d",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 149,
+        "requestId": "a4e7d5ed-ff1c-4d68-9f0f-3e7f28bbe4a1",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 240,
+        "requestId": "79911950-e7c8-4b38-909c-1fbc3e47bb7b",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 161,
+        "requestId": "997c8426-9663-460e-a583-71a6ff77be9a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 184,
+        "requestId": "466539b3-eb38-412b-8df8-b338c5688e43",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 180,
+        "requestId": "f89952c2-d7ea-4634-9920-798780a36d23",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 156,
+        "requestId": "e928d207-81b2-44bc-8cd8-40b0885d7af9",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-18",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 156,
+        "requestId": "7b792dde-493b-41c3-8964-4eb4454bfef2",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 155,
+        "requestId": "99936af6-61af-412e-865f-d9e249fdc448",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 153,
+        "requestId": "cd6f1f13-87b4-41d6-b6a4-7fbf7c18d7dc",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 159,
+        "requestId": "9ca1bedd-6633-4fa8-a59b-a7895bba060d",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 154,
+        "requestId": "3a8fc6d2-9d9c-4e6f-9239-df72ae39280a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 162,
+        "requestId": "1da44152-d1a1-46dd-9f24-7bc2320bbf1c",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 160,
+        "requestId": "1b7c208a-ec1a-4aeb-a053-1ff46157372a",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 159,
+        "requestId": "dbd5ef7c-68bf-4e72-bcd2-a1f0f1eeadfd",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 164,
+        "requestId": "b982ac48-40f2-440e-a9c3-d60bebe144f4",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 164,
+        "requestId": "21557843-e385-4fb7-9418-5d057c205e77",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-19",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 429,
+        "ms": 156,
+        "requestId": "29006763-4dbb-4257-9108-f18e16d831dc",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 429,
+        "ms": 152,
+        "requestId": "749b5b59-7038-4271-8e00-3e89403251ab",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "ok",
+        "status": 200,
+        "ms": 303,
+        "requestId": "02bad9f9-9f72-4692-bbb8-3c9972200528",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Disponha — tamo junto.",
+        "rateLimited": false
+      },
+      {
+        "msg": "certo",
+        "status": 200,
+        "ms": 323,
+        "requestId": "2e23bc73-6afb-4a7b-99ff-4cc6b092d31b",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Imagina — fico feliz em ter ajudado.",
+        "rateLimited": false
+      },
+      {
+        "msg": "obrigado",
+        "status": 200,
+        "ms": 344,
+        "requestId": "67fa5be0-e7bd-482c-884d-c65c402f7096",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Por nada — qualquer coisa.",
+        "rateLimited": false
+      },
+      {
+        "msg": "quem é você?",
+        "status": 200,
+        "ms": 338,
+        "requestId": "52803ee8-5730-40d7-b987-f725e16b657a",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+        "rateLimited": false
+      },
+      {
+        "msg": "hm",
+        "status": 200,
+        "ms": 280,
+        "requestId": "836a7c29-817b-49bd-bc0f-061319d39acc",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Manda ver — estou ouvindo.",
+        "rateLimited": false
+      },
+      {
+        "msg": "beleza",
+        "status": 200,
+        "ms": 218,
+        "requestId": "4a19d6e4-5bf6-4fd0-b1fe-9a2279b8d6a1",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "valeu",
+        "status": 200,
+        "ms": 269,
+        "requestId": "af08598f-f3de-461c-845a-d785434707eb",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Beleza — seguimos.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tchau",
+        "status": 200,
+        "ms": 295,
+        "requestId": "422bd561-7353-41f5-8f95-4420ad681d06",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Até mais — foi bom conversar!",
+        "rateLimited": false
+      }
+    ],
+    "pass": false
+  },
+  {
+    "id": "MT-20",
+    "turns": [
+      {
+        "msg": "oi",
+        "status": 200,
+        "ms": 280,
+        "requestId": "8e83f321-1029-44f8-9551-c22b63be199c",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+        "rateLimited": false
+      },
+      {
+        "msg": "tudo bem?",
+        "status": 200,
+        "ms": 320,
+        "requestId": "577c5802-6f65-488c-bb6f-208ac480acb5",
+        "error": null,
+        "reasonCode": null,
+        "reply": "Tudo tranquilo por aqui!",
+        "rateLimited": false
+      },
+      {
+        "msg": "ok",
+        "status": 429,
+        "ms": 167,
+        "requestId": "afdc3ba5-a056-47a0-9897-114dd67916d8",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "certo",
+        "status": 429,
+        "ms": 193,
+        "requestId": "43e48286-ea62-4107-b362-b9eafb512aaf",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "obrigado",
+        "status": 429,
+        "ms": 182,
+        "requestId": "1b9af2fb-f8c2-4e70-b33f-ebb1236ed9bd",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "quem é você?",
+        "status": 429,
+        "ms": 167,
+        "requestId": "855e2fe5-5562-4e68-a99a-d33682bfe383",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "hm",
+        "status": 429,
+        "ms": 155,
+        "requestId": "40ca3320-9c10-48f9-b89a-8fcd654a4ea7",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "beleza",
+        "status": 429,
+        "ms": 164,
+        "requestId": "185d8bea-3741-4283-84f3-225ae502b872",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "valeu",
+        "status": 429,
+        "ms": 155,
+        "requestId": "7b135c46-858b-4fde-afc7-0adb7ba79768",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      },
+      {
+        "msg": "tchau",
+        "status": 429,
+        "ms": 156,
+        "requestId": "9bfc23a9-05b8-46d7-852c-08ad74b33155",
+        "error": "rate_limited",
+        "reasonCode": "perimeter_rate_limited",
+        "reply": "Você enviou várias mensagens em sequência. Aguarde alguns segundos e tente novamente.",
+        "rateLimited": true
+      }
+    ],
+    "pass": false
+  }
+]
