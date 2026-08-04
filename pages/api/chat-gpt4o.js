@@ -23626,13 +23626,22 @@ async function runNonCommercialAuthorityFastBranch({
   const governedBehaviorInstructions = socialBehaviorContractEarly
     ? buildFullHumanConversationInstructions(socialBehaviorContractEarly)
     : "";
-  const finalizeNonCommercialReply = (rawReply, contract = socialBehaviorContractEarly) =>
-    finalizeHumanConversationReply(
-      rawReply || buildGovernedSocialFallbackReply(contract || {}, { period }),
-      contract || {},
+  const finalizeNonCommercialReply = (rawReply, contract = socialBehaviorContractEarly) => {
+    let activeContract = contract || {};
+    if (!activeContract.humanWarmthPresenceVersion && intentRecognitionEarly) {
+      activeContract = buildSocialConversationBehaviorContract(intentRecognitionEarly, {
+        message: resolvedQuery || query,
+        conversationMessages: Array.isArray(req?.body?.messages) ? req.body.messages : [],
+        sessionContext: preservedSession,
+      });
+    }
+    return finalizeHumanConversationReply(
+      rawReply || buildGovernedSocialFallbackReply(activeContract || {}, { period }),
+      activeContract || {},
       conversationalToneProfile,
       { period }
     );
+  };
   const sendFastBranchEgress = (replyOrFinalized, responsePath) => {
     const finalized =
       typeof replyOrFinalized === "string"
@@ -27475,15 +27484,27 @@ function sendUnifiedConversationalEgress(
     finalizedWrap = null,
   } = {}
 ) {
-  const contract =
-    socialBehaviorContract ||
-    (intentRecognition
-      ? buildSocialConversationBehaviorContract(intentRecognition, {
-          message: "",
-          conversationMessages: [],
+  const rec = intentRecognition || semanticGovernanceRef.ctx?.intentRecognition || null;
+  const resolvedMessage =
+    rec?.resolvedQuery || rec?.userMessage || req?.body?.text || req?.body?.query || "";
+  const conversationMessages = Array.isArray(req?.body?.messages) ? req.body.messages : [];
+
+  let contract = socialBehaviorContract;
+  if (!contract?.humanWarmthPresenceVersion && rec) {
+    contract = buildSocialConversationBehaviorContract(rec, {
+      message: resolvedMessage,
+      conversationMessages,
+      sessionContext,
+    });
+  } else if (!contract) {
+    contract = rec
+      ? buildSocialConversationBehaviorContract(rec, {
+          message: resolvedMessage,
+          conversationMessages,
           sessionContext,
         })
-      : {});
+      : {};
+  }
 
   const universalContext = {
     routingDecision: routingDecision || semanticGovernanceRef.finalRoutingDecision,
