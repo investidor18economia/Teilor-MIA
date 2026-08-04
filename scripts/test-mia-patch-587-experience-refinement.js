@@ -84,7 +84,7 @@ console.log("\nPATCH 5.8.7 — Experience Refinement\n");
 test("continuity version 5.8.7", () => assert.equal(SOCIAL_CONVERSATION_CONTINUITY_VERSION, "5.8.7"));
 test("personality version 5.8.7", () => assert.equal(PERSONALITY_GOVERNANCE_VERSION, "5.8.7"));
 test("rhythm version 5.8.7", () => assert.equal(CONVERSATIONAL_RHYTHM_VERSION, "5.8.7"));
-test("experience version 5.8.7", () => assert.equal(HUMAN_EXPERIENCE_VERSION, "5.8.7"));
+test("experience version 5.8.8+", () => assert.match(HUMAN_EXPERIENCE_VERSION, /^5\.8\.(7|8)$/));
 
 // Class A — resumption / continuity
 const resumeNoAnchor = [

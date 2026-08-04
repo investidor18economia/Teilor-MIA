@@ -1,0 +1,17 @@
+{
+  "buildResults": [
+    {
+      "run": 1,
+      "pass": true,
+      "exitCode": 0,
+      "tail": "\n○  (Static)   prerendered as static content\n●  (SSG)      prerendered as static HTML (uses getStaticProps)\n   (ISR)      incremental static regeneration (uses revalidate in getStaticProps)\nƒ  (Dynamic)  server-rendered on demand"
+    },
+    {
+      "run": 2,
+      "pass": true,
+      "exitCode": 0,
+      "tail": "\n○  (Static)   prerendered as static content\n●  (SSG)      prerendered as static HTML (uses getStaticProps)\n   (ISR)      incremental static regeneration (uses revalidate in getStaticProps)\nƒ  (Dynamic)  server-rendered on demand"
+    }
+  ],
+  "allGreen": true
+}

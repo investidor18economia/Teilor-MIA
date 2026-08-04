@@ -1,0 +1,31 @@
+{
+  "patch": "5.8.8",
+  "allPass": true,
+  "results": [
+    {
+      "id": "5.8.7",
+      "pass": true
+    },
+    {
+      "id": "5.8.6",
+      "pass": true
+    },
+    {
+      "id": "5.8.5",
+      "pass": true
+    },
+    {
+      "id": "5.8.4",
+      "pass": true
+    },
+    {
+      "id": "5.8.3",
+      "pass": true
+    },
+    {
+      "id": "5.8.8",
+      "pass": true
+    }
+  ],
+  "timestamp": "2026-08-03T23:43:47.914Z"
+}
