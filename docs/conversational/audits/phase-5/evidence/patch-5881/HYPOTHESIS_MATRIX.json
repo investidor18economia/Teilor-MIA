@@ -1,0 +1,14 @@
+{
+  "version": "5.8.8.1",
+  "generatedAt": "2026-08-04T20:00:00.000Z",
+  "hypotheses": [
+    { "id": "A-serialization", "status": "discarded", "reason": "500 occurred before response assembly; no serialization stage reached; local contract enrichment succeeds" },
+    { "id": "B-shared-state", "status": "discarded", "reason": "Failures reproduce on fresh session IDs; commercial path succeeds on same build" },
+    { "id": "C-concurrency", "status": "inconclusive", "reason": "588V load may have accelerated quota exhaustion but root failure is provider quota not race" },
+    { "id": "D-llm-provider", "status": "confirmed", "reason": "OpenAI 429 credit_balance_exhausted logged in dev server; social paths call LLM" },
+    { "id": "E-runtime-vercel", "status": "discarded", "reason": "Identical failure locally; fast 250-480ms failure matches provider rejection not function timeout" },
+    { "id": "F-pipeline-contract", "status": "discarded", "reason": "Exception thrown at callOpenAI before finalizer/egress" },
+    { "id": "G-harness", "status": "discarded", "reason": "Direct fetch reproduces; not Playwright" },
+    { "id": "H-patch-588-regression", "status": "discarded", "reason": "588 enrichment runs; failure is uncaught provider throw not gate exception" }
+  ]
+}

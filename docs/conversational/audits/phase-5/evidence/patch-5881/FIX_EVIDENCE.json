@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-08-04T20:02:00.000Z",
+  "localPostFix": [
+    { "msg": "oi", "status": 200, "replySample": "Oi! Tudo bem. Que bom te ver por aqui." },
+    { "msg": "ok", "status": 200, "replySample": "Imagina — fico feliz em ter ajudado." },
+    { "msg": "quem é você?", "status": 200, "replySample": "Sou a MIA, da Teilor — especialista em compras..." },
+    { "msg": "quero notebook", "status": 200, "replySample": "Eu iria no Notebook Gamer Lenovo..." }
+  ],
+  "productionPreFix": [
+    { "msg": "oi", "status": 500, "reasonCode": "internal_error" },
+    { "msg": "ok", "status": 500, "reasonCode": "internal_error" },
+    { "msg": "quem é você?", "status": 500, "reasonCode": "internal_error" },
+    { "msg": "quero notebook", "status": 200 }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-08-04T19:54:00.000Z",
+  "auditScope": "Active PATCH 5.8.8V processes",
+  "found": [
+    {
+      "pid": 27608,
+      "command": "node scripts/patch-588v-ui-resume.mjs",
+      "status": "terminated"
+    }
+  ],
+  "closureScript": {
+    "pid": 18584,
+    "command": "node scripts/patch-588v-closure.mjs",
+    "status": "already_ended",
+    "exitCode": 1,
+    "endedAt": "2026-08-04T18:32:13.535Z"
+  }
+}

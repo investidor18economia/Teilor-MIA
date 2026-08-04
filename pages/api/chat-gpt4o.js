@@ -54,6 +54,10 @@ import { buildCommercialShadowDiagnosticReport } from "../../lib/productSourceAd
 import axios from "axios";
 import { supabase } from "../../lib/supabaseClient";
 import { callOpenAI, getOpenAIText } from "../../lib/openai";
+import {
+  buildMiaLlmProviderErrorFromUnknown,
+  isMiaLlmProviderError,
+} from "../../lib/miaLlmProviderError.js";
 import { MIA_SYSTEM_PROMPT, buildMiaPromptByRole, buildMiaConversationalPrompt, buildMiaUserNameHint } from "../../lib/miaPrompt";
 // PATCH 5.1A/B/C — Cognitive Router + Audit (shadow mode — observação apenas, sem controle de fluxo)
 // PATCH 5.2A — Cognitive Authority (autoridade controlada para VALUE_QUESTION / EXPLANATION_REQUEST)
@@ -572,7 +576,8 @@ const MIA_OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completi
 
 function normalizeMiaLLMResponse(rawResponse = null, {
   provider = MIA_LLM_PROVIDER,
-  model = MIA_TEXT_MODEL
+  model = MIA_TEXT_MODEL,
+  providerFailure = null,
 } = {}) {
   const text =
     typeof rawResponse?.text === "string"
@@ -589,6 +594,7 @@ function normalizeMiaLLMResponse(rawResponse = null, {
       "",
     provider,
     model,
+    providerFailure: providerFailure || rawResponse?.providerFailure || null,
     raw: rawResponse || null
   };
 }
@@ -596,15 +602,38 @@ function normalizeMiaLLMResponse(rawResponse = null, {
 async function callMiaOpenAIProvider(messages = [], options = {}) {
   const model = options.model || MIA_TEXT_MODEL;
 
-  const rawResponse = await callOpenAI(messages, {
-    ...options,
-    model
-  });
+  try {
+    const rawResponse = await callOpenAI(messages, {
+      ...options,
+      model
+    });
 
-  return normalizeMiaLLMResponse(rawResponse, {
-    provider: "openai",
-    model
-  });
+    return normalizeMiaLLMResponse(rawResponse, {
+      provider: "openai",
+      model
+    });
+  } catch (err) {
+    const providerErr =
+      (isMiaLlmProviderError(err) ? err : null) ||
+      buildMiaLlmProviderErrorFromUnknown(err, { stage: "mia_openai_provider" });
+
+    if (providerErr?.recoverable) {
+      logObservedError(providerErr, {
+        endpoint: "/api/chat-gpt4o",
+        reasonCode: providerErr.reasonCode,
+        provider: providerErr.provider || "openai",
+        operation: "llm_provider_degraded",
+      });
+
+      return normalizeMiaLLMResponse(null, {
+        provider: "openai",
+        model,
+        providerFailure: providerErr.toJSON(),
+      });
+    }
+
+    throw err;
+  }
 }
 
 async function callMiaLLMProvider(messages = [], options = {}) {

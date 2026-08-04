@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-08-04T19:54:00.000Z",
+  "action": "controlled_shutdown",
+  "processes": [
+    {
+      "pid": 27608,
+      "command": "node scripts/patch-588v-ui-resume.mjs",
+      "stoppedAt": "2026-08-04T19:54:00.000Z",
+      "reason": "PATCH 5.8.8.1 — UI audit contaminated by production internal_error; invalid for B/D/F evaluation"
+    }
+  ],
+  "lastScenario": {
+    "chain": "UI-F20",
+    "result": "FAIL",
+    "timestamp": "2026-08-04T19:53:41.564Z",
+    "note": "All 60 UI chains had executed; stability phase not reached before shutdown"
+  },
+  "uiSummary": {
+    "pass": 44,
+    "fail": 16,
+    "hardeningTurnRate": 0.785,
+    "contaminated": true,
+    "validForExperienceAudit": false
+  },
+  "evidencePreserved": [
+    "docs/conversational/audits/phase-5/evidence/patch-588v/"
+  ]
+}
