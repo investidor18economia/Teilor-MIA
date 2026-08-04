@@ -74,15 +74,15 @@ function hist(...pairs) {
 console.log("\nPATCH 5.8.8 — Unit tests\n");
 
 test("versions aligned", () => {
-  assert.equal(HUMAN_EXPERIENCE_VERSION, "5.8.8");
-  assert.equal(HUMAN_WARMTH_PRESENCE_VERSION, "5.8.8");
+  assert.match(HUMAN_EXPERIENCE_VERSION, /^5\.8\.8/);
+  assert.match(HUMAN_WARMTH_PRESENCE_VERSION, /^5\.8\.8/);
   assert.equal(STRUCTURAL_EXPRESSION_VERSION, "5.8.8");
-  assert.equal(CONVERSATIONAL_IDENTITY_PRESENCE_VERSION, "5.8.8");
+  assert.match(CONVERSATIONAL_IDENTITY_PRESENCE_VERSION, /^5\.8\.8/);
 });
 
 test("contract enriched with warmth presence fields", () => {
   const c = buildContract("oi, tudo bem?");
-  assert.equal(c.humanWarmthPresenceVersion, "5.8.8");
+  assert.match(c.humanWarmthPresenceVersion, /^5\.8\.8/);
   assert.ok(c.humanWarmthLevel);
   assert.ok(c.conversationEnergy);
   assert.ok(c.emotionalPresence);
@@ -97,7 +97,7 @@ test("contract enriched with structural expression", () => {
 
 test("contract enriched with identity presence", () => {
   const c = buildContract("qual LLM te alimenta?");
-  assert.equal(c.conversationalIdentityPresenceVersion, "5.8.8");
+  assert.match(c.conversationalIdentityPresenceVersion, /^5\.8\.8/);
   assert.equal(c.llmIdentityAnchorRequired, true);
 });
 

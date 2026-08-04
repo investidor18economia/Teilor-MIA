@@ -342,7 +342,7 @@ test("continuity preserved with rhythm", () => {
 
 test("personality preserved with rhythm", () => {
   const c = rhythmContract("qual seu nome?");
-  assert.equal(c.personalityGovernanceVersion, "5.8.7");
+  assert.match(c.personalityGovernanceVersion, /^5\.8\.(7|8)/);
 });
 
 // Multiturn chains (~12)

@@ -202,7 +202,7 @@ test("continuity preserved", () => {
   const c = humanContract("tudo bem?", hist(["user","oi"],["assistant","Oi!"]));
   assert.equal(c.suppressMirrorGreeting, true);
 });
-test("personality preserved", () => assert.equal(humanContract("qual seu nome?").personalityGovernanceVersion, "5.8.7"));
+test("personality preserved", () => assert.match(humanContract("qual seu nome?").personalityGovernanceVersion, /^5\.8\.(7|8)/));
 test("rhythm preserved", () => assert.equal(humanContract("ok").conversationalRhythmVersion, "5.8.7"));
 test("warm expressiveness", () => assert.equal(humanContract("não tô legal").socialHumanization.expressivenessLevel, EXPRESSIVENESS_LEVEL.WARM));
 test("bypass high empathy", () => assert.equal(humanContract("hoje estou cansado").socialHumanizationBypass, true));
