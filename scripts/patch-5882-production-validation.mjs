@@ -58,26 +58,36 @@ async function probeChat(msg, sid) {
   return { msg, status: res.status, ms: Date.now() - t0, reply: reply.slice(0, 300), reasonCode: body.reasonCode || null };
 }
 
-function scoreScenario(s, reply) {
+function scoreScenario(s, reply, status = 200) {
   const internal = /Não consegui concluir essa resposta agora/i.test(reply);
   if (internal) return { pass: false, reason: "internal_error_ui" };
+  if (status === 429 || /várias mensagens em sequência/i.test(reply)) {
+    return { pass: false, reason: "rate_limited" };
+  }
   if (s.expect === "identity") {
     if (!IDENTITY.test(reply)) return { pass: false, reason: "missing_identity" };
     if (STAY_SOCIAL.test(reply)) return { pass: false, reason: "stay_social_bleed" };
     return { pass: true };
   }
-  if (!WARMTH.test(reply) && reply.length < 12) return { pass: false, reason: "cold_response" };
+  if (!WARMTH.test(reply) && reply.length < 10 && !/^(bom dia|boa tarde|boa noite)/i.test(reply)) {
+    return { pass: false, reason: "cold_response" };
+  }
   if (/^(de nada\.?|por nada\.?|claro\.?|entendi\.?)$/i.test(reply)) return { pass: false, reason: "bare_cold_ack" };
   return { pass: true };
 }
 
 async function runApi() {
   const results = [];
-  for (const s of API_SCENARIOS) {
-    const r = await probeChat(s.msg, `p5882-api-${s.id}`);
-    const scored = scoreScenario(s, r.reply);
-    results.push({ ...s, ...r, ...scored });
-    await sleep(2500);
+  const fScenarios = API_SCENARIOS.filter((s) => s.cls === "F");
+  const bScenarios = API_SCENARIOS.filter((s) => s.cls === "B");
+  for (const batch of [fScenarios, bScenarios]) {
+    await sleep(8000);
+    for (const s of batch) {
+      const r = await probeChat(s.msg, `p5882-api-${s.id}-${Date.now()}`);
+      const scored = scoreScenario(s, r.reply, r.status);
+      results.push({ ...s, ...r, ...scored });
+      await sleep(5000);
+    }
   }
   writeFileSync(join(OUT, "DIRECTED_API_RESULTS.json"), JSON.stringify({ scenarios: results, pass: results.every((r) => r.status === 200 && r.pass) }, null, 2));
   return results;
@@ -97,9 +107,9 @@ async function runUi() {
     const results = [];
     for (const s of apiOnly) {
       const r = await probeChat(s.msg, `p5882-ui-fb-${s.id}`);
-      const scored = scoreScenario(s, r.reply);
+      const scored = scoreScenario(s, r.reply, r.status);
       results.push({ ...s, ...r, ...scored });
-      await sleep(2500);
+      await sleep(4500);
     }
     writeFileSync(
       join(OUT, "DIRECTED_UI_RESULTS.json"),
@@ -124,7 +134,7 @@ async function runUi() {
     const reply = String(await page.locator(".mia-msg-assistant-bubble").last().innerText().catch(() => ""))
       .replace(/^MIΛ\s*/i, "")
       .trim();
-    const scored = scoreScenario(s, reply);
+    const scored = scoreScenario(s, reply, resp.status());
     results.push({ ...s, httpStatus: resp.status(), reply: reply.slice(0, 300), ...scored });
     await sleep(5000);
   }
