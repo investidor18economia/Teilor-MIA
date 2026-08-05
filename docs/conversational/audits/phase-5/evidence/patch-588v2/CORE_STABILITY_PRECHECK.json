@@ -1,0 +1,127 @@
+{
+  "pass": true,
+  "probes": [
+    {
+      "i": 1,
+      "msg": "oi",
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "status": 200,
+      "ms": 2529,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 2,
+      "msg": "ok",
+      "reply": "Que bom que você está aqui!",
+      "status": 200,
+      "ms": 1316,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 3,
+      "msg": "certo",
+      "reply": "Certo!",
+      "status": 200,
+      "ms": 1133,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 4,
+      "msg": "obrigado",
+      "reply": "De nada! Fico feliz em poder ajudar.",
+      "status": 200,
+      "ms": 1249,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 5,
+      "msg": "tudo bem?",
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "status": 200,
+      "ms": 1562,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 6,
+      "msg": "quem é você?",
+      "reply": "Sou a MIA — assistente inteligente de compras da Teilor. Gosto de conversar e ajudar a encontrar o que faz sentido pra você.",
+      "status": 200,
+      "ms": 1552,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 7,
+      "msg": "como funciona?",
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "status": 200,
+      "ms": 1971,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 8,
+      "msg": "valeu",
+      "reply": "De nada! Fico feliz que tenha gostado.",
+      "status": 200,
+      "ms": 980,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 9,
+      "msg": "quero celular",
+      "reply": "O iPhone 13 faz sentido aqui porque no dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. Eu escolhi o iPhone 13, mas o iPhone 11 chegou perto. A diferença é que mais margem de tranquilidade quando o uso deixa de ser básico. Visual mais confortável durante o uso prolongado — isso tende a aparecer no uso real, não só no anúncio. ✅ O que você ganha • No dia a dia, isso se traduz em menos preocupação em registrar bons momentos sem precisar repetir a foto várias vezes. ⚠️ O que você abre mão • Pode pedir mais atenção à autonomia em dias mais longos. • O custo tende a pesar mais na comparação com rivais parecidos. Embora possa pedir mais atenção à autonomia em dias mais longos, eu manteria o iPhone 13 — o ganho principal ainda pesa mais do que essa renúncia. Posso te sugerir caminhos iniciais, mas com sua faixa de preço eu fecho uma recomendação bem mais certeira.",
+      "status": 200,
+      "ms": 8467,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    },
+    {
+      "i": 10,
+      "msg": "hm",
+      "reply": "Hehe!",
+      "status": 200,
+      "ms": 1098,
+      "rateLimited": false,
+      "reasonCode": null,
+      "internalError": false,
+      "creditExhausted": false,
+      "empty": false
+    }
+  ],
+  "prodBuild": "b0e3a34ffc93",
+  "timestamp": "2026-08-05T00:38:51.799Z"
+}

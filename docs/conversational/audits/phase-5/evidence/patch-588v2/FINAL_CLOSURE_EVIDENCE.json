@@ -1,0 +1,30 @@
+{
+  "patch": "5.8.8V.2",
+  "prodBuild": "b0e3a34ffc93",
+  "localHead": "b0e3a34ffc931a1303e7415dcbce685c488e5548",
+  "gates": {
+    "coreStable": true,
+    "classB": false,
+    "gratitude": false,
+    "classD": true,
+    "classF": false,
+    "mixed": false,
+    "stability": false,
+    "ui": false,
+    "parity": false,
+    "regressions": true
+  },
+  "counts": {
+    "classB": 25,
+    "gratitude": 25,
+    "classD": 20,
+    "classF": 25,
+    "mixed": 10,
+    "stability": 25,
+    "ui": 55,
+    "parity": 25
+  },
+  "failures": 38,
+  "approved": false,
+  "timestamp": "2026-08-05T02:10:26.843Z"
+}

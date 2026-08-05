@@ -1,0 +1,572 @@
+{
+  "prodBuild": "b0e3a34ffc93",
+  "results": [
+    {
+      "id": "M-01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quem é você?",
+          "reply": "Sou a MIA — assistente inteligente de compras da Teilor. Gosto de conversar e ajudar a encontrar o que faz sentido pra você.",
+          "status": 200,
+          "ms": 1429,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "você é legal",
+          "reply": "Obrigada! Fico feliz que você pense assim. Vamos continuar nossa conversa!",
+          "status": 200,
+          "ms": 1247,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "obrigado",
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "status": 200,
+          "ms": 794,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "De nada! Fico feliz que tenha gostado.",
+      "fEval": {
+        "pass": false,
+        "reason": "missing_identity"
+      },
+      "bEval": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true
+    },
+    {
+      "id": "M-02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "qual LLM te alimenta?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "status": 200,
+          "ms": 424,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "e ai como vai?",
+          "reply": "Aqui está tudo bem — e com você, como foi o dia?",
+          "status": 200,
+          "ms": 1504,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "tchau",
+          "reply": "Até mais — foi bom conversar!",
+          "status": 200,
+          "ms": 300,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "Até mais — foi bom conversar!",
+      "fEval": {
+        "pass": false,
+        "reason": "missing_identity"
+      },
+      "bEval": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true
+    },
+    {
+      "id": "M-03",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "to meio down",
+          "reply": "Imagino que tenha sido um dia pesado.",
+          "status": 200,
+          "ms": 554,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "e você?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+          "status": 200,
+          "ms": 348,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "status": 200,
+          "ms": 976,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "De nada!",
+      "fEval": {
+        "pass": false,
+        "reason": "missing_identity"
+      },
+      "bEval": {
+        "pass": false,
+        "reason": "low_warmth"
+      },
+      "pass": false
+    },
+    {
+      "id": "M-04",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "ok",
+          "reply": "Que bom que você está por aqui!",
+          "status": 200,
+          "ms": 861,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "certo",
+          "reply": "Certo!",
+          "status": 200,
+          "ms": 1049,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "beleza",
+          "reply": "Entendo — me conta um pouco mais.",
+          "status": 200,
+          "ms": 832,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 4,
+          "msg": "quem é a MIA?",
+          "reply": "A MIA é a assistente inteligente de compras da Teilor.scando a melhor opção para você.",
+          "status": 200,
+          "ms": 1986,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "A MIA é a assistente inteligente de compras da Teilor.scando a melhor opção para você.",
+      "fEval": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "bEval": {
+        "pass": true,
+        "reason": "proportional_length"
+      },
+      "pass": true
+    },
+    {
+      "id": "M-05",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "obrigado",
+          "reply": "De nada!",
+          "status": 200,
+          "ms": 805,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "quem te criou?",
+          "reply": "Eu sou a MIA, assistente inteligente de compras criada pela Teilor. Minha missão é ajudar você a tomar as melhores decisões de compra, em geral com clareza e confiança.",
+          "status": 200,
+          "ms": 1693,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "Eu sou a MIA, assistente inteligente de compras criada pela Teilor. Minha missão é ajudar você a tomar as melhores decisões de compra, em geral com clareza e confiança.",
+      "fEval": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "bEval": {
+        "pass": true,
+        "reason": "proportional_length"
+      },
+      "pass": true
+    },
+    {
+      "id": "M-06",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quero notebook",
+          "reply": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Quase te recomendaria o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD; no fim, fiquei com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem",
+          "status": 200,
+          "ms": 2925,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "deixa",
+          "reply": "Eu iria no notebook asus. No conjunto geral, ele parece a escolha mais segura e equilibrada. Os dois são bem próximos, então o desempate foi pelo equilíbrio geral. O notebook gamer ainda pode fazer sentido se a sua prioridade específica for diferente. Meu veredito: vai no notebook asus.",
+          "status": 200,
+          "ms": 5963,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "como você funciona?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "status": 200,
+          "ms": 1521,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "fEval": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "bEval": {
+        "pass": true,
+        "reason": "proportional_length"
+      },
+      "pass": true
+    },
+    {
+      "id": "M-07",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+          "status": 200,
+          "ms": 731,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "entendi",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "status": 200,
+          "ms": 1268,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "entendi",
+          "reply": "Combinado.",
+          "status": 200,
+          "ms": 1111,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 4,
+          "msg": "entendi",
+          "reply": "Ótimo saber que você entendeu! Se tiver mais alguma dúvida ou quiser conversar sobre outro assunto, é só falar.",
+          "status": 200,
+          "ms": 1119,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 5,
+          "msg": "quem é você?",
+          "reply": "Sou a MIA — assistente inteligente de compras da Teilor. Gosto de conversar e ajudar a encontrar o que faz sentido pra você.",
+          "status": 200,
+          "ms": 1625,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "Sou a MIA — assistente inteligente de compras da Teilor. Gosto de conversar e ajudar a encontrar o que faz sentido pra você.",
+      "fEval": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "bEval": {
+        "pass": true,
+        "reason": "proportional_length"
+      },
+      "pass": true
+    },
+    {
+      "id": "M-08",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você é humana?",
+          "reply": "Não — sou a MIA, inteligência de compras da Teilor, não uma pessoa.",
+          "status": 200,
+          "ms": 348,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "brigadão",
+          "reply": "De nada!",
+          "status": 200,
+          "ms": 1068,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "De nada!",
+      "fEval": {
+        "pass": false,
+        "reason": "missing_identity"
+      },
+      "bEval": {
+        "pass": false,
+        "reason": "low_warmth"
+      },
+      "pass": false
+    },
+    {
+      "id": "M-09",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "dia dificil",
+          "reply": "Compreendo.",
+          "status": 200,
+          "ms": 373,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "obrigado por ouvir",
+          "reply": "Fico feliz que você tenha se sentido ouvido.",
+          "status": 200,
+          "ms": 970,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "até logo",
+          "reply": "Até mais — foi bom conversar!",
+          "status": 200,
+          "ms": 333,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "Até mais — foi bom conversar!",
+      "fEval": {
+        "pass": false,
+        "reason": "missing_identity"
+      },
+      "bEval": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true
+    },
+    {
+      "id": "M-10",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "ok",
+          "reply": "Legal!",
+          "status": 200,
+          "ms": 970,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 2,
+          "msg": "show",
+          "reply": "Show!",
+          "status": 200,
+          "ms": 283,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 3,
+          "msg": "legal",
+          "reply": "Aí sim.",
+          "status": 200,
+          "ms": 1354,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 4,
+          "msg": "valeu",
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "status": 200,
+          "ms": 1183,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        },
+        {
+          "turn": 5,
+          "msg": "vlw",
+          "reply": "De nada!",
+          "status": 200,
+          "ms": 946,
+          "rateLimited": false,
+          "reasonCode": null,
+          "internalError": false,
+          "creditExhausted": false,
+          "empty": false
+        }
+      ],
+      "class": "MIXED",
+      "channel": "api",
+      "lastReply": "De nada!",
+      "fEval": {
+        "pass": false,
+        "reason": "missing_identity"
+      },
+      "bEval": {
+        "pass": false,
+        "reason": "low_warmth"
+      },
+      "pass": false
+    }
+  ],
+  "pass": false
+}

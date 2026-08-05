@@ -1,0 +1,12 @@
+{
+  "patch": "5.8.8V.2",
+  "branch": "master",
+  "localHead": "b0e3a34ffc931a1303e7415dcbce685c488e5548",
+  "remoteHead": "b0e3a34ffc931a1303e7415dcbce685c488e5548",
+  "synced": true,
+  "expectedFunctionalBuild": "fb0a725",
+  "activeProductionBuild": "b0e3a34ffc93",
+  "functionalCommitInAncestry": true,
+  "experienceVersion": "5.8.8.2",
+  "timestamp": "2026-08-05T00:37:29.832Z"
+}

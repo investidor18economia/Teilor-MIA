@@ -1,0 +1,2955 @@
+{
+  "prodBuild": "b0e3a34ffc93",
+  "results": [
+    {
+      "id": "UI-B-01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi, blz?",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "greeting",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "bom dia MIA",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "greeting",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-03",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "boa noite",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "greeting",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-04",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "e aí td bem?",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "greeting",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-05",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "salve",
+          "reply": "Oi! Que bom te ver por aqui.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "greeting",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-06",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "obrigado demais",
+          "reply": "Fico feliz que você tenha gostado!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "gratitude",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-07",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu msm",
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "gratitude",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-08",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "brigadão",
+          "reply": "Imagina!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "gratitude",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-09",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "vlw 🙏",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "gratitude",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": false,
+        "reason": "low_warmth"
+      },
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-10",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "thanks 😊",
+          "reply": "De nada! 😊 Fico feliz que tenha gostado.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "gratitude",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-11",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "flw até logo",
+          "reply": "Até mais — foi bom conversar!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "farewell",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-12",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "preciso ir",
+          "reply": "Até mais — foi bom conversar!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "farewell",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-13",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "to meio down",
+          "reply": "Entendo. Às vezes realmente existem dias assim.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "emotional",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-14",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "dia puxado",
+          "reply": "Certo — pode continuar.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "emotional",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "proportional_length"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-B-15",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "to frustrado",
+          "reply": "Certo — pode continuar.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "category": "frustration",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "proportional_length"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "ok",
+          "reply": "Legal!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "certo",
+          "reply": "Certo!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "beleza",
+          "reply": "Claro — estou acompanhando.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "entendi",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "show",
+          "reply": "Que bom!",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "legal",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "sim",
+          "reply": "Entendi!",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "hm",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "8-10",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 8,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "certo",
+          "reply": "Legal!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "beleza",
+          "reply": "Beleza!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "entendi",
+          "reply": "Ótimo saber que você entendeu! Se precisar de mais alguma coisa ou quiser explorar mais sobre suas opções, é só avisar.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "show",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "legal",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "sim",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "hm",
+          "reply": "Boa!",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "blz",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "8-10",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 9,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-03",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "beleza",
+          "reply": "Compreendo — pode continuar.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "entendi",
+          "reply": "Que bom que você entendeu! Se tiver mais alguma dúvida ou quiser conversar sobre outro assunto, é só falar.",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "show",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "legal",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "sim",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "hm",
+          "reply": "Boa!",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "valeu",
+          "reply": "De nada! em geral que precisar,",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "blz",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "aham",
+          "reply": "O que você gostaria de compartilhar ou perguntar?",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 10,
+          "msg": "pois é",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 10,
+          "bubblesAfter": 11,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "8-10",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0.1,
+        "behavioralArchetypeDiversity": 9,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-04",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "entendi",
+          "reply": "Ótimo saber que você entendeu! Se precisar de mais informações ou quiser discutir algo específico, é só falar.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "show",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "legal",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "sim",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "hm",
+          "reply": "Boa!",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "blz",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "aham",
+          "reply": "Parece que você está pensando em algo.",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "8-10",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 8,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-05",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "show",
+          "reply": "Que bom!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "legal",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "sim",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "hm",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "valeu",
+          "reply": "Beleza — seguimos.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "blz",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "aham",
+          "reply": "Entendi — me ajuda com um pouco mais de contexto?",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "pois é",
+          "reply": "Boa!",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "ok",
+          "reply": "Legal!",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "8-10",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 9,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-06",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "legal",
+          "reply": "Legal mesmo!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "sim",
+          "reply": "Entendi!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "hm",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "blz",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "aham",
+          "reply": "Parece que você está pensando em algo.",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "pois é",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "ok",
+          "reply": "Beleza — seguimos.",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "certo",
+          "reply": "Certo!",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 10,
+          "msg": "beleza",
+          "reply": "Compreendo — pode continuar.",
+          "httpStatus": 200,
+          "bubblesBefore": 10,
+          "bubblesAfter": 11,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 11,
+          "msg": "entendi",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 11,
+          "bubblesAfter": 12,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 12,
+          "msg": "show",
+          "reply": "Que bom!",
+          "httpStatus": 200,
+          "bubblesBefore": 12,
+          "bubblesAfter": 13,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "12-15",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 12,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-07",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "sim",
+          "reply": "Entendi!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "hm",
+          "reply": "Parece que você está refletindo.",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "blz",
+          "reply": "Compreendo — pode continuar.",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "aham",
+          "reply": "O que você quis dizer com \"aham\"?",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "pois é",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "ok",
+          "reply": "Imagina — fico feliz em ter ajudado.",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "certo",
+          "reply": "Certo,",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "beleza",
+          "reply": "Claro — estou acompanhando.",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 10,
+          "msg": "entendi",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 10,
+          "bubblesAfter": 11,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 11,
+          "msg": "show",
+          "reply": "Que bom!",
+          "httpStatus": 200,
+          "bubblesBefore": 11,
+          "bubblesAfter": 12,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 12,
+          "msg": "legal",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 12,
+          "bubblesAfter": 13,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 13,
+          "msg": "sim",
+          "reply": "Entendi!",
+          "httpStatus": 200,
+          "bubblesBefore": 13,
+          "bubblesAfter": 14,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "12-15",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0.077,
+        "behavioralArchetypeDiversity": 12,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-08",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "hm",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "blz",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "aham",
+          "reply": "Parece que você está apenas confirmando algo.",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "pois é",
+          "reply": "Beleza — seguimos.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "ok",
+          "reply": "Tudo certo!",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "certo",
+          "reply": "Legal!",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "beleza",
+          "reply": "Beleza mesmo!",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "entendi",
+          "reply": "Ótimo saber que você entendeu! Se precisar de mais alguma coisa ou quiser continuar a conversa, é só avisar.",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 10,
+          "msg": "show",
+          "reply": "Que bom!",
+          "httpStatus": 200,
+          "bubblesBefore": 10,
+          "bubblesAfter": 11,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 11,
+          "msg": "legal",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 11,
+          "bubblesAfter": 12,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 12,
+          "msg": "sim",
+          "reply": "Boa!",
+          "httpStatus": 200,
+          "bubblesBefore": 12,
+          "bubblesAfter": 13,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 13,
+          "msg": "hm",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 13,
+          "bubblesAfter": 14,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 14,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 14,
+          "bubblesAfter": 15,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "12-15",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0.071,
+        "behavioralArchetypeDiversity": 12,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-09",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "blz",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "aham",
+          "reply": "Parece que você está pensando em algo. Posso ajudar com alguma informação ou esclarecer algo específico?",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "pois é",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "ok",
+          "reply": "Imagina — fico feliz em ter ajudado.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "certo",
+          "reply": "Que bom que você está aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "beleza",
+          "reply": "Beleza!",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "entendi",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "show",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 10,
+          "msg": "legal",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 10,
+          "bubblesAfter": 11,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 11,
+          "msg": "sim",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 11,
+          "bubblesAfter": 12,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 12,
+          "msg": "hm",
+          "reply": "Beleza — seguimos.",
+          "httpStatus": 200,
+          "bubblesBefore": 12,
+          "bubblesAfter": 13,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 13,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 13,
+          "bubblesAfter": 14,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 14,
+          "msg": "blz",
+          "reply": "Certo.",
+          "httpStatus": 200,
+          "bubblesBefore": 14,
+          "bubblesAfter": 15,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 15,
+          "msg": "aham",
+          "reply": "Parece que você está pensando em algo. Tem alguma dúvida ou algo específico que você gostaria de conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 15,
+          "bubblesAfter": 16,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "12-15",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0.133,
+        "behavioralArchetypeDiversity": 11,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "D-10",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "blz",
+          "reply": "Tudo certo!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "aham",
+          "reply": "Parece que você está pensando em algo. O que posso ajudar?",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "pois é",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "ok",
+          "reply": "Tudo certo!",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "certo",
+          "reply": "Beleza — seguimos.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 6,
+          "msg": "beleza",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 6,
+          "bubblesAfter": 7,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 7,
+          "msg": "entendi",
+          "reply": "Me conta — estou ouvindo.",
+          "httpStatus": 200,
+          "bubblesBefore": 7,
+          "bubblesAfter": 8,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 8,
+          "msg": "show",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 8,
+          "bubblesAfter": 9,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 9,
+          "msg": "legal",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 9,
+          "bubblesAfter": 10,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 10,
+          "msg": "sim",
+          "reply": "Entendi!",
+          "httpStatus": 200,
+          "bubblesBefore": 10,
+          "bubblesAfter": 11,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 11,
+          "msg": "hm",
+          "reply": "Aí sim.",
+          "httpStatus": 200,
+          "bubblesBefore": 11,
+          "bubblesAfter": 12,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 12,
+          "msg": "valeu",
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "httpStatus": 200,
+          "bubblesBefore": 12,
+          "bubblesAfter": 13,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "tag": "12-15",
+      "class": "D",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0.167,
+        "behavioralArchetypeDiversity": 10,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "me conta quem você é",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "qual seu nome?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-03",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você é humana?",
+          "reply": "Não — sou a MIA, inteligência de compras da Teilor, não uma pessoa.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-04",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você é pessoa?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-05",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você é IA?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-06",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você é ChatGPT?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-07",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "qual modelo você usa?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-08",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "qual LLM te alimenta?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-09",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quem te criou?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-10",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "o que é a Teilor?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-11",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "sua especialidade?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-12",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você aprende comigo?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-13",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você lembra das conversas?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-14",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você treina com minhas mensagens?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "identity_anchored"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-F-15",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você guarda meus dados?",
+          "reply": "Sim, eu guardo seus dados, mas em geral com segurança e respeito à sua privacidade. Se você tiver mais perguntas sobre isso, fique à vontade para perguntar!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "F",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": false,
+        "reason": "missing_identity"
+      },
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-01",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quem é você?",
+          "reply": "Sou a MIA — assistente inteligente de compras da Teilor. Gosto de conversar e ajudar a encontrar o que faz sentido pra você.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "você é legal",
+          "reply": "Obrigada! Fico feliz que você pense assim.",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "obrigado",
+          "reply": "De nada! Fico feliz em poder ajudar.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 3,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-02",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "qual LLM te alimenta?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "e ai como vai?",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "tchau",
+          "reply": "Até mais — foi bom conversar!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 3,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-03",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "to meio down",
+          "reply": "Entendo. Às vezes realmente existem dias assim.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "e você?",
+          "reply": "Por aqui, tudo certo — obrigada por perguntar. E você, como está?",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "valeu",
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 3,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-04",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "ok",
+          "reply": "Legal!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "certo",
+          "reply": "Certo!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "beleza",
+          "reply": "Claro — estou acompanhando.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "quem é a MIA?",
+          "reply": "A MIA é a assistente inteligente de compras da Teilor.ade.",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 4,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-05",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "obrigado",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "quem te criou?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 2,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-06",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "quero notebook",
+          "reply": "Eu iria no Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD. Combina com o foco principal desta busca. Quase te recomendaria o Notebook Asus Vivobook 15 Intel Core I5 8GB 512GB SSD; no fim, fiquei com o Notebook Gamer Lenovo LOQ-e Intel Core i7-12650hx 16gb 512GB SSD — ele encaixa melhor no que esta busca prioriza. No conjunto, o equilíbrio entre ganhos e concessões ainda fecha bem",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "deixa",
+          "reply": "Entendi! Se mudar de ideia ou precisar de ajuda com outra coisa, é só avisar.\n\nℹ️\nProduto ainda não passou pela auditoria completa da MIA. Saiba mais",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "como você funciona?",
+          "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 3,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-07",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "oi",
+          "reply": "Tudo tranquilo por aqui!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "entendi",
+          "reply": "Fico por aqui — o que você quer conversar?",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "entendi",
+          "reply": "Beleza — seguimos.",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "entendi",
+          "reply": "Ótimo saber que ficou claro! Se precisar de mais alguma coisa ou quiser explorar outros temas, é só falar.",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "quem é você?",
+          "reply": "Sou a MIA — assistente inteligente de compras da Teilor. Gosto de conversar e ajudar a encontrar o que faz sentido pra você.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 5,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-08",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "você é humana?",
+          "reply": "Não — sou a MIA, inteligência de compras da Teilor, não uma pessoa.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "brigadão",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 2,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-09",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "dia dificil",
+          "reply": "Certo — pode continuar.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "obrigado por ouvir",
+          "reply": "Fico feliz que você tenha se sentido ouvido.",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "até logo",
+          "reply": "Até mais — foi bom conversar!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 3,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "M-10",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "ok",
+          "reply": "Tudo certo!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 2,
+          "msg": "show",
+          "reply": "Show!",
+          "httpStatus": 200,
+          "bubblesBefore": 2,
+          "bubblesAfter": 3,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 3,
+          "msg": "legal",
+          "reply": "Hehe!",
+          "httpStatus": 200,
+          "bubblesBefore": 3,
+          "bubblesAfter": 4,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 4,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 4,
+          "bubblesAfter": 5,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        },
+        {
+          "turn": 5,
+          "msg": "vlw",
+          "reply": "Beleza — seguimos.",
+          "httpStatus": 200,
+          "bubblesBefore": 5,
+          "bubblesAfter": 6,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "MIXED",
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "structural_variation",
+        "structuralRepetitionRate": 0,
+        "behavioralArchetypeDiversity": 5,
+        "archetypeFatigue": "fresh",
+        "recentPatternReuse": 1
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-GRAT-VAL-1",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "gratitude": true,
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": false,
+        "reason": "bare_cold_gratitude"
+      },
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-GRAT-VAL-2",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada! Fico feliz que tenha gostado.",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "gratitude": true,
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": true,
+        "reason": "warmth_present"
+      },
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-GRAT-VAL-3",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "gratitude": true,
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": false,
+        "reason": "bare_cold_gratitude"
+      },
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-GRAT-VAL-4",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "gratitude": true,
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": false,
+        "reason": "bare_cold_gratitude"
+      },
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "UI-GRAT-VAL-5",
+      "turns": [
+        {
+          "turn": 1,
+          "msg": "valeu",
+          "reply": "De nada!",
+          "httpStatus": 200,
+          "bubblesBefore": 1,
+          "bubblesAfter": 2,
+          "doubleSend": false,
+          "empty": false,
+          "internalError": false
+        }
+      ],
+      "class": "B",
+      "gratitude": true,
+      "page": {
+        "_type": "Page",
+        "_guid": "page@ed9d736dca4864700a78d0c550eff058"
+      },
+      "eval_": {
+        "pass": false,
+        "reason": "bare_cold_gratitude"
+      },
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    }
+  ],
+  "consoleErrors": [],
+  "pass": false
+}

@@ -1,0 +1,203 @@
+[
+  {
+    "class": "B",
+    "id": "B-09",
+    "reason": "low_warmth"
+  },
+  {
+    "class": "B",
+    "id": "B-10",
+    "reason": "low_warmth"
+  },
+  {
+    "class": "B",
+    "id": "B-25",
+    "reason": "low_warmth"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-01",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-02",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-03",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-04",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-05",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-07",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-11",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-12",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-14",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-15",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-16",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-17",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-18",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-19",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-20",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-21",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-22",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-23",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-24",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "GRAT",
+    "id": "GRAT-25",
+    "reason": "bare_cold_gratitude",
+    "reply": "De nada!"
+  },
+  {
+    "class": "F",
+    "id": "F-15",
+    "reason": "missing_identity"
+  },
+  {
+    "class": "F",
+    "id": "F-18",
+    "reason": "missing_identity"
+  },
+  {
+    "class": "F",
+    "id": "F-25",
+    "reason": "stay_social_bleed"
+  },
+  {
+    "class": "MIXED",
+    "id": "M-03"
+  },
+  {
+    "class": "MIXED",
+    "id": "M-08"
+  },
+  {
+    "class": "MIXED",
+    "id": "M-10"
+  },
+  {
+    "class": "STAB",
+    "id": "obrigado",
+    "reason": "low_warmth"
+  },
+  {
+    "class": "UI",
+    "id": "UI-B-09"
+  },
+  {
+    "class": "UI",
+    "id": "UI-F-15"
+  },
+  {
+    "class": "UI",
+    "id": "UI-GRAT-VAL-1"
+  },
+  {
+    "class": "UI",
+    "id": "UI-GRAT-VAL-3"
+  },
+  {
+    "class": "UI",
+    "id": "UI-GRAT-VAL-4"
+  },
+  {
+    "class": "UI",
+    "id": "UI-GRAT-VAL-5"
+  },
+  {
+    "class": "PARITY",
+    "id": "B-08",
+    "classification": "real_divergence"
+  },
+  {
+    "class": "PARITY",
+    "id": "GRAT-02",
+    "classification": "real_divergence"
+  }
+]

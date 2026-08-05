@@ -1,0 +1,281 @@
+{
+  "prodBuild": "b0e3a34ffc93",
+  "pairs": [
+    {
+      "id": "B-01",
+      "message": "oi, blz?",
+      "apiReply": "Oi! Como vai. Que bom te ver por aqui.",
+      "uiReply": "Tudo tranquilo por aqui!",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "semantic_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "B-02",
+      "message": "bom dia MIA",
+      "apiReply": "Bom dia! Como vai. Que bom te ver por aqui.",
+      "uiReply": "Tudo tranquilo por aqui!",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "semantic_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "B-03",
+      "message": "boa noite",
+      "apiReply": "Boa noite! Como vai. Que bom te ver por aqui.",
+      "uiReply": "Oi! Que bom te ver por aqui.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "semantic_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "B-04",
+      "message": "e aí td bem?",
+      "apiReply": "Indo bem, obrigada! E você, tudo certo?",
+      "uiReply": "Tudo tranquilo por aqui!",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "semantic_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "B-05",
+      "message": "salve",
+      "apiReply": "Oi! Que bom te ver por aqui.",
+      "uiReply": "Oi! Que bom te ver por aqui.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "B-06",
+      "message": "obrigado demais",
+      "apiReply": "Fico feliz em saber que você está satisfeito!",
+      "uiReply": "Fico feliz que tenha gostado!",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "semantic_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "B-07",
+      "message": "valeu msm",
+      "apiReply": "De nada!",
+      "uiReply": "De nada! Fico feliz que tenha gostado.",
+      "apiPass": false,
+      "uiPass": true,
+      "classification": "acceptable_variation",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "B-08",
+      "message": "brigadão",
+      "apiReply": "De nada! Fico feliz em poder ajudar.",
+      "uiReply": "De nada!",
+      "apiPass": true,
+      "uiPass": false,
+      "classification": "real_divergence",
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-01",
+      "message": "me conta quem você é",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "uiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-02",
+      "message": "qual seu nome?",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "uiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-03",
+      "message": "você é humana?",
+      "apiReply": "Não — sou a MIA, inteligência de compras da Teilor, não uma pessoa.",
+      "uiReply": "Não — sou a MIA, inteligência de compras da Teilor, não uma pessoa.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-04",
+      "message": "você é pessoa?",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "uiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-05",
+      "message": "você é IA?",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "uiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-06",
+      "message": "você é ChatGPT?",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "uiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-07",
+      "message": "qual modelo você usa?",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "uiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "F-08",
+      "message": "qual LLM te alimenta?",
+      "apiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "uiReply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-01",
+      "message": "valeu",
+      "apiReply": "De nada!",
+      "uiReply": "De nada!",
+      "apiPass": false,
+      "uiPass": false,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-02",
+      "message": "valeu",
+      "apiReply": "Imagina! Fico feliz que tenha gostado.",
+      "uiReply": "De nada!",
+      "apiPass": true,
+      "uiPass": false,
+      "classification": "real_divergence",
+      "pass": false,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-03",
+      "message": "valeu",
+      "apiReply": "De nada!",
+      "uiReply": "De nada!",
+      "apiPass": false,
+      "uiPass": false,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-04",
+      "message": "valeu",
+      "apiReply": "De nada!",
+      "uiReply": "De nada!",
+      "apiPass": false,
+      "uiPass": false,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-05",
+      "message": "valeu",
+      "apiReply": "De nada!",
+      "uiReply": "De nada!",
+      "apiPass": false,
+      "uiPass": false,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-06",
+      "message": "obrigado",
+      "apiReply": "De nada!",
+      "uiReply": "De nada!",
+      "apiPass": false,
+      "uiPass": false,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-07",
+      "message": "obrigado",
+      "apiReply": "De nada! Fico feliz em poder ajudar.",
+      "uiReply": "De nada! Fico feliz em poder ajudar.",
+      "apiPass": true,
+      "uiPass": true,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-08",
+      "message": "obrigado",
+      "apiReply": "De nada!",
+      "uiReply": "De nada! Fico feliz em saber que você está satisfeito.",
+      "apiPass": false,
+      "uiPass": true,
+      "classification": "acceptable_variation",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    },
+    {
+      "id": "GRAT-09",
+      "message": "obrigado",
+      "apiReply": "De nada!",
+      "uiReply": "De nada!",
+      "apiPass": false,
+      "uiPass": false,
+      "classification": "exact_parity",
+      "pass": true,
+      "prodBuild": "b0e3a34ffc93"
+    }
+  ],
+  "pass": false
+}
