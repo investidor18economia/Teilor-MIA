@@ -23643,12 +23643,12 @@ async function runNonCommercialAuthorityFastBranch({
     );
   };
   const sendFastBranchEgress = (replyOrFinalized, responsePath) => {
-    const finalized =
+    const replyText =
       typeof replyOrFinalized === "string"
-        ? finalizeNonCommercialReply(replyOrFinalized)
-        : replyOrFinalized;
+        ? replyOrFinalized
+        : String(replyOrFinalized?.rawLlmResponse || replyOrFinalized?.response || "");
     return sendUnifiedConversationalEgress(res, pipelineTracer, {
-      finalizedWrap: finalized,
+      candidateReply: replyText,
       socialBehaviorContract: socialBehaviorContractEarly,
       conversationalToneProfile,
       sessionContext: preservedSession,
@@ -23716,12 +23716,10 @@ async function runNonCommercialAuthorityFastBranch({
     const llmReply = getMiaLLMText(aiResponse);
     const reply =
       llmReply && !isGenericInstitutionalFallbackReply(llmReply)
-        ? finalizeNonCommercialReply(llmReply)
-        : finalizeNonCommercialReply(
-            isBriefIdentity
-              ? buildBriefOfficialIdentityReply(identityQuery)
-              : buildAboutMiaDeterministicFallback(identityQuery)
-          );
+        ? llmReply
+        : isBriefIdentity
+          ? buildBriefOfficialIdentityReply(identityQuery)
+          : buildAboutMiaDeterministicFallback(identityQuery);
     return sendFastBranchEgress(reply, flow.source || "non_commercial_identity");
   }
 
@@ -23756,12 +23754,11 @@ async function runNonCommercialAuthorityFastBranch({
       max_tokens: 180,
       metadata: { source: flow.source },
     });
-    const reply = finalizeNonCommercialReply(
+    const reply =
       getMiaLLMText(aiResponse) ||
-        (hasAnchorForRouting
-          ? buildAnchoredGreetingFallback(sessionContext)
-          : null)
-    );
+      (hasAnchorForRouting
+        ? buildAnchoredGreetingFallback(sessionContext)
+        : null);
     return sendFastBranchEgress(reply, flow.source || "non_commercial_greeting");
   }
 
@@ -23796,12 +23793,11 @@ async function runNonCommercialAuthorityFastBranch({
       max_tokens: 160,
       metadata: { source: flow.source },
     });
-    const reply = finalizeNonCommercialReply(
+    const reply =
       getMiaLLMText(aiResponse) ||
         (hasAnchorForRouting
           ? buildAnchoredAcknowledgementFallback(sessionContext)
-          : null)
-    );
+          : null);
     return sendFastBranchEgress(reply, flow.source || "non_commercial_acknowledgement");
   }
 
@@ -27514,12 +27510,23 @@ function sendUnifiedConversationalEgress(
     intentAuthority: intentAuthority || semanticGovernanceRef.ctx?.intentAuthority,
   };
 
-  const egressPrep = finalizedWrap
-    ? wrapSocialFinalizationForEgress(finalizedWrap, contract, { ...universalContext, period })
-    : prepareSocialEgressFinalization(candidateReply, contract, conversationalToneProfile, {
-        period: period || getTimePeriod(),
-        universalContext,
-      });
+  const contractWasRebuilt =
+    !!socialBehaviorContract &&
+    !!contract?.humanWarmthPresenceVersion &&
+    !socialBehaviorContract?.humanWarmthPresenceVersion;
+
+  const egressPrep =
+    finalizedWrap && !contractWasRebuilt
+      ? wrapSocialFinalizationForEgress(finalizedWrap, contract, { ...universalContext, period })
+      : prepareSocialEgressFinalization(
+          finalizedWrap?.response ?? candidateReply ?? "",
+          contract,
+          conversationalToneProfile,
+          {
+            period: period || getTimePeriod(),
+            universalContext,
+          }
+        );
 
   if (process.env.MIA_DEBUG === "true" && pipelineTracer) {
     pipelineTracer.patch({
