@@ -1,0 +1,13 @@
+{
+  "patch": "5.8.8.2",
+  "confirmed": true,
+  "rootCauses": [
+    "resolveCentralPersonalityPolicy used classifyIdentityQuery only — supplement variants lost before contract enrichment",
+    "enrichContractWithConversationalIdentityPresence set identityQueryKind but did not sync expectedHumanBehavior to ANSWER_META",
+    "applyConversationalIdentityPresenceGovernance skipped correction when personalityGovernanceBypass && identityQueryKind",
+    "buildPersonalityGovernedStaySocialReply and stay_social verbalization took precedence over identity for meta queries",
+    "GENERIC_STAY_SOCIAL patterns did not flag 'Fico por aqui — o que você quer conversar?' as identity bleed",
+    "Human warmth gate did not treat bare De nada/Por nada as cold gratitude responses"
+  ],
+  "scope": "Classes B and F only — no Decision Engine / ranking / commercial changes"
+}

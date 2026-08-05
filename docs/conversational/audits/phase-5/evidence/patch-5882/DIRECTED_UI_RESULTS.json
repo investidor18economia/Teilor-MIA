@@ -1,0 +1,187 @@
+{
+  "mode": "playwright",
+  "scenarios": [
+    {
+      "id": "F-UI-01",
+      "cls": "F",
+      "msg": "me conta quem você é",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-02",
+      "cls": "F",
+      "msg": "você é humana?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Não — sou a MIA, inteligência de compras da Teilor, não uma pessoa.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-03",
+      "cls": "F",
+      "msg": "qual IA te alimenta?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-04",
+      "cls": "F",
+      "msg": "como você funciona?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-05",
+      "cls": "F",
+      "msg": "quem te criou?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-06",
+      "cls": "F",
+      "msg": "você lembra de mim?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-07",
+      "cls": "F",
+      "msg": "sua especialidade?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-08",
+      "cls": "F",
+      "msg": "você é só um robô?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-09",
+      "cls": "F",
+      "msg": "open ai?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "pass": true
+    },
+    {
+      "id": "F-UI-10",
+      "cls": "F",
+      "msg": "MIA da Teilor?",
+      "expect": "identity",
+      "httpStatus": 200,
+      "reply": "Sim — sou a MIA, da Teilor.",
+      "pass": true
+    },
+    {
+      "id": "B-UI-01",
+      "cls": "B",
+      "msg": "obrigado demais",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Fico feliz que tenha gostado!",
+      "pass": true
+    },
+    {
+      "id": "B-UI-02",
+      "cls": "B",
+      "msg": "valeu",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "De nada!",
+      "pass": false,
+      "reason": "cold_response"
+    },
+    {
+      "id": "B-UI-03",
+      "cls": "B",
+      "msg": "oi",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Oi! Que bom te ver por aqui.",
+      "pass": true
+    },
+    {
+      "id": "B-UI-04",
+      "cls": "B",
+      "msg": "bom dia",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Tudo tranquilo por aqui!",
+      "pass": true
+    },
+    {
+      "id": "B-UI-05",
+      "cls": "B",
+      "msg": "to meio down",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Entendo. Às vezes realmente existem dias assim.",
+      "pass": true
+    },
+    {
+      "id": "B-UI-06",
+      "cls": "B",
+      "msg": "e você?",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Tudo tranquilo por aqui! E contigo, como vai?",
+      "pass": true
+    },
+    {
+      "id": "B-UI-07",
+      "cls": "B",
+      "msg": "frustrado",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Me ajuda a entender o contexto.",
+      "pass": true
+    },
+    {
+      "id": "B-UI-08",
+      "cls": "B",
+      "msg": "tchau",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Até mais — foi bom conversar!",
+      "pass": true
+    },
+    {
+      "id": "B-UI-09",
+      "cls": "B",
+      "msg": "você é legal",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Obrigada! Fico feliz que você pense assim. Vamos seguir conversando!",
+      "pass": true
+    },
+    {
+      "id": "B-UI-10",
+      "cls": "B",
+      "msg": "dia dificil",
+      "expect": "warmth",
+      "httpStatus": 200,
+      "reply": "Certo — pode continuar.",
+      "pass": true
+    }
+  ],
+  "pass": false
+}

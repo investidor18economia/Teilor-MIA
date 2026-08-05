@@ -1,0 +1,71 @@
+{
+  "patch": "5.8.8.2",
+  "timestamp": "2026-08-04T23:50:12.909Z",
+  "stages": [
+    {
+      "stage": "classifyIdentityQuery",
+      "receivesIdentity": true,
+      "losesIdentity": false,
+      "replacesIdentity": false,
+      "notes": "Primary taxonomy patterns; returns GENERAL when unmatched (not null)."
+    },
+    {
+      "stage": "classifyIdentityQuerySupplement",
+      "receivesIdentity": true,
+      "losesIdentity": false,
+      "replacesIdentity": false,
+      "notes": "Covers colloquial/meta variants (humana, LLM, stack, especialidade, só um robô)."
+    },
+    {
+      "stage": "resolveIdentityQueryKind",
+      "receivesIdentity": true,
+      "losesIdentity": "FIXED: now merges primary + supplement + about_mia intent",
+      "replacesIdentity": false,
+      "notes": "Single resolver used by personality + identity presence layers."
+    },
+    {
+      "stage": "resolveCentralPersonalityPolicy",
+      "receivesIdentity": true,
+      "losesIdentity": "FIXED: uses resolveIdentityQueryKind instead of classifyIdentityQuery only",
+      "replacesIdentity": false
+    },
+    {
+      "stage": "propagateIdentityQueryContractFields",
+      "receivesIdentity": true,
+      "losesIdentity": false,
+      "replacesIdentity": false,
+      "notes": "Syncs identityQueryKind, identityMode, expectedHumanBehavior=ANSWER_META."
+    },
+    {
+      "stage": "miaPersonalityGovernance / buildPersonalityGovernedStaySocialReply",
+      "receivesIdentity": true,
+      "losesIdentity": "FIXED: redirects to buildGovernedIdentityReply when identityQueryKind set",
+      "replacesIdentity": "FIXED: no longer emits generic stay_social for meta queries"
+    },
+    {
+      "stage": "miaConversationalIdentityPresenceGovernance",
+      "receivesIdentity": true,
+      "losesIdentity": "FIXED: removed bypass skip when personalityGovernanceBypass && identity",
+      "replacesIdentity": "FIXED: detects identity_query_replaced_by_stay_social"
+    },
+    {
+      "stage": "miaSocialContractVerbalization",
+      "receivesIdentity": true,
+      "losesIdentity": "FIXED: early guard routes identity before stay_social template",
+      "replacesIdentity": false
+    },
+    {
+      "stage": "finalizeHumanConversationReply",
+      "receivesIdentity": true,
+      "losesIdentity": false,
+      "replacesIdentity": "identity + warmth gates reapply when cold/generic detected"
+    },
+    {
+      "stage": "egress",
+      "receivesIdentity": true,
+      "losesIdentity": false,
+      "replacesIdentity": false,
+      "notes": "No new egress path; same governed finalizer output."
+    }
+  ]
+}

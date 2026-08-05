@@ -1,0 +1,19 @@
+{
+  "patch": "5.8.8.2",
+  "directed": {
+    "pass": true,
+    "label": "directed-5882",
+    "output": "PATCH 5.8.8.2 directed tests: 52/52 PASS\n"
+  },
+  "humanPresence": {
+    "pass": true,
+    "label": "588-human-presence",
+    "output": "e identity path\n  ✓ Classe F variant #76: finalize identity path\n  ✓ Classe F variant #77: finalize identity path\n  ✓ Classe F variant #78: finalize identity path\n  ✓ Classe F variant #79: finalize identity path\n  ✓ Classe F variant #80: finalize identity path\n  ✓ finalizeHumanConversationReply applies warmth gate on cold LLM\n  ✓ identity meta rejects ChatGPT claim\n\nResults: 207 passed, 0 failed\n\n"
+  },
+  "regression": {
+    "pass": true,
+    "label": "regression",
+    "output": "✓ 5.8.7\n✓ 5.8.6\n✓ 5.8.5\n✓ 5.8.4\n✓ 5.8.3\n✓ 5.8.8\n"
+  },
+  "timestamp": "2026-08-04T23:50:31.022Z"
+}

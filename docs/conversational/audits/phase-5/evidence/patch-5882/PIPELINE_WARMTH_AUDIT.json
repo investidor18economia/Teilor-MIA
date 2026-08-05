@@ -1,0 +1,36 @@
+{
+  "patch": "5.8.8.2",
+  "timestamp": "2026-08-04T23:50:12.910Z",
+  "stages": [
+    {
+      "stage": "resolveHumanWarmthPresence",
+      "receivesWarmth": true,
+      "losesWarmth": false,
+      "notes": "Derives responseMoment from intent (greeting, gratitude, empathy, reciprocal)."
+    },
+    {
+      "stage": "measureResponseWarmthPresence",
+      "receivesWarmth": true,
+      "losesWarmth": false,
+      "notes": "Detects cold ack, cold gratitude (De nada/Por nada), micro_confirm without markers."
+    },
+    {
+      "stage": "applyHumanWarmthPresenceGovernance",
+      "receivesWarmth": true,
+      "losesWarmth": false,
+      "replacesWithCold": "FIXED: replaces functionally cold LLM/template seeds with governed warm pools"
+    },
+    {
+      "stage": "applySocialHumanizationGovernance",
+      "receivesWarmth": true,
+      "losesWarmth": false,
+      "notes": "Gratitude_with_presence, comfort_without_therapy unchanged structurally."
+    },
+    {
+      "stage": "finalizeHumanConversationReply gates",
+      "receivesWarmth": true,
+      "losesWarmth": "FIXED: warmth gate runs after tone guard; no architectural strip of presence",
+      "whoOverrides": "Only when validation fails (forbidden patterns), not for identity/warmth policy"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "body": {
+    "status": "ok",
+    "version": "12E.1.0",
+    "timestamp": "2026-08-05T00:12:15.779Z",
+    "build": "fb0a725eef9c"
+  },
+  "timestamp": "2026-08-05T00:12:15.863Z"
+}

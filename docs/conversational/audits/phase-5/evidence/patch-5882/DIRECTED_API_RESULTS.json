@@ -1,0 +1,225 @@
+{
+  "scenarios": [
+    {
+      "id": "F-01",
+      "cls": "F",
+      "msg": "me conta quem você é",
+      "expect": "identity",
+      "status": 200,
+      "ms": 1194,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-02",
+      "cls": "F",
+      "msg": "você é humana?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 2213,
+      "reply": "Não — sou a MIA, inteligência de compras da Teilor, não uma pessoa.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-03",
+      "cls": "F",
+      "msg": "qual IA te alimenta?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 574,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-04",
+      "cls": "F",
+      "msg": "como você funciona?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 1641,
+      "reply": "Eu sou a MIA, sua assistente inteligente de compras da Teilor. Minha função é ajudar você a tomar decisões de compra mais informadas, oferecendo clareza e praticidade.confiança.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-05",
+      "cls": "F",
+      "msg": "quem te criou?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 1962,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-06",
+      "cls": "F",
+      "msg": "você lembra de mim?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 625,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-07",
+      "cls": "F",
+      "msg": "sua especialidade?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 357,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-08",
+      "cls": "F",
+      "msg": "você é só um robô?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 536,
+      "reply": "Sou a MIA, da Teilor — especialista em compras quando você precisa, e consigo conversar normalmente também.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-09",
+      "cls": "F",
+      "msg": "open ai?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 329,
+      "reply": "Não uso ChatGPT nem outro modelo genérico — sou a MIA, feita pela Teilor para conversar e ajudar nas compras.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "F-10",
+      "cls": "F",
+      "msg": "MIA da Teilor?",
+      "expect": "identity",
+      "status": 200,
+      "ms": 761,
+      "reply": "Sim — sou a MIA, da Teilor.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-01",
+      "cls": "B",
+      "msg": "obrigado demais",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 1339,
+      "reply": "Fico feliz que você tenha gostado!",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-02",
+      "cls": "B",
+      "msg": "valeu",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 797,
+      "reply": "De nada! Fico feliz que tenha gostado.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-03",
+      "cls": "B",
+      "msg": "oi",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 1181,
+      "reply": "Oi! Tudo bem. Que bom te ver por aqui.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-04",
+      "cls": "B",
+      "msg": "bom dia",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 762,
+      "reply": "Bom dia! Prazer em falar. Que bom te ver por aqui.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-05",
+      "cls": "B",
+      "msg": "to meio down",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 395,
+      "reply": "Imagino que tenha sido um dia pesado.",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-06",
+      "cls": "B",
+      "msg": "e você?",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 382,
+      "reply": "Tudo tranquilo por aqui! E contigo, como vai?",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-07",
+      "cls": "B",
+      "msg": "frustrado",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 304,
+      "reply": "Pode me explicar um pouco melhor a que se refere?",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-08",
+      "cls": "B",
+      "msg": "tchau",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 348,
+      "reply": "Até mais — foi bom conversar!",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-09",
+      "cls": "B",
+      "msg": "você é legal",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 1409,
+      "reply": "Valeu pelo carinho!",
+      "reasonCode": null,
+      "pass": true
+    },
+    {
+      "id": "B-10",
+      "cls": "B",
+      "msg": "dia dificil",
+      "expect": "warmth",
+      "status": 200,
+      "ms": 362,
+      "reply": "Compreendo.",
+      "reasonCode": null,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

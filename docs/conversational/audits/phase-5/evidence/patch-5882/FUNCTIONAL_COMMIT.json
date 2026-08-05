@@ -1,0 +1,27 @@
+{
+  "patch": "5.8.8.2",
+  "commits": [
+    {
+      "sha": "a227445",
+      "message": "fix(mia): PATCH 5.8.8.2 propagate identity and warmth across social paths"
+    },
+    {
+      "sha": "ee776f0",
+      "message": "fix(mia): PATCH 5.8.8.2 prevent finalizer from reverting warmth corrections"
+    },
+    {
+      "sha": "749e550",
+      "message": "fix(mia): PATCH 5.8.8.2 humanization cold gratitude punctuation gate"
+    },
+    {
+      "sha": "1571d43",
+      "message": "fix(mia): PATCH 5.8.8.2 rebuild enriched contract at social egress"
+    },
+    {
+      "sha": "fb0a725",
+      "message": "fix(mia): PATCH 5.8.8.2 single-pass social egress finalization"
+    }
+  ],
+  "productionBuild": "fb0a725eef9c",
+  "timestamp": "2026-08-05T00:20:00.000Z"
+}

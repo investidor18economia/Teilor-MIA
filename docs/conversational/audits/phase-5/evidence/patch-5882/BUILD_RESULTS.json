@@ -1,0 +1,15 @@
+{
+  "builds": [
+    {
+      "pass": true,
+      "label": "build-1",
+      "output": "c5419a799.css                          28.2 kB\n  └ other shared chunks (total)                       1.2 kB\n\nƒ Middleware                                          27 kB\n\n○  (Static)   prerendered as static content\n●  (SSG)      prerendered as static HTML (uses getStaticProps)\n   (ISR)      incremental static regeneration (uses revalidate in getStaticProps)\nƒ  (Dynamic)  server-rendered on demand\n\n"
+    },
+    {
+      "pass": true,
+      "label": "build-2",
+      "output": "f7c815c5419a799.css                        28.2 kB\n  └ other shared chunks (total)                     1.2 kB\n\nƒ Middleware                                        27 kB\n\n○  (Static)   prerendered as static content\n●  (SSG)      prerendered as static HTML (uses getStaticProps)\n   (ISR)      incremental static regeneration (uses revalidate in getStaticProps)\nƒ  (Dynamic)  server-rendered on demand\n\n"
+    }
+  ],
+  "allGreen": true
+}

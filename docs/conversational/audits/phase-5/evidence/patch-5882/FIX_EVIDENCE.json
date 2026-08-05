@@ -1,0 +1,19 @@
+{
+  "patch": "5.8.8.2",
+  "files": [
+    "lib/miaPersonalityGovernance.js",
+    "lib/miaConversationalIdentityPresenceGovernance.js",
+    "lib/miaSocialContractVerbalization.js",
+    "lib/miaHumanWarmthPresenceGovernance.js",
+    "lib/miaHumanConversationExperience.js",
+    "scripts/test-mia-patch-5882-identity-warmth.js"
+  ],
+  "structuralFixes": [
+    "resolveIdentityQueryKind unified resolver exported",
+    "propagateIdentityQueryContractFields syncs contract semantics",
+    "stay_social paths redirect to identity reply when identityQueryKind present",
+    "identity presence finalizer no longer bypasses on personalityGovernanceBypass",
+    "cold gratitude detection extended to Por nada",
+    "IDENTITY_AI_NATURE accepts só/apenas/mesmo modifiers"
+  ]
+}
