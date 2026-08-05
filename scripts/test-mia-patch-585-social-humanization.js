@@ -42,10 +42,10 @@ function humanContract(message, history = []) {
 }
 
 console.log("\nPATCH 5.8.5 — Social Humanization Governance\n");
-test("version", () => assert.equal(SOCIAL_HUMANIZATION_VERSION, "5.8.5"));
+test("version", () => assert.equal(SOCIAL_HUMANIZATION_VERSION, "5.8.8.3"));
 test("contract enriched", () => {
   const c = humanContract("hoje foi difícil");
-  assert.equal(c.socialHumanizationVersion, "5.8.5");
+  assert.equal(c.socialHumanizationVersion, "5.8.8.3");
   assert.ok(c.humanizationMetrics);
 });
 
